@@ -19,6 +19,12 @@
     ],
     "projects\\publications\\index.qmd": [
       "/"
+    ],
+    "blog\\index.qmd": [
+      "/"
+    ],
+    "talks\\index.qmd": [
+      "projects.yml"
     ]
   }
 }

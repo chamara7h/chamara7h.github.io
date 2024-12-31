@@ -49,5 +49,17 @@
   },
   "projects/publications/index.qmd": {
     "index.html": "f2c1a0f3"
+  },
+  "about.qmd": {
+    "about.html": "8e9c3d5e"
+  },
+  "blog/index.qmd": {
+    "index.html": "6acf5a4b"
+  },
+  "projects/publications/third-post/index.ipynb": {
+    "index.html": "dcfba5fb"
+  },
+  "talks/index.qmd": {
+    "index.html": "369d105f"
   }
 }
