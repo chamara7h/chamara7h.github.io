@@ -1,0 +1,10 @@
+---
+title: Projects
+description: 'TBD'
+listing:
+  contents: publications.yml
+  type: default
+  sort-ui: false
+  filter-ui: false
+  fields: [title, image, description, categories]
+---

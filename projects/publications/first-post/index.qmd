@@ -1,0 +1,62 @@
+---
+title: "Forecast adjustments during post-promotional periods"
+description: "Journal Publication"
+author: "Harsha Chamara Hewage, H. Niles Perera, Shari De Baets"
+date: "2022-07-16"
+image: "cover.jpg"
+categories:
+  - Forecasting
+  - Retail
+  - Judgmental adjustments
+  - R
+  - Shiny
+links:
+- icon: bookmark-fill
+  name: Journal article
+  url: https://www.sciencedirect.com/science/article/abs/pii/S0377221721006676
+- icon: github
+  name: GitHub repo
+  url: https://github.com/chamara7h
+link-external-newwindow: true
+---
+
+Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository.
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+/* Custom button style */
+button {
+  background-color: transparent; /* No filling */
+  border: 2px solid rgb(55, 58, 60); /* Gray border */
+  color: rgb(55, 58, 60); /* Gray text */
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect for Journal article */
+#journal-article-btn:hover {
+  border-color: #0066b2; /* Blue border on hover */
+  color: #0066b2; /* Blue text on hover */
+}
+
+/* Hover effect for GitHub repo */
+#github-repo-btn:hover {
+  border-color: #00A86B; /* Green border on hover */
+  color: #00A86B; /* Green text on hover */
+}
+</style>
+
+<button id="journal-article-btn" onclick="window.open('https://www.sciencedirect.com/science/article/abs/pii/S0377221721006676', '_blank');">
+  <i class="fas fa-bookmark"></i> Journal article
+</button>
+<button id="github-repo-btn" onclick="window.open('https://github.com/chamara7h', '_blank');">
+  <i class="fab fa-github"></i> GitHub repo
+</button>
+

@@ -1,0 +1,10 @@
+---
+title: PROJECTS
+description: 'Overview of academic research, data science and creative designing projects.'
+listing: 
+  contents: 
+    - "publications/*.qmd"
+    - "projects/*.qmd"
+  type: grid
+  fields: [image, title, description, categories]
+---

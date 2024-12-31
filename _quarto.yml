@@ -1,0 +1,25 @@
+project:
+  type: website
+
+website:
+  title: "Home"
+  open-graph: true 
+  page-footer: "Made with ❤️ and Quarto"
+  navbar:
+    title: Harsha Halgamuwe Hewage
+    background: '#3e3e3e'
+    right:
+      - text: Projects
+        href: projects/index.qmd
+      - icon: envelope-at-fill
+        href: mailto:hewagehrc@gamil.com
+      - icon: github
+        href: https://github.com/chamara7h
+      - icon: linkedin
+        href: https://www.linkedin.com/in/harshachamara/
+      - icon: bookmark-star-fill
+        href: https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en
+format:
+  html:
+    theme: [cosmo, styles.scss]
+

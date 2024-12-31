@@ -1,0 +1,11 @@
+---
+title: Publications
+description: 'My academic publications, along with their source codes and data.'
+image: "cover.jpg"
+listing: 
+  contents: /
+  type: grid
+  sort-ui: false
+  filter-ui: false
+  fields: [title, image, description, categories]
+---

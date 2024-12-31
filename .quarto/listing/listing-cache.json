@@ -1,0 +1,24 @@
+{
+  "listingMap": {
+    "projects\\index.qmd": [
+      "B3049D40",
+      "/",
+      "research/*.qmd",
+      "ds_projects/*.qmd",
+      "publications/*.qmd",
+      "projects/*.qmd"
+    ],
+    "projects\\research\\index.qmd": [
+      "publications.yml"
+    ],
+    "projects\\ds_projects\\index.qmd": [
+      "/"
+    ],
+    "projects\\projects\\index.qmd": [
+      "publications.yml"
+    ],
+    "projects\\publications\\index.qmd": [
+      "/"
+    ]
+  }
+}

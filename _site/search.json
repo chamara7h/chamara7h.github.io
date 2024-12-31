@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Harsha Halgamuwe Hewage",
+    "section": "",
+    "text": "I am a second-year PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the Data Lab for Social Good.\nI also lead the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I manage the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives."
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "PROJECTS",
+    "section": "",
+    "text": "Projects\n\n\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\nPublications\n\n\nMy academic publications, along with their source codes and data.\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/first-post/index.html",
+    "href": "projects/first-post/index.html",
+    "title": "Journal Publication",
+    "section": "",
+    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository."
+  },
+  {
+    "objectID": "projects/research/index.html",
+    "href": "projects/research/index.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Predicting House Prices with Machine Learning\n\n\n\n\n\n\nForecasting\n\n\nRetail\n\n\nJudgmental adjustments\n\n\nR\n\n\nShiny\n\n\n\nOur research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\n\n\n\nR\n\n\nMachine Learning\n\n\nClustering\n\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\n\n\n\nR\n\n\nData Visualization\n\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs. \n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/ds_projects/first-post/index.html",
+    "href": "projects/ds_projects/first-post/index.html",
+    "title": "Journal Publication",
+    "section": "",
+    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository."
+  },
+  {
+    "objectID": "projects/ds_projects/index.html",
+    "href": "projects/ds_projects/index.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Journal Publication\n\n\nForecast adjustments during post-promotional periods\n\n\n\nHarsha Chamara Hewage, H. Niles Perera, Shari De Baets\n\n\nJul 16, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Post\n\n\nPost description for second post\n\n\n\nAlicia\n\n\nMay 23, 2021\n\n\n\n\n\n\n\n\n\n\n\n\nThird Blog Post\n\n\nAn example post where the source document is a Jupyter Notebook\n\n\n\nAlicia\n\n\nMay 24, 2021\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/publications/first-post/index.html",
+    "href": "projects/publications/first-post/index.html",
+    "title": "Forecast adjustments during post-promotional periods",
+    "section": "",
+    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository.\n\n\n\n Journal article\n\n\n GitHub repo"
+  },
+  {
+    "objectID": "projects/publications/second-post/index.html",
+    "href": "projects/publications/second-post/index.html",
+    "title": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning",
+    "section": "",
+    "text": "We introduce a novel framework that predicts long-term mental healthcare workforce needs using real NHS data. This framework captures the dynamics of both patient needs and nurse availability, enabling effective long-term planning. It also tests policies and identifies strategies to address future staff shortages, providing valuable insights for decision-makers to develop resilient mental healthcare workforce policies.\n\n\n\n Pre-print\n\n\n GitHub repo"
+  },
+  {
+    "objectID": "projects/projects/index.html",
+    "href": "projects/projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Predicting House Prices with Machine Learning\n\n\n\n\n\n\nForecasting\n\n\nRetail\n\n\nJudgmental adjustments\n\n\nR\n\n\nShiny\n\n\n\nOur research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\n\n\n\nR\n\n\nMachine Learning\n\n\nClustering\n\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\n\n\n\nR\n\n\nData Visualization\n\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs. \n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/publications/index.html",
+    "href": "projects/publications/index.html",
+    "title": "Publications",
+    "section": "",
+    "text": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning\n\n\n\nWorkforce planning\n\n\nHealthcare\n\n\nMachine Learning\n\n\nSimulation\n\n\nR\n\n\nPython\n\n\n\nPre-print (under review)\n\n\n\n\n\n\n\n\n\n\n\n\n\nForecast adjustments during post-promotional periods\n\n\n\nForecasting\n\n\nRetail\n\n\nJudgmental adjustments\n\n\nR\n\n\nShiny\n\n\n\nJournal Publication\n\n\n\n\n\n\n\n\n\n\n\nThird Blog Post\n\n\n\nScience\n\n\nData\n\n\n\nAn example post where the source document is a Jupyter Notebook\n\n\n\n\n\n\n\nNo matching items"
+  }
+]
