@@ -1,0 +1,23 @@
+---
+title: Forecasting improvements for better reproductive health and family planning operations in global health supply chains
+description: 2nd year PhD Student, Data Lab for Social Good Research Group, Cardiff Business School, UK
+path: https://profiles.cardiff.ac.uk/staff/halgamuwehewagehr
+image: images/cover.jpg
+categories: [R, Python, Machine Learning, Hybrid Intelligence, Uncertainity, Social Good]
+date: 2022-09-27
+---
+
+<iframe src="HC_poster.pdf" width="100%" height="450"></iframe>
+
+My research focuses on addressing inefficiencies in supply chain management for contraceptive products in developing countries. These inefficiencies often lead to shortages, limiting women's reproductive autonomy and exacerbating societal challenges. By integrating probabilistic forecasting with inventory optimization, I aim to create a novel approach that accounts for uncertainties, poor data quality, and local demand variations. This interdisciplinary project involves collaboration with scholars from Cardiff Business School, the School of Computer Science & Informatics, and the United States Agency for International Development (USAID). The goal is to improve access to contraceptives, reduce unintended pregnancies, and prevent unsafe abortions, ultimately benefiting women, healthcare providers, governments, and donor organizations.
+
+## Supervision team
+
+- Lead: [Prof Bahman Rostami-Tabar](https://profiles.cardiff.ac.uk/staff/rostami-tabarb), Data Lab for Social Good Research Group, Cardiff Business School, UK
+- Co: [Prof Aris Syntetos](https://www.cardiff.ac.uk/people/view/598321-syntetos-aris), Cardiff Business School, UK
+- Co: [Dr Federico Liberatore](https://www.cardiff.ac.uk/people/view/1721244-liberatore-federico), School of Computer Science and Informatics, UK
+- Collaborator: [Glenn Milano](https://www.linkedin.com/in/milano-glenn/), Global Health Supply Chain, Bureau for Global Health, United States Agency for International Development (USAID)
+
+## Funder
+
+Welsh Graduate School for the Social Sciences (WGSSS)

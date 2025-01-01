@@ -25,6 +25,10 @@
     ],
     "talks\\index.qmd": [
       "projects.yml"
+    ],
+    "phd\\index.qmd": [
+      "projects.yml",
+      "phd.qmd"
     ]
   }
 }

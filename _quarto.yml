@@ -9,6 +9,10 @@ website:
     title: Harsha Halgamuwe Hewage
     background: '#3e3e3e'
     right:
+      - text: PhD Project
+        href: phd/index.qmd
+      - text: CV
+        href: cv/index.qmd
       - text: Projects
         href: projects/index.qmd
       - icon: envelope-at-fill

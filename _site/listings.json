@@ -26,8 +26,7 @@
     "listing": "/projects/publications/index.html",
     "items": [
       "/projects/publications/second-post/index.html",
-      "/projects/publications/first-post/index.html",
-      "/projects/publications/third-post/index.html"
+      "/projects/publications/first-post/index.html"
     ]
   },
   {
@@ -41,5 +40,9 @@
       "/blog/second-post/index.html",
       "/blog/third-post/index.html"
     ]
+  },
+  {
+    "listing": "/phd/index.html",
+    "items": []
   }
 ]

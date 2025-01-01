@@ -61,5 +61,17 @@
   },
   "talks/index.qmd": {
     "index.html": "369d105f"
+  },
+  "cv/index.qmd": {
+    "index.html": "7b2abe6b"
+  },
+  "phd/projects.qmd": {
+    "projects.html": "a44e07bf"
+  },
+  "phd/index.qmd": {
+    "index.html": "a8f942df"
+  },
+  "cv/phd.qmd": {
+    "phd.html": "147dd886"
   }
 }
