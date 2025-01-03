@@ -1,24 +1,21 @@
 [
   {
-    "listing": "/projects/publications/index.html",
+    "listing": "/projects/index.html",
     "items": [
-      "/projects/publications/second-post/index.html",
-      "/projects/publications/first-post/index.html"
+      "/projects/design/index.html",
+      "/projects/projects/index.html",
+      "/projects/publications/index.html"
     ]
-  },
-  {
-    "listing": "/projects/projects/index.html",
-    "items": []
   },
   {
     "listing": "/talks/index.html",
     "items": []
   },
   {
-    "listing": "/projects/index.html",
+    "listing": "/projects/publications/index.html",
     "items": [
-      "/projects/projects/index.html",
-      "/projects/publications/index.html"
+      "/projects/publications/second-post/index.html",
+      "/projects/publications/first-post/index.html"
     ]
   }
 ]

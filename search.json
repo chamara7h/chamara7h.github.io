@@ -42,32 +42,18 @@
     "text": "Funder\nWelsh Graduate School for the Social Sciences (WGSSS)"
   },
   {
-    "objectID": "projects/publications/second-post/index.html",
-    "href": "projects/publications/second-post/index.html",
-    "title": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning",
+    "objectID": "projects/publications/first-post/index.html",
+    "href": "projects/publications/first-post/index.html",
+    "title": "Forecast adjustments during post-promotional periods",
     "section": "",
-    "text": "We introduce a novel framework that predicts long-term mental healthcare workforce needs using real NHS data. This framework captures the dynamics of both patient needs and nurse availability, enabling effective long-term planning. It also tests policies and identifies strategies to address future staff shortages, providing valuable insights for decision-makers to develop resilient mental healthcare workforce policies.\n\n\n\n Pre-print\n\n\n GitHub repo"
+    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository.\n\n\n\n Journal article\n\n\n GitHub repo"
   },
   {
-    "objectID": "projects/publications/index.html",
-    "href": "projects/publications/index.html",
-    "title": "Publications",
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "PROJECTS",
     "section": "",
-    "text": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning\n\n\n\nWorkforce planning\n\n\nHealthcare\n\n\nMachine Learning\n\n\nSimulation\n\n\nR\n\n\nPython\n\n\n\nPre-print (under review)\n\n\n\n\n\n\n\n\n\n\n\n\n\nForecast adjustments during post-promotional periods\n\n\n\nForecasting\n\n\nRetail\n\n\nJudgmental adjustments\n\n\nR\n\n\nShiny\n\n\n\nJournal Publication\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/projects/index.html",
-    "href": "projects/projects/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Predicting House Prices with Machine Learning\n\n\n\n\n\n\nForecasting\n\n\nRetail\n\n\nJudgmental adjustments\n\n\nR\n\n\nShiny\n\n\n\nOur research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\n\n\n\nR\n\n\nMachine Learning\n\n\nClustering\n\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\n\n\n\nR\n\n\nData Visualization\n\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs. \n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "talks/index.html",
-    "href": "talks/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Project\n\n\nDescription\n\n\nSkills\n\n\n\n\n\n\nPredicting House Prices with Machine Learning\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection. \n\n\nPython, Machine Learning, Data Cleaning\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments. \n\n\nR, Machine Learning, Clustering, Statistical Modelling\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs. \n\n\nR, Data Visualization, Environmental Science\n\n\n\n\n\nNo matching items"
+    "text": "Creative Gallery\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Science Projects\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Projects\n\n\nMy academic publications, along with their source code and data.\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -77,24 +63,31 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "PROJECTS",
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Projects",
     "section": "",
-    "text": "Projects\n\n\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\nPublications\n\n\nMy academic publications, along with their source codes and data.\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Project\n\n\nDescription\n\n\nSkills\n\n\n\n\n\n\nPredicting House Prices with Machine Learning\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection. \n\n\nPython, Machine Learning, Data Cleaning\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments. \n\n\nR, Machine Learning, Clustering, Statistical Modelling\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs. \n\n\nR, Data Visualization, Environmental Science\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "projects/publications/first-post/index.html",
-    "href": "projects/publications/first-post/index.html",
-    "title": "Forecast adjustments during post-promotional periods",
+    "objectID": "projects/publications/index.html",
+    "href": "projects/publications/index.html",
+    "title": "Research Projects",
     "section": "",
-    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository.\n\n\n\n Journal article\n\n\n GitHub repo"
+    "text": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning\n\n\n\nWorkforce planning\n\n\nHealthcare\n\n\nMachine Learning\n\n\nSimulation\n\n\nR\n\n\nPython\n\n\n\nPre-print (under review)\n\n\n\n\n\n\n\n\n\n\n\n\n\nForecast adjustments during post-promotional periods\n\n\n\nForecasting\n\n\nRetail\n\n\nJudgmental adjustments\n\n\nR\n\n\nShiny\n\n\n\nJournal Publication\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/publications/second-post/index.html",
+    "href": "projects/publications/second-post/index.html",
+    "title": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning",
+    "section": "",
+    "text": "We introduce a novel framework that predicts long-term mental healthcare workforce needs using real NHS data. This framework captures the dynamics of both patient needs and nurse availability, enabling effective long-term planning. It also tests policies and identifies strategies to address future staff shortages, providing valuable insights for decision-makers to develop resilient mental healthcare workforce policies.\n\n\n\n Pre-print\n\n\n GitHub repo"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Harsha Halgamuwe Hewage",
     "section": "",
-    "text": "I am a second-year PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the Data Lab for Social Good.\nI also lead the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I manage the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives."
+    "text": "I am a second-year PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the Data Lab for Social Good.\nI also lead the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I manage the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives.\nExplore my full list of publications on Google Scholar."
   }
 ]
