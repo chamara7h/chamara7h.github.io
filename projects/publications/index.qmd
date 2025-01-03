@@ -1,6 +1,6 @@
 ---
-title: Publications
-description: 'My academic publications, along with their source codes and data.'
+title: Research Projects
+description: 'My academic publications, along with their source code and data.'
 image: "cover.jpg"
 listing: 
   contents: /

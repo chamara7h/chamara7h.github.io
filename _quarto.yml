@@ -15,6 +15,10 @@ website:
         href: cv/index.qmd
       - text: Projects
         href: projects/index.qmd
+      - text: Learning Lab
+        href: lab/index.qmd
+      - text: Resources
+        href: resources/index.qmd
       - icon: envelope-at-fill
         href: mailto:hewagehrc@gamil.com
       - icon: github

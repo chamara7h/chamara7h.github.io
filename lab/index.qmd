@@ -1,5 +1,5 @@
 ---
-title: Data Science Projects
+title: Learning Lab
 description: 'Something is cooking'
 image: images/cover.gif
 ---

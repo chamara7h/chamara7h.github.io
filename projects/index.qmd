@@ -5,6 +5,7 @@ listing:
   contents: 
     - "publications/*.qmd"
     - "projects/*.qmd"
+    - "design/*.qmd"
   type: grid
   fields: [image, title, description, categories]
 ---

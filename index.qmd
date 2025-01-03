@@ -24,3 +24,5 @@ about:
 
   I also lead the research network at [Forecasting for Social Good (F4SG)](https://forecasters.org/programs/communities/forecasting-for-social-good-f4sg/), an official section of the International Institute of Forecasters. As part of this role, I manage the [Learning Labs workshop series](https://github.com/chamara7h/F4SG), providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives.
 
+Explore my [full list of publications](https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en) on Google Scholar.
+
