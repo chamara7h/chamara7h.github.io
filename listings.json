@@ -8,14 +8,26 @@
     ]
   },
   {
-    "listing": "/talks/index.html",
-    "items": []
-  },
-  {
     "listing": "/projects/publications/index.html",
     "items": [
       "/projects/publications/second-post/index.html",
       "/projects/publications/first-post/index.html"
+    ]
+  },
+  {
+    "listing": "/talks/index.html",
+    "items": []
+  },
+  {
+    "listing": "/lab/forecasting/index.html",
+    "items": [
+      "/lab/forecasting/first-post/index.html"
+    ]
+  },
+  {
+    "listing": "/lab/index.html",
+    "items": [
+      "/lab/forecasting/index.html"
     ]
   }
 ]

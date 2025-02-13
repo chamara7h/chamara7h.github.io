@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "PROJECTS",
+    "section": "",
+    "text": "Creative Gallery\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Science Projects\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Projects\n\n\nMy academic publications, along with their source code and data.\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/publications/index.html",
+    "href": "projects/publications/index.html",
+    "title": "Research Projects",
+    "section": "",
+    "text": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning\n\n\n\nWorkforce planning\n\n\nHealthcare\n\n\nMachine Learning\n\n\nSimulation\n\n\nR\n\n\nPython\n\n\n\nPre-print (under review)\n\n\n\n\n\n\n\n\n\n\n\n\n\nForecast adjustments during post-promotional periods\n\n\n\nForecasting\n\n\nRetail\n\n\nJudgmental adjustments\n\n\nR\n\n\nShiny\n\n\n\nJournal Publication\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "phd/index.html",
     "href": "phd/index.html",
     "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
@@ -19,6 +33,48 @@
     "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
     "section": "Funder",
     "text": "Funder\nWelsh Graduate School for the Social Sciences (WGSSS)"
+  },
+  {
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Project\n\n\nDescription\n\n\nSkills\n\n\n\n\n\n\nPredicting House Prices with Machine Learning\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection. \n\n\nPython, Machine Learning, Data Cleaning\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments. \n\n\nR, Machine Learning, Clustering, Statistical Modelling\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs. \n\n\nR, Data Visualization, Environmental Science\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "lab/forecasting/index.html",
+    "href": "lab/forecasting/index.html",
+    "title": "Time Series Forecasting",
+    "section": "",
+    "text": "Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\n\nForecasting\n\n\nHealthcare\n\n\nR\n\n\nPython\n\n\nMachine Learning\n\n\n\nWorkshop\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "lab/index.html",
+    "href": "lab/index.html",
+    "title": "LEARNING LABS",
+    "section": "",
+    "text": "Time Series Forecasting\n\n\nTime series forecasting materials using R and Python.\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "lab/forecasting/first-post/index.html",
+    "href": "lab/forecasting/first-post/index.html",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting",
+    "section": "",
+    "text": "Slides\n\n\n GitHub repo\n\n\nContext\nAccurate demand forecasting is essential for ensuring reliable access to contraceptive products, supporting key processes like procurement, inventory management, and distribution. This course aims to equip pharmaceutical officers at healthcare site levels with the knowledge and tools to adopt modern forecasting methods using R and Python.\n\n\nTarget Audience\n\nPharmaceutical officers at healthcare site levels responsible for demand planning\n\nAnyone interested in forecasting in the context of contraceptive supply chains\n\n\n\nPrerequisites\n\nBasic knowledge of R and Python\n\nBasic understanding of statistics concepts\n\n\n\nLearning Outcomes\n\nDay 1:\n\nFamiliarize with RStudio and R Notebooks.\nInstall and load required packages in R.\nLearn data wrangling and feature engineering.\nUnderstand time series graphics.\nExplore forecasting models: sNAIVE, Moving Average, ARIMA, ETS, and Demographic Forecasting.\nEvaluate model performance using time series cross-validation.\n\n\n\nDay 2:\n\nFamiliarize with Google Colab and Python Notebooks.\nInstall and load required Python packages.\nImport data into Python.\nImplement advanced forecasting models: LightGBM, XGBoost, and TimeGPT.\nEvaluate model performance using time series cross-validation.\nExplore additional learning resources.\n\n\n\n\nPreparation\nThe workshop will provide a quick-start overview of exploring time series data and producing forecasts. No prior experience in time series is required. However, familiarity with:\n\nWriting R code and using tidyverse packages (dplyr, ggplot2) is recommended. Learn R here.\nWriting Python code is beneficial. Learn Python here.\nBasic statistical concepts such as mean, variance, quantiles, and regression would be helpful.\n\n\n\nRequired Equipment\nPlease have a laptop capable of running both R and Python."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Harsha Halgamuwe Hewage",
+    "section": "",
+    "text": "I am a second-year PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the Data Lab for Social Good.\nI also lead the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I manage the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives.\nExplore my full list of publications on Google Scholar."
   },
   {
     "objectID": "cv/phd.html",
@@ -42,41 +98,6 @@
     "text": "Funder\nWelsh Graduate School for the Social Sciences (WGSSS)"
   },
   {
-    "objectID": "projects/publications/first-post/index.html",
-    "href": "projects/publications/first-post/index.html",
-    "title": "Forecast adjustments during post-promotional periods",
-    "section": "",
-    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository.\n\n\n\n Journal article\n\n\n GitHub repo"
-  },
-  {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "PROJECTS",
-    "section": "",
-    "text": "Creative Gallery\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Science Projects\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Projects\n\n\nMy academic publications, along with their source code and data.\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "talks/index.html",
-    "href": "talks/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Project\n\n\nDescription\n\n\nSkills\n\n\n\n\n\n\nPredicting House Prices with Machine Learning\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection. \n\n\nPython, Machine Learning, Data Cleaning\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments. \n\n\nR, Machine Learning, Clustering, Statistical Modelling\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs. \n\n\nR, Data Visualization, Environmental Science\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/publications/index.html",
-    "href": "projects/publications/index.html",
-    "title": "Research Projects",
-    "section": "",
-    "text": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning\n\n\n\nWorkforce planning\n\n\nHealthcare\n\n\nMachine Learning\n\n\nSimulation\n\n\nR\n\n\nPython\n\n\n\nPre-print (under review)\n\n\n\n\n\n\n\n\n\n\n\n\n\nForecast adjustments during post-promotional periods\n\n\n\nForecasting\n\n\nRetail\n\n\nJudgmental adjustments\n\n\nR\n\n\nShiny\n\n\n\nJournal Publication\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "projects/publications/second-post/index.html",
     "href": "projects/publications/second-post/index.html",
     "title": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning",
@@ -84,10 +105,10 @@
     "text": "We introduce a novel framework that predicts long-term mental healthcare workforce needs using real NHS data. This framework captures the dynamics of both patient needs and nurse availability, enabling effective long-term planning. It also tests policies and identifies strategies to address future staff shortages, providing valuable insights for decision-makers to develop resilient mental healthcare workforce policies.\n\n\n\n Pre-print\n\n\n GitHub repo"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Harsha Halgamuwe Hewage",
+    "objectID": "projects/publications/first-post/index.html",
+    "href": "projects/publications/first-post/index.html",
+    "title": "Forecast adjustments during post-promotional periods",
     "section": "",
-    "text": "I am a second-year PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the Data Lab for Social Good.\nI also lead the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I manage the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives.\nExplore my full list of publications on Google Scholar."
+    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository.\n\n\n\n Journal article\n\n\n GitHub repo"
   }
 ]
