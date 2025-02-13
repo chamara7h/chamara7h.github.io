@@ -1,0 +1,2072 @@
+---
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+    logo: "images/logo.png"
+    footer: "[Demand Forecasting Models for Contraceptive Supply Chain](https://chamara7h.github.io/lab/forecasting/first-post/)"
+    css: theme.css
+    theme: simple
+    echo: true
+    title-slide-logo: "images/logo.png"
+editor: source
+execute:
+  warning: false
+---   
+
+
+# Demand Forecasting Models for Contraceptive Supply Chain {background-image="images/title_page.jpg" background-size="cover" background-color="#4f6952"}
+
+<h2>An introduction to time series forecasting</h2>
+
+<br>
+
+<h4>
+  Harsha Halgamuwe Hewage <br>
+  Data Lab for Social Good Research Lab <br>
+  Cardiff University, UK 
+</h4>
+
+2025-03-16
+
+
+```{r}
+#| echo: false
+
+library(knitr)
+options(knitr.graphics.auto_pdf = TRUE)
+```
+
+## Assumptions
+
+- You should be comfortable with R and Python coding.
+- This is not a theory-based course—we will not derive formulas or mathematical proofs.
+- Our focus is on practical time series forecasting: understanding when and how to use different tools effectively.
+
+## What we will cover
+
+- Data wrangling and basic feature engineering
+- Time series visualizations
+- Traditional forecasting models
+- Advanced forecasting models
+- Performance evaluation
+
+## What we will `not cover`
+
+- Handling missing values
+- Advanced feature engineering
+- Time series cross-validation
+- Hyperparameter tuning
+
+## Materials
+
+You can find the workshop materials [here](https://chamara7h.github.io/lab/).
+
+*Note*: These materials are based on [F4SG: Africast training](https://workshop.f4sg.org/africast/) and [F4SG Learning Labs trainings](https://www.youtube.com/watch?v=VCiDhRxNxgc&list=PLQMuwuCypmehClRpxqOzuiRKyPmeQTJsz).
+
+<br>
+
+Recommended readings:
+
+- [Demand forecasting for executives and professionals](https://dfep.netlify.app/) by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa.
+- [Forecasting: Principles and Practice (3rd ed)](https://otexts.com/fpp3/) by Rob J Hyndman and George Athanasopoulos.
+- [Forecasting and Analytics with the Augmented Dynamic Adaptive Model (ADAM)](https://openforecast.org/adam/) by Ivan Svetunkov.
+
+## Outline
+
+- What is forecasting?
+- Prepare your data
+- Explore your data
+- Forecast modelling
+- Evaluating the model performances
+- Advance forecasting models
+- Other forecasting models in family planning supply chains
+
+# What is forecasting?
+
+## What is a `FORECAST`?
+
+An estimation of the future based on all of the information available at the time when we generate the forecast;
+
+- historical data,
+- knowledge of any future events that might impact the forecasts.
+
+## What is time series data?
+
+- Time series consist of sequences of observations collected over time.
+- Time series forecasting is estimating how the sequence of observations will continue into the future.
+
+
+```{r}
+#| echo: false
+
+
+library(ggplot2)
+
+# Create a sample time series dataset with 50 training and 5 testing data points
+set.seed(123) # Set seed for reproducibility
+
+# Generate dates for training and testing
+train_dates <- seq(as.Date("2024-01-01"), by = "month", length.out = 50)
+test_dates <- seq(as.Date("2028-03-01"), by = "month", length.out = 5)
+
+# Combine dates
+all_dates <- c(train_dates, test_dates)
+
+# Generate random sales data
+sales_data <- c(sample(100:300, 50, replace = TRUE), rep(NA, 5))
+
+# Create data frame
+time_series <- data.frame(
+  Month = all_dates,
+  Sales = sales_data
+)
+
+# Define the dates for vertical lines 
+vline_dates <- as.Date(c('2028-03-01'))
+
+# Plot the time series data
+ggplot(data = time_series, aes(x = Month, y = Sales)) +
+  geom_line(color = "#104E8B") +
+  geom_point(color = "#CD2626") +
+  geom_vline(xintercept = as.numeric(vline_dates), linetype = "dashed", color = "#8B0000") +
+  labs(title = "Monthly Sales Data",
+       x = "Month",
+       y = "Sales") +
+  theme_minimal() +
+  theme(legend.position = "none",
+        panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## What to `FORECAST`?
+
+Understanding needs! Identify decisions that need forecasting support!
+
+- Forecast variable/s
+- Time granularity
+- Forecast horizon
+- Frequency
+- Structure/hierarchy
+
+## Forecasting workflow
+
+- *Step 1:* Problem definition
+- *Step 2:* Gathering information
+- *Step 3:* Preliminary (exploratory) analysis
+- *Step 4:* Choosing and fitting models
+- *Step 5:* Evaluating and using a forecasting model
+
+## Tidy forecasting workflow
+
+![](images/tidy_workflow.png){fig-align="center"}
+
+Read more at [Demand forecasting for executives and professionals](https://dfep.netlify.app/) by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa.
+
+
+# Forecasting using R
+
+## Loading libraries
+
+We use the `fpp3` package in this workshop, which provides all the necessary packages for data manipulation, plotting, and forecasting.
+
+```{r}
+
+# Define required packages
+packages <- c("tidyverse", "fable", "tsibble", "feasts", 'zoo')
+
+# Install missing packages
+missing_packages <- packages[!(packages %in% installed.packages()[,"Package"])]
+if(length(missing_packages)) {
+  suppressWarnings(suppressMessages(install.packages(missing_packages)))
+}
+
+# Load libraries quietly
+suppressWarnings(suppressMessages({
+  library(tidyverse) # Data manipulation and plotting functions
+  library(fable) # Time series manipulation
+  library(tsibble) # Forecasting functions
+  library(feasts) # Time series graphics and statistics
+}))
+
+```
+
+Read more at [Forecasting: Principles and Practice (3rd ed)](https://otexts.com/fpp3/) by Rob J Hyndman and George Athanasopoulos.
+
+## Preparing the data
+
+In this workshop, we are using `tsibble` objects. They provide a data infrastructure for tidy temporal data with wrangling tools, adapting the [tidy data principles](https://tidyr.tidyverse.org/articles/tidy-data.html).
+
+In `tsibble`:
+
+- **Index:** time information about the observation
+- **Measured variable(s):** numbers of interest 
+- **Key variable(s):** set of variables that define observational units over time
+- It works with tidyverse functions.
+
+## Read `csv` file
+
+```{r}
+
+med_qty <- read.csv('data/med_qty.csv')
+med_qty |> head(10)
+
+```
+
+
+Do you think the `med_qty` data set is a tidy data?
+
+## Check for `NA` and duplicates
+
+```{r}
+# check NAs
+
+anyNA(med_qty)
+
+```
+
+```{r}
+#check duplicates
+
+med_qty |>  
+  duplicated() |>  
+  sum() 
+
+```
+
+## Create tsibble
+
+```{r}
+
+med_tsb <- med_qty |>  
+  mutate(date = yearmonth(date)) |>  # convert chr to date format
+  as_tsibble(index = date, key = c(hub_id, product_id))
+
+med_tsb 
+
+```
+
+- What is the temporal granularity of `med_tsb`?
+- How many time series do we have in `med_tsb`?
+
+## Check temporal gaps (implicit missing values)
+
+```{r}
+
+has_gaps(med_tsb) |> head(3) #check gaps
+
+scan_gaps(med_tsb) |> head(3) # show gaps
+
+count_gaps(med_tsb) |> head(3) # count gaps
+
+```
+
+## Check temporal gaps (implicit missing values)
+
+If there is any gap, then we fill it. 
+
+```{r}
+
+med_tsb |> fill_gaps(quantity_issued=0L) # we can fill it with zero
+
+```
+
+## Check temporal gaps (implicit missing values)
+
+*Note:* Since the main focus of this study is to provide foundational knowledge on forecasting, we will filter out time series with many missing values and then fill the remaining gaps using `na.interp()` function [(Read more)](https://search.r-project.org/CRAN/refmans/forecast/html/na.interp.html).
+
+```{r}
+
+item_ids <- med_tsb |> 
+  count_gaps() |> 
+  group_by(hub_id, product_id) |> 
+  summarise(.n = max(.n), .groups = 'drop') |> 
+  filter(.n  < 2) |> 
+  mutate(id = paste0(hub_id,'-',product_id)) |> 
+  pull(id) # filtering the item ids
+
+med_tsb_filter <- med_tsb |> 
+  mutate(id = paste0(hub_id,'-',product_id)) |> 
+  group_by(hub_id, product_id) |>
+  mutate(num_observations = n()) |> 
+  filter(id %in% item_ids & num_observations >59) |>   # we have cold starts and discontinuations. 
+  fill_gaps(quantity_issued = 1e-6, .full = TRUE) |>   # Replace NAs with a small value
+  select(-id, -num_observations) |> 
+  mutate(quantity_issued = if_else(is.na(quantity_issued), 
+                                   exp(
+                                     forecast::na.interp(
+                                     ts(log(quantity_issued), frequency = 12))), 
+                                   quantity_issued))
+
+```
+
+```{r}
+#| echo: false
+
+med_tsb_filter |> 
+  write.csv('data/med_tsb_filter.csv', row.names = FALSE)
+
+
+```
+
+
+## Data wrangaling using `tsibble`
+
+We can use the `filter()` function to select rows.
+
+```{r}
+
+med_tsb |> 
+  filter(hub_id == 'hub_10') 
+
+```
+
+## Data wrangaling using `tsibble`
+
+We can use the `select()` function to select columns.
+
+```{r}
+
+med_tsb |> 
+  filter(hub_id == 'hub_10') |> 
+  select(date, product_id, quantity_issued)
+
+```
+
+## Data wrangaling using `tsibble`
+
+We can use `group_by()` function to group over keys. We can use the `summarise()` function to summarise over keys.
+
+```{r}
+
+med_tsb |> 
+  group_by(product_id) |> 
+  summarise(total_quantity_issued = sum(quantity_issued), .groups = 'drop')
+
+```
+
+## Data wrangaling using `tsibble`
+
+We can use the `mutate()` function to create new variables.
+
+```{r}
+
+med_tsb |> 
+  mutate(quarter = yearquarter(date))
+
+```
+
+## Data wrangaling using `tsibble`
+
+We can use `index_by()` function to group over index We can use the `summarise()` function to summarise over index.
+
+```{r}
+
+med_tsb |> 
+  mutate(quarter = yearquarter(date)) |> 
+  index_by(quarter) |> 
+  summarise(total_quantity_issues = sum(quantity_issued))
+
+```
+
+# Now it is your `turn`.
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 15, seconds = 00)
+```
+
+# Explore your data
+
+## Time series patterns
+
+- `Level`: The level of a time series describes the center of the series.
+- `Trend`: A trend describes predictable increases or decreases in the level of a series.
+- `Seasonal`: Seasonality is a consistent pattern that repeats over a fixed cycle. pattern exists when a series is influenced by seasonal factors (e.g., the quarter of the year, the month, or day of the week).
+- `Cyclic`: A pattern exists when data exhibit rises and falls that are not of fixed period (duration usually of at least 2 years).
+
+## Time series patterns
+
+
+```{r}
+#| echo: false
+
+# Generate sample data
+days <- seq.Date(from = as.Date("2015-01-01"), to = as.Date("2025-01-01"), by = "month")
+
+# Components
+level <- 100  # Constant level
+trend <- seq(1, length(days), by = 1)  # Increasing trend
+seasonality <- 10 * sin(2 * pi * month(days) / 12)  # Seasonal effect
+cycle <- 15 * sin(2 * pi * (1:length(days)) / (12 * 4))  # Cyclic pattern (longer than seasonality)
+random_noise <- rnorm(length(days), mean = 0, sd = 5)  # Random noise
+
+ts_data <- data.frame(
+  Date = days,
+  Actual = level + trend + seasonality + cycle + random_noise,
+  Level = mean(level + trend + seasonality + cycle + random_noise),
+  Trend = level + trend,
+  Seasonal = level + trend + seasonality,
+  Cyclic = level + trend + seasonality + cycle
+) |>  
+  pivot_longer(cols = -Date, names_to = "Component", values_to = "Value")  |> 
+  mutate(Component = factor(Component, levels = c("Actual", "Level", "Trend", "Seasonal", "Cyclic")))
+
+# Determine cycle start dates
+cycle_start_dates <- seq.Date(from = as.Date("2015-01-01"), to = as.Date("2025-01-01"), by = "4 years")
+
+# Plot
+ggplot(ts_data, aes(x = Date, y = Value)) +
+  geom_line() +
+  facet_wrap(~Component, scales = "free_y", ncol = 2) +
+  theme_minimal() +
+  labs(x = "Date", y = "Value") +
+  theme(legend.position = "none",
+        panel.border = element_rect(color = "lightgrey", fill = NA))
+
+
+```
+
+Read more at [Demand forecasting for executives and professionals](https://dfep.netlify.app/) by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa.
+
+## Additive vs. multiplicative seasonality
+
+```{r}
+#| echo: false
+
+# Simulate example time series data with additive and multiplicative seasonality
+set.seed(123)
+time <- seq(1, 100, by = 1)
+additive_seasonality <- 10 + 5*sin(2*pi*time/12) + rnorm(100, 0, 2)
+multiplicative_seasonality <- (1 + 0.05*time) * (1 + 0.5*sin(2*pi*time/12)) * rnorm(100, 1, 0.1)
+
+data <- data.frame(Time = time, Additive = additive_seasonality, Multiplicative = multiplicative_seasonality)
+
+# Convert data to long format
+data_long <- data |> pivot_longer(cols = c(Additive, Multiplicative), names_to = "Seasonality", values_to = "Value")
+
+# Plotting using ggplot2
+ggplot(data_long, aes(x = Time, y = Value)) +
+  geom_line() +
+  labs(x = "Time", y = "Value") +
+  theme_minimal() +
+  facet_wrap(~Seasonality, scales = "free_y", ncol = 1) +
+  theme(legend.position = "none",
+        panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+- When we have multiplicative seasonality, we can use transformations to convert multiplicative seasonality into additive seasonality. 
+- In this training, we are not discussing time series transformations. You can read more about it at [Transformations and adjustments](https://otexts.com/fpp3/transformations.html).
+
+
+## Time plots
+
+You can create time plot using `autoplot()` function.
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_2') |> 
+  autoplot(quantity_issued) +
+  labs(
+    x = "Date",
+    y = "Quantity Issued"
+  ) +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## Are time plots best?
+
+```{r}
+
+med_tsb_filter |> 
+  mutate(id = paste0(hub_id, product_id)) |> 
+  ggplot(aes(x = date, y = quantity_issued, group = id)) +
+  geom_line() +
+  labs(
+    x = "Date",
+    y = "Quantity Issued"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none",
+        panel.border = element_rect(color = "lightgrey", fill = NA))
+
+
+```
+  
+## Seasonal plots
+
+- Data plotted against the individual `seasons` in which the data were observed (In this case a “season” is a month).
+- Enables the underlying seasonal pattern to be seen more clearly, and also allows any substantial departures from the seasonal pattern to be easily identified.
+- You can create seasonal plots using `gg_season()` function.
+
+## Seasonal plots
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_14' & product_id == 'product_5') |> 
+  gg_season(quantity_issued, labels = "both") +
+  ylab("Quantity issued") +
+  ggtitle("Seasonal plot") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## Seasonal sub series plots
+
+- Data for each season collected together in time plot as separate time series.
+- Enables the underlying seasonal pattern to be seen clearly, and changes in seasonality over time to be visualized.
+- You can create seasonal sub series plots using `gg_subseries()` function.
+
+## Seasonal sub series plots
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_14' & product_id == 'product_5') |> 
+  gg_subseries(quantity_issued) +
+  ylab("Quantity issued") +
+  ggtitle("Seasonal sub series plot") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1),
+        panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## Strength of seasonality and trend
+
+- We used STL decomposition for additive decompositions.
+- A multiplicative decomposition can be obtained by first taking logs of the data, then back-transforming the components. 
+- Decompositions that are between additive and multiplicative can be obtained using a Box-Cox transformation of the data.
+- Read more at [STL decomposition](https://otexts.com/fpp3/stl.html).
+
+## Strength of seasonality and trend   
+
+**STL Decomposition**
+
+$$
+y_t = T_t + S_t + R_t
+$$
+
+**Seasonal Strength**
+
+$$
+\max \left( 0, 1 - \frac{\text{Var}(R_t)}{\text{Var}(S_t + R_t)} \right)
+$$
+
+**Trend Strength**
+
+$$
+\max \left( 0, 1 - \frac{\text{Var}(R_t)}{\text{Var}(T_t + R_t)} \right)
+$$
+
+## Feature extraction and statistics
+
+We can use `features()` function to extract the strength of trend and seasonality.
+
+```{r}
+
+med_tsb_filter |> 
+  features(quantity_issued, feat_stl)
+
+```
+
+
+## Feature extraction and statistics
+
+```{r}
+
+med_tsb_filter |> 
+  features(quantity_issued, feat_stl) |> 
+  ggplot(aes(x = trend_strength, y = seasonal_strength_year, shape = product_id)) +
+  geom_point(size = 2) + 
+  ylab("Seasonal strength") +
+  xlab("Trend strength") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## Lag plots and autocorrelation
+
+- Each graph shows $y_t$  plotted against $y_{t-k}$ for different values of $k$.  
+- The `autocorrelations` are the correlations associated with these scatterplots: $\text{Corr}(y_t, y_{t-k})$
+- You can create lag plots using `gglag()` function.
+- These values indicate the relationship between current and past observations in a time series.
+
+## Lag plots and autocorrelation
+
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_14' & product_id == 'product_5') |>
+  gg_lag(quantity_issued, lags = 1:12, geom='point') +
+  ylab("Quantity issued") +
+  xlab("Lag (Quantity issued, n)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1),
+         panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## Autocorrelation
+
+- `Autocovariance` and `autocorrelation`: measure linear relationship between `lagged values` of a time series y.
+- We denote the `sample autocovariance` at lag $k$ by $c_k$ and the `sample autocorrelation` at lag $k$ by $r_k$. Then, we define:
+
+$c_k = \frac{1}{T} \sum_{t=k+1}^{T} (y_t - \bar{y})(y_{t-k} - \bar{y})$
+
+$r_k = \frac{c_k}{c_0}$
+
+where $c_0$ is the variance of the time series.
+
+- $r_1$ indicates how successive values of $y$ relate to each other.
+- $r_2$ indicates how $y$ values two periods apart relate to each other.
+- $r_k$ is almost the same as the `sample correlation` between $y_t$ and $y_{t-k}$.
+
+## Autocorrelation
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_14' & product_id == 'product_5') |> 
+  ACF(quantity_issued, lag_max = 24)
+
+```
+
+## Autocorrelation
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_14' & product_id == 'product_5') |> 
+  ACF(quantity_issued, lag_max = 36) |> 
+  autoplot() +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+What autocorrelation will tell us? Which key features could be highlighted by ACF?
+
+## Autocorrelation
+
+- When data have a trend, the autocorrelations for small lags tend to be large and positive.
+- When data are seasonal, the autocorrelations will be larger at the seasonal lags (i.e., at multiples of the seasonal frequency) 
+- When data are trended and seasonal, you see a combination of these effects.
+
+# Now it is your `turn`.
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 15, seconds = 00)
+```
+
+# Forecast modelling
+
+## Naive
+
+Simplest forecasting method using last observation as forecast.
+
+$\hat{y}_{t+h|t} = y_t$
+
+**Assumptions**
+
+- No systematic pattern in data
+- Recent observations are most relevant
+
+**Strengths & Weaknesses**
+
+<span style="color:green;">✓ Simple benchmark model</span>  
+<span style="color:green;">✓ Requires no computation</span>  
+<span style="color:red;">✗ Ignores all patterns</span>  
+<span style="color:red;">✗ Poor for trending/seasonal data</span>  
+
+## Naive
+
+We use `NAIVE()`  function and `model()` function to build the Naive model. 
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(naive = NAIVE(quantity_issued)) |> 
+  forecast(h = 12) |> 
+  autoplot(med_tsb_filter |> 
+             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +
+  labs(y = "Quantity issued", x = "Date") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## Seasonal NAIVE (sNAIVE)
+
+$y_{t+h \mid t} = y_{t+h - m(k+1)}$
+
+Where: $m$ = seasonal period and $k = \lfloor \frac{h-1}{m} \rfloor$
+
+**Assumptions**
+
+- Seasonal pattern is stable
+- No trend present
+
+**Strengths & Weaknesses**
+
+<span style="color:green;">✓ Handles strong seasonality</span>  
+<span style="color:green;">✓ Simple interpretation</span>  
+<span style="color:red;">✗ Fails with changing seasonality</span>  
+<span style="color:red;">✗ Ignores non-seasonal patterns</span>  
+
+
+## sNaive
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(snaive = SNAIVE(quantity_issued ~ lag("year"))) |> 
+  forecast(h = 12) |> 
+  autoplot(med_tsb_filter |> 
+             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +
+  labs(y = "Quantity issued", x = "Date") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## Mean 
+
+Uses the historical average of all observations as forecast.
+
+$y_{t+h \mid t} = \bar{y} = \frac{1}{t} \sum_{i=1}^{t} y_i$
+
+Where: $t$ is the number of past observations used for the forecast.
+
+**Assumptions**
+
+- Series is stationary
+- Short-term fluctuations are noise
+
+**Strengths & Weaknesses**
+
+<span style="color:green;">✓ Effective noise reduction</span>  
+<span style="color:green;">✓ Simple to implement</span>  
+<span style="color:red;">✗ Ignores all patterns</span>  
+<span style="color:red;">✗ Lags behind trends</span>   
+
+## Mean
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(MEAN(quantity_issued ~ window(size = 3))) |> 
+  forecast(h = 12) |> 
+  autoplot(med_tsb_filter |> 
+             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +
+  labs(y = "Quantity issued", x = "Date") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## ARIMA
+
+Combines Autoregressive (AR) and Moving Average (MA) components with differencing.
+
+- `AR`: autoregressive (lagged observations as inputs)
+- `I`: integrated (differencing to make series stationary)
+- `MA`: moving average (lagged errors as inputs)
+
+<br>
+
+The ARIMA model is given by:
+
+$(1 - \phi_1 B - \dots - \phi_p B^p)(1 - B)^d y_t = c + (1 + \theta_1 B + \dots + \theta_q B^q) \epsilon_t$
+
+Where: $B$: Backshift operator, $\phi$: AR coefficients, $\theta$: MA coefficients, $d$: Differencing order, $p$: AR order, $q$: MA order and $\epsilon_t$: White noise 
+
+## ARIMA
+
+**Assumptions**
+
+- Series is stationary
+- Linear relationship between past values and errors
+- White noise errors
+- No missing values in series
+
+**Strengths & Weaknesses**
+
+<span style="color:green;">✓ Flexible for various time series patterns</span>  
+<span style="color:green;">✓ Perform well for short term horizons</span>  
+<span style="color:red;">✗ Requires stationarity for optimal performance</span>  
+<span style="color:red;">✗ The parameters are often not easily interpretable in terms of trend or seasonality</span>  
+
+## ARIMA
+
+A `stationary series` is:
+
+- roughly horizontal  
+- constant variance  
+- no patterns predictable in the long-term  
+
+```{r}
+#| echo: false
+  
+# Set seed for reproducibility
+set.seed(123)
+
+# Number of time periods
+n <- 100 
+
+# Generate a stationary time series (seasonal variation around a mean)
+base_sales <- 500  # Average sales level
+stationary_series <- base_sales + rnorm(n, mean = 0, sd = 20)  # Small variations
+
+# Generate a non-stationary time series (increasing sales trend)
+trend <- seq(1, n, length.out = n) * 3  # Upward trend component
+non_stationary_series <- base_sales + trend + cumsum(rnorm(n, mean = 0, sd = 10)) + rnorm(n, mean = 50, sd = 20)  # Random walk with trend
+
+# Create a data frame for plotting
+time_series_data <- data.frame(
+  Time = rep(1:n, 2),
+  Sales = c(stationary_series, non_stationary_series),
+  Type = rep(c("Stationary", "Non-Stationary"), each = n)
+)
+
+# Plot using ggplot2
+ggplot(time_series_data, aes(x = Time, y = Sales)) +
+  geom_line() +
+  theme_minimal() +
+  labs(
+    x = "Time",
+    y = "Value",
+  ) +
+  facet_wrap(~Type, scales = 'free_y', nrow = 2) +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## Seasonal ARIMA models
+
+\fontsize{13}{15}\sf
+
+| ARIMA | $~\underbrace{(p, d, q)}$ | $\underbrace{(P, D, Q)_{m}}$ |
+| ----: | :-----------------------: | :--------------------------: |
+|       | ${\uparrow}$              | ${\uparrow}$                 |
+|       | Non-seasonal part         | Seasonal part of             |
+|       | of the model              | of the model                 |
+
+\vspace*{-0.4cm}
+
+  * $m$: number of observations per year.
+  * $d$: first differences, $D$: seasonal differences
+  * $p$: AR lags, $q$: MA lags
+  * $P$: seasonal AR lags, $Q$: seasonal MA lags
+
+Seasonal and non-seasonal terms combine multiplicatively.
+
+## ARIMA automatic modelling
+
+- Plot the data. Identify any unusual observations.
+- If necessary, transform the data (e.g., Box-Cox transformation) to stabilize the variance.
+- Use `ARIMA()` to automatically select a model.
+- Check the residuals from your chosen model and if they do not look like white noise, try a modified model.
+- Once the residuals look like white noise, calculate forecasts.
+
+## ARIMA automatic modelling
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(ARIMA(quantity_issued)) |> 
+  forecast(h = 12) |> 
+  autoplot(med_tsb_filter |> 
+             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +
+  labs(y = "Quantity issued", x = "Date") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## ETS
+
+ETS stands for Exponential Smoothing and is based on a state space framework that decomposes a time series into three components:
+
+| General Notation |  | E T S | **`E`**xponen**`T`**ial **`S`**moothing |
+|------------------|--|-------|-----------------------------------|
+|                 | ↗  | ↑     | ↖                                 |
+|                 | **`E`**rror | **`T`**rend | **`S`**eason |
+
+
+- `E`rror: Additive (`"A"`) or multiplicative (`"M"`)
+- `T`rend: None (`"N"`), additive (`"A"`), multiplicative (`"M"`), or damped (`"Ad"` or `"Md"`).
+- `S`easonality: None (`"N"`), additive (`"A"`) or multiplicative (`"M"`)
+
+<br>
+For example, `ETS(A,N,N)` is the simple exponential smoothing model (no trend or seasonality) with additive errors.
+
+## ETS
+
+How do we combine these elements?
+
+`Additively`?
+
+$y_t = \ell_{t-1} + b_{t-1} + s_{t-m} + \varepsilon_t$
+
+<br>
+
+`Multiplicatively`?
+
+$y_t = \ell_{t-1}b_{t-1}s_{t-m}(1 + \varepsilon_t)$
+
+<br>
+
+Perhaps `a mix of both`?
+
+$y_t = (\ell_{t-1} + b_{t-1}) s_{t-m} + \varepsilon_t$
+
+## ETS
+
+How do the level, trend and seasonal components evolve over time?
+
+![](images/pegel1.png){fig-align="center"}
+
+## ETS
+
+**Assumptions**
+
+- Decomposable patterns
+- Recent observations more important
+- Consistent error structure (additive/multiplicative)
+
+**Strengths & Weaknesses**
+
+<span style="color:green;">✓ They can be adapted to various data characteristics with different error, trend, and seasonal formulations</span>  
+<span style="color:green;">✓ Often very effective when the underlying components are stable</span>  
+<span style="color:red;">✗ Parameter estimates (including smoothing parameters and initial states) can affect the forecasts</span>  
+<span style="color:red;">✗ SMay struggle to capture sudden shifts or non-standard patterns if the smoothing parameters are constant</span>  
+
+## ETS automatic modelling
+
+- Apply each model that is appropriate to the data.
+- Optimize parameters and initial values using MLE (or some other criterion).
+- Select best method using AICc.
+- Use `ETS()` to automatically select a model.
+- Produce forecasts using best method.
+
+## ETS automatic modelling
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(ETS(quantity_issued)) |> 
+  forecast(h = 12) |> 
+  autoplot(med_tsb_filter |> 
+             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +
+  labs(y = "Quantity issued", x = "Date") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## Model fitting in `Fable`
+
+- The `model()` function trains models on data.
+- It returns a `mable` object.
+- A `mable` is a model table, each cell corresponds to a fitted model.
+
+```{r}
+
+# Fit the models
+
+fit_all <- med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(
+    naive = NAIVE(quantity_issued),
+    snaive = SNAIVE(quantity_issued ~ lag('year')),
+    mean = MEAN(quantity_issued ~ window(size = 3)),
+    arima = ARIMA(quantity_issued),
+    ets = ETS(quantity_issued)
+    )
+
+fit_all
+
+```
+
+## Extract information from `mable`
+
+```{r}
+#| eval: false
+
+fit_all  |>  select(snaive) |>  report()
+fit_all |>  tidy()
+fit_all  |>  glance()
+
+```
+
+- The `report()` function gives a formatted model-specific display.
+- The `tidy()` function is used to extract the coefficients from the models.
+- We can extract information about some specific model using the `filter()` and `select()`functions.
+
+## Producing forecasts
+
+- The `forecast()` function is used to produce forecasts from estimated models.
+- `h` can be specified with:
+    * a number (the number of future observations)
+    * natural language (the length of time to predict)
+    * provide a dataset of future time periods
+    
+
+## Producing forecasts
+
+```{r}
+
+fit_all_fc <- fit_all |> 
+  forecast(h = 'year')
+
+#h = "year" is equivalent to setting h = 12.
+
+fit_all_fc
+
+```
+
+## Visualising forecasts
+
+```{r}
+
+fit_all_fc |> 
+  autoplot(level = NULL) +
+  autolayer(med_tsb_filter |> 
+              filter_index("2022 JAn" ~ .) |> 
+              filter(hub_id == 'hub_1' & product_id == 'product_5'), color = 'black') +
+  labs(title = "Forecasts for monthly quantity issued", y = "Quantity issued", x = "Date") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA)) +
+  guides(colour=guide_legend(title="Forecast"))
+
+```
+
+
+# Now it is your `turn`.
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 15, seconds = 00)
+```
+
+
+## What is wrong with point forecasts?
+
+A point forecast is a single-value prediction representing the most likely future outcome, based on current data and models.
+
+The disadvantage of point forecast;
+
+<span style="color:red;">✗ It ignores additional information in future.</span>  
+<span style="color:red;">✗ It does not explain uncertainties around future.</span>  
+<span style="color:red;">✗ It can not deal with assymmetric.</span>  
+
+## Types of probabilistic forecasts
+
+`Interval forecasts`: A prediction interval is an interval within which power generation may lie, with a certain probability.
+
+![](images/interval_fc.png){fig-align="center"}
+
+## Types of probabilistic forecasts
+
+`Quantile forecasts`: A quantile forecast provides a value that the future observation is expected to be below with a specified probability.
+
+![](images/quantile_fc.png){fig-align="center"}
+
+## Types of probabilistic forecasts
+
+`Distribution forecasts`: A	comprehensive	probabilistic	forecast	capturing	the	full	range	of	potential	outcomes across all time horizons.
+
+![](images/density_fc.png){fig-align="center"}
+
+## Types of probabilistic forecasts
+
+`Scenario forecasts`: A spectrum of potential futures derived from probabilistic modeling to inform decision- making under uncertainty.
+
+![](images/scenario_fc.png){fig-align="center"}
+
+## Forecast distributions from `bootstrapping`
+
+When a normal distribution for the residuals is an unreasonable assumption, one alternative is to use `bootstrapping`, which only assumes that the residuals are uncorrelated with constant variance.
+
+- A one-step forecast error is defined as 
+
+$e_t = y_t - \hat{y}_{t|t-1}$, $y_t = \hat{y}_{t|t-1} + e_t$
+
+- So we can simulate the next observation of a time series using
+
+$y_{T+1} = \hat{y}_{T+1|T} + e_{T+1}$
+
+- Adding the new simulated observation to our data set, we can repeat the process to obtain 
+
+$y_{T+2} = \hat{y}_{T+2|T+1} + e_{T+2}$
+
+## Generate different futures forecast
+
+```{r}
+#| eval: false
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(snaive = SNAIVE(quantity_issued ~ lag("year"))) |> 
+  generate(h = 12, bootstrap = TRUE, times = 5)
+```
+
+```{r}
+#| echo: false
+
+sim <- med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(snaive = SNAIVE(quantity_issued ~ lag("year"))) |> 
+  generate(h = 12, bootstrap = TRUE, times = 5)
+
+med_tsb_filter |> 
+  filter_index('2022 Jan' ~ .) |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  ggplot(aes(x = date)) +
+  geom_line(aes(y = quantity_issued)) +
+  geom_line(aes(y = .sim, colour = as.factor(.rep)),
+    data = sim)+
+  labs(y = "Quantity issued", x = "Date", colour="Future") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+```
+
+## Generate probabilistic forecast
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(snaive = SNAIVE(quantity_issued ~ lag("year"))) |> 
+  forecast(h = 12, bootstrap = TRUE, times = 1000)
+
+```
+
+## Prediction intervals
+
+Forecast intervals can be extracted using the `hilo()` function.
+
+```{r}
+
+med_tsb_filter |> 
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(snaive = SNAIVE(quantity_issued ~ lag("year"))) |> 
+  forecast(h = 12, bootstrap = TRUE, times = 1000) |> 
+  hilo(level = 75) |> 
+  unpack_hilo("75%")
+
+```
+
+# Now it is your `turn`.
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 15, seconds = 00)
+```
+
+# Evaluating the model performances
+
+## Forecast accuracy evaluation using test sets
+
+* We mimic the real life situation
+* We pretend we don't know some part of data (new data)
+* It must not be used for `any` aspect of model training
+* Forecast accuracy is computed only based on the test set
+
+`Training and test sets`
+
+```{r traintest, fig.height=1, echo=FALSE}
+train <- 1:18
+test <- 19:24
+par(mar = c(0, 0, 0, 0))
+plot(0, 0, xlim = c(0, 26), ylim = c(0, 2), xaxt = "n", yaxt = "n", bty = "n", xlab = "", ylab = "", type = "n")
+arrows(0, 0.5, 25, 0.5, 0.05)
+points(train, train * 0 + 0.5, pch = 19, col = "#0072B2")
+points(test, test * 0 + 0.5, pch = 19, col = "#D55E00")
+text(26, 0.5, "time")
+text(10, 1, "Training data", col = "#0072B2")
+text(21, 1, "Test data", col = "#D55E00")
+```
+
+## Evaluating `point forecast` accuracy
+
+- In order to evaluate the performance of a forecasting model, we compute its forecast  accuracy.
+- Forecast accuracy is compared by measuring errors based on the test set.
+- Ideally it should allow comparing benefits from improved accuracy with the cost of obtaining the improvement.
+
+## Evaluating `point forecast` accuracy
+
+**Forecast Error**
+
+$e_{T+h} = y_{T+h} - \hat{y}_{T+h\mid T}$
+
+where  
+- $y_{T+h}$ is the $(T+h)^\text{th}$ observation $(h=1,\dots,H)$, and  
+- $\hat{y}_{T+h\mid T}$ is the forecast based on data up to time $T$.
+
+<br>
+
+Read more on [How to choose appropriate error measure](https://openforecast.org/adam/errorMeasuresSelection.html) by Ivan Svetunkov.
+
+## Evaluating `point forecast` accuracy
+
+| **Measure** | **Formula** | **Notes** |
+|-------------|-------------|-----------|
+| **MAE** <br> (Mean Absolute Error) | $\text{MAE} = \text{mean}(|e_{T+h}|)$ | Scale dependent |
+| **MSE** <br> (Mean Squared Error) | $\text{MSE} = \text{mean}(e_{T+h}^2)$ | Scale dependent |
+| **MAPE** <br> (Mean Absolute Percentage Error) | $\text{MAPE} = 100\,\text{mean}(|e_{T+h}|/|y_{T+h}|)$ | Scale independent; use if $y_t \gg 0$ and $y$ has a natural zero |
+| **RMSE** <br> (Root Mean Squared Error) | $\text{RMSE} = \sqrt{\text{mean}(e_{T+h}^2)}$ | Scale dependent |
+
+## Evaluating `point forecast` accuracy
+
+| **Measure** | **Formula** | **Notes** |
+|-------------|-------------|-----------|
+| **MASE** <br> (Mean Absolute Scaled Error) | $\text{MASE} = \text{mean}(|e_{T+h}|/Q)$ | **Non-seasonal:** $Q = \frac{1}{T-1}\sum_{t=2}^T |y_t-y_{t-1}|$ <br> **Seasonal:** $Q = \frac{1}{T-m}\sum_{t=m+1}^T |y_t-y_{t-m}|$, where $m$ is the seasonal frequency |
+| **RMSSE** <br> (Root Mean Squared Scaled Error) | $\text{RMSSE} = \sqrt{\text{mean}(e_{T+h}^2/Q)}$ | **Non-seasonal:** $Q = \frac{1}{T-1}\sum_{t=2}^T (y_t-y_{t-1})^2$ <br> **Seasonal:** $Q = \frac{1}{T-m}\sum_{t=m+1}^T (y_t-y_{t-m})^2$, where $m$ is the seasonal frequency |
+
+## Evaluating `point forecast` accuracy
+
+Create train and test sets.
+
+```{r}
+
+f_horizon <- 12 # forecast horizon
+
+train <- med_tsb_filter |> # create train set
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |> 
+  filter_index(. ~ '2022 June')
+
+fit_all <- train |> # model fitting
+  filter(hub_id == 'hub_1' & product_id == 'product_5') |>
+  model(
+    naive = NAIVE(quantity_issued),
+    snaive = SNAIVE(quantity_issued ~ lag('year')),
+    mean = MEAN(quantity_issued ~ window(size = 3)),
+    arima = ARIMA(quantity_issued),
+    ets = ETS(quantity_issued)
+    )
+
+fit_all_fc <- fit_all |> # forecasting
+  forecast(h = f_horizon)
+
+```
+
+
+## Evaluating `point forecast` accuracy
+
+```{r}
+
+fit_all_fc |> 
+  accuracy(med_tsb_filter |>
+             filter(hub_id == 'hub_1' & product_id == 'product_5'),
+           measures = list(point_accuracy_measures))
+
+```
+
+## Evaluating `probabilistic forecast` accuracy
+
+`Coverage`
+
+- Measures how often the true value falls within a prediction interval
+- Typically assessed for specific confidence levels (e.g., 95% interval)
+
+Example: A 95% prediction interval should contain the true value 95% of the time.
+
+```{r}
+#| echo: false
+
+library(gridExtra)  # For arranging multiple plots
+
+# Set seed for reproducibility
+set.seed(42)
+
+# Generate data similar to the Python code
+x <- 0:99
+y_pred <- sin(x * 0.1)
+y_true <- sin(x * 0.1) + rnorm(100, mean = 0, sd = 0.1)
+
+# Compute prediction intervals for "good" and "poor" coverage
+lower_good <- y_pred - 0.3
+upper_good <- y_pred + 0.3
+
+lower_poor <- y_pred - 0.1
+upper_poor <- y_pred + 0.1
+
+# Create a data frame with all the variables
+data <- data.frame(
+  x = x,
+  y_true = y_true,
+  y_pred = y_pred,
+  lower_good = lower_good,
+  upper_good = upper_good,
+  lower_poor = lower_poor,
+  upper_poor = upper_poor
+)
+
+# Plot for Good Coverage
+plot_good <- ggplot(data, aes(x = x)) +
+  # Add the prediction interval ribbon
+  geom_ribbon(aes(ymin = lower_good, ymax = upper_good), fill = "lightblue", alpha = 0.3) +
+  # Plot the true values and predicted values
+  geom_line(aes(y = y_true, color = "True Values")) +
+  geom_line(aes(y = y_pred, color = "Predicted Values"), linetype = "dashed") +
+  labs(title = "Good Coverage", y = "Value") +
+  scale_color_manual("", values = c("True Values" = "black", "Predicted Values" = "red")) +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+# Plot for Poor Coverage
+plot_poor <- ggplot(data, aes(x = x)) +
+  # Add the prediction interval ribbon
+  geom_ribbon(aes(ymin = lower_poor, ymax = upper_poor), fill = "lightblue", alpha = 0.3) +
+  # Plot the true values and predicted values
+  geom_line(aes(y = y_true, color = "True Values")) +
+  geom_line(aes(y = y_pred, color = "Predicted Values"), linetype = "dashed") +
+  labs(title = "Poor Coverage", y = "Value") +
+  scale_color_manual("", values = c("True Values" = "black", "Predicted Values" = "red")) +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+# Arrange the two plots vertically
+grid.arrange(plot_good, plot_poor, ncol = 1)
+
+```
+
+## Evaluating `probabilistic forecast` accuracy
+
+`Sharpness`
+
+- Refers to the width of prediction intervals
+- Measures how precise or focused the forecast is
+
+*Example*: A forecast predicting monthly sales qty between 2500-5000 is sharper than 500-10000.
+
+```{r}
+#| echo: false
+
+# Load required libraries
+library(ggplot2)
+library(gridExtra)
+
+# Generate the data
+x <- 0:49
+y_pred <- sin(x * 0.2)
+
+# Compute prediction intervals
+# Sharp intervals
+lower_sharp <- y_pred - 0.2
+upper_sharp <- y_pred + 0.2
+
+# Wide intervals
+lower_wide <- y_pred - 0.6
+upper_wide <- y_pred + 0.6
+
+# Create a data frame with the variables
+data <- data.frame(
+  x = x,
+  y_pred = y_pred,
+  lower_sharp = lower_sharp,
+  upper_sharp = upper_sharp,
+  lower_wide = lower_wide,
+  upper_wide = upper_wide
+)
+
+# Plot for Sharp Intervals
+plot_sharp <- ggplot(data, aes(x = x)) +
+  geom_ribbon(aes(ymin = lower_sharp, ymax = upper_sharp), fill = "lightblue", alpha = 0.3) +
+  geom_line(aes(y = y_pred), color = "black") +
+  labs(title = "Sharp Intervals", y = "Predicted Value") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+# Plot for Wide Intervals
+plot_wide <- ggplot(data, aes(x = x)) +
+  geom_ribbon(aes(ymin = lower_wide, ymax = upper_wide), fill = "lightblue", alpha = 0.3) +
+  geom_line(aes(y = y_pred), color = "black") +
+  labs(title = "Wide Intervals", y = "Predicted Value") +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+# Arrange the two plots vertically
+grid.arrange(plot_sharp, plot_wide, ncol = 1)
+
+
+```
+
+## Evaluating `probabilistic forecast` accuracy
+
+`Quantile score/ Pin ball loss`
+
+- Assesses entire prediction interval, not just point forecast
+- Penalizes too narrow and too wide intervals
+- Interpretation: Lower values indicate better calibrated intervals
+
+$$
+Q_{p,t} =
+\begin{cases} 
+2(1 - p)(f_{p,t} - y_t), & \text{if } y_t < f_{p,t}, \\[1mm]
+2p(y_t - f_{p,t}),       & \text{if } y_t \geq f_{p,t}.
+\end{cases}
+$$
+
+## Evaluating `probabilistic forecast` accuracy
+
+`CRPS (Continuous Ranked Probability Score)`
+
+- Proper scoring rule
+- Measures accuracy of full predictive distribution
+- Generalizes absolute error to probabilistic forecasts
+- Interpretation: Lower CRPS = better forecast
+- Advantage: Sensitive to distance, rewards sharp and calibrated forecasts
+
+
+$\large \text{CRPS} = \text{mean}(p_j),$
+
+where
+
+$p_j = \int_{-\infty}^{\infty} \left(G_j(x) - F_j(x)\right)^2dx,$
+
+## Evaluating `probabilistic forecast` accuracy
+
+`CRPS (Continuous Ranked Probability Score)`
+
+```{r}
+#| echo: false
+
+# Generate x values and set the observed value
+x <- seq(-3, 3, length.out = 1000)
+obs <- 1.0
+
+# Compute the forecast CDF using the normal distribution.
+# Note: pnorm(x) is equivalent to 0.5*(1 + erf(x/sqrt(2)))
+forecast_cdf <- pnorm(x)
+
+# Create the observation CDF as a step function:
+# 0 when x < obs, and 1 when x >= obs.
+obs_cdf <- ifelse(x < obs, 0, 1)
+
+# Create a data frame with the variables
+data <- data.frame(
+  x = x,
+  forecast_cdf = forecast_cdf,
+  obs_cdf = obs_cdf
+)
+
+# For shading the area between the curves, define the lower and upper bounds.
+data$lower_bound <- pmin(data$forecast_cdf, data$obs_cdf)
+data$upper_bound <- pmax(data$forecast_cdf, data$obs_cdf)
+
+# Create the plot
+ggplot(data, aes(x = x)) +
+  # Plot the forecast CDF
+  geom_line(aes(y = forecast_cdf, color = "Forecast CDF")) +
+  # Plot the observation CDF (dashed)
+  geom_line(aes(y = obs_cdf, color = "Observation CDF"), linetype = "dashed") +
+  # Fill the area between the two curves (CRPS area)
+  geom_ribbon(aes(ymin = lower_bound, ymax = upper_bound, fill = "CRPS"), alpha = 0.3) +
+  # Add a vertical line for the observed value
+  geom_vline(xintercept = obs, color = "red", linetype = "dashed") +
+  # Add labels and title
+  labs(title = "Continuous Ranked Probability Score (CRPS)",
+       x = "Value",
+       y = "Cumulative Probability") +
+  # Set manual colors for the lines and fill
+  scale_color_manual("", values = c("Forecast CDF" = "blue",
+                                    "Observation CDF" = "black")) +
+  scale_fill_manual("", values = c("CRPS" = "grey70")) +
+  theme_minimal() +
+  theme(panel.border = element_rect(color = "lightgrey", fill = NA))
+
+
+```
+
+## Evaluating `probabilistic forecast` accuracy
+
+```{r}
+
+fit_all_fc |> 
+  accuracy(med_tsb_filter |>
+             filter(hub_id == 'hub_1' & product_id == 'product_5'),
+           measures = list(distribution_accuracy_measures)) |> 
+  select(-percentile)
+
+```
+
+# Now it is your `turn`.
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 15, seconds = 00)
+```
+
+# Advance forecasting models
+
+## Feature engineering
+
+In this training, we only do a basic feature engineering.
+
+```{python}
+#| eval: false
+
+# Load data
+from google.colab import files
+uploaded = files.upload()
+df = pd.read_csv('med_tsb_filter.csv')
+
+# Make the yearmonth as date format
+df['date'] = pd.to_datetime(df['date']) + pd.offsets.MonthEnd(0)
+
+# Feature Engineering
+df['month'] = df['date'].dt.month  # create month feature
+
+# categorical encoding
+enc = OrdinalEncoder()
+df[['hub_id_cat', 'product_id_cat']] = enc.fit_transform(df[['hub_id', 'product_id']])
+
+# Create unique identifier for series
+df['unique_id'] = df['hub_id'] + '_' + df['product_id']
+```
+
+## Feature engineering
+
+```{python}
+#| eval: false
+
+# Create series and exogenous data
+series = df[['date', 'unique_id', 'quantity_issued']]
+exog = df[['date', 'unique_id', 'month', 'hub_id_cat', 'product_id_cat']]
+
+# Transform series and exog to dictionaries
+
+series_dict = series_long_to_dict(
+    data      = series,
+    series_id = 'unique_id',
+    index     = 'date',
+    values    = 'quantity_issued',
+    freq      = 'M'
+)
+
+exog_dict = exog_long_to_dict(
+    data      = exog,
+    series_id = 'unique_id',
+    index     = 'date',
+    freq      = 'M'
+)
+```
+
+## Feature engineering
+
+```{python}
+#| eval: false
+
+# Partition data in train and test
+end_train = '2022-06-30'
+start_test = pd.to_datetime(end_train) + pd.DateOffset(months=1)  # Add 1 month
+
+series_dict_train = {k: v.loc[:end_train] for k, v in series_dict.items()}
+exog_dict_train = {k: v.loc[:end_train] for k, v in exog_dict.items()}
+series_dict_test = {k: v.loc[start_test:] for k, v in series_dict.items()}
+exog_dict_test = {k: v.loc[start_test:] for k, v in exog_dict.items()}
+
+```
+
+## XGBoost
+
+[Extreme Gradient Boosting (XGBoost)](https://www.nvidia.com/en-gb/glossary/xgboost/) is a scalable tree-based gradient boosting machine learning algorithm.
+
+$\hat{y}_{t+h|t} = \sum_{k=1}^K f_k(\mathbf{x}_t), \quad f_k \in \mathcal{F}$
+
+Where: $K$ = number of trees, $f_k$ = tree function, $\mathbf{x}_t$ = feature vector (lags, calendar features, etc.)
+
+![[source: Rui Guo et al.](https://www.researchgate.net/publication/345327934_Degradation_state_recognition_of_piston_pump_based_on_ICEEMDAN_and_XGBoost/figures?lo=1)](images/xgboost.jpg){fig-align="center"}
+
+## XGBoost
+
+**Assumptions**
+
+- Predictive patterns can be captured through feature engineering
+- Relationships between features and target are stable
+- No strong temporal dependencies beyond engineered features
+
+**Strengths & Weaknesses**
+
+<span style="color:green;">✓ Handles non-linear relationships well</span>  
+<span style="color:green;">✓ Provides feature importance metrics</span>  
+<span style="color:red;">✗ Requires careful parameter tuning</span>  
+<span style="color:red;">✗ Less interpretable than linear models</span>  
+
+## XGBoost
+
+```{python}
+#| eval: false
+
+# Fit xgboost forecaster
+regressor_xgb = XGBRegressor(tree_method = 'hist',
+                             enable_categorical = True)
+
+forecaster_xgb = ForecasterRecursiveMultiSeries(
+                 regressor          = regressor_xgb,
+                 transformer_series = None,
+                 lags               = 4,
+                 dropna_from_series = False
+             )
+
+forecaster_xgb.fit(series=series_dict_train, exog=exog_dict_train, suppress_warnings=True)
+
+forecaster_xgb
+
+```
+
+## XGBoost
+
+```{python}
+#| eval: false
+
+# Feature importance plot for XGB
+plt.figure(figsize=(10, 6))
+feat_xgb = forecaster_xgb.get_feature_importances()
+sns.barplot(x='importance', y='feature', data=feat_xgb.sort_values('importance', ascending=False).head(10))
+plt.title('XGBoost Feature Importance')
+plt.tight_layout()
+plt.show()
+
+```
+
+![](images/xgb_feat.png){fig-align="center"}
+
+## XGBoost
+
+```{python}
+#| eval: false
+
+# XGB predictions and plot
+boot = 100
+predictions_xgb = forecaster_xgb.predict_bootstrapping(steps=12, exog=exog_dict_test, n_boot=boot)
+
+# Create prediction DF and plot example series
+example_series = list(series_dict_test.keys())[2]
+xgb_pred_test = predictions_xgb[example_series].copy()
+
+# Calculate statistics
+mean_pred = xgb_pred_test.mean(axis=1)
+lower_pred = xgb_pred_test.quantile(0.025, axis=1)
+upper_pred = xgb_pred_test.quantile(0.975, axis=1)
+```
+
+## XGBoost
+
+```{python}
+#| eval: false
+
+# Plotting
+plt.figure(figsize=(12, 6))
+plt.plot(series_dict_test[example_series], label='Actual', color='black')
+plt.plot(mean_pred, label='XGB Prediction', color='blue')
+plt.fill_between(mean_pred.index, 
+                 lower_pred, 
+                 upper_pred,
+                 color='blue', alpha=0.2)
+plt.title('XGBoost Forecast with 95% Prediction Intervals')
+plt.legend()
+plt.show()
+
+```
+
+![](images/xgb_pred.png){fig-align="center"}
+
+## XGBoost
+
+```{python}
+#| eval: false
+
+# Create prediciton df
+
+pred_id = list(predictions_xgb.keys())
+
+# Create an empty DataFrame
+xgb_pred = pd.DataFrame(columns=['date', 'unique_id', 'model'] + [f'X_{i}' for i in range(boot)])
+
+for i in pred_id:
+    xgb_pred_test = predictions_xgb[i]
+    xgb_pred_test = xgb_pred_test.reset_index()
+    xgb_pred_test.columns = ['date'] + [f'X_{i}' for i in range(boot)]
+    xgb_pred_test['unique_id'] = i
+    xgb_pred_test['model'] = 'xgb'
+    xgb_pred = pd.concat([xgb_pred, xgb_pred_test])
+
+xgb_pred.head()
+
+```
+
+## LightGBM
+
+Light Gradient Boosting Machine (LightGBM) uses leaf-wise tree growth for efficiency whereas other boosting methods divide the tree level‐wise.
+
+![[source: Sheng Dong et al.](https://www.researchgate.net/publication/358974017_Predicting_and_Analyzing_Road_Traffic_Injury_Severity_Using_Boosting-Based_Ensemble_Learning_Models_with_SHAPley_Additive_exPlanations)](images/lgbm.jpg){fig-align="center"}
+
+## LightGBM
+
+**Assumptions**
+
+- Similar to XGBoost but more efficient with large datasets
+- Handles categorical features natively
+
+**Strengths & Weaknesses**
+
+<span style="color:green;">✓ Faster training speed</span>  
+<span style="color:green;">✓ Lower memory usage</span>  
+<span style="color:red;">✗ Sensitive to small datasets</span>  
+<span style="color:red;">✗ May overfit with noisy data</span>  
+
+## LightGBM
+
+```{python}
+#| eval: false
+
+# Fit lightgbm forecaster
+
+regressor_lgbm = LGBMRegressor(
+                boosting_type = 'gbdt',
+                metric = 'mae',
+                learning_rate = 0.1,
+                num_iterations = 200,
+                n_estimators = 100,
+                objective = 'poisson')
+
+forecaster_lgbm = ForecasterRecursiveMultiSeries(
+                 regressor          = regressor_lgbm, 
+                 transformer_series = None,
+                 lags               = 4,  
+                 dropna_from_series = False
+             )
+
+forecaster_lgbm.fit(series=series_dict_train, exog=exog_dict_train, suppress_warnings=True)
+
+forecaster_lgbm
+
+```
+
+## LightGBM
+
+```{python}
+#| eval: false
+
+# Feature importance plot for LGBM
+plt.figure(figsize=(10, 6))
+feat_lgbm = forecaster_lgbm.get_feature_importances()
+sns.barplot(x='importance', y='feature', data=feat_lgbm.sort_values('importance', ascending=False).head(10))
+plt.title('LightGBM Feature Importance')
+plt.tight_layout()
+plt.show()
+
+```
+
+![](images/lgbm_feat.png){fig-align="center"}
+
+## LightGBM
+
+```{python}
+#| eval: false
+
+# LGBM predictions and plot
+boot = 100
+predictions_lgbm = forecaster_lgbm.predict_bootstrapping(steps=12, exog=exog_dict_test, n_boot=boot)
+
+# Create prediction DF and plot example series
+example_series = list(series_dict_test.keys())[2]
+lgbm_pred_test = predictions_lgbm[example_series].copy()
+
+# Calculate statistics
+mean_pred = lgbm_pred_test.mean(axis=1)
+lower_pred = lgbm_pred_test.quantile(0.025, axis=1)
+upper_pred = lgbm_pred_test.quantile(0.975, axis=1)
+```
+
+## LightGBM
+
+```{python}
+#| eval: false
+
+# Plotting
+plt.figure(figsize=(12, 6))
+plt.plot(series_dict_test[example_series], label='Actual', color='black')
+plt.plot(mean_pred, label='LGBM Prediction', color='blue')
+plt.fill_between(mean_pred.index, 
+                 lower_pred, 
+                 upper_pred,
+                 color='blue', alpha=0.2)
+plt.title('LGBM Forecast with 95% Prediction Intervals')
+plt.legend()
+plt.show()
+
+```
+
+![](images/lgbm_pred.png){fig-align="center"}
+
+## LightGBM
+
+```{python}
+#| eval: false
+
+# Create prediciton df
+
+pred_id = list(predictions_lgbm.keys())
+
+# Create an empty DataFrame
+lgbm_pred = pd.DataFrame(columns=['date', 'unique_id', 'model'] + [f'X_{i}' for i in range(boot)])
+
+for i in pred_id:
+    lgbm_pred_test = predictions_lgbm[i]
+    lgbm_pred_test = lgbm_pred_test.reset_index()
+    lgbm_pred_test.columns = ['date'] + [f'X_{i}' for i in range(boot)]
+    lgbm_pred_test['unique_id'] = i
+    lgbm_pred_test['model'] = 'lgbm'
+    lgbm_pred = pd.concat([lgbm_pred, lgbm_pred_test])
+
+lgbm_pred.head()
+```
+
+## Model evaluation
+
+```{python}
+#| eval: false
+
+# Calculate metrics for both models
+xgb_mase, xgb_rmse, xgb_qs, xgb_crps = calculate_metrics(predictions_xgb, series_dict_test, series_dict_train)
+lgbm_mase, lgbm_rmse, lgbm_qs, lgbm_crps = calculate_metrics(predictions_lgbm, series_dict_test, series_dict_train)
+
+```
+
+<br>
+
+
+| Model                    | Average MASE | Average RMSE | Average Quantile Score | Average CRPS |
+|--------------------------|-------------|-------------|------------------------|-------------|
+| XGBoost                 | 1.218       | 4878.992    | 1151.738               | 3548.056    |
+| LightGBM                | 1.061       | 4953.944    | 310.234                | 3498.346    |
+
+<br>
+
+*Note*: We can improve the performance of XGBoost and LightGBM through better feature engineering and hyperparameter tuning.
+
+## TimeGPT
+
+Foundational time series model for time series forecasting by Nixtla [(Read more)](https://docs.nixtla.io/docs/getting-started-timegpt_quickstart).
+
+**Assumptions**
+
+- No strict stationarity requirements
+- Automatically handles multiple series
+
+**Strengths & Weaknesses**
+
+<span style="color:green;">✓ Zero configuration needed</span>  
+<span style="color:green;">✓ Handles complex patterns</span>  
+<span style="color:red;">✗ Requires API access</span>  
+<span style="color:red;">✗ Black-box model</span>  
+
+## TimeGPT
+
+Get API key from Nixtla
+
+1. Visit https://nixtla.io/
+2. Sign up for free account
+3. Navigate to API Keys section
+4. Create new key and copy it
+
+```{python}
+#| eval: false
+
+!pip install nixtla
+
+# Load libraries
+from nixtla import NixtlaClient
+
+# Initialize Nixtla client
+nixtla_client = NixtlaClient(api_key='your_api_key_here')
+
+```
+
+## TimeGPT
+
+```{python}
+#| eval: false
+
+# Since we already have done the feature engineering, we dont need to do it again
+# Create unique identifier and rename columns for TimeGPT
+df_timegpt = df.rename(columns={'date': 'ds', 'quantity_issued': 'y'}).drop(columns=['hub_id', 'product_id'])
+
+# Split data into train-test
+end_train = '2022-06-30'
+train_df = df_timegpt[df_timegpt['ds'] <= end_train]
+test_df = df_timegpt[df_timegpt['ds'] > end_train]
+
+```
+
+## TimeGPT
+
+```{python}
+#| eval: false
+
+# TimeGPT Base Model
+timegpt_fcst =  nixtla_client.forecast(
+    df=train_df,
+    h=len(test_df['ds'].unique()),
+    freq='M',
+    level=[90, 95]  # 90% and 95% prediction intervals
+)
+
+nixtla_client.plot(train_df, timegpt_fcst, time_col='ds', target_col='y')
+
+```
+
+![](images/timegpt.png){fig-align="center"}
+
+## TimeGPT  
+
+```{python}
+#| eval: false
+
+# TimeGPT with Exogenous Variables
+
+# Prepare exogenous data
+exog_features = ['month', 'hub_id_cat', 'product_id_cat']
+
+# Future exogenous variables (from your test set)
+future_exog = test_df[['unique_id', 'ds'] + exog_features]
+
+timegpt_reg_fcst = nixtla_client.forecast(
+    df=train_df,
+    X_df=future_exog,
+    h=len(test_df['ds'].unique()),
+    freq='M',
+    level=[90, 95]
+)
+
+nixtla_client.plot(train_df, timegpt_reg_fcst, time_col='ds', target_col='y')
+
+```
+
+![](images/timegpt.png){fig-align="center"}
+
+## Model evaluation
+
+```{python}
+#| eval: false
+
+# Calculate metrics for both models
+xgb_mase, xgb_rmse, xgb_qs, xgb_crps = calculate_metrics(predictions_xgb, series_dict_test, series_dict_train)
+lgbm_mase, lgbm_rmse, lgbm_qs, lgbm_crps = calculate_metrics(predictions_lgbm, series_dict_test, series_dict_train)
+
+# Calculate metrics for base model
+base_metrics = calculate_metrics(timegpt_fcst, test_df, train_df)
+
+# Calculate metrics for regressor model
+reg_metrics = calculate_metrics(timegpt_reg_fcst, test_df, train_df)
+```
+
+<br>
+
+| Model                    | Average MASE | Average RMSE | Average Quantile Score |
+|--------------------------|-------------|-------------|------------------------|
+| TimeGPT Base Model      | 1.019       | 4261.135    | 41.892                 | 
+| TimeGPT Regressor Model | 1.125       | 5016.053    | 57.571                 | 
+
+# Other Models
+
+## Demographic forecasting method (FPSC Context)
+
+A population-based contraceptive needs estimation model combining:
+
+- Population dynamics
+- Family planning indicators
+- Method/brand distribution factors
+
+## Demographic forecasting method (FPSC Context)
+
+\begin{equation}
+\begin{split}
+y_{i,t} = & \left(\sum_{j=15}^{50} \text{mCPR}_{t,j} \times \text{WomenPopulation}_{t,j}\right) \\
+           & \times \text{MethodMix}_{t,i} \times \text{CYP}_{t,i} \times \text{BrandMix}_{t,i} \times \text{SourceShare}_t
+\end{split}
+\end{equation}
+
+- $i$: Contraceptive product
+- $t$: Time period (year)
+- $\text{mCPR}$: Modern Contraceptive Prevalence Rate (%)
+- $\text{WomenPopulation}$: Women aged 15-49
+- $\text{MethodMix}$: Contraceptive method distribution
+- $\text{CYP}$: Couple-Years of Protection factor
+- $\text{BrandMix}$: Brand preference distribution
+- $\text{SourceShare}$: Provider type distribution
+
+## Demographic forecasting method (FPSC Context)
+
+**Assumptions**
+
+1. Stable demographic patterns during forecast period
+2. Consistent reporting of family planning indicators
+3. Accurate CYP values for different methods
+4. Historical brand/source mixes remain valid
+5. Linear relationship between population and needs
+6. Proper spatial distribution via site coordinates
+7. Valid monthly weight distribution
+
+## Demographic forecasting method (FPSC Context)
+
+**Strengths & Weaknesses**
+
+<span style="color:green;">✓ Directly ties to population dynamics</span>  
+<span style="color:green;">✓ Incorporates multiple programmatic factors</span>  
+<span style="color:green;">✓ Enables spatial allocation to health sites</span>  
+<span style="color:green;">✓ Aligns with public health planning frameworks</span>   
+<span style="color:red;">✗ Sensitive to input data quality</span>  
+<span style="color:red;">✗ Static assumptions about behavior patterns</span>  
+<span style="color:red;">✗ Limited responsiveness to sudden changes</span>  
+<span style="color:red;">✗ Provides national level need</span> 
+
+## Next steps and further learning
+
+- Forecasting for social good [learning labs](https://github.com/chamara7h/F4SG)
+- [Forecasting: Principles and Practice](https://otexts.com/fpp3/)
+- [Forecasting and Analytics with the Augmented Dynamic Adaptive Model (ADAM)](https://openforecast.org/adam/index.html)
+- [Nixtla](https://nixtlaverse.nixtla.io/)
+- [SKTIME](https://www.sktime.net/en/v0.20.1/index.html)
+- [skforecast](https://skforecast.org/0.14.0/index.html)
+
+# Any `Q/As`?
+
+## `Thank you!`
+
+<br>
+
+:::{.center}
+Scan the QR Code and follow us on `LinkedIn`...
+:::
+
+<br>
+
+
+![](images/qr.png){width=400 height=400 fig-align="center"}

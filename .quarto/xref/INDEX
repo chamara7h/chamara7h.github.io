@@ -94,5 +94,11 @@
   },
   "resources/index.qmd": {
     "index.html": "d587875e"
+  },
+  "lab/forecasting/epss_training/index.qmd": {
+    "index.html": "e3b41884"
+  },
+  "lab/forecasting/epss_training/slides/epss_training.qmd": {
+    "epss_training.html": "4ad0ddeb"
   }
 }

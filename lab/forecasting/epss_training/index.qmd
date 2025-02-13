@@ -46,7 +46,8 @@ button {
 }
 </style>
 
-<button id="journal-article-btn" onclick="window.open('https://chamara7h.github.io/lab/forecasting/first-post/epss_training.html', '_blank')">
+<button id="journal-article-btn" 
+        onclick="window.open('slides/epss_training.html', '_blank')">
   <i class="fas fa-bookmark"></i> Slides
 </button>
 <button id="github-repo-btn" onclick="window.open('https://github.com/chamara7h/epss_training', '_blank');">
