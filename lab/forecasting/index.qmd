@@ -3,7 +3,8 @@ title: Time Series Forecasting
 description: 'Time series forecasting materials using R and Python.'
 image: "cover.png"
 listing: 
-  contents: /
+  contents: 
+    - "epss_training/*.qmd"
   type: grid
   sort-ui: false
   filter-ui: false
