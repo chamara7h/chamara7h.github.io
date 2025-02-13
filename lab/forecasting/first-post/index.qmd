@@ -1,0 +1,98 @@
+---
+title: "Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting"
+description: "Workshop"
+author: "Harsha Chamara Hewage"
+date: "2025-03-17"
+image: "cover.png"
+categories:
+  - Forecasting
+  - Healthcare
+  - R
+  - Python
+  - Machine Learning
+link-external-newwindow: true
+---
+
+![](cover.png){fig-align="center"}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+/* Custom button style */
+button {
+  background-color: transparent; /* No filling */
+  border: 2px solid rgb(55, 58, 60); /* Gray border */
+  color: rgb(55, 58, 60); /* Gray text */
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect for Journal article */
+#journal-article-btn:hover {
+  border-color: #0066b2; /* Blue border on hover */
+  color: #0066b2; /* Blue text on hover */
+}
+
+/* Hover effect for GitHub repo */
+#github-repo-btn:hover {
+  border-color: #00A86B; /* Green border on hover */
+  color: #00A86B; /* Green text on hover */
+}
+</style>
+
+<button id="journal-article-btn" onclick="window.open('https://chamara7h.github.io/lab/forecasting/first-post/epss_training.html', '_blank')">
+  <i class="fas fa-bookmark"></i> Slides
+</button>
+<button id="github-repo-btn" onclick="window.open('https://github.com/chamara7h/epss_training', '_blank');">
+  <i class="fab fa-github"></i> GitHub repo
+</button>
+
+### Context
+
+Accurate demand forecasting is essential for ensuring reliable access to contraceptive products, supporting key processes like procurement, inventory management, and distribution. This course aims to equip pharmaceutical officers at healthcare site levels with the knowledge and tools to adopt modern forecasting methods using R and Python.
+
+### Target Audience
+
+- Pharmaceutical officers at healthcare site levels responsible for demand planning  
+- Anyone interested in forecasting in the context of contraceptive supply chains  
+
+### Prerequisites
+
+- Basic knowledge of R and Python  
+- Basic understanding of statistics concepts  
+
+### Learning Outcomes
+#### Day 1:
+
+1. Familiarize with RStudio and R Notebooks.
+2. Install and load required packages in R.
+3. Learn data wrangling and feature engineering.
+4. Understand time series graphics.
+5. Explore forecasting models: sNAIVE, Moving Average, ARIMA, ETS, and Demographic Forecasting.
+6. Evaluate model performance using time series cross-validation.
+
+#### Day 2:
+1. Familiarize with Google Colab and Python Notebooks.
+2. Install and load required Python packages.
+3. Import data into Python.
+4. Implement advanced forecasting models: LightGBM, XGBoost, and TimeGPT.
+5. Evaluate model performance using time series cross-validation.
+6. Explore additional learning resources.
+
+### Preparation
+
+The workshop will provide a quick-start overview of exploring time series data and producing forecasts. No prior experience in time series is required. However, familiarity with:
+
+- Writing R code and using tidyverse packages (dplyr, ggplot2) is recommended. [Learn R here](https://learnr.numbat.space/).
+- Writing Python code is beneficial. [Learn Python here](https://www.learnpython.org/).
+- Basic statistical concepts such as mean, variance, quantiles, and regression would be helpful.
+
+### Required Equipment
+
+Please have a laptop capable of running both R and Python.

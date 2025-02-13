@@ -6,7 +6,8 @@
       "research/*.qmd",
       "ds_projects/*.qmd",
       "publications/*.qmd",
-      "projects/*.qmd"
+      "projects/*.qmd",
+      "design/*.qmd"
     ],
     "projects\\research\\index.qmd": [
       "publications.yml"
@@ -29,6 +30,18 @@
     "phd\\index.qmd": [
       "projects.yml",
       "phd.qmd"
+    ],
+    "lab\\dashboards\\index.qmd": [
+      "/"
+    ],
+    "lab\\forecasting\\index.qmd": [
+      "/"
+    ],
+    "lab\\index.qmd": [
+      "forecasting/*.qmd",
+      "data_analysis/*.qmd",
+      "dashboards/*.qmd",
+      "/"
     ]
   }
 }

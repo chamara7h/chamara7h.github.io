@@ -73,5 +73,26 @@
   },
   "cv/phd.qmd": {
     "phd.html": "147dd886"
+  },
+  "lab/forecasting/first-post/index.qmd": {
+    "index.html": "2fb0c198"
+  },
+  "lab/dashboards/index.qmd": {
+    "index.html": "6aba7c88"
+  },
+  "lab/data_analysis/index.qmd": {
+    "index.html": "ec04c293"
+  },
+  "lab/forecasting/index.qmd": {
+    "index.html": "2ef0acb8"
+  },
+  "lab/index.qmd": {
+    "index.html": "da8fa2b2"
+  },
+  "projects/design/index.qmd": {
+    "index.html": "fd0a2969"
+  },
+  "resources/index.qmd": {
+    "index.html": "d587875e"
   }
 }

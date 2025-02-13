@@ -1,7 +1,9 @@
 ---
-title: Learning Lab
-description: 'Something is cooking'
-image: images/cover.gif
+title: LEARNING LABS
+description: 'Training materials on R, Python, data analysis, time series forecasting, and Quarto tutorials.'
+listing: 
+  contents: 
+    - "forecasting/*.qmd"
+  type: grid
+  fields: [image, title, description, categories]
 ---
-
-<img src="images/cover.gif" alt="" width="400">

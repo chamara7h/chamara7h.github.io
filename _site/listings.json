@@ -2,6 +2,7 @@
   {
     "listing": "/projects/index.html",
     "items": [
+      "/projects/design/index.html",
       "/projects/projects/index.html",
       "/projects/publications/index.html"
     ]
@@ -44,5 +45,21 @@
   {
     "listing": "/phd/index.html",
     "items": []
+  },
+  {
+    "listing": "/lab/forecasting/index.html",
+    "items": [
+      "/lab/forecasting/first-post/index.html"
+    ]
+  },
+  {
+    "listing": "/lab/dashboards/index.html",
+    "items": []
+  },
+  {
+    "listing": "/lab/index.html",
+    "items": [
+      "/lab/forecasting/index.html"
+    ]
   }
 ]

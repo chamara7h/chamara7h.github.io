@@ -11,7 +11,7 @@
     "href": "projects/index.html",
     "title": "PROJECTS",
     "section": "",
-    "text": "Data Science Projects\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Projects\n\n\nMy academic publications, along with their source code and data.\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Creative Gallery\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Science Projects\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Projects\n\n\nMy academic publications, along with their source code and data.\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/first-post/index.html",
@@ -187,5 +187,33 @@
     "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
     "section": "Funder",
     "text": "Funder\nWelsh Graduate School for the Social Sciences (WGSSS)"
+  },
+  {
+    "objectID": "lab/forecasting/first-post/index.html",
+    "href": "lab/forecasting/first-post/index.html",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting",
+    "section": "",
+    "text": "Slides\n\n\n GitHub repo\n\n\nContext\nAccurate demand forecasting is essential for ensuring reliable access to contraceptive products, supporting key processes like procurement, inventory management, and distribution. This course aims to equip pharmaceutical officers at healthcare site levels with the knowledge and tools to adopt modern forecasting methods using R and Python.\n\n\nTarget Audience\n\nPharmaceutical officers at healthcare site levels responsible for demand planning\n\nAnyone interested in forecasting in the context of contraceptive supply chains\n\n\n\nPrerequisites\n\nBasic knowledge of R and Python\n\nBasic understanding of statistics concepts\n\n\n\nLearning Outcomes\n\nDay 1:\n\nFamiliarize with RStudio and R Notebooks.\nInstall and load required packages in R.\nLearn data wrangling and feature engineering.\nUnderstand time series graphics.\nExplore forecasting models: sNAIVE, Moving Average, ARIMA, ETS, and Demographic Forecasting.\nEvaluate model performance using time series cross-validation.\n\n\n\nDay 2:\n\nFamiliarize with Google Colab and Python Notebooks.\nInstall and load required Python packages.\nImport data into Python.\nImplement advanced forecasting models: LightGBM, XGBoost, and TimeGPT.\nEvaluate model performance using time series cross-validation.\nExplore additional learning resources.\n\n\n\n\nPreparation\nThe workshop will provide a quick-start overview of exploring time series data and producing forecasts. No prior experience in time series is required. However, familiarity with:\n\nWriting R code and using tidyverse packages (dplyr, ggplot2) is recommended. Learn R here.\nWriting Python code is beneficial. Learn Python here.\nBasic statistical concepts such as mean, variance, quantiles, and regression would be helpful.\n\n\n\nRequired Equipment\nPlease have a laptop capable of running both R and Python."
+  },
+  {
+    "objectID": "lab/forecasting/index.html",
+    "href": "lab/forecasting/index.html",
+    "title": "Time Series Forecasting",
+    "section": "",
+    "text": "Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\n\nForecasting\n\n\nHealthcare\n\n\nR\n\n\nPython\n\n\nMachine Learning\n\n\n\nWorkshop\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "lab/dashboards/index.html",
+    "href": "lab/dashboards/index.html",
+    "title": "Research Projects",
+    "section": "",
+    "text": "Data illustrations by Storyset\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "lab/index.html",
+    "href": "lab/index.html",
+    "title": "LEARNING LABS",
+    "section": "",
+    "text": "Research Projects\n\n\nTime series forecasting materials using R and Python.\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
