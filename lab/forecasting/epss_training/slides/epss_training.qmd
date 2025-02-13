@@ -103,6 +103,8 @@ An estimation of the future based on all of the information available at the tim
 
 install.packages('reticulate')
 install.packages('ggplot2')
+install.packages('forecast')
+install.packages('countdown')
 library(ggplot2)
 
 # Create a sample time series dataset with 50 training and 5 testing data points
