@@ -19,15 +19,16 @@
     "items": []
   },
   {
-    "listing": "/lab/forecasting/index.html",
-    "items": [
-      "/lab/forecasting/first-post/index.html"
-    ]
-  },
-  {
     "listing": "/lab/index.html",
     "items": [
       "/lab/forecasting/index.html"
+    ]
+  },
+  {
+    "listing": "/lab/forecasting/index.html",
+    "items": [
+      "/lab/forecasting/epss_training/slides/epss_training.html",
+      "/lab/forecasting/epss_training/index.html"
     ]
   }
 ]
