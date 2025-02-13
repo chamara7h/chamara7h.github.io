@@ -100,12 +100,17 @@ An estimation of the future based on all of the information available at the tim
 
 ```{r}
 #| echo: false
+#| results: hide 
 
 install.packages('reticulate')
 install.packages('ggplot2')
 install.packages('forecast')
 install.packages('countdown')
 install.packages('gridExtra')
+```
+
+```{r}
+#| echo: false
 library(ggplot2)
 
 # Create a sample time series dataset with 50 training and 5 testing data points
@@ -176,6 +181,7 @@ Read more at [Demand forecasting for executives and professionals](https://dfep.
 We use the `fpp3` package in this workshop, which provides all the necessary packages for data manipulation, plotting, and forecasting.
 
 ```{r}
+#| results: hide 
 
 # Define required packages
 packages <- c("tidyverse", "fable", "tsibble", "feasts", 'zoo')
