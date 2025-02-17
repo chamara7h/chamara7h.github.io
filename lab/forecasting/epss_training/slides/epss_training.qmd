@@ -63,7 +63,7 @@ options(knitr.graphics.auto_pdf = TRUE)
 
 You can find the workshop materials [here](https://chamara7h.github.io/lab/).
 
-*Note*: These materials are based on [F4SG: Africast training](https://workshop.f4sg.org/africast/) and [F4SG Learning Labs trainings](https://www.youtube.com/watch?v=VCiDhRxNxgc&list=PLQMuwuCypmehClRpxqOzuiRKyPmeQTJsz).
+*Note*: These materials are based on [A Novel Hybrid Approach to Contraceptive Demand Forecasting Research](https://arxiv.org/abs/2502.09685), [F4SG: Africast training](https://workshop.f4sg.org/africast/) and [F4SG Learning Labs trainings](https://www.youtube.com/watch?v=VCiDhRxNxgc&list=PLQMuwuCypmehClRpxqOzuiRKyPmeQTJsz).
 
 <br>
 
