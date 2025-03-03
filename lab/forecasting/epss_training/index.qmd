@@ -91,7 +91,7 @@ Accurate demand forecasting is essential for ensuring reliable access to contrac
 The workshop will provide a quick-start overview of exploring time series data and producing forecasts. No prior experience in time series is required. However, familiarity with:
 
 - Writing R code and using tidyverse packages (dplyr, ggplot2) is recommended. [Learn R here](https://learnr.numbat.space/).
-- Writing Python code is beneficial. [Learn Python here](https://www.learnpython.org/).
+- Writing Python code is beneficial. [Learn Python here](https://chamara7h.github.io/lab/data_analytics/intro_python/).
 - Basic statistical concepts such as mean, variance, quantiles, and regression would be helpful.
 
 ### Required Equipment

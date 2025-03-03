@@ -100,5 +100,20 @@
   },
   "lab/forecasting/epss_training/slides/epss_training.qmd": {
     "epss_training.html": "4ad0ddeb"
+  },
+  "lab/data_analytics/index.qmd": {
+    "index.html": "244904ef"
+  },
+  "lab/data_analytics/intro_python/index.ipynb": {
+    "index.html": "eb5474f3"
+  },
+  "lab/data_analytics/intro_python/index.qmd": {
+    "index.html": "6ff50ac9"
+  },
+  "lab/data_analytics/intro_python/materials/intro_to_python.ipynb": {
+    "intro_to_python.html": "a554ee03"
+  },
+  "lab/data_analytics/intro_python/materials/index.ipynb": {
+    "index.html": "70eaf03f"
   }
 }

@@ -292,7 +292,7 @@ item_ids <- med_tsb |>
   count_gaps() |> 
   group_by(hub_id, product_id) |> 
   summarise(.n = max(.n), .groups = 'drop') |> 
-  filter(.n  < 2) |> 
+  filter(.n  > 1) |> 
   mutate(id = paste0(hub_id,'-',product_id)) |> 
   pull(id) # filtering the item ids
 
@@ -300,7 +300,7 @@ med_tsb_filter <- med_tsb |>
   mutate(id = paste0(hub_id,'-',product_id)) |> 
   group_by(hub_id, product_id) |>
   mutate(num_observations = n()) |> 
-  filter(id %in% item_ids & num_observations >59) |>   # we have cold starts and discontinuations. 
+  filter(!id %in% item_ids & num_observations >59) |>   # we have cold starts and discontinuations. 
   fill_gaps(quantity_issued = 1e-6, .full = TRUE) |>   # Replace NAs with a small value
   select(-id, -num_observations) |> 
   mutate(quantity_issued = if_else(is.na(quantity_issued), 

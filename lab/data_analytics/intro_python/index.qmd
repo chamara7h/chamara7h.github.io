@@ -1,0 +1,55 @@
+---
+title: "A basic introduction to Python"
+description: "Tutorial"
+author: "Harsha Chamara Hewage"
+date: "2025-03-03"
+image: "cover.jpg"
+listing: 
+  contents: 
+    - "materials/*.ipynb"
+  type: table
+  sort-ui: false
+  filter-ui: false
+  fields: [title]
+  field-display-names: 
+    title: "Click on the following link to open the tutorial."
+categories:
+  - Python
+  - Jupyter Lab
+  - Data analytics
+link-external-newwindow: true
+---
+
+![](cover.jpg){fig-align="center"}
+
+
+## Who is the course for?
+This course is primarily aimed at learners who require a practical introduction to Python. It assumes no previous experience using Python.
+
+## Learning Objectives
+- Familiarize yourself with Python and an Integrated Development Environment (IDE) such as Jupyter Lab or VS Code, which we’ll use to interact with Python.
+- Understand the basics of working with Python, including how to write and execute code.
+- Use three different ways to work with Python: Python Shell, Python Scripts, and Jupyter Lab.
+- Learn about Python’s basic data types and structures.
+- Install and import required libraries.
+- Find resources for help when coding in Python.
+
+## Prerequisites
+- No prior knowledge of Python is assumed.
+- Install [Python](https://www.python.org/downloads/) and [GitHub Desktop](https://github.com/git-guides/install-git).
+
+## Course Topics
+
+### Python and IDE Essentials
+
+#### Section 1: Introduction to Python and IDEs
+- Introduction to Python
+- Installing Python
+- Setting up an Integrated Development Environment (IDE)
+- Overview of Jupyter Lab, VS Code, Google Colab, and Anaconda
+
+#### Section 2: Working with Jupyter Lab
+- Understanding the basic syntax
+- Writing and executing code in Python
+- Setting up and organizing a Python project
+

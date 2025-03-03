@@ -49,7 +49,6 @@
   {
     "listing": "/lab/forecasting/index.html",
     "items": [
-      "/lab/forecasting/epss_training/slides/epss_training.html",
       "/lab/forecasting/epss_training/index.html"
     ]
   },
@@ -60,7 +59,20 @@
   {
     "listing": "/lab/index.html",
     "items": [
+      "/lab/data_analytics/index.html",
       "/lab/forecasting/index.html"
+    ]
+  },
+  {
+    "listing": "/lab/data_analytics/index.html",
+    "items": [
+      "/lab/data_analytics/intro_python/index.html"
+    ]
+  },
+  {
+    "listing": "/lab/data_analytics/intro_python/index.html",
+    "items": [
+      "/lab/data_analytics/intro_python/materials/index.html"
     ]
   }
 ]

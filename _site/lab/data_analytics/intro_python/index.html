@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Time series forecasting materials using R and Python.">
+<meta name="author" content="Harsha Chamara Hewage">
+<meta name="dcterms.date" content="2025-03-03">
+<meta name="description" content="Tutorial">
 
-<title>Time Series Forecasting – Home</title>
+<title>A basic introduction to Python – Home</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -129,9 +131,9 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="Time Series Forecasting – Home">
-<meta property="og:description" content="Time series forecasting materials using R and Python.">
-<meta property="og:image" content="cover.png">
+<meta property="og:title" content="A basic introduction to Python – Home">
+<meta property="og:description" content="Tutorial">
+<meta property="og:image" content="cover.jpg">
 <meta property="og:site_name" content="Home">
 </head>
 
@@ -142,7 +144,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Harsha Halgamuwe Hewage</span>
     </a>
   </div>
@@ -153,23 +155,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../phd/index.html"> 
+    <a class="nav-link" href="../../../phd/index.html"> 
 <span class="menu-text">PhD Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv/index.html"> 
+    <a class="nav-link" href="../../../cv/index.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects/index.html"> 
+    <a class="nav-link" href="../../../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../lab/index.html"> 
+    <a class="nav-link" href="../../../lab/index.html"> 
 <span class="menu-text">Learning Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/index.html"> 
+    <a class="nav-link" href="../../../resources/index.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item compact">
@@ -209,19 +211,36 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Time Series Forecasting</h1>
-</div>
+<h1 class="title">A basic introduction to Python</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Jupyter Lab</div>
+    <div class="quarto-category">Data analytics</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Time series forecasting materials using R and Python.
+    Tutorial
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Harsha Chamara Hewage </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 3, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -231,47 +250,77 @@ window.Quarto = {
 </header>
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cover.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<section id="who-is-the-course-for" class="level2">
+<h2 class="anchored" data-anchor-id="who-is-the-course-for">Who is the course for?</h2>
+<p>This course is primarily aimed at learners who require a practical introduction to Python. It assumes no previous experience using Python.</p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Familiarize yourself with Python and an Integrated Development Environment (IDE) such as Jupyter Lab or VS Code, which we’ll use to interact with Python.</li>
+<li>Understand the basics of working with Python, including how to write and execute code.</li>
+<li>Use three different ways to work with Python: Python Shell, Python Scripts, and Jupyter Lab.</li>
+<li>Learn about Python’s basic data types and structures.</li>
+<li>Install and import required libraries.</li>
+<li>Find resources for help when coding in Python.</li>
+</ul>
+</section>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<ul>
+<li>No prior knowledge of Python is assumed.</li>
+<li>Install <a href="https://www.python.org/downloads/">Python</a> and <a href="https://github.com/git-guides/install-git">GitHub Desktop</a>.</li>
+</ul>
+</section>
+<section id="course-topics" class="level2">
+<h2 class="anchored" data-anchor-id="course-topics">Course Topics</h2>
+<section id="python-and-ide-essentials" class="level3">
+<h3 class="anchored" data-anchor-id="python-and-ide-essentials">Python and IDE Essentials</h3>
+<section id="section-1-introduction-to-python-and-ides" class="level4">
+<h4 class="anchored" data-anchor-id="section-1-introduction-to-python-and-ides">Section 1: Introduction to Python and IDEs</h4>
+<ul>
+<li>Introduction to Python</li>
+<li>Installing Python</li>
+<li>Setting up an Integrated Development Environment (IDE)</li>
+<li>Overview of Jupyter Lab, VS Code, Google Colab, and Anaconda</li>
+</ul>
+</section>
+<section id="section-2-working-with-jupyter-lab" class="level4">
+<h4 class="anchored" data-anchor-id="section-2-working-with-jupyter-lab">Section 2: Working with Jupyter Lab</h4>
+<ul>
+<li>Understanding the basic syntax</li>
+<li>Writing and executing code in Python</li>
+<li>Setting up and organizing a Python project</li>
+</ul>
 
 
 
+</section>
+</section>
+</section>
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Forecasting,Healthcare,R,Python,Machine Learning" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1739454752877" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="384">
-<a href="../../lab/forecasting/epss_training/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../../lab/forecasting/epss_training/cover.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Forecasting'); return false;">
-Forecasting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Healthcare'); return false;">
-Healthcare
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
-Machine Learning
-</div>
-</div>
-<div class="card-text listing-description">
-Workshop
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Click on the following
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1736333195472" data-listing-reading-time-sort="9" data-listing-word-count-sort="1649" data-listing-title-sort="Introduction to Python" data-listing-filename-sort="index.ipynb">
+<td>
+<a href="../../../lab/data_analytics/intro_python/materials/index.html" class="title listing-title">Introduction to Python</a>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
@@ -382,6 +431,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

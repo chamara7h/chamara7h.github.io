@@ -1,9 +1,10 @@
 ---
 title: LEARNING LABS
-description: 'Training materials on R, Python, data analysis, time series forecasting, and Quarto tutorials.'
+description: 'Training materials and tutorials.'
 listing: 
   contents: 
     - "forecasting/*.qmd"
+    - "data_analytics/*.qmd"
   type: grid
   fields: [image, title, description, categories]
 ---

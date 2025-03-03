@@ -35,13 +35,22 @@
       "/"
     ],
     "lab\\forecasting\\index.qmd": [
-      "/"
+      "/",
+      "epss_training/*.qmd"
     ],
     "lab\\index.qmd": [
       "forecasting/*.qmd",
       "data_analysis/*.qmd",
       "dashboards/*.qmd",
-      "/"
+      "/",
+      "data_analytics/*.qmd"
+    ],
+    "lab\\data_analytics\\index.qmd": [
+      "intro_python/*.ipynb",
+      "intro_python/*.qmd"
+    ],
+    "lab\\data_analytics\\intro_python\\index.qmd": [
+      "materials/*.ipynb"
     ]
   }
 }
