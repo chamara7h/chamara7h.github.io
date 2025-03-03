@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-09-27">
-<meta name="description" content="2nd year PhD Student, Data Lab for Social Good Research Group, Cardiff Business School, UK">
+<meta name="description" content="Data analytics materials using R and Python.">
 
-<title>Forecasting improvements for better reproductive health and family planning operations in global health supply chains – Home</title>
+<title>Data analytics – Home</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,22 +24,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2bf58884913958edbc1a36cac3ab5997.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2bf58884913958edbc1a36cac3ab5997.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,12 +69,72 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<meta property="og:title" content="Forecasting improvements for better reproductive health and family planning operations in global health supply chains – Home">
-<meta property="og:description" content="2nd year PhD Student, Data Lab for Social Good Research Group, Cardiff Business School, UK">
-<meta property="og:image" content="https://chamara7h.github.io/cv/images/cover.jpg">
+    const options = {
+      valueNames: ['listing-title','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Data analytics – Home">
+<meta property="og:description" content="Data analytics materials using R and Python.">
+<meta property="og:image" content="https://chamara7h.github.io/lab/data_analytics/cover.png">
 <meta property="og:site_name" content="Home">
+<meta property="og:image:height" content="2000">
+<meta property="og:image:width" content="2000">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -83,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Harsha Halgamuwe Hewage</span>
     </a>
   </div>
@@ -94,23 +155,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../phd/index.html"> 
+    <a class="nav-link" href="../../phd/index.html"> 
 <span class="menu-text">PhD Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html"> 
+    <a class="nav-link" href="../../cv/index.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../projects/index.html"> 
+    <a class="nav-link" href="../../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lab/index.html"> 
+    <a class="nav-link" href="../../lab/index.html"> 
 <span class="menu-text">Learning Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/index.html"> 
+    <a class="nav-link" href="../../resources/index.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item compact">
@@ -150,20 +211,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Forecasting improvements for better reproductive health and family planning operations in global health supply chains</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">Python</div>
-    <div class="quarto-category">Machine Learning</div>
-    <div class="quarto-category">Hybrid Intelligence</div>
-    <div class="quarto-category">Uncertainity</div>
-    <div class="quarto-category">Social Good</div>
-  </div>
-  </div>
+<h1 class="title">Data analytics</h1>
+</div>
 
 <div>
   <div class="description">
-    2nd year PhD Student, Data Lab for Social Good Research Group, Cardiff Business School, UK
+    Data analytics materials using R and Python.
   </div>
 </div>
 
@@ -171,12 +224,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 27, 2022</p>
-    </div>
-  </div>
   
     
   </div>
@@ -186,26 +233,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<iframe src="HC_poster.pdf" width="100%" height="450">
-</iframe>
-<p>My research focuses on addressing inefficiencies in supply chain management for contraceptive products in developing countries. These inefficiencies often lead to shortages, limiting women’s reproductive autonomy and exacerbating societal challenges. By integrating probabilistic forecasting with inventory optimization, I aim to create a novel approach that accounts for uncertainties, poor data quality, and local demand variations. This interdisciplinary project involves collaboration with scholars from Cardiff Business School, the School of Computer Science &amp; Informatics, and the United States Agency for International Development (USAID). The goal is to improve access to contraceptives, reduce unintended pregnancies, and prevent unsafe abortions, ultimately benefiting women, healthcare providers, governments, and donor organizations.</p>
-<section id="supervision-team" class="level2">
-<h2 class="anchored" data-anchor-id="supervision-team">Supervision team</h2>
-<ul>
-<li>Lead: <a href="https://profiles.cardiff.ac.uk/staff/rostami-tabarb">Prof Bahman Rostami-Tabar</a>, Data Lab for Social Good Research Group, Cardiff Business School, UK</li>
-<li>Co: <a href="https://www.cardiff.ac.uk/people/view/598321-syntetos-aris">Prof Aris Syntetos</a>, Cardiff Business School, UK</li>
-<li>Co: <a href="https://www.cardiff.ac.uk/people/view/1721244-liberatore-federico">Dr Federico Liberatore</a>, School of Computer Science and Informatics, UK</li>
-<li>Collaborator: <a href="https://www.linkedin.com/in/milano-glenn/">Glenn Milano</a>, Global Health Supply Chain, Bureau for Global Health, United States Agency for International Development (USAID)</li>
-</ul>
-</section>
-<section id="funder" class="level2">
-<h2 class="anchored" data-anchor-id="funder">Funder</h2>
-<p>Welsh Graduate School for the Social Sciences (WGSSS)</p>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="UHl0aG9uJTJDSnVweXRlciUyMExhYiUyQ0RhdGElMjBhbmFseXRpY3M=" data-listing-date-sort="1740960000000" data-listing-file-modified-sort="1741004215880" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="168">
+<a href="../../lab/data_analytics/intro_python/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../../lab/data_analytics/intro_python/cover.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+A basic introduction to Python
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">
+Python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SnVweXRlciUyMExhYg=='); return false;">
+Jupyter Lab
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMGFuYWx5dGljcw=='); return false;">
+Data analytics
+</div>
+</div>
+<div class="card-text listing-description">
+Tutorial
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

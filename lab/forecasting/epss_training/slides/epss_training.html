@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
   <title>Home – epss_training</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -93,7 +93,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-423d414d36ce366a9d05f36d06304417.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-8f3eebe07241f08526c91a7e9cbef8fd.css">
   <link rel="stylesheet" href="theme.css">
   <link href="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -483,7 +483,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <span id="cb18-2"><a></a>  <span class="fu">count_gaps</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb18-3"><a></a>  <span class="fu">group_by</span>(hub_id, product_id) <span class="sc">|&gt;</span> </span>
 <span id="cb18-4"><a></a>  <span class="fu">summarise</span>(<span class="at">.n =</span> <span class="fu">max</span>(.n), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb18-5"><a></a>  <span class="fu">filter</span>(.n  <span class="sc">&lt;</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb18-5"><a></a>  <span class="fu">filter</span>(.n  <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb18-6"><a></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">paste0</span>(hub_id,<span class="st">'-'</span>,product_id)) <span class="sc">|&gt;</span> </span>
 <span id="cb18-7"><a></a>  <span class="fu">pull</span>(id) <span class="co"># filtering the item ids</span></span>
 <span id="cb18-8"><a></a></span>
@@ -491,7 +491,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <span id="cb18-10"><a></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">paste0</span>(hub_id,<span class="st">'-'</span>,product_id)) <span class="sc">|&gt;</span> </span>
 <span id="cb18-11"><a></a>  <span class="fu">group_by</span>(hub_id, product_id) <span class="sc">|&gt;</span></span>
 <span id="cb18-12"><a></a>  <span class="fu">mutate</span>(<span class="at">num_observations =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb18-13"><a></a>  <span class="fu">filter</span>(id <span class="sc">%in%</span> item_ids <span class="sc">&amp;</span> num_observations <span class="sc">&gt;</span><span class="dv">59</span>) <span class="sc">|&gt;</span>   <span class="co"># we have cold starts and discontinuations. </span></span>
+<span id="cb18-13"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>id <span class="sc">%in%</span> item_ids <span class="sc">&amp;</span> num_observations <span class="sc">&gt;</span><span class="dv">59</span>) <span class="sc">|&gt;</span>   <span class="co"># we have cold starts and discontinuations. </span></span>
 <span id="cb18-14"><a></a>  <span class="fu">fill_gaps</span>(<span class="at">quantity_issued =</span> <span class="fl">1e-6</span>, <span class="at">.full =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span>   <span class="co"># Replace NAs with a small value</span></span>
 <span id="cb18-15"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>id, <span class="sc">-</span>num_observations) <span class="sc">|&gt;</span> </span>
 <span id="cb18-16"><a></a>  <span class="fu">mutate</span>(<span class="at">quantity_issued =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(quantity_issued), </span>
@@ -633,7 +633,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <h1>Now it is your <code>turn</code>.</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_22fef5aa" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_8d1f915a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -775,26 +775,20 @@ y_t = T_t + S_t + R_t
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb33-2"><a></a>  <span class="fu">features</span>(quantity_issued, feat_stl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 17 × 11
+<pre><code># A tibble: 21 × 11
    hub_id product_id trend_strength seasonal_strength_year seasonal_peak_year
    &lt;chr&gt;  &lt;chr&gt;               &lt;dbl&gt;                  &lt;dbl&gt;              &lt;dbl&gt;
- 1 hub_1  product_2          0.261                  0.503                   6
- 2 hub_1  product_5          0.250                  0.438                   0
- 3 hub_10 product_5          0.366                  0.0911                  0
- 4 hub_11 product_2          0.624                  0.407                  11
- 5 hub_11 product_7          0.181                  0.196                   7
- 6 hub_13 product_5          0.196                  0.402                   0
- 7 hub_14 product_5          0.595                  0.229                   9
- 8 hub_16 product_2          0.233                  0.238                   7
- 9 hub_16 product_5          0.416                  0.272                   0
-10 hub_2  product_2          0.178                  0.246                   9
-11 hub_2  product_5          0.262                  0.264                   6
-12 hub_3  product_2          0.663                  0.215                   4
-13 hub_5  product_5          0.208                  0.158                  11
-14 hub_6  product_2          0.189                  0.211                  11
-15 hub_8  product_2          0.0746                 0.189                   8
-16 hub_8  product_4          0.277                  0.366                   0
-17 hub_8  product_5          0.304                  0.337                   0
+ 1 hub_1  product_2           0.261                 0.503                   6
+ 2 hub_1  product_5           0.250                 0.438                   0
+ 3 hub_10 product_5           0.366                 0.0911                  0
+ 4 hub_11 product_2           0.624                 0.407                  11
+ 5 hub_11 product_5           0.352                 0.244                   4
+ 6 hub_11 product_7           0.181                 0.196                   7
+ 7 hub_13 product_5           0.196                 0.402                   0
+ 8 hub_14 product_5           0.595                 0.229                   9
+ 9 hub_16 product_2           0.233                 0.238                   7
+10 hub_16 product_5           0.416                 0.272                   0
+# ℹ 11 more rows
 # ℹ 6 more variables: seasonal_trough_year &lt;dbl&gt;, spikiness &lt;dbl&gt;,
 #   linearity &lt;dbl&gt;, curvature &lt;dbl&gt;, stl_e_acf1 &lt;dbl&gt;, stl_e_acf10 &lt;dbl&gt;</code></pre>
 </div>
@@ -903,7 +897,7 @@ y_t = T_t + S_t + R_t
 <h1>Now it is your <code>turn</code>.</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_15c5c3c0" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_6ee80b66" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1310,7 +1304,7 @@ y_t = T_t + S_t + R_t
 <h1>Now it is your <code>turn</code>.</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c0af193d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_28f063fd" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1433,7 +1427,7 @@ y_t = T_t + S_t + R_t
 <h1>Now it is your <code>turn</code>.</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_45be4a55" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_53c3ec9d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1666,7 +1660,7 @@ Q_{p,t} =
 <h1>Now it is your <code>turn</code>.</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_9667ad9f" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_0ccb143a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
