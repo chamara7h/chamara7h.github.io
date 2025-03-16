@@ -970,7 +970,7 @@ How do the level, trend and seasonal components evolve over time?
 <span style="color:green;">✓ They can be adapted to various data characteristics with different error, trend, and seasonal formulations</span>  
 <span style="color:green;">✓ Often very effective when the underlying components are stable</span>  
 <span style="color:red;">✗ Parameter estimates (including smoothing parameters and initial states) can affect the forecasts</span>  
-<span style="color:red;">✗ SMay struggle to capture sudden shifts or non-standard patterns if the smoothing parameters are constant</span>  
+<span style="color:red;">✗ May struggle to capture sudden shifts or non-standard patterns if the smoothing parameters are constant</span>  
 
 ## ETS automatic modelling
 
@@ -2059,6 +2059,22 @@ y_{i,t} = & \left(\sum_{j=15}^{50} \text{mCPR}_{t,j} \times \text{WomenPopulatio
 <span style="color:red;">✗ Static assumptions about behavior patterns</span>  
 <span style="color:red;">✗ Limited responsiveness to sudden changes</span>  
 <span style="color:red;">✗ Provides national level need</span> 
+
+## Demographic forecasting method (FPSC Context)
+
+*Female condom needs for August 2020 (example)*
+
+| Parameter                                      | Value    | Unit         | Sources          |
+|-----------------------------------------------|---------|-------------|-----------------|
+| **A. Women population 20 – 25**               | 345,000 | # of people | WorldPop        |
+| **B. Percentage of women who will use a contraceptive product (mCPR)** | 68%  | %            | PMA DataLab     |
+| **C. Percentage of the method mix**           | 26%     | %            | PMA DataLab     |
+| **D. CYP**                                    | 120     | -           | USAID           |
+| **E. Percentage of brand A mix**              | 45%     | %            | Author calculation |
+| **F. Percentage of source mix**               | 13%     | %            | USAID           |
+| **G. Weight as a percentage for August**      | 8%      | %            | Author calculation |
+| **Total requirement (A × B × C × D × E × F × G)** | **34,255** | # of products | - |
+
 
 ## Next steps and further learning
 
