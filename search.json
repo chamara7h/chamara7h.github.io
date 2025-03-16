@@ -424,7 +424,7 @@
     "href": "lab/forecasting/epss_training/slides/epss_training.html#ets-3",
     "title": "Home",
     "section": "ETS",
-    "text": "ETS\nAssumptions\n\nDecomposable patterns\nRecent observations more important\nConsistent error structure (additive/multiplicative)\n\nStrengths & Weaknesses\n✓ They can be adapted to various data characteristics with different error, trend, and seasonal formulations\n✓ Often very effective when the underlying components are stable\n✗ Parameter estimates (including smoothing parameters and initial states) can affect the forecasts\n✗ SMay struggle to capture sudden shifts or non-standard patterns if the smoothing parameters are constant"
+    "text": "ETS\nAssumptions\n\nDecomposable patterns\nRecent observations more important\nConsistent error structure (additive/multiplicative)\n\nStrengths & Weaknesses\n✓ They can be adapted to various data characteristics with different error, trend, and seasonal formulations\n✓ Often very effective when the underlying components are stable\n✗ Parameter estimates (including smoothing parameters and initial states) can affect the forecasts\n✗ May struggle to capture sudden shifts or non-standard patterns if the smoothing parameters are constant"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#ets-automatic-modelling",
@@ -824,6 +824,13 @@
     "title": "Home",
     "section": "Demographic forecasting method (FPSC Context)",
     "text": "Demographic forecasting method (FPSC Context)\nStrengths & Weaknesses\n✓ Directly ties to population dynamics\n✓ Incorporates multiple programmatic factors\n✓ Enables spatial allocation to health sites\n✓ Aligns with public health planning frameworks\n✗ Sensitive to input data quality\n✗ Static assumptions about behavior patterns\n✗ Limited responsiveness to sudden changes\n✗ Provides national level need"
+  },
+  {
+    "objectID": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-4",
+    "href": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-4",
+    "title": "Home",
+    "section": "Demographic forecasting method (FPSC Context)",
+    "text": "Demographic forecasting method (FPSC Context)\nFemale condom needs for August 2020 (example)\n\n\n\n\n\n\n\n\n\nParameter\nValue\nUnit\nSources\n\n\n\n\nA. Women population 20 – 25\n345,000\n# of people\nWorldPop\n\n\nB. Percentage of women who will use a contraceptive product (mCPR)\n68%\n%\nPMA DataLab\n\n\nC. Percentage of the method mix\n26%\n%\nPMA DataLab\n\n\nD. CYP\n120\n-\nUSAID\n\n\nE. Percentage of brand A mix\n45%\n%\nAuthor calculation\n\n\nF. Percentage of source mix\n13%\n%\nUSAID\n\n\nG. Weight as a percentage for August\n8%\n%\nAuthor calculation\n\n\nTotal requirement (A × B × C × D × E × F × G)\n34,255\n# of products\n-"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#next-steps-and-further-learning",
