@@ -28,7 +28,11 @@ execute:
   Cardiff University, UK 
 </h4>
 
-2025-03-16
+2025-03-17
+
+## Self-Assessment 
+
+![](images/epss_pre.png){fig-align="center"}
 
 
 ```{r}
@@ -2066,6 +2070,10 @@ y_{i,t} = & \left(\sum_{j=15}^{50} \text{mCPR}_{t,j} \times \text{WomenPopulatio
 - [skforecast](https://skforecast.org/0.14.0/index.html)
 
 # Any `Q/As`?
+
+## Post-Training Feedback 
+
+![](images/epss_post.png){fig-align="center"}
 
 ## `Thank you!`
 

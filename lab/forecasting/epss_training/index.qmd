@@ -76,14 +76,14 @@ Accurate demand forecasting is essential for ensuring reliable access to contrac
 3. Learn data wrangling and feature engineering.
 4. Understand time series graphics.
 5. Explore forecasting models: sNAIVE, Moving Average, ARIMA, ETS, and Demographic Forecasting.
-6. Evaluate model performance using time series cross-validation.
+6. Evaluate model performance.
 
 #### Day 2:
 1. Familiarize with Google Colab and Python Notebooks.
 2. Install and load required Python packages.
 3. Import data into Python.
 4. Implement advanced forecasting models: LightGBM, XGBoost, and TimeGPT.
-5. Evaluate model performance using time series cross-validation.
+5. Evaluate model performance.
 6. Explore additional learning resources.
 
 ### Preparation
