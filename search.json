@@ -830,7 +830,7 @@
     "href": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-4",
     "title": "Home",
     "section": "Demographic forecasting method (FPSC Context)",
-    "text": "Demographic forecasting method (FPSC Context)\nFemale condom needs for August 2020 (example)\n\n\n\n\n\n\n\n\n\nParameter\nValue\nUnit\nSources\n\n\n\n\nA. Women population 20 – 25\n345,000\n# of people\nWorldPop\n\n\nB. Percentage of women who will use a contraceptive product (mCPR)\n68%\n%\nPMA DataLab\n\n\nC. Percentage of the method mix\n26%\n%\nPMA DataLab\n\n\nD. CYP\n120\n-\nUSAID\n\n\nE. Percentage of brand A mix\n45%\n%\nAuthor calculation\n\n\nF. Percentage of source mix\n13%\n%\nUSAID\n\n\nG. Weight as a percentage for August\n8%\n%\nAuthor calculation\n\n\nTotal requirement (A × B × C × D × E × F × G)\n34,255\n# of products\n-"
+    "text": "Demographic forecasting method (FPSC Context)\nFemale condom needs (age 20-15) for 2020 (example)\n\n\n\n\n\n\n\n\n\nParameter\nValue\nUnit\nSources\n\n\n\n\nA. Women population 20 – 25\n345,000\n# of people\nWorldPop\n\n\nB. Percentage of women who will use a contraceptive product (mCPR)\n68%\n%\nPMA DataLab\n\n\nC. Percentage of the method mix\n26%\n%\nPMA DataLab\n\n\nD. CYP\n120\n-\nUSAID\n\n\nE. Percentage of brand A mix\n45%\n%\nAuthor calculation\n\n\nF. Percentage of source mix\n13%\n%\nUSAID\n\n\nTotal requirement (A × B × C × D × E × F)\n629,694\n# of products\n-"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#next-steps-and-further-learning",
