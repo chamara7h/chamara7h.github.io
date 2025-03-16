@@ -212,7 +212,7 @@
   {
     "objectID": "lab/index.html",
     "href": "lab/index.html",
-    "title": "LEARNING LABS",
+    "title": "Home",
     "section": "",
     "text": "Data analytics\n\n\nData analytics materials using R and Python.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime Series Forecasting\n\n\nTime series forecasting materials using R and Python.\n\n\n\n\n\n\n\nNo matching items"
   },
@@ -221,833 +221,833 @@
     "href": "lab/forecasting/epss_training/index.html",
     "title": "Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting",
     "section": "",
-    "text": "Slides\n\n\n GitHub repo\n\n\nContext\nAccurate demand forecasting is essential for ensuring reliable access to contraceptive products, supporting key processes like procurement, inventory management, and distribution. This course aims to equip pharmaceutical officers at healthcare site levels with the knowledge and tools to adopt modern forecasting methods using R and Python.\n\n\nTarget Audience\n\nPharmaceutical officers at healthcare site levels responsible for demand planning\n\nAnyone interested in forecasting in the context of contraceptive supply chains\n\n\n\nPrerequisites\n\nBasic knowledge of R and Python\n\nBasic understanding of statistics concepts\n\n\n\nLearning Outcomes\n\nDay 1:\n\nFamiliarize with RStudio and R Notebooks.\nInstall and load required packages in R.\nLearn data wrangling and feature engineering.\nUnderstand time series graphics.\nExplore forecasting models: sNAIVE, Moving Average, ARIMA, ETS, and Demographic Forecasting.\nEvaluate model performance using time series cross-validation.\n\n\n\nDay 2:\n\nFamiliarize with Google Colab and Python Notebooks.\nInstall and load required Python packages.\nImport data into Python.\nImplement advanced forecasting models: LightGBM, XGBoost, and TimeGPT.\nEvaluate model performance using time series cross-validation.\nExplore additional learning resources.\n\n\n\n\nPreparation\nThe workshop will provide a quick-start overview of exploring time series data and producing forecasts. No prior experience in time series is required. However, familiarity with:\n\nWriting R code and using tidyverse packages (dplyr, ggplot2) is recommended. Learn R here.\nWriting Python code is beneficial. Learn Python here.\nBasic statistical concepts such as mean, variance, quantiles, and regression would be helpful.\n\n\n\nRequired Equipment\nPlease have a laptop capable of running both R and Python."
+    "text": "Slides\n\n\n GitHub repo\n\n\nContext\nAccurate demand forecasting is essential for ensuring reliable access to contraceptive products, supporting key processes like procurement, inventory management, and distribution. This course aims to equip pharmaceutical officers at healthcare site levels with the knowledge and tools to adopt modern forecasting methods using R and Python.\n\n\nTarget Audience\n\nPharmaceutical officers at healthcare site levels responsible for demand planning\n\nAnyone interested in forecasting in the context of contraceptive supply chains\n\n\n\nPrerequisites\n\nBasic knowledge of R and Python\n\nBasic understanding of statistics concepts\n\n\n\nLearning Outcomes\n\nDay 1:\n\nFamiliarize with RStudio and R Notebooks.\nInstall and load required packages in R.\nLearn data wrangling and feature engineering.\nUnderstand time series graphics.\nExplore forecasting models: sNAIVE, Moving Average, ARIMA, ETS, and Demographic Forecasting.\nEvaluate model performance.\n\n\n\nDay 2:\n\nFamiliarize with Google Colab and Python Notebooks.\nInstall and load required Python packages.\nImport data into Python.\nImplement advanced forecasting models: LightGBM, XGBoost, and TimeGPT.\nEvaluate model performance.\nExplore additional learning resources.\n\n\n\n\nPreparation\nThe workshop will provide a quick-start overview of exploring time series data and producing forecasts. No prior experience in time series is required. However, familiarity with:\n\nWriting R code and using tidyverse packages (dplyr, ggplot2) is recommended. Learn R here.\nWriting Python code is beneficial. Learn Python here.\nBasic statistical concepts such as mean, variance, quantiles, and regression would be helpful.\n\n\n\nRequired Equipment\nPlease have a laptop capable of running both R and Python."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html",
     "href": "lab/forecasting/epss_training/slides/epss_training.html",
     "title": "Demand Forecasting Models for Contraceptive Supply Chain",
     "section": "",
-    "text": "2025-03-16\n\n\n\nYou should be comfortable with R and Python coding.\nThis is not a theory-based course—we will not derive formulas or mathematical proofs.\nOur focus is on practical time series forecasting: understanding when and how to use different tools effectively.\n\n\n\n\n\nData wrangling and basic feature engineering\nTime series visualizations\nTraditional forecasting models\nAdvanced forecasting models\nPerformance evaluation\n\n\n\n\n\nHandling missing values\nAdvanced feature engineering\nTime series cross-validation\nHyperparameter tuning\n\n\n\n\nYou can find the workshop materials here.\nNote: These materials are based on A Novel Hybrid Approach to Contraceptive Demand Forecasting Research, F4SG: Africast training and F4SG Learning Labs trainings.\n\nRecommended readings:\n\nDemand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa.\nForecasting: Principles and Practice (3rd ed) by Rob J Hyndman and George Athanasopoulos.\nForecasting and Analytics with the Augmented Dynamic Adaptive Model (ADAM) by Ivan Svetunkov.\n\n\n\n\n\nWhat is forecasting?\nPrepare your data\nExplore your data\nForecast modelling\nEvaluating the model performances\nAdvance forecasting models\nOther forecasting models in family planning supply chains"
+    "text": "2025-03-17\n\n\n\n\n\n\n\n\n\n\n\nYou should be comfortable with R and Python coding.\nThis is not a theory-based course—we will not derive formulas or mathematical proofs.\nOur focus is on practical time series forecasting: understanding when and how to use different tools effectively.\n\n\n\n\n\nData wrangling and basic feature engineering\nTime series visualizations\nTraditional forecasting models\nAdvanced forecasting models\nPerformance evaluation\n\n\n\n\n\nHandling missing values\nAdvanced feature engineering\nTime series cross-validation\nHyperparameter tuning\n\n\n\n\nYou can find the workshop materials here.\nNote: These materials are based on A Novel Hybrid Approach to Contraceptive Demand Forecasting Research, F4SG: Africast training and F4SG Learning Labs trainings.\n\nRecommended readings:\n\nDemand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa.\nForecasting: Principles and Practice (3rd ed) by Rob J Hyndman and George Athanasopoulos.\nForecasting and Analytics with the Augmented Dynamic Adaptive Model (ADAM) by Ivan Svetunkov.\n\n\n\n\n\nWhat is forecasting?\nPrepare your data\nExplore your data\nForecast modelling\nEvaluating the model performances\nAdvance forecasting models\nOther forecasting models in family planning supply chains"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#assumptions",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#assumptions",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
-    "section": "",
-    "text": "You should be comfortable with R and Python coding.\nThis is not a theory-based course—we will not derive formulas or mathematical proofs.\nOur focus is on practical time series forecasting: understanding when and how to use different tools effectively."
+    "title": "Home",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nYou should be comfortable with R and Python coding.\nThis is not a theory-based course—we will not derive formulas or mathematical proofs.\nOur focus is on practical time series forecasting: understanding when and how to use different tools effectively."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#what-we-will-cover",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#what-we-will-cover",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
-    "section": "",
-    "text": "Data wrangling and basic feature engineering\nTime series visualizations\nTraditional forecasting models\nAdvanced forecasting models\nPerformance evaluation"
+    "title": "Home",
+    "section": "What we will cover",
+    "text": "What we will cover\n\nData wrangling and basic feature engineering\nTime series visualizations\nTraditional forecasting models\nAdvanced forecasting models\nPerformance evaluation"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#what-we-will-not-cover",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#what-we-will-not-cover",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
-    "section": "",
-    "text": "Handling missing values\nAdvanced feature engineering\nTime series cross-validation\nHyperparameter tuning"
+    "title": "Home",
+    "section": "What we will not cover",
+    "text": "What we will not cover\n\nHandling missing values\nAdvanced feature engineering\nTime series cross-validation\nHyperparameter tuning"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#materials",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#materials",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
-    "section": "",
-    "text": "You can find the workshop materials here.\nNote: These materials are based on A Novel Hybrid Approach to Contraceptive Demand Forecasting Research, F4SG: Africast training and F4SG Learning Labs trainings.\n\nRecommended readings:\n\nDemand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa.\nForecasting: Principles and Practice (3rd ed) by Rob J Hyndman and George Athanasopoulos.\nForecasting and Analytics with the Augmented Dynamic Adaptive Model (ADAM) by Ivan Svetunkov."
+    "title": "Home",
+    "section": "Materials",
+    "text": "Materials\nYou can find the workshop materials here.\nNote: These materials are based on A Novel Hybrid Approach to Contraceptive Demand Forecasting Research, F4SG: Africast training and F4SG Learning Labs trainings.\n\nRecommended readings:\n\nDemand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa.\nForecasting: Principles and Practice (3rd ed) by Rob J Hyndman and George Athanasopoulos.\nForecasting and Analytics with the Augmented Dynamic Adaptive Model (ADAM) by Ivan Svetunkov."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#outline",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#outline",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
-    "section": "",
-    "text": "What is forecasting?\nPrepare your data\nExplore your data\nForecast modelling\nEvaluating the model performances\nAdvance forecasting models\nOther forecasting models in family planning supply chains"
+    "title": "Home",
+    "section": "Outline",
+    "text": "Outline\n\nWhat is forecasting?\nPrepare your data\nExplore your data\nForecast modelling\nEvaluating the model performances\nAdvance forecasting models\nOther forecasting models in family planning supply chains"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#what-is-a-forecast",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#what-is-a-forecast",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "What is a FORECAST?",
     "text": "What is a FORECAST?\nAn estimation of the future based on all of the information available at the time when we generate the forecast;\n\nhistorical data,\nknowledge of any future events that might impact the forecasts."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#what-is-time-series-data",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#what-is-time-series-data",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "What is time series data?",
     "text": "What is time series data?\n\nTime series consist of sequences of observations collected over time.\nTime series forecasting is estimating how the sequence of observations will continue into the future."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#what-to-forecast",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#what-to-forecast",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "What to FORECAST?",
     "text": "What to FORECAST?\nUnderstanding needs! Identify decisions that need forecasting support!\n\nForecast variable/s\nTime granularity\nForecast horizon\nFrequency\nStructure/hierarchy"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#forecasting-workflow",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#forecasting-workflow",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Forecasting workflow",
     "text": "Forecasting workflow\n\nStep 1: Problem definition\nStep 2: Gathering information\nStep 3: Preliminary (exploratory) analysis\nStep 4: Choosing and fitting models\nStep 5: Evaluating and using a forecasting model"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#tidy-forecasting-workflow",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#tidy-forecasting-workflow",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Tidy forecasting workflow",
-    "text": "Tidy forecasting workflow\n\n\n\n\n\nRead more at Demand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa."
+    "text": "Tidy forecasting workflow\n\nRead more at Demand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#loading-libraries",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#loading-libraries",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Loading libraries",
     "text": "Loading libraries\nWe use the fpp3 package in this workshop, which provides all the necessary packages for data manipulation, plotting, and forecasting.\n\n# Define required packages\npackages &lt;- c(\"tidyverse\", \"fable\", \"tsibble\", \"feasts\", 'zoo')\n\n# Install missing packages\nmissing_packages &lt;- packages[!(packages %in% installed.packages()[,\"Package\"])]\nif(length(missing_packages)) {\n  suppressWarnings(suppressMessages(install.packages(missing_packages)))\n}\n\n# Load libraries quietly\nsuppressWarnings(suppressMessages({\n  library(tidyverse) # Data manipulation and plotting functions\n  library(fable) # Time series manipulation\n  library(tsibble) # Forecasting functions\n  library(feasts) # Time series graphics and statistics\n}))\n\nRead more at Forecasting: Principles and Practice (3rd ed) by Rob J Hyndman and George Athanasopoulos."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#preparing-the-data",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#preparing-the-data",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Preparing the data",
     "text": "Preparing the data\nIn this workshop, we are using tsibble objects. They provide a data infrastructure for tidy temporal data with wrangling tools, adapting the tidy data principles.\nIn tsibble:\n\nIndex: time information about the observation\nMeasured variable(s): numbers of interest\nKey variable(s): set of variables that define observational units over time\nIt works with tidyverse functions."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#read-csv-file",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#read-csv-file",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Read csv file",
     "text": "Read csv file\n\nmed_qty &lt;- read.csv('data/med_qty.csv')\nmed_qty |&gt; head(10)\n\n       date hub_id product_id quantity_issued\n1  2017 Jul  hub_4  product_1              60\n2  2017 Jul  hub_4  product_6            5200\n3  2017 Jul  hub_7  product_1               8\n4  2017 Jul  hub_7  product_5             120\n5  2017 Jul  hub_8  product_7              10\n6  2017 Jul hub_10  product_1             343\n7  2017 Jul hub_10  product_2              53\n8  2017 Jul hub_10  product_3              26\n9  2017 Jul hub_10  product_4            1710\n10 2017 Jul hub_10  product_5            1340\n\n\nDo you think the med_qty data set is a tidy data?"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#check-for-na-and-duplicates",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#check-for-na-and-duplicates",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Check for NA and duplicates",
     "text": "Check for NA and duplicates\n\n# check NAs\n\nanyNA(med_qty)\n\n[1] FALSE\n\n\n\n#check duplicates\n\nmed_qty |&gt;  \n  duplicated() |&gt;  \n  sum() \n\n[1] 0"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#create-tsibble",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#create-tsibble",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Create tsibble",
     "text": "Create tsibble\n\nmed_tsb &lt;- med_qty |&gt;  \n  mutate(date = yearmonth(date)) |&gt;  # convert chr to date format\n  as_tsibble(index = date, key = c(hub_id, product_id))\n\nmed_tsb \n\n# A tsibble: 6,745 x 4 [1M]\n# Key:       hub_id, product_id [133]\n       date hub_id product_id quantity_issued\n      &lt;mth&gt; &lt;chr&gt;  &lt;chr&gt;                &lt;dbl&gt;\n 1 2017 Aug hub_1  product_1              721\n 2 2017 Sep hub_1  product_1              795\n 3 2017 Oct hub_1  product_1             1720\n 4 2017 Nov hub_1  product_1              911\n 5 2017 Dec hub_1  product_1              314\n 6 2018 Jan hub_1  product_1             6913\n 7 2018 Feb hub_1  product_1             2988\n 8 2018 Mar hub_1  product_1             7120\n 9 2018 Apr hub_1  product_1             3122\n10 2018 May hub_1  product_1            11737\n# ℹ 6,735 more rows\n\n\n\nWhat is the temporal granularity of med_tsb?\nHow many time series do we have in med_tsb?"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Check temporal gaps (implicit missing values)",
     "text": "Check temporal gaps (implicit missing values)\n\nhas_gaps(med_tsb) |&gt; head(3) #check gaps\n\n# A tibble: 3 × 3\n  hub_id product_id .gaps\n  &lt;chr&gt;  &lt;chr&gt;      &lt;lgl&gt;\n1 hub_1  product_1  TRUE \n2 hub_1  product_2  TRUE \n3 hub_1  product_3  TRUE \n\nscan_gaps(med_tsb) |&gt; head(3) # show gaps\n\n# A tsibble: 3 x 3 [1M]\n# Key:       hub_id, product_id [1]\n  hub_id product_id     date\n  &lt;chr&gt;  &lt;chr&gt;         &lt;mth&gt;\n1 hub_1  product_1  2018 Jul\n2 hub_1  product_1  2018 Aug\n3 hub_1  product_1  2018 Sep\n\ncount_gaps(med_tsb) |&gt; head(3) # count gaps\n\n# A tibble: 3 × 5\n  hub_id product_id    .from      .to    .n\n  &lt;chr&gt;  &lt;chr&gt;         &lt;mth&gt;    &lt;mth&gt; &lt;int&gt;\n1 hub_1  product_1  2018 Jul 2021 Feb    32\n2 hub_1  product_1  2021 Jul 2022 Sep    15\n3 hub_1  product_2  2018 Sep 2018 Sep     1"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Check temporal gaps (implicit missing values)",
     "text": "Check temporal gaps (implicit missing values)\nIf there is any gap, then we fill it.\n\nmed_tsb |&gt; fill_gaps(quantity_issued=0L) # we can fill it with zero\n\n# A tsibble: 8,795 x 4 [1M]\n# Key:       hub_id, product_id [133]\n       date hub_id product_id quantity_issued\n      &lt;mth&gt; &lt;chr&gt;  &lt;chr&gt;                &lt;dbl&gt;\n 1 2017 Aug hub_1  product_1              721\n 2 2017 Sep hub_1  product_1              795\n 3 2017 Oct hub_1  product_1             1720\n 4 2017 Nov hub_1  product_1              911\n 5 2017 Dec hub_1  product_1              314\n 6 2018 Jan hub_1  product_1             6913\n 7 2018 Feb hub_1  product_1             2988\n 8 2018 Mar hub_1  product_1             7120\n 9 2018 Apr hub_1  product_1             3122\n10 2018 May hub_1  product_1            11737\n# ℹ 8,785 more rows"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Check temporal gaps (implicit missing values)",
     "text": "Check temporal gaps (implicit missing values)\nNote: Since the main focus of this study is to provide foundational knowledge on forecasting, we will filter out time series with many missing values and then fill the remaining gaps using na.interp() function (Read more).\n\nitem_ids &lt;- med_tsb |&gt; \n  count_gaps() |&gt; \n  group_by(hub_id, product_id) |&gt; \n  summarise(.n = max(.n), .groups = 'drop') |&gt; \n  filter(.n  &gt; 1) |&gt; \n  mutate(id = paste0(hub_id,'-',product_id)) |&gt; \n  pull(id) # filtering the item ids\n\nmed_tsb_filter &lt;- med_tsb |&gt; \n  mutate(id = paste0(hub_id,'-',product_id)) |&gt; \n  group_by(hub_id, product_id) |&gt;\n  mutate(num_observations = n()) |&gt; \n  filter(!id %in% item_ids & num_observations &gt;59) |&gt;   # we have cold starts and discontinuations. \n  fill_gaps(quantity_issued = 1e-6, .full = TRUE) |&gt;   # Replace NAs with a small value\n  select(-id, -num_observations) |&gt; \n  mutate(quantity_issued = if_else(is.na(quantity_issued), \n                                   exp(\n                                     forecast::na.interp(\n                                     ts(log(quantity_issued), frequency = 12))), \n                                   quantity_issued))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Data wrangaling using tsibble",
     "text": "Data wrangaling using tsibble\nWe can use the filter() function to select rows.\n\nmed_tsb |&gt; \n  filter(hub_id == 'hub_10') \n\n# A tsibble: 417 x 4 [1M]\n# Key:       hub_id, product_id [7]\n       date hub_id product_id quantity_issued\n      &lt;mth&gt; &lt;chr&gt;  &lt;chr&gt;                &lt;dbl&gt;\n 1 2017 Jul hub_10 product_1              343\n 2 2017 Aug hub_10 product_1               67\n 3 2017 Sep hub_10 product_1              127\n 4 2017 Oct hub_10 product_1              287\n 5 2017 Nov hub_10 product_1              759\n 6 2017 Dec hub_10 product_1              181\n 7 2018 Jan hub_10 product_1             7015\n 8 2018 Feb hub_10 product_1              840\n 9 2018 Mar hub_10 product_1             4111\n10 2018 Apr hub_10 product_1             1910\n# ℹ 407 more rows"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Data wrangaling using tsibble",
     "text": "Data wrangaling using tsibble\nWe can use the select() function to select columns.\n\nmed_tsb |&gt; \n  filter(hub_id == 'hub_10') |&gt; \n  select(date, product_id, quantity_issued)\n\n# A tsibble: 417 x 3 [1M]\n# Key:       product_id [7]\n       date product_id quantity_issued\n      &lt;mth&gt; &lt;chr&gt;                &lt;dbl&gt;\n 1 2017 Jul product_1              343\n 2 2017 Aug product_1               67\n 3 2017 Sep product_1              127\n 4 2017 Oct product_1              287\n 5 2017 Nov product_1              759\n 6 2017 Dec product_1              181\n 7 2018 Jan product_1             7015\n 8 2018 Feb product_1              840\n 9 2018 Mar product_1             4111\n10 2018 Apr product_1             1910\n# ℹ 407 more rows"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Data wrangaling using tsibble",
     "text": "Data wrangaling using tsibble\nWe can use group_by() function to group over keys. We can use the summarise() function to summarise over keys.\n\nmed_tsb |&gt; \n  group_by(product_id) |&gt; \n  summarise(total_quantity_issued = sum(quantity_issued), .groups = 'drop')\n\n# A tsibble: 471 x 3 [1M]\n# Key:       product_id [7]\n   product_id     date total_quantity_issued\n   &lt;chr&gt;         &lt;mth&gt;                 &lt;dbl&gt;\n 1 product_1  2017 Jul                   691\n 2 product_1  2017 Aug                 18855\n 3 product_1  2017 Sep                 21654\n 4 product_1  2017 Oct                 16456\n 5 product_1  2017 Nov                 19694\n 6 product_1  2017 Dec                 63107\n 7 product_1  2018 Jan                 66703\n 8 product_1  2018 Feb                 53012\n 9 product_1  2018 Mar                 82566\n10 product_1  2018 Apr                 56913\n# ℹ 461 more rows"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-3",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-3",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Data wrangaling using tsibble",
     "text": "Data wrangaling using tsibble\nWe can use the mutate() function to create new variables.\n\nmed_tsb |&gt; \n  mutate(quarter = yearquarter(date))\n\n# A tsibble: 6,745 x 5 [1M]\n# Key:       hub_id, product_id [133]\n       date hub_id product_id quantity_issued quarter\n      &lt;mth&gt; &lt;chr&gt;  &lt;chr&gt;                &lt;dbl&gt;   &lt;qtr&gt;\n 1 2017 Aug hub_1  product_1              721 2017 Q3\n 2 2017 Sep hub_1  product_1              795 2017 Q3\n 3 2017 Oct hub_1  product_1             1720 2017 Q4\n 4 2017 Nov hub_1  product_1              911 2017 Q4\n 5 2017 Dec hub_1  product_1              314 2017 Q4\n 6 2018 Jan hub_1  product_1             6913 2018 Q1\n 7 2018 Feb hub_1  product_1             2988 2018 Q1\n 8 2018 Mar hub_1  product_1             7120 2018 Q1\n 9 2018 Apr hub_1  product_1             3122 2018 Q2\n10 2018 May hub_1  product_1            11737 2018 Q2\n# ℹ 6,735 more rows"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-4",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-4",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Data wrangaling using tsibble",
     "text": "Data wrangaling using tsibble\nWe can use index_by() function to group over index We can use the summarise() function to summarise over index.\n\nmed_tsb |&gt; \n  mutate(quarter = yearquarter(date)) |&gt; \n  index_by(quarter) |&gt; \n  summarise(total_quantity_issues = sum(quantity_issued))\n\n# A tsibble: 24 x 2 [1Q]\n   quarter total_quantity_issues\n     &lt;qtr&gt;                 &lt;dbl&gt;\n 1 2017 Q3               2103843\n 2 2017 Q4               2811202\n 3 2018 Q1               2511488\n 4 2018 Q2               3433726\n 5 2018 Q3               1738860\n 6 2018 Q4               2934886\n 7 2019 Q1               2452192\n 8 2019 Q2               1640048\n 9 2019 Q3               2170015\n10 2019 Q4               3045525\n# ℹ 14 more rows"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#time-series-patterns",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#time-series-patterns",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Time series patterns",
     "text": "Time series patterns\n\nLevel: The level of a time series describes the center of the series.\nTrend: A trend describes predictable increases or decreases in the level of a series.\nSeasonal: Seasonality is a consistent pattern that repeats over a fixed cycle. pattern exists when a series is influenced by seasonal factors (e.g., the quarter of the year, the month, or day of the week).\nCyclic: A pattern exists when data exhibit rises and falls that are not of fixed period (duration usually of at least 2 years)."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#time-series-patterns-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#time-series-patterns-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Time series patterns",
-    "text": "Time series patterns\n\n\n\n\n\n\n\n\n\nRead more at Demand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa."
+    "text": "Time series patterns\n\nRead more at Demand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#additive-vs.-multiplicative-seasonality",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#additive-vs.-multiplicative-seasonality",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Additive vs. multiplicative seasonality",
-    "text": "Additive vs. multiplicative seasonality\n\n\n\n\n\n\n\n\n\n\nWhen we have multiplicative seasonality, we can use transformations to convert multiplicative seasonality into additive seasonality.\nIn this training, we are not discussing time series transformations. You can read more about it at Transformations and adjustments."
+    "text": "Additive vs. multiplicative seasonality\n\n\nWhen we have multiplicative seasonality, we can use transformations to convert multiplicative seasonality into additive seasonality.\nIn this training, we are not discussing time series transformations. You can read more about it at Transformations and adjustments."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#time-plots",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#time-plots",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Time plots",
     "text": "Time plots\nYou can create time plot using autoplot() function.\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_2') |&gt; \n  autoplot(quantity_issued) +\n  labs(\n    x = \"Date\",\n    y = \"Quantity Issued\"\n  ) +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#are-time-plots-best",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#are-time-plots-best",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Are time plots best?",
     "text": "Are time plots best?\n\nmed_tsb_filter |&gt; \n  mutate(id = paste0(hub_id, product_id)) |&gt; \n  ggplot(aes(x = date, y = quantity_issued, group = id)) +\n  geom_line() +\n  labs(\n    x = \"Date\",\n    y = \"Quantity Issued\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\",\n        panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-plots",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-plots",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Seasonal plots",
     "text": "Seasonal plots\n\nData plotted against the individual seasons in which the data were observed (In this case a “season” is a month).\nEnables the underlying seasonal pattern to be seen more clearly, and also allows any substantial departures from the seasonal pattern to be easily identified.\nYou can create seasonal plots using gg_season() function."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-plots-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-plots-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Seasonal plots",
     "text": "Seasonal plots\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt; \n  gg_season(quantity_issued, labels = \"both\") +\n  ylab(\"Quantity issued\") +\n  ggtitle(\"Seasonal plot\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-sub-series-plots",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-sub-series-plots",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Seasonal sub series plots",
     "text": "Seasonal sub series plots\n\nData for each season collected together in time plot as separate time series.\nEnables the underlying seasonal pattern to be seen clearly, and changes in seasonality over time to be visualized.\nYou can create seasonal sub series plots using gg_subseries() function."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-sub-series-plots-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-sub-series-plots-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Seasonal sub series plots",
     "text": "Seasonal sub series plots\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt; \n  gg_subseries(quantity_issued) +\n  ylab(\"Quantity issued\") +\n  ggtitle(\"Seasonal sub series plot\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 90, hjust = 1),\n        panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#strength-of-seasonality-and-trend",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#strength-of-seasonality-and-trend",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Strength of seasonality and trend",
     "text": "Strength of seasonality and trend\n\nWe used STL decomposition for additive decompositions.\nA multiplicative decomposition can be obtained by first taking logs of the data, then back-transforming the components.\nDecompositions that are between additive and multiplicative can be obtained using a Box-Cox transformation of the data.\nRead more at STL decomposition."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#strength-of-seasonality-and-trend-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#strength-of-seasonality-and-trend-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Strength of seasonality and trend",
     "text": "Strength of seasonality and trend\nSTL Decomposition\n\\[\ny_t = T_t + S_t + R_t\n\\]\nSeasonal Strength\n\\[\n\\max \\left( 0, 1 - \\frac{\\text{Var}(R_t)}{\\text{Var}(S_t + R_t)} \\right)\n\\]\nTrend Strength\n\\[\n\\max \\left( 0, 1 - \\frac{\\text{Var}(R_t)}{\\text{Var}(T_t + R_t)} \\right)\n\\]"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#feature-extraction-and-statistics",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#feature-extraction-and-statistics",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Feature extraction and statistics",
     "text": "Feature extraction and statistics\nWe can use features() function to extract the strength of trend and seasonality.\n\nmed_tsb_filter |&gt; \n  features(quantity_issued, feat_stl)\n\n# A tibble: 21 × 11\n   hub_id product_id trend_strength seasonal_strength_year seasonal_peak_year\n   &lt;chr&gt;  &lt;chr&gt;               &lt;dbl&gt;                  &lt;dbl&gt;              &lt;dbl&gt;\n 1 hub_1  product_2           0.261                 0.503                   6\n 2 hub_1  product_5           0.250                 0.438                   0\n 3 hub_10 product_5           0.366                 0.0911                  0\n 4 hub_11 product_2           0.624                 0.407                  11\n 5 hub_11 product_5           0.352                 0.244                   4\n 6 hub_11 product_7           0.181                 0.196                   7\n 7 hub_13 product_5           0.196                 0.402                   0\n 8 hub_14 product_5           0.595                 0.229                   9\n 9 hub_16 product_2           0.233                 0.238                   7\n10 hub_16 product_5           0.416                 0.272                   0\n# ℹ 11 more rows\n# ℹ 6 more variables: seasonal_trough_year &lt;dbl&gt;, spikiness &lt;dbl&gt;,\n#   linearity &lt;dbl&gt;, curvature &lt;dbl&gt;, stl_e_acf1 &lt;dbl&gt;, stl_e_acf10 &lt;dbl&gt;"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#feature-extraction-and-statistics-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#feature-extraction-and-statistics-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Feature extraction and statistics",
     "text": "Feature extraction and statistics\n\nmed_tsb_filter |&gt; \n  features(quantity_issued, feat_stl) |&gt; \n  ggplot(aes(x = trend_strength, y = seasonal_strength_year, shape = product_id)) +\n  geom_point(size = 2) + \n  ylab(\"Seasonal strength\") +\n  xlab(\"Trend strength\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#lag-plots-and-autocorrelation",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#lag-plots-and-autocorrelation",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Lag plots and autocorrelation",
     "text": "Lag plots and autocorrelation\n\nEach graph shows \\(y_t\\) plotted against \\(y_{t-k}\\) for different values of \\(k\\).\n\nThe autocorrelations are the correlations associated with these scatterplots: \\(\\text{Corr}(y_t, y_{t-k})\\)\nYou can create lag plots using gglag() function.\nThese values indicate the relationship between current and past observations in a time series."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#lag-plots-and-autocorrelation-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#lag-plots-and-autocorrelation-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Lag plots and autocorrelation",
     "text": "Lag plots and autocorrelation\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt;\n  gg_lag(quantity_issued, lags = 1:12, geom='point') +\n  ylab(\"Quantity issued\") +\n  xlab(\"Lag (Quantity issued, n)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 90, hjust = 1),\n         panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#autocorrelation",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#autocorrelation",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Autocorrelation",
     "text": "Autocorrelation\n\nAutocovariance and autocorrelation: measure linear relationship between lagged values of a time series y.\nWe denote the sample autocovariance at lag \\(k\\) by \\(c_k\\) and the sample autocorrelation at lag \\(k\\) by \\(r_k\\). Then, we define:\n\n\\(c_k = \\frac{1}{T} \\sum_{t=k+1}^{T} (y_t - \\bar{y})(y_{t-k} - \\bar{y})\\)\n\\(r_k = \\frac{c_k}{c_0}\\)\nwhere \\(c_0\\) is the variance of the time series.\n\n\\(r_1\\) indicates how successive values of \\(y\\) relate to each other.\n\\(r_2\\) indicates how \\(y\\) values two periods apart relate to each other.\n\\(r_k\\) is almost the same as the sample correlation between \\(y_t\\) and \\(y_{t-k}\\)."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#autocorrelation-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#autocorrelation-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Autocorrelation",
     "text": "Autocorrelation\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt; \n  ACF(quantity_issued, lag_max = 24)\n\n# A tsibble: 24 x 4 [1M]\n# Key:       hub_id, product_id [1]\n   hub_id product_id      lag      acf\n   &lt;chr&gt;  &lt;chr&gt;      &lt;cf_lag&gt;    &lt;dbl&gt;\n 1 hub_14 product_5        1M  0.681  \n 2 hub_14 product_5        2M  0.485  \n 3 hub_14 product_5        3M  0.320  \n 4 hub_14 product_5        4M  0.160  \n 5 hub_14 product_5        5M  0.195  \n 6 hub_14 product_5        6M  0.162  \n 7 hub_14 product_5        7M  0.0956 \n 8 hub_14 product_5        8M  0.0540 \n 9 hub_14 product_5        9M  0.00739\n10 hub_14 product_5       10M -0.0665 \n# ℹ 14 more rows"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#autocorrelation-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#autocorrelation-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Autocorrelation",
-    "text": "Autocorrelation\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt; \n  ACF(quantity_issued, lag_max = 36) |&gt; \n  autoplot() +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))\n\n\n\n\n\n\n\n\nWhat autocorrelation will tell us? Which key features could be highlighted by ACF?"
+    "text": "Autocorrelation\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt; \n  ACF(quantity_issued, lag_max = 36) |&gt; \n  autoplot() +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))\n\n\nWhat autocorrelation will tell us? Which key features could be highlighted by ACF?"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#autocorrelation-3",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#autocorrelation-3",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Autocorrelation",
     "text": "Autocorrelation\n\nWhen data have a trend, the autocorrelations for small lags tend to be large and positive.\nWhen data are seasonal, the autocorrelations will be larger at the seasonal lags (i.e., at multiples of the seasonal frequency)\nWhen data are trended and seasonal, you see a combination of these effects."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#naive",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#naive",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Naive",
     "text": "Naive\nSimplest forecasting method using last observation as forecast.\n\\(\\hat{y}_{t+h|t} = y_t\\)\nAssumptions\n\nNo systematic pattern in data\nRecent observations are most relevant\n\nStrengths & Weaknesses\n✓ Simple benchmark model\n✓ Requires no computation\n✗ Ignores all patterns\n✗ Poor for trending/seasonal data"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#naive-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#naive-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Naive",
     "text": "Naive\nWe use NAIVE() function and model() function to build the Naive model.\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(naive = NAIVE(quantity_issued)) |&gt; \n  forecast(h = 12) |&gt; \n  autoplot(med_tsb_filter |&gt; \n             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +\n  labs(y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-naive-snaive",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-naive-snaive",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Seasonal NAIVE (sNAIVE)",
     "text": "Seasonal NAIVE (sNAIVE)\n\\(y_{t+h \\mid t} = y_{t+h - m(k+1)}\\)\nWhere: \\(m\\) = seasonal period and \\(k = \\lfloor \\frac{h-1}{m} \\rfloor\\)\nAssumptions\n\nSeasonal pattern is stable\nNo trend present\n\nStrengths & Weaknesses\n✓ Handles strong seasonality\n✓ Simple interpretation\n✗ Fails with changing seasonality\n✗ Ignores non-seasonal patterns"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#snaive",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#snaive",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "sNaive",
     "text": "sNaive\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(snaive = SNAIVE(quantity_issued ~ lag(\"year\"))) |&gt; \n  forecast(h = 12) |&gt; \n  autoplot(med_tsb_filter |&gt; \n             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +\n  labs(y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#mean",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#mean",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Mean",
     "text": "Mean\nUses the historical average of all observations as forecast.\n\\(y_{t+h \\mid t} = \\bar{y} = \\frac{1}{t} \\sum_{i=1}^{t} y_i\\)\nWhere: \\(t\\) is the number of past observations used for the forecast.\nAssumptions\n\nSeries is stationary\nShort-term fluctuations are noise\n\nStrengths & Weaknesses\n✓ Effective noise reduction\n✓ Simple to implement\n✗ Ignores all patterns\n✗ Lags behind trends"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#mean-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#mean-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Mean",
     "text": "Mean\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(MEAN(quantity_issued ~ window(size = 3))) |&gt; \n  forecast(h = 12) |&gt; \n  autoplot(med_tsb_filter |&gt; \n             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +\n  labs(y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#arima",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#arima",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ARIMA",
     "text": "ARIMA\nCombines Autoregressive (AR) and Moving Average (MA) components with differencing.\n\nAR: autoregressive (lagged observations as inputs)\nI: integrated (differencing to make series stationary)\nMA: moving average (lagged errors as inputs)\n\n\nThe ARIMA model is given by:\n\\((1 - \\phi_1 B - \\dots - \\phi_p B^p)(1 - B)^d y_t = c + (1 + \\theta_1 B + \\dots + \\theta_q B^q) \\epsilon_t\\)\nWhere: \\(B\\): Backshift operator, \\(\\phi\\): AR coefficients, \\(\\theta\\): MA coefficients, \\(d\\): Differencing order, \\(p\\): AR order, \\(q\\): MA order and \\(\\epsilon_t\\): White noise"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#arima-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#arima-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ARIMA",
     "text": "ARIMA\nAssumptions\n\nSeries is stationary\nLinear relationship between past values and errors\nWhite noise errors\nNo missing values in series\n\nStrengths & Weaknesses\n✓ Flexible for various time series patterns\n✓ Perform well for short term horizons\n✗ Requires stationarity for optimal performance\n✗ The parameters are often not easily interpretable in terms of trend or seasonality"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#arima-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#arima-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ARIMA",
     "text": "ARIMA\nA stationary series is:\n\nroughly horizontal\n\nconstant variance\n\nno patterns predictable in the long-term"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-arima-models",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#seasonal-arima-models",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Seasonal ARIMA models",
     "text": "Seasonal ARIMA models\n\n\n\nARIMA\n\\(~\\underbrace{(p, d, q)}\\)\n\\(\\underbrace{(P, D, Q)_{m}}\\)\n\n\n\n\n\n\\({\\uparrow}\\)\n\\({\\uparrow}\\)\n\n\n\nNon-seasonal part\nSeasonal part of\n\n\n\nof the model\nof the model\n\n\n\n\n\\(m\\): number of observations per year.\n\\(d\\): first differences, \\(D\\): seasonal differences\n\\(p\\): AR lags, \\(q\\): MA lags\n\\(P\\): seasonal AR lags, \\(Q\\): seasonal MA lags\n\nSeasonal and non-seasonal terms combine multiplicatively."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#arima-automatic-modelling",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#arima-automatic-modelling",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ARIMA automatic modelling",
     "text": "ARIMA automatic modelling\n\nPlot the data. Identify any unusual observations.\nIf necessary, transform the data (e.g., Box-Cox transformation) to stabilize the variance.\nUse ARIMA() to automatically select a model.\nCheck the residuals from your chosen model and if they do not look like white noise, try a modified model.\nOnce the residuals look like white noise, calculate forecasts."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#arima-automatic-modelling-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#arima-automatic-modelling-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ARIMA automatic modelling",
     "text": "ARIMA automatic modelling\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(ARIMA(quantity_issued)) |&gt; \n  forecast(h = 12) |&gt; \n  autoplot(med_tsb_filter |&gt; \n             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +\n  labs(y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#ets",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#ets",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ETS",
     "text": "ETS\nETS stands for Exponential Smoothing and is based on a state space framework that decomposes a time series into three components:\n\n\n\n\n\n\n\n\n\nGeneral Notation\n\nE T S\nExponenTial Smoothing\n\n\n\n\n\n↗\n↑\n↖\n\n\n\nError\nTrend\nSeason\n\n\n\n\nError: Additive (\"A\") or multiplicative (\"M\")\nTrend: None (\"N\"), additive (\"A\"), multiplicative (\"M\"), or damped (\"Ad\" or \"Md\").\nSeasonality: None (\"N\"), additive (\"A\") or multiplicative (\"M\")\n\n For example, ETS(A,N,N) is the simple exponential smoothing model (no trend or seasonality) with additive errors."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#ets-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#ets-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ETS",
     "text": "ETS\nHow do we combine these elements?\nAdditively?\n\\(y_t = \\ell_{t-1} + b_{t-1} + s_{t-m} + \\varepsilon_t\\)\n\nMultiplicatively?\n\\(y_t = \\ell_{t-1}b_{t-1}s_{t-m}(1 + \\varepsilon_t)\\)\n\nPerhaps a mix of both?\n\\(y_t = (\\ell_{t-1} + b_{t-1}) s_{t-m} + \\varepsilon_t\\)"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#ets-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#ets-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ETS",
     "text": "ETS\nHow do the level, trend and seasonal components evolve over time?"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#ets-3",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#ets-3",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ETS",
     "text": "ETS\nAssumptions\n\nDecomposable patterns\nRecent observations more important\nConsistent error structure (additive/multiplicative)\n\nStrengths & Weaknesses\n✓ They can be adapted to various data characteristics with different error, trend, and seasonal formulations\n✓ Often very effective when the underlying components are stable\n✗ Parameter estimates (including smoothing parameters and initial states) can affect the forecasts\n✗ SMay struggle to capture sudden shifts or non-standard patterns if the smoothing parameters are constant"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#ets-automatic-modelling",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#ets-automatic-modelling",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ETS automatic modelling",
     "text": "ETS automatic modelling\n\nApply each model that is appropriate to the data.\nOptimize parameters and initial values using MLE (or some other criterion).\nSelect best method using AICc.\nUse ETS() to automatically select a model.\nProduce forecasts using best method."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#ets-automatic-modelling-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#ets-automatic-modelling-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "ETS automatic modelling",
     "text": "ETS automatic modelling\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(ETS(quantity_issued)) |&gt; \n  forecast(h = 12) |&gt; \n  autoplot(med_tsb_filter |&gt; \n             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +\n  labs(y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#model-fitting-in-fable",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#model-fitting-in-fable",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Model fitting in Fable",
     "text": "Model fitting in Fable\n\nThe model() function trains models on data.\nIt returns a mable object.\nA mable is a model table, each cell corresponds to a fitted model.\n\n\n# Fit the models\n\nfit_all &lt;- med_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(\n    naive = NAIVE(quantity_issued),\n    snaive = SNAIVE(quantity_issued ~ lag('year')),\n    mean = MEAN(quantity_issued ~ window(size = 3)),\n    arima = ARIMA(quantity_issued),\n    ets = ETS(quantity_issued)\n    )\n\nfit_all\n\n# A mable: 1 x 7\n# Key:     hub_id, product_id [1]\n  hub_id product_id   naive   snaive    mean                     arima\n  &lt;chr&gt;  &lt;chr&gt;      &lt;model&gt;  &lt;model&gt; &lt;model&gt;                   &lt;model&gt;\n1 hub_1  product_5  &lt;NAIVE&gt; &lt;SNAIVE&gt;  &lt;MEAN&gt; &lt;ARIMA(0,1,1)(0,0,2)[12]&gt;\n# ℹ 1 more variable: ets &lt;model&gt;"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#extract-information-from-mable",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#extract-information-from-mable",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Extract information from mable",
     "text": "Extract information from mable\n\nfit_all  |&gt;  select(snaive) |&gt;  report()\nfit_all |&gt;  tidy()\nfit_all  |&gt;  glance()\n\n\nThe report() function gives a formatted model-specific display.\nThe tidy() function is used to extract the coefficients from the models.\nWe can extract information about some specific model using the filter() and select()functions."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#producing-forecasts",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#producing-forecasts",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Producing forecasts",
     "text": "Producing forecasts\n\nThe forecast() function is used to produce forecasts from estimated models.\nh can be specified with:\n\na number (the number of future observations)\nnatural language (the length of time to predict)\nprovide a dataset of future time periods"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#producing-forecasts-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#producing-forecasts-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Producing forecasts",
     "text": "Producing forecasts\n\nfit_all_fc &lt;- fit_all |&gt; \n  forecast(h = 'year')\n\n#h = \"year\" is equivalent to setting h = 12.\n\nfit_all_fc\n\n# A fable: 60 x 6 [1M]\n# Key:     hub_id, product_id, .model [5]\n   hub_id product_id .model     date\n   &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;     &lt;mth&gt;\n 1 hub_1  product_5  naive  2023 Jul\n 2 hub_1  product_5  naive  2023 Aug\n 3 hub_1  product_5  naive  2023 Sep\n 4 hub_1  product_5  naive  2023 Oct\n 5 hub_1  product_5  naive  2023 Nov\n 6 hub_1  product_5  naive  2023 Dec\n 7 hub_1  product_5  naive  2024 Jan\n 8 hub_1  product_5  naive  2024 Feb\n 9 hub_1  product_5  naive  2024 Mar\n10 hub_1  product_5  naive  2024 Apr\n# ℹ 50 more rows\n# ℹ 2 more variables: quantity_issued &lt;dist&gt;, .mean &lt;dbl&gt;"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#visualising-forecasts",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#visualising-forecasts",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Visualising forecasts",
     "text": "Visualising forecasts\n\nfit_all_fc |&gt; \n  autoplot(level = NULL) +\n  autolayer(med_tsb_filter |&gt; \n              filter_index(\"2022 JAn\" ~ .) |&gt; \n              filter(hub_id == 'hub_1' & product_id == 'product_5'), color = 'black') +\n  labs(title = \"Forecasts for monthly quantity issued\", y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA)) +\n  guides(colour=guide_legend(title=\"Forecast\"))"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#what-is-wrong-with-point-forecasts",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#what-is-wrong-with-point-forecasts",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "What is wrong with point forecasts?",
     "text": "What is wrong with point forecasts?\nA point forecast is a single-value prediction representing the most likely future outcome, based on current data and models.\nThe disadvantage of point forecast;\n✗ It ignores additional information in future.\n✗ It does not explain uncertainties around future.\n✗ It can not deal with assymmetric."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Types of probabilistic forecasts",
     "text": "Types of probabilistic forecasts\nInterval forecasts: A prediction interval is an interval within which power generation may lie, with a certain probability."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Types of probabilistic forecasts",
     "text": "Types of probabilistic forecasts\nQuantile forecasts: A quantile forecast provides a value that the future observation is expected to be below with a specified probability."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Types of probabilistic forecasts",
     "text": "Types of probabilistic forecasts\nDistribution forecasts: A comprehensive probabilistic forecast capturing the full range of potential outcomes across all time horizons."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-3",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-3",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Types of probabilistic forecasts",
     "text": "Types of probabilistic forecasts\nScenario forecasts: A spectrum of potential futures derived from probabilistic modeling to inform decision- making under uncertainty."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#forecast-distributions-from-bootstrapping",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#forecast-distributions-from-bootstrapping",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Forecast distributions from bootstrapping",
     "text": "Forecast distributions from bootstrapping\nWhen a normal distribution for the residuals is an unreasonable assumption, one alternative is to use bootstrapping, which only assumes that the residuals are uncorrelated with constant variance.\n\nA one-step forecast error is defined as\n\n\\(e_t = y_t - \\hat{y}_{t|t-1}\\), \\(y_t = \\hat{y}_{t|t-1} + e_t\\)\n\nSo we can simulate the next observation of a time series using\n\n\\(y_{T+1} = \\hat{y}_{T+1|T} + e_{T+1}\\)\n\nAdding the new simulated observation to our data set, we can repeat the process to obtain\n\n\\(y_{T+2} = \\hat{y}_{T+2|T+1} + e_{T+2}\\)"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#generate-different-futures-forecast",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#generate-different-futures-forecast",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Generate different futures forecast",
     "text": "Generate different futures forecast\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(snaive = SNAIVE(quantity_issued ~ lag(\"year\"))) |&gt; \n  generate(h = 12, bootstrap = TRUE, times = 5)"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#generate-probabilistic-forecast",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#generate-probabilistic-forecast",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Generate probabilistic forecast",
     "text": "Generate probabilistic forecast\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(snaive = SNAIVE(quantity_issued ~ lag(\"year\"))) |&gt; \n  forecast(h = 12, bootstrap = TRUE, times = 1000)\n\n# A fable: 12 x 6 [1M]\n# Key:     hub_id, product_id, .model [1]\n   hub_id product_id .model     date quantity_issued  .mean\n   &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;     &lt;mth&gt;          &lt;dist&gt;  &lt;dbl&gt;\n 1 hub_1  product_5  snaive 2023 Jul    sample[1000]  3790.\n 2 hub_1  product_5  snaive 2023 Aug    sample[1000] 32090.\n 3 hub_1  product_5  snaive 2023 Sep    sample[1000] 13039.\n 4 hub_1  product_5  snaive 2023 Oct    sample[1000] 13203.\n 5 hub_1  product_5  snaive 2023 Nov    sample[1000] 28567.\n 6 hub_1  product_5  snaive 2023 Dec    sample[1000] 26470.\n 7 hub_1  product_5  snaive 2024 Jan    sample[1000] 11766.\n 8 hub_1  product_5  snaive 2024 Feb    sample[1000] 25393.\n 9 hub_1  product_5  snaive 2024 Mar    sample[1000] 11540.\n10 hub_1  product_5  snaive 2024 Apr    sample[1000] 11942.\n11 hub_1  product_5  snaive 2024 May    sample[1000] 16975.\n12 hub_1  product_5  snaive 2024 Jun    sample[1000]  5496."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#prediction-intervals",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#prediction-intervals",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Prediction intervals",
     "text": "Prediction intervals\nForecast intervals can be extracted using the hilo() function.\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(snaive = SNAIVE(quantity_issued ~ lag(\"year\"))) |&gt; \n  forecast(h = 12, bootstrap = TRUE, times = 1000) |&gt; \n  hilo(level = 75) |&gt; \n  unpack_hilo(\"75%\")\n\n# A tsibble: 12 x 8 [1M]\n# Key:       hub_id, product_id, .model [1]\n   hub_id product_id .model     date quantity_issued  .mean `75%_lower`\n   &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;     &lt;mth&gt;          &lt;dist&gt;  &lt;dbl&gt;       &lt;dbl&gt;\n 1 hub_1  product_5  snaive 2023 Jul    sample[1000]  3509.     -8015. \n 2 hub_1  product_5  snaive 2023 Aug    sample[1000] 32690.     20230. \n 3 hub_1  product_5  snaive 2023 Sep    sample[1000] 12713.       850. \n 4 hub_1  product_5  snaive 2023 Oct    sample[1000] 13433.      1624. \n 5 hub_1  product_5  snaive 2023 Nov    sample[1000] 29074.     16981. \n 6 hub_1  product_5  snaive 2023 Dec    sample[1000] 25767.     14190. \n 7 hub_1  product_5  snaive 2024 Jan    sample[1000] 11377.       -48.1\n 8 hub_1  product_5  snaive 2024 Feb    sample[1000] 25310.     13406. \n 9 hub_1  product_5  snaive 2024 Mar    sample[1000] 11876.      -410. \n10 hub_1  product_5  snaive 2024 Apr    sample[1000] 12137.       -44.1\n11 hub_1  product_5  snaive 2024 May    sample[1000] 16901.      4829. \n12 hub_1  product_5  snaive 2024 Jun    sample[1000]  5407.     -6448. \n# ℹ 1 more variable: `75%_upper` &lt;dbl&gt;"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#forecast-accuracy-evaluation-using-test-sets",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#forecast-accuracy-evaluation-using-test-sets",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Forecast accuracy evaluation using test sets",
     "text": "Forecast accuracy evaluation using test sets\n\nWe mimic the real life situation\nWe pretend we don’t know some part of data (new data)\nIt must not be used for any aspect of model training\nForecast accuracy is computed only based on the test set\n\nTraining and test sets"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating point forecast accuracy",
     "text": "Evaluating point forecast accuracy\n\nIn order to evaluate the performance of a forecasting model, we compute its forecast accuracy.\nForecast accuracy is compared by measuring errors based on the test set.\nIdeally it should allow comparing benefits from improved accuracy with the cost of obtaining the improvement."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating point forecast accuracy",
     "text": "Evaluating point forecast accuracy\nForecast Error\n\\(e_{T+h} = y_{T+h} - \\hat{y}_{T+h\\mid T}\\)\nwhere\n- \\(y_{T+h}\\) is the \\((T+h)^\\text{th}\\) observation \\((h=1,\\dots,H)\\), and\n- \\(\\hat{y}_{T+h\\mid T}\\) is the forecast based on data up to time \\(T\\).\n\nRead more on How to choose appropriate error measure by Ivan Svetunkov."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating point forecast accuracy",
     "text": "Evaluating point forecast accuracy\n\n\n\n\n\n\n\n\nMeasure\nFormula\nNotes\n\n\n\n\nMAE  (Mean Absolute Error)\n\\(\\text{MAE} = \\text{mean}(|e_{T+h}|)\\)\nScale dependent\n\n\nMSE  (Mean Squared Error)\n\\(\\text{MSE} = \\text{mean}(e_{T+h}^2)\\)\nScale dependent\n\n\nMAPE  (Mean Absolute Percentage Error)\n\\(\\text{MAPE} = 100\\,\\text{mean}(|e_{T+h}|/|y_{T+h}|)\\)\nScale independent; use if \\(y_t \\gg 0\\) and \\(y\\) has a natural zero\n\n\nRMSE  (Root Mean Squared Error)\n\\(\\text{RMSE} = \\sqrt{\\text{mean}(e_{T+h}^2)}\\)\nScale dependent"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-3",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-3",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating point forecast accuracy",
     "text": "Evaluating point forecast accuracy\n\n\n\n\n\n\n\n\nMeasure\nFormula\nNotes\n\n\n\n\nMASE  (Mean Absolute Scaled Error)\n\\(\\text{MASE} = \\text{mean}(|e_{T+h}|/Q)\\)\nNon-seasonal: \\(Q = \\frac{1}{T-1}\\sum_{t=2}^T |y_t-y_{t-1}|\\)  Seasonal: \\(Q = \\frac{1}{T-m}\\sum_{t=m+1}^T |y_t-y_{t-m}|\\), where \\(m\\) is the seasonal frequency\n\n\nRMSSE  (Root Mean Squared Scaled Error)\n\\(\\text{RMSSE} = \\sqrt{\\text{mean}(e_{T+h}^2/Q)}\\)\nNon-seasonal: \\(Q = \\frac{1}{T-1}\\sum_{t=2}^T (y_t-y_{t-1})^2\\)  Seasonal: \\(Q = \\frac{1}{T-m}\\sum_{t=m+1}^T (y_t-y_{t-m})^2\\), where \\(m\\) is the seasonal frequency"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-4",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-4",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating point forecast accuracy",
     "text": "Evaluating point forecast accuracy\nCreate train and test sets.\n\nf_horizon &lt;- 12 # forecast horizon\n\ntrain &lt;- med_tsb_filter |&gt; # create train set\n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt; \n  filter_index(. ~ '2022 June')\n\nfit_all &lt;- train |&gt; # model fitting\n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(\n    naive = NAIVE(quantity_issued),\n    snaive = SNAIVE(quantity_issued ~ lag('year')),\n    mean = MEAN(quantity_issued ~ window(size = 3)),\n    arima = ARIMA(quantity_issued),\n    ets = ETS(quantity_issued)\n    )\n\nfit_all_fc &lt;- fit_all |&gt; # forecasting\n  forecast(h = f_horizon)"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-5",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-5",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating point forecast accuracy",
     "text": "Evaluating point forecast accuracy\n\nfit_all_fc |&gt; \n  accuracy(med_tsb_filter |&gt;\n             filter(hub_id == 'hub_1' & product_id == 'product_5'),\n           measures = list(point_accuracy_measures))\n\n# A tibble: 5 × 12\n  .model hub_id product_id .type     ME   RMSE    MAE    MPE  MAPE  MASE RMSSE\n  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 arima  hub_1  product_5  Test   5787. 10679.  8732.   5.08  59.3  1.23  1.21\n2 ets    hub_1  product_5  Test   5400. 11163.  8681.   5.33  57.0  1.23  1.27\n3 mean   hub_1  product_5  Test   8568. 12274.  9664.  29.9   54.3  1.37  1.39\n4 naive  hub_1  product_5  Test  -3627.  9508.  8803. -76.1   94.1  1.24  1.08\n5 snaive hub_1  product_5  Test   5237. 12571. 11346.  -1.06  85.6  1.60  1.43\n# ℹ 1 more variable: ACF1 &lt;dbl&gt;"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating probabilistic forecast accuracy",
     "text": "Evaluating probabilistic forecast accuracy\nCoverage\n\nMeasures how often the true value falls within a prediction interval\nTypically assessed for specific confidence levels (e.g., 95% interval)\n\nExample: A 95% prediction interval should contain the true value 95% of the time."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating probabilistic forecast accuracy",
     "text": "Evaluating probabilistic forecast accuracy\nSharpness\n\nRefers to the width of prediction intervals\nMeasures how precise or focused the forecast is\n\nExample: A forecast predicting monthly sales qty between 2500-5000 is sharper than 500-10000."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating probabilistic forecast accuracy",
     "text": "Evaluating probabilistic forecast accuracy\nQuantile score/ Pin ball loss\n\nAssesses entire prediction interval, not just point forecast\nPenalizes too narrow and too wide intervals\nInterpretation: Lower values indicate better calibrated intervals\n\n\\[\nQ_{p,t} =\n\\begin{cases}\n2(1 - p)(f_{p,t} - y_t), & \\text{if } y_t &lt; f_{p,t}, \\\\[1mm]\n2p(y_t - f_{p,t}),       & \\text{if } y_t \\geq f_{p,t}.\n\\end{cases}\n\\]"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-3",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-3",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating probabilistic forecast accuracy",
     "text": "Evaluating probabilistic forecast accuracy\nCRPS (Continuous Ranked Probability Score)\n\nProper scoring rule\nMeasures accuracy of full predictive distribution\nGeneralizes absolute error to probabilistic forecasts\nInterpretation: Lower CRPS = better forecast\nAdvantage: Sensitive to distance, rewards sharp and calibrated forecasts\n\n\\(\\large \\text{CRPS} = \\text{mean}(p_j),\\)\nwhere\n\\(p_j = \\int_{-\\infty}^{\\infty} \\left(G_j(x) - F_j(x)\\right)^2dx,\\)"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-4",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-4",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating probabilistic forecast accuracy",
     "text": "Evaluating probabilistic forecast accuracy\nCRPS (Continuous Ranked Probability Score)"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-5",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-5",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Evaluating probabilistic forecast accuracy",
     "text": "Evaluating probabilistic forecast accuracy\n\nfit_all_fc |&gt; \n  accuracy(med_tsb_filter |&gt;\n             filter(hub_id == 'hub_1' & product_id == 'product_5'),\n           measures = list(distribution_accuracy_measures)) |&gt; \n  select(-percentile)\n\n# A tibble: 5 × 5\n  .model hub_id product_id .type  CRPS\n  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;\n1 arima  hub_1  product_5  Test  6311.\n2 ets    hub_1  product_5  Test  6648.\n3 mean   hub_1  product_5  Test  7081.\n4 naive  hub_1  product_5  Test  8034.\n5 snaive hub_1  product_5  Test  7823."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#feature-engineering",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#feature-engineering",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Feature engineering",
     "text": "Feature engineering\nIn this training, we only do a basic feature engineering.\n\n# Load data\nfrom google.colab import files\nuploaded = files.upload()\ndf = pd.read_csv('med_tsb_filter.csv')\n\n# Make the yearmonth as date format\ndf['date'] = pd.to_datetime(df['date']) + pd.offsets.MonthEnd(0)\n\n# Feature Engineering\ndf['month'] = df['date'].dt.month  # create month feature\n\n# categorical encoding\nenc = OrdinalEncoder()\ndf[['hub_id_cat', 'product_id_cat']] = enc.fit_transform(df[['hub_id', 'product_id']])\n\n# Create unique identifier for series\ndf['unique_id'] = df['hub_id'] + '_' + df['product_id']"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#feature-engineering-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#feature-engineering-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Feature engineering",
     "text": "Feature engineering\n\n# Create series and exogenous data\nseries = df[['date', 'unique_id', 'quantity_issued']]\nexog = df[['date', 'unique_id', 'month', 'hub_id_cat', 'product_id_cat']]\n\n# Transform series and exog to dictionaries\n\nseries_dict = series_long_to_dict(\n    data      = series,\n    series_id = 'unique_id',\n    index     = 'date',\n    values    = 'quantity_issued',\n    freq      = 'M'\n)\n\nexog_dict = exog_long_to_dict(\n    data      = exog,\n    series_id = 'unique_id',\n    index     = 'date',\n    freq      = 'M'\n)"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#feature-engineering-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#feature-engineering-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Feature engineering",
     "text": "Feature engineering\n\n# Partition data in train and test\nend_train = '2022-06-30'\nstart_test = pd.to_datetime(end_train) + pd.DateOffset(months=1)  # Add 1 month\n\nseries_dict_train = {k: v.loc[:end_train] for k, v in series_dict.items()}\nexog_dict_train = {k: v.loc[:end_train] for k, v in exog_dict.items()}\nseries_dict_test = {k: v.loc[start_test:] for k, v in series_dict.items()}\nexog_dict_test = {k: v.loc[start_test:] for k, v in exog_dict.items()}"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#xgboost",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#xgboost",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "XGBoost",
-    "text": "XGBoost\nExtreme Gradient Boosting (XGBoost) is a scalable tree-based gradient boosting machine learning algorithm.\n\\(\\hat{y}_{t+h|t} = \\sum_{k=1}^K f_k(\\mathbf{x}_t), \\quad f_k \\in \\mathcal{F}\\)\nWhere: \\(K\\) = number of trees, \\(f_k\\) = tree function, \\(\\mathbf{x}_t\\) = feature vector (lags, calendar features, etc.)\n\n\n\nsource: Rui Guo et al."
+    "text": "XGBoost\nExtreme Gradient Boosting (XGBoost) is a scalable tree-based gradient boosting machine learning algorithm.\n\\(\\hat{y}_{t+h|t} = \\sum_{k=1}^K f_k(\\mathbf{x}_t), \\quad f_k \\in \\mathcal{F}\\)\nWhere: \\(K\\) = number of trees, \\(f_k\\) = tree function, \\(\\mathbf{x}_t\\) = feature vector (lags, calendar features, etc.)\n\nsource: Rui Guo et al."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "XGBoost",
     "text": "XGBoost\nAssumptions\n\nPredictive patterns can be captured through feature engineering\nRelationships between features and target are stable\nNo strong temporal dependencies beyond engineered features\n\nStrengths & Weaknesses\n✓ Handles non-linear relationships well\n✓ Provides feature importance metrics\n✗ Requires careful parameter tuning\n✗ Less interpretable than linear models"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "XGBoost",
     "text": "XGBoost\n\n# Fit xgboost forecaster\nregressor_xgb = XGBRegressor(tree_method = 'hist',\n                             enable_categorical = True)\n\nforecaster_xgb = ForecasterRecursiveMultiSeries(\n                 regressor          = regressor_xgb,\n                 transformer_series = None,\n                 lags               = 4,\n                 dropna_from_series = False\n             )\n\nforecaster_xgb.fit(series=series_dict_train, exog=exog_dict_train, suppress_warnings=True)\n\nforecaster_xgb"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-3",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-3",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "XGBoost",
     "text": "XGBoost\n\n# Feature importance plot for XGB\nplt.figure(figsize=(10, 6))\nfeat_xgb = forecaster_xgb.get_feature_importances()\nsns.barplot(x='importance', y='feature', data=feat_xgb.sort_values('importance', ascending=False).head(10))\nplt.title('XGBoost Feature Importance')\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-4",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-4",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "XGBoost",
     "text": "XGBoost\n\n# XGB predictions and plot\nboot = 100\npredictions_xgb = forecaster_xgb.predict_bootstrapping(steps=12, exog=exog_dict_test, n_boot=boot)\n\n# Create prediction DF and plot example series\nexample_series = list(series_dict_test.keys())[2]\nxgb_pred_test = predictions_xgb[example_series].copy()\n\n# Calculate statistics\nmean_pred = xgb_pred_test.mean(axis=1)\nlower_pred = xgb_pred_test.quantile(0.025, axis=1)\nupper_pred = xgb_pred_test.quantile(0.975, axis=1)"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-5",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-5",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "XGBoost",
     "text": "XGBoost\n\n# Plotting\nplt.figure(figsize=(12, 6))\nplt.plot(series_dict_test[example_series], label='Actual', color='black')\nplt.plot(mean_pred, label='XGB Prediction', color='blue')\nplt.fill_between(mean_pred.index, \n                 lower_pred, \n                 upper_pred,\n                 color='blue', alpha=0.2)\nplt.title('XGBoost Forecast with 95% Prediction Intervals')\nplt.legend()\nplt.show()"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-6",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#xgboost-6",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "XGBoost",
     "text": "XGBoost\n\n# Create prediciton df\n\npred_id = list(predictions_xgb.keys())\n\n# Create an empty DataFrame\nxgb_pred = pd.DataFrame(columns=['date', 'unique_id', 'model'] + [f'X_{i}' for i in range(boot)])\n\nfor i in pred_id:\n    xgb_pred_test = predictions_xgb[i]\n    xgb_pred_test = xgb_pred_test.reset_index()\n    xgb_pred_test.columns = ['date'] + [f'X_{i}' for i in range(boot)]\n    xgb_pred_test['unique_id'] = i\n    xgb_pred_test['model'] = 'xgb'\n    xgb_pred = pd.concat([xgb_pred, xgb_pred_test])\n\nxgb_pred.head()"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "LightGBM",
-    "text": "LightGBM\nLight Gradient Boosting Machine (LightGBM) uses leaf-wise tree growth for efficiency whereas other boosting methods divide the tree level‐wise.\n\n\n\nsource: Sheng Dong et al."
+    "text": "LightGBM\nLight Gradient Boosting Machine (LightGBM) uses leaf-wise tree growth for efficiency whereas other boosting methods divide the tree level‐wise.\n\nsource: Sheng Dong et al."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "LightGBM",
     "text": "LightGBM\nAssumptions\n\nSimilar to XGBoost but more efficient with large datasets\nHandles categorical features natively\n\nStrengths & Weaknesses\n✓ Faster training speed\n✓ Lower memory usage\n✗ Sensitive to small datasets\n✗ May overfit with noisy data"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "LightGBM",
     "text": "LightGBM\n\n# Fit lightgbm forecaster\n\nregressor_lgbm = LGBMRegressor(\n                boosting_type = 'gbdt',\n                metric = 'mae',\n                learning_rate = 0.1,\n                num_iterations = 200,\n                n_estimators = 100,\n                objective = 'poisson')\n\nforecaster_lgbm = ForecasterRecursiveMultiSeries(\n                 regressor          = regressor_lgbm, \n                 transformer_series = None,\n                 lags               = 4,  \n                 dropna_from_series = False\n             )\n\nforecaster_lgbm.fit(series=series_dict_train, exog=exog_dict_train, suppress_warnings=True)\n\nforecaster_lgbm"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-3",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-3",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "LightGBM",
     "text": "LightGBM\n\n# Feature importance plot for LGBM\nplt.figure(figsize=(10, 6))\nfeat_lgbm = forecaster_lgbm.get_feature_importances()\nsns.barplot(x='importance', y='feature', data=feat_lgbm.sort_values('importance', ascending=False).head(10))\nplt.title('LightGBM Feature Importance')\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-4",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-4",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "LightGBM",
     "text": "LightGBM\n\n# LGBM predictions and plot\nboot = 100\npredictions_lgbm = forecaster_lgbm.predict_bootstrapping(steps=12, exog=exog_dict_test, n_boot=boot)\n\n# Create prediction DF and plot example series\nexample_series = list(series_dict_test.keys())[2]\nlgbm_pred_test = predictions_lgbm[example_series].copy()\n\n# Calculate statistics\nmean_pred = lgbm_pred_test.mean(axis=1)\nlower_pred = lgbm_pred_test.quantile(0.025, axis=1)\nupper_pred = lgbm_pred_test.quantile(0.975, axis=1)"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-5",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-5",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "LightGBM",
     "text": "LightGBM\n\n# Plotting\nplt.figure(figsize=(12, 6))\nplt.plot(series_dict_test[example_series], label='Actual', color='black')\nplt.plot(mean_pred, label='LGBM Prediction', color='blue')\nplt.fill_between(mean_pred.index, \n                 lower_pred, \n                 upper_pred,\n                 color='blue', alpha=0.2)\nplt.title('LGBM Forecast with 95% Prediction Intervals')\nplt.legend()\nplt.show()"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-6",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#lightgbm-6",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "LightGBM",
     "text": "LightGBM\n\n# Create prediciton df\n\npred_id = list(predictions_lgbm.keys())\n\n# Create an empty DataFrame\nlgbm_pred = pd.DataFrame(columns=['date', 'unique_id', 'model'] + [f'X_{i}' for i in range(boot)])\n\nfor i in pred_id:\n    lgbm_pred_test = predictions_lgbm[i]\n    lgbm_pred_test = lgbm_pred_test.reset_index()\n    lgbm_pred_test.columns = ['date'] + [f'X_{i}' for i in range(boot)]\n    lgbm_pred_test['unique_id'] = i\n    lgbm_pred_test['model'] = 'lgbm'\n    lgbm_pred = pd.concat([lgbm_pred, lgbm_pred_test])\n\nlgbm_pred.head()"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#model-evaluation",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#model-evaluation",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Model evaluation",
     "text": "Model evaluation\n\n# Calculate metrics for both models\nxgb_mase, xgb_rmse, xgb_qs, xgb_crps = calculate_metrics(predictions_xgb, series_dict_test, series_dict_train)\nlgbm_mase, lgbm_rmse, lgbm_qs, lgbm_crps = calculate_metrics(predictions_lgbm, series_dict_test, series_dict_train)\n\n\n\n\n\n\n\n\n\n\n\n\nModel\nAverage MASE\nAverage RMSE\nAverage Quantile Score\nAverage CRPS\n\n\n\n\nXGBoost\n1.218\n4878.992\n1151.738\n3548.056\n\n\nLightGBM\n1.061\n4953.944\n310.234\n3498.346\n\n\n\n\nNote: We can improve the performance of XGBoost and LightGBM through better feature engineering and hyperparameter tuning."
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#timegpt",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#timegpt",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "TimeGPT",
     "text": "TimeGPT\nFoundational time series model for time series forecasting by Nixtla (Read more).\nAssumptions\n\nNo strict stationarity requirements\nAutomatically handles multiple series\n\nStrengths & Weaknesses\n✓ Zero configuration needed\n✓ Handles complex patterns\n✗ Requires API access\n✗ Black-box model"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#timegpt-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#timegpt-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "TimeGPT",
     "text": "TimeGPT\nGet API key from Nixtla\n\nVisit https://nixtla.io/\nSign up for free account\nNavigate to API Keys section\nCreate new key and copy it\n\n\n!pip install nixtla\n\n# Load libraries\nfrom nixtla import NixtlaClient\n\n# Initialize Nixtla client\nnixtla_client = NixtlaClient(api_key='your_api_key_here')"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#timegpt-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#timegpt-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "TimeGPT",
     "text": "TimeGPT\n\n# Since we already have done the feature engineering, we dont need to do it again\n# Create unique identifier and rename columns for TimeGPT\ndf_timegpt = df.rename(columns={'date': 'ds', 'quantity_issued': 'y'}).drop(columns=['hub_id', 'product_id'])\n\n# Split data into train-test\nend_train = '2022-06-30'\ntrain_df = df_timegpt[df_timegpt['ds'] &lt;= end_train]\ntest_df = df_timegpt[df_timegpt['ds'] &gt; end_train]"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#timegpt-3",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#timegpt-3",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "TimeGPT",
     "text": "TimeGPT\n\n# TimeGPT Base Model\ntimegpt_fcst =  nixtla_client.forecast(\n    df=train_df,\n    h=len(test_df['ds'].unique()),\n    freq='M',\n    level=[90, 95]  # 90% and 95% prediction intervals\n)\n\nnixtla_client.plot(train_df, timegpt_fcst, time_col='ds', target_col='y')"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#timegpt-4",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#timegpt-4",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "TimeGPT",
     "text": "TimeGPT\n\n# TimeGPT with Exogenous Variables\n\n# Prepare exogenous data\nexog_features = ['month', 'hub_id_cat', 'product_id_cat']\n\n# Future exogenous variables (from your test set)\nfuture_exog = test_df[['unique_id', 'ds'] + exog_features]\n\ntimegpt_reg_fcst = nixtla_client.forecast(\n    df=train_df,\n    X_df=future_exog,\n    h=len(test_df['ds'].unique()),\n    freq='M',\n    level=[90, 95]\n)\n\nnixtla_client.plot(train_df, timegpt_reg_fcst, time_col='ds', target_col='y')"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#model-evaluation-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#model-evaluation-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Model evaluation",
     "text": "Model evaluation\n\n# Calculate metrics for both models\nxgb_mase, xgb_rmse, xgb_qs, xgb_crps = calculate_metrics(predictions_xgb, series_dict_test, series_dict_train)\nlgbm_mase, lgbm_rmse, lgbm_qs, lgbm_crps = calculate_metrics(predictions_lgbm, series_dict_test, series_dict_train)\n\n# Calculate metrics for base model\nbase_metrics = calculate_metrics(timegpt_fcst, test_df, train_df)\n\n# Calculate metrics for regressor model\nreg_metrics = calculate_metrics(timegpt_reg_fcst, test_df, train_df)\n\n\n\n\n\n\n\n\n\n\n\nModel\nAverage MASE\nAverage RMSE\nAverage Quantile Score\n\n\n\n\nTimeGPT Base Model\n1.019\n4261.135\n41.892\n\n\nTimeGPT Regressor Model\n1.125\n5016.053\n57.571"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Demographic forecasting method (FPSC Context)",
     "text": "Demographic forecasting method (FPSC Context)\nA population-based contraceptive needs estimation model combining:\n\nPopulation dynamics\nFamily planning indicators\nMethod/brand distribution factors"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-1",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-1",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Demographic forecasting method (FPSC Context)",
     "text": "Demographic forecasting method (FPSC Context)\n\\[\\begin{equation}\n\\begin{split}\ny_{i,t} = & \\left(\\sum_{j=15}^{50} \\text{mCPR}_{t,j} \\times \\text{WomenPopulation}_{t,j}\\right) \\\\\n           & \\times \\text{MethodMix}_{t,i} \\times \\text{CYP}_{t,i} \\times \\text{BrandMix}_{t,i} \\times \\text{SourceShare}_t\n\\end{split}\n\\end{equation}\\]\n\n\\(i\\): Contraceptive product\n\\(t\\): Time period (year)\n\\(\\text{mCPR}\\): Modern Contraceptive Prevalence Rate (%)\n\\(\\text{WomenPopulation}\\): Women aged 15-49\n\\(\\text{MethodMix}\\): Contraceptive method distribution\n\\(\\text{CYP}\\): Couple-Years of Protection factor\n\\(\\text{BrandMix}\\): Brand preference distribution\n\\(\\text{SourceShare}\\): Provider type distribution"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-2",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-2",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Demographic forecasting method (FPSC Context)",
     "text": "Demographic forecasting method (FPSC Context)\nAssumptions\n\nStable demographic patterns during forecast period\nConsistent reporting of family planning indicators\nAccurate CYP values for different methods\nHistorical brand/source mixes remain valid\nLinear relationship between population and needs\nProper spatial distribution via site coordinates\nValid monthly weight distribution"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-3",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-3",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Demographic forecasting method (FPSC Context)",
     "text": "Demographic forecasting method (FPSC Context)\nStrengths & Weaknesses\n✓ Directly ties to population dynamics\n✓ Incorporates multiple programmatic factors\n✓ Enables spatial allocation to health sites\n✓ Aligns with public health planning frameworks\n✗ Sensitive to input data quality\n✗ Static assumptions about behavior patterns\n✗ Limited responsiveness to sudden changes\n✗ Provides national level need"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#next-steps-and-further-learning",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#next-steps-and-further-learning",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Next steps and further learning",
     "text": "Next steps and further learning\n\nForecasting for social good learning labs\nForecasting: Principles and Practice\nForecasting and Analytics with the Augmented Dynamic Adaptive Model (ADAM)\nNixtla\nSKTIME\nskforecast"
   },
   {
     "objectID": "lab/forecasting/epss_training/slides/epss_training.html#thank-you",
     "href": "lab/forecasting/epss_training/slides/epss_training.html#thank-you",
-    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "title": "Home",
     "section": "Thank you!",
-    "text": "Thank you!\n\n\nScan the QR Code and follow us on LinkedIn…"
+    "text": "Thank you!\n\n\nScan the QR Code and follow us on LinkedIn…\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain"
   },
   {
     "objectID": "lab/data_analytics/index.html",
@@ -1335,5 +1335,19 @@
     "title": "Introduction to Python",
     "section": "",
     "text": "To ensure that Jupyter Lab uses the project directory as the working directory, you can use the os module to change the current working directory.\n\n\n\nImport the os Module:\n\nThe os module provides a way of using operating system-dependent functionality.\n\nDefine the Project Directory:\n\nSpecify the path to your project directory.\n\nChange the Current Working Directory:\n\nUse os.chdir() to change the current working directory to the project directory.\n\nVerify the Current Working Directory:\n\nUse os.getcwd() to print the current working directory and ensure it’s set correctly.\n\n\n\n\n\nUse python console or terminal.\nimport os\n\n# Define project directory and subdirectories\nproject_dir = 'my_python_project'\nfolders = ['data', 'scripts', 'notebooks']\n\n# Create the main project directory\nif not os.path.exists(project_dir):\n    os.makedirs(project_dir)\n\n# Create subdirectories\nfor folder in folders:\n    path = os.path.join(project_dir, folder)\n    if not os.path.exists(path):\n        os.makedirs(path)\n\n# Check the created structure\n!tree my_python_project\nGo to your main project folder and open the terminal.\nimport os\n\n# Define the project directory\nproject_dir = os.getcwd()\n\n# Set the working directory to the project directory\nos.chdir(project_dir)\n\n# Check the current working directory\nprint(\"Current Working Directory:\", os.getcwd())\nexample: save a file\n# Save a Sample Dataset in the data Folder \nimport pandas as pd\n\n# Create a sample DataFrame\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [24, 22, 23],\n    'Grade': ['A', 'B', 'A']\n}\n\ndf = pd.DataFrame(data)\n\n# Display the DataFrame\nprint(\"Sample DataFrame:\")\nprint(df)\n\n# Define the path to save the CSV file\ncsv_file_path = os.path.join('data', 'students_data.csv')\n\n# Save the DataFrame as a CSV file\ndf.to_csv(csv_file_path, index=False)\n\n# Verify that the file has been saved\nprint(f\"DataFrame saved as CSV file at: {csv_file_path}\")"
+  },
+  {
+    "objectID": "lab/forecasting/epss_training/slides/epss_training.html#post-training-feedback",
+    "href": "lab/forecasting/epss_training/slides/epss_training.html#post-training-feedback",
+    "title": "Home",
+    "section": "Post-Training Feedback",
+    "text": "Post-Training Feedback"
+  },
+  {
+    "objectID": "lab/forecasting/epss_training/slides/epss_training.html#self-assessment",
+    "href": "lab/forecasting/epss_training/slides/epss_training.html#self-assessment",
+    "title": "Home",
+    "section": "Self-Assessment",
+    "text": "Self-Assessment"
   }
 ]
