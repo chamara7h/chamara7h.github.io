@@ -2062,7 +2062,7 @@ y_{i,t} = & \left(\sum_{j=15}^{50} \text{mCPR}_{t,j} \times \text{WomenPopulatio
 
 ## Demographic forecasting method (FPSC Context)
 
-*Female condom needs for August 2020 (example)*
+*Female condom needs (age 20-15) for 2020 (example)*
 
 | Parameter                                      | Value    | Unit         | Sources          |
 |-----------------------------------------------|---------|-------------|-----------------|
@@ -2072,8 +2072,7 @@ y_{i,t} = & \left(\sum_{j=15}^{50} \text{mCPR}_{t,j} \times \text{WomenPopulatio
 | **D. CYP**                                    | 120     | -           | USAID           |
 | **E. Percentage of brand A mix**              | 45%     | %            | Author calculation |
 | **F. Percentage of source mix**               | 13%     | %            | USAID           |
-| **G. Weight as a percentage for August**      | 8%      | %            | Author calculation |
-| **Total requirement (A × B × C × D × E × F × G)** | **34,255** | # of products | - |
+| **Total requirement (A × B × C × D × E × F)** | **629,694** | # of products | - |
 
 
 ## Next steps and further learning
