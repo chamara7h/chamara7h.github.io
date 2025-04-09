@@ -30,10 +30,19 @@ execute:
 
 ```{r}
 #| echo: false
+#| results: hide 
+
+install.packages('countdown')
+install.packages('knitr')
+```
+
+```{r}
+#| echo: false
 
 library(knitr)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
+
 
 ## Assumptions
 
