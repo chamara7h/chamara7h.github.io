@@ -33,7 +33,6 @@ execute:
 #| results: hide 
 
 install.packages('countdown')
-install.packages('knitr')
 ```
 
 ```{r}
