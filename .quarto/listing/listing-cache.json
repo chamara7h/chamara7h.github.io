@@ -25,7 +25,8 @@
       "/"
     ],
     "talks\\index.qmd": [
-      "projects.yml"
+      "projects.yml",
+      "intro_method_skills/*.qmd"
     ],
     "phd\\index.qmd": [
       "projects.yml",

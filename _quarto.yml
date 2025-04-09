@@ -6,7 +6,7 @@ website:
   open-graph: true 
   page-footer: "Made with ❤️ and Quarto"
   navbar:
-    title: Harsha Halgamuwe Hewage
+    title: Home
     background: '#3e3e3e'
     right:
       - text: PhD Project
@@ -17,8 +17,8 @@ website:
         href: projects/index.qmd
       - text: Learning Lab
         href: lab/index.qmd
-      - text: Resources
-        href: resources/index.qmd
+      - text: Talks
+        href: talks/index.qmd
       - icon: envelope-at-fill
         href: mailto:hewagehrc@gamil.com
       - icon: github

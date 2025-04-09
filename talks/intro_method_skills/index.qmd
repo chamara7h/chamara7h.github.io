@@ -1,0 +1,79 @@
+---
+title: "Methodological Skills for Research"
+description: "Lecture"
+author: "Harsha Halgamuwe Hewage"
+date: "2025-04-11"
+image: "cover.png"
+categories:
+  - Research
+  - Methodology
+  - Philosophy
+link-external-newwindow: true
+---
+
+![](cover.png){fig-align="center"}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+/* Custom button style */
+button {
+  background-color: transparent; /* No filling */
+  border: 2px solid rgb(55, 58, 60); /* Gray border */
+  color: rgb(55, 58, 60); /* Gray text */
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect for Journal article */
+#journal-article-btn:hover {
+  border-color: #0066b2; /* Blue border on hover */
+  color: #0066b2; /* Blue text on hover */
+}
+
+/* Hover effect for GitHub repo */
+#github-repo-btn:hover {
+  border-color: #00A86B; /* Green border on hover */
+  color: #00A86B; /* Green text on hover */
+}
+</style>
+
+<button id="journal-article-btn" 
+        onclick="window.open('slides/intro_method_skills.html', '_blank')">
+  <i class="fas fa-bookmark"></i> Slides
+</button>
+
+
+
+## Context
+
+Understanding research methodologies is essential for conducting rigorous, credible, and context-appropriate research in fields like transport, logistics, and beyond. This lecture introduces key philosophical foundations, paradigms, and methodological choices that shape how research questions are framed and investigated. It supports students in developing critical thinking and research design skills, which are foundational for academic projects and evidence-based decision-making in logistics and supply chain management.
+
+## Target Audience
+
+- Undergraduate students studying Transport and Logistics Management
+- Anyone interested in gaining a practical understanding of research paradigms, methodologies, and methods
+- Students preparing to develop their undergraduate dissertations or research proposals
+
+## Prerequisites
+
+- Curiosity about research and how knowledge is constructed
+- No prior experience with research philosophy is required
+- Basic understanding of research goals (e.g., solving real-world problems, generating new insights)
+
+## Learning Outcomes
+
+By the end of this lecture, students will be able to:
+
+- ✅ Distinguish between ontology, epistemology, axiology, methodology, and methods
+- ✅ Understand and compare major research paradigms: Positivism, Interpretivism, Critical Realism, Pragmatism, and Post-Structuralism
+- ✅ Recognize how paradigms influence research design choices
+- ✅ Identify suitable methodologies and data collection methods for different research problems
+- ✅ Apply these concepts to real-world examples in transport and logistics contexts
+- ✅ Critically reflect on their own positionality and philosophical assumptions in research

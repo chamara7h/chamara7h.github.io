@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Projects – Home</title>
+<title>index – Home</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-title','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-image","listing-description","listing-categories","listing-date"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -128,7 +128,8 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="Projects – Home">
+<meta property="og:title" content="Home">
+<meta property="og:image" content="cover.png">
 <meta property="og:site_name" content="Home">
 </head>
 
@@ -150,8 +151,24 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
+    <a class="nav-link" href="../phd/index.html"> 
+<span class="menu-text">PhD Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lab/index.html"> 
+<span class="menu-text">Learning Lab</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../talks/index.html" aria-current="page"> 
+<span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="mailto:hewagehrc@gamil.com"> <i class="bi bi-envelope-at-fill" role="img">
@@ -188,80 +205,44 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Projects</h1>
+
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Research,Methodology,Philosophy" data-listing-date-sort="1744326000000" data-listing-file-modified-sort="1744203708515" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="334">
+<a href="../talks/intro_method_skills/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../talks/intro_method_skills/cover.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Methodological Skills for Research
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Research'); return false;">
+Research
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Project
-</th>
-<th>
-Description
-</th>
-<th>
-Skills
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="Python,Machine Learning,Data Cleaning" data-listing-date-sort="1704067200000" data-listing-title-sort="Predicting House Prices with Machine Learning">
-<td>
-<a href="https://example.com/house-prices" class="title listing-title">Predicting House Prices with Machine Learning</a>
-</td>
-<td>
-<span class="listing-description">This project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection. </span>
-</td>
-<td>
-<span class="listing-categories">Python, Machine Learning, Data Cleaning</span>
-</td>
-</tr>
-<tr data-index="1" data-categories="R,Machine Learning,Clustering,Statistical Modelling" data-listing-date-sort="1711926000000" data-listing-title-sort="Customer Segmentation Using Clustering Techniques">
-<td>
-<a href="https://example.com/customer-segmentation" class="title listing-title">Customer Segmentation Using Clustering Techniques</a>
-</td>
-<td>
-<span class="listing-description">This project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments. </span>
-</td>
-<td>
-<span class="listing-categories">R, Machine Learning, Clustering, Statistical Modelling</span>
-</td>
-</tr>
-<tr data-index="2" data-categories="R,Data Visualization,Environmental Science" data-listing-date-sort="1719788400000" data-listing-title-sort="Visualizing Global CO2 Emissions">
-<td>
-<a href="https://example.com/co2-visualization" class="title listing-title">Visualizing Global CO2 Emissions</a>
-</td>
-<td>
-<span class="listing-description">This project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs. </span>
-</td>
-<td>
-<span class="listing-categories">R, Data Visualization, Environmental Science</span>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="listing-category" onclick="window.quartoListingCategory('Methodology'); return false;">
+Methodology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Philosophy'); return false;">
+Philosophy
+</div>
+</div>
+<div class="card-text listing-description">
+Lecture
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>

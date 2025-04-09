@@ -32,7 +32,9 @@
   },
   {
     "listing": "/talks/index.html",
-    "items": []
+    "items": [
+      "/talks/intro_method_skills/index.html"
+    ]
   },
   {
     "listing": "/blog/index.html",

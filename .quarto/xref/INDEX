@@ -115,5 +115,11 @@
   },
   "lab/data_analytics/intro_python/materials/index.ipynb": {
     "index.html": "70eaf03f"
+  },
+  "talks/intro_method_skills/slides/intro_method_skills.qmd": {
+    "intro_method_skills.html": "addaace4"
+  },
+  "talks/intro_method_skills/index.qmd": {
+    "index.html": "2c24f86d"
   }
 }

@@ -1,13 +1,10 @@
 ---
-title: Projects
-listing:
-  contents: projects.yml
-  type: table
-  max-description-length: 250
+image: "cover.png"
+listing: 
+  contents: 
+    - "intro_method_skills/*.qmd"
+  type: grid
   sort-ui: false
   filter-ui: false
-  fields: [title, description, categories]
-  field-display-names: 
-    title: "Project"
-    categories: "Skills"
+  fields: [title, image, description, categories]
 ---

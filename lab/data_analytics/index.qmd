@@ -1,5 +1,5 @@
 ---
-title: Data analytics
+title: Data Analytics
 description: 'Data analytics materials using R and Python.'
 image: "cover.png"
 listing: 
