@@ -893,7 +893,7 @@
     "href": "lab/index.html",
     "title": "Home",
     "section": "",
-    "text": "Data analytics\n\n\nData analytics materials using R and Python.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime Series Forecasting\n\n\nTime series forecasting materials using R and Python.\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Data Analytics\n\n\nData analytics materials using R and Python.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime Series Forecasting\n\n\nTime series forecasting materials using R and Python.\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -910,11 +910,263 @@
     "text": "I am a second-year PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the Data Lab for Social Good.\nI also lead the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I manage the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives.\nExplore my full list of publications on Google Scholar."
   },
   {
+    "objectID": "talks/intro_method_skills/index.html#context",
+    "href": "talks/intro_method_skills/index.html#context",
+    "title": "Methodological Skills for Research",
+    "section": "Context",
+    "text": "Context\nUnderstanding research methodologies is essential for conducting rigorous, credible, and context-appropriate research in fields like transport, logistics, and beyond. This lecture introduces key philosophical foundations, paradigms, and methodological choices that shape how research questions are framed and investigated. It supports students in developing critical thinking and research design skills, which are foundational for academic projects and evidence-based decision-making in logistics and supply chain management."
+  },
+  {
+    "objectID": "talks/intro_method_skills/index.html#target-audience",
+    "href": "talks/intro_method_skills/index.html#target-audience",
+    "title": "Methodological Skills for Research",
+    "section": "Target Audience",
+    "text": "Target Audience\n\nUndergraduate students studying Transport and Logistics Management\nAnyone interested in gaining a practical understanding of research paradigms, methodologies, and methods\nStudents preparing to develop their undergraduate dissertations or research proposals"
+  },
+  {
+    "objectID": "talks/intro_method_skills/index.html#prerequisites",
+    "href": "talks/intro_method_skills/index.html#prerequisites",
+    "title": "Methodological Skills for Research",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nCuriosity about research and how knowledge is constructed\nNo prior experience with research philosophy is required\nBasic understanding of research goals (e.g., solving real-world problems, generating new insights)"
+  },
+  {
+    "objectID": "talks/intro_method_skills/index.html#learning-outcomes",
+    "href": "talks/intro_method_skills/index.html#learning-outcomes",
+    "title": "Methodological Skills for Research",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nBy the end of this lecture, students will be able to:\n\n✅ Distinguish between ontology, epistemology, axiology, methodology, and methods\n✅ Understand and compare major research paradigms: Positivism, Interpretivism, Critical Realism, Pragmatism, and Post-Structuralism\n✅ Recognize how paradigms influence research design choices\n✅ Identify suitable methodologies and data collection methods for different research problems\n✅ Apply these concepts to real-world examples in transport and logistics contexts\n✅ Critically reflect on their own positionality and philosophical assumptions in research"
+  },
+  {
     "objectID": "talks/index.html",
     "href": "talks/index.html",
-    "title": "Projects",
+    "title": "Home",
     "section": "",
-    "text": "Project\n\n\nDescription\n\n\nSkills\n\n\n\n\n\n\nPredicting House Prices with Machine Learning\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection. \n\n\nPython, Machine Learning, Data Cleaning\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments. \n\n\nR, Machine Learning, Clustering, Statistical Modelling\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs. \n\n\nR, Data Visualization, Environmental Science\n\n\n\n\n\nNo matching items"
+    "text": "Methodological Skills for Research\n\n\n\nResearch\n\n\nMethodology\n\n\nPhilosophy\n\n\n\nLecture\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#assumptions",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#assumptions",
+    "title": "Home",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nThis session is designed for undergraduate students.\nNo prior knowledge of research philosophy or paradigms is expected.\nThe session is descriptive and exploratory, not heavily theoretical or mathematical."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#what-we-will-cover",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#what-we-will-cover",
+    "title": "Home",
+    "section": "What we will cover",
+    "text": "What we will cover\n\nIntroduction to research philosophy: ontology, epistemology, axiology\nUnderstanding research paradigms: positivism, interpretivism, critical realism, pragmatism, post-structuralism\nDefining methodology vs. methods\nOverview of qualitative, quantitative, and mixed-methods approaches\nExploring core research principles: objectivity, validity, reliability, reflexivity, and ethics\nUsing real-world examples to illustrate abstract concepts"
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#what-we-will-not-cover",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#what-we-will-not-cover",
+    "title": "Home",
+    "section": "What we will not cover",
+    "text": "What we will not cover\n\nDetailed coverage of data analysis techniques\nIn-depth theoretical derivations or philosophical debates\nSpecific guidance on research proposal writing\nFull training in data collection instruments (e.g., surveys, interview guides)"
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#materials",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#materials",
+    "title": "Home",
+    "section": "Materials",
+    "text": "Materials\nYou can find the lecture materials here."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#blind-men-and-the-elephant",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#blind-men-and-the-elephant",
+    "title": "Home",
+    "section": "Blind men and the elephant",
+    "text": "Blind men and the elephant"
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#different-ways-of-seeing",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#different-ways-of-seeing",
+    "title": "Home",
+    "section": "Different ways of seeing",
+    "text": "Different ways of seeing\n\nWhat is “out there” to know\nWhat, and how, can we know about it?\nHow do we go about acquiring the knowledge to find out about it?\nWhat techniques or procedures will we use to acquire this knowledge?"
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#research-onion",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#research-onion",
+    "title": "Home",
+    "section": "Research onion",
+    "text": "Research onion\n\nSource: © Mark Saunders, Philip Lewis and Adrian Thornhill 2006."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#ontology",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#ontology",
+    "title": "Home",
+    "section": "Ontology",
+    "text": "Ontology\n\nOntology – concerns the nature of reality and what we believe exists.\nAsks: What is real? Do social phenomena have an existence independent of our perception?\nRealist vs. relativist ontologies: a single objective reality vs. multiple socially constructed realities."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#epistemology",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#epistemology",
+    "title": "Home",
+    "section": "Epistemology",
+    "text": "Epistemology\n\nEpistemology – concerns knowledge and how we can know about reality.\nAsks: What counts as acceptable knowledge? Can we obtain objective truth or only subjective understandings?\nPositivist epistemology seeks observable, measurable evidence, while interpretivist epistemology emphasizes understanding meanings in context."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#axiology",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#axiology",
+    "title": "Home",
+    "section": "Axiology",
+    "text": "Axiology\n\nAxiology – the study of values; examines the role of researchers’ values and ethics in research.\nConsiders issues of right and wrong, what is worth researching, and the value judgments we bring to research.\nInfluences how we interpret findings and what we see as important (e.g., a researcher’s personal and cultural values can shape research focus)."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#what-is-a-research-paradigm",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#what-is-a-research-paradigm",
+    "title": "Home",
+    "section": "What is a research paradigm?",
+    "text": "What is a research paradigm?\n\nA research paradigm is a worldview or basic set of beliefs that guides how research is conducted.\nIt influences what should be studied, how it should be studied, and how results are interpreted.\nMajor paradigms include positivism, post-positivism, interpretivism (constructivism), critical (realism), pragmatism, and postmodern/post-structural paradigms."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#paradigm-positivism",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#paradigm-positivism",
+    "title": "Home",
+    "section": "Paradigm – Positivism",
+    "text": "Paradigm – Positivism\n\nPositivism – assumes an objective reality that can be measured. Advocates applying natural science methods to study social phenomena.\nSeeks causal relationships and generalizable laws; uses testable hypotheses and focuses on observable facts (not subjective opinions).\nPositivist research aims to be value-free and objective, with the researcher as a neutral observer."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#paradigm-interpretivism",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#paradigm-interpretivism",
+    "title": "Home",
+    "section": "Paradigm – Interpretivism",
+    "text": "Paradigm – Interpretivism\n\nInterpretivism – assumes reality is socially constructed and subjective, with multiple valid perspectives.\nEmphasizes understanding the meanings and context of human experiences rather than finding universal laws. Research is often qualitative and contextual.\nResearchers recognize their own role and values in the process; reflexivity is encouraged to understand how interpretations are formed."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#paradigm-critical-realism",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#paradigm-critical-realism",
+    "title": "Home",
+    "section": "Paradigm – Critical Realism",
+    "text": "Paradigm – Critical Realism\n\nCritical Realism – a post-positivist paradigm acknowledging an independent reality that exists, but our understanding of it is inevitably imperfect.\nDistinguishes between the “real” (underlying structures) and the “observable”; unobservable mechanisms cause observable events.\nUses theory to identify underlying social structures or mechanisms. Bridges positivism and interpretivism by accepting an external reality but viewing knowledge of it as theory-laden."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#paradigm-pragmatism",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#paradigm-pragmatism",
+    "title": "Home",
+    "section": "Paradigm – Pragmatism",
+    "text": "Paradigm – Pragmatism\n\nPragmatism – focuses on what works in practice. Truth is viewed as what is useful in answering the research question.\nRejects strict either/or choices between paradigms: methods and concepts are chosen for their practical usefulness rather than adherence to a single philosophy.\nOften underpins mixed methods research: quantitative and qualitative approaches are combined to provide actionable knowledge from multiple perspectives."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#paradigm-post-structuralism",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#paradigm-post-structuralism",
+    "title": "Home",
+    "section": "Paradigm – Post-Structuralism",
+    "text": "Paradigm – Post-Structuralism\n\nPost-Structuralism – a critical paradigm (related to postmodernism) that questions stable structures and universal truths.\nArgues that meaning and knowledge are not fixed; they are constructed through language, discourse, and power relations, and thus can be deconstructed.\nChallenges assumptions about reality and truth, highlighting how perspectives are influenced by culture, language, and power dynamics."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#research-paradigms-examples",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#research-paradigms-examples",
+    "title": "Home",
+    "section": "Research Paradigms: Examples",
+    "text": "Research Paradigms: Examples\n\n\n\n\n\n\n\n\n\n\nParadigm\nResearch Question\nApproach\nMethodology\nOutcome/Focus\n\n\n\n\nPositivism\nWhat is the impact of traffic congestion on last-mile delivery times in urban areas?\nQuantitative analysis using GPS and traffic data\nStatistical modeling (e.g., regression)\nIdentifies causal relationships and general patterns to support predictions\n\n\nInterpretivism\nHow do long-haul truck drivers experience life on the road?\nInterviews and fieldwork to understand drivers’ perspectives\nThematic analysis, narrative inquiry\nExplores subjective experiences and meanings from participants’ viewpoints"
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#research-paradigms-examples-1",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#research-paradigms-examples-1",
+    "title": "Home",
+    "section": "Research Paradigms: Examples",
+    "text": "Research Paradigms: Examples\n\n\n\n\n\n\n\n\n\n\nParadigm\nResearch Question\nApproach\nMethodology\nOutcome/Focus\n\n\n\n\nCritical Realism\nWhy do delivery delays persist in a warehouse despite technology upgrades?\nInvestigate both surface data and underlying structures (e.g., labor, policies)\nCase study, process tracing\nUncovers hidden mechanisms driving observable problems\n\n\nPragmatism\nHow can route planning tools be improved to balance delivery speed and driver satisfaction?\nCombine delivery data with driver feedback to develop practical recommendations\nMixed methods (quantitative + qualitative)\nSolves practical problems using a combination of methods that “work”"
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#research-paradigms-examples-2",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#research-paradigms-examples-2",
+    "title": "Home",
+    "section": "Research Paradigms: Examples",
+    "text": "Research Paradigms: Examples\n\n\n\n\n\n\n\n\n\n\nParadigm\nResearch Question\nApproach\nMethodology\nOutcome/Focus\n\n\n\n\nPost-Structuralism\nHow is the concept of “efficiency” constructed in logistics marketing discourse?\nExamine how companies use language to define “efficiency” in ads, reports, training manuals\nDiscourse analysis\nReveals how language shapes meaning and reflects power dynamics in the industry"
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#activity-locating-your-paradigm",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#activity-locating-your-paradigm",
+    "title": "Home",
+    "section": "Activity – Locating your paradigm",
+    "text": "Activity – Locating your paradigm\n\n\n\n−+\n05:00\n\n\n\n\nThink-Pair-Share: What discipline or field are you in? Discuss which research paradigm(s) are common in your field.\nAre there taken-for-granted assumptions about what should be studied, how to study it, and what counts as evidence in your field?"
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#principle-objectivity",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#principle-objectivity",
+    "title": "Home",
+    "section": "Principle – Objectivity",
+    "text": "Principle – Objectivity\n\nObjectivity – maintaining impartiality and avoiding personal biases when conducting research.\nResearchers strive to observe and report facts as they are, independent of their own beliefs or values.\nIn practice, complete objectivity is challenging, especially in social research – awareness of potential bias is crucial."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#principles-validity-reliability",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#principles-validity-reliability",
+    "title": "Home",
+    "section": "Principles – Validity & Reliability",
+    "text": "Principles – Validity & Reliability\n\nValidity – the extent to which a study or measurement actually measures what it intends to measure (accuracy/truthfulness of findings).\nReliability – the consistency or repeatability of results; a reliable study yields similar results under consistent conditions.\nA study should aim to be both valid and reliable – e.g., a survey that consistently gives the same result is reliable, but it must also measure the right concept to be valid."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#principle-reflexivity",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#principle-reflexivity",
+    "title": "Home",
+    "section": "Principle – Reflexivity",
+    "text": "Principle – Reflexivity\n\nReflexivity – the practice of reflecting on how the researcher’s own beliefs, experiences, and biases influence the research.\nAcknowledges that researchers are part of the social world they study, rather than completely objective outsiders.\nReflexive research involves being transparent about one’s positionality and how it may shape data collection, analysis, and interpretations."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#principle-ethics",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#principle-ethics",
+    "title": "Home",
+    "section": "Principle – Ethics",
+    "text": "Principle – Ethics\n\nResearch Ethics – guidelines for the responsible conduct of research, defining what is acceptable or unacceptable behavior with participants and data.\nKey ethical principles: informed consent, avoiding harm to participants, confidentiality and privacy, honesty and integrity in data and analysis.\nEthical research ensures the rights and well-being of participants are protected and that the knowledge gained is trustworthy."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#activity-ethics-scenario",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#activity-ethics-scenario",
+    "title": "Home",
+    "section": "Activity – Ethics scenario",
+    "text": "Activity – Ethics scenario\n\n\n\n−+\n05:00\n\n\n\n\nImagine you are conducting interviews on a sensitive topic (e.g., mental health). How would you ensure your study is ethical?"
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#quantitative-research",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#quantitative-research",
+    "title": "Home",
+    "section": "Quantitative research",
+    "text": "Quantitative research\n\nQuantitative research – deals with numerical data and statistics to test hypotheses and examine relationships.\nTypically seeks generalizable results and causal explanations; often associated with positivist approaches (aims for objectivity and measurement).\nExample: measuring class size and test scores across schools to see if smaller classes lead to higher performance (data analyzed statistically)."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#qualitative-research",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#qualitative-research",
+    "title": "Home",
+    "section": "Qualitative research",
+    "text": "Qualitative research\n\nQualitative research – deals with non-numerical data (words, observations) to understand concepts, experiences, or social contexts in depth.\nProduces rich, detailed insights rather than broad generalizations; often aligned with interpretivist approaches (understanding meanings in context).\nExample: interviewing teachers and students to explore how classroom size affects their experiences and learning, gathering in-depth narratives."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#mixed-methods",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#mixed-methods",
+    "title": "Home",
+    "section": "Mixed methods",
+    "text": "Mixed methods\n\nMixed methods – integrates both quantitative and qualitative approaches in one study to address a question from multiple angles.\nCombines numerical data with narrative data to provide a more comprehensive understanding and to corroborate findings across methods.\nExample: studying climate change adaptation by analyzing climate data (quantitative) and interviewing community members (qualitative) to merge scientific and local perspectives."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#methodology-vs.-methods",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#methodology-vs.-methods",
+    "title": "Home",
+    "section": "Methodology vs. Methods",
+    "text": "Methodology vs. Methods\n\nMethodology – the overall strategy or research design guiding how you investigate a problem (the logic of inquiry) (E.g., experimental, survey, ethnography, case study).\nMethods – the specific techniques or procedures for data collection and analysis (the tools) (E.g., questionnaires, interviews, observations, statistical analysis).\nRemember: methodology is why and how you’re doing the research (at a strategic level), whereas methods are what you actually do to collect and analyze data."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#example-poor-housing-design",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#example-poor-housing-design",
+    "title": "Home",
+    "section": "Example – Poor housing design",
+    "text": "Example – Poor housing design\n\nScenario: A report claims many new houses suffer from “poor design.” How might researchers study this issue differently based on their paradigm?\nOntology: Is “poor design” a measurable fact (objective criteria) or a concept defined by stakeholders’ perceptions (subjective)?\nEpistemology: Should we gain knowledge by measuring design features (collect facts) or by understanding what “poor design” means to residents and designers (interpret meanings)?\nMethods: A positivist approach might survey homes against design quality criteria & quantify residents’ satisfaction. An interpretivist approach might conduct interviews or focus groups to explore how people perceive and discuss “poor design”."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#activity-plan-a-study",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#activity-plan-a-study",
+    "title": "Home",
+    "section": "Activity – Plan a study",
+    "text": "Activity – Plan a study\n\n\n\n−+\n10:00\n\n\n\n\nChoose a research question of interest (e.g., “How does social media use affect academic performance?”).\nWhat research approach would you use (qualitative, quantitative, or mixed) and why? What paradigm might this align with?\nIdentify one or two specific methods you would use to collect data, and explain how these methods fit your research question and paradigm."
+  },
+  {
+    "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#wrapping-up",
+    "href": "talks/intro_method_skills/slides/intro_method_skills.html#wrapping-up",
+    "title": "Home",
+    "section": "Wrapping up",
+    "text": "Wrapping up\n\nMethodological skills involve making informed choices at each stage of research – from philosophical stance to data collection methods.\nNo single paradigm or method is “best” for all questions. The goal is to align your approach with your research question and objectives, and to be able to justify your choices.\nUnderstanding these foundations helps you critically evaluate others’ research and conduct your own studies in a rigorous, reflective, and ethical manner."
   },
   {
     "objectID": "phd/index.html",
@@ -961,7 +1213,7 @@
   {
     "objectID": "lab/data_analytics/index.html",
     "href": "lab/data_analytics/index.html",
-    "title": "Data analytics",
+    "title": "Data Analytics",
     "section": "",
     "text": "A basic introduction to Python\n\n\n\nPython\n\n\nJupyter Lab\n\n\nData analytics\n\n\n\nTutorial\n\n\n\n\n\n\n\nNo matching items"
   },
