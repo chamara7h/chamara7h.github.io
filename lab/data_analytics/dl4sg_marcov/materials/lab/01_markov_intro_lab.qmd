@@ -3,10 +3,6 @@ format:
   html: 
     toc: true
     toc-depth: 2
-  pdf:
-    latex-engine: xelatex
-    toc: true
-    toc-depth: 2
 ---
 
 # Lab: Brand Switching Markov Chain Example
