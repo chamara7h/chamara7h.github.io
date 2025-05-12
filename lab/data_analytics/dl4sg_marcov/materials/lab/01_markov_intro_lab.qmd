@@ -37,7 +37,6 @@ We will:
 #| warning: false
 library(tidyverse)
 library(knitr)
-library(kableExtra)
 library(ggthemes)
 ```
 
