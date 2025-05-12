@@ -78,7 +78,6 @@ options(knitr.graphics.auto_pdf = TRUE)
 required_packages <- c(
   "tidyverse",
   "knitr",
-  "kableExtra",
   "ggthemes",
   "showtext"
 )
