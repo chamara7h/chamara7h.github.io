@@ -40,7 +40,7 @@ We will:
 required_packages <- c(
   "tidyverse",
   "knitr",
-  "ggthemes",
+  "ggthemes"
 )
 
 # 2. install any that are missing
