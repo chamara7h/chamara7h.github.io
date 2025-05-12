@@ -3,7 +3,7 @@ title: "Introduction to Markov Processes in Healthcare Supply Chains"
 description: "Tutorial"
 author: "Harsha Chamara Hewage"
 date: "2025-05-15"
-image: "cover.jpg"
+image: "cover.png"
 categories:
   - Stochastic modelling
   - Healthcare
