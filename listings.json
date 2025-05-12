@@ -1,10 +1,15 @@
 [
   {
-    "listing": "/projects/index.html",
+    "listing": "/lab/data_analytics/intro_python/index.html",
     "items": [
-      "/projects/design/index.html",
-      "/projects/projects/index.html",
-      "/projects/publications/index.html"
+      "/lab/data_analytics/intro_python/materials/index.html"
+    ]
+  },
+  {
+    "listing": "/lab/data_analytics/index.html",
+    "items": [
+      "/lab/data_analytics/intro_python/index.html",
+      "/lab/data_analytics/dl4sg_marcov/index.html"
     ]
   },
   {
@@ -14,16 +19,11 @@
     ]
   },
   {
-    "listing": "/lab/data_analytics/intro_python/index.html",
+    "listing": "/projects/index.html",
     "items": [
-      "/lab/data_analytics/intro_python/materials/index.html"
-    ]
-  },
-  {
-    "listing": "/lab/index.html",
-    "items": [
-      "/lab/data_analytics/index.html",
-      "/lab/forecasting/index.html"
+      "/projects/design/index.html",
+      "/projects/projects/index.html",
+      "/projects/publications/index.html"
     ]
   },
   {
@@ -33,16 +33,17 @@
     ]
   },
   {
-    "listing": "/lab/data_analytics/index.html",
-    "items": [
-      "/lab/data_analytics/intro_python/index.html"
-    ]
-  },
-  {
     "listing": "/projects/publications/index.html",
     "items": [
       "/projects/publications/second-post/index.html",
       "/projects/publications/first-post/index.html"
+    ]
+  },
+  {
+    "listing": "/lab/index.html",
+    "items": [
+      "/lab/data_analytics/index.html",
+      "/lab/forecasting/index.html"
     ]
   }
 ]
