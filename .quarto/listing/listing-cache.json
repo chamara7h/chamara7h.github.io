@@ -48,7 +48,8 @@
     ],
     "lab\\data_analytics\\index.qmd": [
       "intro_python/*.ipynb",
-      "intro_python/*.qmd"
+      "intro_python/*.qmd",
+      "dl4sg_marcov/*.qmd"
     ],
     "lab\\data_analytics\\intro_python\\index.qmd": [
       "materials/*.ipynb"

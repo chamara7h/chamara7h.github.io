@@ -121,5 +121,15 @@
   },
   "talks/intro_method_skills/index.qmd": {
     "index.html": "2c24f86d"
+  },
+  "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.qmd": {
+    "dl4sg_markov.html": "daf24e35"
+  },
+  "lab/data_analytics/dl4sg_marcov/index.qmd": {
+    "index.html": "76e58d1e"
+  },
+  "lab/data_analytics/dl4sg_marcov/materials/lab/01_markov_intro_lab.qmd": {
+    "01_markov_intro_lab.html": "8944bc31",
+    "01_markov_intro_lab.tex": "71ef52b1"
   }
 }

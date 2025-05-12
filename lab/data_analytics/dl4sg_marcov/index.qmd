@@ -1,0 +1,111 @@
+---
+title: "Introduction to Markov Processes in Healthcare Supply Chains"
+description: "Tutorial"
+author: "Harsha Chamara Hewage"
+date: "2025-05-15"
+image: "cover.jpg"
+categories:
+  - Stochastic modelling
+  - Healthcare
+  - R
+  - Python
+link-external-newwindow: true
+---
+
+![](cover.png){fig-align="center"}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+/* Custom button style */
+button {
+  background-color: transparent; /* No filling */
+  border: 2px solid rgb(55, 58, 60); /* Gray border */
+  color: rgb(55, 58, 60); /* Gray text */
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect for Journal article */
+#journal-article-btn:hover {
+  border-color: #0066b2; /* Blue border on hover */
+  color: #0066b2; /* Blue text on hover */
+}
+
+/* Hover effect for GitHub repo */
+#github-repo-btn:hover {
+  border-color: #00A86B; /* Green border on hover */
+  color: #00A86B; /* Green text on hover */
+}
+</style>
+
+<button id="journal-article-btn" 
+        onclick="window.open('materials/dl4sg_markov.html', '_blank')">
+  <i class="fas fa-bookmark"></i> Slides
+</button>
+
+<button id="journal-article-btn" 
+        onclick="window.open('materials/lab/01_markov_intro_lab.html', '_blank')">
+  <i class="fas fa-bookmark"></i> Lab
+</button>
+
+<button id="github-repo-btn" onclick="window.open('https://github.com/chamara7h/dl4sg_markov', '_blank');">
+  <i class="fab fa-github"></i> GitHub repo
+</button>
+
+
+<br>
+<br>
+
+## Who is the course for?
+
+This course is intended for healthcare supply chain researchers, practitioners, and students who want to model uncertainty in logistical systems using **Markov Chains**. It assumes familiarity with basic probability and matrix manipulation in R.
+
+## Learning Objectives
+
+* Understand the structure and assumptions of **discrete-time Markov chains (DTMCs)**
+* Apply transition matrices to simulate system evolution over time
+* Compute and interpret **steady-state distributions**
+* Model brand switching and service reliability in healthcare supply chains
+* Simulate long-run outcomes and interpret them visually in R
+* Link model insights to supply chain policy decisions (e.g. stockouts, demand, brand promotion)
+
+## Prerequisites
+
+* Comfortable with **basic probability** (random variables, distributions)
+* Familiarity with **R and tidyverse** for matrix operations and plotting
+* No prior knowledge of Markov chains is assumed
+
+## Course Topics
+
+### Markov Chains for Healthcare Supply Chains
+
+#### Section 1: Foundations of Markov Chains
+
+* State-based systems and probabilistic transitions
+* The Markov property and memoryless dynamics
+* Transition probability matrices and system trajectories
+
+#### Section 2: Steady-State Analysis
+
+* n-step transitions and convergence
+* Existence and uniqueness of steady-state distributions
+* Interpreting long-run behaviour in real systems
+
+#### Section 3: Brand Switching Case Study
+
+* Promote-local strategy for paracetamol brands
+* Simulate switching behaviour and market share convergence
+* Solve steady-state equations using R
+
+#### Section 4: Applied Simulation in R
+
+* Vector-matrix calculations
+* Transition matrix exponentiation
+* Plotting and comparing convergence paths

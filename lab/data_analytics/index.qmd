@@ -5,6 +5,7 @@ image: "cover.png"
 listing: 
   contents: 
     - "intro_python/*.qmd"
+    - "dl4sg_marcov/*.qmd"
   type: grid
   sort-ui: false
   filter-ui: false

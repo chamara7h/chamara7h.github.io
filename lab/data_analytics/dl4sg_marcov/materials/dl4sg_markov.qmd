@@ -1,0 +1,757 @@
+---
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1800
+    height: 900
+    logo: "images/logo.png"
+    footer: "[Introduction to Markov Processes in Healthcare Supply Chains](https://chamara7h.github.io/talks/)"
+    css: theme.css
+    theme: simple
+    echo: true
+    title-slide-logo: "images/logo.png"
+editor: source
+execute:
+  warning: false
+---   
+
+<div style="position: relative; width: 100%; height: 100%;">
+  <!-- Cardiff logo top-left -->
+  <img
+    src="images/cardiff_logo.png"
+    alt="Cardiff University"
+    style="
+      position: absolute;
+      top: 40px;
+      left: 0px;
+      width: 110px;
+      height: auto;
+    "
+  />
+
+  <!-- Data Lab logo a bit to the right -->
+  <img
+    src="images/logo_white.png"
+    alt="Data Lab for Social Good"
+    style="
+      position: absolute;
+      top: 40px;
+      left: 150px;
+      width: 225px;
+      height: auto;
+    "
+  />
+  
+<br>
+<br>
+<br>
+<br>
+
+# Introduction to Markov Processes in Healthcare Supply Chains {background-image="images/markov.jpg" background-size="cover" background-color="#4f6952"}
+
+<br>
+
+<h4>
+  Harsha Halgamuwe Hewage <br>
+  Data Lab for Social Good Research Lab, Cardiff University, UK 
+</h4>
+
+<br>
+
+2025-05-15
+
+</div>
+
+```{r}
+#| echo: false
+
+library(knitr)
+options(knitr.graphics.auto_pdf = TRUE)
+```
+
+```{r}
+#| label: setup
+#| context: setup
+#| include: false
+
+# 1. list your CRAN packages
+required_packages <- c(
+  "tidyverse",
+  "knitr",
+  "kableExtra",
+  "ggthemes",
+  "showtext"
+)
+
+# 2. install any that are missing
+new_packages <- required_packages[!required_packages %in% installed.packages()[, "Package"]]
+if (length(new_packages)) {
+  install.packages(new_packages)
+}
+
+# 3. load them
+invisible(lapply(required_packages, library, character.only = TRUE))
+
+# 4. register and activate the Assistant font
+font_add_google("Assistant", "C:/Windows/Fonts/Assistant-Regular.ttf")
+showtext_auto()
+```
+
+## Assumptions
+
+- You should be familiar with basic probability and random variables.
+
+- You are expected to be comfortable with R (or Python) for basic simulation and matrix operations.
+
+- This is not a theory-heavy workshop—we will use simple examples to build intuition, not derive theorems.
+
+## What we will cover
+
+- Key concepts in Markov chains
+
+- Transition matrices and system evolution
+
+- Steady-state distributions and their interpretations
+
+- Applications of Markov models in healthcare supply chains
+
+- Code demonstrations and simulations
+
+## What we will `not cover`
+
+- Proofs of Markov chain convergence theorems
+
+- Advanced topics like Hidden Markov Models or Semi-Markov processes
+
+- Continuous-time Markov processes in full generality
+
+- Formal classification of all chain types (e.g., reducibility, ergodicity)
+
+- Marcov process with rewards
+
+## Materials
+
+![](images/git.png)
+
+You can find the workshop materials [here](https://chamara7h.github.io/lab/).
+
+<br>
+
+*Note*: These materials are based on my learnings at [NATCOR Taught Course Centre: Stochastic Modelling Course](https://www.natcor.ac.uk/courses/).
+
+## Outline
+
+- Why stochastic modeling?
+
+- What are Markov processes?
+
+- Brand switching as a DTMC example
+
+- Code walk-throughs in R
+
+# Why stochastic modeling?
+
+## Why stochastic modelling in healthcare supply chains?
+
+<br>
+
+- `Demand is unpredictable`: Patient arrivals, seasonal outbreaks, and changing usage patterns
+
+- `Supply is uncertain`: Delivery delays, stock losses, funding gaps, partial shipments
+
+- `Helps quantify risks`: Probability of stockouts, unmet demand, cold chain failures
+
+- `Enables simulation of long-run behavior`: nderstand steady-state stock levels, refill patterns, or equipment uptime
+
+- `Useful for evaluating interventions`: E.g., What if we promote a local brand? Add a backup supplier? Use mobile delivery?
+
+
+# What are Markov processes?
+
+## System states
+
+We want to model the behaviour of a `system` which can change its `state` from one period to the next.  
+
+For example:
+
+<br>
+
+::: {.table-custom}
+| System | States | Time unit |
+|------------|--------------|--------|
+| Weather | Sunny, cloudy, rainy, … | Day or hour |
+| No. of people in a healtcare centre | 0, 1, 2, 3, … | Minute or second |
+| Status of job application | “In preparation”, “Submitted”, “Invited for interview”, … | Day or hour? |
+|             |             |        |
+:::
+
+## System states: `weather example`
+
+We are interested in the `transitions` between different states.  Suppose there are only 3 possible states in weather:
+
+![](images/weather_1.png)
+
+From any of the 3 states we can get to any of the other states in a single transition (or stay in the same state). A sample trajectory of the system could be:
+
+$[Sunny,  Cloudy,  Cloudy,  Rainy,  Sunny,  Cloudy,  Rainy,  Rainy, …]$
+
+## System states: `weather example cont.`
+
+For convenience, let’s give each of the 3 states a number: $0 – Sunny$, $1 – Cloudy$, $2 – Rainy$ 
+
+<br>
+
+Let $S$ be the set of system states. So in our example: $S = {0, 1, 2}$ 
+
+<br>
+
+Let $X_n$ be the state of the system after $n$ time units (e.g. days).
+
+<br>
+
+For example: 
+
+![](images/weather_2.png)
+
+
+## System states: `weather example cont.`
+
+Suppose that the system begins as follows:
+
+$X_0 = 0, X_1 = 1, X_2 = 1, X_3 = 2$
+
+Given the above, what is the probability that $X_4 = 0$, i.e. it is sunny after 4 days?  We can write this as a conditional probability:
+
+$$
+Pr(X_4 = 0\,|\,\underbrace{X_0 = 0,\,X_1 = 1,\, X_2 = 1,\,X_3 = 2)}_{\text{entire history of the process}}
+$$
+Suppose we assume that the probability that $X_4 = 0$ depends only on the value of $X_3$, and not on $X_2$, $X_1$ or $X_0$.  We can then write:
+
+$$
+Pr(X_4 = 0\,|\,\underbrace{X_0 = 0,\,X_1 = 1,\, X_2 = 1,\,X_3 = 2)}_{\text{entire history of the process}} = Pr(X_4 = 0\,|\,\underbrace{X_3 = 2)}_{\text{current state}}
+$$
+
+## Markov process: definition
+
+A stochastic process with the `Markov Property`:
+
+<br>
+
+$(X_1, X_2, X_3, ...)$
+
+<br>
+
+in which the probability distribution for state $X_{n+1}$ depends only on the state $X_n$, and not on any of the states from $X_0$ up to $X_{n-1}$ (for all $n \ge 0$).
+
+<br>
+
+Writing this more mathematically, we can say:
+<br>
+$$
+\Pr\bigl(X_{n+1} = j \;\bigm|\; X_0 = x_0,\; X_1 = x_1,\;\dots,\; X_n = x_n\bigr)
+\;=\;
+\Pr\bigl(X_{n+1} = j \;\bigm|\; X_n = x_n\bigr)
+$$
+
+
+`Key idea`: *“The future depends only on the present, not on the past.”* 
+
+So the probability distribution for the next state depends only on the current state, not on the history of previous states. Can be discrete or continuous in time.
+
+# Pause for a thought… 💬
+
+Is it a good idea to model the `weather` using a Markov chain? 
+
+```{r}
+#| echo: false
+countdown::countdown(minutes = 00, seconds = 30)
+```
+
+## What is a `good example` of a Markov chain?
+
+If the weather is not a good example of a Markov chain, then what is?
+
+:::: {.columns}
+
+::: {.column-left .column width="50%"}
+![](images/snake_game.png)
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+For example, in Snakes and Ladders, if $X_n = 50$ then:
+
+- $\displaystyle \Pr\bigl(X_{n+1}=67 \mid X_n=50\bigr) = \tfrac{1}{6}$
+
+- $\displaystyle \Pr\bigl(X_{n+1}=52 \mid X_n=50\bigr) = \tfrac{1}{6}$
+
+- $\displaystyle \Pr\bigl(X_{n+1}=53 \mid X_n=50\bigr) = \tfrac{1}{6}$
+
+- $\displaystyle \Pr\bigl(X_{n+1}=34 \mid X_n=50\bigr) = \tfrac{1}{6}$
+
+- $\displaystyle \Pr\bigl(X_{n+1}=55 \mid X_n=50\bigr) = \tfrac{1}{6}$
+
+- $\displaystyle \Pr\bigl(X_{n+1}=56 \mid X_n=50\bigr) = \tfrac{1}{6}$
+:::
+
+::::
+
+## Assumptions of Markov chain models
+
+<br>
+
+Remember, simple Markov chain models rely upon some important assumptions:
+
+- The Markov chain is in exactly one state on any particular time step
+
+- The probability distribution for the next state only depends on the current state  `[Markov property]`
+
+- The transition probabilities are the same on every time step
+
+# Discrete time `Markov Chains`
+
+## Transition probability matrix
+
+Let $S = \{s_1, s_2, \dots, s_n\}$ be the finite state space. The one-step transition probabilities are:
+
+$$
+p_{ij} = \Pr(X_{t+1} = s_j \mid X_t = s_i)
+$$
+
+We collect these into the **transition matrix**:
+
+$$
+P = [p_{ij}], \quad \text{where each row sums to 1}
+$$
+
+The $n$-step transition matrix is:
+
+$$
+P^{(n)} = P^n = \underbrace{P \cdot P \cdot \dots \cdot P}_{n\text{ times}}
+$$
+
+We can use the **Chapman-Kolmogorov Equation**:
+
+$$
+P^{(n)} = P^{(k)} P^{(n-k)}
+$$
+
+## Steady-state distribution
+
+<br>
+
+When a Markov chain evolves over time, the probability distribution of states may converge to a fixed vector — called the `steady-state distribution`, $\pi$.
+
+A steady-state distribution exists if the chain is: 
+
+- **Irreducible**: all states communicate
+- **Aperiodic**: not cyclic 
+- **Positive recurrent**: expected return time is finite
+
+**Steady-state equation**: $\pi P = \pi, \quad \sum_i \pi_i = 1$
+
+This means:
+
+* $\pi_i$: long-run proportion of time spent in state $i$
+* It's a left eigenvector of $P$ corresponding to eigenvalue 1
+
+
+## Classifying states: infinitely many states
+
+<br>
+
+Suppose we have a Markov chain defined on the infinite state space ${0, 1, 2, …}$. If it is in state 0 then it moves to state $1$ with probability $1$.  If it is in any other state then it moves `up` with probability $p$ and moves `down` with probability $1-p$, where $0<p<1$.
+
+![](images/state_1.png)
+
+Key point: *if a Markov chain has infinitely many states, a steady-state distribution might not exist.* 
+
+## Classifying states: periodic states
+
+<br>
+
+Suppose we have a Markov chain which just goes back and forth between states 1 and 2. We call this a periodic Markov chain with a period of 2, because it can only return to the same state after an even number of time steps.
+
+![](images/state_2.png)
+
+Key point: *even if a steady-state distribution exists, the Markov chain might not “converge” to the steady-state distribution unless it actually starts there.*
+
+## Classifying states: absorbing states
+
+This time, we assume that if you’re in state 1 you stay there forever – and the same applies to state 2.  In this case we call states 1 and 2 absorbing states.
+
+![](images/state_3.png)
+
+Key point: *if states do not all “communicate” with each other (meaning that you cannot necessarily find a path from one state to another), there could be multiple steady-state distributions.*
+
+# `Brand switching` 
+
+Imagine there are two brands of paracetamol 100mg tablets: Brand A (locally manufactured) and Brand B (imported). As the healthcare center manager, you're planning to promote Brand A via healthcare campaigns to encourage local sourcing. You want to estimate how the market share evolves over time and determine the expected steady-state market share for each brand under this strategy.
+
+## Lets promote `Brand A`
+
+Assume patients switch weekly between two brands according to the probabilities shown in the table below:
+
+::: {.table-custom}
+| From \ To | Brand A | Brand B |
+| --------- | ------- | ------- |
+| Brand A   | 0.92    | 0.08    |
+| Brand B   | 0.15    | 0.85    |
+|           |         |         |
+:::
+
+Let $X_n$ denote the preferred brand (either A or B) of a randomly-chosen customer after $n$ weeks. From the table:
+
+$\Pr(X_{n+1}=1 \mid X_n = 1) = 0.92$    $\Pr(X_{n+1}=2 \mid X_n = 1) = 0.08$
+
+$\Pr(X_{n+1}=1 \mid X_n = 2) = 0.15$    $\Pr(X_{n+1}=2 \mid X_n = 2) = 0.85$
+
+## Lets promote `Brand A` cont.
+
+<br>
+
+We can represent this situation using a discrete-time Markov chain:
+
+![](images/brand_1.png)
+
+We are using some shorthand notation: $p_{ij} = Pr(X_{n+1} = j \,|\, X_n = i)$
+
+## Lets promote `Brand A` cont.
+
+Suppose that after zero weeks, both brands have a 50% market share. This means a randomly-chosen patient has a 50% chance of preferring Brand A. 
+
+So: $Pr(X_0 = 1) = 0.5$ and $Pr(X_0 = 2) = 0.5$
+
+Using the switching probabilities and invoking the `law of total probability`, we can calculate the preferred brand of a randomly-chosen patient after 1 week:
+
+$Pr(X_1 = 1) = \underbrace{Pr(X_0 = 1)Pr(X_1 = 1|X_0 = 1)}_{\text{(begin in state 1)}} + \underbrace{Pr(X_0 = 2)Pr(X_1 = 1|X_0 = 2)}_{\text{(begin in state 2)}} \\ =(0.5×0.92)+(0.5×0.15)=0.535$
+
+<br>
+
+$Pr(X_1 = 2) = \underbrace{Pr(X_0 = 1)Pr(X_1 = 2|X_0 = 1)}_{\text{(begin in state 1)}} + \underbrace{Pr(X_0 = 2)Pr(X_1 = 2|X_0 = 2)}_{\text{(begin in state 2)}} \\=(0.5×0.08)+(0.5×0.85)=0.465$
+
+## Lets promote `Brand A` cont.
+
+We can make these calculations look neater by using matrix-vector notation.  Let $p_{ij}$ denote the probability of switching from $i$ to $j$.  Obviously, this implies:
+
+$p_{ij}\ge0,\;\forall\,i,j\in S$, $\sum_{j\in S} p_{ij} = 1,\;\forall\,i\in S.$
+
+Let $P$ denote the `transition matrix`:
+
+$$
+\mathbf{P} \;=\;
+\begin{pmatrix}
+p_{11} & p_{12} \\
+p_{21} & p_{22}
+\end{pmatrix}
+\;=\;
+\begin{pmatrix}
+0.92 & 0.08 \\
+0.15 & 0.85
+\end{pmatrix}
+$$
+
+Also let $q^{(0)}$ be the vector of initial market shares:
+
+$q^{(0)}=(0.5, 0.5)$
+
+To get the expected market shares after one week, we multiply $q^{(0)}$ by $P$ to get $q^{(1)}$
+
+$$
+\mathbf{q}^{(0)} \mathbf{P}
+\;=\;
+(0.5,\;0.5)\,
+\begin{pmatrix}
+0.92 & 0.08\\
+0.15 & 0.85
+\end{pmatrix}
+\;=\;
+(0.535,\;0.465)
+\;=\;
+\mathbf{q}^{(1)}
+$$
+
+
+## Lets promote `Brand A` cont.
+
+To find the expected market shares after `two` weeks, we repeat the process, starting from the expected market shares after one week. This means we need to calculate
+
+$$
+\overset{\substack{\text{expected market shares}\\\text{after one week}}}
+         {\mathbf{q}^{(1)}}
+\;\times\;
+\overset{\text{transition matrix}}{P}
+\;\;=\;\;
+\overset{\substack{\text{expected market shares}\\\text{after two weeks}}}
+         {\mathbf{q}^{(2)}}
+$$
+
+
+$$
+\mathbf{q}^{(1)} \mathbf{P}
+\;=\;
+(0.535,\;0.465)\,
+\begin{pmatrix}
+0.92 & 0.08\\
+0.15 & 0.85
+\end{pmatrix}
+\;=\;
+(0.56195,\;0.43805)
+\;=\;
+\mathbf{q}^{(2)}
+$$
+
+Similarly, to find the expected market shares after `three` weeks:
+
+$$
+\mathbf{q}^{(2)} \mathbf{P}
+\;=\;
+(0.56195,\;0.43805)\,
+\begin{pmatrix}
+0.92 & 0.08\\
+0.15 & 0.85
+\end{pmatrix}
+\;=\;
+(0.5827015,\;0.4172985)
+\;=\;
+\mathbf{q}^{(3)}
+$$
+
+
+## Lets promote `Brand A` cont.
+
+<br>
+
+In general, to find the expected market shares after $n$ weeks, we calculate
+
+$\mathbf{q}^{(n-1)}\,\mathbf{P} = \mathbf{q}^{(n)}$
+
+<br>
+
+This is the same as:
+
+$\mathbf{q}^{(0)}\underbrace{\mathbf{P}\,\mathbf{P}\,\cdots\,\mathbf{P}}_{\text{(n times)}} \;=\; \mathbf{q}^{(0)}\,\mathbf{P}^n$ 
+
+<br>
+
+i.e. the vector of initial market shares multiplied by $\mathbf{P}$ to the power $n$.
+
+## Lets promote `Brand A` cont.
+
+If we use a line graph to show how the expected market shares change with time, we find that both of them appear to `converge` to fixed values.
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 16
+#| fig-height: 5
+
+# Define transition matrix
+P <- matrix(c(0.92, 0.08,
+              0.15, 0.85),
+            nrow = 2, byrow = TRUE)
+
+# Initial market shares: equal
+pi_0 <- c(0.5, 0.5)
+
+# Step-by-step calculations
+pi_1 <- pi_0 %*% P
+pi_2 <- pi_1 %*% P
+pi_3 <- pi_2 %*% P
+
+# Long-run simulation
+n_steps <- 30
+pi_matrix <- matrix(NA, nrow = n_steps, ncol = 2)
+pi_matrix[1, ] <- pi_0
+
+for (t in 2:n_steps) {
+  pi_matrix[t, ] <- pi_matrix[t-1, ] %*% P
+}
+
+# Convert to tidy data frame
+colnames(pi_matrix) <- c("Brand A", "Brand B")
+pi_df <- as_tibble(pi_matrix) |>
+  mutate(time = 1:n_steps) |>
+  pivot_longer(cols = c("Brand A", "Brand B"),
+               names_to = "brand", values_to = "prob")
+
+# Plot convergence
+ggplot(pi_df, aes(x = time, y = prob, color = brand)) +
+  geom_line(size = 1.2) +
+  geom_hline(yintercept = pi_matrix[n_steps, 1], linetype = "dashed", color = "gray") +
+  geom_hline(yintercept = pi_matrix[n_steps, 2], linetype = "dashed", color = "gray") +
+  labs(
+    x = "Time Step",
+    y = "Market Share"
+  ) +
+  scale_colour_manual(name   = "Brand", values = c('Brand A' = "#E69F00", 'Brand B' = "#0072B2")) +
+  theme_few(base_family = "Assistant", base_size = 30) +
+  theme(
+    strip.text         = element_text(face = "bold"),
+    panel.grid.minor   = element_blank(),
+    panel.border       = element_rect(colour = "lightgrey", fill = NA),
+    panel.spacing      = unit(0.5, "lines")
+  )
+
+```
+
+
+The market share for `Brand A` converges to about 65.2%, and the market share for `Brand B` converges to about 34.8%. We call (0.652, 0.348) the `steady-state distribution` in this example.
+
+## Lets promote `Brand A` cont.
+
+Changing the initial probability vector $\mathbf{q}^{(0)}$ has no effect on the steady-state distribution.
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 18
+#| fig-height: 7
+
+# 1. Define P and the list of initials + labels
+P <- matrix(c(0.92, 0.08,
+              0.15, 0.85),
+            nrow = 2, byrow = TRUE)
+
+init_list <- list(
+  `q^(0) = (0.5, 0.5)`   = c(0.5, 0.5),
+  `q^(0) = (0.75, 0.25)` = c(0.75, 0.25),
+  `q^(0) = (0.25, 0.75)` = c(0.25, 0.75),
+  `q^(0) = (0.9, 0.1)`   = c(0.90, 0.10)
+)
+
+# 2. A little helper to simulate for one initial:
+simulate_chain <- function(pi0, label, n_steps = 30) {
+  pi_mat <- matrix(NA, nrow = n_steps, ncol = 2)
+  pi_mat[1, ] <- pi0
+  for (t in 2:n_steps) {
+    pi_mat[t, ] <- pi_mat[t - 1, ] %*% P
+  }
+  tibble(time = 1:n_steps,
+         `Brand A` = pi_mat[,1],
+         `Brand B` = pi_mat[,2]) %>%
+    pivot_longer(-time, names_to = "brand", values_to = "prob") %>%
+    mutate(initial = label)
+}
+
+# 3. Map over all initials, bind into one data frame
+all_runs <- imap_dfr(init_list, simulate_chain)
+
+# 4. Plot with facets
+ggplot(all_runs, aes(x = time, y = prob, color = brand)) +
+  geom_line(size = 1.2) +
+  # long-run horizontals (same for every init; they'll line up in each facet)
+  geom_hline(yintercept = all_runs %>% filter(time == max(time), brand == "Brand A") %>% pull(prob) %>% unique(),
+             linetype = "dashed", color = "gray") +
+  geom_hline(yintercept = all_runs %>% filter(time == max(time), brand == "Brand B") %>% pull(prob) %>% unique(),
+             linetype = "dashed", color = "gray") +
+  facet_wrap(~ initial, nrow = 2) +
+  scale_color_manual(name   = "Brand",
+                     values = c('Brand A' = "#E69F00", 'Brand B' = "#0072B2")) +
+  labs(x = "Time Step",
+       y = "Market Share") +
+  theme_few(base_family = "Assistant", base_size = 30) +
+  theme(
+    strip.text         = element_text(face = "bold"),
+    panel.grid.minor   = element_blank(),
+    panel.border       = element_rect(colour = "lightgrey", fill = NA),
+    panel.spacing      = unit(0.5, "lines")
+  )
+
+```
+
+## Lets promote `Brand A` cont.
+
+<br>
+
+Recall that: $\mathbf{q}^{(n)}$ = vector of state probabilities after $n$ time steps (*this is the vector of expected market shares in our task*) and $\mathbf{P}$ = transition matrix.
+
+<br>
+
+We have already seen that $\mathbf{q}^{(n)}$ appears to converge towards a limit as $n$ increases. If we use $\boldsymbol{\pi}$ to denote the limiting vector, i.e. $\boldsymbol{\pi} \;=\;\lim_{n \to \infty}\mathbf{q}^{(n)},$ then we can take limits to obtain:
+
+$$
+\boldsymbol{\pi}P = \boldsymbol{\pi}
+$$
+
+Note: $\boldsymbol{\pi} = (\pi_1,\pi_2)$, where the numbers $\pi_1$ and $\pi_2$ are “unknowns.”
+
+## Lets promote `Brand A` cont.
+
+By solving the equations $\boldsymbol{\pi} = (\pi_1,\pi_2)$ (where $\boldsymbol{\pi}$ is a ‘vector of unknowns’) we can calculate the steady-state distribution of the Markov chain.
+
+Recall the market shares example from earlier. Let $\pi_1$ and $\pi_2$ denote the (unknown) steady-state expected market shares for brands A and B respectively. We have:
+
+$$
+\boldsymbol{\pi}P = \boldsymbol{\pi}
+\quad\Longleftrightarrow\quad
+(\pi_1, \pi_2)
+\begin{pmatrix}
+0.92 & 0.08 \\
+0.15 & 0.85
+\end{pmatrix}
+=
+(\pi_1, \pi_2).
+$$
+
+This gives us a couple of linear equations in $\pi_1$ and $\pi_2$:
+
+$$
+\;\Longleftrightarrow\;
+\begin{cases}
+\pi_1 = 0.92\,\pi_1 + 0.15\,\pi_2\\[6pt]
+\pi_2 = 0.08\,\pi_1 + 0.85\,\pi_2
+\end{cases}
+\;\Longleftrightarrow\;
+\begin{cases}
+0.08\,\pi_1 - 0.15\,\pi_2 = 0\\[6pt]
+0.08\,\pi_1 - 0.15\,\pi_2 = 0
+\end{cases}
+\quad\text{(These equations are the same!)}
+$$
+
+To solve these equations we will also have to use the fact that  $\pi_1 + \pi_2 = 1$.
+
+## Lets promote `Brand A` cont.
+
+Let’s replace one of the two identical equations with $\pi_1 + \pi_2 = 1$.  Then we have: 
+
+$$
+\begin{cases}
+0.08\,\pi_1 - 0.15\,\pi_2 = 0\\[6pt]
+\pi_1 + \pi_2 = 1
+\end{cases}
+$$
+
+If we substitute $\pi_2 = 1 - \pi_1$ into the first equation, this gives:
+
+$$
+0.08\,\pi_1 \;-\; 0.15\,(1 - \pi_1) \;=\; 0
+\;\Longleftrightarrow\;
+0.23\,\pi_1 \;=\; 0.15
+$$
+
+Therefore;
+
+$$
+\pi_1 \;=\;\frac{0.15}{0.23}\approx 0.652,
+\qquad
+\pi_2 \;=\;1 - \pi_1\approx 0.348
+$$
+
+So the steady-state expected market shares are roughly: 65.2% for `Brand A` and 34.8% for `Brand B`.
+
+# Now it is `your turn`
+
+```{r}
+#| echo: false
+countdown::countdown(minutes = 15, seconds = 00)
+```
+
+# Any questions or thoughts? 💬
+
+---
+
+![](images/follow_us.png){fig-align="center"}
