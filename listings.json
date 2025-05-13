@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/lab/forecasting/index.html",
+    "items": [
+      "/lab/forecasting/epss_training/index.html"
+    ]
+  },
+  {
     "listing": "/lab/data_analytics/intro_python/index.html",
     "items": [
       "/lab/data_analytics/intro_python/materials/index.html"
@@ -10,12 +16,6 @@
     "items": [
       "/lab/data_analytics/intro_python/index.html",
       "/lab/data_analytics/dl4sg_marcov/index.html"
-    ]
-  },
-  {
-    "listing": "/lab/forecasting/index.html",
-    "items": [
-      "/lab/forecasting/epss_training/index.html"
     ]
   },
   {
