@@ -102,7 +102,7 @@ steady_state_dist <- function(P) {
 
 ### Task 2A
 
-Open the Python script `00_dtcm.qmd`. This script can be used to find the steady-state distribution of a Markov chain, given the transition probability matrix. In our case, we are interested in using it to calculate the steady-state expected market shares for the two brands. Find the steady-state distribution in each of the following cases:
+Open the R quarto script `00_dtcm.qmd`. This script can be used to find the steady-state distribution of a Markov chain, given the transition probability matrix. In our case, we are interested in using it to calculate the steady-state expected market shares for the two brands. Find the steady-state distribution in each of the following cases:
 
 $$
 P_1 =

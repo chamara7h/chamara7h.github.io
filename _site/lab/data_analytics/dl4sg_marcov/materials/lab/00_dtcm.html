@@ -311,11 +311,28 @@ window.Quarto = {
 <section id="task-2a" class="level3">
 <h3 class="anchored" data-anchor-id="task-2a">Task 2A</h3>
 <p>Open the Python script <code>00_dtcm.qmd</code>. This script can be used to find the steady-state distribution of a Markov chain, given the transition probability matrix. In our case, we are interested in using it to calculate the steady-state expected market shares for the two brands. Find the steady-state distribution in each of the following cases:</p>
-<ul>
-<li>matrix(c(0.96, 0.04, 0.07, 0.93), 2, byrow = TRUE),</li>
-<li>matrix(c(0.75, 0.25, 0.22, 0.78), 2, byrow = TRUE),</li>
-<li>matrix(c(0.99, 0.01, 0.02, 0.98), 2, byrow = TRUE)</li>
-</ul>
+<p><span class="math display">\[
+P_1 =
+\begin{bmatrix}
+0.96 &amp; 0.04 \\
+0.07 &amp; 0.93
+\end{bmatrix}
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+P_2 =
+\begin{bmatrix}
+0.75 &amp; 0.25 \\
+0.22 &amp; 0.78
+\end{bmatrix}
+\]</span> <br></p>
+<p><span class="math display">\[
+P_3 =
+\begin{bmatrix}
+0.99 &amp; 0.01 \\
+0.02 &amp; 0.98
+\end{bmatrix}
+\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transition matrices</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>matrices <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
