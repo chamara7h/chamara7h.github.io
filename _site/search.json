@@ -1054,7 +1054,7 @@
     "href": "lab/data_analytics/index.html",
     "title": "Data Analytics",
     "section": "",
-    "text": "A basic introduction to Python\n\n\n\nPython\n\n\nJupyter Lab\n\n\nData analytics\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Markov Processes in Healthcare Supply Chains\n\n\n\nStochastic modelling\n\n\nHealthcare\n\n\nR\n\n\nPython\n\n\n\nTutorial\n\n\n\n\n\n\n\nNo matching items"
+    "text": "A basic introduction to Python\n\n\n\nPython\n\n\nJupyter Lab\n\n\nData analytics\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Markov Processes in Healthcare Supply Chains\n\n\n\nStochastic modelling\n\n\nHealthcare\n\n\nR\n\n\nPython\n\n\n\nWorkshop\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lab/data_analytics/intro_python/index.html",
@@ -1647,203 +1647,203 @@
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#assumptions",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#assumptions",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Assumptions",
     "text": "Assumptions\n\nYou should be familiar with basic probability and random variables.\nYou are expected to be comfortable with R (or Python) for basic simulation and matrix operations.\nThis is not a theory-heavy workshop—we will use simple examples to build intuition, not derive theorems."
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#what-we-will-cover",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#what-we-will-cover",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "What we will cover",
     "text": "What we will cover\n\nKey concepts in Markov chains\nTransition matrices and system evolution\nSteady-state distributions and their interpretations\nApplications of Markov models in healthcare supply chains\nCode demonstrations and simulations"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#what-we-will-not-cover",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#what-we-will-not-cover",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "What we will not cover",
     "text": "What we will not cover\n\nProofs of Markov chain convergence theorems\nAdvanced topics like Hidden Markov Models or Semi-Markov processes\nContinuous-time Markov processes in full generality\nFormal classification of all chain types (e.g., reducibility, ergodicity)\nMarcov process with rewards"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#materials",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#materials",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Materials",
     "text": "Materials\n\nYou can find the workshop materials here.\n\nNote: These materials are based on my learnings at NATCOR Taught Course Centre: Stochastic Modelling Course."
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#outline",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#outline",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Outline",
     "text": "Outline\n\nWhy stochastic modeling?\nWhat are Markov processes?\nBrand switching as a DTMC example\nCode walk-throughs in R"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#why-stochastic-modelling-in-healthcare-supply-chains",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#why-stochastic-modelling-in-healthcare-supply-chains",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Why stochastic modelling in healthcare supply chains?",
     "text": "Why stochastic modelling in healthcare supply chains?\n\n\nDemand is unpredictable: Patient arrivals, seasonal outbreaks, and changing usage patterns\nSupply is uncertain: Delivery delays, stock losses, funding gaps, partial shipments\nHelps quantify risks: Probability of stockouts, unmet demand, cold chain failures\nEnables simulation of long-run behavior: nderstand steady-state stock levels, refill patterns, or equipment uptime\nUseful for evaluating interventions: E.g., What if we promote a local brand? Add a backup supplier? Use mobile delivery?"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#system-states",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#system-states",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "System states",
     "text": "System states\nWe want to model the behaviour of a system which can change its state from one period to the next.\nFor example:\n\n\n\n\n\n\n\n\n\n\nSystem\nStates\nTime unit\n\n\n\n\nWeather\nSunny, cloudy, rainy, …\nDay or hour\n\n\nNo. of people in a healtcare centre\n0, 1, 2, 3, …\nMinute or second\n\n\nStatus of job application\n“In preparation”, “Submitted”, “Invited for interview”, …\nDay or hour?"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "System states: weather example",
     "text": "System states: weather example\nWe are interested in the transitions between different states. Suppose there are only 3 possible states in weather:\n\nFrom any of the 3 states we can get to any of the other states in a single transition (or stay in the same state). A sample trajectory of the system could be:\n\\([Sunny,  Cloudy,  Cloudy,  Rainy,  Sunny,  Cloudy,  Rainy,  Rainy, …]\\)"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example-cont.",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example-cont.",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "System states: weather example cont.",
     "text": "System states: weather example cont.\nFor convenience, let’s give each of the 3 states a number: \\(0 – Sunny\\), \\(1 – Cloudy\\), \\(2 – Rainy\\)\n\nLet \\(S\\) be the set of system states. So in our example: \\(S = {0, 1, 2}\\)\n\nLet \\(X_n\\) be the state of the system after \\(n\\) time units (e.g. days).\n\nFor example:"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example-cont.-1",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example-cont.-1",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "System states: weather example cont.",
     "text": "System states: weather example cont.\nSuppose that the system begins as follows:\n\\(X_0 = 0, X_1 = 1, X_2 = 1, X_3 = 2\\)\nGiven the above, what is the probability that \\(X_4 = 0\\), i.e. it is sunny after 4 days? We can write this as a conditional probability:\n\\[\nPr(X_4 = 0\\,|\\,\\underbrace{X_0 = 0,\\,X_1 = 1,\\, X_2 = 1,\\,X_3 = 2)}_{\\text{entire history of the process}}\n\\] Suppose we assume that the probability that \\(X_4 = 0\\) depends only on the value of \\(X_3\\), and not on \\(X_2\\), \\(X_1\\) or \\(X_0\\). We can then write:\n\\[\nPr(X_4 = 0\\,|\\,\\underbrace{X_0 = 0,\\,X_1 = 1,\\, X_2 = 1,\\,X_3 = 2)}_{\\text{entire history of the process}} = Pr(X_4 = 0\\,|\\,\\underbrace{X_3 = 2)}_{\\text{current state}}\n\\]"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#markov-process-definition",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#markov-process-definition",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Markov process: definition",
     "text": "Markov process: definition\nA stochastic process with the Markov Property:\n\n\\((X_1, X_2, X_3, ...)\\)\n\nin which the probability distribution for state \\(X_{n+1}\\) depends only on the state \\(X_n\\), and not on any of the states from \\(X_0\\) up to \\(X_{n-1}\\) (for all \\(n \\ge 0\\)).\n\nWriting this more mathematically, we can say:  \\[\n\\Pr\\bigl(X_{n+1} = j \\;\\bigm|\\; X_0 = x_0,\\; X_1 = x_1,\\;\\dots,\\; X_n = x_n\\bigr)\n\\;=\\;\n\\Pr\\bigl(X_{n+1} = j \\;\\bigm|\\; X_n = x_n\\bigr)\n\\]\nKey idea: “The future depends only on the present, not on the past.”\nSo the probability distribution for the next state depends only on the current state, not on the history of previous states. Can be discrete or continuous in time."
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#what-is-a-good-example-of-a-markov-chain",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#what-is-a-good-example-of-a-markov-chain",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "What is a good example of a Markov chain?",
     "text": "What is a good example of a Markov chain?\nIf the weather is not a good example of a Markov chain, then what is?\n\n\n\n\n\nFor example, in Snakes and Ladders, if \\(X_n = 50\\) then:\n\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=67 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=52 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=53 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=34 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=55 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=56 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#assumptions-of-markov-chain-models",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#assumptions-of-markov-chain-models",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Assumptions of Markov chain models",
     "text": "Assumptions of Markov chain models\n\nRemember, simple Markov chain models rely upon some important assumptions:\n\nThe Markov chain is in exactly one state on any particular time step\nThe probability distribution for the next state only depends on the current state [Markov property]\nThe transition probabilities are the same on every time step"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#transition-probability-matrix",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#transition-probability-matrix",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Transition probability matrix",
     "text": "Transition probability matrix\nLet \\(S = \\{s_1, s_2, \\dots, s_n\\}\\) be the finite state space. The one-step transition probabilities are:\n\\[\np_{ij} = \\Pr(X_{t+1} = s_j \\mid X_t = s_i)\n\\]\nWe collect these into the transition matrix:\n\\[\nP = [p_{ij}], \\quad \\text{where each row sums to 1}\n\\]\nThe \\(n\\)-step transition matrix is:\n\\[\nP^{(n)} = P^n = \\underbrace{P \\cdot P \\cdot \\dots \\cdot P}_{n\\text{ times}}\n\\]\nWe can use the Chapman-Kolmogorov Equation:\n\\[\nP^{(n)} = P^{(k)} P^{(n-k)}\n\\]"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#steady-state-distribution",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#steady-state-distribution",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Steady-state distribution",
     "text": "Steady-state distribution\n\nWhen a Markov chain evolves over time, the probability distribution of states may converge to a fixed vector — called the steady-state distribution, \\(\\pi\\).\nA steady-state distribution exists if the chain is:\n\nIrreducible: all states communicate\nAperiodic: not cyclic\nPositive recurrent: expected return time is finite\n\nSteady-state equation: \\(\\pi P = \\pi, \\quad \\sum_i \\pi_i = 1\\)\nThis means:\n\n\\(\\pi_i\\): long-run proportion of time spent in state \\(i\\)\nIt’s a left eigenvector of \\(P\\) corresponding to eigenvalue 1"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-infinitely-many-states",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-infinitely-many-states",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Classifying states: infinitely many states",
     "text": "Classifying states: infinitely many states\n\nSuppose we have a Markov chain defined on the infinite state space \\({0, 1, 2, …}\\). If it is in state 0 then it moves to state \\(1\\) with probability \\(1\\). If it is in any other state then it moves up with probability \\(p\\) and moves down with probability \\(1-p\\), where \\(0&lt;p&lt;1\\).\n\nKey point: if a Markov chain has infinitely many states, a steady-state distribution might not exist."
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-periodic-states",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-periodic-states",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Classifying states: periodic states",
     "text": "Classifying states: periodic states\n\nSuppose we have a Markov chain which just goes back and forth between states 1 and 2. We call this a periodic Markov chain with a period of 2, because it can only return to the same state after an even number of time steps.\n\nKey point: even if a steady-state distribution exists, the Markov chain might not “converge” to the steady-state distribution unless it actually starts there."
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-absorbing-states",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-absorbing-states",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Classifying states: absorbing states",
     "text": "Classifying states: absorbing states\nThis time, we assume that if you’re in state 1 you stay there forever – and the same applies to state 2. In this case we call states 1 and 2 absorbing states.\n\nKey point: if states do not all “communicate” with each other (meaning that you cannot necessarily find a path from one state to another), there could be multiple steady-state distributions."
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A",
     "text": "Lets promote Brand A\nAssume patients switch weekly between two brands according to the probabilities shown in the table below:\n\n\n\n\nFrom  To\nBrand A\nBrand B\n\n\n\n\nBrand A\n0.92\n0.08\n\n\nBrand B\n0.15\n0.85\n\n\n\n\n\n\n\n\n\nLet \\(X_n\\) denote the preferred brand (either A or B) of a randomly-chosen customer after \\(n\\) weeks. From the table:\n\\(\\Pr(X_{n+1}=1 \\mid X_n = 1) = 0.92\\) \\(\\Pr(X_{n+1}=2 \\mid X_n = 1) = 0.08\\)\n\\(\\Pr(X_{n+1}=1 \\mid X_n = 2) = 0.15\\) \\(\\Pr(X_{n+1}=2 \\mid X_n = 2) = 0.85\\)"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A cont.",
     "text": "Lets promote Brand A cont.\n\nWe can represent this situation using a discrete-time Markov chain:\n\nWe are using some shorthand notation: \\(p_{ij} = Pr(X_{n+1} = j \\,|\\, X_n = i)\\)"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-1",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-1",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A cont.",
     "text": "Lets promote Brand A cont.\nSuppose that after zero weeks, both brands have a 50% market share. This means a randomly-chosen patient has a 50% chance of preferring Brand A.\nSo: \\(Pr(X_0 = 1) = 0.5\\) and \\(Pr(X_0 = 2) = 0.5\\)\nUsing the switching probabilities and invoking the law of total probability, we can calculate the preferred brand of a randomly-chosen patient after 1 week:\n\\(Pr(X_1 = 1) = \\underbrace{Pr(X_0 = 1)Pr(X_1 = 1|X_0 = 1)}_{\\text{(begin in state 1)}} + \\underbrace{Pr(X_0 = 2)Pr(X_1 = 1|X_0 = 2)}_{\\text{(begin in state 2)}} \\\\ =(0.5×0.92)+(0.5×0.15)=0.535\\)\n\n\\(Pr(X_1 = 2) = \\underbrace{Pr(X_0 = 1)Pr(X_1 = 2|X_0 = 1)}_{\\text{(begin in state 1)}} + \\underbrace{Pr(X_0 = 2)Pr(X_1 = 2|X_0 = 2)}_{\\text{(begin in state 2)}} \\\\=(0.5×0.08)+(0.5×0.85)=0.465\\)"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-2",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-2",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A cont.",
     "text": "Lets promote Brand A cont.\nWe can make these calculations look neater by using matrix-vector notation. Let \\(p_{ij}\\) denote the probability of switching from \\(i\\) to \\(j\\). Obviously, this implies:\n\\(p_{ij}\\ge0,\\;\\forall\\,i,j\\in S\\), \\(\\sum_{j\\in S} p_{ij} = 1,\\;\\forall\\,i\\in S.\\)\nLet \\(P\\) denote the transition matrix:\n\\[\n\\mathbf{P} \\;=\\;\n\\begin{pmatrix}\np_{11} & p_{12} \\\\\np_{21} & p_{22}\n\\end{pmatrix}\n\\;=\\;\n\\begin{pmatrix}\n0.92 & 0.08 \\\\\n0.15 & 0.85\n\\end{pmatrix}\n\\]\nAlso let \\(q^{(0)}\\) be the vector of initial market shares:\n\\(q^{(0)}=(0.5, 0.5)\\)\nTo get the expected market shares after one week, we multiply \\(q^{(0)}\\) by \\(P\\) to get \\(q^{(1)}\\)\n\\[\n\\mathbf{q}^{(0)} \\mathbf{P}\n\\;=\\;\n(0.5,\\;0.5)\\,\n\\begin{pmatrix}\n0.92 & 0.08\\\\\n0.15 & 0.85\n\\end{pmatrix}\n\\;=\\;\n(0.535,\\;0.465)\n\\;=\\;\n\\mathbf{q}^{(1)}\n\\]"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-3",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-3",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A cont.",
     "text": "Lets promote Brand A cont.\nTo find the expected market shares after two weeks, we repeat the process, starting from the expected market shares after one week. This means we need to calculate\n\\[\n\\overset{\\substack{\\text{expected market shares}\\\\\\text{after one week}}}\n         {\\mathbf{q}^{(1)}}\n\\;\\times\\;\n\\overset{\\text{transition matrix}}{P}\n\\;\\;=\\;\\;\n\\overset{\\substack{\\text{expected market shares}\\\\\\text{after two weeks}}}\n         {\\mathbf{q}^{(2)}}\n\\]\n\\[\n\\mathbf{q}^{(1)} \\mathbf{P}\n\\;=\\;\n(0.535,\\;0.465)\\,\n\\begin{pmatrix}\n0.92 & 0.08\\\\\n0.15 & 0.85\n\\end{pmatrix}\n\\;=\\;\n(0.56195,\\;0.43805)\n\\;=\\;\n\\mathbf{q}^{(2)}\n\\]\nSimilarly, to find the expected market shares after three weeks:\n\\[\n\\mathbf{q}^{(2)} \\mathbf{P}\n\\;=\\;\n(0.56195,\\;0.43805)\\,\n\\begin{pmatrix}\n0.92 & 0.08\\\\\n0.15 & 0.85\n\\end{pmatrix}\n\\;=\\;\n(0.5827015,\\;0.4172985)\n\\;=\\;\n\\mathbf{q}^{(3)}\n\\]"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-4",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-4",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A cont.",
     "text": "Lets promote Brand A cont.\n\nIn general, to find the expected market shares after \\(n\\) weeks, we calculate\n\\(\\mathbf{q}^{(n-1)}\\,\\mathbf{P} = \\mathbf{q}^{(n)}\\)\n\nThis is the same as:\n\\(\\mathbf{q}^{(0)}\\underbrace{\\mathbf{P}\\,\\mathbf{P}\\,\\cdots\\,\\mathbf{P}}_{\\text{(n times)}} \\;=\\; \\mathbf{q}^{(0)}\\,\\mathbf{P}^n\\)\n\ni.e. the vector of initial market shares multiplied by \\(\\mathbf{P}\\) to the power \\(n\\)."
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-5",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-5",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A cont.",
-    "text": "Lets promote Brand A cont.\nIf we use a line graph to show how the expected market shares change with time, we find that both of them appear to converge to fixed values.\n\nThe market share for Brand A converges to about 65.2%, and the market share for Brand B converges to about 34.8%. We call (0.652, 0.348) the steady-state distribution in this example."
+    "text": "Lets promote Brand A cont.\nIf we use a line graph to show how the expected market shares change with time, we find that both of them appear to converge to fixed values.\n\n\n\n\n\n\n\n\n\nThe market share for Brand A converges to about 65.2%, and the market share for Brand B converges to about 34.8%. We call (0.652, 0.348) the steady-state distribution in this example."
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-6",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-6",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A cont.",
     "text": "Lets promote Brand A cont.\nChanging the initial probability vector \\(\\mathbf{q}^{(0)}\\) has no effect on the steady-state distribution."
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-7",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-7",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A cont.",
     "text": "Lets promote Brand A cont.\n\nRecall that: \\(\\mathbf{q}^{(n)}\\) = vector of state probabilities after \\(n\\) time steps (this is the vector of expected market shares in our task) and \\(\\mathbf{P}\\) = transition matrix.\n\nWe have already seen that \\(\\mathbf{q}^{(n)}\\) appears to converge towards a limit as \\(n\\) increases. If we use \\(\\boldsymbol{\\pi}\\) to denote the limiting vector, i.e. \\(\\boldsymbol{\\pi} \\;=\\;\\lim_{n \\to \\infty}\\mathbf{q}^{(n)},\\) then we can take limits to obtain:\n\\[\n\\boldsymbol{\\pi}P = \\boldsymbol{\\pi}\n\\]\nNote: \\(\\boldsymbol{\\pi} = (\\pi_1,\\pi_2)\\), where the numbers \\(\\pi_1\\) and \\(\\pi_2\\) are “unknowns.”"
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-8",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-8",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A cont.",
     "text": "Lets promote Brand A cont.\nBy solving the equations \\(\\boldsymbol{\\pi} = (\\pi_1,\\pi_2)\\) (where \\(\\boldsymbol{\\pi}\\) is a ‘vector of unknowns’) we can calculate the steady-state distribution of the Markov chain.\nRecall the market shares example from earlier. Let \\(\\pi_1\\) and \\(\\pi_2\\) denote the (unknown) steady-state expected market shares for brands A and B respectively. We have:\n\\[\n\\boldsymbol{\\pi}P = \\boldsymbol{\\pi}\n\\quad\\Longleftrightarrow\\quad\n(\\pi_1, \\pi_2)\n\\begin{pmatrix}\n0.92 & 0.08 \\\\\n0.15 & 0.85\n\\end{pmatrix}\n=\n(\\pi_1, \\pi_2).\n\\]\nThis gives us a couple of linear equations in \\(\\pi_1\\) and \\(\\pi_2\\):\n\\[\n\\;\\Longleftrightarrow\\;\n\\begin{cases}\n\\pi_1 = 0.92\\,\\pi_1 + 0.15\\,\\pi_2\\\\[6pt]\n\\pi_2 = 0.08\\,\\pi_1 + 0.85\\,\\pi_2\n\\end{cases}\n\\;\\Longleftrightarrow\\;\n\\begin{cases}\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\\\\[6pt]\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\n\\end{cases}\n\\quad\\text{(These equations are the same!)}\n\\]\nTo solve these equations we will also have to use the fact that \\(\\pi_1 + \\pi_2 = 1\\)."
   },
   {
     "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-9",
     "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-9",
-    "title": "Home",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
     "section": "Lets promote Brand A cont.",
     "text": "Lets promote Brand A cont.\nLet’s replace one of the two identical equations with \\(\\pi_1 + \\pi_2 = 1\\). Then we have:\n\\[\n\\begin{cases}\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\\\\[6pt]\n\\pi_1 + \\pi_2 = 1\n\\end{cases}\n\\]\nIf we substitute \\(\\pi_2 = 1 - \\pi_1\\) into the first equation, this gives:\n\\[\n0.08\\,\\pi_1 \\;-\\; 0.15\\,(1 - \\pi_1) \\;=\\; 0\n\\;\\Longleftrightarrow\\;\n0.23\\,\\pi_1 \\;=\\; 0.15\n\\]\nTherefore;\n\\[\n\\pi_1 \\;=\\;\\frac{0.15}{0.23}\\approx 0.652,\n\\qquad\n\\pi_2 \\;=\\;1 - \\pi_1\\approx 0.348\n\\]\nSo the steady-state expected market shares are roughly: 65.2% for Brand A and 34.8% for Brand B."
   },
@@ -1930,5 +1930,40 @@
     "title": "Methodological Skills for Research",
     "section": "",
     "text": "2025-04-11\n\n\n\nThis session is designed for undergraduate students.\nNo prior knowledge of research philosophy or paradigms is expected.\nThe session is descriptive and exploratory, not heavily theoretical or mathematical.\n\n\n\n\n\nIntroduction to research philosophy: ontology, epistemology, axiology\nUnderstanding research paradigms: positivism, interpretivism, critical realism, pragmatism, post-structuralism\nDefining methodology vs. methods\nOverview of qualitative, quantitative, and mixed-methods approaches\nExploring core research principles: objectivity, validity, reliability, reflexivity, and ethics\nUsing real-world examples to illustrate abstract concepts\n\n\n\n\n\nDetailed coverage of data analysis techniques\nIn-depth theoretical derivations or philosophical debates\nSpecific guidance on research proposal writing\nFull training in data collection instruments (e.g., surveys, interview guides)\n\n\n\n\nYou can find the lecture materials here."
+  },
+  {
+    "objectID": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html",
+    "href": "lab/data_analytics/dl4sg_marcov/materials/dl4sg_markov.html",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "",
+    "text": "2025-05-15"
+  },
+  {
+    "objectID": "lab/data_analytics/dl4sg_marcov/materials/lab/00_dtcm.html",
+    "href": "lab/data_analytics/dl4sg_marcov/materials/lab/00_dtcm.html",
+    "title": "Home",
+    "section": "",
+    "text": "This exercise is based on the brand switching example discussed in the slides. It models consumer behavior using a discrete-time Markov chain with two states representing two brands."
+  },
+  {
+    "objectID": "lab/data_analytics/dl4sg_marcov/materials/lab/00_dtcm.html#introduction",
+    "href": "lab/data_analytics/dl4sg_marcov/materials/lab/00_dtcm.html#introduction",
+    "title": "Home",
+    "section": "",
+    "text": "This exercise is based on the brand switching example discussed in the slides. It models consumer behavior using a discrete-time Markov chain with two states representing two brands."
+  },
+  {
+    "objectID": "lab/data_analytics/dl4sg_marcov/materials/lab/00_dtcm.html#excel-based-exploration",
+    "href": "lab/data_analytics/dl4sg_marcov/materials/lab/00_dtcm.html#excel-based-exploration",
+    "title": "Home",
+    "section": "Excel-Based Exploration",
+    "text": "Excel-Based Exploration\n\nInitial Setup\nOpen the “Brand switching example – spreadsheet” Excel file.\n\nInitial market shares are in cells B2 (Brand 1) and C2 (Brand 2) — both start at 50%.\nTransition probabilities are found in:\n\nE2: \\(\\Pr(\\text{Brand 1 next week} \\mid \\text{Brand 1 this week})\\)\nF2: \\(\\Pr(\\text{Brand 2 next week} \\mid \\text{Brand 1 this week})\\)\nE3: \\(\\Pr(\\text{Brand 1 next week} \\mid \\text{Brand 2 this week})\\)\nF3: \\(\\Pr(\\text{Brand 2 next week} \\mid \\text{Brand 2 this week})\\)\n\n\nCells B3 and C3 contain formulas to calculate expected market shares after one week.\n\n\nTask 1A\nCopy the formulas in B3 and C3 down for at least 30 rows.\n\nQuestion: How long does it take until the expected market share for Brand 1 exceeds 60%?\n\nAnswer: _________\n\n\nTask 1B\nChange the initial market shares: - Case 1: 30% (Brand 1) and 70% (Brand 2) - Case 2: 15% (Brand 1) and 85% (Brand 2)\n\nQuestion: In each case, how many weeks does it take for Brand 1 to overtake Brand 2?\n\nAnswers: - Case 1: _________ - Case 2: _________\nRegardless of starting conditions, the system quickly converges to a steady-state distribution.\n\n\nTask 1C\nInspect further down the spreadsheet and record the steady-state expected market shares for both brands to 4 decimal places.\nAnswer: - Brand 1: _________ - Brand 2: _________\nThese values are determined by the transition matrix, not the initial shares."
+  },
+  {
+    "objectID": "lab/data_analytics/dl4sg_marcov/materials/lab/00_dtcm.html#using-r-to-find-steady-state-distribution",
+    "href": "lab/data_analytics/dl4sg_marcov/materials/lab/00_dtcm.html#using-r-to-find-steady-state-distribution",
+    "title": "Home",
+    "section": "Using R to Find Steady-State Distribution",
+    "text": "Using R to Find Steady-State Distribution\nWe now use R to compute the steady-state distribution algebraically.\nR Function to Solve for Steady-State\n\nlibrary(tidyverse)\n\nsteady_state_dist &lt;- function(P) {\n  # Calculate the steady-state distribution of a discrete-time Markov chain\n  # defined by the transition matrix P\n  \n  # Parameters:\n  # P : matrix\n  #   The transition matrix of the Markov chain of interest.\n  \n  # Returns:\n  # A vector representing the steady-state probabilities for the Markov chain.\n  \n  # Check if P is a square matrix\n  if (!is.matrix(P) || nrow(P) != ncol(P)) {\n    stop(\"P must be a square matrix\")\n  }\n  \n  # Number of states\n  dim &lt;- nrow(P)\n  \n  # Set up the system of equations\n  Q &lt;- P - diag(dim)  # P - I\n  ones &lt;- rep(1, dim) \n  Q &lt;- cbind(Q, ones)  # Append column of ones\n  QTQ &lt;- Q %*% t(Q)    # Compute Q * Q^T\n  bQT &lt;- rep(1, dim)   # Right-hand side vector\n  \n  # Solve the equations and return the solution\n  return(solve(QTQ, bQT))\n}\n\n\nTask 2A\nOpen the Python script 00_dtcm.qmd. This script can be used to find the steady-state distribution of a Markov chain, given the transition probability matrix. In our case, we are interested in using it to calculate the steady-state expected market shares for the two brands. Find the steady-state distribution in each of the following cases:\n\nmatrix(c(0.96, 0.04, 0.07, 0.93), 2, byrow = TRUE),\nmatrix(c(0.75, 0.25, 0.22, 0.78), 2, byrow = TRUE),\nmatrix(c(0.99, 0.01, 0.02, 0.98), 2, byrow = TRUE)\n\n\n# Transition matrices\nmatrices &lt;- list(\n  matrix(c(__, __, __, __), 2, byrow = TRUE),\n  matrix(c(__, __, __, __), 2, byrow = TRUE),\n  matrix(c(__, __, __, __), 2, byrow = TRUE)\n)\n\n# Compute steady-state for each\nfor (P in matrices) {\n  pi_dist &lt;- steady_state_dist(P)\n  print(t(pi_dist))\n}\n\n\n🧠 Even with very similar transition probabilities, the resulting steady-state market shares can be surprisingly different.\n\n\n\nTask 2B – Extra Challenge: Algebraic derivation of steady-state\nLet the transition matrix be:\n\\[\nP = \\begin{bmatrix}\n1 - a & a \\\\\n2a & 1 - 2a\n\\end{bmatrix}, \\quad \\text{where } 0 &lt; a &lt; 0.5\n\\]\nWe want to show the steady-state vector is:\n\\[\n\\boldsymbol{\\pi} = \\left(\\frac{2}{3}, \\frac{1}{3}\\right)\n\\]\n\na_vals &lt;- c(__, __, __, __)\n\nfor (a in a_vals) {\n  P &lt;- matrix(c(__, __, __, __), 2, byrow = TRUE)\n  pi_dist &lt;- steady_state_dist(P)\n  print(t(pi_dist))\n}"
   }
 ]

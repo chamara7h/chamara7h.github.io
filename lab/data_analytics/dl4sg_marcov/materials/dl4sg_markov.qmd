@@ -5,7 +5,7 @@ format:
     width: 1800
     height: 900
     logo: "images/logo.png"
-    footer: "[Introduction to Markov Processes in Healthcare Supply Chains](https://chamara7h.github.io/talks/)"
+    footer: "[Introduction to Markov Processes in Healthcare Supply Chains](https://chamara7h.github.io/labs/)"
     css: theme.css
     theme: simple
     echo: true
@@ -268,12 +268,10 @@ countdown::countdown(minutes = 00, seconds = 30)
 
 ## What is a `good example` of a Markov chain?
 
-If the weather is not a good example of a Markov chain, then what is?
-
 :::: {.columns}
 
 ::: {.column-left .column width="50%"}
-![](images/snake_game.png)
+<img src="images/snake_game.png" style="max-width: 100%; height: auto;" />
 :::
 
 ::: {.column width="50%"}
@@ -283,16 +281,12 @@ If the weather is not a good example of a Markov chain, then what is?
 For example, in Snakes and Ladders, if $X_n = 50$ then:
 
 - $\displaystyle \Pr\bigl(X_{n+1}=67 \mid X_n=50\bigr) = \tfrac{1}{6}$
-
 - $\displaystyle \Pr\bigl(X_{n+1}=52 \mid X_n=50\bigr) = \tfrac{1}{6}$
-
 - $\displaystyle \Pr\bigl(X_{n+1}=53 \mid X_n=50\bigr) = \tfrac{1}{6}$
-
 - $\displaystyle \Pr\bigl(X_{n+1}=34 \mid X_n=50\bigr) = \tfrac{1}{6}$
-
 - $\displaystyle \Pr\bigl(X_{n+1}=55 \mid X_n=50\bigr) = \tfrac{1}{6}$
-
 - $\displaystyle \Pr\bigl(X_{n+1}=56 \mid X_n=50\bigr) = \tfrac{1}{6}$
+
 :::
 
 ::::
@@ -746,7 +740,7 @@ So the steady-state expected market shares are roughly: 65.2% for `Brand A` and 
 
 ```{r}
 #| echo: false
-countdown::countdown(minutes = 15, seconds = 00)
+countdown::countdown(minutes = 20, seconds = 00)
 ```
 
 # Any questions or thoughts? 💬

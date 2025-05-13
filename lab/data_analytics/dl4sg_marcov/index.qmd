@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Markov Processes in Healthcare Supply Chains"
-description: "Tutorial"
+description: "Workshop"
 author: "Harsha Chamara Hewage"
 date: "2025-05-15"
 image: "cover.png"
@@ -51,8 +51,13 @@ button {
 </button>
 
 <button id="journal-article-btn" 
+        onclick="window.open('materials/lab/00_dtcm.html', '_blank')">
+  <i class="fas fa-bookmark"></i> Lab 1
+</button>
+
+<button id="journal-article-btn" 
         onclick="window.open('materials/lab/01_markov_intro_lab.html', '_blank')">
-  <i class="fas fa-bookmark"></i> Lab
+  <i class="fas fa-bookmark"></i> Lab 2
 </button>
 
 <button id="github-repo-btn" onclick="window.open('https://github.com/chamara7h/dl4sg_markov', '_blank');">
