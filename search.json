@@ -144,7 +144,7 @@
     "href": "lab/index.html",
     "title": "Home",
     "section": "",
-    "text": "A basic introduction to Python\n\n\n\nPython\n\nJupyter Lab\n\nData analytics\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\n\nForecasting\n\nHealthcare\n\nR\n\nPython\n\nMachine Learning\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Markov Processes in Healthcare Supply Chains\n\n\n\nStochastic modelling\n\nHealthcare\n\nR\n\nPython\n\n\n\nWorkshop\n\n\n\n\n\nNo matching items"
+    "text": "A basic introduction to Python\n\n\n\nPython\n\nJupyter Lab\n\nData analytics\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\n\nForecasting\n\nHealthcare\n\nR\n\nPython\n\nMachine Learning\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Markov Processes in Healthcare Supply Chains\n\n\n\nStochastic modelling\n\nHealthcare\n\nR\n\nPython\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/publications/second-post/index.html",
@@ -508,7 +508,7 @@
     "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#markov-process-definition",
     "title": "Home",
     "section": "Markov process: definition",
-    "text": "Markov process: definition\nA stochastic process with the Markov Property:\n\n\\((X_1, X_2, X_3, ...)\\)\n\nin which the probability distribution for state \\(X_{n+1}\\) depends only on the state \\(X_n\\), and not on any of the states from \\(X_0\\) up to \\(X_{n-1}\\) (for all \\(n \\ge 0\\)).\n\nWriting this more mathematically, we can say:  \\[\n\\Pr\\bigl(X_{n+1} = j \\;\\bigm|\\; X_0 = x_0,\\; X_1 = x_1,\\;\\dots,\\; X_n = x_n\\bigr)\n\\;=\\;\n\\Pr\\bigl(X_{n+1} = j \\;\\bigm|\\; X_n = x_n\\bigr)\n\\]\n\nKey idea: “The future depends only on the present, not on the past.”\n\nSo the probability distribution for the next state depends only on the current state, not on the history of previous states. Can be discrete or continuous in time."
+    "text": "Markov process: definition\nA stochastic process with the Markov Property:\n\n\\((X_1, X_2, X_3, ...)\\)\n\nin which the probability distribution for state \\(X_{n+1}\\) depends only on the state \\(X_n\\), and not on any of the states from \\(X_0\\) up to \\(X_{n-1}\\) (for all \\(n \\ge 0\\)).\n\nWriting this more mathematically, we can say:  \\[\n\\Pr\\bigl(X_{n+1} = j \\;\\bigm|\\; X_0 = x_0,\\; X_1 = x_1,\\;\\dots,\\; X_n = x_n\\bigr)\n\\;=\\;\n\\Pr\\bigl(X_{n+1} = j \\;\\bigm|\\; X_n = x_n\\bigr)\n\\]\nKey idea: “The future depends only on the present, not on the past.”\nSo the probability distribution for the next state depends only on the current state, not on the history of previous states. Can be discrete or continuous in time."
   },
   {
     "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#what-is-a-good-example-of-a-markov-chain",
@@ -606,35 +606,35 @@
     "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-5",
     "title": "Home",
     "section": "Lets promote Brand A cont.",
-    "text": "Lets promote Brand A cont.\nIf we use a line graph to show how the expected market shares change with time, we find that both of them appear to converge to fixed values.\n\nThe market share for Brand A converges to about 65.2%, and the market share for Brand B converges to about 34.8%. We call (0.652, 0.348) the steady-state distribution in this example."
+    "text": "Lets promote Brand A cont.\n\n\n\n−+\n10:00\n\n\n\n\nRecall that: \\(\\mathbf{q}^{(n)}\\) = vector of state probabilities after \\(n\\) time steps (this is the vector of expected market shares in our task) and \\(\\mathbf{P}\\) = transition matrix.\n\nWe have already seen that \\(\\mathbf{q}^{(n)}\\) appears to converge towards a limit as \\(n\\) increases. If we use \\(\\boldsymbol{\\pi}\\) to denote the limiting vector, i.e. \\(\\boldsymbol{\\pi} \\;=\\;\\lim_{n \\to \\infty}\\mathbf{q}^{(n)},\\) then we can take limits to obtain:\n\\[\n\\boldsymbol{\\pi}P = \\boldsymbol{\\pi}\n\\]\nNote: \\(\\boldsymbol{\\pi} = (\\pi_1,\\pi_2)\\), where the numbers \\(\\pi_1\\) and \\(\\pi_2\\) are “unknowns.”"
   },
   {
     "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-6",
     "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-6",
     "title": "Home",
     "section": "Lets promote Brand A cont.",
-    "text": "Lets promote Brand A cont.\nChanging the initial probability vector \\(\\mathbf{q}^{(0)}\\) has no effect on the steady-state distribution."
+    "text": "Lets promote Brand A cont.\nBy solving the equations \\(\\boldsymbol{\\pi} = (\\pi_1,\\pi_2)\\) (where \\(\\boldsymbol{\\pi}\\) is a ‘vector of unknowns’) we can calculate the steady-state distribution of the Markov chain.\nRecall the market shares example from earlier. Let \\(\\pi_1\\) and \\(\\pi_2\\) denote the (unknown) steady-state expected market shares for brands A and B respectively. We have:\n\\[\n\\boldsymbol{\\pi}P = \\boldsymbol{\\pi}\n\\quad\\Longleftrightarrow\\quad\n(\\pi_1, \\pi_2)\n\\begin{pmatrix}\n0.92 & 0.08 \\\\\n0.15 & 0.85\n\\end{pmatrix}\n=\n(\\pi_1, \\pi_2).\n\\]\nThis gives us a couple of linear equations in \\(\\pi_1\\) and \\(\\pi_2\\):\n\\[\n\\;\\Longleftrightarrow\\;\n\\begin{cases}\n\\pi_1 = 0.92\\,\\pi_1 + 0.15\\,\\pi_2\\\\[6pt]\n\\pi_2 = 0.08\\,\\pi_1 + 0.85\\,\\pi_2\n\\end{cases}\n\\;\\Longleftrightarrow\\;\n\\begin{cases}\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\\\\[6pt]\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\n\\end{cases}\n\\quad\\text{(These equations are the same!)}\n\\]\nTo solve these equations we will also have to use the fact that \\(\\pi_1 + \\pi_2 = 1\\)."
   },
   {
     "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-7",
     "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-7",
     "title": "Home",
     "section": "Lets promote Brand A cont.",
-    "text": "Lets promote Brand A cont.\n\n\n\n−+\n10:00\n\n\n\n\nRecall that: \\(\\mathbf{q}^{(n)}\\) = vector of state probabilities after \\(n\\) time steps (this is the vector of expected market shares in our task) and \\(\\mathbf{P}\\) = transition matrix.\n\nWe have already seen that \\(\\mathbf{q}^{(n)}\\) appears to converge towards a limit as \\(n\\) increases. If we use \\(\\boldsymbol{\\pi}\\) to denote the limiting vector, i.e. \\(\\boldsymbol{\\pi} \\;=\\;\\lim_{n \\to \\infty}\\mathbf{q}^{(n)},\\) then we can take limits to obtain:\n\\[\n\\boldsymbol{\\pi}P = \\boldsymbol{\\pi}\n\\]\nNote: \\(\\boldsymbol{\\pi} = (\\pi_1,\\pi_2)\\), where the numbers \\(\\pi_1\\) and \\(\\pi_2\\) are “unknowns.”"
+    "text": "Lets promote Brand A cont.\nLet’s replace one of the two identical equations with \\(\\pi_1 + \\pi_2 = 1\\). Then we have:\n\\[\n\\begin{cases}\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\\\\[6pt]\n\\pi_1 + \\pi_2 = 1\n\\end{cases}\n\\]\nIf we substitute \\(\\pi_2 = 1 - \\pi_1\\) into the first equation, this gives:\n\\[\n0.08\\,\\pi_1 \\;-\\; 0.15\\,(1 - \\pi_1) \\;=\\; 0\n\\;\\Longleftrightarrow\\;\n0.23\\,\\pi_1 \\;=\\; 0.15\n\\]\nTherefore;\n\\[\n\\pi_1 \\;=\\;\\frac{0.15}{0.23}\\approx 0.652,\n\\qquad\n\\pi_2 \\;=\\;1 - \\pi_1\\approx 0.348\n\\]\nSo the steady-state expected market shares are roughly: 65.2% for Brand A and 34.8% for Brand B."
   },
   {
     "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-8",
     "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-8",
     "title": "Home",
     "section": "Lets promote Brand A cont.",
-    "text": "Lets promote Brand A cont.\nBy solving the equations \\(\\boldsymbol{\\pi} = (\\pi_1,\\pi_2)\\) (where \\(\\boldsymbol{\\pi}\\) is a ‘vector of unknowns’) we can calculate the steady-state distribution of the Markov chain.\nRecall the market shares example from earlier. Let \\(\\pi_1\\) and \\(\\pi_2\\) denote the (unknown) steady-state expected market shares for brands A and B respectively. We have:\n\\[\n\\boldsymbol{\\pi}P = \\boldsymbol{\\pi}\n\\quad\\Longleftrightarrow\\quad\n(\\pi_1, \\pi_2)\n\\begin{pmatrix}\n0.92 & 0.08 \\\\\n0.15 & 0.85\n\\end{pmatrix}\n=\n(\\pi_1, \\pi_2).\n\\]\nThis gives us a couple of linear equations in \\(\\pi_1\\) and \\(\\pi_2\\):\n\\[\n\\;\\Longleftrightarrow\\;\n\\begin{cases}\n\\pi_1 = 0.92\\,\\pi_1 + 0.15\\,\\pi_2\\\\[6pt]\n\\pi_2 = 0.08\\,\\pi_1 + 0.85\\,\\pi_2\n\\end{cases}\n\\;\\Longleftrightarrow\\;\n\\begin{cases}\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\\\\[6pt]\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\n\\end{cases}\n\\quad\\text{(These equations are the same!)}\n\\]\nTo solve these equations we will also have to use the fact that \\(\\pi_1 + \\pi_2 = 1\\)."
+    "text": "Lets promote Brand A cont.\nIf we use a line graph to show how the expected market shares change with time, we find that both of them appear to converge to fixed values.\n\nThe market share for Brand A converges to about 65.2%, and the market share for Brand B converges to about 34.8%. We call (0.652, 0.348) the steady-state distribution in this example."
   },
   {
     "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-9",
     "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-9",
     "title": "Home",
     "section": "Lets promote Brand A cont.",
-    "text": "Lets promote Brand A cont.\nLet’s replace one of the two identical equations with \\(\\pi_1 + \\pi_2 = 1\\). Then we have:\n\\[\n\\begin{cases}\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\\\\[6pt]\n\\pi_1 + \\pi_2 = 1\n\\end{cases}\n\\]\nIf we substitute \\(\\pi_2 = 1 - \\pi_1\\) into the first equation, this gives:\n\\[\n0.08\\,\\pi_1 \\;-\\; 0.15\\,(1 - \\pi_1) \\;=\\; 0\n\\;\\Longleftrightarrow\\;\n0.23\\,\\pi_1 \\;=\\; 0.15\n\\]\nTherefore;\n\\[\n\\pi_1 \\;=\\;\\frac{0.15}{0.23}\\approx 0.652,\n\\qquad\n\\pi_2 \\;=\\;1 - \\pi_1\\approx 0.348\n\\]\nSo the steady-state expected market shares are roughly: 65.2% for Brand A and 34.8% for Brand B."
+    "text": "Lets promote Brand A cont.\nChanging the initial probability vector \\(\\mathbf{q}^{(0)}\\) has no effect on the steady-state distribution."
   },
   {
     "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html",
