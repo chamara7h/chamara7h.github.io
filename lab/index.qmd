@@ -5,5 +5,7 @@ listing:
     - "intro_python/*.qmd"
     - "dl4sg_marcov/*.qmd"
   type: grid
-  fields: [image, title, description, categories]
+  sort-ui: false
+  filter-ui: false
+  fields: [title, image, description, categories]
 ---

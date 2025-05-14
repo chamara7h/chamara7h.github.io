@@ -1,5 +1,4 @@
 ---
-image: "cover.png"
 listing: 
   contents: 
     - "intro_method_skills/*.qmd"
