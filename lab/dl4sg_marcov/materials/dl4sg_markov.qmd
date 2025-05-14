@@ -253,7 +253,7 @@ $$
 $$
 
 
-> `Key idea`: *“The future depends only on the present, not on the past.”* 
+`Key idea`: *“The future depends only on the present, not on the past.”* 
 
 So the probability distribution for the next state depends only on the current state, not on the history of previous states. Can be discrete or continuous in time.
 
@@ -544,6 +544,92 @@ i.e. the vector of initial market shares multiplied by $\mathbf{P}$ to the power
 
 ## Lets promote `Brand A` cont.
 
+```{r}
+#| echo: false
+countdown::countdown(minutes = 10, seconds = 00)
+```
+
+<br>
+
+Recall that: $\mathbf{q}^{(n)}$ = vector of state probabilities after $n$ time steps (*this is the vector of expected market shares in our task*) and $\mathbf{P}$ = transition matrix.
+
+<br>
+
+We have already seen that $\mathbf{q}^{(n)}$ appears to converge towards a limit as $n$ increases. If we use $\boldsymbol{\pi}$ to denote the limiting vector, i.e. $\boldsymbol{\pi} \;=\;\lim_{n \to \infty}\mathbf{q}^{(n)},$ then we can take limits to obtain:
+
+$$
+\boldsymbol{\pi}P = \boldsymbol{\pi}
+$$
+
+Note: $\boldsymbol{\pi} = (\pi_1,\pi_2)$, where the numbers $\pi_1$ and $\pi_2$ are “unknowns.”
+
+## Lets promote `Brand A` cont.
+
+By solving the equations $\boldsymbol{\pi} = (\pi_1,\pi_2)$ (where $\boldsymbol{\pi}$ is a ‘vector of unknowns’) we can calculate the steady-state distribution of the Markov chain.
+
+Recall the market shares example from earlier. Let $\pi_1$ and $\pi_2$ denote the (unknown) steady-state expected market shares for brands A and B respectively. We have:
+
+$$
+\boldsymbol{\pi}P = \boldsymbol{\pi}
+\quad\Longleftrightarrow\quad
+(\pi_1, \pi_2)
+\begin{pmatrix}
+0.92 & 0.08 \\
+0.15 & 0.85
+\end{pmatrix}
+=
+(\pi_1, \pi_2).
+$$
+
+This gives us a couple of linear equations in $\pi_1$ and $\pi_2$:
+
+$$
+\;\Longleftrightarrow\;
+\begin{cases}
+\pi_1 = 0.92\,\pi_1 + 0.15\,\pi_2\\[6pt]
+\pi_2 = 0.08\,\pi_1 + 0.85\,\pi_2
+\end{cases}
+\;\Longleftrightarrow\;
+\begin{cases}
+0.08\,\pi_1 - 0.15\,\pi_2 = 0\\[6pt]
+0.08\,\pi_1 - 0.15\,\pi_2 = 0
+\end{cases}
+\quad\text{(These equations are the same!)}
+$$
+
+To solve these equations we will also have to use the fact that  $\pi_1 + \pi_2 = 1$.
+
+## Lets promote `Brand A` cont.
+
+Let’s replace one of the two identical equations with $\pi_1 + \pi_2 = 1$.  Then we have: 
+
+$$
+\begin{cases}
+0.08\,\pi_1 - 0.15\,\pi_2 = 0\\[6pt]
+\pi_1 + \pi_2 = 1
+\end{cases}
+$$
+
+If we substitute $\pi_2 = 1 - \pi_1$ into the first equation, this gives:
+
+$$
+0.08\,\pi_1 \;-\; 0.15\,(1 - \pi_1) \;=\; 0
+\;\Longleftrightarrow\;
+0.23\,\pi_1 \;=\; 0.15
+$$
+
+Therefore;
+
+$$
+\pi_1 \;=\;\frac{0.15}{0.23}\approx 0.652,
+\qquad
+\pi_2 \;=\;1 - \pi_1\approx 0.348
+$$
+
+So the steady-state expected market shares are roughly: 65.2% for `Brand A` and 34.8% for `Brand B`.
+
+## Lets promote `Brand A` cont.
+
 If we use a line graph to show how the expected market shares change with time, we find that both of them appear to `converge` to fixed values.
 
 ```{r}
@@ -665,92 +751,6 @@ ggplot(all_runs, aes(x = time, y = prob, color = brand)) +
   )
 
 ```
-
-## Lets promote `Brand A` cont.
-
-```{r}
-#| echo: false
-countdown::countdown(minutes = 10, seconds = 00)
-```
-
-<br>
-
-Recall that: $\mathbf{q}^{(n)}$ = vector of state probabilities after $n$ time steps (*this is the vector of expected market shares in our task*) and $\mathbf{P}$ = transition matrix.
-
-<br>
-
-We have already seen that $\mathbf{q}^{(n)}$ appears to converge towards a limit as $n$ increases. If we use $\boldsymbol{\pi}$ to denote the limiting vector, i.e. $\boldsymbol{\pi} \;=\;\lim_{n \to \infty}\mathbf{q}^{(n)},$ then we can take limits to obtain:
-
-$$
-\boldsymbol{\pi}P = \boldsymbol{\pi}
-$$
-
-Note: $\boldsymbol{\pi} = (\pi_1,\pi_2)$, where the numbers $\pi_1$ and $\pi_2$ are “unknowns.”
-
-## Lets promote `Brand A` cont.
-
-By solving the equations $\boldsymbol{\pi} = (\pi_1,\pi_2)$ (where $\boldsymbol{\pi}$ is a ‘vector of unknowns’) we can calculate the steady-state distribution of the Markov chain.
-
-Recall the market shares example from earlier. Let $\pi_1$ and $\pi_2$ denote the (unknown) steady-state expected market shares for brands A and B respectively. We have:
-
-$$
-\boldsymbol{\pi}P = \boldsymbol{\pi}
-\quad\Longleftrightarrow\quad
-(\pi_1, \pi_2)
-\begin{pmatrix}
-0.92 & 0.08 \\
-0.15 & 0.85
-\end{pmatrix}
-=
-(\pi_1, \pi_2).
-$$
-
-This gives us a couple of linear equations in $\pi_1$ and $\pi_2$:
-
-$$
-\;\Longleftrightarrow\;
-\begin{cases}
-\pi_1 = 0.92\,\pi_1 + 0.15\,\pi_2\\[6pt]
-\pi_2 = 0.08\,\pi_1 + 0.85\,\pi_2
-\end{cases}
-\;\Longleftrightarrow\;
-\begin{cases}
-0.08\,\pi_1 - 0.15\,\pi_2 = 0\\[6pt]
-0.08\,\pi_1 - 0.15\,\pi_2 = 0
-\end{cases}
-\quad\text{(These equations are the same!)}
-$$
-
-To solve these equations we will also have to use the fact that  $\pi_1 + \pi_2 = 1$.
-
-## Lets promote `Brand A` cont.
-
-Let’s replace one of the two identical equations with $\pi_1 + \pi_2 = 1$.  Then we have: 
-
-$$
-\begin{cases}
-0.08\,\pi_1 - 0.15\,\pi_2 = 0\\[6pt]
-\pi_1 + \pi_2 = 1
-\end{cases}
-$$
-
-If we substitute $\pi_2 = 1 - \pi_1$ into the first equation, this gives:
-
-$$
-0.08\,\pi_1 \;-\; 0.15\,(1 - \pi_1) \;=\; 0
-\;\Longleftrightarrow\;
-0.23\,\pi_1 \;=\; 0.15
-$$
-
-Therefore;
-
-$$
-\pi_1 \;=\;\frac{0.15}{0.23}\approx 0.652,
-\qquad
-\pi_2 \;=\;1 - \pi_1\approx 0.348
-$$
-
-So the steady-state expected market shares are roughly: 65.2% for `Brand A` and 34.8% for `Brand B`.
 
 # Now it is `your turn`
 
