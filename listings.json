@@ -1,11 +1,17 @@
 [
   {
-    "listing": "/lab/forecasting/index.html",
-    "items": []
+    "listing": "/lab/intro_python/index.html",
+    "items": [
+      "/lab/intro_python/materials/index.html"
+    ]
   },
   {
-    "listing": "/lab/data_analytics/index.html",
-    "items": []
+    "listing": "/lab/index.html",
+    "items": [
+      "/lab/intro_python/index.html",
+      "/lab/epss_training/index.html",
+      "/lab/dl4sg_marcov/index.html"
+    ]
   },
   {
     "listing": "/projects/index.html",
@@ -26,20 +32,6 @@
     "items": [
       "/projects/publications/second-post/index.html",
       "/projects/publications/first-post/index.html"
-    ]
-  },
-  {
-    "listing": "/lab/index.html",
-    "items": [
-      "/lab/intro_python/index.html",
-      "/lab/epss_training/index.html",
-      "/lab/dl4sg_marcov/index.html"
-    ]
-  },
-  {
-    "listing": "/lab/intro_python/index.html",
-    "items": [
-      "/lab/intro_python/materials/index.html"
     ]
   }
 ]
