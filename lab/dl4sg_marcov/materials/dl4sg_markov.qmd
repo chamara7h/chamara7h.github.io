@@ -5,7 +5,7 @@ format:
     width: 1800
     height: 900
     logo: "images/logo.png"
-    footer: "[Introduction to Markov Processes in Healthcare Supply Chains](https://chamara7h.github.io/labs/)"
+    footer: "[Introduction to Markov Processes in Healthcare Supply Chains](https://chamara7h.github.io/lab/)"
     css: theme.css
     theme: simple
     echo: true
@@ -136,7 +136,7 @@ You can find the workshop materials [here](https://chamara7h.github.io/lab/).
 
 <br>
 
-*Note*: These materials are based on my learnings at [NATCOR Taught Course Centre: Stochastic Modelling Course](https://www.natcor.ac.uk/courses/).
+> *Note*: These materials are based on my learnings at [NATCOR Taught Course Centre: Stochastic Modelling Course](https://www.natcor.ac.uk/courses/).
 
 ## Outline
 
@@ -160,7 +160,7 @@ You can find the workshop materials [here](https://chamara7h.github.io/lab/).
 
 - `Helps quantify risks`: Probability of stockouts, unmet demand, cold chain failures
 
-- `Enables simulation of long-run behavior`: nderstand steady-state stock levels, refill patterns, or equipment uptime
+- `Enables simulation of long-run behavior`: Understand steady-state stock levels, refill patterns, or equipment uptime
 
 - `Useful for evaluating interventions`: E.g., What if we promote a local brand? Add a backup supplier? Use mobile delivery?
 
@@ -253,7 +253,7 @@ $$
 $$
 
 
-`Key idea`: *“The future depends only on the present, not on the past.”* 
+> `Key idea`: *“The future depends only on the present, not on the past.”* 
 
 So the probability distribution for the next state depends only on the current state, not on the history of previous states. Can be discrete or continuous in time.
 
@@ -278,7 +278,9 @@ countdown::countdown(minutes = 00, seconds = 30)
 
 <br>
 
-For example, in Snakes and Ladders, if $X_n = 50$ then:
+For example, in Snakes and Ladders, 
+
+if $X_n = 50$ then:
 
 - $\displaystyle \Pr\bigl(X_{n+1}=67 \mid X_n=50\bigr) = \tfrac{1}{6}$
 - $\displaystyle \Pr\bigl(X_{n+1}=52 \mid X_n=50\bigr) = \tfrac{1}{6}$
@@ -299,7 +301,7 @@ Remember, simple Markov chain models rely upon some important assumptions:
 
 - The Markov chain is in exactly one state on any particular time step
 
-- The probability distribution for the next state only depends on the current state  `[Markov property]`
+- The probability distribution for the next state only depends on the current state  `(i.e., Markov property)`
 
 - The transition probabilities are the same on every time step
 
@@ -397,11 +399,20 @@ Assume patients switch weekly between two brands according to the probabilities 
 
 Let $X_n$ denote the preferred brand (either A or B) of a randomly-chosen customer after $n$ weeks. From the table:
 
-$\Pr(X_{n+1}=1 \mid X_n = 1) = 0.92$    $\Pr(X_{n+1}=2 \mid X_n = 1) = 0.08$
+$\Pr(X_{n+1}=1 \mid X_n = 1) = 0.92$
 
-$\Pr(X_{n+1}=1 \mid X_n = 2) = 0.15$    $\Pr(X_{n+1}=2 \mid X_n = 2) = 0.85$
+$\Pr(X_{n+1}=2 \mid X_n = 1) = 0.08$
+
+$\Pr(X_{n+1}=1 \mid X_n = 2) = 0.15$    
+
+$\Pr(X_{n+1}=2 \mid X_n = 2) = 0.85$
 
 ## Lets promote `Brand A` cont.
+
+```{r}
+#| echo: false
+countdown::countdown(minutes = 10, seconds = 00)
+```
 
 <br>
 
@@ -656,6 +667,11 @@ ggplot(all_runs, aes(x = time, y = prob, color = brand)) +
 ```
 
 ## Lets promote `Brand A` cont.
+
+```{r}
+#| echo: false
+countdown::countdown(minutes = 10, seconds = 00)
+```
 
 <br>
 

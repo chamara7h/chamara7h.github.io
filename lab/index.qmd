@@ -1,8 +1,9 @@
 ---
 listing: 
   contents: 
-    - "forecasting/*.qmd"
-    - "data_analytics/*.qmd"
+    - "epss_training/*.qmd"
+    - "intro_python/*.qmd"
+    - "dl4sg_marcov/*.qmd"
   type: grid
   fields: [image, title, description, categories]
 ---
