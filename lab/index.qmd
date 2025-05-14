@@ -4,6 +4,6 @@ listing:
     - "epss_training/*.qmd"
     - "intro_python/*.qmd"
     - "dl4sg_marcov/*.qmd"
-  type: default
+  type: grid
   fields: [title, image, description, categories]
 ---
