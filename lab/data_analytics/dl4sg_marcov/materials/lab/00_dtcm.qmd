@@ -37,13 +37,16 @@ Copy the formulas in **B3 and C3** down for at least 30 rows.
 ### Task 1B
 
 Change the initial market shares:
+
 - **Case 1**: 30% (Brand 1) and 70% (Brand 2)
+
 - **Case 2**: 15% (Brand 1) and 85% (Brand 2)
 
 > **Question**: In each case, how many weeks does it take for Brand 1 to overtake Brand 2?
 
 **Answers**:
 - Case 1: _________
+
 - Case 2: _________
 
 Regardless of starting conditions, the system quickly converges to a **steady-state distribution**.
@@ -53,7 +56,9 @@ Regardless of starting conditions, the system quickly converges to a **steady-st
 Inspect further down the spreadsheet and record the steady-state expected market shares for both brands to **4 decimal places**.
 
 **Answer**:
+
 - Brand 1:  _________
+
 - Brand 2:  _________
 
 These values are determined by the **transition matrix**, not the initial shares.
