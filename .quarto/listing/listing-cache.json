@@ -26,7 +26,8 @@
     ],
     "talks\\index.qmd": [
       "projects.yml",
-      "intro_method_skills/*.qmd"
+      "intro_method_skills/*.qmd",
+      "dl4sg_semnar/*.qmd"
     ],
     "phd\\index.qmd": [
       "projects.yml",

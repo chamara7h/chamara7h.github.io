@@ -2,6 +2,7 @@
 listing: 
   contents: 
     - "intro_method_skills/*.qmd"
+    - 'dl4sg_semnar/*.qmd'
   type: grid
-  fields: [title, image, description, categories]
+  fields: [date, title, image, description, categories]
 ---
