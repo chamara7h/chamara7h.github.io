@@ -543,7 +543,7 @@
     "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#censorship-scenarios",
     "title": "Home",
     "section": "Censorship scenarios",
-    "text": "Censorship scenarios\nHow can a demand forecasting and inventory optimization model that incorporates lost sales estimation and contextual field data enhance contraceptive supply chain performance and reduce stockouts in developing countries?\n\n\nFigure 1: Censorship scenarios in family planning supply chains."
+    "text": "Censorship scenarios\nHow can a demand forecasting and inventory optimization model that incorporates lost sales estimation and contextual field data enhance contraceptive supply chain performance and reduce stockouts in developing countries?\n\n\n\n\n\n\n\n\n\nFigure 1: Censorship scenarios in family planning supply chains."
   },
   {
     "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#why-this-is-critical",
@@ -557,7 +557,7 @@
     "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#how-we-can-fill-the-gaps",
     "title": "Home",
     "section": "How we can fill the gaps",
-    "text": "How we can fill the gaps\n\n\n\n\n\n\n\nRQ1: How accurately can a Tobit Kalman Filter with conformal prediction estimate true demand under sales censorship?\n\n\n\n\nRQ2: How does demand reconstruction improve inventory performance compared to baseline planning methods?\n\n\n\n\nRQ3: How do planners adjust their orders in response to proposed model-generated recommendations?\n\n\n\n\n\nImage generated using ChatGPT."
+    "text": "How we can fill the gaps\n\n\n\n\n\n\n\nRQ1: How accurately can a Tobit Kalman Filter with conformal prediction estimate true demand under censorship?\n\n\n\n\nRQ2: How does demand reconstruction improve inventory performance compared to baseline planning methods?\n\n\n\n\nRQ3: How do planners adjust their orders in response to proposed model-generated recommendations?\n\n\n\n\n\nImage generated using ChatGPT."
   },
   {
     "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#our-proposed-framework",
@@ -574,18 +574,18 @@
     "text": "First stage: estimating true demand under censorship using tobit kalman filtering and conformal prediction"
   },
   {
-    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#data-exploration",
-    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#data-exploration",
-    "title": "Home",
-    "section": "Data exploration",
-    "text": "Data exploration\n\nActual vs. observed demand for one representative series per type × category, with disruptions and censoring shaded."
-  },
-  {
     "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#experiment-setup",
     "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#experiment-setup",
     "title": "Home",
     "section": "Experiment setup",
     "text": "Experiment setup"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#data-exploration",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#data-exploration",
+    "title": "Home",
+    "section": "Data exploration",
+    "text": "Data exploration\n\nActual vs. observed demand for one representative series per type × category, with disruptions and censoring shaded."
   },
   {
     "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#actual-vs-forecasted-demand-distributions",
