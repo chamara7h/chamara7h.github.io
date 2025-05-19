@@ -4,6 +4,7 @@ listing:
     - "epss_training/*.qmd"
     - "intro_python/*.qmd"
     - "dl4sg_marcov/*.qmd"
-  type: grid
-  fields: [title, image, description, categories]
+  type: default
+  sort: date desc
+  filter-ui: true
 ---

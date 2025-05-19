@@ -137,5 +137,32 @@
   },
   "lab/dl4sg_marcov/index.qmd": {
     "index.html": "3c8275b3"
+  },
+  "lab/dl4sg_marcov/materials/dl4sg_markov.qmd": {
+    "dl4sg_markov.html": "4ec5999b"
+  },
+  "lab/dl4sg_marcov/materials/lab/00_dtcm.qmd": {
+    "00_dtcm.html": "f959c422"
+  },
+  "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.qmd": {
+    "01_markov_intro_lab.html": "d071aa80"
+  },
+  "lab/epss_training/index.qmd": {
+    "index.html": "852fd26f"
+  },
+  "lab/epss_training/slides/epss_training.qmd": {
+    "epss_training.html": "497d5aa1"
+  },
+  "lab/intro_python/index.qmd": {
+    "index.html": "3bf2037e"
+  },
+  "lab/intro_python/materials/index.ipynb": {
+    "index.html": "730913a0"
+  },
+  "talks/dl4sg_seminar/index.qmd": {
+    "index.html": "8a818c1e"
+  },
+  "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.qmd": {
+    "dl4sg_seminar_wp2.html": "f74656b6"
   }
 }

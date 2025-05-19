@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -129,7 +129,7 @@ window.Quarto = {
 </script>
 
 <meta property="og:title" content="Home">
-<meta property="og:image" content="../lab/data_analytics/cover.png">
+<meta property="og:image" content="../lab/intro_python/cover.jpg">
 <meta property="og:site_name" content="Home">
 </head>
 
@@ -214,35 +214,109 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1747045857769" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a href="../lab/data_analytics/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Python,Jupyter Lab,Data analytics" data-listing-date-sort="1740960000000" data-listing-file-modified-sort="1747557348876" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="168">
+<a href="../lab/intro_python/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="../lab/data_analytics/cover.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="../lab/intro_python/cover.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Data Analytics
+A basic introduction to Python
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Jupyter Lab'); return false;">
+Jupyter Lab
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Data analytics'); return false;">
+Data analytics
+</div>
+</div>
 <div class="card-text listing-description">
-Data analytics materials using R and Python.
+Tutorial
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Mar 3, 2025
+</div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1739462063291" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a href="../lab/forecasting/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="Forecasting,Healthcare,R,Python,Machine Learning" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1747557348702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="376">
+<a href="../lab/epss_training/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="../lab/forecasting/cover.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="../lab/epss_training/cover.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Time Series Forecasting
+Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Forecasting'); return false;">
+Forecasting
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Healthcare'); return false;">
+Healthcare
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
+Machine Learning
+</div>
+</div>
 <div class="card-text listing-description">
-Time series forecasting materials using R and Python.
+Workshop
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Mar 17, 2025
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Stochastic modelling,Healthcare,R,Python" data-listing-date-sort="1747263600000" data-listing-file-modified-sort="1747557348436" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="381">
+<a href="../lab/dl4sg_marcov/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../lab/dl4sg_marcov/cover.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Introduction to Markov Processes in Healthcare Supply Chains
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Stochastic modelling'); return false;">
+Stochastic modelling
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Healthcare'); return false;">
+Healthcare
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
+</div>
+</div>
+<div class="card-text listing-description">
+Workshop
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+May 15, 2025
+</div>
 </div>
 </div>
 </div>

@@ -2,7 +2,8 @@
 listing: 
   contents: 
     - "intro_method_skills/*.qmd"
-    - 'dl4sg_semnar/*.qmd'
-  type: grid
-  fields: [date, title, image, description, categories]
+    - "dl4sg_seminar/*.qmd"
+  type: default
+  sort: date desc
+  filter-ui: true
 ---

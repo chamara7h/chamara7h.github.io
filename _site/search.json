@@ -74,7 +74,7 @@
     "href": "talks/index.html",
     "title": "Home",
     "section": "",
-    "text": "Methodological Skills for Research\n\n\n\nResearch\n\n\nMethodology\n\n\nPhilosophy\n\n\n\nLecture\n\n\n\nApr 11, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\n\n\nSeminar\n\n\n\n\n\nMay 20, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nMethodological Skills for Research\n\n\n\n\n\nLecture\n\n\n\n\n\nApr 11, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/third-post/index.html",
@@ -214,7 +214,7 @@
     "href": "lab/index.html",
     "title": "Home",
     "section": "",
-    "text": "Data Analytics\n\n\nData analytics materials using R and Python.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime Series Forecasting\n\n\nTime series forecasting materials using R and Python.\n\n\n\n\n\n\n\nNo matching items"
+    "text": "A basic introduction to Python\n\n\n\nPython\n\n\nJupyter Lab\n\n\nData analytics\n\n\n\nTutorial\n\n\n\nMar 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\n\nForecasting\n\n\nHealthcare\n\n\nR\n\n\nPython\n\n\nMachine Learning\n\n\n\nWorkshop\n\n\n\nMar 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Markov Processes in Healthcare Supply Chains\n\n\n\nStochastic modelling\n\n\nHealthcare\n\n\nR\n\n\nPython\n\n\n\nWorkshop\n\n\n\nMay 15, 2025\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lab/forecasting/epss_training/index.html",
@@ -1965,5 +1965,1440 @@
     "title": "Home",
     "section": "Using R to Find Steady-State Distribution",
     "text": "Using R to Find Steady-State Distribution\nWe now use R to compute the steady-state distribution algebraically.\nR Function to Solve for Steady-State\n\nlibrary(tidyverse)\n\nsteady_state_dist &lt;- function(P) {\n  # Calculate the steady-state distribution of a discrete-time Markov chain\n  # defined by the transition matrix P\n  \n  # Parameters:\n  # P : matrix\n  #   The transition matrix of the Markov chain of interest.\n  \n  # Returns:\n  # A vector representing the steady-state probabilities for the Markov chain.\n  \n  # Check if P is a square matrix\n  if (!is.matrix(P) || nrow(P) != ncol(P)) {\n    stop(\"P must be a square matrix\")\n  }\n  \n  # Number of states\n  dim &lt;- nrow(P)\n  \n  # Set up the system of equations\n  Q &lt;- P - diag(dim)  # P - I\n  ones &lt;- rep(1, dim) \n  Q &lt;- cbind(Q, ones)  # Append column of ones\n  QTQ &lt;- Q %*% t(Q)    # Compute Q * Q^T\n  bQT &lt;- rep(1, dim)   # Right-hand side vector\n  \n  # Solve the equations and return the solution\n  return(solve(QTQ, bQT))\n}\n\n\nTask 2A\nOpen the Python script 00_dtcm.qmd. This script can be used to find the steady-state distribution of a Markov chain, given the transition probability matrix. In our case, we are interested in using it to calculate the steady-state expected market shares for the two brands. Find the steady-state distribution in each of the following cases:\n\\[\nP_1 =\n\\begin{bmatrix}\n0.96 & 0.04 \\\\\n0.07 & 0.93\n\\end{bmatrix}\n\\]\n\n\\[\nP_2 =\n\\begin{bmatrix}\n0.75 & 0.25 \\\\\n0.22 & 0.78\n\\end{bmatrix}\n\\] \n\\[\nP_3 =\n\\begin{bmatrix}\n0.99 & 0.01 \\\\\n0.02 & 0.98\n\\end{bmatrix}\n\\]\n\n# Transition matrices\nmatrices &lt;- list(\n  matrix(c(__, __, __, __), 2, byrow = TRUE),\n  matrix(c(__, __, __, __), 2, byrow = TRUE),\n  matrix(c(__, __, __, __), 2, byrow = TRUE)\n)\n\n# Compute steady-state for each\nfor (P in matrices) {\n  pi_dist &lt;- steady_state_dist(P)\n  print(t(pi_dist))\n}\n\n\n🧠 Even with very similar transition probabilities, the resulting steady-state market shares can be surprisingly different.\n\n\n\nTask 2B – Extra Challenge: Algebraic derivation of steady-state\nLet the transition matrix be:\n\\[\nP = \\begin{bmatrix}\n1 - a & a \\\\\n2a & 1 - 2a\n\\end{bmatrix}, \\quad \\text{where } 0 &lt; a &lt; 0.5\n\\]\nWe want to show the steady-state vector is:\n\\[\n\\boldsymbol{\\pi} = \\left(\\frac{2}{3}, \\frac{1}{3}\\right)\n\\]\n\na_vals &lt;- c(__, __, __, __)\n\nfor (a in a_vals) {\n  P &lt;- matrix(c(__, __, __, __), 2, byrow = TRUE)\n  pi_dist &lt;- steady_state_dist(P)\n  print(t(pi_dist))\n}"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/index.html#who-is-the-course-for",
+    "href": "lab/dl4sg_marcov/index.html#who-is-the-course-for",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Who is the course for?",
+    "text": "Who is the course for?\nThis course is intended for healthcare supply chain researchers, practitioners, and students who want to model uncertainty in logistical systems using Markov Chains. It assumes familiarity with basic probability and matrix manipulation in R."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/index.html#learning-objectives",
+    "href": "lab/dl4sg_marcov/index.html#learning-objectives",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nUnderstand the structure and assumptions of discrete-time Markov chains (DTMCs)\nApply transition matrices to simulate system evolution over time\nCompute and interpret steady-state distributions\nModel brand switching and service reliability in healthcare supply chains\nSimulate long-run outcomes and interpret them visually in R\nLink model insights to supply chain policy decisions (e.g. stockouts, demand, brand promotion)"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/index.html#prerequisites",
+    "href": "lab/dl4sg_marcov/index.html#prerequisites",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nComfortable with basic probability (random variables, distributions)\nFamiliarity with R and tidyverse for matrix operations and plotting\nNo prior knowledge of Markov chains is assumed"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/index.html#course-topics",
+    "href": "lab/dl4sg_marcov/index.html#course-topics",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Course Topics",
+    "text": "Course Topics\n\nMarkov Chains for Healthcare Supply Chains\n\nSection 1: Foundations of Markov Chains\n\nState-based systems and probabilistic transitions\nThe Markov property and memoryless dynamics\nTransition probability matrices and system trajectories\n\n\n\nSection 2: Steady-State Analysis\n\nn-step transitions and convergence\nExistence and uniqueness of steady-state distributions\nInterpreting long-run behaviour in real systems\n\n\n\nSection 3: Brand Switching Case Study\n\nPromote-local strategy for paracetamol brands\nSimulate switching behaviour and market share convergence\nSolve steady-state equations using R\n\n\n\nSection 4: Applied Simulation in R\n\nVector-matrix calculations\nTransition matrix exponentiation\nPlotting and comparing convergence paths"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#outline",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#outline",
+    "title": "Home",
+    "section": "Outline",
+    "text": "Outline\n\n\nWhat was never counted...\nThe fundamental question\nWhat we are going to do\nNumerical experiment\nWhat’s NEXT"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\n\n\n\n\nThis is Nilu.\nShe went to the pharmacy today to get contraceptive Product A.\nBut it wasn’t in stock.\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-1",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-1",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\n\n\n\n\nShe didn’t go to the pharmacy today.\nWhy would she?\nThe last two times she went, they didn’t have the product she needed.\nThe system doesn’t know this.\nIt sees “no demand” and it continously logs Nilu’s silence as data.\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-2",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-2",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\n\n\n\n\nWhen data is censored by stockouts or service interruptions…\n…forecasts fail.\nNot just by being wrong, But by being blind.\nThis creates a broken trust and leads to\nUNMET DEMAND.\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-3",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-3",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\n\n\n\n\nIn reality…\nThere are more than\n218 million women\nlike Nilu still have an unmet need for family planning.\nUltimately, this results in dropouts, unwanted pregnancies, and almost 7 million hospitalizations each year in developing countries.\n\n\n\nImage generated using ChatGPT.\nSources: USAID, 2020; PATH, 2019; Mukasa et al., 2017; Gilda et al., 2016"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#contraceptive-products-arent-easily-substituted",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#contraceptive-products-arent-easily-substituted",
+    "title": "Home",
+    "section": "Contraceptive products aren’t easily SUBSTITUTED",
+    "text": "Contraceptive products aren’t easily SUBSTITUTED\n\n\n\n\n*Percent of women who will get pregnant within the first year of typical use."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#key-definitions",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#key-definitions",
+    "title": "Home",
+    "section": "Key definitions",
+    "text": "Key definitions\n\n\nStockouts: Periods when demand is higher than available inventory, leading to censored observations of demand.\nInterruptions: Periods when no products are issued despite available stock, thus artificially recorded as zero demand.\nCensored Demand: Demand occurring during periods when products are unavailable (stockouts or interruptions), thus not fully observable.\nTrue Demand: Actual demand that would have occurred if sufficient stock was available."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#censorship-scenarios",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#censorship-scenarios",
+    "title": "Home",
+    "section": "Censorship scenarios",
+    "text": "Censorship scenarios\nHow can a demand forecasting and inventory optimization model that incorporates lost sales estimation and contextual field data enhance contraceptive supply chain performance and reduce stockouts in developing countries?\n\n\nFigure 1: Censorship scenarios in family planning supply chains."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#why-this-is-critical",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#why-this-is-critical",
+    "title": "Home",
+    "section": "Why this is critical",
+    "text": "Why this is critical\n\n\n\n\n\n\n\nFrequent stockouts are common in family planning supply chains, especially in developing countries, significantly impacting public health outcomes.\n\n\n\n\nDuring my recent field visit to Ethiopia, stockouts were repeatedly identified by demand planners as a major barrier to effective contraceptive supply management.\n\n\n\n\nTraditional forecasting methods fail under censorship.\n\n\n\n\nPrior research inadequately addresses demand estimation under conditions of frequent stockouts and interruptions, often leading to biased forecasts and suboptimal inventory decisions.\n\n\n\n\n\nImage generated using ChatGPT.\nSources: Bijvank et al., 2011; Karimi et al., 2021; Thanos et as., 2022 ; Trapero, 2024"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#how-we-can-fill-the-gaps",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#how-we-can-fill-the-gaps",
+    "title": "Home",
+    "section": "How we can fill the gaps",
+    "text": "How we can fill the gaps\n\n\n\n\n\n\n\nRQ1: How accurately can a Tobit Kalman Filter with conformal prediction estimate true demand under sales censorship?\n\n\n\n\nRQ2: How does demand reconstruction improve inventory performance compared to baseline planning methods?\n\n\n\n\nRQ3: How do planners adjust their orders in response to proposed model-generated recommendations?\n\n\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#our-proposed-framework",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#our-proposed-framework",
+    "title": "Home",
+    "section": "Our proposed framework",
+    "text": "Our proposed framework\n\n\n\n\nWe are currently at the green-colored stage."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#first-stage-estimating-true-demand-under-censorship-using-tobit-kalman-filtering-and-conformal-prediction",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#first-stage-estimating-true-demand-under-censorship-using-tobit-kalman-filtering-and-conformal-prediction",
+    "title": "Home",
+    "section": "First stage: estimating true demand under censorship using tobit kalman filtering and conformal prediction",
+    "text": "First stage: estimating true demand under censorship using tobit kalman filtering and conformal prediction"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#data-exploration",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#data-exploration",
+    "title": "Home",
+    "section": "Data exploration",
+    "text": "Data exploration\n\nActual vs. observed demand for one representative series per type × category, with disruptions and censoring shaded."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#experiment-setup",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#experiment-setup",
+    "title": "Home",
+    "section": "Experiment setup",
+    "text": "Experiment setup"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#actual-vs-forecasted-demand-distributions",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#actual-vs-forecasted-demand-distributions",
+    "title": "Home",
+    "section": "Actual vs forecasted demand distributions",
+    "text": "Actual vs forecasted demand distributions\n\n\nFigure 2: Actual vs. forecasted demand distributions for the different forecasting methods."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#overall-forecasting-and-inventory-performance-across-models",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#overall-forecasting-and-inventory-performance-across-models",
+    "title": "Home",
+    "section": "Overall forecasting and inventory performance across models",
+    "text": "Overall forecasting and inventory performance across models\n\n\n\n\nMethod\nMASE (mean)\nPin Ball Loss - q95 (mean)\nCSL (mean)\nLost Sales Rate (mean)\nInventory coverage (mean)\n\n\n\n\nTKF CP\n0.87\n47.61\n0.86\n0.14\n5.25\n\n\nMoving Average\n1.06\n72.65\n0.82\n0.18\n19.6\n\n\nLinear Regression\n1.08\n73.86\n0.82\n0.16\n2.55\n\n\nNaive\n1.21\n78.89\n0.84\n0.16\n123.38"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---nemenyi-test",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---nemenyi-test",
+    "title": "Home",
+    "section": "Performance evaluation - Nemenyi test",
+    "text": "Performance evaluation - Nemenyi test\n\n\nFigure 3: Average ranks of forecasting methods with 95% confidence intervals based on the Nemenyi test for all metrics. Lower ranks indicate better performance."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---forecasting",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---forecasting",
+    "title": "Home",
+    "section": "Performance evaluation - forecasting",
+    "text": "Performance evaluation - forecasting\n\n\nFigure 4: Forecasting metrics for each series type for the different forecasting methods."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---inventory",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---inventory",
+    "title": "Home",
+    "section": "Performance evaluation - inventory",
+    "text": "Performance evaluation - inventory\n\n\nFigure 5: Inentory metrics for each series type for the different forecasting methods."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#way-forward",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#way-forward",
+    "title": "Home",
+    "section": "Way forward",
+    "text": "Way forward\n\n\n\n\nDevelop a more comprehensive inventory policy using forecasted quantiles → Incorporate uncertainty directly into order decisions\n\nExtend empirical model with external covariates → Account for special events, disruptions, and policy shifts\n\nConduct lab experiment with real demand planners → Measure how model recommendations affect decision-making\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#materials",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#materials",
+    "title": "Home",
+    "section": "Materials",
+    "text": "Materials\n\n\nYou can find the slides here."
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html",
+    "href": "lab/intro_python/materials/index.html",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Introduction to Python\nInstalling Python\nSetting up an Integrated Development Environment (IDE)\nIntroduction to Jupyter Lab, VS Code, Google Colab and Anaconda\n\n\n\n\n\nUnderstanding the basic syntax\nHow to write and execute code in Python\nSetting up and organizing a Python project\n\n\n\n\nPython is a versatile, high-level programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more.\n\n\n\n\nEasy to read and write\nExtensive libraries and frameworks\nStrong community support\nGreat for beginners and professionals alike\n\n\n\n\nPython can be installed on various operating systems, including Windows, macOS, and Linux.\nStep 1: Download the Installer\n\nVisit the official Python website: https://www.python.org/\nNavigate to the Downloads section and choose the appropriate installer for your operating system.\n\nStep 2: Run the Installer - Open the downloaded installer file. - Make sure to check the box that says “Add Python to PATH” during the installation process. This makes it easier to run Python from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation:\npython --version\n\nYou should see the version of Python you installed.\n\nCongratulations! Python is now installed on your computer.\n\n\n\nAn IDE is a software application that provides comprehensive facilities to programmers for software development.\nThere are many IDEs available for Python. Two popular choices are VS Code and Jupyter Lab.\n\nInstalling VS Code\n\n\nVisit the Visual Studio Code website: https://code.visualstudio.com/\nDownload and install the version for your operating system.\nOnce installed, you can add Python support by installing the Python extension:\n\nOpen VS Code.\nGo to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.\nSearch for “Python” and install the extension provided by Microsoft.\nOpen a new Python file or notebook and start coding!\n\nTutorial: https://code.visualstudio.com/docs/python/python-tutorial\nKey Features:\n\nExtensions: VS Code has a vast library of extensions that enhance its functionality.\nIntegrated Terminal: You can run command-line tasks directly in VS Code.\n\n\n\nInstalling Jupyter Lab\n\n\nJupyter Lab is a web-based interactive computing environment.\nTo install Jupyter Lab, you need to have Python installed. You can use pip, the Python package installer, to install Jupyter Lab:\n    pip install jupyterlab\nTo start Jupyter Lab, open your command prompt (Windows) or terminal (macOS/Linux) and type: bash         Jupyter Lab\nThis will open a new tab in your default web browser, where you can create and run Jupyter Labs.\nTutorial: https://jupyter.org/install\nKey Features:\n\nInteractive output: You can run code in real-time and see the results immediately.\nMarkdown support: You can write rich text, which makes it great for creating tutorials and educational materials.\nVisualizations: You can embed visualizations and plots directly in the notebook.\n\n\nNow you have both VS Code and Jupyter Lab set up for your Python development!\n\n\n\nGoogle Colab, short for “Collaboratory,” is a free Jupyter Lab environment that runs entirely in the cloud. It is perfect for those who want to run Python code without having to set up anything on their local machines.\nStep 1: Accessing Google Colab - Open your web browser and go to: https://colab.research.google.com/\nStep 2: Creating a New Notebook - On the Google Colab homepage, you can either open an existing notebook or create a new one. - To create a new notebook, click on the “New Notebook” button.\nStep 3: Using Google Colab - You can start writing and running Python code right away. - Google Colab provides free access to GPUs and TPUs, which can be used for more intensive computations.\nStep 4: Saving Your Work - You can save your notebooks directly to Google Drive, which makes it easy to access them from any device. - To save your notebook, go to “File” -&gt; “Save a copy in Drive…”\nKey Features: - No installation required: You can start coding immediately without any local setup. - Cloud-based: Your notebooks are stored in Google Drive, making them easy to share and collaborate on. - Free access to GPUs and TPUs: This is particularly useful for machine learning and data science tasks.\nNow you can use Google Colab to run Python code from anywhere, without worrying about setting up your local environment!\n\n\n\nAnaconda is a distribution of Python and R for scientific computing and data science. It comes with many popular data science and machine learning libraries, as well as Jupyter Lab.\nStep 1: Download Anaconda - Visit the Anaconda website: https://www.anaconda.com/products/distribution - Download the Anaconda installer for your operating system.\nStep 2: Install Anaconda - Open the downloaded installer and follow the instructions. - During the installation, you can choose to add Anaconda to your PATH environment variable. This makes it easier to run Anaconda commands from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation: bash         conda --version - You should see the version of Conda that is installed.\nStep 4: Launching Jupyter Lab from Anaconda - Anaconda Navigator is a graphical user interface that comes with Anaconda. It allows you to launch Jupyter Lab easily. - Open Anaconda Navigator from your applications menu. - In Anaconda Navigator, you will see Jupyter Lab listed. Click “Launch” to open it.\nNow you have Anaconda installed, and you can use it to manage your Python environments and packages, as well as run Jupyter Labs!\n\n\n\nGetting Started 1. Launching Jupyter Lab: - Open your command prompt (Windows) or terminal (macOS/Linux). - Type jupyter lab and press Enter. - A new tab will open in your default web browser showing the Jupyter Lab interface.\n\nCreating a New Notebook:\n\nClick on the “New” button and select “Python 3” to create a new notebook.\nYou will see a new notebook with an empty code cell.\n\nWriting and Running Code:\n\nWrite your Python code in the code cells.\nExecute the code by pressing Shift + Enter or clicking the “Run” button.\nExample:\n\n print(\"Hello, Jupyter Lab!\")\nUsing Markdown Cells:\n\nTo add text, headers, lists, and other non-code content, use Markdown cells.\nChange the cell type to Markdown by selecting “Markdown” from the dropdown menu.\nExample of a Markdown cell:\n# This is a Header\n- This is a list item\n    - Another list item\n\n\n\n\n\n\n# Install necessary libraries\n!pip install numpy pandas matplotlib seaborn\n\n# Importing Libraries\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n# Load a sample dataset from seaborn\ndata = sns.load_dataset('penguins')\n\n# Display the first few rows of the dataset\nprint(data.head())\n# Perform some basic data analysis\nsummary = data.describe()\nprint(summary)\n# Create a simple plot\nplt.figure(figsize=(10, 6))\nplt.scatter(data['bill_length_mm'], data['bill_depth_mm'])\nplt.title('Bill Length vs. Bill Depth')\nplt.xlabel('Bill Length (mm)')\nplt.ylabel('Bill Depth (mm)')\nplt.show()\n\n\n\nWe imported necessary libraries.\nWe loaded a sample dataset from the seaborn library and displayed the first few rows.\nWe performed a basic data analysis using the describe method.\nWe visualized the relationship between bill length and bill depth.\n\n\n\n\n\nInteractive Coding: Run code and see results instantly, making it great for experimentation.\nDocumentation: Combine code and narrative text to create comprehensive and understandable documents.\nVisualization: Easily integrate plots and charts to visualize your data.\n\n\n\n\n\nTo ensure that Jupyter Lab uses the project directory as the working directory, you can use the os module to change the current working directory.\n\n\n\nImport the os Module:\n\nThe os module provides a way of using operating system-dependent functionality.\n\nDefine the Project Directory:\n\nSpecify the path to your project directory.\n\nChange the Current Working Directory:\n\nUse os.chdir() to change the current working directory to the project directory.\n\nVerify the Current Working Directory:\n\nUse os.getcwd() to print the current working directory and ensure it’s set correctly.\n\n\n\n\n\nUse python console or terminal.\nimport os\n\n# Define project directory and subdirectories\nproject_dir = 'my_python_project'\nfolders = ['data', 'scripts', 'notebooks']\n\n# Create the main project directory\nif not os.path.exists(project_dir):\n    os.makedirs(project_dir)\n\n# Create subdirectories\nfor folder in folders:\n    path = os.path.join(project_dir, folder)\n    if not os.path.exists(path):\n        os.makedirs(path)\n\n# Check the created structure\n!tree my_python_project\nGo to your main project folder and open the terminal.\nimport os\n\n# Define the project directory\nproject_dir = os.getcwd()\n\n# Set the working directory to the project directory\nos.chdir(project_dir)\n\n# Check the current working directory\nprint(\"Current Working Directory:\", os.getcwd())\nexample: save a file\n# Save a Sample Dataset in the data Folder \nimport pandas as pd\n\n# Create a sample DataFrame\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [24, 22, 23],\n    'Grade': ['A', 'B', 'A']\n}\n\ndf = pd.DataFrame(data)\n\n# Display the DataFrame\nprint(\"Sample DataFrame:\")\nprint(df)\n\n# Define the path to save the CSV file\ncsv_file_path = os.path.join('data', 'students_data.csv')\n\n# Save the DataFrame as a CSV file\ndf.to_csv(csv_file_path, index=False)\n\n# Verify that the file has been saved\nprint(f\"DataFrame saved as CSV file at: {csv_file_path}\")"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#section-1-python-and-ide-essentials",
+    "href": "lab/intro_python/materials/index.html#section-1-python-and-ide-essentials",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Introduction to Python\nInstalling Python\nSetting up an Integrated Development Environment (IDE)\nIntroduction to Jupyter Lab, VS Code, Google Colab and Anaconda"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#section-2-working-with-jupyter-lab",
+    "href": "lab/intro_python/materials/index.html#section-2-working-with-jupyter-lab",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Understanding the basic syntax\nHow to write and execute code in Python\nSetting up and organizing a Python project"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#what-is-python",
+    "href": "lab/intro_python/materials/index.html#what-is-python",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Python is a versatile, high-level programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more."
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#why-learn-python",
+    "href": "lab/intro_python/materials/index.html#why-learn-python",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Easy to read and write\nExtensive libraries and frameworks\nStrong community support\nGreat for beginners and professionals alike"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#installing-python",
+    "href": "lab/intro_python/materials/index.html#installing-python",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Python can be installed on various operating systems, including Windows, macOS, and Linux.\nStep 1: Download the Installer\n\nVisit the official Python website: https://www.python.org/\nNavigate to the Downloads section and choose the appropriate installer for your operating system.\n\nStep 2: Run the Installer - Open the downloaded installer file. - Make sure to check the box that says “Add Python to PATH” during the installation process. This makes it easier to run Python from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation:\npython --version\n\nYou should see the version of Python you installed.\n\nCongratulations! Python is now installed on your computer."
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#setting-up-an-integrated-development-environment-ide",
+    "href": "lab/intro_python/materials/index.html#setting-up-an-integrated-development-environment-ide",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "An IDE is a software application that provides comprehensive facilities to programmers for software development.\nThere are many IDEs available for Python. Two popular choices are VS Code and Jupyter Lab.\n\nInstalling VS Code\n\n\nVisit the Visual Studio Code website: https://code.visualstudio.com/\nDownload and install the version for your operating system.\nOnce installed, you can add Python support by installing the Python extension:\n\nOpen VS Code.\nGo to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.\nSearch for “Python” and install the extension provided by Microsoft.\nOpen a new Python file or notebook and start coding!\n\nTutorial: https://code.visualstudio.com/docs/python/python-tutorial\nKey Features:\n\nExtensions: VS Code has a vast library of extensions that enhance its functionality.\nIntegrated Terminal: You can run command-line tasks directly in VS Code.\n\n\n\nInstalling Jupyter Lab\n\n\nJupyter Lab is a web-based interactive computing environment.\nTo install Jupyter Lab, you need to have Python installed. You can use pip, the Python package installer, to install Jupyter Lab:\n    pip install jupyterlab\nTo start Jupyter Lab, open your command prompt (Windows) or terminal (macOS/Linux) and type: bash         Jupyter Lab\nThis will open a new tab in your default web browser, where you can create and run Jupyter Labs.\nTutorial: https://jupyter.org/install\nKey Features:\n\nInteractive output: You can run code in real-time and see the results immediately.\nMarkdown support: You can write rich text, which makes it great for creating tutorials and educational materials.\nVisualizations: You can embed visualizations and plots directly in the notebook.\n\n\nNow you have both VS Code and Jupyter Lab set up for your Python development!"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#setting-up-google-colab",
+    "href": "lab/intro_python/materials/index.html#setting-up-google-colab",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Google Colab, short for “Collaboratory,” is a free Jupyter Lab environment that runs entirely in the cloud. It is perfect for those who want to run Python code without having to set up anything on their local machines.\nStep 1: Accessing Google Colab - Open your web browser and go to: https://colab.research.google.com/\nStep 2: Creating a New Notebook - On the Google Colab homepage, you can either open an existing notebook or create a new one. - To create a new notebook, click on the “New Notebook” button.\nStep 3: Using Google Colab - You can start writing and running Python code right away. - Google Colab provides free access to GPUs and TPUs, which can be used for more intensive computations.\nStep 4: Saving Your Work - You can save your notebooks directly to Google Drive, which makes it easy to access them from any device. - To save your notebook, go to “File” -&gt; “Save a copy in Drive…”\nKey Features: - No installation required: You can start coding immediately without any local setup. - Cloud-based: Your notebooks are stored in Google Drive, making them easy to share and collaborate on. - Free access to GPUs and TPUs: This is particularly useful for machine learning and data science tasks.\nNow you can use Google Colab to run Python code from anywhere, without worrying about setting up your local environment!"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#setting-up-anaconda-additional-resources",
+    "href": "lab/intro_python/materials/index.html#setting-up-anaconda-additional-resources",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Anaconda is a distribution of Python and R for scientific computing and data science. It comes with many popular data science and machine learning libraries, as well as Jupyter Lab.\nStep 1: Download Anaconda - Visit the Anaconda website: https://www.anaconda.com/products/distribution - Download the Anaconda installer for your operating system.\nStep 2: Install Anaconda - Open the downloaded installer and follow the instructions. - During the installation, you can choose to add Anaconda to your PATH environment variable. This makes it easier to run Anaconda commands from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation: bash         conda --version - You should see the version of Conda that is installed.\nStep 4: Launching Jupyter Lab from Anaconda - Anaconda Navigator is a graphical user interface that comes with Anaconda. It allows you to launch Jupyter Lab easily. - Open Anaconda Navigator from your applications menu. - In Anaconda Navigator, you will see Jupyter Lab listed. Click “Launch” to open it.\nNow you have Anaconda installed, and you can use it to manage your Python environments and packages, as well as run Jupyter Labs!"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#working-with-jupyter-lab",
+    "href": "lab/intro_python/materials/index.html#working-with-jupyter-lab",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Getting Started 1. Launching Jupyter Lab: - Open your command prompt (Windows) or terminal (macOS/Linux). - Type jupyter lab and press Enter. - A new tab will open in your default web browser showing the Jupyter Lab interface.\n\nCreating a New Notebook:\n\nClick on the “New” button and select “Python 3” to create a new notebook.\nYou will see a new notebook with an empty code cell.\n\nWriting and Running Code:\n\nWrite your Python code in the code cells.\nExecute the code by pressing Shift + Enter or clicking the “Run” button.\nExample:\n\n print(\"Hello, Jupyter Lab!\")\nUsing Markdown Cells:\n\nTo add text, headers, lists, and other non-code content, use Markdown cells.\nChange the cell type to Markdown by selecting “Markdown” from the dropdown menu.\nExample of a Markdown cell:\n# This is a Header\n- This is a list item\n    - Another list item"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#example-workflow-in-jupyter-lab",
+    "href": "lab/intro_python/materials/index.html#example-workflow-in-jupyter-lab",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "# Install necessary libraries\n!pip install numpy pandas matplotlib seaborn\n\n# Importing Libraries\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n# Load a sample dataset from seaborn\ndata = sns.load_dataset('penguins')\n\n# Display the first few rows of the dataset\nprint(data.head())\n# Perform some basic data analysis\nsummary = data.describe()\nprint(summary)\n# Create a simple plot\nplt.figure(figsize=(10, 6))\nplt.scatter(data['bill_length_mm'], data['bill_depth_mm'])\nplt.title('Bill Length vs. Bill Depth')\nplt.xlabel('Bill Length (mm)')\nplt.ylabel('Bill Depth (mm)')\nplt.show()\n\n\n\nWe imported necessary libraries.\nWe loaded a sample dataset from the seaborn library and displayed the first few rows.\nWe performed a basic data analysis using the describe method.\nWe visualized the relationship between bill length and bill depth.\n\n\n\n\n\nInteractive Coding: Run code and see results instantly, making it great for experimentation.\nDocumentation: Combine code and narrative text to create comprehensive and understandable documents.\nVisualization: Easily integrate plots and charts to visualize your data."
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#setting-up-the-working-directory-in-jupyter-lab",
+    "href": "lab/intro_python/materials/index.html#setting-up-the-working-directory-in-jupyter-lab",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "To ensure that Jupyter Lab uses the project directory as the working directory, you can use the os module to change the current working directory.\n\n\n\nImport the os Module:\n\nThe os module provides a way of using operating system-dependent functionality.\n\nDefine the Project Directory:\n\nSpecify the path to your project directory.\n\nChange the Current Working Directory:\n\nUse os.chdir() to change the current working directory to the project directory.\n\nVerify the Current Working Directory:\n\nUse os.getcwd() to print the current working directory and ensure it’s set correctly.\n\n\n\n\n\nUse python console or terminal.\nimport os\n\n# Define project directory and subdirectories\nproject_dir = 'my_python_project'\nfolders = ['data', 'scripts', 'notebooks']\n\n# Create the main project directory\nif not os.path.exists(project_dir):\n    os.makedirs(project_dir)\n\n# Create subdirectories\nfor folder in folders:\n    path = os.path.join(project_dir, folder)\n    if not os.path.exists(path):\n        os.makedirs(path)\n\n# Check the created structure\n!tree my_python_project\nGo to your main project folder and open the terminal.\nimport os\n\n# Define the project directory\nproject_dir = os.getcwd()\n\n# Set the working directory to the project directory\nos.chdir(project_dir)\n\n# Check the current working directory\nprint(\"Current Working Directory:\", os.getcwd())\nexample: save a file\n# Save a Sample Dataset in the data Folder \nimport pandas as pd\n\n# Create a sample DataFrame\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [24, 22, 23],\n    'Grade': ['A', 'B', 'A']\n}\n\ndf = pd.DataFrame(data)\n\n# Display the DataFrame\nprint(\"Sample DataFrame:\")\nprint(df)\n\n# Define the path to save the CSV file\ncsv_file_path = os.path.join('data', 'students_data.csv')\n\n# Save the DataFrame as a CSV file\ndf.to_csv(csv_file_path, index=False)\n\n# Verify that the file has been saved\nprint(f\"DataFrame saved as CSV file at: {csv_file_path}\")"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html",
+    "href": "lab/epss_training/slides/epss_training.html",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "",
+    "text": "2025-03-17\n\n\n\n\n\n\n\n\n\n\n\nYou should be comfortable with R and Python coding.\nThis is not a theory-based course—we will not derive formulas or mathematical proofs.\nOur focus is on practical time series forecasting: understanding when and how to use different tools effectively.\n\n\n\n\n\nData wrangling and basic feature engineering\nTime series visualizations\nTraditional forecasting models\nAdvanced forecasting models\nPerformance evaluation\n\n\n\n\n\nHandling missing values\nAdvanced feature engineering\nTime series cross-validation\nHyperparameter tuning\n\n\n\n\nYou can find the workshop materials here.\nNote: These materials are based on A Novel Hybrid Approach to Contraceptive Demand Forecasting Research, F4SG: Africast training and F4SG Learning Labs trainings.\n\nRecommended readings:\n\nDemand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa.\nForecasting: Principles and Practice (3rd ed) by Rob J Hyndman and George Athanasopoulos.\nForecasting and Analytics with the Augmented Dynamic Adaptive Model (ADAM) by Ivan Svetunkov.\n\n\n\n\n\nWhat is forecasting?\nPrepare your data\nExplore your data\nForecast modelling\nEvaluating the model performances\nAdvance forecasting models\nOther forecasting models in family planning supply chains"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#assumptions",
+    "href": "lab/epss_training/slides/epss_training.html#assumptions",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "",
+    "text": "You should be comfortable with R and Python coding.\nThis is not a theory-based course—we will not derive formulas or mathematical proofs.\nOur focus is on practical time series forecasting: understanding when and how to use different tools effectively."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#what-we-will-cover",
+    "href": "lab/epss_training/slides/epss_training.html#what-we-will-cover",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "",
+    "text": "Data wrangling and basic feature engineering\nTime series visualizations\nTraditional forecasting models\nAdvanced forecasting models\nPerformance evaluation"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#what-we-will-not-cover",
+    "href": "lab/epss_training/slides/epss_training.html#what-we-will-not-cover",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "",
+    "text": "Handling missing values\nAdvanced feature engineering\nTime series cross-validation\nHyperparameter tuning"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#materials",
+    "href": "lab/epss_training/slides/epss_training.html#materials",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "",
+    "text": "You can find the workshop materials here.\nNote: These materials are based on A Novel Hybrid Approach to Contraceptive Demand Forecasting Research, F4SG: Africast training and F4SG Learning Labs trainings.\n\nRecommended readings:\n\nDemand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa.\nForecasting: Principles and Practice (3rd ed) by Rob J Hyndman and George Athanasopoulos.\nForecasting and Analytics with the Augmented Dynamic Adaptive Model (ADAM) by Ivan Svetunkov."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#outline",
+    "href": "lab/epss_training/slides/epss_training.html#outline",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "",
+    "text": "What is forecasting?\nPrepare your data\nExplore your data\nForecast modelling\nEvaluating the model performances\nAdvance forecasting models\nOther forecasting models in family planning supply chains"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#what-is-a-forecast",
+    "href": "lab/epss_training/slides/epss_training.html#what-is-a-forecast",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "What is a FORECAST?",
+    "text": "What is a FORECAST?\nAn estimation of the future based on all of the information available at the time when we generate the forecast;\n\nhistorical data,\nknowledge of any future events that might impact the forecasts."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#what-is-time-series-data",
+    "href": "lab/epss_training/slides/epss_training.html#what-is-time-series-data",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "What is time series data?",
+    "text": "What is time series data?\n\nTime series consist of sequences of observations collected over time.\nTime series forecasting is estimating how the sequence of observations will continue into the future."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#what-to-forecast",
+    "href": "lab/epss_training/slides/epss_training.html#what-to-forecast",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "What to FORECAST?",
+    "text": "What to FORECAST?\nUnderstanding needs! Identify decisions that need forecasting support!\n\nForecast variable/s\nTime granularity\nForecast horizon\nFrequency\nStructure/hierarchy"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#forecasting-workflow",
+    "href": "lab/epss_training/slides/epss_training.html#forecasting-workflow",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Forecasting workflow",
+    "text": "Forecasting workflow\n\nStep 1: Problem definition\nStep 2: Gathering information\nStep 3: Preliminary (exploratory) analysis\nStep 4: Choosing and fitting models\nStep 5: Evaluating and using a forecasting model"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#tidy-forecasting-workflow",
+    "href": "lab/epss_training/slides/epss_training.html#tidy-forecasting-workflow",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Tidy forecasting workflow",
+    "text": "Tidy forecasting workflow\n\n\n\n\n\nRead more at Demand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#loading-libraries",
+    "href": "lab/epss_training/slides/epss_training.html#loading-libraries",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Loading libraries",
+    "text": "Loading libraries\nWe use the fpp3 package in this workshop, which provides all the necessary packages for data manipulation, plotting, and forecasting.\n\n# Define required packages\npackages &lt;- c(\"tidyverse\", \"fable\", \"tsibble\", \"feasts\", 'zoo')\n\n# Install missing packages\nmissing_packages &lt;- packages[!(packages %in% installed.packages()[,\"Package\"])]\nif(length(missing_packages)) {\n  suppressWarnings(suppressMessages(install.packages(missing_packages)))\n}\n\n# Load libraries quietly\nsuppressWarnings(suppressMessages({\n  library(tidyverse) # Data manipulation and plotting functions\n  library(fable) # Time series manipulation\n  library(tsibble) # Forecasting functions\n  library(feasts) # Time series graphics and statistics\n}))\n\nRead more at Forecasting: Principles and Practice (3rd ed) by Rob J Hyndman and George Athanasopoulos."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#preparing-the-data",
+    "href": "lab/epss_training/slides/epss_training.html#preparing-the-data",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Preparing the data",
+    "text": "Preparing the data\nIn this workshop, we are using tsibble objects. They provide a data infrastructure for tidy temporal data with wrangling tools, adapting the tidy data principles.\nIn tsibble:\n\nIndex: time information about the observation\nMeasured variable(s): numbers of interest\nKey variable(s): set of variables that define observational units over time\nIt works with tidyverse functions."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#read-csv-file",
+    "href": "lab/epss_training/slides/epss_training.html#read-csv-file",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Read csv file",
+    "text": "Read csv file\n\nmed_qty &lt;- read.csv('data/med_qty.csv')\nmed_qty |&gt; head(10)\n\n       date hub_id product_id quantity_issued\n1  2017 Jul  hub_4  product_1              60\n2  2017 Jul  hub_4  product_6            5200\n3  2017 Jul  hub_7  product_1               8\n4  2017 Jul  hub_7  product_5             120\n5  2017 Jul  hub_8  product_7              10\n6  2017 Jul hub_10  product_1             343\n7  2017 Jul hub_10  product_2              53\n8  2017 Jul hub_10  product_3              26\n9  2017 Jul hub_10  product_4            1710\n10 2017 Jul hub_10  product_5            1340\n\n\nDo you think the med_qty data set is a tidy data?"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#check-for-na-and-duplicates",
+    "href": "lab/epss_training/slides/epss_training.html#check-for-na-and-duplicates",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Check for NA and duplicates",
+    "text": "Check for NA and duplicates\n\n# check NAs\n\nanyNA(med_qty)\n\n[1] FALSE\n\n\n\n#check duplicates\n\nmed_qty |&gt;  \n  duplicated() |&gt;  \n  sum() \n\n[1] 0"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#create-tsibble",
+    "href": "lab/epss_training/slides/epss_training.html#create-tsibble",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Create tsibble",
+    "text": "Create tsibble\n\nmed_tsb &lt;- med_qty |&gt;  \n  mutate(date = yearmonth(date)) |&gt;  # convert chr to date format\n  as_tsibble(index = date, key = c(hub_id, product_id))\n\nmed_tsb \n\n# A tsibble: 6,745 x 4 [1M]\n# Key:       hub_id, product_id [133]\n       date hub_id product_id quantity_issued\n      &lt;mth&gt; &lt;chr&gt;  &lt;chr&gt;                &lt;dbl&gt;\n 1 2017 Aug hub_1  product_1              721\n 2 2017 Sep hub_1  product_1              795\n 3 2017 Oct hub_1  product_1             1720\n 4 2017 Nov hub_1  product_1              911\n 5 2017 Dec hub_1  product_1              314\n 6 2018 Jan hub_1  product_1             6913\n 7 2018 Feb hub_1  product_1             2988\n 8 2018 Mar hub_1  product_1             7120\n 9 2018 Apr hub_1  product_1             3122\n10 2018 May hub_1  product_1            11737\n# ℹ 6,735 more rows\n\n\n\nWhat is the temporal granularity of med_tsb?\nHow many time series do we have in med_tsb?"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values",
+    "href": "lab/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Check temporal gaps (implicit missing values)",
+    "text": "Check temporal gaps (implicit missing values)\n\nhas_gaps(med_tsb) |&gt; head(3) #check gaps\n\n# A tibble: 3 × 3\n  hub_id product_id .gaps\n  &lt;chr&gt;  &lt;chr&gt;      &lt;lgl&gt;\n1 hub_1  product_1  TRUE \n2 hub_1  product_2  TRUE \n3 hub_1  product_3  TRUE \n\nscan_gaps(med_tsb) |&gt; head(3) # show gaps\n\n# A tsibble: 3 x 3 [1M]\n# Key:       hub_id, product_id [1]\n  hub_id product_id     date\n  &lt;chr&gt;  &lt;chr&gt;         &lt;mth&gt;\n1 hub_1  product_1  2018 Jul\n2 hub_1  product_1  2018 Aug\n3 hub_1  product_1  2018 Sep\n\ncount_gaps(med_tsb) |&gt; head(3) # count gaps\n\n# A tibble: 3 × 5\n  hub_id product_id    .from      .to    .n\n  &lt;chr&gt;  &lt;chr&gt;         &lt;mth&gt;    &lt;mth&gt; &lt;int&gt;\n1 hub_1  product_1  2018 Jul 2021 Feb    32\n2 hub_1  product_1  2021 Jul 2022 Sep    15\n3 hub_1  product_2  2018 Sep 2018 Sep     1"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values-1",
+    "href": "lab/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Check temporal gaps (implicit missing values)",
+    "text": "Check temporal gaps (implicit missing values)\nIf there is any gap, then we fill it.\n\nmed_tsb |&gt; fill_gaps(quantity_issued=0L) # we can fill it with zero\n\n# A tsibble: 8,795 x 4 [1M]\n# Key:       hub_id, product_id [133]\n       date hub_id product_id quantity_issued\n      &lt;mth&gt; &lt;chr&gt;  &lt;chr&gt;                &lt;dbl&gt;\n 1 2017 Aug hub_1  product_1              721\n 2 2017 Sep hub_1  product_1              795\n 3 2017 Oct hub_1  product_1             1720\n 4 2017 Nov hub_1  product_1              911\n 5 2017 Dec hub_1  product_1              314\n 6 2018 Jan hub_1  product_1             6913\n 7 2018 Feb hub_1  product_1             2988\n 8 2018 Mar hub_1  product_1             7120\n 9 2018 Apr hub_1  product_1             3122\n10 2018 May hub_1  product_1            11737\n# ℹ 8,785 more rows"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values-2",
+    "href": "lab/epss_training/slides/epss_training.html#check-temporal-gaps-implicit-missing-values-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Check temporal gaps (implicit missing values)",
+    "text": "Check temporal gaps (implicit missing values)\nNote: Since the main focus of this study is to provide foundational knowledge on forecasting, we will filter out time series with many missing values and then fill the remaining gaps using na.interp() function (Read more).\n\nitem_ids &lt;- med_tsb |&gt; \n  count_gaps() |&gt; \n  group_by(hub_id, product_id) |&gt; \n  summarise(.n = max(.n), .groups = 'drop') |&gt; \n  filter(.n  &gt; 1) |&gt; \n  mutate(id = paste0(hub_id,'-',product_id)) |&gt; \n  pull(id) # filtering the item ids\n\nmed_tsb_filter &lt;- med_tsb |&gt; \n  mutate(id = paste0(hub_id,'-',product_id)) |&gt; \n  group_by(hub_id, product_id) |&gt;\n  mutate(num_observations = n()) |&gt; \n  filter(!id %in% item_ids & num_observations &gt;59) |&gt;   # we have cold starts and discontinuations. \n  fill_gaps(quantity_issued = 1e-6, .full = TRUE) |&gt;   # Replace NAs with a small value\n  select(-id, -num_observations) |&gt; \n  mutate(quantity_issued = if_else(is.na(quantity_issued), \n                                   exp(\n                                     forecast::na.interp(\n                                     ts(log(quantity_issued), frequency = 12))), \n                                   quantity_issued))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble",
+    "href": "lab/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Data wrangaling using tsibble",
+    "text": "Data wrangaling using tsibble\nWe can use the filter() function to select rows.\n\nmed_tsb |&gt; \n  filter(hub_id == 'hub_10') \n\n# A tsibble: 417 x 4 [1M]\n# Key:       hub_id, product_id [7]\n       date hub_id product_id quantity_issued\n      &lt;mth&gt; &lt;chr&gt;  &lt;chr&gt;                &lt;dbl&gt;\n 1 2017 Jul hub_10 product_1              343\n 2 2017 Aug hub_10 product_1               67\n 3 2017 Sep hub_10 product_1              127\n 4 2017 Oct hub_10 product_1              287\n 5 2017 Nov hub_10 product_1              759\n 6 2017 Dec hub_10 product_1              181\n 7 2018 Jan hub_10 product_1             7015\n 8 2018 Feb hub_10 product_1              840\n 9 2018 Mar hub_10 product_1             4111\n10 2018 Apr hub_10 product_1             1910\n# ℹ 407 more rows"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-1",
+    "href": "lab/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Data wrangaling using tsibble",
+    "text": "Data wrangaling using tsibble\nWe can use the select() function to select columns.\n\nmed_tsb |&gt; \n  filter(hub_id == 'hub_10') |&gt; \n  select(date, product_id, quantity_issued)\n\n# A tsibble: 417 x 3 [1M]\n# Key:       product_id [7]\n       date product_id quantity_issued\n      &lt;mth&gt; &lt;chr&gt;                &lt;dbl&gt;\n 1 2017 Jul product_1              343\n 2 2017 Aug product_1               67\n 3 2017 Sep product_1              127\n 4 2017 Oct product_1              287\n 5 2017 Nov product_1              759\n 6 2017 Dec product_1              181\n 7 2018 Jan product_1             7015\n 8 2018 Feb product_1              840\n 9 2018 Mar product_1             4111\n10 2018 Apr product_1             1910\n# ℹ 407 more rows"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-2",
+    "href": "lab/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Data wrangaling using tsibble",
+    "text": "Data wrangaling using tsibble\nWe can use group_by() function to group over keys. We can use the summarise() function to summarise over keys.\n\nmed_tsb |&gt; \n  group_by(product_id) |&gt; \n  summarise(total_quantity_issued = sum(quantity_issued), .groups = 'drop')\n\n# A tsibble: 471 x 3 [1M]\n# Key:       product_id [7]\n   product_id     date total_quantity_issued\n   &lt;chr&gt;         &lt;mth&gt;                 &lt;dbl&gt;\n 1 product_1  2017 Jul                   691\n 2 product_1  2017 Aug                 18855\n 3 product_1  2017 Sep                 21654\n 4 product_1  2017 Oct                 16456\n 5 product_1  2017 Nov                 19694\n 6 product_1  2017 Dec                 63107\n 7 product_1  2018 Jan                 66703\n 8 product_1  2018 Feb                 53012\n 9 product_1  2018 Mar                 82566\n10 product_1  2018 Apr                 56913\n# ℹ 461 more rows"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-3",
+    "href": "lab/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-3",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Data wrangaling using tsibble",
+    "text": "Data wrangaling using tsibble\nWe can use the mutate() function to create new variables.\n\nmed_tsb |&gt; \n  mutate(quarter = yearquarter(date))\n\n# A tsibble: 6,745 x 5 [1M]\n# Key:       hub_id, product_id [133]\n       date hub_id product_id quantity_issued quarter\n      &lt;mth&gt; &lt;chr&gt;  &lt;chr&gt;                &lt;dbl&gt;   &lt;qtr&gt;\n 1 2017 Aug hub_1  product_1              721 2017 Q3\n 2 2017 Sep hub_1  product_1              795 2017 Q3\n 3 2017 Oct hub_1  product_1             1720 2017 Q4\n 4 2017 Nov hub_1  product_1              911 2017 Q4\n 5 2017 Dec hub_1  product_1              314 2017 Q4\n 6 2018 Jan hub_1  product_1             6913 2018 Q1\n 7 2018 Feb hub_1  product_1             2988 2018 Q1\n 8 2018 Mar hub_1  product_1             7120 2018 Q1\n 9 2018 Apr hub_1  product_1             3122 2018 Q2\n10 2018 May hub_1  product_1            11737 2018 Q2\n# ℹ 6,735 more rows"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-4",
+    "href": "lab/epss_training/slides/epss_training.html#data-wrangaling-using-tsibble-4",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Data wrangaling using tsibble",
+    "text": "Data wrangaling using tsibble\nWe can use index_by() function to group over index We can use the summarise() function to summarise over index.\n\nmed_tsb |&gt; \n  mutate(quarter = yearquarter(date)) |&gt; \n  index_by(quarter) |&gt; \n  summarise(total_quantity_issues = sum(quantity_issued))\n\n# A tsibble: 24 x 2 [1Q]\n   quarter total_quantity_issues\n     &lt;qtr&gt;                 &lt;dbl&gt;\n 1 2017 Q3               2103843\n 2 2017 Q4               2811202\n 3 2018 Q1               2511488\n 4 2018 Q2               3433726\n 5 2018 Q3               1738860\n 6 2018 Q4               2934886\n 7 2019 Q1               2452192\n 8 2019 Q2               1640048\n 9 2019 Q3               2170015\n10 2019 Q4               3045525\n# ℹ 14 more rows"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#time-series-patterns",
+    "href": "lab/epss_training/slides/epss_training.html#time-series-patterns",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Time series patterns",
+    "text": "Time series patterns\n\nLevel: The level of a time series describes the center of the series.\nTrend: A trend describes predictable increases or decreases in the level of a series.\nSeasonal: Seasonality is a consistent pattern that repeats over a fixed cycle. pattern exists when a series is influenced by seasonal factors (e.g., the quarter of the year, the month, or day of the week).\nCyclic: A pattern exists when data exhibit rises and falls that are not of fixed period (duration usually of at least 2 years)."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#time-series-patterns-1",
+    "href": "lab/epss_training/slides/epss_training.html#time-series-patterns-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Time series patterns",
+    "text": "Time series patterns\n\n\n\n\n\n\n\n\n\nRead more at Demand forecasting for executives and professionals by Bahman Rostami-Tabar, Enno Siemsen, and Stephan Kolassa."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#additive-vs.-multiplicative-seasonality",
+    "href": "lab/epss_training/slides/epss_training.html#additive-vs.-multiplicative-seasonality",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Additive vs. multiplicative seasonality",
+    "text": "Additive vs. multiplicative seasonality\n\n\n\n\n\n\n\n\n\n\nWhen we have multiplicative seasonality, we can use transformations to convert multiplicative seasonality into additive seasonality.\nIn this training, we are not discussing time series transformations. You can read more about it at Transformations and adjustments."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#time-plots",
+    "href": "lab/epss_training/slides/epss_training.html#time-plots",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Time plots",
+    "text": "Time plots\nYou can create time plot using autoplot() function.\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_2') |&gt; \n  autoplot(quantity_issued) +\n  labs(\n    x = \"Date\",\n    y = \"Quantity Issued\"\n  ) +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#are-time-plots-best",
+    "href": "lab/epss_training/slides/epss_training.html#are-time-plots-best",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Are time plots best?",
+    "text": "Are time plots best?\n\nmed_tsb_filter |&gt; \n  mutate(id = paste0(hub_id, product_id)) |&gt; \n  ggplot(aes(x = date, y = quantity_issued, group = id)) +\n  geom_line() +\n  labs(\n    x = \"Date\",\n    y = \"Quantity Issued\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\",\n        panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#seasonal-plots",
+    "href": "lab/epss_training/slides/epss_training.html#seasonal-plots",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Seasonal plots",
+    "text": "Seasonal plots\n\nData plotted against the individual seasons in which the data were observed (In this case a “season” is a month).\nEnables the underlying seasonal pattern to be seen more clearly, and also allows any substantial departures from the seasonal pattern to be easily identified.\nYou can create seasonal plots using gg_season() function."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#seasonal-plots-1",
+    "href": "lab/epss_training/slides/epss_training.html#seasonal-plots-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Seasonal plots",
+    "text": "Seasonal plots\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt; \n  gg_season(quantity_issued, labels = \"both\") +\n  ylab(\"Quantity issued\") +\n  ggtitle(\"Seasonal plot\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#seasonal-sub-series-plots",
+    "href": "lab/epss_training/slides/epss_training.html#seasonal-sub-series-plots",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Seasonal sub series plots",
+    "text": "Seasonal sub series plots\n\nData for each season collected together in time plot as separate time series.\nEnables the underlying seasonal pattern to be seen clearly, and changes in seasonality over time to be visualized.\nYou can create seasonal sub series plots using gg_subseries() function."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#seasonal-sub-series-plots-1",
+    "href": "lab/epss_training/slides/epss_training.html#seasonal-sub-series-plots-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Seasonal sub series plots",
+    "text": "Seasonal sub series plots\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt; \n  gg_subseries(quantity_issued) +\n  ylab(\"Quantity issued\") +\n  ggtitle(\"Seasonal sub series plot\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 90, hjust = 1),\n        panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#strength-of-seasonality-and-trend",
+    "href": "lab/epss_training/slides/epss_training.html#strength-of-seasonality-and-trend",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Strength of seasonality and trend",
+    "text": "Strength of seasonality and trend\n\nWe used STL decomposition for additive decompositions.\nA multiplicative decomposition can be obtained by first taking logs of the data, then back-transforming the components.\nDecompositions that are between additive and multiplicative can be obtained using a Box-Cox transformation of the data.\nRead more at STL decomposition."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#strength-of-seasonality-and-trend-1",
+    "href": "lab/epss_training/slides/epss_training.html#strength-of-seasonality-and-trend-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Strength of seasonality and trend",
+    "text": "Strength of seasonality and trend\nSTL Decomposition\n\\[\ny_t = T_t + S_t + R_t\n\\]\nSeasonal Strength\n\\[\n\\max \\left( 0, 1 - \\frac{\\text{Var}(R_t)}{\\text{Var}(S_t + R_t)} \\right)\n\\]\nTrend Strength\n\\[\n\\max \\left( 0, 1 - \\frac{\\text{Var}(R_t)}{\\text{Var}(T_t + R_t)} \\right)\n\\]"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#feature-extraction-and-statistics",
+    "href": "lab/epss_training/slides/epss_training.html#feature-extraction-and-statistics",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Feature extraction and statistics",
+    "text": "Feature extraction and statistics\nWe can use features() function to extract the strength of trend and seasonality.\n\nmed_tsb_filter |&gt; \n  features(quantity_issued, feat_stl)\n\n# A tibble: 21 × 11\n   hub_id product_id trend_strength seasonal_strength_year seasonal_peak_year\n   &lt;chr&gt;  &lt;chr&gt;               &lt;dbl&gt;                  &lt;dbl&gt;              &lt;dbl&gt;\n 1 hub_1  product_2           0.261                 0.503                   6\n 2 hub_1  product_5           0.250                 0.438                   0\n 3 hub_10 product_5           0.366                 0.0911                  0\n 4 hub_11 product_2           0.624                 0.407                  11\n 5 hub_11 product_5           0.352                 0.244                   4\n 6 hub_11 product_7           0.181                 0.196                   7\n 7 hub_13 product_5           0.196                 0.402                   0\n 8 hub_14 product_5           0.595                 0.229                   9\n 9 hub_16 product_2           0.233                 0.238                   7\n10 hub_16 product_5           0.416                 0.272                   0\n# ℹ 11 more rows\n# ℹ 6 more variables: seasonal_trough_year &lt;dbl&gt;, spikiness &lt;dbl&gt;,\n#   linearity &lt;dbl&gt;, curvature &lt;dbl&gt;, stl_e_acf1 &lt;dbl&gt;, stl_e_acf10 &lt;dbl&gt;"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#feature-extraction-and-statistics-1",
+    "href": "lab/epss_training/slides/epss_training.html#feature-extraction-and-statistics-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Feature extraction and statistics",
+    "text": "Feature extraction and statistics\n\nmed_tsb_filter |&gt; \n  features(quantity_issued, feat_stl) |&gt; \n  ggplot(aes(x = trend_strength, y = seasonal_strength_year, shape = product_id)) +\n  geom_point(size = 2) + \n  ylab(\"Seasonal strength\") +\n  xlab(\"Trend strength\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#lag-plots-and-autocorrelation",
+    "href": "lab/epss_training/slides/epss_training.html#lag-plots-and-autocorrelation",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Lag plots and autocorrelation",
+    "text": "Lag plots and autocorrelation\n\nEach graph shows \\(y_t\\) plotted against \\(y_{t-k}\\) for different values of \\(k\\).\n\nThe autocorrelations are the correlations associated with these scatterplots: \\(\\text{Corr}(y_t, y_{t-k})\\)\nYou can create lag plots using gglag() function.\nThese values indicate the relationship between current and past observations in a time series."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#lag-plots-and-autocorrelation-1",
+    "href": "lab/epss_training/slides/epss_training.html#lag-plots-and-autocorrelation-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Lag plots and autocorrelation",
+    "text": "Lag plots and autocorrelation\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt;\n  gg_lag(quantity_issued, lags = 1:12, geom='point') +\n  ylab(\"Quantity issued\") +\n  xlab(\"Lag (Quantity issued, n)\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 90, hjust = 1),\n         panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#autocorrelation",
+    "href": "lab/epss_training/slides/epss_training.html#autocorrelation",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Autocorrelation",
+    "text": "Autocorrelation\n\nAutocovariance and autocorrelation: measure linear relationship between lagged values of a time series y.\nWe denote the sample autocovariance at lag \\(k\\) by \\(c_k\\) and the sample autocorrelation at lag \\(k\\) by \\(r_k\\). Then, we define:\n\n\\(c_k = \\frac{1}{T} \\sum_{t=k+1}^{T} (y_t - \\bar{y})(y_{t-k} - \\bar{y})\\)\n\\(r_k = \\frac{c_k}{c_0}\\)\nwhere \\(c_0\\) is the variance of the time series.\n\n\\(r_1\\) indicates how successive values of \\(y\\) relate to each other.\n\\(r_2\\) indicates how \\(y\\) values two periods apart relate to each other.\n\\(r_k\\) is almost the same as the sample correlation between \\(y_t\\) and \\(y_{t-k}\\)."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#autocorrelation-1",
+    "href": "lab/epss_training/slides/epss_training.html#autocorrelation-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Autocorrelation",
+    "text": "Autocorrelation\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt; \n  ACF(quantity_issued, lag_max = 24)\n\n# A tsibble: 24 x 4 [1M]\n# Key:       hub_id, product_id [1]\n   hub_id product_id      lag      acf\n   &lt;chr&gt;  &lt;chr&gt;      &lt;cf_lag&gt;    &lt;dbl&gt;\n 1 hub_14 product_5        1M  0.681  \n 2 hub_14 product_5        2M  0.485  \n 3 hub_14 product_5        3M  0.320  \n 4 hub_14 product_5        4M  0.160  \n 5 hub_14 product_5        5M  0.195  \n 6 hub_14 product_5        6M  0.162  \n 7 hub_14 product_5        7M  0.0956 \n 8 hub_14 product_5        8M  0.0540 \n 9 hub_14 product_5        9M  0.00739\n10 hub_14 product_5       10M -0.0665 \n# ℹ 14 more rows"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#autocorrelation-2",
+    "href": "lab/epss_training/slides/epss_training.html#autocorrelation-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Autocorrelation",
+    "text": "Autocorrelation\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_14' & product_id == 'product_5') |&gt; \n  ACF(quantity_issued, lag_max = 36) |&gt; \n  autoplot() +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))\n\n\n\n\n\n\n\n\nWhat autocorrelation will tell us? Which key features could be highlighted by ACF?"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#autocorrelation-3",
+    "href": "lab/epss_training/slides/epss_training.html#autocorrelation-3",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Autocorrelation",
+    "text": "Autocorrelation\n\nWhen data have a trend, the autocorrelations for small lags tend to be large and positive.\nWhen data are seasonal, the autocorrelations will be larger at the seasonal lags (i.e., at multiples of the seasonal frequency)\nWhen data are trended and seasonal, you see a combination of these effects."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#naive",
+    "href": "lab/epss_training/slides/epss_training.html#naive",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Naive",
+    "text": "Naive\nSimplest forecasting method using last observation as forecast.\n\\(\\hat{y}_{t+h|t} = y_t\\)\nAssumptions\n\nNo systematic pattern in data\nRecent observations are most relevant\n\nStrengths & Weaknesses\n✓ Simple benchmark model\n✓ Requires no computation\n✗ Ignores all patterns\n✗ Poor for trending/seasonal data"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#naive-1",
+    "href": "lab/epss_training/slides/epss_training.html#naive-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Naive",
+    "text": "Naive\nWe use NAIVE() function and model() function to build the Naive model.\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(naive = NAIVE(quantity_issued)) |&gt; \n  forecast(h = 12) |&gt; \n  autoplot(med_tsb_filter |&gt; \n             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +\n  labs(y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#seasonal-naive-snaive",
+    "href": "lab/epss_training/slides/epss_training.html#seasonal-naive-snaive",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Seasonal NAIVE (sNAIVE)",
+    "text": "Seasonal NAIVE (sNAIVE)\n\\(y_{t+h \\mid t} = y_{t+h - m(k+1)}\\)\nWhere: \\(m\\) = seasonal period and \\(k = \\lfloor \\frac{h-1}{m} \\rfloor\\)\nAssumptions\n\nSeasonal pattern is stable\nNo trend present\n\nStrengths & Weaknesses\n✓ Handles strong seasonality\n✓ Simple interpretation\n✗ Fails with changing seasonality\n✗ Ignores non-seasonal patterns"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#snaive",
+    "href": "lab/epss_training/slides/epss_training.html#snaive",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "sNaive",
+    "text": "sNaive\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(snaive = SNAIVE(quantity_issued ~ lag(\"year\"))) |&gt; \n  forecast(h = 12) |&gt; \n  autoplot(med_tsb_filter |&gt; \n             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +\n  labs(y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#mean",
+    "href": "lab/epss_training/slides/epss_training.html#mean",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Mean",
+    "text": "Mean\nUses the historical average of all observations as forecast.\n\\(y_{t+h \\mid t} = \\bar{y} = \\frac{1}{t} \\sum_{i=1}^{t} y_i\\)\nWhere: \\(t\\) is the number of past observations used for the forecast.\nAssumptions\n\nSeries is stationary\nShort-term fluctuations are noise\n\nStrengths & Weaknesses\n✓ Effective noise reduction\n✓ Simple to implement\n✗ Ignores all patterns\n✗ Lags behind trends"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#mean-1",
+    "href": "lab/epss_training/slides/epss_training.html#mean-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Mean",
+    "text": "Mean\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(MEAN(quantity_issued ~ window(size = 3))) |&gt; \n  forecast(h = 12) |&gt; \n  autoplot(med_tsb_filter |&gt; \n             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +\n  labs(y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#arima",
+    "href": "lab/epss_training/slides/epss_training.html#arima",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ARIMA",
+    "text": "ARIMA\nCombines Autoregressive (AR) and Moving Average (MA) components with differencing.\n\nAR: autoregressive (lagged observations as inputs)\nI: integrated (differencing to make series stationary)\nMA: moving average (lagged errors as inputs)\n\n\nThe ARIMA model is given by:\n\\((1 - \\phi_1 B - \\dots - \\phi_p B^p)(1 - B)^d y_t = c + (1 + \\theta_1 B + \\dots + \\theta_q B^q) \\epsilon_t\\)\nWhere: \\(B\\): Backshift operator, \\(\\phi\\): AR coefficients, \\(\\theta\\): MA coefficients, \\(d\\): Differencing order, \\(p\\): AR order, \\(q\\): MA order and \\(\\epsilon_t\\): White noise"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#arima-1",
+    "href": "lab/epss_training/slides/epss_training.html#arima-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ARIMA",
+    "text": "ARIMA\nAssumptions\n\nSeries is stationary\nLinear relationship between past values and errors\nWhite noise errors\nNo missing values in series\n\nStrengths & Weaknesses\n✓ Flexible for various time series patterns\n✓ Perform well for short term horizons\n✗ Requires stationarity for optimal performance\n✗ The parameters are often not easily interpretable in terms of trend or seasonality"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#arima-2",
+    "href": "lab/epss_training/slides/epss_training.html#arima-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ARIMA",
+    "text": "ARIMA\nA stationary series is:\n\nroughly horizontal\n\nconstant variance\n\nno patterns predictable in the long-term"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#seasonal-arima-models",
+    "href": "lab/epss_training/slides/epss_training.html#seasonal-arima-models",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Seasonal ARIMA models",
+    "text": "Seasonal ARIMA models\n\n\n\nARIMA\n\\(~\\underbrace{(p, d, q)}\\)\n\\(\\underbrace{(P, D, Q)_{m}}\\)\n\n\n\n\n\n\\({\\uparrow}\\)\n\\({\\uparrow}\\)\n\n\n\nNon-seasonal part\nSeasonal part of\n\n\n\nof the model\nof the model\n\n\n\n\n\\(m\\): number of observations per year.\n\\(d\\): first differences, \\(D\\): seasonal differences\n\\(p\\): AR lags, \\(q\\): MA lags\n\\(P\\): seasonal AR lags, \\(Q\\): seasonal MA lags\n\nSeasonal and non-seasonal terms combine multiplicatively."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#arima-automatic-modelling",
+    "href": "lab/epss_training/slides/epss_training.html#arima-automatic-modelling",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ARIMA automatic modelling",
+    "text": "ARIMA automatic modelling\n\nPlot the data. Identify any unusual observations.\nIf necessary, transform the data (e.g., Box-Cox transformation) to stabilize the variance.\nUse ARIMA() to automatically select a model.\nCheck the residuals from your chosen model and if they do not look like white noise, try a modified model.\nOnce the residuals look like white noise, calculate forecasts."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#arima-automatic-modelling-1",
+    "href": "lab/epss_training/slides/epss_training.html#arima-automatic-modelling-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ARIMA automatic modelling",
+    "text": "ARIMA automatic modelling\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(ARIMA(quantity_issued)) |&gt; \n  forecast(h = 12) |&gt; \n  autoplot(med_tsb_filter |&gt; \n             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +\n  labs(y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#ets",
+    "href": "lab/epss_training/slides/epss_training.html#ets",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ETS",
+    "text": "ETS\nETS stands for Exponential Smoothing and is based on a state space framework that decomposes a time series into three components:\n\n\n\n\n\n\n\n\n\nGeneral Notation\n\nE T S\nExponenTial Smoothing\n\n\n\n\n\n↗\n↑\n↖\n\n\n\nError\nTrend\nSeason\n\n\n\n\nError: Additive (\"A\") or multiplicative (\"M\")\nTrend: None (\"N\"), additive (\"A\"), multiplicative (\"M\"), or damped (\"Ad\" or \"Md\").\nSeasonality: None (\"N\"), additive (\"A\") or multiplicative (\"M\")\n\n For example, ETS(A,N,N) is the simple exponential smoothing model (no trend or seasonality) with additive errors."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#ets-1",
+    "href": "lab/epss_training/slides/epss_training.html#ets-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ETS",
+    "text": "ETS\nHow do we combine these elements?\nAdditively?\n\\(y_t = \\ell_{t-1} + b_{t-1} + s_{t-m} + \\varepsilon_t\\)\n\nMultiplicatively?\n\\(y_t = \\ell_{t-1}b_{t-1}s_{t-m}(1 + \\varepsilon_t)\\)\n\nPerhaps a mix of both?\n\\(y_t = (\\ell_{t-1} + b_{t-1}) s_{t-m} + \\varepsilon_t\\)"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#ets-2",
+    "href": "lab/epss_training/slides/epss_training.html#ets-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ETS",
+    "text": "ETS\nHow do the level, trend and seasonal components evolve over time?"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#ets-3",
+    "href": "lab/epss_training/slides/epss_training.html#ets-3",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ETS",
+    "text": "ETS\nAssumptions\n\nDecomposable patterns\nRecent observations more important\nConsistent error structure (additive/multiplicative)\n\nStrengths & Weaknesses\n✓ They can be adapted to various data characteristics with different error, trend, and seasonal formulations\n✓ Often very effective when the underlying components are stable\n✗ Parameter estimates (including smoothing parameters and initial states) can affect the forecasts\n✗ May struggle to capture sudden shifts or non-standard patterns if the smoothing parameters are constant"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#ets-automatic-modelling",
+    "href": "lab/epss_training/slides/epss_training.html#ets-automatic-modelling",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ETS automatic modelling",
+    "text": "ETS automatic modelling\n\nApply each model that is appropriate to the data.\nOptimize parameters and initial values using MLE (or some other criterion).\nSelect best method using AICc.\nUse ETS() to automatically select a model.\nProduce forecasts using best method."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#ets-automatic-modelling-1",
+    "href": "lab/epss_training/slides/epss_training.html#ets-automatic-modelling-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "ETS automatic modelling",
+    "text": "ETS automatic modelling\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(ETS(quantity_issued)) |&gt; \n  forecast(h = 12) |&gt; \n  autoplot(med_tsb_filter |&gt; \n             filter(hub_id == 'hub_1' & product_id == 'product_5'), level = NULL) +\n  labs(y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#model-fitting-in-fable",
+    "href": "lab/epss_training/slides/epss_training.html#model-fitting-in-fable",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Model fitting in Fable",
+    "text": "Model fitting in Fable\n\nThe model() function trains models on data.\nIt returns a mable object.\nA mable is a model table, each cell corresponds to a fitted model.\n\n\n# Fit the models\n\nfit_all &lt;- med_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(\n    naive = NAIVE(quantity_issued),\n    snaive = SNAIVE(quantity_issued ~ lag('year')),\n    mean = MEAN(quantity_issued ~ window(size = 3)),\n    arima = ARIMA(quantity_issued),\n    ets = ETS(quantity_issued)\n    )\n\nfit_all\n\n# A mable: 1 x 7\n# Key:     hub_id, product_id [1]\n  hub_id product_id   naive   snaive    mean                     arima\n  &lt;chr&gt;  &lt;chr&gt;      &lt;model&gt;  &lt;model&gt; &lt;model&gt;                   &lt;model&gt;\n1 hub_1  product_5  &lt;NAIVE&gt; &lt;SNAIVE&gt;  &lt;MEAN&gt; &lt;ARIMA(0,1,1)(0,0,2)[12]&gt;\n# ℹ 1 more variable: ets &lt;model&gt;"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#extract-information-from-mable",
+    "href": "lab/epss_training/slides/epss_training.html#extract-information-from-mable",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Extract information from mable",
+    "text": "Extract information from mable\n\nfit_all  |&gt;  select(snaive) |&gt;  report()\nfit_all |&gt;  tidy()\nfit_all  |&gt;  glance()\n\n\nThe report() function gives a formatted model-specific display.\nThe tidy() function is used to extract the coefficients from the models.\nWe can extract information about some specific model using the filter() and select()functions."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#producing-forecasts",
+    "href": "lab/epss_training/slides/epss_training.html#producing-forecasts",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Producing forecasts",
+    "text": "Producing forecasts\n\nThe forecast() function is used to produce forecasts from estimated models.\nh can be specified with:\n\na number (the number of future observations)\nnatural language (the length of time to predict)\nprovide a dataset of future time periods"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#producing-forecasts-1",
+    "href": "lab/epss_training/slides/epss_training.html#producing-forecasts-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Producing forecasts",
+    "text": "Producing forecasts\n\nfit_all_fc &lt;- fit_all |&gt; \n  forecast(h = 'year')\n\n#h = \"year\" is equivalent to setting h = 12.\n\nfit_all_fc\n\n# A fable: 60 x 6 [1M]\n# Key:     hub_id, product_id, .model [5]\n   hub_id product_id .model     date\n   &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;     &lt;mth&gt;\n 1 hub_1  product_5  naive  2023 Jul\n 2 hub_1  product_5  naive  2023 Aug\n 3 hub_1  product_5  naive  2023 Sep\n 4 hub_1  product_5  naive  2023 Oct\n 5 hub_1  product_5  naive  2023 Nov\n 6 hub_1  product_5  naive  2023 Dec\n 7 hub_1  product_5  naive  2024 Jan\n 8 hub_1  product_5  naive  2024 Feb\n 9 hub_1  product_5  naive  2024 Mar\n10 hub_1  product_5  naive  2024 Apr\n# ℹ 50 more rows\n# ℹ 2 more variables: quantity_issued &lt;dist&gt;, .mean &lt;dbl&gt;"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#visualising-forecasts",
+    "href": "lab/epss_training/slides/epss_training.html#visualising-forecasts",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Visualising forecasts",
+    "text": "Visualising forecasts\n\nfit_all_fc |&gt; \n  autoplot(level = NULL) +\n  autolayer(med_tsb_filter |&gt; \n              filter_index(\"2022 JAn\" ~ .) |&gt; \n              filter(hub_id == 'hub_1' & product_id == 'product_5'), color = 'black') +\n  labs(title = \"Forecasts for monthly quantity issued\", y = \"Quantity issued\", x = \"Date\") +\n  theme_minimal() +\n  theme(panel.border = element_rect(color = \"lightgrey\", fill = NA)) +\n  guides(colour=guide_legend(title=\"Forecast\"))"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#what-is-wrong-with-point-forecasts",
+    "href": "lab/epss_training/slides/epss_training.html#what-is-wrong-with-point-forecasts",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "What is wrong with point forecasts?",
+    "text": "What is wrong with point forecasts?\nA point forecast is a single-value prediction representing the most likely future outcome, based on current data and models.\nThe disadvantage of point forecast;\n✗ It ignores additional information in future.\n✗ It does not explain uncertainties around future.\n✗ It can not deal with assymmetric."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts",
+    "href": "lab/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Types of probabilistic forecasts",
+    "text": "Types of probabilistic forecasts\nInterval forecasts: A prediction interval is an interval within which power generation may lie, with a certain probability."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-1",
+    "href": "lab/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Types of probabilistic forecasts",
+    "text": "Types of probabilistic forecasts\nQuantile forecasts: A quantile forecast provides a value that the future observation is expected to be below with a specified probability."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-2",
+    "href": "lab/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Types of probabilistic forecasts",
+    "text": "Types of probabilistic forecasts\nDistribution forecasts: A comprehensive probabilistic forecast capturing the full range of potential outcomes across all time horizons."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-3",
+    "href": "lab/epss_training/slides/epss_training.html#types-of-probabilistic-forecasts-3",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Types of probabilistic forecasts",
+    "text": "Types of probabilistic forecasts\nScenario forecasts: A spectrum of potential futures derived from probabilistic modeling to inform decision- making under uncertainty."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#forecast-distributions-from-bootstrapping",
+    "href": "lab/epss_training/slides/epss_training.html#forecast-distributions-from-bootstrapping",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Forecast distributions from bootstrapping",
+    "text": "Forecast distributions from bootstrapping\nWhen a normal distribution for the residuals is an unreasonable assumption, one alternative is to use bootstrapping, which only assumes that the residuals are uncorrelated with constant variance.\n\nA one-step forecast error is defined as\n\n\\(e_t = y_t - \\hat{y}_{t|t-1}\\), \\(y_t = \\hat{y}_{t|t-1} + e_t\\)\n\nSo we can simulate the next observation of a time series using\n\n\\(y_{T+1} = \\hat{y}_{T+1|T} + e_{T+1}\\)\n\nAdding the new simulated observation to our data set, we can repeat the process to obtain\n\n\\(y_{T+2} = \\hat{y}_{T+2|T+1} + e_{T+2}\\)"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#generate-different-futures-forecast",
+    "href": "lab/epss_training/slides/epss_training.html#generate-different-futures-forecast",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Generate different futures forecast",
+    "text": "Generate different futures forecast\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(snaive = SNAIVE(quantity_issued ~ lag(\"year\"))) |&gt; \n  generate(h = 12, bootstrap = TRUE, times = 5)"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#generate-probabilistic-forecast",
+    "href": "lab/epss_training/slides/epss_training.html#generate-probabilistic-forecast",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Generate probabilistic forecast",
+    "text": "Generate probabilistic forecast\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(snaive = SNAIVE(quantity_issued ~ lag(\"year\"))) |&gt; \n  forecast(h = 12, bootstrap = TRUE, times = 1000)\n\n# A fable: 12 x 6 [1M]\n# Key:     hub_id, product_id, .model [1]\n   hub_id product_id .model     date quantity_issued  .mean\n   &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;     &lt;mth&gt;          &lt;dist&gt;  &lt;dbl&gt;\n 1 hub_1  product_5  snaive 2023 Jul    sample[1000]  3790.\n 2 hub_1  product_5  snaive 2023 Aug    sample[1000] 32090.\n 3 hub_1  product_5  snaive 2023 Sep    sample[1000] 13039.\n 4 hub_1  product_5  snaive 2023 Oct    sample[1000] 13203.\n 5 hub_1  product_5  snaive 2023 Nov    sample[1000] 28567.\n 6 hub_1  product_5  snaive 2023 Dec    sample[1000] 26470.\n 7 hub_1  product_5  snaive 2024 Jan    sample[1000] 11766.\n 8 hub_1  product_5  snaive 2024 Feb    sample[1000] 25393.\n 9 hub_1  product_5  snaive 2024 Mar    sample[1000] 11540.\n10 hub_1  product_5  snaive 2024 Apr    sample[1000] 11942.\n11 hub_1  product_5  snaive 2024 May    sample[1000] 16975.\n12 hub_1  product_5  snaive 2024 Jun    sample[1000]  5496."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#prediction-intervals",
+    "href": "lab/epss_training/slides/epss_training.html#prediction-intervals",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Prediction intervals",
+    "text": "Prediction intervals\nForecast intervals can be extracted using the hilo() function.\n\nmed_tsb_filter |&gt; \n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(snaive = SNAIVE(quantity_issued ~ lag(\"year\"))) |&gt; \n  forecast(h = 12, bootstrap = TRUE, times = 1000) |&gt; \n  hilo(level = 75) |&gt; \n  unpack_hilo(\"75%\")\n\n# A tsibble: 12 x 8 [1M]\n# Key:       hub_id, product_id, .model [1]\n   hub_id product_id .model     date quantity_issued  .mean `75%_lower`\n   &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;     &lt;mth&gt;          &lt;dist&gt;  &lt;dbl&gt;       &lt;dbl&gt;\n 1 hub_1  product_5  snaive 2023 Jul    sample[1000]  3509.     -8015. \n 2 hub_1  product_5  snaive 2023 Aug    sample[1000] 32690.     20230. \n 3 hub_1  product_5  snaive 2023 Sep    sample[1000] 12713.       850. \n 4 hub_1  product_5  snaive 2023 Oct    sample[1000] 13433.      1624. \n 5 hub_1  product_5  snaive 2023 Nov    sample[1000] 29074.     16981. \n 6 hub_1  product_5  snaive 2023 Dec    sample[1000] 25767.     14190. \n 7 hub_1  product_5  snaive 2024 Jan    sample[1000] 11377.       -48.1\n 8 hub_1  product_5  snaive 2024 Feb    sample[1000] 25310.     13406. \n 9 hub_1  product_5  snaive 2024 Mar    sample[1000] 11876.      -410. \n10 hub_1  product_5  snaive 2024 Apr    sample[1000] 12137.       -44.1\n11 hub_1  product_5  snaive 2024 May    sample[1000] 16901.      4829. \n12 hub_1  product_5  snaive 2024 Jun    sample[1000]  5407.     -6448. \n# ℹ 1 more variable: `75%_upper` &lt;dbl&gt;"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#forecast-accuracy-evaluation-using-test-sets",
+    "href": "lab/epss_training/slides/epss_training.html#forecast-accuracy-evaluation-using-test-sets",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Forecast accuracy evaluation using test sets",
+    "text": "Forecast accuracy evaluation using test sets\n\nWe mimic the real life situation\nWe pretend we don’t know some part of data (new data)\nIt must not be used for any aspect of model training\nForecast accuracy is computed only based on the test set\n\nTraining and test sets"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating point forecast accuracy",
+    "text": "Evaluating point forecast accuracy\n\nIn order to evaluate the performance of a forecasting model, we compute its forecast accuracy.\nForecast accuracy is compared by measuring errors based on the test set.\nIdeally it should allow comparing benefits from improved accuracy with the cost of obtaining the improvement."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-1",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating point forecast accuracy",
+    "text": "Evaluating point forecast accuracy\nForecast Error\n\\(e_{T+h} = y_{T+h} - \\hat{y}_{T+h\\mid T}\\)\nwhere\n- \\(y_{T+h}\\) is the \\((T+h)^\\text{th}\\) observation \\((h=1,\\dots,H)\\), and\n- \\(\\hat{y}_{T+h\\mid T}\\) is the forecast based on data up to time \\(T\\).\n\nRead more on How to choose appropriate error measure by Ivan Svetunkov."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-2",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating point forecast accuracy",
+    "text": "Evaluating point forecast accuracy\n\n\n\n\n\n\n\n\nMeasure\nFormula\nNotes\n\n\n\n\nMAE  (Mean Absolute Error)\n\\(\\text{MAE} = \\text{mean}(|e_{T+h}|)\\)\nScale dependent\n\n\nMSE  (Mean Squared Error)\n\\(\\text{MSE} = \\text{mean}(e_{T+h}^2)\\)\nScale dependent\n\n\nMAPE  (Mean Absolute Percentage Error)\n\\(\\text{MAPE} = 100\\,\\text{mean}(|e_{T+h}|/|y_{T+h}|)\\)\nScale independent; use if \\(y_t \\gg 0\\) and \\(y\\) has a natural zero\n\n\nRMSE  (Root Mean Squared Error)\n\\(\\text{RMSE} = \\sqrt{\\text{mean}(e_{T+h}^2)}\\)\nScale dependent"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-3",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-3",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating point forecast accuracy",
+    "text": "Evaluating point forecast accuracy\n\n\n\n\n\n\n\n\nMeasure\nFormula\nNotes\n\n\n\n\nMASE  (Mean Absolute Scaled Error)\n\\(\\text{MASE} = \\text{mean}(|e_{T+h}|/Q)\\)\nNon-seasonal: \\(Q = \\frac{1}{T-1}\\sum_{t=2}^T |y_t-y_{t-1}|\\)  Seasonal: \\(Q = \\frac{1}{T-m}\\sum_{t=m+1}^T |y_t-y_{t-m}|\\), where \\(m\\) is the seasonal frequency\n\n\nRMSSE  (Root Mean Squared Scaled Error)\n\\(\\text{RMSSE} = \\sqrt{\\text{mean}(e_{T+h}^2/Q)}\\)\nNon-seasonal: \\(Q = \\frac{1}{T-1}\\sum_{t=2}^T (y_t-y_{t-1})^2\\)  Seasonal: \\(Q = \\frac{1}{T-m}\\sum_{t=m+1}^T (y_t-y_{t-m})^2\\), where \\(m\\) is the seasonal frequency"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-4",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-4",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating point forecast accuracy",
+    "text": "Evaluating point forecast accuracy\nCreate train and test sets.\n\nf_horizon &lt;- 12 # forecast horizon\n\ntrain &lt;- med_tsb_filter |&gt; # create train set\n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt; \n  filter_index(. ~ '2022 June')\n\nfit_all &lt;- train |&gt; # model fitting\n  filter(hub_id == 'hub_1' & product_id == 'product_5') |&gt;\n  model(\n    naive = NAIVE(quantity_issued),\n    snaive = SNAIVE(quantity_issued ~ lag('year')),\n    mean = MEAN(quantity_issued ~ window(size = 3)),\n    arima = ARIMA(quantity_issued),\n    ets = ETS(quantity_issued)\n    )\n\nfit_all_fc &lt;- fit_all |&gt; # forecasting\n  forecast(h = f_horizon)"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-5",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-point-forecast-accuracy-5",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating point forecast accuracy",
+    "text": "Evaluating point forecast accuracy\n\nfit_all_fc |&gt; \n  accuracy(med_tsb_filter |&gt;\n             filter(hub_id == 'hub_1' & product_id == 'product_5'),\n           measures = list(point_accuracy_measures))\n\n# A tibble: 5 × 12\n  .model hub_id product_id .type     ME   RMSE    MAE    MPE  MAPE  MASE RMSSE\n  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 arima  hub_1  product_5  Test   5787. 10679.  8732.   5.08  59.3  1.23  1.21\n2 ets    hub_1  product_5  Test   5400. 11163.  8681.   5.33  57.0  1.23  1.27\n3 mean   hub_1  product_5  Test   8568. 12274.  9664.  29.9   54.3  1.37  1.39\n4 naive  hub_1  product_5  Test  -3627.  9508.  8803. -76.1   94.1  1.24  1.08\n5 snaive hub_1  product_5  Test   5237. 12571. 11346.  -1.06  85.6  1.60  1.43\n# ℹ 1 more variable: ACF1 &lt;dbl&gt;"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating probabilistic forecast accuracy",
+    "text": "Evaluating probabilistic forecast accuracy\nCoverage\n\nMeasures how often the true value falls within a prediction interval\nTypically assessed for specific confidence levels (e.g., 95% interval)\n\nExample: A 95% prediction interval should contain the true value 95% of the time."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-1",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating probabilistic forecast accuracy",
+    "text": "Evaluating probabilistic forecast accuracy\nSharpness\n\nRefers to the width of prediction intervals\nMeasures how precise or focused the forecast is\n\nExample: A forecast predicting monthly sales qty between 2500-5000 is sharper than 500-10000."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-2",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating probabilistic forecast accuracy",
+    "text": "Evaluating probabilistic forecast accuracy\nQuantile score/ Pin ball loss\n\nAssesses entire prediction interval, not just point forecast\nPenalizes too narrow and too wide intervals\nInterpretation: Lower values indicate better calibrated intervals\n\n\\[\nQ_{p,t} =\n\\begin{cases}\n2(1 - p)(f_{p,t} - y_t), & \\text{if } y_t &lt; f_{p,t}, \\\\[1mm]\n2p(y_t - f_{p,t}),       & \\text{if } y_t \\geq f_{p,t}.\n\\end{cases}\n\\]"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-3",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-3",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating probabilistic forecast accuracy",
+    "text": "Evaluating probabilistic forecast accuracy\nCRPS (Continuous Ranked Probability Score)\n\nProper scoring rule\nMeasures accuracy of full predictive distribution\nGeneralizes absolute error to probabilistic forecasts\nInterpretation: Lower CRPS = better forecast\nAdvantage: Sensitive to distance, rewards sharp and calibrated forecasts\n\n\\(\\large \\text{CRPS} = \\text{mean}(p_j),\\)\nwhere\n\\(p_j = \\int_{-\\infty}^{\\infty} \\left(G_j(x) - F_j(x)\\right)^2dx,\\)"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-4",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-4",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating probabilistic forecast accuracy",
+    "text": "Evaluating probabilistic forecast accuracy\nCRPS (Continuous Ranked Probability Score)"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-5",
+    "href": "lab/epss_training/slides/epss_training.html#evaluating-probabilistic-forecast-accuracy-5",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Evaluating probabilistic forecast accuracy",
+    "text": "Evaluating probabilistic forecast accuracy\n\nfit_all_fc |&gt; \n  accuracy(med_tsb_filter |&gt;\n             filter(hub_id == 'hub_1' & product_id == 'product_5'),\n           measures = list(distribution_accuracy_measures)) |&gt; \n  select(-percentile)\n\n# A tibble: 5 × 5\n  .model hub_id product_id .type  CRPS\n  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt;\n1 arima  hub_1  product_5  Test  6311.\n2 ets    hub_1  product_5  Test  6648.\n3 mean   hub_1  product_5  Test  7081.\n4 naive  hub_1  product_5  Test  8034.\n5 snaive hub_1  product_5  Test  7823."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#feature-engineering",
+    "href": "lab/epss_training/slides/epss_training.html#feature-engineering",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Feature engineering",
+    "text": "Feature engineering\nIn this training, we only do a basic feature engineering.\n\n# Load data\nfrom google.colab import files\nuploaded = files.upload()\ndf = pd.read_csv('med_tsb_filter.csv')\n\n# Make the yearmonth as date format\ndf['date'] = pd.to_datetime(df['date']) + pd.offsets.MonthEnd(0)\n\n# Feature Engineering\ndf['month'] = df['date'].dt.month  # create month feature\n\n# categorical encoding\nenc = OrdinalEncoder()\ndf[['hub_id_cat', 'product_id_cat']] = enc.fit_transform(df[['hub_id', 'product_id']])\n\n# Create unique identifier for series\ndf['unique_id'] = df['hub_id'] + '_' + df['product_id']"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#feature-engineering-1",
+    "href": "lab/epss_training/slides/epss_training.html#feature-engineering-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Feature engineering",
+    "text": "Feature engineering\n\n# Create series and exogenous data\nseries = df[['date', 'unique_id', 'quantity_issued']]\nexog = df[['date', 'unique_id', 'month', 'hub_id_cat', 'product_id_cat']]\n\n# Transform series and exog to dictionaries\n\nseries_dict = series_long_to_dict(\n    data      = series,\n    series_id = 'unique_id',\n    index     = 'date',\n    values    = 'quantity_issued',\n    freq      = 'M'\n)\n\nexog_dict = exog_long_to_dict(\n    data      = exog,\n    series_id = 'unique_id',\n    index     = 'date',\n    freq      = 'M'\n)"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#feature-engineering-2",
+    "href": "lab/epss_training/slides/epss_training.html#feature-engineering-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Feature engineering",
+    "text": "Feature engineering\n\n# Partition data in train and test\nend_train = '2022-06-30'\nstart_test = pd.to_datetime(end_train) + pd.DateOffset(months=1)  # Add 1 month\n\nseries_dict_train = {k: v.loc[:end_train] for k, v in series_dict.items()}\nexog_dict_train = {k: v.loc[:end_train] for k, v in exog_dict.items()}\nseries_dict_test = {k: v.loc[start_test:] for k, v in series_dict.items()}\nexog_dict_test = {k: v.loc[start_test:] for k, v in exog_dict.items()}"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#xgboost",
+    "href": "lab/epss_training/slides/epss_training.html#xgboost",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "XGBoost",
+    "text": "XGBoost\nExtreme Gradient Boosting (XGBoost) is a scalable tree-based gradient boosting machine learning algorithm.\n\\(\\hat{y}_{t+h|t} = \\sum_{k=1}^K f_k(\\mathbf{x}_t), \\quad f_k \\in \\mathcal{F}\\)\nWhere: \\(K\\) = number of trees, \\(f_k\\) = tree function, \\(\\mathbf{x}_t\\) = feature vector (lags, calendar features, etc.)\n\n\n\nsource: Rui Guo et al."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#xgboost-1",
+    "href": "lab/epss_training/slides/epss_training.html#xgboost-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "XGBoost",
+    "text": "XGBoost\nAssumptions\n\nPredictive patterns can be captured through feature engineering\nRelationships between features and target are stable\nNo strong temporal dependencies beyond engineered features\n\nStrengths & Weaknesses\n✓ Handles non-linear relationships well\n✓ Provides feature importance metrics\n✗ Requires careful parameter tuning\n✗ Less interpretable than linear models"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#xgboost-2",
+    "href": "lab/epss_training/slides/epss_training.html#xgboost-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "XGBoost",
+    "text": "XGBoost\n\n# Fit xgboost forecaster\nregressor_xgb = XGBRegressor(tree_method = 'hist',\n                             enable_categorical = True)\n\nforecaster_xgb = ForecasterRecursiveMultiSeries(\n                 regressor          = regressor_xgb,\n                 transformer_series = None,\n                 lags               = 4,\n                 dropna_from_series = False\n             )\n\nforecaster_xgb.fit(series=series_dict_train, exog=exog_dict_train, suppress_warnings=True)\n\nforecaster_xgb"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#xgboost-3",
+    "href": "lab/epss_training/slides/epss_training.html#xgboost-3",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "XGBoost",
+    "text": "XGBoost\n\n# Feature importance plot for XGB\nplt.figure(figsize=(10, 6))\nfeat_xgb = forecaster_xgb.get_feature_importances()\nsns.barplot(x='importance', y='feature', data=feat_xgb.sort_values('importance', ascending=False).head(10))\nplt.title('XGBoost Feature Importance')\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#xgboost-4",
+    "href": "lab/epss_training/slides/epss_training.html#xgboost-4",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "XGBoost",
+    "text": "XGBoost\n\n# XGB predictions and plot\nboot = 100\npredictions_xgb = forecaster_xgb.predict_bootstrapping(steps=12, exog=exog_dict_test, n_boot=boot)\n\n# Create prediction DF and plot example series\nexample_series = list(series_dict_test.keys())[2]\nxgb_pred_test = predictions_xgb[example_series].copy()\n\n# Calculate statistics\nmean_pred = xgb_pred_test.mean(axis=1)\nlower_pred = xgb_pred_test.quantile(0.025, axis=1)\nupper_pred = xgb_pred_test.quantile(0.975, axis=1)"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#xgboost-5",
+    "href": "lab/epss_training/slides/epss_training.html#xgboost-5",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "XGBoost",
+    "text": "XGBoost\n\n# Plotting\nplt.figure(figsize=(12, 6))\nplt.plot(series_dict_test[example_series], label='Actual', color='black')\nplt.plot(mean_pred, label='XGB Prediction', color='blue')\nplt.fill_between(mean_pred.index, \n                 lower_pred, \n                 upper_pred,\n                 color='blue', alpha=0.2)\nplt.title('XGBoost Forecast with 95% Prediction Intervals')\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#xgboost-6",
+    "href": "lab/epss_training/slides/epss_training.html#xgboost-6",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "XGBoost",
+    "text": "XGBoost\n\n# Create prediciton df\n\npred_id = list(predictions_xgb.keys())\n\n# Create an empty DataFrame\nxgb_pred = pd.DataFrame(columns=['date', 'unique_id', 'model'] + [f'X_{i}' for i in range(boot)])\n\nfor i in pred_id:\n    xgb_pred_test = predictions_xgb[i]\n    xgb_pred_test = xgb_pred_test.reset_index()\n    xgb_pred_test.columns = ['date'] + [f'X_{i}' for i in range(boot)]\n    xgb_pred_test['unique_id'] = i\n    xgb_pred_test['model'] = 'xgb'\n    xgb_pred = pd.concat([xgb_pred, xgb_pred_test])\n\nxgb_pred.head()"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#lightgbm",
+    "href": "lab/epss_training/slides/epss_training.html#lightgbm",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "LightGBM",
+    "text": "LightGBM\nLight Gradient Boosting Machine (LightGBM) uses leaf-wise tree growth for efficiency whereas other boosting methods divide the tree level‐wise.\n\n\n\nsource: Sheng Dong et al."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#lightgbm-1",
+    "href": "lab/epss_training/slides/epss_training.html#lightgbm-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "LightGBM",
+    "text": "LightGBM\nAssumptions\n\nSimilar to XGBoost but more efficient with large datasets\nHandles categorical features natively\n\nStrengths & Weaknesses\n✓ Faster training speed\n✓ Lower memory usage\n✗ Sensitive to small datasets\n✗ May overfit with noisy data"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#lightgbm-2",
+    "href": "lab/epss_training/slides/epss_training.html#lightgbm-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "LightGBM",
+    "text": "LightGBM\n\n# Fit lightgbm forecaster\n\nregressor_lgbm = LGBMRegressor(\n                boosting_type = 'gbdt',\n                metric = 'mae',\n                learning_rate = 0.1,\n                num_iterations = 200,\n                n_estimators = 100,\n                objective = 'poisson')\n\nforecaster_lgbm = ForecasterRecursiveMultiSeries(\n                 regressor          = regressor_lgbm, \n                 transformer_series = None,\n                 lags               = 4,  \n                 dropna_from_series = False\n             )\n\nforecaster_lgbm.fit(series=series_dict_train, exog=exog_dict_train, suppress_warnings=True)\n\nforecaster_lgbm"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#lightgbm-3",
+    "href": "lab/epss_training/slides/epss_training.html#lightgbm-3",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "LightGBM",
+    "text": "LightGBM\n\n# Feature importance plot for LGBM\nplt.figure(figsize=(10, 6))\nfeat_lgbm = forecaster_lgbm.get_feature_importances()\nsns.barplot(x='importance', y='feature', data=feat_lgbm.sort_values('importance', ascending=False).head(10))\nplt.title('LightGBM Feature Importance')\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#lightgbm-4",
+    "href": "lab/epss_training/slides/epss_training.html#lightgbm-4",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "LightGBM",
+    "text": "LightGBM\n\n# LGBM predictions and plot\nboot = 100\npredictions_lgbm = forecaster_lgbm.predict_bootstrapping(steps=12, exog=exog_dict_test, n_boot=boot)\n\n# Create prediction DF and plot example series\nexample_series = list(series_dict_test.keys())[2]\nlgbm_pred_test = predictions_lgbm[example_series].copy()\n\n# Calculate statistics\nmean_pred = lgbm_pred_test.mean(axis=1)\nlower_pred = lgbm_pred_test.quantile(0.025, axis=1)\nupper_pred = lgbm_pred_test.quantile(0.975, axis=1)"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#lightgbm-5",
+    "href": "lab/epss_training/slides/epss_training.html#lightgbm-5",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "LightGBM",
+    "text": "LightGBM\n\n# Plotting\nplt.figure(figsize=(12, 6))\nplt.plot(series_dict_test[example_series], label='Actual', color='black')\nplt.plot(mean_pred, label='LGBM Prediction', color='blue')\nplt.fill_between(mean_pred.index, \n                 lower_pred, \n                 upper_pred,\n                 color='blue', alpha=0.2)\nplt.title('LGBM Forecast with 95% Prediction Intervals')\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#lightgbm-6",
+    "href": "lab/epss_training/slides/epss_training.html#lightgbm-6",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "LightGBM",
+    "text": "LightGBM\n\n# Create prediciton df\n\npred_id = list(predictions_lgbm.keys())\n\n# Create an empty DataFrame\nlgbm_pred = pd.DataFrame(columns=['date', 'unique_id', 'model'] + [f'X_{i}' for i in range(boot)])\n\nfor i in pred_id:\n    lgbm_pred_test = predictions_lgbm[i]\n    lgbm_pred_test = lgbm_pred_test.reset_index()\n    lgbm_pred_test.columns = ['date'] + [f'X_{i}' for i in range(boot)]\n    lgbm_pred_test['unique_id'] = i\n    lgbm_pred_test['model'] = 'lgbm'\n    lgbm_pred = pd.concat([lgbm_pred, lgbm_pred_test])\n\nlgbm_pred.head()"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#model-evaluation",
+    "href": "lab/epss_training/slides/epss_training.html#model-evaluation",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Model evaluation",
+    "text": "Model evaluation\n\n# Calculate metrics for both models\nxgb_mase, xgb_rmse, xgb_qs, xgb_crps = calculate_metrics(predictions_xgb, series_dict_test, series_dict_train)\nlgbm_mase, lgbm_rmse, lgbm_qs, lgbm_crps = calculate_metrics(predictions_lgbm, series_dict_test, series_dict_train)\n\n\n\n\n\n\n\n\n\n\n\n\nModel\nAverage MASE\nAverage RMSE\nAverage Quantile Score\nAverage CRPS\n\n\n\n\nXGBoost\n1.218\n4878.992\n1151.738\n3548.056\n\n\nLightGBM\n1.061\n4953.944\n310.234\n3498.346\n\n\n\n\nNote: We can improve the performance of XGBoost and LightGBM through better feature engineering and hyperparameter tuning."
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#timegpt",
+    "href": "lab/epss_training/slides/epss_training.html#timegpt",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "TimeGPT",
+    "text": "TimeGPT\nFoundational time series model for time series forecasting by Nixtla (Read more).\nAssumptions\n\nNo strict stationarity requirements\nAutomatically handles multiple series\n\nStrengths & Weaknesses\n✓ Zero configuration needed\n✓ Handles complex patterns\n✗ Requires API access\n✗ Black-box model"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#timegpt-1",
+    "href": "lab/epss_training/slides/epss_training.html#timegpt-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "TimeGPT",
+    "text": "TimeGPT\nGet API key from Nixtla\n\nVisit https://nixtla.io/\nSign up for free account\nNavigate to API Keys section\nCreate new key and copy it\n\n\n!pip install nixtla\n\n# Load libraries\nfrom nixtla import NixtlaClient\n\n# Initialize Nixtla client\nnixtla_client = NixtlaClient(api_key='your_api_key_here')"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#timegpt-2",
+    "href": "lab/epss_training/slides/epss_training.html#timegpt-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "TimeGPT",
+    "text": "TimeGPT\n\n# Since we already have done the feature engineering, we dont need to do it again\n# Create unique identifier and rename columns for TimeGPT\ndf_timegpt = df.rename(columns={'date': 'ds', 'quantity_issued': 'y'}).drop(columns=['hub_id', 'product_id'])\n\n# Split data into train-test\nend_train = '2022-06-30'\ntrain_df = df_timegpt[df_timegpt['ds'] &lt;= end_train]\ntest_df = df_timegpt[df_timegpt['ds'] &gt; end_train]"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#timegpt-3",
+    "href": "lab/epss_training/slides/epss_training.html#timegpt-3",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "TimeGPT",
+    "text": "TimeGPT\n\n# TimeGPT Base Model\ntimegpt_fcst =  nixtla_client.forecast(\n    df=train_df,\n    h=len(test_df['ds'].unique()),\n    freq='M',\n    level=[90, 95]  # 90% and 95% prediction intervals\n)\n\nnixtla_client.plot(train_df, timegpt_fcst, time_col='ds', target_col='y')"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#timegpt-4",
+    "href": "lab/epss_training/slides/epss_training.html#timegpt-4",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "TimeGPT",
+    "text": "TimeGPT\n\n# TimeGPT with Exogenous Variables\n\n# Prepare exogenous data\nexog_features = ['month', 'hub_id_cat', 'product_id_cat']\n\n# Future exogenous variables (from your test set)\nfuture_exog = test_df[['unique_id', 'ds'] + exog_features]\n\ntimegpt_reg_fcst = nixtla_client.forecast(\n    df=train_df,\n    X_df=future_exog,\n    h=len(test_df['ds'].unique()),\n    freq='M',\n    level=[90, 95]\n)\n\nnixtla_client.plot(train_df, timegpt_reg_fcst, time_col='ds', target_col='y')"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#model-evaluation-1",
+    "href": "lab/epss_training/slides/epss_training.html#model-evaluation-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Model evaluation",
+    "text": "Model evaluation\n\n# Calculate metrics for both models\nxgb_mase, xgb_rmse, xgb_qs, xgb_crps = calculate_metrics(predictions_xgb, series_dict_test, series_dict_train)\nlgbm_mase, lgbm_rmse, lgbm_qs, lgbm_crps = calculate_metrics(predictions_lgbm, series_dict_test, series_dict_train)\n\n# Calculate metrics for base model\nbase_metrics = calculate_metrics(timegpt_fcst, test_df, train_df)\n\n# Calculate metrics for regressor model\nreg_metrics = calculate_metrics(timegpt_reg_fcst, test_df, train_df)\n\n\n\n\n\n\n\n\n\n\n\nModel\nAverage MASE\nAverage RMSE\nAverage Quantile Score\n\n\n\n\nTimeGPT Base Model\n1.019\n4261.135\n41.892\n\n\nTimeGPT Regressor Model\n1.125\n5016.053\n57.571"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context",
+    "href": "lab/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Demographic forecasting method (FPSC Context)",
+    "text": "Demographic forecasting method (FPSC Context)\nA population-based contraceptive needs estimation model combining:\n\nPopulation dynamics\nFamily planning indicators\nMethod/brand distribution factors"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-1",
+    "href": "lab/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-1",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Demographic forecasting method (FPSC Context)",
+    "text": "Demographic forecasting method (FPSC Context)\n\\[\\begin{equation}\n\\begin{split}\ny_{i,t} = & \\left(\\sum_{j=15}^{50} \\text{mCPR}_{t,j} \\times \\text{WomenPopulation}_{t,j}\\right) \\\\\n           & \\times \\text{MethodMix}_{t,i} \\times \\text{CYP}_{t,i} \\times \\text{BrandMix}_{t,i} \\times \\text{SourceShare}_t\n\\end{split}\n\\end{equation}\\]\n\n\\(i\\): Contraceptive product\n\\(t\\): Time period (year)\n\\(\\text{mCPR}\\): Modern Contraceptive Prevalence Rate (%)\n\\(\\text{WomenPopulation}\\): Women aged 15-49\n\\(\\text{MethodMix}\\): Contraceptive method distribution\n\\(\\text{CYP}\\): Couple-Years of Protection factor\n\\(\\text{BrandMix}\\): Brand preference distribution\n\\(\\text{SourceShare}\\): Provider type distribution"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-2",
+    "href": "lab/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-2",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Demographic forecasting method (FPSC Context)",
+    "text": "Demographic forecasting method (FPSC Context)\nAssumptions\n\nStable demographic patterns during forecast period\nConsistent reporting of family planning indicators\nAccurate CYP values for different methods\nHistorical brand/source mixes remain valid\nLinear relationship between population and needs\nProper spatial distribution via site coordinates\nValid monthly weight distribution"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-3",
+    "href": "lab/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-3",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Demographic forecasting method (FPSC Context)",
+    "text": "Demographic forecasting method (FPSC Context)\nStrengths & Weaknesses\n✓ Directly ties to population dynamics\n✓ Incorporates multiple programmatic factors\n✓ Enables spatial allocation to health sites\n✓ Aligns with public health planning frameworks\n✗ Sensitive to input data quality\n✗ Static assumptions about behavior patterns\n✗ Limited responsiveness to sudden changes\n✗ Provides national level need"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-4",
+    "href": "lab/epss_training/slides/epss_training.html#demographic-forecasting-method-fpsc-context-4",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Demographic forecasting method (FPSC Context)",
+    "text": "Demographic forecasting method (FPSC Context)\nFemale condom needs (age 20-15) for 2020 (example)\n\n\n\n\n\n\n\n\n\nParameter\nValue\nUnit\nSources\n\n\n\n\nA. Women population 20 – 25\n345,000\n# of people\nWorldPop\n\n\nB. Percentage of women who will use a contraceptive product (mCPR)\n68%\n%\nPMA DataLab\n\n\nC. Percentage of the method mix\n26%\n%\nPMA DataLab\n\n\nD. CYP\n120\n-\nUSAID\n\n\nE. Percentage of brand A mix\n45%\n%\nAuthor calculation\n\n\nF. Percentage of source mix\n13%\n%\nUSAID\n\n\nTotal requirement (A × B × C × D × E × F)\n629,694\n# of products\n-"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#next-steps-and-further-learning",
+    "href": "lab/epss_training/slides/epss_training.html#next-steps-and-further-learning",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Next steps and further learning",
+    "text": "Next steps and further learning\n\nForecasting for social good learning labs\nForecasting: Principles and Practice\nForecasting and Analytics with the Augmented Dynamic Adaptive Model (ADAM)\nNixtla\nSKTIME\nskforecast"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#post-training-feedback",
+    "href": "lab/epss_training/slides/epss_training.html#post-training-feedback",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Post-Training Feedback",
+    "text": "Post-Training Feedback"
+  },
+  {
+    "objectID": "lab/epss_training/slides/epss_training.html#thank-you",
+    "href": "lab/epss_training/slides/epss_training.html#thank-you",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain",
+    "section": "Thank you!",
+    "text": "Thank you!\n\n\nScan the QR Code and follow us on LinkedIn…"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "In this lab, we explore a discrete-time Markov chain modeling brand switching between two paracetamol brands:\n\nBrand A: locally manufactured (state 1)\nBrand B: imported (state 2)\n\nPatients switch weekly according to the transition matrix:\n\n\n\nFrom  To\nBrand A\nBrand B\n\n\n\n\nBrand A\n0.92\n0.08\n\n\nBrand B\n0.15\n0.85\n\n\n\nWe will:\n\nCompute expected market shares after the first three weeks.\nWrite a function to calculate the steady-state distribution.\nPlot convergence over time.\nVerify independence of the steady state from initial shares.\nAdd simulation and sensitivity tasks.\n\n\n\nSet the initial market-share vector \\(q^{(0)} = (0.5, 0.5)\\). Manually compute \\(q^{(1)}, q^{(2)}, q^{(3)}\\) using matrix multiplication.\n\n# Define transition matrix P\nP &lt;- matrix(c(0.92, 0.08,\n              0.15, 0.85), \n            nrow = 2, byrow = TRUE,\n            dimnames = list(c(\"A\", \"B\"), c(\"A\", \"B\")))\n# Initial distribution\nq0 &lt;- c(A = 0.5, B = 0.5)\n# Compute first three periods\nq_list &lt;- accumulate(1:3, ~ .x %*% P, .init = q0)[-1]\n# Display results\nresults1 &lt;- tibble(week = 1:3,\n       A = map_dbl(q_list, 1),\n       B = map_dbl(q_list, 2))\nknitr::kable(results1, digits=6)\n\n\n\n\nweek\nA\nB\n\n\n\n\n1\n0.535000\n0.465000\n\n\n2\n0.561950\n0.438050\n\n\n3\n0.582702\n0.417298\n\n\n\n\n\n\n\n\nImplement a function steady_state(P) that returns the long-run distribution via eigen decomposition. Verify it on \\(P\\) above.\n\nsteady_state &lt;- function(P) {\n  eig &lt;- eigen(t(P))\n  vec &lt;- Re(eig$vectors[, which.min(Mod(eig$values - 1))])\n  pi &lt;- vec / sum(vec)\n  pi\n}\n# Test\ndist_ss &lt;- steady_state(P)\nknitr::kable(t(round(dist_ss, 6)), col.names = c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.652174\n0.347826\n\n\n\n\n\n\n\n\nSimulate the expected market-share evolution for 30 weeks and plot \\(q^{(n)}\\) to illustrate convergence.\n\ntotal_weeks &lt;- 30\npi_mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\ncolnames(pi_mat) &lt;- c(\"A\", \"B\")\npi_mat[1, ] &lt;- q0\nfor (i in 2:(total_weeks + 1)) {\n  pi_mat[i, ] &lt;- pi_mat[i - 1, ] %*% P\n}\ndata_conv &lt;- as_tibble(pi_mat) |&gt;\n  mutate(week = 0:total_weeks) |&gt;\n  pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\nsteady_vals &lt;- steady_state(P)\n\ndata_conv |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line(size = 1) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Market-Share Convergence over Time\",\n       x = \"Week\",\n       y = \"Expected Market Share\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nThe convergence plot shows both shares approaching the dashed lines at (0.652174, 0.347826) by around week 20.\n\n\n\nUsing initial distributions \\((0.5, 0.5), (0.75, 0.25), (0.25, 0.75), (0.9, 0.1)\\), confirm that all converge to the same steady state.\n\ninit_list &lt;- list(\n  \"0.5,0.5\" = c(0.5, 0.5),\n  \"0.75,0.25\" = c(0.75, 0.25),\n  \"0.25,0.75\" = c(0.25, 0.75),\n  \"0.9,0.1\" = c(0.9, 0.1)\n)\nframe_list &lt;- map2_dfr(init_list, names(init_list), function(init_dist, label) {\n  mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\n  colnames(mat) &lt;- c(\"A\", \"B\")\n  mat[1, ] &lt;- init_dist\n  for (i in 2:(total_weeks + 1)) mat[i, ] &lt;- mat[i - 1, ] %*% P\n  as_tibble(mat) |&gt;\n    mutate(week = 0:total_weeks, init = label) |&gt;\n    pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\n})\nframe_list |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line() +\n  facet_wrap(~ init) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Convergence Across Different Initial Distributions\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nRegardless of initial shares, all paths converge to approximately (0.652174, 0.347826) by week 30.\n\n\n\nSimulate the brand preference for 10,000 patients over 30 weeks by sampling transitions. Compare empirical frequencies at week 30 to the theoretical steady state.\n\nset.seed(123)\nn_patients &lt;- 10000\nn_weeks &lt;- 30\n# Initialize state 1=A, 2=B randomly according to q0\nstates &lt;- sample(c(1,2), n_patients, replace = TRUE, prob = q0)\nfor (t in 1:n_weeks) {\n  probs &lt;- P[states, ]\n  states &lt;- apply(probs, 1, function(pr) sample(c(1,2), 1, prob = pr))\n}\nempirical &lt;- prop.table(table(states))\nknitr::kable(t(round(empirical, 4)), col.names=c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.6446\n0.3554\n\n\n\n\n\nEmpirical shares at week 30 (approx):\n\nBrand A: 0.6518\nBrand B: 0.3482\n\nClose to theoretical (0.6522, 0.3478).\n\n\n\nVary the promotion effect: change \\(p_{21}\\) (Brand B → A) from 0.15 to 0.20 and 0.10. Compute new steady states and discuss impact.\n\nfor (p21 in c(0.20, 0.10)) {\n  P_var &lt;- matrix(c(0.92, 0.08,\n                    p21, 1-p21), nrow=2, byrow=TRUE)\n  ss &lt;- steady_state(P_var)\n  cat(\"p21 =\", p21, \"→ steady state:\", round(ss,4), \"\\n\")\n}\n\np21 = 0.2 → steady state: 0.7143 0.2857 \np21 = 0.1 → steady state: 0.5556 0.4444 \n\n\nIncreasing the promotion increases the long-run share of Brand A, while decreasing it lowers that share."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-1-initial-evolution",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-1-initial-evolution",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Set the initial market-share vector \\(q^{(0)} = (0.5, 0.5)\\). Manually compute \\(q^{(1)}, q^{(2)}, q^{(3)}\\) using matrix multiplication.\n\n# Define transition matrix P\nP &lt;- matrix(c(0.92, 0.08,\n              0.15, 0.85), \n            nrow = 2, byrow = TRUE,\n            dimnames = list(c(\"A\", \"B\"), c(\"A\", \"B\")))\n# Initial distribution\nq0 &lt;- c(A = 0.5, B = 0.5)\n# Compute first three periods\nq_list &lt;- accumulate(1:3, ~ .x %*% P, .init = q0)[-1]\n# Display results\nresults1 &lt;- tibble(week = 1:3,\n       A = map_dbl(q_list, 1),\n       B = map_dbl(q_list, 2))\nknitr::kable(results1, digits=6)\n\n\n\n\nweek\nA\nB\n\n\n\n\n1\n0.535000\n0.465000\n\n\n2\n0.561950\n0.438050\n\n\n3\n0.582702\n0.417298"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-2-steady-state-distribution-function",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-2-steady-state-distribution-function",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Implement a function steady_state(P) that returns the long-run distribution via eigen decomposition. Verify it on \\(P\\) above.\n\nsteady_state &lt;- function(P) {\n  eig &lt;- eigen(t(P))\n  vec &lt;- Re(eig$vectors[, which.min(Mod(eig$values - 1))])\n  pi &lt;- vec / sum(vec)\n  pi\n}\n# Test\ndist_ss &lt;- steady_state(P)\nknitr::kable(t(round(dist_ss, 6)), col.names = c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.652174\n0.347826"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-3-convergence-plot",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-3-convergence-plot",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Simulate the expected market-share evolution for 30 weeks and plot \\(q^{(n)}\\) to illustrate convergence.\n\ntotal_weeks &lt;- 30\npi_mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\ncolnames(pi_mat) &lt;- c(\"A\", \"B\")\npi_mat[1, ] &lt;- q0\nfor (i in 2:(total_weeks + 1)) {\n  pi_mat[i, ] &lt;- pi_mat[i - 1, ] %*% P\n}\ndata_conv &lt;- as_tibble(pi_mat) |&gt;\n  mutate(week = 0:total_weeks) |&gt;\n  pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\nsteady_vals &lt;- steady_state(P)\n\ndata_conv |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line(size = 1) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Market-Share Convergence over Time\",\n       x = \"Week\",\n       y = \"Expected Market Share\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nThe convergence plot shows both shares approaching the dashed lines at (0.652174, 0.347826) by around week 20."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-4-independence-from-initial-shares",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-4-independence-from-initial-shares",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Using initial distributions \\((0.5, 0.5), (0.75, 0.25), (0.25, 0.75), (0.9, 0.1)\\), confirm that all converge to the same steady state.\n\ninit_list &lt;- list(\n  \"0.5,0.5\" = c(0.5, 0.5),\n  \"0.75,0.25\" = c(0.75, 0.25),\n  \"0.25,0.75\" = c(0.25, 0.75),\n  \"0.9,0.1\" = c(0.9, 0.1)\n)\nframe_list &lt;- map2_dfr(init_list, names(init_list), function(init_dist, label) {\n  mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\n  colnames(mat) &lt;- c(\"A\", \"B\")\n  mat[1, ] &lt;- init_dist\n  for (i in 2:(total_weeks + 1)) mat[i, ] &lt;- mat[i - 1, ] %*% P\n  as_tibble(mat) |&gt;\n    mutate(week = 0:total_weeks, init = label) |&gt;\n    pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\n})\nframe_list |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line() +\n  facet_wrap(~ init) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Convergence Across Different Initial Distributions\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nRegardless of initial shares, all paths converge to approximately (0.652174, 0.347826) by week 30."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-5-simulation-challenge",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-5-simulation-challenge",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Simulate the brand preference for 10,000 patients over 30 weeks by sampling transitions. Compare empirical frequencies at week 30 to the theoretical steady state.\n\nset.seed(123)\nn_patients &lt;- 10000\nn_weeks &lt;- 30\n# Initialize state 1=A, 2=B randomly according to q0\nstates &lt;- sample(c(1,2), n_patients, replace = TRUE, prob = q0)\nfor (t in 1:n_weeks) {\n  probs &lt;- P[states, ]\n  states &lt;- apply(probs, 1, function(pr) sample(c(1,2), 1, prob = pr))\n}\nempirical &lt;- prop.table(table(states))\nknitr::kable(t(round(empirical, 4)), col.names=c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.6446\n0.3554\n\n\n\n\n\nEmpirical shares at week 30 (approx):\n\nBrand A: 0.6518\nBrand B: 0.3482\n\nClose to theoretical (0.6522, 0.3478)."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-6-sensitivity-analysis",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-6-sensitivity-analysis",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Vary the promotion effect: change \\(p_{21}\\) (Brand B → A) from 0.15 to 0.20 and 0.10. Compute new steady states and discuss impact.\n\nfor (p21 in c(0.20, 0.10)) {\n  P_var &lt;- matrix(c(0.92, 0.08,\n                    p21, 1-p21), nrow=2, byrow=TRUE)\n  ss &lt;- steady_state(P_var)\n  cat(\"p21 =\", p21, \"→ steady state:\", round(ss,4), \"\\n\")\n}\n\np21 = 0.2 → steady state: 0.7143 0.2857 \np21 = 0.1 → steady state: 0.5556 0.4444 \n\n\nIncreasing the promotion increases the long-run share of Brand A, while decreasing it lowers that share."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "",
+    "text": "2025-05-15"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#assumptions",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#assumptions",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nYou should be familiar with basic probability and random variables.\nYou are expected to be comfortable with R (or Python) for basic simulation and matrix operations.\nThis is not a theory-heavy workshop—we will use simple examples to build intuition, not derive theorems."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#what-we-will-cover",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#what-we-will-cover",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "What we will cover",
+    "text": "What we will cover\n\nKey concepts in Markov chains\nTransition matrices and system evolution\nSteady-state distributions and their interpretations\nApplications of Markov models in healthcare supply chains\nCode demonstrations and simulations"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#what-we-will-not-cover",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#what-we-will-not-cover",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "What we will not cover",
+    "text": "What we will not cover\n\nProofs of Markov chain convergence theorems\nAdvanced topics like Hidden Markov Models or Semi-Markov processes\nContinuous-time Markov processes in full generality\nFormal classification of all chain types (e.g., reducibility, ergodicity)\nMarcov process with rewards"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#materials",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#materials",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Materials",
+    "text": "Materials\n\nYou can find the workshop materials here.\n\n\nNote: These materials are based on my learnings at NATCOR Taught Course Centre: Stochastic Modelling Course."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#outline",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#outline",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Outline",
+    "text": "Outline\n\nWhy stochastic modeling?\nWhat are Markov processes?\nBrand switching as a DTMC example\nCode walk-throughs in R"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#why-stochastic-modelling-in-healthcare-supply-chains",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#why-stochastic-modelling-in-healthcare-supply-chains",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Why stochastic modelling in healthcare supply chains?",
+    "text": "Why stochastic modelling in healthcare supply chains?\n\n\nDemand is unpredictable: Patient arrivals, seasonal outbreaks, and changing usage patterns\nSupply is uncertain: Delivery delays, stock losses, funding gaps, partial shipments\nHelps quantify risks: Probability of stockouts, unmet demand, cold chain failures\nEnables simulation of long-run behavior: Understand steady-state stock levels, refill patterns, or equipment uptime\nUseful for evaluating interventions: E.g., What if we promote a local brand? Add a backup supplier? Use mobile delivery?"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#system-states",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#system-states",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "System states",
+    "text": "System states\nWe want to model the behaviour of a system which can change its state from one period to the next.\nFor example:\n\n\n\n\n\n\n\n\n\n\nSystem\nStates\nTime unit\n\n\n\n\nWeather\nSunny, cloudy, rainy, …\nDay or hour\n\n\nNo. of people in a healtcare centre\n0, 1, 2, 3, …\nMinute or second\n\n\nStatus of job application\n“In preparation”, “Submitted”, “Invited for interview”, …\nDay or hour?"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "System states: weather example",
+    "text": "System states: weather example\nWe are interested in the transitions between different states. Suppose there are only 3 possible states in weather:\n\nFrom any of the 3 states we can get to any of the other states in a single transition (or stay in the same state). A sample trajectory of the system could be:\n\\([Sunny,  Cloudy,  Cloudy,  Rainy,  Sunny,  Cloudy,  Rainy,  Rainy, …]\\)"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example-cont.",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example-cont.",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "System states: weather example cont.",
+    "text": "System states: weather example cont.\nFor convenience, let’s give each of the 3 states a number: \\(0 – Sunny\\), \\(1 – Cloudy\\), \\(2 – Rainy\\)\n\nLet \\(S\\) be the set of system states. So in our example: \\(S = {0, 1, 2}\\)\n\nLet \\(X_n\\) be the state of the system after \\(n\\) time units (e.g. days).\n\nFor example:"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example-cont.-1",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#system-states-weather-example-cont.-1",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "System states: weather example cont.",
+    "text": "System states: weather example cont.\nSuppose that the system begins as follows:\n\\(X_0 = 0, X_1 = 1, X_2 = 1, X_3 = 2\\)\nGiven the above, what is the probability that \\(X_4 = 0\\), i.e. it is sunny after 4 days? We can write this as a conditional probability:\n\\[\nPr(X_4 = 0\\,|\\,\\underbrace{X_0 = 0,\\,X_1 = 1,\\, X_2 = 1,\\,X_3 = 2)}_{\\text{entire history of the process}}\n\\] Suppose we assume that the probability that \\(X_4 = 0\\) depends only on the value of \\(X_3\\), and not on \\(X_2\\), \\(X_1\\) or \\(X_0\\). We can then write:\n\\[\nPr(X_4 = 0\\,|\\,\\underbrace{X_0 = 0,\\,X_1 = 1,\\, X_2 = 1,\\,X_3 = 2)}_{\\text{entire history of the process}} = Pr(X_4 = 0\\,|\\,\\underbrace{X_3 = 2)}_{\\text{current state}}\n\\]"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#markov-process-definition",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#markov-process-definition",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Markov process: definition",
+    "text": "Markov process: definition\nA stochastic process with the Markov Property:\n\n\\((X_1, X_2, X_3, ...)\\)\n\nin which the probability distribution for state \\(X_{n+1}\\) depends only on the state \\(X_n\\), and not on any of the states from \\(X_0\\) up to \\(X_{n-1}\\) (for all \\(n \\ge 0\\)).\n\nWriting this more mathematically, we can say:  \\[\n\\Pr\\bigl(X_{n+1} = j \\;\\bigm|\\; X_0 = x_0,\\; X_1 = x_1,\\;\\dots,\\; X_n = x_n\\bigr)\n\\;=\\;\n\\Pr\\bigl(X_{n+1} = j \\;\\bigm|\\; X_n = x_n\\bigr)\n\\]\nKey idea: “The future depends only on the present, not on the past.”\nSo the probability distribution for the next state depends only on the current state, not on the history of previous states. Can be discrete or continuous in time."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#what-is-a-good-example-of-a-markov-chain",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#what-is-a-good-example-of-a-markov-chain",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "What is a good example of a Markov chain?",
+    "text": "What is a good example of a Markov chain?\n\n\n\n\n\nFor example, in Snakes and Ladders,\nif \\(X_n = 50\\) then:\n\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=67 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=52 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=53 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=34 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=55 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)\n\\(\\displaystyle \\Pr\\bigl(X_{n+1}=56 \\mid X_n=50\\bigr) = \\tfrac{1}{6}\\)"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#assumptions-of-markov-chain-models",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#assumptions-of-markov-chain-models",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Assumptions of Markov chain models",
+    "text": "Assumptions of Markov chain models\n\nRemember, simple Markov chain models rely upon some important assumptions:\n\nThe Markov chain is in exactly one state on any particular time step\nThe probability distribution for the next state only depends on the current state (i.e., Markov property)\nThe transition probabilities are the same on every time step"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#transition-probability-matrix",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#transition-probability-matrix",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Transition probability matrix",
+    "text": "Transition probability matrix\nLet \\(S = \\{s_1, s_2, \\dots, s_n\\}\\) be the finite state space. The one-step transition probabilities are:\n\\[\np_{ij} = \\Pr(X_{t+1} = s_j \\mid X_t = s_i)\n\\]\nWe collect these into the transition matrix:\n\\[\nP = [p_{ij}], \\quad \\text{where each row sums to 1}\n\\]\nThe \\(n\\)-step transition matrix is:\n\\[\nP^{(n)} = P^n = \\underbrace{P \\cdot P \\cdot \\dots \\cdot P}_{n\\text{ times}}\n\\]\nWe can use the Chapman-Kolmogorov Equation:\n\\[\nP^{(n)} = P^{(k)} P^{(n-k)}\n\\]"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#steady-state-distribution",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#steady-state-distribution",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Steady-state distribution",
+    "text": "Steady-state distribution\n\nWhen a Markov chain evolves over time, the probability distribution of states may converge to a fixed vector — called the steady-state distribution, \\(\\pi\\).\nA steady-state distribution exists if the chain is:\n\nIrreducible: all states communicate\nAperiodic: not cyclic\nPositive recurrent: expected return time is finite\n\nSteady-state equation: \\(\\pi P = \\pi, \\quad \\sum_i \\pi_i = 1\\)\nThis means:\n\n\\(\\pi_i\\): long-run proportion of time spent in state \\(i\\)\nIt’s a left eigenvector of \\(P\\) corresponding to eigenvalue 1"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-infinitely-many-states",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-infinitely-many-states",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Classifying states: infinitely many states",
+    "text": "Classifying states: infinitely many states\n\nSuppose we have a Markov chain defined on the infinite state space \\({0, 1, 2, …}\\). If it is in state 0 then it moves to state \\(1\\) with probability \\(1\\). If it is in any other state then it moves up with probability \\(p\\) and moves down with probability \\(1-p\\), where \\(0&lt;p&lt;1\\).\n\nKey point: if a Markov chain has infinitely many states, a steady-state distribution might not exist."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-periodic-states",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-periodic-states",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Classifying states: periodic states",
+    "text": "Classifying states: periodic states\n\nSuppose we have a Markov chain which just goes back and forth between states 1 and 2. We call this a periodic Markov chain with a period of 2, because it can only return to the same state after an even number of time steps.\n\nKey point: even if a steady-state distribution exists, the Markov chain might not “converge” to the steady-state distribution unless it actually starts there."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-absorbing-states",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#classifying-states-absorbing-states",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Classifying states: absorbing states",
+    "text": "Classifying states: absorbing states\nThis time, we assume that if you’re in state 1 you stay there forever – and the same applies to state 2. In this case we call states 1 and 2 absorbing states.\n\nKey point: if states do not all “communicate” with each other (meaning that you cannot necessarily find a path from one state to another), there could be multiple steady-state distributions."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A",
+    "text": "Lets promote Brand A\nAssume patients switch weekly between two brands according to the probabilities shown in the table below:\n\n\n\n\nFrom  To\nBrand A\nBrand B\n\n\n\n\nBrand A\n0.92\n0.08\n\n\nBrand B\n0.15\n0.85\n\n\n\n\n\n\n\n\n\nLet \\(X_n\\) denote the preferred brand (either A or B) of a randomly-chosen customer after \\(n\\) weeks. From the table:\n\\(\\Pr(X_{n+1}=1 \\mid X_n = 1) = 0.92\\)\n\\(\\Pr(X_{n+1}=2 \\mid X_n = 1) = 0.08\\)\n\\(\\Pr(X_{n+1}=1 \\mid X_n = 2) = 0.15\\)\n\\(\\Pr(X_{n+1}=2 \\mid X_n = 2) = 0.85\\)"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A cont.",
+    "text": "Lets promote Brand A cont.\n\n\n\n−+\n10:00\n\n\n\n\nWe can represent this situation using a discrete-time Markov chain:\n\nWe are using some shorthand notation: \\(p_{ij} = Pr(X_{n+1} = j \\,|\\, X_n = i)\\)"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-1",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-1",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A cont.",
+    "text": "Lets promote Brand A cont.\nSuppose that after zero weeks, both brands have a 50% market share. This means a randomly-chosen patient has a 50% chance of preferring Brand A.\nSo: \\(Pr(X_0 = 1) = 0.5\\) and \\(Pr(X_0 = 2) = 0.5\\)\nUsing the switching probabilities and invoking the law of total probability, we can calculate the preferred brand of a randomly-chosen patient after 1 week:\n\\(Pr(X_1 = 1) = \\underbrace{Pr(X_0 = 1)Pr(X_1 = 1|X_0 = 1)}_{\\text{(begin in state 1)}} + \\underbrace{Pr(X_0 = 2)Pr(X_1 = 1|X_0 = 2)}_{\\text{(begin in state 2)}} \\\\ =(0.5×0.92)+(0.5×0.15)=0.535\\)\n\n\\(Pr(X_1 = 2) = \\underbrace{Pr(X_0 = 1)Pr(X_1 = 2|X_0 = 1)}_{\\text{(begin in state 1)}} + \\underbrace{Pr(X_0 = 2)Pr(X_1 = 2|X_0 = 2)}_{\\text{(begin in state 2)}} \\\\=(0.5×0.08)+(0.5×0.85)=0.465\\)"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-2",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-2",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A cont.",
+    "text": "Lets promote Brand A cont.\nWe can make these calculations look neater by using matrix-vector notation. Let \\(p_{ij}\\) denote the probability of switching from \\(i\\) to \\(j\\). Obviously, this implies:\n\\(p_{ij}\\ge0,\\;\\forall\\,i,j\\in S\\), \\(\\sum_{j\\in S} p_{ij} = 1,\\;\\forall\\,i\\in S.\\)\nLet \\(P\\) denote the transition matrix:\n\\[\n\\mathbf{P} \\;=\\;\n\\begin{pmatrix}\np_{11} & p_{12} \\\\\np_{21} & p_{22}\n\\end{pmatrix}\n\\;=\\;\n\\begin{pmatrix}\n0.92 & 0.08 \\\\\n0.15 & 0.85\n\\end{pmatrix}\n\\]\nAlso let \\(q^{(0)}\\) be the vector of initial market shares:\n\\(q^{(0)}=(0.5, 0.5)\\)\nTo get the expected market shares after one week, we multiply \\(q^{(0)}\\) by \\(P\\) to get \\(q^{(1)}\\)\n\\[\n\\mathbf{q}^{(0)} \\mathbf{P}\n\\;=\\;\n(0.5,\\;0.5)\\,\n\\begin{pmatrix}\n0.92 & 0.08\\\\\n0.15 & 0.85\n\\end{pmatrix}\n\\;=\\;\n(0.535,\\;0.465)\n\\;=\\;\n\\mathbf{q}^{(1)}\n\\]"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-3",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-3",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A cont.",
+    "text": "Lets promote Brand A cont.\nTo find the expected market shares after two weeks, we repeat the process, starting from the expected market shares after one week. This means we need to calculate\n\\[\n\\overset{\\substack{\\text{expected market shares}\\\\\\text{after one week}}}\n         {\\mathbf{q}^{(1)}}\n\\;\\times\\;\n\\overset{\\text{transition matrix}}{P}\n\\;\\;=\\;\\;\n\\overset{\\substack{\\text{expected market shares}\\\\\\text{after two weeks}}}\n         {\\mathbf{q}^{(2)}}\n\\]\n\\[\n\\mathbf{q}^{(1)} \\mathbf{P}\n\\;=\\;\n(0.535,\\;0.465)\\,\n\\begin{pmatrix}\n0.92 & 0.08\\\\\n0.15 & 0.85\n\\end{pmatrix}\n\\;=\\;\n(0.56195,\\;0.43805)\n\\;=\\;\n\\mathbf{q}^{(2)}\n\\]\nSimilarly, to find the expected market shares after three weeks:\n\\[\n\\mathbf{q}^{(2)} \\mathbf{P}\n\\;=\\;\n(0.56195,\\;0.43805)\\,\n\\begin{pmatrix}\n0.92 & 0.08\\\\\n0.15 & 0.85\n\\end{pmatrix}\n\\;=\\;\n(0.5827015,\\;0.4172985)\n\\;=\\;\n\\mathbf{q}^{(3)}\n\\]"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-4",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-4",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A cont.",
+    "text": "Lets promote Brand A cont.\n\nIn general, to find the expected market shares after \\(n\\) weeks, we calculate\n\\(\\mathbf{q}^{(n-1)}\\,\\mathbf{P} = \\mathbf{q}^{(n)}\\)\n\nThis is the same as:\n\\(\\mathbf{q}^{(0)}\\underbrace{\\mathbf{P}\\,\\mathbf{P}\\,\\cdots\\,\\mathbf{P}}_{\\text{(n times)}} \\;=\\; \\mathbf{q}^{(0)}\\,\\mathbf{P}^n\\)\n\ni.e. the vector of initial market shares multiplied by \\(\\mathbf{P}\\) to the power \\(n\\)."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-5",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-5",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A cont.",
+    "text": "Lets promote Brand A cont.\n\n\n\n−+\n10:00\n\n\n\n\nRecall that: \\(\\mathbf{q}^{(n)}\\) = vector of state probabilities after \\(n\\) time steps (this is the vector of expected market shares in our task) and \\(\\mathbf{P}\\) = transition matrix.\n\nWe have already seen that \\(\\mathbf{q}^{(n)}\\) appears to converge towards a limit as \\(n\\) increases. If we use \\(\\boldsymbol{\\pi}\\) to denote the limiting vector, i.e. \\(\\boldsymbol{\\pi} \\;=\\;\\lim_{n \\to \\infty}\\mathbf{q}^{(n)},\\) then we can take limits to obtain:\n\\[\n\\boldsymbol{\\pi}P = \\boldsymbol{\\pi}\n\\]\nNote: \\(\\boldsymbol{\\pi} = (\\pi_1,\\pi_2)\\), where the numbers \\(\\pi_1\\) and \\(\\pi_2\\) are “unknowns.”"
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-6",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-6",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A cont.",
+    "text": "Lets promote Brand A cont.\nBy solving the equations \\(\\boldsymbol{\\pi} = (\\pi_1,\\pi_2)\\) (where \\(\\boldsymbol{\\pi}\\) is a ‘vector of unknowns’) we can calculate the steady-state distribution of the Markov chain.\nRecall the market shares example from earlier. Let \\(\\pi_1\\) and \\(\\pi_2\\) denote the (unknown) steady-state expected market shares for brands A and B respectively. We have:\n\\[\n\\boldsymbol{\\pi}P = \\boldsymbol{\\pi}\n\\quad\\Longleftrightarrow\\quad\n(\\pi_1, \\pi_2)\n\\begin{pmatrix}\n0.92 & 0.08 \\\\\n0.15 & 0.85\n\\end{pmatrix}\n=\n(\\pi_1, \\pi_2).\n\\]\nThis gives us a couple of linear equations in \\(\\pi_1\\) and \\(\\pi_2\\):\n\\[\n\\;\\Longleftrightarrow\\;\n\\begin{cases}\n\\pi_1 = 0.92\\,\\pi_1 + 0.15\\,\\pi_2\\\\[6pt]\n\\pi_2 = 0.08\\,\\pi_1 + 0.85\\,\\pi_2\n\\end{cases}\n\\;\\Longleftrightarrow\\;\n\\begin{cases}\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\\\\[6pt]\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\n\\end{cases}\n\\quad\\text{(These equations are the same!)}\n\\]\nTo solve these equations we will also have to use the fact that \\(\\pi_1 + \\pi_2 = 1\\)."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-7",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-7",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A cont.",
+    "text": "Lets promote Brand A cont.\nLet’s replace one of the two identical equations with \\(\\pi_1 + \\pi_2 = 1\\). Then we have:\n\\[\n\\begin{cases}\n0.08\\,\\pi_1 - 0.15\\,\\pi_2 = 0\\\\[6pt]\n\\pi_1 + \\pi_2 = 1\n\\end{cases}\n\\]\nIf we substitute \\(\\pi_2 = 1 - \\pi_1\\) into the first equation, this gives:\n\\[\n0.08\\,\\pi_1 \\;-\\; 0.15\\,(1 - \\pi_1) \\;=\\; 0\n\\;\\Longleftrightarrow\\;\n0.23\\,\\pi_1 \\;=\\; 0.15\n\\]\nTherefore;\n\\[\n\\pi_1 \\;=\\;\\frac{0.15}{0.23}\\approx 0.652,\n\\qquad\n\\pi_2 \\;=\\;1 - \\pi_1\\approx 0.348\n\\]\nSo the steady-state expected market shares are roughly: 65.2% for Brand A and 34.8% for Brand B."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-8",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-8",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A cont.",
+    "text": "Lets promote Brand A cont.\nIf we use a line graph to show how the expected market shares change with time, we find that both of them appear to converge to fixed values.\n\n\n\n\n\n\n\n\n\nThe market share for Brand A converges to about 65.2%, and the market share for Brand B converges to about 34.8%. We call (0.652, 0.348) the steady-state distribution in this example."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-9",
+    "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-9",
+    "title": "Introduction to Markov Processes in Healthcare Supply Chains",
+    "section": "Lets promote Brand A cont.",
+    "text": "Lets promote Brand A cont.\nChanging the initial probability vector \\(\\mathbf{q}^{(0)}\\) has no effect on the steady-state distribution."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html",
+    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html",
+    "title": "Home",
+    "section": "",
+    "text": "This exercise is based on the brand switching example discussed in the slides. It models consumer behavior using a discrete-time Markov chain with two states representing two brands."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#introduction",
+    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#introduction",
+    "title": "Home",
+    "section": "",
+    "text": "This exercise is based on the brand switching example discussed in the slides. It models consumer behavior using a discrete-time Markov chain with two states representing two brands."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#excel-based-exploration",
+    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#excel-based-exploration",
+    "title": "Home",
+    "section": "Excel-Based Exploration",
+    "text": "Excel-Based Exploration\n\nInitial Setup\nOpen the “Brand switching example – spreadsheet” Excel file.\n\nInitial market shares are in cells B2 (Brand 1) and C2 (Brand 2) — both start at 50%.\nTransition probabilities are found in:\n\nE2: \\(\\Pr(\\text{Brand 1 next week} \\mid \\text{Brand 1 this week})\\)\nF2: \\(\\Pr(\\text{Brand 2 next week} \\mid \\text{Brand 1 this week})\\)\nE3: \\(\\Pr(\\text{Brand 1 next week} \\mid \\text{Brand 2 this week})\\)\nF3: \\(\\Pr(\\text{Brand 2 next week} \\mid \\text{Brand 2 this week})\\)\n\n\nCells B3 and C3 contain formulas to calculate expected market shares after one week.\n\n\nTask 1A\nCopy the formulas in B3 and C3 down for at least 30 rows.\n\nQuestion: How long does it take until the expected market share for Brand 1 exceeds 60%?\n\nAnswer: _________\n\n\nTask 1B\nChange the initial market shares:\n\nCase 1: 30% (Brand 1) and 70% (Brand 2)\nCase 2: 15% (Brand 1) and 85% (Brand 2)\n\n\nQuestion: In each case, how many weeks does it take for Brand 1 to overtake Brand 2?\n\nAnswers: - Case 1: _________\n\nCase 2: _________\n\nRegardless of starting conditions, the system quickly converges to a steady-state distribution.\n\n\nTask 1C\nInspect further down the spreadsheet and record the steady-state expected market shares for both brands to 4 decimal places.\nAnswer:\n\nBrand 1: _________\nBrand 2: _________\n\nThese values are determined by the transition matrix, not the initial shares."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#using-r-to-find-steady-state-distribution",
+    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#using-r-to-find-steady-state-distribution",
+    "title": "Home",
+    "section": "Using R to Find Steady-State Distribution",
+    "text": "Using R to Find Steady-State Distribution\nWe now use R to compute the steady-state distribution algebraically.\nR Function to Solve for Steady-State\n\nlibrary(tidyverse)\n\nsteady_state_dist &lt;- function(P) {\n  # Calculate the steady-state distribution of a discrete-time Markov chain\n  # defined by the transition matrix P\n  \n  # Parameters:\n  # P : matrix\n  #   The transition matrix of the Markov chain of interest.\n  \n  # Returns:\n  # A vector representing the steady-state probabilities for the Markov chain.\n  \n  # Check if P is a square matrix\n  if (!is.matrix(P) || nrow(P) != ncol(P)) {\n    stop(\"P must be a square matrix\")\n  }\n  \n  # Number of states\n  dim &lt;- nrow(P)\n  \n  # Set up the system of equations\n  Q &lt;- P - diag(dim)  # P - I\n  ones &lt;- rep(1, dim) \n  Q &lt;- cbind(Q, ones)  # Append column of ones\n  QTQ &lt;- Q %*% t(Q)    # Compute Q * Q^T\n  bQT &lt;- rep(1, dim)   # Right-hand side vector\n  \n  # Solve the equations and return the solution\n  return(solve(QTQ, bQT))\n}\n\n\nTask 2A\nOpen the R quarto script 00_dtcm.qmd. This script can be used to find the steady-state distribution of a Markov chain, given the transition probability matrix. In our case, we are interested in using it to calculate the steady-state expected market shares for the two brands. Find the steady-state distribution in each of the following cases:\n\\[\nP_1 =\n\\begin{bmatrix}\n0.96 & 0.04 \\\\\n0.07 & 0.93\n\\end{bmatrix}\n\\]\n\n\\[\nP_2 =\n\\begin{bmatrix}\n0.75 & 0.25 \\\\\n0.22 & 0.78\n\\end{bmatrix}\n\\] \n\\[\nP_3 =\n\\begin{bmatrix}\n0.99 & 0.01 \\\\\n0.02 & 0.98\n\\end{bmatrix}\n\\]\n\n# Transition matrices\nmatrices &lt;- list(\n  matrix(c(__, __, __, __), 2, byrow = TRUE),\n  matrix(c(__, __, __, __), 2, byrow = TRUE),\n  matrix(c(__, __, __, __), 2, byrow = TRUE)\n)\n\n# Compute steady-state for each\nfor (P in matrices) {\n  pi_dist &lt;- steady_state_dist(P)\n  print(t(pi_dist))\n}\n\n\n🧠 Even with very similar transition probabilities, the resulting steady-state market shares can be surprisingly different.\n\n\n\nTask 2B – Extra Challenge: Algebraic derivation of steady-state\nLet the transition matrix be:\n\\[\nP = \\begin{bmatrix}\n1 - a & a \\\\\n2a & 1 - 2a\n\\end{bmatrix}, \\quad \\text{where } 0 &lt; a &lt; 0.5\n\\]\nWe want to show the steady-state vector is:\n\\[\n\\boldsymbol{\\pi} = \\left(\\frac{2}{3}, \\frac{1}{3}\\right)\n\\]\n\na_vals &lt;- c(__, __, __, __)\n\nfor (a in a_vals) {\n  P &lt;- matrix(c(__, __, __, __), 2, byrow = TRUE)\n  pi_dist &lt;- steady_state_dist(P)\n  print(t(pi_dist))\n}"
+  },
+  {
+    "objectID": "lab/epss_training/index.html",
+    "href": "lab/epss_training/index.html",
+    "title": "Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting",
+    "section": "",
+    "text": "Slides\n\n\n GitHub repo\n\n\nContext\nAccurate demand forecasting is essential for ensuring reliable access to contraceptive products, supporting key processes like procurement, inventory management, and distribution. This course aims to equip pharmaceutical officers at healthcare site levels with the knowledge and tools to adopt modern forecasting methods using R and Python.\n\n\nTarget Audience\n\nPharmaceutical officers at healthcare site levels responsible for demand planning\n\nAnyone interested in forecasting in the context of contraceptive supply chains\n\n\n\nPrerequisites\n\nBasic knowledge of R and Python\n\nBasic understanding of statistics concepts\n\n\n\nLearning Outcomes\n\nDay 1:\n\nFamiliarize with RStudio and R Notebooks.\nInstall and load required packages in R.\nLearn data wrangling and feature engineering.\nUnderstand time series graphics.\nExplore forecasting models: sNAIVE, Moving Average, ARIMA, ETS, and Demographic Forecasting.\nEvaluate model performance.\n\n\n\nDay 2:\n\nFamiliarize with Google Colab and Python Notebooks.\nInstall and load required Python packages.\nImport data into Python.\nImplement advanced forecasting models: LightGBM, XGBoost, and TimeGPT.\nEvaluate model performance.\nExplore additional learning resources.\n\n\n\n\nPreparation\nThe workshop will provide a quick-start overview of exploring time series data and producing forecasts. No prior experience in time series is required. However, familiarity with:\n\nWriting R code and using tidyverse packages (dplyr, ggplot2) is recommended. Learn R here.\nWriting Python code is beneficial. Learn Python here.\nBasic statistical concepts such as mean, variance, quantiles, and regression would be helpful.\n\n\n\nRequired Equipment\nPlease have a laptop capable of running both R and Python."
+  },
+  {
+    "objectID": "lab/intro_python/index.html#who-is-the-course-for",
+    "href": "lab/intro_python/index.html#who-is-the-course-for",
+    "title": "A basic introduction to Python",
+    "section": "Who is the course for?",
+    "text": "Who is the course for?\nThis course is primarily aimed at learners who require a practical introduction to Python. It assumes no previous experience using Python."
+  },
+  {
+    "objectID": "lab/intro_python/index.html#learning-objectives",
+    "href": "lab/intro_python/index.html#learning-objectives",
+    "title": "A basic introduction to Python",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nFamiliarize yourself with Python and an Integrated Development Environment (IDE) such as Jupyter Lab or VS Code, which we’ll use to interact with Python.\nUnderstand the basics of working with Python, including how to write and execute code.\nUse three different ways to work with Python: Python Shell, Python Scripts, and Jupyter Lab.\nLearn about Python’s basic data types and structures.\nInstall and import required libraries.\nFind resources for help when coding in Python."
+  },
+  {
+    "objectID": "lab/intro_python/index.html#prerequisites",
+    "href": "lab/intro_python/index.html#prerequisites",
+    "title": "A basic introduction to Python",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nNo prior knowledge of Python is assumed.\nInstall Python and GitHub Desktop."
+  },
+  {
+    "objectID": "lab/intro_python/index.html#course-topics",
+    "href": "lab/intro_python/index.html#course-topics",
+    "title": "A basic introduction to Python",
+    "section": "Course Topics",
+    "text": "Course Topics\n\nPython and IDE Essentials\n\nSection 1: Introduction to Python and IDEs\n\nIntroduction to Python\nInstalling Python\nSetting up an Integrated Development Environment (IDE)\nOverview of Jupyter Lab, VS Code, Google Colab, and Anaconda\n\n\n\nSection 2: Working with Jupyter Lab\n\nUnderstanding the basic syntax\nWriting and executing code in Python\nSetting up and organizing a Python project"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/index.html#context",
+    "href": "talks/dl4sg_seminar/index.html#context",
+    "title": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains",
+    "section": "Context",
+    "text": "Context\nIn this presentation for the Data Lab for Social Good seminar, we explore how traditional forecasting methods often fail to capture unmet demand in contraceptive supply chains—particularly when stockouts censor the data. Our work combines temporal kernel forecasting, conformal prediction, and inventory-aware simulation to estimate true demand beyond what the system records.\nWe show how “no demand” often just means “no stock,” and how our approach can support smarter, more equitable inventory decisions. Our next steps include expanding the policy framework, incorporating external covariates, and testing the model in both lab and field settings with real demand planners.\nBecause unmet demand isn’t invisible—our systems just fail to see it."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#section",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#section",
+    "title": "Home",
+    "section": "",
+    "text": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains"
   }
 ]

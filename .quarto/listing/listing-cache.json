@@ -27,7 +27,8 @@
     "talks\\index.qmd": [
       "projects.yml",
       "intro_method_skills/*.qmd",
-      "dl4sg_semnar/*.qmd"
+      "dl4sg_semnar/*.qmd",
+      "dl4sg_seminar/*.qmd"
     ],
     "phd\\index.qmd": [
       "projects.yml",
@@ -45,7 +46,10 @@
       "data_analysis/*.qmd",
       "dashboards/*.qmd",
       "/",
-      "data_analytics/*.qmd"
+      "data_analytics/*.qmd",
+      "epss_training/*.qmd",
+      "intro_python/*.qmd",
+      "dl4sg_marcov/*.qmd"
     ],
     "lab\\data_analytics\\index.qmd": [
       "intro_python/*.ipynb",
@@ -53,6 +57,9 @@
       "dl4sg_marcov/*.qmd"
     ],
     "lab\\data_analytics\\intro_python\\index.qmd": [
+      "materials/*.ipynb"
+    ],
+    "lab\\intro_python\\index.qmd": [
       "materials/*.ipynb"
     ]
   }
