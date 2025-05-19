@@ -1,16 +1,16 @@
 [
   {
-    "listing": "/lab/intro_python/index.html",
+    "listing": "/talks/index.html",
     "items": [
-      "/lab/intro_python/materials/index.html"
+      "/talks/dl4sg_seminar/index.html",
+      "/talks/intro_method_skills/index.html"
     ]
   },
   {
-    "listing": "/lab/index.html",
+    "listing": "/projects/publications/index.html",
     "items": [
-      "/lab/intro_python/index.html",
-      "/lab/epss_training/index.html",
-      "/lab/dl4sg_marcov/index.html"
+      "/projects/publications/second-post/index.html",
+      "/projects/publications/first-post/index.html"
     ]
   },
   {
@@ -22,16 +22,17 @@
     ]
   },
   {
-    "listing": "/talks/index.html",
+    "listing": "/lab/index.html",
     "items": [
-      "/talks/intro_method_skills/index.html"
+      "/lab/dl4sg_marcov/index.html",
+      "/lab/epss_training/index.html",
+      "/lab/intro_python/index.html"
     ]
   },
   {
-    "listing": "/projects/publications/index.html",
+    "listing": "/lab/intro_python/index.html",
     "items": [
-      "/projects/publications/second-post/index.html",
-      "/projects/publications/first-post/index.html"
+      "/lab/intro_python/materials/index.html"
     ]
   }
 ]

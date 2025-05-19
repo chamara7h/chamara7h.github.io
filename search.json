@@ -1,59 +1,87 @@
 [
   {
-    "objectID": "phd/index.html",
-    "href": "phd/index.html",
-    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
+    "objectID": "lab/intro_python/materials/index.html",
+    "href": "lab/intro_python/materials/index.html",
+    "title": "Introduction to Python",
     "section": "",
-    "text": "My research focuses on addressing inefficiencies in supply chain management for contraceptive products in developing countries. These inefficiencies often lead to shortages, limiting women’s reproductive autonomy and exacerbating societal challenges. By integrating probabilistic forecasting with inventory optimization, I aim to create a novel approach that accounts for uncertainties, poor data quality, and local demand variations. This interdisciplinary project involves collaboration with scholars from Cardiff Business School, the School of Computer Science & Informatics, and the United States Agency for International Development (USAID). The goal is to improve access to contraceptives, reduce unintended pregnancies, and prevent unsafe abortions, ultimately benefiting women, healthcare providers, governments, and donor organizations."
+    "text": "Introduction to Python\nInstalling Python\nSetting up an Integrated Development Environment (IDE)\nIntroduction to Jupyter Lab, VS Code, Google Colab and Anaconda\n\n\n\n\n\nUnderstanding the basic syntax\nHow to write and execute code in Python\nSetting up and organizing a Python project\n\n\n\n\nPython is a versatile, high-level programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more.\n\n\n\n\nEasy to read and write\nExtensive libraries and frameworks\nStrong community support\nGreat for beginners and professionals alike\n\n\n\n\nPython can be installed on various operating systems, including Windows, macOS, and Linux.\nStep 1: Download the Installer\n\nVisit the official Python website: https://www.python.org/\nNavigate to the Downloads section and choose the appropriate installer for your operating system.\n\nStep 2: Run the Installer - Open the downloaded installer file. - Make sure to check the box that says “Add Python to PATH” during the installation process. This makes it easier to run Python from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation:\npython --version\n\nYou should see the version of Python you installed.\n\nCongratulations! Python is now installed on your computer.\n\n\n\nAn IDE is a software application that provides comprehensive facilities to programmers for software development.\nThere are many IDEs available for Python. Two popular choices are VS Code and Jupyter Lab.\n\nInstalling VS Code\n\n\nVisit the Visual Studio Code website: https://code.visualstudio.com/\nDownload and install the version for your operating system.\nOnce installed, you can add Python support by installing the Python extension:\n\nOpen VS Code.\nGo to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.\nSearch for “Python” and install the extension provided by Microsoft.\nOpen a new Python file or notebook and start coding!\n\nTutorial: https://code.visualstudio.com/docs/python/python-tutorial\nKey Features:\n\nExtensions: VS Code has a vast library of extensions that enhance its functionality.\nIntegrated Terminal: You can run command-line tasks directly in VS Code.\n\n\n\nInstalling Jupyter Lab\n\n\nJupyter Lab is a web-based interactive computing environment.\nTo install Jupyter Lab, you need to have Python installed. You can use pip, the Python package installer, to install Jupyter Lab:\n    pip install jupyterlab\nTo start Jupyter Lab, open your command prompt (Windows) or terminal (macOS/Linux) and type: bash         Jupyter Lab\nThis will open a new tab in your default web browser, where you can create and run Jupyter Labs.\nTutorial: https://jupyter.org/install\nKey Features:\n\nInteractive output: You can run code in real-time and see the results immediately.\nMarkdown support: You can write rich text, which makes it great for creating tutorials and educational materials.\nVisualizations: You can embed visualizations and plots directly in the notebook.\n\n\nNow you have both VS Code and Jupyter Lab set up for your Python development!\n\n\n\nGoogle Colab, short for “Collaboratory,” is a free Jupyter Lab environment that runs entirely in the cloud. It is perfect for those who want to run Python code without having to set up anything on their local machines.\nStep 1: Accessing Google Colab - Open your web browser and go to: https://colab.research.google.com/\nStep 2: Creating a New Notebook - On the Google Colab homepage, you can either open an existing notebook or create a new one. - To create a new notebook, click on the “New Notebook” button.\nStep 3: Using Google Colab - You can start writing and running Python code right away. - Google Colab provides free access to GPUs and TPUs, which can be used for more intensive computations.\nStep 4: Saving Your Work - You can save your notebooks directly to Google Drive, which makes it easy to access them from any device. - To save your notebook, go to “File” -&gt; “Save a copy in Drive…”\nKey Features: - No installation required: You can start coding immediately without any local setup. - Cloud-based: Your notebooks are stored in Google Drive, making them easy to share and collaborate on. - Free access to GPUs and TPUs: This is particularly useful for machine learning and data science tasks.\nNow you can use Google Colab to run Python code from anywhere, without worrying about setting up your local environment!\n\n\n\nAnaconda is a distribution of Python and R for scientific computing and data science. It comes with many popular data science and machine learning libraries, as well as Jupyter Lab.\nStep 1: Download Anaconda - Visit the Anaconda website: https://www.anaconda.com/products/distribution - Download the Anaconda installer for your operating system.\nStep 2: Install Anaconda - Open the downloaded installer and follow the instructions. - During the installation, you can choose to add Anaconda to your PATH environment variable. This makes it easier to run Anaconda commands from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation: bash         conda --version - You should see the version of Conda that is installed.\nStep 4: Launching Jupyter Lab from Anaconda - Anaconda Navigator is a graphical user interface that comes with Anaconda. It allows you to launch Jupyter Lab easily. - Open Anaconda Navigator from your applications menu. - In Anaconda Navigator, you will see Jupyter Lab listed. Click “Launch” to open it.\nNow you have Anaconda installed, and you can use it to manage your Python environments and packages, as well as run Jupyter Labs!\n\n\n\nGetting Started 1. Launching Jupyter Lab: - Open your command prompt (Windows) or terminal (macOS/Linux). - Type jupyter lab and press Enter. - A new tab will open in your default web browser showing the Jupyter Lab interface.\n\nCreating a New Notebook:\n\nClick on the “New” button and select “Python 3” to create a new notebook.\nYou will see a new notebook with an empty code cell.\n\nWriting and Running Code:\n\nWrite your Python code in the code cells.\nExecute the code by pressing Shift + Enter or clicking the “Run” button.\nExample:\n\n print(\"Hello, Jupyter Lab!\")\nUsing Markdown Cells:\n\nTo add text, headers, lists, and other non-code content, use Markdown cells.\nChange the cell type to Markdown by selecting “Markdown” from the dropdown menu.\nExample of a Markdown cell:\n# This is a Header\n- This is a list item\n    - Another list item\n\n\n\n\n\n\n# Install necessary libraries\n!pip install numpy pandas matplotlib seaborn\n\n# Importing Libraries\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n# Load a sample dataset from seaborn\ndata = sns.load_dataset('penguins')\n\n# Display the first few rows of the dataset\nprint(data.head())\n# Perform some basic data analysis\nsummary = data.describe()\nprint(summary)\n# Create a simple plot\nplt.figure(figsize=(10, 6))\nplt.scatter(data['bill_length_mm'], data['bill_depth_mm'])\nplt.title('Bill Length vs. Bill Depth')\nplt.xlabel('Bill Length (mm)')\nplt.ylabel('Bill Depth (mm)')\nplt.show()\n\n\n\nWe imported necessary libraries.\nWe loaded a sample dataset from the seaborn library and displayed the first few rows.\nWe performed a basic data analysis using the describe method.\nWe visualized the relationship between bill length and bill depth.\n\n\n\n\n\nInteractive Coding: Run code and see results instantly, making it great for experimentation.\nDocumentation: Combine code and narrative text to create comprehensive and understandable documents.\nVisualization: Easily integrate plots and charts to visualize your data.\n\n\n\n\n\nTo ensure that Jupyter Lab uses the project directory as the working directory, you can use the os module to change the current working directory.\n\n\n\nImport the os Module:\n\nThe os module provides a way of using operating system-dependent functionality.\n\nDefine the Project Directory:\n\nSpecify the path to your project directory.\n\nChange the Current Working Directory:\n\nUse os.chdir() to change the current working directory to the project directory.\n\nVerify the Current Working Directory:\n\nUse os.getcwd() to print the current working directory and ensure it’s set correctly.\n\n\n\n\n\nUse python console or terminal.\nimport os\n\n# Define project directory and subdirectories\nproject_dir = 'my_python_project'\nfolders = ['data', 'scripts', 'notebooks']\n\n# Create the main project directory\nif not os.path.exists(project_dir):\n    os.makedirs(project_dir)\n\n# Create subdirectories\nfor folder in folders:\n    path = os.path.join(project_dir, folder)\n    if not os.path.exists(path):\n        os.makedirs(path)\n\n# Check the created structure\n!tree my_python_project\nGo to your main project folder and open the terminal.\nimport os\n\n# Define the project directory\nproject_dir = os.getcwd()\n\n# Set the working directory to the project directory\nos.chdir(project_dir)\n\n# Check the current working directory\nprint(\"Current Working Directory:\", os.getcwd())\nexample: save a file\n# Save a Sample Dataset in the data Folder \nimport pandas as pd\n\n# Create a sample DataFrame\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [24, 22, 23],\n    'Grade': ['A', 'B', 'A']\n}\n\ndf = pd.DataFrame(data)\n\n# Display the DataFrame\nprint(\"Sample DataFrame:\")\nprint(df)\n\n# Define the path to save the CSV file\ncsv_file_path = os.path.join('data', 'students_data.csv')\n\n# Save the DataFrame as a CSV file\ndf.to_csv(csv_file_path, index=False)\n\n# Verify that the file has been saved\nprint(f\"DataFrame saved as CSV file at: {csv_file_path}\")"
   },
   {
-    "objectID": "phd/index.html#supervision-team",
-    "href": "phd/index.html#supervision-team",
-    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
-    "section": "Supervision team",
-    "text": "Supervision team\n\nLead: Prof Bahman Rostami-Tabar, Data Lab for Social Good Research Group, Cardiff Business School, UK\nCo: Prof Aris Syntetos, Cardiff Business School, UK\nCo: Dr Federico Liberatore, School of Computer Science and Informatics, UK\nCollaborator: Glenn Milano, Global Health Supply Chain, Bureau for Global Health, United States Agency for International Development (USAID)"
-  },
-  {
-    "objectID": "phd/index.html#funder",
-    "href": "phd/index.html#funder",
-    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
-    "section": "Funder",
-    "text": "Funder\nWelsh Graduate School for the Social Sciences (WGSSS)"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "lab/intro_python/materials/index.html#section-1-python-and-ide-essentials",
+    "href": "lab/intro_python/materials/index.html#section-1-python-and-ide-essentials",
+    "title": "Introduction to Python",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Introduction to Python\nInstalling Python\nSetting up an Integrated Development Environment (IDE)\nIntroduction to Jupyter Lab, VS Code, Google Colab and Anaconda"
   },
   {
-    "objectID": "lab/intro_python/index.html#who-is-the-course-for",
-    "href": "lab/intro_python/index.html#who-is-the-course-for",
-    "title": "A basic introduction to Python",
-    "section": "Who is the course for?",
-    "text": "Who is the course for?\nThis course is primarily aimed at learners who require a practical introduction to Python. It assumes no previous experience using Python."
+    "objectID": "lab/intro_python/materials/index.html#section-2-working-with-jupyter-lab",
+    "href": "lab/intro_python/materials/index.html#section-2-working-with-jupyter-lab",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Understanding the basic syntax\nHow to write and execute code in Python\nSetting up and organizing a Python project"
   },
   {
-    "objectID": "lab/intro_python/index.html#learning-objectives",
-    "href": "lab/intro_python/index.html#learning-objectives",
-    "title": "A basic introduction to Python",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nFamiliarize yourself with Python and an Integrated Development Environment (IDE) such as Jupyter Lab or VS Code, which we’ll use to interact with Python.\nUnderstand the basics of working with Python, including how to write and execute code.\nUse three different ways to work with Python: Python Shell, Python Scripts, and Jupyter Lab.\nLearn about Python’s basic data types and structures.\nInstall and import required libraries.\nFind resources for help when coding in Python."
+    "objectID": "lab/intro_python/materials/index.html#what-is-python",
+    "href": "lab/intro_python/materials/index.html#what-is-python",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Python is a versatile, high-level programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more."
   },
   {
-    "objectID": "lab/intro_python/index.html#prerequisites",
-    "href": "lab/intro_python/index.html#prerequisites",
-    "title": "A basic introduction to Python",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\nNo prior knowledge of Python is assumed.\nInstall Python and GitHub Desktop."
+    "objectID": "lab/intro_python/materials/index.html#why-learn-python",
+    "href": "lab/intro_python/materials/index.html#why-learn-python",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Easy to read and write\nExtensive libraries and frameworks\nStrong community support\nGreat for beginners and professionals alike"
   },
   {
-    "objectID": "lab/intro_python/index.html#course-topics",
-    "href": "lab/intro_python/index.html#course-topics",
-    "title": "A basic introduction to Python",
-    "section": "Course Topics",
-    "text": "Course Topics\n\nPython and IDE Essentials\n\nSection 1: Introduction to Python and IDEs\n\nIntroduction to Python\nInstalling Python\nSetting up an Integrated Development Environment (IDE)\nOverview of Jupyter Lab, VS Code, Google Colab, and Anaconda\n\n\n\nSection 2: Working with Jupyter Lab\n\nUnderstanding the basic syntax\nWriting and executing code in Python\nSetting up and organizing a Python project"
+    "objectID": "lab/intro_python/materials/index.html#installing-python",
+    "href": "lab/intro_python/materials/index.html#installing-python",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Python can be installed on various operating systems, including Windows, macOS, and Linux.\nStep 1: Download the Installer\n\nVisit the official Python website: https://www.python.org/\nNavigate to the Downloads section and choose the appropriate installer for your operating system.\n\nStep 2: Run the Installer - Open the downloaded installer file. - Make sure to check the box that says “Add Python to PATH” during the installation process. This makes it easier to run Python from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation:\npython --version\n\nYou should see the version of Python you installed.\n\nCongratulations! Python is now installed on your computer."
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#setting-up-an-integrated-development-environment-ide",
+    "href": "lab/intro_python/materials/index.html#setting-up-an-integrated-development-environment-ide",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "An IDE is a software application that provides comprehensive facilities to programmers for software development.\nThere are many IDEs available for Python. Two popular choices are VS Code and Jupyter Lab.\n\nInstalling VS Code\n\n\nVisit the Visual Studio Code website: https://code.visualstudio.com/\nDownload and install the version for your operating system.\nOnce installed, you can add Python support by installing the Python extension:\n\nOpen VS Code.\nGo to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.\nSearch for “Python” and install the extension provided by Microsoft.\nOpen a new Python file or notebook and start coding!\n\nTutorial: https://code.visualstudio.com/docs/python/python-tutorial\nKey Features:\n\nExtensions: VS Code has a vast library of extensions that enhance its functionality.\nIntegrated Terminal: You can run command-line tasks directly in VS Code.\n\n\n\nInstalling Jupyter Lab\n\n\nJupyter Lab is a web-based interactive computing environment.\nTo install Jupyter Lab, you need to have Python installed. You can use pip, the Python package installer, to install Jupyter Lab:\n    pip install jupyterlab\nTo start Jupyter Lab, open your command prompt (Windows) or terminal (macOS/Linux) and type: bash         Jupyter Lab\nThis will open a new tab in your default web browser, where you can create and run Jupyter Labs.\nTutorial: https://jupyter.org/install\nKey Features:\n\nInteractive output: You can run code in real-time and see the results immediately.\nMarkdown support: You can write rich text, which makes it great for creating tutorials and educational materials.\nVisualizations: You can embed visualizations and plots directly in the notebook.\n\n\nNow you have both VS Code and Jupyter Lab set up for your Python development!"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#setting-up-google-colab",
+    "href": "lab/intro_python/materials/index.html#setting-up-google-colab",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Google Colab, short for “Collaboratory,” is a free Jupyter Lab environment that runs entirely in the cloud. It is perfect for those who want to run Python code without having to set up anything on their local machines.\nStep 1: Accessing Google Colab - Open your web browser and go to: https://colab.research.google.com/\nStep 2: Creating a New Notebook - On the Google Colab homepage, you can either open an existing notebook or create a new one. - To create a new notebook, click on the “New Notebook” button.\nStep 3: Using Google Colab - You can start writing and running Python code right away. - Google Colab provides free access to GPUs and TPUs, which can be used for more intensive computations.\nStep 4: Saving Your Work - You can save your notebooks directly to Google Drive, which makes it easy to access them from any device. - To save your notebook, go to “File” -&gt; “Save a copy in Drive…”\nKey Features: - No installation required: You can start coding immediately without any local setup. - Cloud-based: Your notebooks are stored in Google Drive, making them easy to share and collaborate on. - Free access to GPUs and TPUs: This is particularly useful for machine learning and data science tasks.\nNow you can use Google Colab to run Python code from anywhere, without worrying about setting up your local environment!"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#setting-up-anaconda-additional-resources",
+    "href": "lab/intro_python/materials/index.html#setting-up-anaconda-additional-resources",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Anaconda is a distribution of Python and R for scientific computing and data science. It comes with many popular data science and machine learning libraries, as well as Jupyter Lab.\nStep 1: Download Anaconda - Visit the Anaconda website: https://www.anaconda.com/products/distribution - Download the Anaconda installer for your operating system.\nStep 2: Install Anaconda - Open the downloaded installer and follow the instructions. - During the installation, you can choose to add Anaconda to your PATH environment variable. This makes it easier to run Anaconda commands from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation: bash         conda --version - You should see the version of Conda that is installed.\nStep 4: Launching Jupyter Lab from Anaconda - Anaconda Navigator is a graphical user interface that comes with Anaconda. It allows you to launch Jupyter Lab easily. - Open Anaconda Navigator from your applications menu. - In Anaconda Navigator, you will see Jupyter Lab listed. Click “Launch” to open it.\nNow you have Anaconda installed, and you can use it to manage your Python environments and packages, as well as run Jupyter Labs!"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#working-with-jupyter-lab",
+    "href": "lab/intro_python/materials/index.html#working-with-jupyter-lab",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Getting Started 1. Launching Jupyter Lab: - Open your command prompt (Windows) or terminal (macOS/Linux). - Type jupyter lab and press Enter. - A new tab will open in your default web browser showing the Jupyter Lab interface.\n\nCreating a New Notebook:\n\nClick on the “New” button and select “Python 3” to create a new notebook.\nYou will see a new notebook with an empty code cell.\n\nWriting and Running Code:\n\nWrite your Python code in the code cells.\nExecute the code by pressing Shift + Enter or clicking the “Run” button.\nExample:\n\n print(\"Hello, Jupyter Lab!\")\nUsing Markdown Cells:\n\nTo add text, headers, lists, and other non-code content, use Markdown cells.\nChange the cell type to Markdown by selecting “Markdown” from the dropdown menu.\nExample of a Markdown cell:\n# This is a Header\n- This is a list item\n    - Another list item"
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#example-workflow-in-jupyter-lab",
+    "href": "lab/intro_python/materials/index.html#example-workflow-in-jupyter-lab",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "# Install necessary libraries\n!pip install numpy pandas matplotlib seaborn\n\n# Importing Libraries\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n# Load a sample dataset from seaborn\ndata = sns.load_dataset('penguins')\n\n# Display the first few rows of the dataset\nprint(data.head())\n# Perform some basic data analysis\nsummary = data.describe()\nprint(summary)\n# Create a simple plot\nplt.figure(figsize=(10, 6))\nplt.scatter(data['bill_length_mm'], data['bill_depth_mm'])\nplt.title('Bill Length vs. Bill Depth')\nplt.xlabel('Bill Length (mm)')\nplt.ylabel('Bill Depth (mm)')\nplt.show()\n\n\n\nWe imported necessary libraries.\nWe loaded a sample dataset from the seaborn library and displayed the first few rows.\nWe performed a basic data analysis using the describe method.\nWe visualized the relationship between bill length and bill depth.\n\n\n\n\n\nInteractive Coding: Run code and see results instantly, making it great for experimentation.\nDocumentation: Combine code and narrative text to create comprehensive and understandable documents.\nVisualization: Easily integrate plots and charts to visualize your data."
+  },
+  {
+    "objectID": "lab/intro_python/materials/index.html#setting-up-the-working-directory-in-jupyter-lab",
+    "href": "lab/intro_python/materials/index.html#setting-up-the-working-directory-in-jupyter-lab",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "To ensure that Jupyter Lab uses the project directory as the working directory, you can use the os module to change the current working directory.\n\n\n\nImport the os Module:\n\nThe os module provides a way of using operating system-dependent functionality.\n\nDefine the Project Directory:\n\nSpecify the path to your project directory.\n\nChange the Current Working Directory:\n\nUse os.chdir() to change the current working directory to the project directory.\n\nVerify the Current Working Directory:\n\nUse os.getcwd() to print the current working directory and ensure it’s set correctly.\n\n\n\n\n\nUse python console or terminal.\nimport os\n\n# Define project directory and subdirectories\nproject_dir = 'my_python_project'\nfolders = ['data', 'scripts', 'notebooks']\n\n# Create the main project directory\nif not os.path.exists(project_dir):\n    os.makedirs(project_dir)\n\n# Create subdirectories\nfor folder in folders:\n    path = os.path.join(project_dir, folder)\n    if not os.path.exists(path):\n        os.makedirs(path)\n\n# Check the created structure\n!tree my_python_project\nGo to your main project folder and open the terminal.\nimport os\n\n# Define the project directory\nproject_dir = os.getcwd()\n\n# Set the working directory to the project directory\nos.chdir(project_dir)\n\n# Check the current working directory\nprint(\"Current Working Directory:\", os.getcwd())\nexample: save a file\n# Save a Sample Dataset in the data Folder \nimport pandas as pd\n\n# Create a sample DataFrame\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [24, 22, 23],\n    'Grade': ['A', 'B', 'A']\n}\n\ndf = pd.DataFrame(data)\n\n# Display the DataFrame\nprint(\"Sample DataFrame:\")\nprint(df)\n\n# Define the path to save the CSV file\ncsv_file_path = os.path.join('data', 'students_data.csv')\n\n# Save the DataFrame as a CSV file\ndf.to_csv(csv_file_path, index=False)\n\n# Verify that the file has been saved\nprint(f\"DataFrame saved as CSV file at: {csv_file_path}\")"
   },
   {
     "objectID": "lab/epss_training/index.html",
@@ -91,74 +119,67 @@
     "text": "Course Topics\n\nMarkov Chains for Healthcare Supply Chains\n\nSection 1: Foundations of Markov Chains\n\nState-based systems and probabilistic transitions\nThe Markov property and memoryless dynamics\nTransition probability matrices and system trajectories\n\n\n\nSection 2: Steady-State Analysis\n\nn-step transitions and convergence\nExistence and uniqueness of steady-state distributions\nInterpreting long-run behaviour in real systems\n\n\n\nSection 3: Brand Switching Case Study\n\nPromote-local strategy for paracetamol brands\nSimulate switching behaviour and market share convergence\nSolve steady-state equations using R\n\n\n\nSection 4: Applied Simulation in R\n\nVector-matrix calculations\nTransition matrix exponentiation\nPlotting and comparing convergence paths"
   },
   {
-    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html",
-    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html",
-    "title": "Lab: Brand Switching Markov Chain Example",
-    "section": "",
-    "text": "In this lab, we explore a discrete-time Markov chain modeling brand switching between two paracetamol brands:\n\nBrand A: locally manufactured (state 1)\nBrand B: imported (state 2)\n\nPatients switch weekly according to the transition matrix:\n\n\n\nFrom  To\nBrand A\nBrand B\n\n\n\n\nBrand A\n0.92\n0.08\n\n\nBrand B\n0.15\n0.85\n\n\n\nWe will:\n\nCompute expected market shares after the first three weeks.\nWrite a function to calculate the steady-state distribution.\nPlot convergence over time.\nVerify independence of the steady state from initial shares.\nAdd simulation and sensitivity tasks.\n\n\n\nSet the initial market-share vector \\(q^{(0)} = (0.5, 0.5)\\). Manually compute \\(q^{(1)}, q^{(2)}, q^{(3)}\\) using matrix multiplication.\n\n# Define transition matrix P\nP &lt;- matrix(c(0.92, 0.08,\n              0.15, 0.85), \n            nrow = 2, byrow = TRUE,\n            dimnames = list(c(\"A\", \"B\"), c(\"A\", \"B\")))\n# Initial distribution\nq0 &lt;- c(A = 0.5, B = 0.5)\n# Compute first three periods\nq_list &lt;- accumulate(1:3, ~ .x %*% P, .init = q0)[-1]\n# Display results\nresults1 &lt;- tibble(week = 1:3,\n       A = map_dbl(q_list, 1),\n       B = map_dbl(q_list, 2))\nknitr::kable(results1, digits=6)\n\n\n\n\nweek\nA\nB\n\n\n\n\n1\n0.535000\n0.465000\n\n\n2\n0.561950\n0.438050\n\n\n3\n0.582702\n0.417298\n\n\n\n\n\n\n\n\nImplement a function steady_state(P) that returns the long-run distribution via eigen decomposition. Verify it on \\(P\\) above.\n\nsteady_state &lt;- function(P) {\n  eig &lt;- eigen(t(P))\n  vec &lt;- Re(eig$vectors[, which.min(Mod(eig$values - 1))])\n  pi &lt;- vec / sum(vec)\n  pi\n}\n# Test\ndist_ss &lt;- steady_state(P)\nknitr::kable(t(round(dist_ss, 6)), col.names = c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.652174\n0.347826\n\n\n\n\n\n\n\n\nSimulate the expected market-share evolution for 30 weeks and plot \\(q^{(n)}\\) to illustrate convergence.\n\ntotal_weeks &lt;- 30\npi_mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\ncolnames(pi_mat) &lt;- c(\"A\", \"B\")\npi_mat[1, ] &lt;- q0\nfor (i in 2:(total_weeks + 1)) {\n  pi_mat[i, ] &lt;- pi_mat[i - 1, ] %*% P\n}\ndata_conv &lt;- as_tibble(pi_mat) |&gt;\n  mutate(week = 0:total_weeks) |&gt;\n  pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\nsteady_vals &lt;- steady_state(P)\n\ndata_conv |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line(size = 1) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Market-Share Convergence over Time\",\n       x = \"Week\",\n       y = \"Expected Market Share\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nThe convergence plot shows both shares approaching the dashed lines at (0.652174, 0.347826) by around week 20.\n\n\n\nUsing initial distributions \\((0.5, 0.5), (0.75, 0.25), (0.25, 0.75), (0.9, 0.1)\\), confirm that all converge to the same steady state.\n\ninit_list &lt;- list(\n  \"0.5,0.5\" = c(0.5, 0.5),\n  \"0.75,0.25\" = c(0.75, 0.25),\n  \"0.25,0.75\" = c(0.25, 0.75),\n  \"0.9,0.1\" = c(0.9, 0.1)\n)\nframe_list &lt;- map2_dfr(init_list, names(init_list), function(init_dist, label) {\n  mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\n  colnames(mat) &lt;- c(\"A\", \"B\")\n  mat[1, ] &lt;- init_dist\n  for (i in 2:(total_weeks + 1)) mat[i, ] &lt;- mat[i - 1, ] %*% P\n  as_tibble(mat) |&gt;\n    mutate(week = 0:total_weeks, init = label) |&gt;\n    pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\n})\nframe_list |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line() +\n  facet_wrap(~ init) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Convergence Across Different Initial Distributions\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nRegardless of initial shares, all paths converge to approximately (0.652174, 0.347826) by week 30.\n\n\n\nSimulate the brand preference for 10,000 patients over 30 weeks by sampling transitions. Compare empirical frequencies at week 30 to the theoretical steady state.\n\nset.seed(123)\nn_patients &lt;- 10000\nn_weeks &lt;- 30\n# Initialize state 1=A, 2=B randomly according to q0\nstates &lt;- sample(c(1,2), n_patients, replace = TRUE, prob = q0)\nfor (t in 1:n_weeks) {\n  probs &lt;- P[states, ]\n  states &lt;- apply(probs, 1, function(pr) sample(c(1,2), 1, prob = pr))\n}\nempirical &lt;- prop.table(table(states))\nknitr::kable(t(round(empirical, 4)), col.names=c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.6446\n0.3554\n\n\n\n\n\nEmpirical shares at week 30 (approx):\n\nBrand A: 0.6518\nBrand B: 0.3482\n\nClose to theoretical (0.6522, 0.3478).\n\n\n\nVary the promotion effect: change \\(p_{21}\\) (Brand B → A) from 0.15 to 0.20 and 0.10. Compute new steady states and discuss impact.\n\nfor (p21 in c(0.20, 0.10)) {\n  P_var &lt;- matrix(c(0.92, 0.08,\n                    p21, 1-p21), nrow=2, byrow=TRUE)\n  ss &lt;- steady_state(P_var)\n  cat(\"p21 =\", p21, \"→ steady state:\", round(ss,4), \"\\n\")\n}\n\np21 = 0.2 → steady state: 0.7143 0.2857 \np21 = 0.1 → steady state: 0.5556 0.4444 \n\n\nIncreasing the promotion increases the long-run share of Brand A, while decreasing it lowers that share."
-  },
-  {
-    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-1-initial-evolution",
-    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-1-initial-evolution",
-    "title": "Lab: Brand Switching Markov Chain Example",
-    "section": "",
-    "text": "Set the initial market-share vector \\(q^{(0)} = (0.5, 0.5)\\). Manually compute \\(q^{(1)}, q^{(2)}, q^{(3)}\\) using matrix multiplication.\n\n# Define transition matrix P\nP &lt;- matrix(c(0.92, 0.08,\n              0.15, 0.85), \n            nrow = 2, byrow = TRUE,\n            dimnames = list(c(\"A\", \"B\"), c(\"A\", \"B\")))\n# Initial distribution\nq0 &lt;- c(A = 0.5, B = 0.5)\n# Compute first three periods\nq_list &lt;- accumulate(1:3, ~ .x %*% P, .init = q0)[-1]\n# Display results\nresults1 &lt;- tibble(week = 1:3,\n       A = map_dbl(q_list, 1),\n       B = map_dbl(q_list, 2))\nknitr::kable(results1, digits=6)\n\n\n\n\nweek\nA\nB\n\n\n\n\n1\n0.535000\n0.465000\n\n\n2\n0.561950\n0.438050\n\n\n3\n0.582702\n0.417298"
-  },
-  {
-    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-2-steady-state-distribution-function",
-    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-2-steady-state-distribution-function",
-    "title": "Lab: Brand Switching Markov Chain Example",
-    "section": "",
-    "text": "Implement a function steady_state(P) that returns the long-run distribution via eigen decomposition. Verify it on \\(P\\) above.\n\nsteady_state &lt;- function(P) {\n  eig &lt;- eigen(t(P))\n  vec &lt;- Re(eig$vectors[, which.min(Mod(eig$values - 1))])\n  pi &lt;- vec / sum(vec)\n  pi\n}\n# Test\ndist_ss &lt;- steady_state(P)\nknitr::kable(t(round(dist_ss, 6)), col.names = c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.652174\n0.347826"
-  },
-  {
-    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-3-convergence-plot",
-    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-3-convergence-plot",
-    "title": "Lab: Brand Switching Markov Chain Example",
-    "section": "",
-    "text": "Simulate the expected market-share evolution for 30 weeks and plot \\(q^{(n)}\\) to illustrate convergence.\n\ntotal_weeks &lt;- 30\npi_mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\ncolnames(pi_mat) &lt;- c(\"A\", \"B\")\npi_mat[1, ] &lt;- q0\nfor (i in 2:(total_weeks + 1)) {\n  pi_mat[i, ] &lt;- pi_mat[i - 1, ] %*% P\n}\ndata_conv &lt;- as_tibble(pi_mat) |&gt;\n  mutate(week = 0:total_weeks) |&gt;\n  pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\nsteady_vals &lt;- steady_state(P)\n\ndata_conv |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line(size = 1) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Market-Share Convergence over Time\",\n       x = \"Week\",\n       y = \"Expected Market Share\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nThe convergence plot shows both shares approaching the dashed lines at (0.652174, 0.347826) by around week 20."
-  },
-  {
-    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-4-independence-from-initial-shares",
-    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-4-independence-from-initial-shares",
-    "title": "Lab: Brand Switching Markov Chain Example",
-    "section": "",
-    "text": "Using initial distributions \\((0.5, 0.5), (0.75, 0.25), (0.25, 0.75), (0.9, 0.1)\\), confirm that all converge to the same steady state.\n\ninit_list &lt;- list(\n  \"0.5,0.5\" = c(0.5, 0.5),\n  \"0.75,0.25\" = c(0.75, 0.25),\n  \"0.25,0.75\" = c(0.25, 0.75),\n  \"0.9,0.1\" = c(0.9, 0.1)\n)\nframe_list &lt;- map2_dfr(init_list, names(init_list), function(init_dist, label) {\n  mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\n  colnames(mat) &lt;- c(\"A\", \"B\")\n  mat[1, ] &lt;- init_dist\n  for (i in 2:(total_weeks + 1)) mat[i, ] &lt;- mat[i - 1, ] %*% P\n  as_tibble(mat) |&gt;\n    mutate(week = 0:total_weeks, init = label) |&gt;\n    pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\n})\nframe_list |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line() +\n  facet_wrap(~ init) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Convergence Across Different Initial Distributions\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nRegardless of initial shares, all paths converge to approximately (0.652174, 0.347826) by week 30."
-  },
-  {
-    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-5-simulation-challenge",
-    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-5-simulation-challenge",
-    "title": "Lab: Brand Switching Markov Chain Example",
-    "section": "",
-    "text": "Simulate the brand preference for 10,000 patients over 30 weeks by sampling transitions. Compare empirical frequencies at week 30 to the theoretical steady state.\n\nset.seed(123)\nn_patients &lt;- 10000\nn_weeks &lt;- 30\n# Initialize state 1=A, 2=B randomly according to q0\nstates &lt;- sample(c(1,2), n_patients, replace = TRUE, prob = q0)\nfor (t in 1:n_weeks) {\n  probs &lt;- P[states, ]\n  states &lt;- apply(probs, 1, function(pr) sample(c(1,2), 1, prob = pr))\n}\nempirical &lt;- prop.table(table(states))\nknitr::kable(t(round(empirical, 4)), col.names=c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.6446\n0.3554\n\n\n\n\n\nEmpirical shares at week 30 (approx):\n\nBrand A: 0.6518\nBrand B: 0.3482\n\nClose to theoretical (0.6522, 0.3478)."
-  },
-  {
-    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-6-sensitivity-analysis",
-    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-6-sensitivity-analysis",
-    "title": "Lab: Brand Switching Markov Chain Example",
-    "section": "",
-    "text": "Vary the promotion effect: change \\(p_{21}\\) (Brand B → A) from 0.15 to 0.20 and 0.10. Compute new steady states and discuss impact.\n\nfor (p21 in c(0.20, 0.10)) {\n  P_var &lt;- matrix(c(0.92, 0.08,\n                    p21, 1-p21), nrow=2, byrow=TRUE)\n  ss &lt;- steady_state(P_var)\n  cat(\"p21 =\", p21, \"→ steady state:\", round(ss,4), \"\\n\")\n}\n\np21 = 0.2 → steady state: 0.7143 0.2857 \np21 = 0.1 → steady state: 0.5556 0.4444 \n\n\nIncreasing the promotion increases the long-run share of Brand A, while decreasing it lowers that share."
-  },
-  {
-    "objectID": "lab/index.html",
-    "href": "lab/index.html",
+    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html",
+    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html",
     "title": "Home",
     "section": "",
-    "text": "A basic introduction to Python\n\n\n\nPython\n\nJupyter Lab\n\nData analytics\n\n\n\nTutorial\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\n\nForecasting\n\nHealthcare\n\nR\n\nPython\n\nMachine Learning\n\n\n\nWorkshop\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Markov Processes in Healthcare Supply Chains\n\n\n\nStochastic modelling\n\nHealthcare\n\nR\n\nPython\n\n\n\nWorkshop\n\n\n\n\n\nNo matching items"
+    "text": "This exercise is based on the brand switching example discussed in the slides. It models consumer behavior using a discrete-time Markov chain with two states representing two brands."
   },
   {
-    "objectID": "projects/publications/second-post/index.html",
-    "href": "projects/publications/second-post/index.html",
-    "title": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning",
+    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#introduction",
+    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#introduction",
+    "title": "Home",
     "section": "",
-    "text": "We introduce a novel framework that predicts long-term mental healthcare workforce needs using real NHS data. This framework captures the dynamics of both patient needs and nurse availability, enabling effective long-term planning. It also tests policies and identifies strategies to address future staff shortages, providing valuable insights for decision-makers to develop resilient mental healthcare workforce policies.\n\n\n\n Pre-print\n\n\n GitHub repo"
+    "text": "This exercise is based on the brand switching example discussed in the slides. It models consumer behavior using a discrete-time Markov chain with two states representing two brands."
   },
   {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "PROJECTS",
+    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#excel-based-exploration",
+    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#excel-based-exploration",
+    "title": "Home",
+    "section": "Excel-Based Exploration",
+    "text": "Excel-Based Exploration\n\nInitial Setup\nOpen the “Brand switching example – spreadsheet” Excel file.\n\nInitial market shares are in cells B2 (Brand 1) and C2 (Brand 2) — both start at 50%.\nTransition probabilities are found in:\n\nE2: \\(\\Pr(\\text{Brand 1 next week} \\mid \\text{Brand 1 this week})\\)\nF2: \\(\\Pr(\\text{Brand 2 next week} \\mid \\text{Brand 1 this week})\\)\nE3: \\(\\Pr(\\text{Brand 1 next week} \\mid \\text{Brand 2 this week})\\)\nF3: \\(\\Pr(\\text{Brand 2 next week} \\mid \\text{Brand 2 this week})\\)\n\n\nCells B3 and C3 contain formulas to calculate expected market shares after one week.\n\n\nTask 1A\nCopy the formulas in B3 and C3 down for at least 30 rows.\n\nQuestion: How long does it take until the expected market share for Brand 1 exceeds 60%?\n\nAnswer: _________\n\n\nTask 1B\nChange the initial market shares:\n\nCase 1: 30% (Brand 1) and 70% (Brand 2)\nCase 2: 15% (Brand 1) and 85% (Brand 2)\n\n\nQuestion: In each case, how many weeks does it take for Brand 1 to overtake Brand 2?\n\nAnswers: - Case 1: _________\n\nCase 2: _________\n\nRegardless of starting conditions, the system quickly converges to a steady-state distribution.\n\n\nTask 1C\nInspect further down the spreadsheet and record the steady-state expected market shares for both brands to 4 decimal places.\nAnswer:\n\nBrand 1: _________\nBrand 2: _________\n\nThese values are determined by the transition matrix, not the initial shares."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#using-r-to-find-steady-state-distribution",
+    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#using-r-to-find-steady-state-distribution",
+    "title": "Home",
+    "section": "Using R to Find Steady-State Distribution",
+    "text": "Using R to Find Steady-State Distribution\nWe now use R to compute the steady-state distribution algebraically.\nR Function to Solve for Steady-State\n\nlibrary(tidyverse)\n\nsteady_state_dist &lt;- function(P) {\n  # Calculate the steady-state distribution of a discrete-time Markov chain\n  # defined by the transition matrix P\n  \n  # Parameters:\n  # P : matrix\n  #   The transition matrix of the Markov chain of interest.\n  \n  # Returns:\n  # A vector representing the steady-state probabilities for the Markov chain.\n  \n  # Check if P is a square matrix\n  if (!is.matrix(P) || nrow(P) != ncol(P)) {\n    stop(\"P must be a square matrix\")\n  }\n  \n  # Number of states\n  dim &lt;- nrow(P)\n  \n  # Set up the system of equations\n  Q &lt;- P - diag(dim)  # P - I\n  ones &lt;- rep(1, dim) \n  Q &lt;- cbind(Q, ones)  # Append column of ones\n  QTQ &lt;- Q %*% t(Q)    # Compute Q * Q^T\n  bQT &lt;- rep(1, dim)   # Right-hand side vector\n  \n  # Solve the equations and return the solution\n  return(solve(QTQ, bQT))\n}\n\n\nTask 2A\nOpen the R quarto script 00_dtcm.qmd. This script can be used to find the steady-state distribution of a Markov chain, given the transition probability matrix. In our case, we are interested in using it to calculate the steady-state expected market shares for the two brands. Find the steady-state distribution in each of the following cases:\n\\[\nP_1 =\n\\begin{bmatrix}\n0.96 & 0.04 \\\\\n0.07 & 0.93\n\\end{bmatrix}\n\\]\n\n\\[\nP_2 =\n\\begin{bmatrix}\n0.75 & 0.25 \\\\\n0.22 & 0.78\n\\end{bmatrix}\n\\] \n\\[\nP_3 =\n\\begin{bmatrix}\n0.99 & 0.01 \\\\\n0.02 & 0.98\n\\end{bmatrix}\n\\]\n\n# Transition matrices\nmatrices &lt;- list(\n  matrix(c(__, __, __, __), 2, byrow = TRUE),\n  matrix(c(__, __, __, __), 2, byrow = TRUE),\n  matrix(c(__, __, __, __), 2, byrow = TRUE)\n)\n\n# Compute steady-state for each\nfor (P in matrices) {\n  pi_dist &lt;- steady_state_dist(P)\n  print(t(pi_dist))\n}\n\n\n🧠 Even with very similar transition probabilities, the resulting steady-state market shares can be surprisingly different.\n\n\n\nTask 2B – Extra Challenge: Algebraic derivation of steady-state\nLet the transition matrix be:\n\\[\nP = \\begin{bmatrix}\n1 - a & a \\\\\n2a & 1 - 2a\n\\end{bmatrix}, \\quad \\text{where } 0 &lt; a &lt; 0.5\n\\]\nWe want to show the steady-state vector is:\n\\[\n\\boldsymbol{\\pi} = \\left(\\frac{2}{3}, \\frac{1}{3}\\right)\n\\]\n\na_vals &lt;- c(__, __, __, __)\n\nfor (a in a_vals) {\n  P &lt;- matrix(c(__, __, __, __), 2, byrow = TRUE)\n  pi_dist &lt;- steady_state_dist(P)\n  print(t(pi_dist))\n}"
+  },
+  {
+    "objectID": "phd/index.html",
+    "href": "phd/index.html",
+    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
     "section": "",
-    "text": "Creative Gallery\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\nData Science Projects\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Projects\n\n\nMy academic publications, along with their source code and data.\n\n\n\n\n\nNo matching items"
+    "text": "My research focuses on addressing inefficiencies in supply chain management for contraceptive products in developing countries. These inefficiencies often lead to shortages, limiting women’s reproductive autonomy and exacerbating societal challenges. By integrating probabilistic forecasting with inventory optimization, I aim to create a novel approach that accounts for uncertainties, poor data quality, and local demand variations. This interdisciplinary project involves collaboration with scholars from Cardiff Business School, the School of Computer Science & Informatics, and the United States Agency for International Development (USAID). The goal is to improve access to contraceptives, reduce unintended pregnancies, and prevent unsafe abortions, ultimately benefiting women, healthcare providers, governments, and donor organizations."
+  },
+  {
+    "objectID": "phd/index.html#supervision-team",
+    "href": "phd/index.html#supervision-team",
+    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
+    "section": "Supervision team",
+    "text": "Supervision team\n\nLead: Prof Bahman Rostami-Tabar, Data Lab for Social Good Research Group, Cardiff Business School, UK\nCo: Prof Aris Syntetos, Cardiff Business School, UK\nCo: Dr Federico Liberatore, School of Computer Science and Informatics, UK\nCollaborator: Glenn Milano, Global Health Supply Chain, Bureau for Global Health, United States Agency for International Development (USAID)"
+  },
+  {
+    "objectID": "phd/index.html#funder",
+    "href": "phd/index.html#funder",
+    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
+    "section": "Funder",
+    "text": "Funder\nWelsh Graduate School for the Social Sciences (WGSSS)"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/index.html#context",
+    "href": "talks/dl4sg_seminar/index.html#context",
+    "title": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains",
+    "section": "Context",
+    "text": "Context\nIn this presentation for the Data Lab for Social Good seminar, we explore how traditional forecasting methods often fail to capture unmet demand in contraceptive supply chains—particularly when stockouts censor the data. Our work combines temporal kernel forecasting, conformal prediction, and inventory-aware simulation to estimate true demand beyond what the system records.\nWe show how “no demand” often just means “no stock,” and how our approach can support smarter, more equitable inventory decisions. Our next steps include expanding the policy framework, incorporating external covariates, and testing the model in both lab and field settings with real demand planners.\nBecause unmet demand isn’t invisible—our systems just fail to see it."
+  },
+  {
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Home",
+    "section": "",
+    "text": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\nSeminar\n\n\n\n\n\nMay 20, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nMethodological Skills for Research\n\n\nLecture\n\n\n\n\n\nApr 11, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#assumptions",
@@ -385,11 +406,60 @@
     "text": "Wrapping up\n\nMethodological skills involve making informed choices at each stage of research – from philosophical stance to data collection methods.\nNo single paradigm or method is “best” for all questions. The goal is to align your approach with your research question and objectives, and to be able to justify your choices.\nUnderstanding these foundations helps you critically evaluate others’ research and conduct your own studies in a rigorous, reflective, and ethical manner."
   },
   {
-    "objectID": "talks/index.html",
-    "href": "talks/index.html",
-    "title": "Home",
+    "objectID": "projects/publications/index.html",
+    "href": "projects/publications/index.html",
+    "title": "Research Projects",
     "section": "",
-    "text": "Methodological Skills for Research\n\n\n\nResearch\n\nMethodology\n\nPhilosophy\n\n\n\nLecture\n\n\n\n\n\nNo matching items"
+    "text": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning\n\n\n\nWorkforce planning\n\nHealthcare\n\nMachine Learning\n\nSimulation\n\nR\n\nPython\n\n\n\nPre-print (under review)\n\n\n\n\n\n\n\n\n\n\n\n\nForecast adjustments during post-promotional periods\n\n\n\nForecasting\n\nRetail\n\nJudgmental adjustments\n\nR\n\nShiny\n\n\n\nJournal Publication\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "PROJECTS",
+    "section": "",
+    "text": "Creative Gallery\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\nData Science Projects\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Projects\n\n\nMy academic publications, along with their source code and data.\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "cv/phd.html",
+    "href": "cv/phd.html",
+    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
+    "section": "",
+    "text": "My research focuses on addressing inefficiencies in supply chain management for contraceptive products in developing countries. These inefficiencies often lead to shortages, limiting women’s reproductive autonomy and exacerbating societal challenges. By integrating probabilistic forecasting with inventory optimization, I aim to create a novel approach that accounts for uncertainties, poor data quality, and local demand variations. This interdisciplinary project involves collaboration with scholars from Cardiff Business School, the School of Computer Science & Informatics, and the United States Agency for International Development (USAID). The goal is to improve access to contraceptives, reduce unintended pregnancies, and prevent unsafe abortions, ultimately benefiting women, healthcare providers, governments, and donor organizations."
+  },
+  {
+    "objectID": "cv/phd.html#supervision-team",
+    "href": "cv/phd.html#supervision-team",
+    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
+    "section": "Supervision team",
+    "text": "Supervision team\n\nLead: Prof Bahman Rostami-Tabar, Data Lab for Social Good Research Group, Cardiff Business School, UK\nCo: Prof Aris Syntetos, Cardiff Business School, UK\nCo: Dr Federico Liberatore, School of Computer Science and Informatics, UK\nCollaborator: Glenn Milano, Global Health Supply Chain, Bureau for Global Health, United States Agency for International Development (USAID)"
+  },
+  {
+    "objectID": "cv/phd.html#funder",
+    "href": "cv/phd.html#funder",
+    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
+    "section": "Funder",
+    "text": "Funder\nWelsh Graduate School for the Social Sciences (WGSSS)"
+  },
+  {
+    "objectID": "projects/publications/second-post/index.html",
+    "href": "projects/publications/second-post/index.html",
+    "title": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning",
+    "section": "",
+    "text": "We introduce a novel framework that predicts long-term mental healthcare workforce needs using real NHS data. This framework captures the dynamics of both patient needs and nurse availability, enabling effective long-term planning. It also tests policies and identifies strategies to address future staff shortages, providing valuable insights for decision-makers to develop resilient mental healthcare workforce policies.\n\n\n\n Pre-print\n\n\n GitHub repo"
+  },
+  {
+    "objectID": "projects/publications/first-post/index.html",
+    "href": "projects/publications/first-post/index.html",
+    "title": "Forecast adjustments during post-promotional periods",
+    "section": "",
+    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository.\n\n\n\n Journal article\n\n\n GitHub repo"
   },
   {
     "objectID": "talks/intro_method_skills/index.html#context",
@@ -420,18 +490,158 @@
     "text": "Learning Outcomes\nBy the end of this lecture, students will be able to:\n\n✅ Distinguish between ontology, epistemology, axiology, methodology, and methods\n✅ Understand and compare major research paradigms: Positivism, Interpretivism, Critical Realism, Pragmatism, and Post-Structuralism\n✅ Recognize how paradigms influence research design choices\n✅ Identify suitable methodologies and data collection methods for different research problems\n✅ Apply these concepts to real-world examples in transport and logistics contexts\n✅ Critically reflect on their own positionality and philosophical assumptions in research"
   },
   {
-    "objectID": "projects/publications/first-post/index.html",
-    "href": "projects/publications/first-post/index.html",
-    "title": "Forecast adjustments during post-promotional periods",
-    "section": "",
-    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository.\n\n\n\n Journal article\n\n\n GitHub repo"
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#outline",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#outline",
+    "title": "Home",
+    "section": "Outline",
+    "text": "Outline\n\n\nWhat was never counted...\nThe fundamental question\nWhat we are going to do\nNumerical experiment\nWhat’s NEXT"
   },
   {
-    "objectID": "projects/publications/index.html",
-    "href": "projects/publications/index.html",
-    "title": "Research Projects",
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\n\n\n\n\nThis is Nilu.\nShe went to the pharmacy today to get contraceptive Product A.\nBut it wasn’t in stock.\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-1",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-1",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\n\n\n\n\nShe didn’t go to the pharmacy today.\nWhy would she?\nThe last two times she went, they didn’t have the product she needed.\nThe system doesn’t know this.\nIt sees “no demand” and it continously logs Nilu’s silence as data.\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-2",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-2",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\n\n\n\n\nWhen data is censored by stockouts or service interruptions…\n…forecasts fail.\nNot just by being wrong, But by being blind.\nThis creates a broken trust and leads to\nUNMET DEMAND.\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-3",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#seen-the-unseen-3",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\n\n\n\n\nIn reality…\nThere are more than\n218 million women\nlike Nilu still have an unmet need for family planning.\nUltimately, this results in dropouts, unwanted pregnancies, and almost 7 million hospitalizations each year in developing countries.\n\n\n\nImage generated using ChatGPT.\nSources: USAID, 2020; PATH, 2019; Mukasa et al., 2017; Gilda et al., 2016"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#contraceptive-products-arent-easily-substituted",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#contraceptive-products-arent-easily-substituted",
+    "title": "Home",
+    "section": "Contraceptive products aren’t easily SUBSTITUTED",
+    "text": "Contraceptive products aren’t easily SUBSTITUTED\n\n\n\n\n*Percent of women who will get pregnant within the first year of typical use."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#key-definitions",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#key-definitions",
+    "title": "Home",
+    "section": "Key definitions",
+    "text": "Key definitions\n\n\nStockouts: Periods when demand is higher than available inventory, leading to censored observations of demand.\nInterruptions: Periods when no products are issued despite available stock, thus artificially recorded as zero demand.\nCensored Demand: Demand occurring during periods when products are unavailable (stockouts or interruptions), thus not fully observable.\nTrue Demand: Actual demand that would have occurred if sufficient stock was available."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#censorship-scenarios",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#censorship-scenarios",
+    "title": "Home",
+    "section": "Censorship scenarios",
+    "text": "Censorship scenarios\nHow can a demand forecasting and inventory optimization model that incorporates lost sales estimation and contextual field data enhance contraceptive supply chain performance and reduce stockouts in developing countries?\n\n\nFigure 1: Censorship scenarios in family planning supply chains."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#why-this-is-critical",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#why-this-is-critical",
+    "title": "Home",
+    "section": "Why this is critical",
+    "text": "Why this is critical\n\n\n\n\n\n\n\nFrequent stockouts are common in family planning supply chains, especially in developing countries, significantly impacting public health outcomes.\n\n\n\n\nDuring my recent field visit to Ethiopia, stockouts were repeatedly identified by demand planners as a major barrier to effective contraceptive supply management.\n\n\n\n\nTraditional forecasting methods fail under censorship.\n\n\n\n\nPrior research inadequately addresses demand estimation under conditions of frequent stockouts and interruptions, often leading to biased forecasts and suboptimal inventory decisions.\n\n\n\n\n\nImage generated using ChatGPT.\nSources: Bijvank et al., 2011; Karimi et al., 2021; Thanos et as., 2022 ; Trapero, 2024"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#how-we-can-fill-the-gaps",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#how-we-can-fill-the-gaps",
+    "title": "Home",
+    "section": "How we can fill the gaps",
+    "text": "How we can fill the gaps\n\n\n\n\n\n\n\nRQ1: How accurately can a Tobit Kalman Filter with conformal prediction estimate true demand under sales censorship?\n\n\n\n\nRQ2: How does demand reconstruction improve inventory performance compared to baseline planning methods?\n\n\n\n\nRQ3: How do planners adjust their orders in response to proposed model-generated recommendations?\n\n\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#our-proposed-framework",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#our-proposed-framework",
+    "title": "Home",
+    "section": "Our proposed framework",
+    "text": "Our proposed framework\n\n\n\n\nWe are currently at the green-colored stage."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#first-stage-estimating-true-demand-under-censorship-using-tobit-kalman-filtering-and-conformal-prediction",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#first-stage-estimating-true-demand-under-censorship-using-tobit-kalman-filtering-and-conformal-prediction",
+    "title": "Home",
+    "section": "First stage: estimating true demand under censorship using tobit kalman filtering and conformal prediction",
+    "text": "First stage: estimating true demand under censorship using tobit kalman filtering and conformal prediction"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#data-exploration",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#data-exploration",
+    "title": "Home",
+    "section": "Data exploration",
+    "text": "Data exploration\n\nActual vs. observed demand for one representative series per type × category, with disruptions and censoring shaded."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#experiment-setup",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#experiment-setup",
+    "title": "Home",
+    "section": "Experiment setup",
+    "text": "Experiment setup"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#actual-vs-forecasted-demand-distributions",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#actual-vs-forecasted-demand-distributions",
+    "title": "Home",
+    "section": "Actual vs forecasted demand distributions",
+    "text": "Actual vs forecasted demand distributions\n\n\nFigure 2: Actual vs. forecasted demand distributions for the different forecasting methods."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#overall-forecasting-and-inventory-performance-across-models",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#overall-forecasting-and-inventory-performance-across-models",
+    "title": "Home",
+    "section": "Overall forecasting and inventory performance across models",
+    "text": "Overall forecasting and inventory performance across models\n\n\n\n\nMethod\nMASE (mean)\nPin Ball Loss - q95 (mean)\nCSL (mean)\nLost Sales Rate (mean)\nInventory coverage (mean)\n\n\n\n\nTKF CP\n0.87\n47.61\n0.86\n0.14\n5.25\n\n\nMoving Average\n1.06\n72.65\n0.82\n0.18\n19.6\n\n\nLinear Regression\n1.08\n73.86\n0.82\n0.16\n2.55\n\n\nNaive\n1.21\n78.89\n0.84\n0.16\n123.38"
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---nemenyi-test",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---nemenyi-test",
+    "title": "Home",
+    "section": "Performance evaluation - Nemenyi test",
+    "text": "Performance evaluation - Nemenyi test\n\n\nFigure 3: Average ranks of forecasting methods with 95% confidence intervals based on the Nemenyi test for all metrics. Lower ranks indicate better performance."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---forecasting",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---forecasting",
+    "title": "Home",
+    "section": "Performance evaluation - forecasting",
+    "text": "Performance evaluation - forecasting\n\n\nFigure 4: Forecasting metrics for each series type for the different forecasting methods."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---inventory",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#performance-evaluation---inventory",
+    "title": "Home",
+    "section": "Performance evaluation - inventory",
+    "text": "Performance evaluation - inventory\n\n\nFigure 5: Inentory metrics for each series type for the different forecasting methods."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#way-forward",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#way-forward",
+    "title": "Home",
+    "section": "Way forward",
+    "text": "Way forward\n\n\n\n\nDevelop a more comprehensive inventory policy using forecasted quantiles → Incorporate uncertainty directly into order decisions\n\nExtend empirical model with external covariates → Account for special events, disruptions, and policy shifts\n\nConduct lab experiment with real demand planners → Measure how model recommendations affect decision-making\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#materials",
+    "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#materials",
+    "title": "Home",
+    "section": "Materials",
+    "text": "Materials\n\n\nYou can find the slides here."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Harsha Halgamuwe Hewage",
     "section": "",
-    "text": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning\n\n\n\nWorkforce planning\n\nHealthcare\n\nMachine Learning\n\nSimulation\n\nR\n\nPython\n\n\n\nPre-print (under review)\n\n\n\n\n\n\n\n\n\n\n\n\nForecast adjustments during post-promotional periods\n\n\n\nForecasting\n\nRetail\n\nJudgmental adjustments\n\nR\n\nShiny\n\n\n\nJournal Publication\n\n\n\n\n\nNo matching items"
+    "text": "I am a second-year PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the Data Lab for Social Good.\nI also lead the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I manage the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives.\nExplore my full list of publications on Google Scholar."
   },
   {
     "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#assumptions",
@@ -637,32 +847,53 @@
     "text": "Lets promote Brand A cont.\nChanging the initial probability vector \\(\\mathbf{q}^{(0)}\\) has no effect on the steady-state distribution."
   },
   {
-    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html",
-    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html",
-    "title": "Home",
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html",
+    "title": "Lab: Brand Switching Markov Chain Example",
     "section": "",
-    "text": "This exercise is based on the brand switching example discussed in the slides. It models consumer behavior using a discrete-time Markov chain with two states representing two brands."
+    "text": "In this lab, we explore a discrete-time Markov chain modeling brand switching between two paracetamol brands:\n\nBrand A: locally manufactured (state 1)\nBrand B: imported (state 2)\n\nPatients switch weekly according to the transition matrix:\n\n\n\nFrom  To\nBrand A\nBrand B\n\n\n\n\nBrand A\n0.92\n0.08\n\n\nBrand B\n0.15\n0.85\n\n\n\nWe will:\n\nCompute expected market shares after the first three weeks.\nWrite a function to calculate the steady-state distribution.\nPlot convergence over time.\nVerify independence of the steady state from initial shares.\nAdd simulation and sensitivity tasks.\n\n\n\nSet the initial market-share vector \\(q^{(0)} = (0.5, 0.5)\\). Manually compute \\(q^{(1)}, q^{(2)}, q^{(3)}\\) using matrix multiplication.\n\n# Define transition matrix P\nP &lt;- matrix(c(0.92, 0.08,\n              0.15, 0.85), \n            nrow = 2, byrow = TRUE,\n            dimnames = list(c(\"A\", \"B\"), c(\"A\", \"B\")))\n# Initial distribution\nq0 &lt;- c(A = 0.5, B = 0.5)\n# Compute first three periods\nq_list &lt;- accumulate(1:3, ~ .x %*% P, .init = q0)[-1]\n# Display results\nresults1 &lt;- tibble(week = 1:3,\n       A = map_dbl(q_list, 1),\n       B = map_dbl(q_list, 2))\nknitr::kable(results1, digits=6)\n\n\n\n\nweek\nA\nB\n\n\n\n\n1\n0.535000\n0.465000\n\n\n2\n0.561950\n0.438050\n\n\n3\n0.582702\n0.417298\n\n\n\n\n\n\n\n\nImplement a function steady_state(P) that returns the long-run distribution via eigen decomposition. Verify it on \\(P\\) above.\n\nsteady_state &lt;- function(P) {\n  eig &lt;- eigen(t(P))\n  vec &lt;- Re(eig$vectors[, which.min(Mod(eig$values - 1))])\n  pi &lt;- vec / sum(vec)\n  pi\n}\n# Test\ndist_ss &lt;- steady_state(P)\nknitr::kable(t(round(dist_ss, 6)), col.names = c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.652174\n0.347826\n\n\n\n\n\n\n\n\nSimulate the expected market-share evolution for 30 weeks and plot \\(q^{(n)}\\) to illustrate convergence.\n\ntotal_weeks &lt;- 30\npi_mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\ncolnames(pi_mat) &lt;- c(\"A\", \"B\")\npi_mat[1, ] &lt;- q0\nfor (i in 2:(total_weeks + 1)) {\n  pi_mat[i, ] &lt;- pi_mat[i - 1, ] %*% P\n}\ndata_conv &lt;- as_tibble(pi_mat) |&gt;\n  mutate(week = 0:total_weeks) |&gt;\n  pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\nsteady_vals &lt;- steady_state(P)\n\ndata_conv |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line(size = 1) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Market-Share Convergence over Time\",\n       x = \"Week\",\n       y = \"Expected Market Share\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nThe convergence plot shows both shares approaching the dashed lines at (0.652174, 0.347826) by around week 20.\n\n\n\nUsing initial distributions \\((0.5, 0.5), (0.75, 0.25), (0.25, 0.75), (0.9, 0.1)\\), confirm that all converge to the same steady state.\n\ninit_list &lt;- list(\n  \"0.5,0.5\" = c(0.5, 0.5),\n  \"0.75,0.25\" = c(0.75, 0.25),\n  \"0.25,0.75\" = c(0.25, 0.75),\n  \"0.9,0.1\" = c(0.9, 0.1)\n)\nframe_list &lt;- map2_dfr(init_list, names(init_list), function(init_dist, label) {\n  mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\n  colnames(mat) &lt;- c(\"A\", \"B\")\n  mat[1, ] &lt;- init_dist\n  for (i in 2:(total_weeks + 1)) mat[i, ] &lt;- mat[i - 1, ] %*% P\n  as_tibble(mat) |&gt;\n    mutate(week = 0:total_weeks, init = label) |&gt;\n    pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\n})\nframe_list |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line() +\n  facet_wrap(~ init) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Convergence Across Different Initial Distributions\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nRegardless of initial shares, all paths converge to approximately (0.652174, 0.347826) by week 30.\n\n\n\nSimulate the brand preference for 10,000 patients over 30 weeks by sampling transitions. Compare empirical frequencies at week 30 to the theoretical steady state.\n\nset.seed(123)\nn_patients &lt;- 10000\nn_weeks &lt;- 30\n# Initialize state 1=A, 2=B randomly according to q0\nstates &lt;- sample(c(1,2), n_patients, replace = TRUE, prob = q0)\nfor (t in 1:n_weeks) {\n  probs &lt;- P[states, ]\n  states &lt;- apply(probs, 1, function(pr) sample(c(1,2), 1, prob = pr))\n}\nempirical &lt;- prop.table(table(states))\nknitr::kable(t(round(empirical, 4)), col.names=c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.6446\n0.3554\n\n\n\n\n\nEmpirical shares at week 30 (approx):\n\nBrand A: 0.6518\nBrand B: 0.3482\n\nClose to theoretical (0.6522, 0.3478).\n\n\n\nVary the promotion effect: change \\(p_{21}\\) (Brand B → A) from 0.15 to 0.20 and 0.10. Compute new steady states and discuss impact.\n\nfor (p21 in c(0.20, 0.10)) {\n  P_var &lt;- matrix(c(0.92, 0.08,\n                    p21, 1-p21), nrow=2, byrow=TRUE)\n  ss &lt;- steady_state(P_var)\n  cat(\"p21 =\", p21, \"→ steady state:\", round(ss,4), \"\\n\")\n}\n\np21 = 0.2 → steady state: 0.7143 0.2857 \np21 = 0.1 → steady state: 0.5556 0.4444 \n\n\nIncreasing the promotion increases the long-run share of Brand A, while decreasing it lowers that share."
   },
   {
-    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#introduction",
-    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#introduction",
-    "title": "Home",
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-1-initial-evolution",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-1-initial-evolution",
+    "title": "Lab: Brand Switching Markov Chain Example",
     "section": "",
-    "text": "This exercise is based on the brand switching example discussed in the slides. It models consumer behavior using a discrete-time Markov chain with two states representing two brands."
+    "text": "Set the initial market-share vector \\(q^{(0)} = (0.5, 0.5)\\). Manually compute \\(q^{(1)}, q^{(2)}, q^{(3)}\\) using matrix multiplication.\n\n# Define transition matrix P\nP &lt;- matrix(c(0.92, 0.08,\n              0.15, 0.85), \n            nrow = 2, byrow = TRUE,\n            dimnames = list(c(\"A\", \"B\"), c(\"A\", \"B\")))\n# Initial distribution\nq0 &lt;- c(A = 0.5, B = 0.5)\n# Compute first three periods\nq_list &lt;- accumulate(1:3, ~ .x %*% P, .init = q0)[-1]\n# Display results\nresults1 &lt;- tibble(week = 1:3,\n       A = map_dbl(q_list, 1),\n       B = map_dbl(q_list, 2))\nknitr::kable(results1, digits=6)\n\n\n\n\nweek\nA\nB\n\n\n\n\n1\n0.535000\n0.465000\n\n\n2\n0.561950\n0.438050\n\n\n3\n0.582702\n0.417298"
   },
   {
-    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#excel-based-exploration",
-    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#excel-based-exploration",
-    "title": "Home",
-    "section": "Excel-Based Exploration",
-    "text": "Excel-Based Exploration\n\nInitial Setup\nOpen the “Brand switching example – spreadsheet” Excel file.\n\nInitial market shares are in cells B2 (Brand 1) and C2 (Brand 2) — both start at 50%.\nTransition probabilities are found in:\n\nE2: \\(\\Pr(\\text{Brand 1 next week} \\mid \\text{Brand 1 this week})\\)\nF2: \\(\\Pr(\\text{Brand 2 next week} \\mid \\text{Brand 1 this week})\\)\nE3: \\(\\Pr(\\text{Brand 1 next week} \\mid \\text{Brand 2 this week})\\)\nF3: \\(\\Pr(\\text{Brand 2 next week} \\mid \\text{Brand 2 this week})\\)\n\n\nCells B3 and C3 contain formulas to calculate expected market shares after one week.\n\n\nTask 1A\nCopy the formulas in B3 and C3 down for at least 30 rows.\n\nQuestion: How long does it take until the expected market share for Brand 1 exceeds 60%?\n\nAnswer: _________\n\n\nTask 1B\nChange the initial market shares:\n\nCase 1: 30% (Brand 1) and 70% (Brand 2)\nCase 2: 15% (Brand 1) and 85% (Brand 2)\n\n\nQuestion: In each case, how many weeks does it take for Brand 1 to overtake Brand 2?\n\nAnswers: - Case 1: _________\n\nCase 2: _________\n\nRegardless of starting conditions, the system quickly converges to a steady-state distribution.\n\n\nTask 1C\nInspect further down the spreadsheet and record the steady-state expected market shares for both brands to 4 decimal places.\nAnswer:\n\nBrand 1: _________\nBrand 2: _________\n\nThese values are determined by the transition matrix, not the initial shares."
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-2-steady-state-distribution-function",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-2-steady-state-distribution-function",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Implement a function steady_state(P) that returns the long-run distribution via eigen decomposition. Verify it on \\(P\\) above.\n\nsteady_state &lt;- function(P) {\n  eig &lt;- eigen(t(P))\n  vec &lt;- Re(eig$vectors[, which.min(Mod(eig$values - 1))])\n  pi &lt;- vec / sum(vec)\n  pi\n}\n# Test\ndist_ss &lt;- steady_state(P)\nknitr::kable(t(round(dist_ss, 6)), col.names = c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.652174\n0.347826"
   },
   {
-    "objectID": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#using-r-to-find-steady-state-distribution",
-    "href": "lab/dl4sg_marcov/materials/lab/00_dtcm.html#using-r-to-find-steady-state-distribution",
-    "title": "Home",
-    "section": "Using R to Find Steady-State Distribution",
-    "text": "Using R to Find Steady-State Distribution\nWe now use R to compute the steady-state distribution algebraically.\nR Function to Solve for Steady-State\n\nlibrary(tidyverse)\n\nsteady_state_dist &lt;- function(P) {\n  # Calculate the steady-state distribution of a discrete-time Markov chain\n  # defined by the transition matrix P\n  \n  # Parameters:\n  # P : matrix\n  #   The transition matrix of the Markov chain of interest.\n  \n  # Returns:\n  # A vector representing the steady-state probabilities for the Markov chain.\n  \n  # Check if P is a square matrix\n  if (!is.matrix(P) || nrow(P) != ncol(P)) {\n    stop(\"P must be a square matrix\")\n  }\n  \n  # Number of states\n  dim &lt;- nrow(P)\n  \n  # Set up the system of equations\n  Q &lt;- P - diag(dim)  # P - I\n  ones &lt;- rep(1, dim) \n  Q &lt;- cbind(Q, ones)  # Append column of ones\n  QTQ &lt;- Q %*% t(Q)    # Compute Q * Q^T\n  bQT &lt;- rep(1, dim)   # Right-hand side vector\n  \n  # Solve the equations and return the solution\n  return(solve(QTQ, bQT))\n}\n\n\nTask 2A\nOpen the R quarto script 00_dtcm.qmd. This script can be used to find the steady-state distribution of a Markov chain, given the transition probability matrix. In our case, we are interested in using it to calculate the steady-state expected market shares for the two brands. Find the steady-state distribution in each of the following cases:\n\\[\nP_1 =\n\\begin{bmatrix}\n0.96 & 0.04 \\\\\n0.07 & 0.93\n\\end{bmatrix}\n\\]\n\n\\[\nP_2 =\n\\begin{bmatrix}\n0.75 & 0.25 \\\\\n0.22 & 0.78\n\\end{bmatrix}\n\\] \n\\[\nP_3 =\n\\begin{bmatrix}\n0.99 & 0.01 \\\\\n0.02 & 0.98\n\\end{bmatrix}\n\\]\n\n# Transition matrices\nmatrices &lt;- list(\n  matrix(c(__, __, __, __), 2, byrow = TRUE),\n  matrix(c(__, __, __, __), 2, byrow = TRUE),\n  matrix(c(__, __, __, __), 2, byrow = TRUE)\n)\n\n# Compute steady-state for each\nfor (P in matrices) {\n  pi_dist &lt;- steady_state_dist(P)\n  print(t(pi_dist))\n}\n\n\n🧠 Even with very similar transition probabilities, the resulting steady-state market shares can be surprisingly different.\n\n\n\nTask 2B – Extra Challenge: Algebraic derivation of steady-state\nLet the transition matrix be:\n\\[\nP = \\begin{bmatrix}\n1 - a & a \\\\\n2a & 1 - 2a\n\\end{bmatrix}, \\quad \\text{where } 0 &lt; a &lt; 0.5\n\\]\nWe want to show the steady-state vector is:\n\\[\n\\boldsymbol{\\pi} = \\left(\\frac{2}{3}, \\frac{1}{3}\\right)\n\\]\n\na_vals &lt;- c(__, __, __, __)\n\nfor (a in a_vals) {\n  P &lt;- matrix(c(__, __, __, __), 2, byrow = TRUE)\n  pi_dist &lt;- steady_state_dist(P)\n  print(t(pi_dist))\n}"
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-3-convergence-plot",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-3-convergence-plot",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Simulate the expected market-share evolution for 30 weeks and plot \\(q^{(n)}\\) to illustrate convergence.\n\ntotal_weeks &lt;- 30\npi_mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\ncolnames(pi_mat) &lt;- c(\"A\", \"B\")\npi_mat[1, ] &lt;- q0\nfor (i in 2:(total_weeks + 1)) {\n  pi_mat[i, ] &lt;- pi_mat[i - 1, ] %*% P\n}\ndata_conv &lt;- as_tibble(pi_mat) |&gt;\n  mutate(week = 0:total_weeks) |&gt;\n  pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\nsteady_vals &lt;- steady_state(P)\n\ndata_conv |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line(size = 1) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Market-Share Convergence over Time\",\n       x = \"Week\",\n       y = \"Expected Market Share\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nThe convergence plot shows both shares approaching the dashed lines at (0.652174, 0.347826) by around week 20."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-4-independence-from-initial-shares",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-4-independence-from-initial-shares",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Using initial distributions \\((0.5, 0.5), (0.75, 0.25), (0.25, 0.75), (0.9, 0.1)\\), confirm that all converge to the same steady state.\n\ninit_list &lt;- list(\n  \"0.5,0.5\" = c(0.5, 0.5),\n  \"0.75,0.25\" = c(0.75, 0.25),\n  \"0.25,0.75\" = c(0.25, 0.75),\n  \"0.9,0.1\" = c(0.9, 0.1)\n)\nframe_list &lt;- map2_dfr(init_list, names(init_list), function(init_dist, label) {\n  mat &lt;- matrix(NA, nrow = total_weeks + 1, ncol = 2)\n  colnames(mat) &lt;- c(\"A\", \"B\")\n  mat[1, ] &lt;- init_dist\n  for (i in 2:(total_weeks + 1)) mat[i, ] &lt;- mat[i - 1, ] %*% P\n  as_tibble(mat) |&gt;\n    mutate(week = 0:total_weeks, init = label) |&gt;\n    pivot_longer(cols = c(\"A\", \"B\"), names_to = \"Brand\", values_to = \"Share\")\n})\nframe_list |&gt;\n  ggplot(aes(x = week, y = Share, color = Brand)) +\n  geom_line() +\n  facet_wrap(~ init) +\n  geom_hline(yintercept = steady_vals, linetype = \"dashed\") +\n  labs(title = \"Convergence Across Different Initial Distributions\") +\n  scale_colour_manual(name   = \"Brand\", values = c('A' = \"#E69F00\", 'B' = \"#0072B2\")) +\n  theme_few(base_size = 10) +\n  theme(\n    strip.text         = element_text(face = \"bold\"),\n    panel.grid.minor   = element_blank(),\n    panel.border       = element_rect(colour = \"lightgrey\", fill = NA),\n    panel.spacing      = unit(0.5, \"lines\")\n  )\n\n\n\n\n\n\n\n\nRegardless of initial shares, all paths converge to approximately (0.652174, 0.347826) by week 30."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-5-simulation-challenge",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-5-simulation-challenge",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Simulate the brand preference for 10,000 patients over 30 weeks by sampling transitions. Compare empirical frequencies at week 30 to the theoretical steady state.\n\nset.seed(123)\nn_patients &lt;- 10000\nn_weeks &lt;- 30\n# Initialize state 1=A, 2=B randomly according to q0\nstates &lt;- sample(c(1,2), n_patients, replace = TRUE, prob = q0)\nfor (t in 1:n_weeks) {\n  probs &lt;- P[states, ]\n  states &lt;- apply(probs, 1, function(pr) sample(c(1,2), 1, prob = pr))\n}\nempirical &lt;- prop.table(table(states))\nknitr::kable(t(round(empirical, 4)), col.names=c(\"Brand A\", \"Brand B\"))\n\n\n\n\nBrand A\nBrand B\n\n\n\n\n0.6446\n0.3554\n\n\n\n\n\nEmpirical shares at week 30 (approx):\n\nBrand A: 0.6518\nBrand B: 0.3482\n\nClose to theoretical (0.6522, 0.3478)."
+  },
+  {
+    "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-6-sensitivity-analysis",
+    "href": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html#task-6-sensitivity-analysis",
+    "title": "Lab: Brand Switching Markov Chain Example",
+    "section": "",
+    "text": "Vary the promotion effect: change \\(p_{21}\\) (Brand B → A) from 0.15 to 0.20 and 0.10. Compute new steady states and discuss impact.\n\nfor (p21 in c(0.20, 0.10)) {\n  P_var &lt;- matrix(c(0.92, 0.08,\n                    p21, 1-p21), nrow=2, byrow=TRUE)\n  ss &lt;- steady_state(P_var)\n  cat(\"p21 =\", p21, \"→ steady state:\", round(ss,4), \"\\n\")\n}\n\np21 = 0.2 → steady state: 0.7143 0.2857 \np21 = 0.1 → steady state: 0.5556 0.4444 \n\n\nIncreasing the promotion increases the long-run share of Brand A, while decreasing it lowers that share."
   },
   {
     "objectID": "lab/epss_training/slides/epss_training.html#self-assessment",
@@ -1505,115 +1736,38 @@
     "text": "Thank you!\n\n\nScan the QR Code and follow us on LinkedIn…"
   },
   {
-    "objectID": "lab/intro_python/materials/index.html",
-    "href": "lab/intro_python/materials/index.html",
-    "title": "Introduction to Python",
+    "objectID": "lab/index.html",
+    "href": "lab/index.html",
+    "title": "Home",
     "section": "",
-    "text": "Introduction to Python\nInstalling Python\nSetting up an Integrated Development Environment (IDE)\nIntroduction to Jupyter Lab, VS Code, Google Colab and Anaconda\n\n\n\n\n\nUnderstanding the basic syntax\nHow to write and execute code in Python\nSetting up and organizing a Python project\n\n\n\n\nPython is a versatile, high-level programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more.\n\n\n\n\nEasy to read and write\nExtensive libraries and frameworks\nStrong community support\nGreat for beginners and professionals alike\n\n\n\n\nPython can be installed on various operating systems, including Windows, macOS, and Linux.\nStep 1: Download the Installer\n\nVisit the official Python website: https://www.python.org/\nNavigate to the Downloads section and choose the appropriate installer for your operating system.\n\nStep 2: Run the Installer - Open the downloaded installer file. - Make sure to check the box that says “Add Python to PATH” during the installation process. This makes it easier to run Python from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation:\npython --version\n\nYou should see the version of Python you installed.\n\nCongratulations! Python is now installed on your computer.\n\n\n\nAn IDE is a software application that provides comprehensive facilities to programmers for software development.\nThere are many IDEs available for Python. Two popular choices are VS Code and Jupyter Lab.\n\nInstalling VS Code\n\n\nVisit the Visual Studio Code website: https://code.visualstudio.com/\nDownload and install the version for your operating system.\nOnce installed, you can add Python support by installing the Python extension:\n\nOpen VS Code.\nGo to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.\nSearch for “Python” and install the extension provided by Microsoft.\nOpen a new Python file or notebook and start coding!\n\nTutorial: https://code.visualstudio.com/docs/python/python-tutorial\nKey Features:\n\nExtensions: VS Code has a vast library of extensions that enhance its functionality.\nIntegrated Terminal: You can run command-line tasks directly in VS Code.\n\n\n\nInstalling Jupyter Lab\n\n\nJupyter Lab is a web-based interactive computing environment.\nTo install Jupyter Lab, you need to have Python installed. You can use pip, the Python package installer, to install Jupyter Lab:\n    pip install jupyterlab\nTo start Jupyter Lab, open your command prompt (Windows) or terminal (macOS/Linux) and type: bash         Jupyter Lab\nThis will open a new tab in your default web browser, where you can create and run Jupyter Labs.\nTutorial: https://jupyter.org/install\nKey Features:\n\nInteractive output: You can run code in real-time and see the results immediately.\nMarkdown support: You can write rich text, which makes it great for creating tutorials and educational materials.\nVisualizations: You can embed visualizations and plots directly in the notebook.\n\n\nNow you have both VS Code and Jupyter Lab set up for your Python development!\n\n\n\nGoogle Colab, short for “Collaboratory,” is a free Jupyter Lab environment that runs entirely in the cloud. It is perfect for those who want to run Python code without having to set up anything on their local machines.\nStep 1: Accessing Google Colab - Open your web browser and go to: https://colab.research.google.com/\nStep 2: Creating a New Notebook - On the Google Colab homepage, you can either open an existing notebook or create a new one. - To create a new notebook, click on the “New Notebook” button.\nStep 3: Using Google Colab - You can start writing and running Python code right away. - Google Colab provides free access to GPUs and TPUs, which can be used for more intensive computations.\nStep 4: Saving Your Work - You can save your notebooks directly to Google Drive, which makes it easy to access them from any device. - To save your notebook, go to “File” -&gt; “Save a copy in Drive…”\nKey Features: - No installation required: You can start coding immediately without any local setup. - Cloud-based: Your notebooks are stored in Google Drive, making them easy to share and collaborate on. - Free access to GPUs and TPUs: This is particularly useful for machine learning and data science tasks.\nNow you can use Google Colab to run Python code from anywhere, without worrying about setting up your local environment!\n\n\n\nAnaconda is a distribution of Python and R for scientific computing and data science. It comes with many popular data science and machine learning libraries, as well as Jupyter Lab.\nStep 1: Download Anaconda - Visit the Anaconda website: https://www.anaconda.com/products/distribution - Download the Anaconda installer for your operating system.\nStep 2: Install Anaconda - Open the downloaded installer and follow the instructions. - During the installation, you can choose to add Anaconda to your PATH environment variable. This makes it easier to run Anaconda commands from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation: bash         conda --version - You should see the version of Conda that is installed.\nStep 4: Launching Jupyter Lab from Anaconda - Anaconda Navigator is a graphical user interface that comes with Anaconda. It allows you to launch Jupyter Lab easily. - Open Anaconda Navigator from your applications menu. - In Anaconda Navigator, you will see Jupyter Lab listed. Click “Launch” to open it.\nNow you have Anaconda installed, and you can use it to manage your Python environments and packages, as well as run Jupyter Labs!\n\n\n\nGetting Started 1. Launching Jupyter Lab: - Open your command prompt (Windows) or terminal (macOS/Linux). - Type jupyter lab and press Enter. - A new tab will open in your default web browser showing the Jupyter Lab interface.\n\nCreating a New Notebook:\n\nClick on the “New” button and select “Python 3” to create a new notebook.\nYou will see a new notebook with an empty code cell.\n\nWriting and Running Code:\n\nWrite your Python code in the code cells.\nExecute the code by pressing Shift + Enter or clicking the “Run” button.\nExample:\n\n print(\"Hello, Jupyter Lab!\")\nUsing Markdown Cells:\n\nTo add text, headers, lists, and other non-code content, use Markdown cells.\nChange the cell type to Markdown by selecting “Markdown” from the dropdown menu.\nExample of a Markdown cell:\n# This is a Header\n- This is a list item\n    - Another list item\n\n\n\n\n\n\n# Install necessary libraries\n!pip install numpy pandas matplotlib seaborn\n\n# Importing Libraries\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n# Load a sample dataset from seaborn\ndata = sns.load_dataset('penguins')\n\n# Display the first few rows of the dataset\nprint(data.head())\n# Perform some basic data analysis\nsummary = data.describe()\nprint(summary)\n# Create a simple plot\nplt.figure(figsize=(10, 6))\nplt.scatter(data['bill_length_mm'], data['bill_depth_mm'])\nplt.title('Bill Length vs. Bill Depth')\nplt.xlabel('Bill Length (mm)')\nplt.ylabel('Bill Depth (mm)')\nplt.show()\n\n\n\nWe imported necessary libraries.\nWe loaded a sample dataset from the seaborn library and displayed the first few rows.\nWe performed a basic data analysis using the describe method.\nWe visualized the relationship between bill length and bill depth.\n\n\n\n\n\nInteractive Coding: Run code and see results instantly, making it great for experimentation.\nDocumentation: Combine code and narrative text to create comprehensive and understandable documents.\nVisualization: Easily integrate plots and charts to visualize your data.\n\n\n\n\n\nTo ensure that Jupyter Lab uses the project directory as the working directory, you can use the os module to change the current working directory.\n\n\n\nImport the os Module:\n\nThe os module provides a way of using operating system-dependent functionality.\n\nDefine the Project Directory:\n\nSpecify the path to your project directory.\n\nChange the Current Working Directory:\n\nUse os.chdir() to change the current working directory to the project directory.\n\nVerify the Current Working Directory:\n\nUse os.getcwd() to print the current working directory and ensure it’s set correctly.\n\n\n\n\n\nUse python console or terminal.\nimport os\n\n# Define project directory and subdirectories\nproject_dir = 'my_python_project'\nfolders = ['data', 'scripts', 'notebooks']\n\n# Create the main project directory\nif not os.path.exists(project_dir):\n    os.makedirs(project_dir)\n\n# Create subdirectories\nfor folder in folders:\n    path = os.path.join(project_dir, folder)\n    if not os.path.exists(path):\n        os.makedirs(path)\n\n# Check the created structure\n!tree my_python_project\nGo to your main project folder and open the terminal.\nimport os\n\n# Define the project directory\nproject_dir = os.getcwd()\n\n# Set the working directory to the project directory\nos.chdir(project_dir)\n\n# Check the current working directory\nprint(\"Current Working Directory:\", os.getcwd())\nexample: save a file\n# Save a Sample Dataset in the data Folder \nimport pandas as pd\n\n# Create a sample DataFrame\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [24, 22, 23],\n    'Grade': ['A', 'B', 'A']\n}\n\ndf = pd.DataFrame(data)\n\n# Display the DataFrame\nprint(\"Sample DataFrame:\")\nprint(df)\n\n# Define the path to save the CSV file\ncsv_file_path = os.path.join('data', 'students_data.csv')\n\n# Save the DataFrame as a CSV file\ndf.to_csv(csv_file_path, index=False)\n\n# Verify that the file has been saved\nprint(f\"DataFrame saved as CSV file at: {csv_file_path}\")"
+    "text": "Introduction to Markov Processes in Healthcare Supply Chains\n\n\nWorkshop\n\n\n\n\n\nMay 15, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\nWorkshop\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nA basic introduction to Python\n\n\nTutorial\n\n\n\n\n\nMar 3, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "lab/intro_python/materials/index.html#section-1-python-and-ide-essentials",
-    "href": "lab/intro_python/materials/index.html#section-1-python-and-ide-essentials",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "Introduction to Python\nInstalling Python\nSetting up an Integrated Development Environment (IDE)\nIntroduction to Jupyter Lab, VS Code, Google Colab and Anaconda"
+    "objectID": "lab/intro_python/index.html#who-is-the-course-for",
+    "href": "lab/intro_python/index.html#who-is-the-course-for",
+    "title": "A basic introduction to Python",
+    "section": "Who is the course for?",
+    "text": "Who is the course for?\nThis course is primarily aimed at learners who require a practical introduction to Python. It assumes no previous experience using Python."
   },
   {
-    "objectID": "lab/intro_python/materials/index.html#section-2-working-with-jupyter-lab",
-    "href": "lab/intro_python/materials/index.html#section-2-working-with-jupyter-lab",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "Understanding the basic syntax\nHow to write and execute code in Python\nSetting up and organizing a Python project"
+    "objectID": "lab/intro_python/index.html#learning-objectives",
+    "href": "lab/intro_python/index.html#learning-objectives",
+    "title": "A basic introduction to Python",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nFamiliarize yourself with Python and an Integrated Development Environment (IDE) such as Jupyter Lab or VS Code, which we’ll use to interact with Python.\nUnderstand the basics of working with Python, including how to write and execute code.\nUse three different ways to work with Python: Python Shell, Python Scripts, and Jupyter Lab.\nLearn about Python’s basic data types and structures.\nInstall and import required libraries.\nFind resources for help when coding in Python."
   },
   {
-    "objectID": "lab/intro_python/materials/index.html#what-is-python",
-    "href": "lab/intro_python/materials/index.html#what-is-python",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "Python is a versatile, high-level programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more."
+    "objectID": "lab/intro_python/index.html#prerequisites",
+    "href": "lab/intro_python/index.html#prerequisites",
+    "title": "A basic introduction to Python",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nNo prior knowledge of Python is assumed.\nInstall Python and GitHub Desktop."
   },
   {
-    "objectID": "lab/intro_python/materials/index.html#why-learn-python",
-    "href": "lab/intro_python/materials/index.html#why-learn-python",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "Easy to read and write\nExtensive libraries and frameworks\nStrong community support\nGreat for beginners and professionals alike"
-  },
-  {
-    "objectID": "lab/intro_python/materials/index.html#installing-python",
-    "href": "lab/intro_python/materials/index.html#installing-python",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "Python can be installed on various operating systems, including Windows, macOS, and Linux.\nStep 1: Download the Installer\n\nVisit the official Python website: https://www.python.org/\nNavigate to the Downloads section and choose the appropriate installer for your operating system.\n\nStep 2: Run the Installer - Open the downloaded installer file. - Make sure to check the box that says “Add Python to PATH” during the installation process. This makes it easier to run Python from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation:\npython --version\n\nYou should see the version of Python you installed.\n\nCongratulations! Python is now installed on your computer."
-  },
-  {
-    "objectID": "lab/intro_python/materials/index.html#setting-up-an-integrated-development-environment-ide",
-    "href": "lab/intro_python/materials/index.html#setting-up-an-integrated-development-environment-ide",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "An IDE is a software application that provides comprehensive facilities to programmers for software development.\nThere are many IDEs available for Python. Two popular choices are VS Code and Jupyter Lab.\n\nInstalling VS Code\n\n\nVisit the Visual Studio Code website: https://code.visualstudio.com/\nDownload and install the version for your operating system.\nOnce installed, you can add Python support by installing the Python extension:\n\nOpen VS Code.\nGo to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.\nSearch for “Python” and install the extension provided by Microsoft.\nOpen a new Python file or notebook and start coding!\n\nTutorial: https://code.visualstudio.com/docs/python/python-tutorial\nKey Features:\n\nExtensions: VS Code has a vast library of extensions that enhance its functionality.\nIntegrated Terminal: You can run command-line tasks directly in VS Code.\n\n\n\nInstalling Jupyter Lab\n\n\nJupyter Lab is a web-based interactive computing environment.\nTo install Jupyter Lab, you need to have Python installed. You can use pip, the Python package installer, to install Jupyter Lab:\n    pip install jupyterlab\nTo start Jupyter Lab, open your command prompt (Windows) or terminal (macOS/Linux) and type: bash         Jupyter Lab\nThis will open a new tab in your default web browser, where you can create and run Jupyter Labs.\nTutorial: https://jupyter.org/install\nKey Features:\n\nInteractive output: You can run code in real-time and see the results immediately.\nMarkdown support: You can write rich text, which makes it great for creating tutorials and educational materials.\nVisualizations: You can embed visualizations and plots directly in the notebook.\n\n\nNow you have both VS Code and Jupyter Lab set up for your Python development!"
-  },
-  {
-    "objectID": "lab/intro_python/materials/index.html#setting-up-google-colab",
-    "href": "lab/intro_python/materials/index.html#setting-up-google-colab",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "Google Colab, short for “Collaboratory,” is a free Jupyter Lab environment that runs entirely in the cloud. It is perfect for those who want to run Python code without having to set up anything on their local machines.\nStep 1: Accessing Google Colab - Open your web browser and go to: https://colab.research.google.com/\nStep 2: Creating a New Notebook - On the Google Colab homepage, you can either open an existing notebook or create a new one. - To create a new notebook, click on the “New Notebook” button.\nStep 3: Using Google Colab - You can start writing and running Python code right away. - Google Colab provides free access to GPUs and TPUs, which can be used for more intensive computations.\nStep 4: Saving Your Work - You can save your notebooks directly to Google Drive, which makes it easy to access them from any device. - To save your notebook, go to “File” -&gt; “Save a copy in Drive…”\nKey Features: - No installation required: You can start coding immediately without any local setup. - Cloud-based: Your notebooks are stored in Google Drive, making them easy to share and collaborate on. - Free access to GPUs and TPUs: This is particularly useful for machine learning and data science tasks.\nNow you can use Google Colab to run Python code from anywhere, without worrying about setting up your local environment!"
-  },
-  {
-    "objectID": "lab/intro_python/materials/index.html#setting-up-anaconda-additional-resources",
-    "href": "lab/intro_python/materials/index.html#setting-up-anaconda-additional-resources",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "Anaconda is a distribution of Python and R for scientific computing and data science. It comes with many popular data science and machine learning libraries, as well as Jupyter Lab.\nStep 1: Download Anaconda - Visit the Anaconda website: https://www.anaconda.com/products/distribution - Download the Anaconda installer for your operating system.\nStep 2: Install Anaconda - Open the downloaded installer and follow the instructions. - During the installation, you can choose to add Anaconda to your PATH environment variable. This makes it easier to run Anaconda commands from the command line.\nStep 3: Verify the Installation - Open your command prompt (Windows) or terminal (macOS/Linux). - Type the following command to verify the installation: bash         conda --version - You should see the version of Conda that is installed.\nStep 4: Launching Jupyter Lab from Anaconda - Anaconda Navigator is a graphical user interface that comes with Anaconda. It allows you to launch Jupyter Lab easily. - Open Anaconda Navigator from your applications menu. - In Anaconda Navigator, you will see Jupyter Lab listed. Click “Launch” to open it.\nNow you have Anaconda installed, and you can use it to manage your Python environments and packages, as well as run Jupyter Labs!"
-  },
-  {
-    "objectID": "lab/intro_python/materials/index.html#working-with-jupyter-lab",
-    "href": "lab/intro_python/materials/index.html#working-with-jupyter-lab",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "Getting Started 1. Launching Jupyter Lab: - Open your command prompt (Windows) or terminal (macOS/Linux). - Type jupyter lab and press Enter. - A new tab will open in your default web browser showing the Jupyter Lab interface.\n\nCreating a New Notebook:\n\nClick on the “New” button and select “Python 3” to create a new notebook.\nYou will see a new notebook with an empty code cell.\n\nWriting and Running Code:\n\nWrite your Python code in the code cells.\nExecute the code by pressing Shift + Enter or clicking the “Run” button.\nExample:\n\n print(\"Hello, Jupyter Lab!\")\nUsing Markdown Cells:\n\nTo add text, headers, lists, and other non-code content, use Markdown cells.\nChange the cell type to Markdown by selecting “Markdown” from the dropdown menu.\nExample of a Markdown cell:\n# This is a Header\n- This is a list item\n    - Another list item"
-  },
-  {
-    "objectID": "lab/intro_python/materials/index.html#example-workflow-in-jupyter-lab",
-    "href": "lab/intro_python/materials/index.html#example-workflow-in-jupyter-lab",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "# Install necessary libraries\n!pip install numpy pandas matplotlib seaborn\n\n# Importing Libraries\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n# Load a sample dataset from seaborn\ndata = sns.load_dataset('penguins')\n\n# Display the first few rows of the dataset\nprint(data.head())\n# Perform some basic data analysis\nsummary = data.describe()\nprint(summary)\n# Create a simple plot\nplt.figure(figsize=(10, 6))\nplt.scatter(data['bill_length_mm'], data['bill_depth_mm'])\nplt.title('Bill Length vs. Bill Depth')\nplt.xlabel('Bill Length (mm)')\nplt.ylabel('Bill Depth (mm)')\nplt.show()\n\n\n\nWe imported necessary libraries.\nWe loaded a sample dataset from the seaborn library and displayed the first few rows.\nWe performed a basic data analysis using the describe method.\nWe visualized the relationship between bill length and bill depth.\n\n\n\n\n\nInteractive Coding: Run code and see results instantly, making it great for experimentation.\nDocumentation: Combine code and narrative text to create comprehensive and understandable documents.\nVisualization: Easily integrate plots and charts to visualize your data."
-  },
-  {
-    "objectID": "lab/intro_python/materials/index.html#setting-up-the-working-directory-in-jupyter-lab",
-    "href": "lab/intro_python/materials/index.html#setting-up-the-working-directory-in-jupyter-lab",
-    "title": "Introduction to Python",
-    "section": "",
-    "text": "To ensure that Jupyter Lab uses the project directory as the working directory, you can use the os module to change the current working directory.\n\n\n\nImport the os Module:\n\nThe os module provides a way of using operating system-dependent functionality.\n\nDefine the Project Directory:\n\nSpecify the path to your project directory.\n\nChange the Current Working Directory:\n\nUse os.chdir() to change the current working directory to the project directory.\n\nVerify the Current Working Directory:\n\nUse os.getcwd() to print the current working directory and ensure it’s set correctly.\n\n\n\n\n\nUse python console or terminal.\nimport os\n\n# Define project directory and subdirectories\nproject_dir = 'my_python_project'\nfolders = ['data', 'scripts', 'notebooks']\n\n# Create the main project directory\nif not os.path.exists(project_dir):\n    os.makedirs(project_dir)\n\n# Create subdirectories\nfor folder in folders:\n    path = os.path.join(project_dir, folder)\n    if not os.path.exists(path):\n        os.makedirs(path)\n\n# Check the created structure\n!tree my_python_project\nGo to your main project folder and open the terminal.\nimport os\n\n# Define the project directory\nproject_dir = os.getcwd()\n\n# Set the working directory to the project directory\nos.chdir(project_dir)\n\n# Check the current working directory\nprint(\"Current Working Directory:\", os.getcwd())\nexample: save a file\n# Save a Sample Dataset in the data Folder \nimport pandas as pd\n\n# Create a sample DataFrame\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [24, 22, 23],\n    'Grade': ['A', 'B', 'A']\n}\n\ndf = pd.DataFrame(data)\n\n# Display the DataFrame\nprint(\"Sample DataFrame:\")\nprint(df)\n\n# Define the path to save the CSV file\ncsv_file_path = os.path.join('data', 'students_data.csv')\n\n# Save the DataFrame as a CSV file\ndf.to_csv(csv_file_path, index=False)\n\n# Verify that the file has been saved\nprint(f\"DataFrame saved as CSV file at: {csv_file_path}\")"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Harsha Halgamuwe Hewage",
-    "section": "",
-    "text": "I am a second-year PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the Data Lab for Social Good.\nI also lead the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I manage the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives.\nExplore my full list of publications on Google Scholar."
-  },
-  {
-    "objectID": "cv/phd.html",
-    "href": "cv/phd.html",
-    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
-    "section": "",
-    "text": "My research focuses on addressing inefficiencies in supply chain management for contraceptive products in developing countries. These inefficiencies often lead to shortages, limiting women’s reproductive autonomy and exacerbating societal challenges. By integrating probabilistic forecasting with inventory optimization, I aim to create a novel approach that accounts for uncertainties, poor data quality, and local demand variations. This interdisciplinary project involves collaboration with scholars from Cardiff Business School, the School of Computer Science & Informatics, and the United States Agency for International Development (USAID). The goal is to improve access to contraceptives, reduce unintended pregnancies, and prevent unsafe abortions, ultimately benefiting women, healthcare providers, governments, and donor organizations."
-  },
-  {
-    "objectID": "cv/phd.html#supervision-team",
-    "href": "cv/phd.html#supervision-team",
-    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
-    "section": "Supervision team",
-    "text": "Supervision team\n\nLead: Prof Bahman Rostami-Tabar, Data Lab for Social Good Research Group, Cardiff Business School, UK\nCo: Prof Aris Syntetos, Cardiff Business School, UK\nCo: Dr Federico Liberatore, School of Computer Science and Informatics, UK\nCollaborator: Glenn Milano, Global Health Supply Chain, Bureau for Global Health, United States Agency for International Development (USAID)"
-  },
-  {
-    "objectID": "cv/phd.html#funder",
-    "href": "cv/phd.html#funder",
-    "title": "Forecasting improvements for better reproductive health and family planning operations in global health supply chains",
-    "section": "Funder",
-    "text": "Funder\nWelsh Graduate School for the Social Sciences (WGSSS)"
+    "objectID": "lab/intro_python/index.html#course-topics",
+    "href": "lab/intro_python/index.html#course-topics",
+    "title": "A basic introduction to Python",
+    "section": "Course Topics",
+    "text": "Course Topics\n\nPython and IDE Essentials\n\nSection 1: Introduction to Python and IDEs\n\nIntroduction to Python\nInstalling Python\nSetting up an Integrated Development Environment (IDE)\nOverview of Jupyter Lab, VS Code, Google Colab, and Anaconda\n\n\n\nSection 2: Working with Jupyter Lab\n\nUnderstanding the basic syntax\nWriting and executing code in Python\nSetting up and organizing a Python project"
   }
 ]
