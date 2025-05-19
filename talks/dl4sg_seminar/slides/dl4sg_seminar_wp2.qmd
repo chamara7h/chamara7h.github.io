@@ -327,6 +327,8 @@ Sources: USAID, 2020; PATH, 2019; Mukasa et al., 2017; Gilda et al., 2016
 
 How can a demand forecasting and inventory optimization model that incorporates lost sales estimation and contextual field data enhance contraceptive supply chain performance and reduce stockouts in developing countries?
 
+::: {.fragment fragment-index=0}
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -409,6 +411,8 @@ ggplot() +
 
 
 ```
+:::
+
 
 ## Why this is `critical`
 
@@ -467,7 +471,7 @@ Sources: Bijvank et al., 2011; Karimi et al., 2021; Thanos et as., 2022 ; Traper
 ::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: left; text-align: left;"}
 
 ::: {.fragment fragment-index=0}
-- **`RQ1:`** How accurately can a Tobit Kalman Filter with conformal prediction estimate true demand under sales censorship?
+- **`RQ1:`** How accurately can a Tobit Kalman Filter with conformal prediction estimate true demand under censorship?
 :::
 
 ::: {.fragment fragment-index=1}
@@ -507,6 +511,14 @@ We are currently at the green-colored stage.
      style="max-width: 80%; height: auto; display: block;" />
 
 # Numerical experiment
+
+## Experiment setup
+
+<br>
+
+<img src="images/num_experiment.png"
+     alt="Story panel"
+     style="max-width: 100%; height: auto; display: block;" />
 
 ## Data exploration
 
@@ -582,14 +594,6 @@ ggplot() +
   )
 
 ```
-
-## Experiment setup
-
-<br>
-
-<img src="images/num_experiment.png"
-     alt="Story panel"
-     style="max-width: 100%; height: auto; display: block;" />
 
 # What did we find?
 
