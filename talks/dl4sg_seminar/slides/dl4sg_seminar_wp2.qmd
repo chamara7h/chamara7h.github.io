@@ -327,8 +327,6 @@ Sources: USAID, 2020; PATH, 2019; Mukasa et al., 2017; Gilda et al., 2016
 
 How can a demand forecasting and inventory optimization model that incorporates lost sales estimation and contextual field data enhance contraceptive supply chain performance and reduce stockouts in developing countries?
 
-::: {.fragment fragment-index=0}
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -411,8 +409,6 @@ ggplot() +
 
 
 ```
-:::
-
 
 ## Why this is `critical`
 
