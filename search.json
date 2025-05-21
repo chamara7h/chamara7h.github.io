@@ -168,6 +168,13 @@
     "text": "Funder\nWelsh Graduate School for the Social Sciences (WGSSS)"
   },
   {
+    "objectID": "talks/qff_london/index.html#context",
+    "href": "talks/qff_london/index.html#context",
+    "title": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains",
+    "section": "Context",
+    "text": "Context\nIn this presentation for the IIF UK Chapter: Quarterly Forecasting Forum seminar, we explore how traditional forecasting methods often fail to capture unmet demand in contraceptive supply chains—particularly when stockouts censor the data. Our work combines temporal kernel forecasting, conformal prediction, and inventory-aware simulation to estimate true demand beyond what the system records.\nWe show how “no demand” often just means “no stock,” and how our approach can support smarter, more equitable inventory decisions. Our next steps include expanding the policy framework, incorporating external covariates, and testing the model in both lab and field settings with real demand planners.\nBecause unmet demand isn’t invisible—our systems just fail to see it."
+  },
+  {
     "objectID": "talks/dl4sg_seminar/index.html#context",
     "href": "talks/dl4sg_seminar/index.html#context",
     "title": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains",
@@ -179,7 +186,7 @@
     "href": "talks/index.html",
     "title": "Home",
     "section": "",
-    "text": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\nSeminar\n\n\n\n\n\nMay 20, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nMethodological Skills for Research\n\n\nLecture\n\n\n\n\n\nApr 11, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\nNo matching items"
+    "text": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\nSeminar\n\n\n\n\n\nMay 20, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\nIIF UK Chapter: Quarterly Forecasting Forum\n\n\n\n\n\nMay 20, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nMethodological Skills for Research\n\n\nLecture\n\n\n\n\n\nApr 11, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "talks/intro_method_skills/slides/intro_method_skills.html#assumptions",
@@ -632,6 +639,132 @@
   {
     "objectID": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#materials",
     "href": "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html#materials",
+    "title": "Home",
+    "section": "Materials",
+    "text": "Materials\n\n\nYou can find the slides here."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#outline",
+    "href": "talks/qff_london/slides/qff_london.html#outline",
+    "title": "Home",
+    "section": "Outline",
+    "text": "Outline\n\n\nWhat was never counted...\nThe fundamental question\nWhat we are going to do\nNumerical experiment\nWhat’s NEXT"
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#seen-the-unseen",
+    "href": "talks/qff_london/slides/qff_london.html#seen-the-unseen",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\n\nHuman story: What data misses\n\nNilu went to a pharmacy for Product A. It was not in stock and the system logs it as zero demand.\n\nWhen data is censored by stockouts or service interruptions… Forecasts fail… Not just by being wrong, but by being blind.\n\nThis creates broken trust and leads to UNMET DEMAND.\n\n\nAnalytical reality: Why this matters\n\nStockouts censor demand.\nObserved sales ≠ actual demand.\n\nInventory decisions based on this false signal?\nUnderstocking → more stockouts.\n\nForecasts don’t just underperform. They miss the whole story.\n\nContraceptives aren’t easily substitutable. A lost sale = a lost opportunity for care."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#contraceptive-products-arent-easily-substituted",
+    "href": "talks/qff_london/slides/qff_london.html#contraceptive-products-arent-easily-substituted",
+    "title": "Home",
+    "section": "Contraceptive products aren’t easily SUBSTITUTED",
+    "text": "Contraceptive products aren’t easily SUBSTITUTED\n\n\n\n\n*Percent of women who will get pregnant within the first year of typical use."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#the-big-picture",
+    "href": "talks/qff_london/slides/qff_london.html#the-big-picture",
+    "title": "Home",
+    "section": "The BIG PICTURE",
+    "text": "The BIG PICTURE\n\n\n\n\n\nIn reality…\nThere are more than\n218 million women\nlike Nilu still have an unmet need for family planning.\nUltimately, this results in dropouts, unwanted pregnancies, and almost 7 million hospitalizations each year in developing countries.\n\n\n\nImage generated using ChatGPT.\nSources: USAID, 2020; PATH, 2019; Mukasa et al., 2017; Gilda et al., 2016"
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#why-this-is-critical",
+    "href": "talks/qff_london/slides/qff_london.html#why-this-is-critical",
+    "title": "Home",
+    "section": "Why this is critical",
+    "text": "Why this is critical\n\n\n\n\n\n\n\nFrequent stockouts are common in family planning supply chains, especially in developing countries, significantly impacting public health outcomes.\n\n\n\n\nDuring my recent field visit to Ethiopia, stockouts were repeatedly identified by demand planners as a major barrier to effective contraceptive supply management.\n\n\n\n\nTraditional forecasting methods fail under censorship.\n\n\n\n\nPrior research inadequately addresses demand estimation under conditions of frequent stockouts and interruptions, often leading to biased forecasts and suboptimal inventory decisions.\n\n\n\n\n\nImage generated using ChatGPT.\nSources: Bijvank et al., 2011; Karimi et al., 2021; Thanos et as., 2022 ; Trapero, 2024"
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#key-definitions",
+    "href": "talks/qff_london/slides/qff_london.html#key-definitions",
+    "title": "Home",
+    "section": "Key definitions",
+    "text": "Key definitions\n\n\nStockouts: Periods when demand is higher than available inventory, leading to censored observations of demand.\nInterruptions: Periods when no products are issued despite available stock, thus artificially recorded as zero demand.\nCensored Demand: Demand occurring during periods when products are unavailable (stockouts or interruptions), thus not fully observable.\nTrue Demand: Actual demand that would have occurred if sufficient stock was available."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#censorship-scenarios",
+    "href": "talks/qff_london/slides/qff_london.html#censorship-scenarios",
+    "title": "Home",
+    "section": "Censorship scenarios",
+    "text": "Censorship scenarios\nHow can a demand forecasting and inventory optimization model that incorporates lost sales estimation and contextual field data enhance contraceptive supply chain performance and reduce stockouts in developing countries?\n\n\nFigure 1: Censorship scenarios in family planning supply chains."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#how-we-can-fill-the-gaps",
+    "href": "talks/qff_london/slides/qff_london.html#how-we-can-fill-the-gaps",
+    "title": "Home",
+    "section": "How we can fill the gaps",
+    "text": "How we can fill the gaps\n\n\n\n\n\n\n\n\nRQ1: How accurately can a Tobit Kalman Filter with conformal prediction estimate true demand under censorship?\n\n\n\n\n\nRQ2: How does demand reconstruction improve inventory performance compared to baseline planning methods?\n\n\n\n\nRQ3: How do planners adjust their orders in response to proposed model-generated recommendations?\n\n\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#our-proposed-framework",
+    "href": "talks/qff_london/slides/qff_london.html#our-proposed-framework",
+    "title": "Home",
+    "section": "Our proposed framework",
+    "text": "Our proposed framework"
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#first-stage-estimating-true-demand-under-censorship-using-tobit-kalman-filtering-and-conformal-prediction",
+    "href": "talks/qff_london/slides/qff_london.html#first-stage-estimating-true-demand-under-censorship-using-tobit-kalman-filtering-and-conformal-prediction",
+    "title": "Home",
+    "section": "First stage: estimating true demand under censorship using tobit kalman filtering and conformal prediction",
+    "text": "First stage: estimating true demand under censorship using tobit kalman filtering and conformal prediction"
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#experiment-setup",
+    "href": "talks/qff_london/slides/qff_london.html#experiment-setup",
+    "title": "Home",
+    "section": "Experiment setup",
+    "text": "Experiment setup"
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#synthetic-data-exploration---example",
+    "href": "talks/qff_london/slides/qff_london.html#synthetic-data-exploration---example",
+    "title": "Home",
+    "section": "Synthetic data exploration - example",
+    "text": "Synthetic data exploration - example\n\nActual vs. observed demand for one representative series per type × category, with disruptions and censoring shaded."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#overall-forecasting-and-inventory-performance-across-models",
+    "href": "talks/qff_london/slides/qff_london.html#overall-forecasting-and-inventory-performance-across-models",
+    "title": "Home",
+    "section": "Overall forecasting and inventory performance across models",
+    "text": "Overall forecasting and inventory performance across models\n\n\n\n\nMethod\nMASE (mean)\nPin Ball Loss - q95 (mean)\nCSL (mean)\nLost Sales Rate (mean)\nInventory Coverage (mean)\n\n\n\n\nTKF CP\n0.87\n47.61\n0.86\n0.14\n5.25\n\n\nMoving Average\n1.06\n72.65\n0.82\n0.18\n19.6\n\n\nLinear Regression\n1.08\n73.86\n0.82\n0.16\n2.55\n\n\nNaive\n1.21\n78.89\n0.84\n0.16\n123.38"
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#performance-evaluation---nemenyi-test",
+    "href": "talks/qff_london/slides/qff_london.html#performance-evaluation---nemenyi-test",
+    "title": "Home",
+    "section": "Performance evaluation - Nemenyi test",
+    "text": "Performance evaluation - Nemenyi test\n\n\nFigure 2: Average ranks of forecasting methods with 95% confidence intervals based on the Nemenyi test for all metrics. Lower ranks indicate better performance."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#performance-evaluation---forecasting",
+    "href": "talks/qff_london/slides/qff_london.html#performance-evaluation---forecasting",
+    "title": "Home",
+    "section": "Performance evaluation - forecasting",
+    "text": "Performance evaluation - forecasting\n\n\nFigure 3: Forecasting metrics for each series type for the different forecasting methods."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#performance-evaluation---inventory",
+    "href": "talks/qff_london/slides/qff_london.html#performance-evaluation---inventory",
+    "title": "Home",
+    "section": "Performance evaluation - inventory",
+    "text": "Performance evaluation - inventory\n\n\nFigure 4: Inentory metrics for each series type for the different forecasting methods."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#way-forward",
+    "href": "talks/qff_london/slides/qff_london.html#way-forward",
+    "title": "Home",
+    "section": "Way forward",
+    "text": "Way forward\n\n\n\n\nDevelop a quantile-based inventory policy → Incorporate uncertainty directly into order decisions\n\nExtend empirical model with external covariates → Account for special events, disruptions, and policy shifts\n\nConduct lab experiment with real demand planners → Measure how model recommendations affect decision-making\n\n\n\nImage generated using ChatGPT."
+  },
+  {
+    "objectID": "talks/qff_london/slides/qff_london.html#materials",
+    "href": "talks/qff_london/slides/qff_london.html#materials",
     "title": "Home",
     "section": "Materials",
     "text": "Materials\n\n\nYou can find the slides here."
