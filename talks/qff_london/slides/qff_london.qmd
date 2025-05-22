@@ -183,7 +183,7 @@ Image generated using ChatGPT.
 
 :::: {.columns}
 
-::: {.column style="flex: 0 0 47.5%;"}
+::: {.column style="flex: 0 0 45%;"}
 
 ### `Human story`: What data misses
 
@@ -204,7 +204,7 @@ This creates broken trust and leads to [UNMET DEMAND.]{.highlight-blue-big}
 
 :::
 
-::: {.column style="flex: 0 0 47.5%; ; margin-left;"}
+::: {.column style="flex: 0 0 45%; ; margin-left;"}
 
 ::: {.fragment fragment-index=0}
 

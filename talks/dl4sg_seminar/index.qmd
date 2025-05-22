@@ -1,6 +1,6 @@
 ---
 title: "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains"
-description: "Data ab for Social Good Seminar"
+description: "Data Lab for Social Good Seminar"
 author: "Harsha Halgamuwe Hewage"
 date: "2025-05-20"
 image: "cover.png"
