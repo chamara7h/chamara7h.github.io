@@ -204,10 +204,6 @@ This creates broken trust and leads to [UNMET DEMAND.]{.highlight-blue-big}
 
 :::
 
-::: {.column style="flex: 0 0 5%;"}
-
-:::
-
 ::: {.column style="flex: 0 0 47.5%; ; margin-left;"}
 
 ::: {.fragment fragment-index=0}
