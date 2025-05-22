@@ -87,7 +87,7 @@ execute:
 <br>
 
 
-# WHAT WAS LOST {background-image="images/cover.png" background-size="cover" background-color="#4f6952"}
+# WHAT WAS LOST {background-image="images/cover1.png" background-size="cover" background-color="#4f6952"}
 
 <h2>
 Tracing unmet demand in contraceptive supply chains
@@ -101,8 +101,8 @@ Tracing unmet demand in contraceptive supply chains
 </h4>
 
 <h5>
-Supervison team <br>
-Prof. Bahman Rostami-Tabar, Prof. Aris Syntetos, Dr. Federico Liberatore
+Lead Supervisor: Prof. Bahman Rostami-Tabar <br>
+Co Supervisors: Prof. Aris Syntetos & Dr. Federico Liberatore
 <h5>
 
 <br>
@@ -463,6 +463,12 @@ Image generated using ChatGPT.
 <img src="images/plan.png"
      alt="Story panel"
      style="max-width: 100%; height: auto; display: block;" />
+     
+## `First stage`: estimating true demand under censorship using tobit kalman filtering and conformal prediction
+
+<img src="images/tkf_cp_framework.png"
+     alt="Story panel"
+     style="max-width: 80%; height: auto; display: block;" />
 
 ## `First stage`: estimating true demand under censorship using tobit kalman filtering and conformal prediction
 
