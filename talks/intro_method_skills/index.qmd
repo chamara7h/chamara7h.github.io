@@ -1,6 +1,6 @@
 ---
 title: "Methodological Skills for Research"
-description: "Lecture"
+description: "Lecture - University of Moratuwa Sri Lanka"
 author: "Harsha Halgamuwe Hewage"
 date: "2025-04-11"
 image: "cover.png"
