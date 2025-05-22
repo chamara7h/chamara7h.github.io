@@ -655,7 +655,7 @@
     "href": "talks/qff_london/slides/qff_london.html#seen-the-unseen",
     "title": "Home",
     "section": "Seen the UNSEEN",
-    "text": "Seen the UNSEEN\n\n\nHuman story: What data misses\n\nNilu went to a pharmacy for Product A. It was not in stock and the system logs it as zero demand.\n\nWhen data is censored by stockouts or service interruptions… Forecasts fail… Not just by being wrong, but by being blind.\n\nThis creates broken trust and leads to UNMET DEMAND.\n\n\n\n\nAnalytical reality: Why this matters\n\nStockouts censor demand.\nObserved sales ≠ actual demand.\n\nInventory decisions based on this false signal?\nUnderstocking → more stockouts.\n\nForecasts don’t just underperform. They miss the whole story.\n\nContraceptives aren’t easily substitutable. A lost sale = a lost opportunity for care."
+    "text": "Seen the UNSEEN\n\n\nHuman story: What data misses\n\nNilu went to a pharmacy for Product A. It was not in stock and the system logs it as zero demand.\n\nWhen data is censored by stockouts or service interruptions… Forecasts fail… Not just by being wrong, but by being blind.\n\nThis creates broken trust and leads to UNMET DEMAND.\n\n\nAnalytical reality: Why this matters\n\nStockouts censor demand.\nObserved sales ≠ actual demand.\n\nInventory decisions based on this false signal?\nUnderstocking → more stockouts.\n\nForecasts don’t just underperform. They miss the whole story.\n\nContraceptives aren’t easily substitutable. A lost sale = a lost opportunity for care."
   },
   {
     "objectID": "talks/qff_london/slides/qff_london.html#contraceptive-products-arent-easily-substituted",
