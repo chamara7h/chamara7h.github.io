@@ -189,7 +189,9 @@ Image generated using ChatGPT.
 
 <br>
 
-`Nilu` went to a pharmacy for Product A. It was [not in stock]{.highlight-blue-big} and the system logs it as [zero demand.]{.highlight-blue-big}
+`Nilu` went to a pharmacy for Product A. 
+It was [not in stock]{.highlight-blue-big} and 
+the system logs it as [zero demand.]{.highlight-blue-big}
 
 <br>
 
