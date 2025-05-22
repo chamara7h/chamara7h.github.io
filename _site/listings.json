@@ -33,6 +33,7 @@
   {
     "listing": "/talks/index.html",
     "items": [
+      "/talks/qff_london/index.html",
       "/talks/dl4sg_seminar/index.html",
       "/talks/intro_method_skills/index.html"
     ]
@@ -62,9 +63,9 @@
   {
     "listing": "/lab/index.html",
     "items": [
-      "/lab/intro_python/index.html",
+      "/lab/dl4sg_marcov/index.html",
       "/lab/epss_training/index.html",
-      "/lab/dl4sg_marcov/index.html"
+      "/lab/intro_python/index.html"
     ]
   },
   {

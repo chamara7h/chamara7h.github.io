@@ -13,8 +13,8 @@ website:
         href: phd/index.qmd
       - text: CV
         href: cv/index.qmd
-      - text: Projects
-        href: projects/index.qmd
+      # - text: Projects
+      #   href: projects/index.qmd
       - text: Learning Lab
         href: lab/index.qmd
       - text: Talks

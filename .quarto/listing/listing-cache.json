@@ -28,7 +28,8 @@
       "projects.yml",
       "intro_method_skills/*.qmd",
       "dl4sg_semnar/*.qmd",
-      "dl4sg_seminar/*.qmd"
+      "dl4sg_seminar/*.qmd",
+      "qff_london/*.qmd"
     ],
     "phd\\index.qmd": [
       "projects.yml",

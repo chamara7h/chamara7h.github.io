@@ -164,5 +164,11 @@
   },
   "talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.qmd": {
     "dl4sg_seminar_wp2.html": "f74656b6"
+  },
+  "talks/qff_london/slides/qff_london.qmd": {
+    "qff_london.html": "04c20c5e"
+  },
+  "talks/qff_london/index.qmd": {
+    "index.html": "a7226f39"
   }
 }
