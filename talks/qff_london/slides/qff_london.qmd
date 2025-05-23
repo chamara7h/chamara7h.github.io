@@ -331,7 +331,7 @@ Sources: Bijvank et al., 2011; Karimi et al., 2021; Thanos et as., 2022 ; Traper
 
 - `Censored Demand`: Demand occurring during periods when products are unavailable (stockouts or interruptions), thus not fully observable.
 
-- `True Demand`: Actual demand that would have occurred if sufficient stock was available.
+- `True Demand`: Actual demand that would have occurred if sufficient stock was available or no interruptions happened.
 
 ## Censorship scenarios
 
