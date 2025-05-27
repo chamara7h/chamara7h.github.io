@@ -56,7 +56,7 @@ button {
 
 ## Context
 
-In this presentation for the [IIF UK Chapter: Quarterly Forecasting Forum](https://forecasters.org/programs/communities/united-kingdom-chapter/) seminar, we explore how traditional forecasting methods often fail to capture unmet demand in contraceptive supply chains—particularly when stockouts censor the data. Our work combines temporal kernel forecasting, conformal prediction, and inventory-aware simulation to estimate true demand beyond what the system records.
+In this presentation for the [IIF UK Chapter: Quarterly Forecasting Forum](https://forecasters.org/programs/communities/united-kingdom-chapter/) seminar, we explore how traditional forecasting methods often fail to capture unmet demand in contraceptive supply chains—particularly when stockouts censor the data. Our work combines tobit kalman filter, conformal prediction, and inventory-aware simulation to estimate true demand beyond what the system records.
 
 We show how "no demand" often just means "no stock," and how our approach can support smarter, more equitable inventory decisions. Our next steps include expanding the policy framework, incorporating external covariates, and testing the model in both lab and field settings with real demand planners.
 
