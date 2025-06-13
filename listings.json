@@ -31,6 +31,7 @@
   {
     "listing": "/talks/index.html",
     "items": [
+      "/talks/euro_leeds/index.html",
       "/talks/qff_london/index.html",
       "/talks/dl4sg_seminar/index.html",
       "/talks/intro_method_skills/index.html"
