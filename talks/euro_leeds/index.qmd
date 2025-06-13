@@ -1,0 +1,65 @@
+---
+title: "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains"
+description: "EURO 2025 Leeds, UK"
+author: "Harsha Halgamuwe Hewage"
+date: "2025-06-24"
+image: "cover.png"
+categories:
+  - Forecasting
+  - Inventory
+  - Loss Sales
+  - R
+  - Tobit Kalman Filter
+  - Conformal Prediction
+link-external-newwindow: true
+---
+
+![](cover.png){fig-align="center"}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+/* Custom button style */
+button {
+  background-color: transparent; /* No filling */
+  border: 2px solid rgb(55, 58, 60); /* Gray border */
+  color: rgb(55, 58, 60); /* Gray text */
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect for Journal article */
+#journal-article-btn:hover {
+  border-color: #0066b2; /* Blue border on hover */
+  color: #0066b2; /* Blue text on hover */
+}
+
+/* Hover effect for GitHub repo */
+#github-repo-btn:hover {
+  border-color: #00A86B; /* Green border on hover */
+  color: #00A86B; /* Green text on hover */
+}
+</style>
+
+<button id="journal-article-btn" 
+        onclick="window.open('slides/euro_leeds_25.html', '_blank')">
+  <i class="fas fa-bookmark"></i> Slides
+</button>
+
+<br>
+
+## Context
+
+At the **EURO 2025 conference** in Leeds, we present our work on reconstructing true demand in family planning supply chains—where stockouts routinely censor observed data and distort decision-making. Standard forecasting tools treat these absences as lack of demand, leading to understocking and reinforcing supply failure.
+
+We introduce a novel approach that integrates a Truncated Conformal Kalman Filter (TCKF) with simulation-based inventory evaluation. By correcting for both partial and full censorship and layering conformal prediction for distribution-free uncertainty, we recover latent demand more accurately and translate it into better ordering policies.
+
+Through synthetic experiments and real data application, we show how ignoring censored demand underestimates both need and risk. Our results point toward a scalable framework for inventory management in fragile public health systems—where demand isn’t lost, just buried under broken assumptions.
+
+Because “zero demand” doesn’t mean “zero need”—it often just means the shelves were empty.

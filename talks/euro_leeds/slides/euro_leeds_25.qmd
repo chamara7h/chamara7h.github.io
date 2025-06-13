@@ -1,0 +1,1007 @@
+---
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1920
+    height: 1080
+    logo: "images/logo.png"
+    footer: "[WHAT WAS LOST: tracing unmet demand in contraceptive supply chains](https://chamara7h.github.io/talks/)"
+    css: theme.css
+    theme: simple
+    echo: true
+execute:
+  warning: false
+  echo: false
+---   
+
+<div style="position: relative; width: 100%; height: 100%;">
+  <!-- Cardiff logo top-left -->
+  <img
+    src="images/cardiff_logo.png"
+    alt="Cardiff University"
+    style="
+      position: absolute;
+      top: 40px;
+      left: 0px;
+      width: 110px;
+      height: auto;
+    "
+  />
+
+  <!-- Data Lab logo a bit to the right -->
+  <img
+    src="images/logo_white.png"
+    alt="Data Lab for Social Good"
+    style="
+      position: absolute;
+      top: 40px;
+      left: 150px;
+      width: 225px;
+      height: auto;
+    "
+  />
+  
+  <img
+    src="images/ukri.png"
+    alt="ukri"
+    style="
+      position: absolute;
+      top: 40px;
+      left: 415px;
+      width: 350px;
+      height: auto;
+    "
+  />
+  
+  <img
+    src="images/wgss.png"
+    alt="wgsss"
+    style="
+      position: absolute;
+      top: 40px;
+      left: 805px;
+      width: 75px;
+      height: auto;
+    "
+  />
+  
+  <img
+    src="images/usaid.png"
+    alt="usaid"
+    style="
+      position: absolute;
+      top: 40px;
+      left: 930px;
+      width: 110px;
+      height: auto;
+    "
+  />
+  
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+# WHAT WAS LOST {background-image="images/cover1.png" background-size="cover" background-color="#4f6952"}
+
+<h2>
+Tracing unmet demand in contraceptive supply chains
+<h2>
+
+<br>
+
+<h4>
+  Harsha Halgamuwe Hewage <br>
+  Data Lab for Social Good Research Group, Cardiff University, UK 
+</h4>
+
+<h5>
+Lead Supervisor: Prof. Bahman Rostami-Tabar <br>
+Co Supervisors: Prof. Aris Syntetos & Dr. Federico Liberatore
+<h5>
+
+<br>
+
+2025-06-24
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+</div>
+
+```{r}
+#| echo: false
+
+library(knitr)
+options(knitr.graphics.auto_pdf = TRUE)
+```
+
+```{r}
+#| label: setup
+#| context: setup
+#| include: false
+
+# 1. list your CRAN packages
+required_packages <- c(
+  "tidyverse",
+  "knitr",
+  "kableExtra",
+  "ggthemes",
+  "patchwork",
+  "tsibble",
+  "feasts",
+  "viridis",
+  "showtext",
+  "ggdist",
+  'tsutils'
+)
+
+# 2. install any that are missing
+new_packages <- required_packages[!required_packages %in% installed.packages()[, "Package"]]
+if (length(new_packages)) {
+  install.packages(new_packages)
+}
+
+# 3. load them
+invisible(lapply(required_packages, library, character.only = TRUE))
+
+# 4. register and activate the Assistant font
+font_add_google("Assistant", "C:/Windows/Fonts/Assistant-Regular.ttf")
+showtext_auto()
+```
+
+## Outline
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/outline.png"
+     alt="Outline graphic"
+     style="max-width: 95%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+::: {.step data-step="01"}
+<div class="step-content">
+  <h3>What was never [COUNTED . . .]{.highlight-blue}</h3>
+</div>
+::: 
+
+::: {.step data-step="02"}
+<div class="step-content">
+  <h3>The fundamental question</h3>
+</div>
+:::
+
+::: {.step data-step="03"}
+<div class="step-content">
+  <h3>What we are going to do</h3>
+</div>
+:::
+
+::: {.step data-step="04"}
+<div class="step-content">
+  <h3>Numerical experiment</h3>
+</div>
+:::
+
+::: {.step data-step="05"}
+<div class="step-content">
+  <h3>What's [NEXT]{.highlight-blue}</h3>
+</div>
+:::
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+# WHAT WAS NEVER COUNTED... {background-color="#4D59AC"}
+
+## Seen the `UNSEEN`
+
+### `Human story`: What data misses
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 50%; display: flex; justify-content: flex-start;"}
+<img src="images/story_1.png"
+     alt="Outline graphic"
+     style="max-width: 100%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 50%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+[Nilu]{.highlight-blue-big} went to a pharmacy for Product A. 
+
+It was [not in stock]{.highlight-blue-big} and 
+the system logs it as 
+
+[zero demand.]{.highlight-blue-big}
+
+<br>
+
+This creates broken trust and leads to create
+
+[UNMET DEMAND.]{.highlight-blue-big}
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+## Seen the `UNSEEN`
+
+### `Analytical reality`: Why this matters
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 50%; display: flex; justify-content: flex-start;"}
+<img src="images/story_1a.png"
+     alt="Outline graphic"
+     style="max-width: 100%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 50%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+Stockouts [censor demand.]{.highlight-blue-big}  
+Observed sales ≠ actual demand.
+
+<br>
+
+Inventory decisions based on this [false signal?]{.highlight-blue-big}  
+Understocking → more stockouts.
+
+<br>
+
+Forecasts don't just underperform.
+They miss the whole story.
+
+<br>
+
+A lost sale = [a lost opportunity for care.]{.highlight-blue-big}
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+## Contraceptive products aren't easily `SUBSTITUTED`
+
+<br>
+
+<img src="images/types.png"
+     alt="Story panel"
+     style="max-width: 80%; height: auto; display: block;" />
+
+::: aside
+*Percent of women who will get pregnant within the first year of typical use.
+:::
+
+## The `BIG PICTURE`
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 50%; display: flex; justify-content: left;"}
+<img src="images/story_4.png"
+     alt="Story panel"
+     style="max-width: 100%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 50%; display: flex; flex-direction: column; justify-content: left; text-align: left;"}
+In reality...
+
+There are more than 
+
+[218 million women]{.highlight-blue-big}
+
+like  Nilu still have an unmet need for family planning.
+
+Ultimately, this results in dropouts, unwanted pregnancies, and almost `7 million hospitalizations` each year in developing countries.
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+
+Sources: USAID, 2020; PATH, 2019; Mukasa et al., 2017; Gilda et al., 2016 
+:::
+
+## Why this is `critical`
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: left;"}
+<img src="images/background.png"
+     alt="Story panel"
+     style="max-width: 100%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: left; text-align: left;"}
+
+::: {.fragment fragment-index=0}
+- Frequent stockouts are common in family planning supply chains, especially in developing countries, significantly impacting public health outcomes.
+:::
+
+::: {.fragment fragment-index=1}
+- During my recent field visit to Ethiopia, stockouts were repeatedly identified by demand planners as a major barrier to effective contraceptive supply management.
+:::
+
+::: {.fragment fragment-index=2}
+- Traditional forecasting methods fail under censorship.
+:::
+
+::: {.fragment fragment-index=3}
+- Prior research inadequately addresses demand estimation under conditions of frequent stockouts and interruptions, often leading to biased forecasts and suboptimal inventory decisions.
+:::
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+
+Sources: Bijvank et al., 2011; Karimi et al., 2021; Thanos et al., 2022 ; Trapero et al., 2024
+:::
+
+# THE FUNDEMENTAL QUESTION {background-color="#4D59AC"}
+
+## Key definitions
+
+<br>
+
+- `Stockouts`: Periods when demand is higher than available inventory, leading to censored observations of demand.
+
+- `Interruptions`: Periods when no products are issued despite available stock, thus artificially recorded as zero demand.
+
+- `Censored Demand`: Demand occurring during periods when products are unavailable (stockouts or interruptions), thus not fully observable.
+
+- `True Demand`: Actual demand that would have occurred if sufficient stock was available.
+
+## Censorship scenarios
+
+How can a demand forecasting and inventory optimization model that incorporates lost sales estimation and contextual field data enhance contraceptive supply chain performance and reduce stockouts in developing countries?
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-plot
+#| fig-width: 14
+#| fig-height: 5
+#| fig-cap: "Censorship scenarios in family planning supply chains."
+
+synthetic_tsibble <- read_rds('data/tidy_data/synthetic_data.rds')
+
+# pick one series per
+
+selected <- synthetic_tsibble |>
+  filter(store == 'S51', product == 'P8')
+
+# grab the full time‐slice for those series
+
+plot_df <- synthetic_tsibble |>
+  semi_join(selected, by = c("series_category","series_type","store","product")) |> 
+  mutate(series_type     = str_to_sentence(series_type),
+         series_category = str_to_sentence(series_category)) |> 
+  group_by(series_category, series_type, store, product) |>
+  arrange(date) |>
+  mutate(period = row_number()) |>
+  ungroup()
+
+
+# build shading rectangles for each contiguous run of censorship
+
+shade_df <- plot_df |>
+  as_tibble() |> 
+  arrange(series_category, series_type, store, product, period) |>
+  group_by(series_category, series_type, store, product) |>
+  mutate(
+    run_id = cumsum(
+      c(TRUE, censorship_type[-1] != censorship_type[-n()])  
+    )
+  ) |>
+  group_by(series_category, series_type, store, product, run_id, censorship_type) |>
+  summarize(start = min(period), end = max(period), .groups = "drop") |>
+  filter(censorship_type != "none")
+
+# plot
+
+ggplot() +
+  geom_rect(
+    data = shade_df,
+    aes(xmin = start, xmax = end, ymin = -Inf, ymax = Inf, fill = censorship_type), 
+    inherit.aes = FALSE, alpha = 0.25) +
+  
+  geom_rect(data = shade_df |> 
+              filter(start == end),
+            aes(xmin = start, xmax = end, ymin = -Inf, ymax = Inf, colour = censorship_type),
+            inherit.aes = FALSE, fill = NA,
+            size = 0.5, alpha = 0.05, show.legend = FALSE) +
+  
+  geom_line(data = plot_df,
+            aes(x = period, y = actual_demand, colour = "Actual", linetype = "Actual"),
+            size = 0.7) +
+  
+  geom_line(data = plot_df,
+            aes(x = period, y = observed_demand, colour = "Observed", linetype = "Observed"),
+            size = 0.7) +
+  
+  scale_fill_manual(name = "Censorship type", values = c(censored = "#E69F00", disruption = "#0072B2"),
+                    labels = c(censored   = "Stockout", disruption = "Interruption")) +
+  
+  scale_colour_manual(name   = "Demand", values = c(Actual = "black", Observed = "red")) +
+  
+  scale_linetype_manual(name = "Demand",values = c(Actual = "solid", Observed = "dashed")) +
+  
+  labs(x = "Period", y = "Demand") +
+  theme_few(base_family = "Assistant", base_size = 22) +
+  theme(
+    strip.text         = element_text(face = "bold"),
+    panel.grid.minor   = element_blank(),
+    panel.border       = element_rect(colour = "lightgrey", fill = NA),
+    panel.spacing      = unit(0.5, "lines")
+  )
+
+
+```
+
+# WHAT WE ARE GOING TO DO {background-color="#4D59AC"}
+
+## How we can fill the gaps
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: left;"}
+<img src="images/rqs.png"
+     alt="Story panel"
+     style="max-width: 100%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: left; text-align: left;"}
+
+::: {.fragment fragment-index=0}
+::: {.fragment fragment-index=0}
+- <span style="color:#0072B2;"><strong>RQ1:</strong></span> How accurately can a Tobit Kalman Filter with conformal prediction estimate true demand under censorship?
+:::
+:::
+
+::: {.fragment fragment-index=1}
+- <span style="color:#E69F00;"><strong>RQ2:</strong></span> How does demand reconstruction improve inventory performance compared to baseline planning methods?
+:::
+
+::: {.fragment fragment-index=2}
+- <span style="color:#009E73;"><strong>RQ3:</strong></span> How do planners adjust their orders in response to proposed model-generated recommendations?
+:::
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+## Our proposed framework
+
+<br>
+
+![](images/plan.svg){fig-align="center"}
+
+## `First stage`: Truncated Conformal Kalman Filter (TCKF)
+
+![](images/tckf_flow.svg){fig-align="center"}
+     
+## `First stage`: Truncated Conformal Kalman Filter (TCKF)
+
+::: {.algorithm}
+1. **State-Space Formulation**
+
+$$
+X_t = F X_{t-1} + \eta_t, \quad \eta_t \sim \mathcal{N}(0, Q_t)
+$$
+
+* $X_t = [\ell_t, \tau_t, \gamma_t]^T$: level, trend, seasonality
+* $F$: state transition matrix with seasonal decay and trend
+
+2. **Observation Equation with Censorship**
+
+$$
+y_t =
+\begin{cases}
+H X_t + \nu_t & \text{if uncensored} \\
+0 & \text{if fully censored} \\
+\min(H X_t, s_t) & \text{if partially censored}
+\end{cases}
+$$
+
+* $H = [1, 0, 1]$: maps level and seasonality to observation
+* $s_t$: stock available at time $t$
+
+:::
+
+## `First stage`: Truncated Conformal Kalman Filter (TCKF)
+
+::: {.algorithm}
+3. **Kalman Prediction Step**
+
+$$
+\mu_t = H \hat{X}_{t|t-1}, \quad \sigma_t^2 = H P_{t|t-1} H^T + R
+$$
+
+4. **Censored Observation Update**
+
+$$
+\hat{y}_t = \mu_t + \sigma_t \cdot \frac{\phi(z_t)}{1 - \Phi(z_t)}, \quad z_t = \frac{y_t - \mu_t}{\sigma_t}
+$$
+
+$$
+\hat{X}_{t|t} = \hat{X}_{t|t-1} + K_t (\hat{y}_t - \mu_t)
+$$
+
+* Uses expectation of truncated Gaussian
+* For fully censored ($y_t = 0$), skip state update; propagate uncertainty
+:::
+
+## `First stage`: Truncated Conformal Kalman Filter (TCKF)
+
+::: {.algorithm}
+
+5. **Conformal Prediction for Interval Estimation**
+
+$$
+D_t \in [\max(0, \mu_t - q_\alpha), \mu_t + q_\alpha]
+$$
+
+* Residuals from uncensored periods used to calibrate $q_\alpha$
+* Ensures valid coverage without assuming normality
+
+<br>
+
+**Note on Initialization:**
+Initial state vector $X_0 = [\ell_0, \tau_0, \gamma_0]^T$ is extracted via STL decomposition from uncensored periods:
+
+* $\ell_0$: last STL trend
+* $\tau_0$: average slope of recent trend
+* $\gamma_0$: seasonal component or zero if undefined
+* $P_0$: diagonal matrix estimated from STL component variances
+
+:::
+
+# NUMERICAL EXPERIMENT {background-color="#4D59AC"}
+
+## Experiment setup
+
+<br>
+
+![](images/num_experiment.png)
+
+## Synthetic data exploration - `example`
+
+```{r}
+#| echo: false
+#| cache: false
+#| fig-width: 20
+#| fig-height: 10
+#| fig-cap: "Actual vs. observed demand for one representative series per type, with disruptions and censoring shaded."
+
+# grab the full time‐slice for those series
+
+plot_df <- synthetic_tsibble |>
+  mutate(series_type     = str_to_sentence(series_type)) |> 
+  group_by(series_type, store, product) |>
+  arrange(date) |>
+  mutate(period = row_number()) |>
+  ungroup()
+
+# build shading rectangles for each contiguous run of censorship
+
+shade_df <- plot_df |>
+  as_tibble() |> 
+  arrange(series_category, series_type, store, product, period) |>
+  group_by(series_category, series_type, store, product) |>
+  mutate(
+    run_id = cumsum(
+      c(TRUE, censorship_type[-1] != censorship_type[-n()])  
+    )
+  ) |>
+  group_by(series_type, store, product, run_id, censorship_type) |>
+  summarize(start = min(period), end = max(period), .groups = "drop") |>
+  filter(censorship_type != "none")
+
+# plot
+
+ggplot() +
+  geom_rect(
+    data = shade_df,
+    aes(xmin = start, xmax = end, ymin = -Inf, ymax = Inf, fill = censorship_type), 
+    inherit.aes = FALSE, alpha = 0.25) +
+  
+  geom_rect(data = shade_df |> 
+              filter(start == end),
+            aes(xmin = start, xmax = end, ymin = -Inf, ymax = Inf, colour = censorship_type),
+            inherit.aes = FALSE, fill = NA,
+            size = 0.5, alpha = 0.05, show.legend = FALSE) +
+  
+  geom_line(data = plot_df,
+            aes(x = period, y = actual_demand, colour = "Actual", linetype = "Actual"),
+            size = 0.5) +
+  
+  geom_line(data = plot_df,
+            aes(x = period, y = observed_demand, colour = "Observed", linetype = "Observed"),
+            size = 0.5) +
+  
+  facet_wrap(~series_type, scales = "free_y", ncol = 1) +
+  
+  scale_fill_manual(name = "Censorship type", values = c(censored   = "#E69F00", disruption = "#0072B2"),
+                    labels = c(censored   = "Censored", disruption = "Disruption")) +
+  
+  scale_colour_manual(name   = "Demand", values = c(Actual = "black", Observed = "red")) +
+  
+  scale_linetype_manual(name = "Demand",values = c(Actual = "solid", Observed = "dashed")) +
+  
+  labs(x = "Period", y = "Demand") +
+  theme_few(base_family = "Assistant", base_size = 36) +
+  theme(
+    strip.text         = element_text(face = "bold"),
+    panel.grid.minor   = element_blank(),
+    panel.border       = element_rect(colour = "lightgrey", fill = NA),
+    panel.spacing      = unit(0.5, "lines")
+  )
+
+```
+
+# WHAT DID WE FIND {background-color="#4D59AC"}
+
+## Overall forecasting and inventory performance across models
+
+<br>
+`Policy 1:` order-up-to level (deterministic target)
+
+<br>
+ 
+```{r}
+#| echo: false
+#| results: asis
+
+inv_meas  <- read_rds('data/results/numerical_experiment_sim.rds')
+inv_meas_quant <- read_rds('data/results/numerical_experiment_quant_sim.rds')
+
+point_acc <- read_rds('data/results/num_ex_point_acc.rds')
+pinball_acc <- read_rds('data/results/num_ex_pinball.rds') |> 
+  pivot_longer(cols = !c(store, product, model),
+               names_to = 'target_csl',
+               values_to = 'pinball_score') |> 
+  mutate(target_csl = as.double(str_extract(target_csl, "\\d+"))/100)
+
+num_ex_metrics <- point_acc |>
+  left_join(inv_meas,  by = c('series_category','series_type','store','product','model'))
+
+num_ex_quant <- inv_meas_quant |> 
+  left_join(pinball_acc, by = c('store','product','model', 'target_csl'))
+
+
+# 1) Build & round the summary table
+df <- num_ex_metrics |>
+  filter(!model %in% c("tkf_cp","snaive")) |>
+  group_by(model) |>
+  summarise(
+    across(where(is.numeric), ~ mean(.x, na.rm = TRUE), .names = "{.col}_mean"),
+    .groups = "drop"
+  ) |>
+  mutate(model = case_when(
+    model == "lr"             ~ "Linear Regression",
+    model == "moving_average" ~ "Moving Average",
+    model == "naive"          ~ "Naive",
+    model == "tckf"      ~ "TCKF"
+  )) |>
+  arrange(mase_mean) |>
+  select(
+    model,
+    mase_mean,
+    CSL_mean,
+    lost_sales_rate_mean,
+    avg_inventory_eff_mean,
+    mcpr_loss_mean
+  ) |>
+  mutate(across(ends_with("_mean"), ~ round(.x, 2))) |>
+  mutate(across(everything(), as.character)) |>
+  add_row(
+    model                         = "",
+    mase_mean                     = "",
+    CSL_mean                      = "",
+    lost_sales_rate_mean          = "",
+    avg_inventory_eff_mean = "",
+    mcpr_loss_mean = ''
+  ) |>
+  rename(
+    Method                        = model,
+    `MASE (mean)`                 = mase_mean,
+    `CSL (mean)`                  = CSL_mean,
+    `Lost Sales Rate (mean)`      = lost_sales_rate_mean,
+    `Inventory Efficiency (mean)`   = avg_inventory_eff_mean,
+    `mCPR Loss (mean)` = mcpr_loss_mean
+  )
+
+# 2) Compute the “best” thresholds (ignore blank row)
+mase_best <- min(as.numeric(df$`MASE (mean)`),                    na.rm = TRUE)
+pbl_best  <- min(as.numeric(df$`Pin Ball Loss - q95 (mean)`),    na.rm = TRUE)
+csl_best  <- max(as.numeric(df$`CSL (mean)`),                    na.rm = TRUE)
+lsr_best  <- min(as.numeric(df$`Lost Sales Rate (mean)`),        na.rm = TRUE)
+icov_best <- max(as.numeric(df$`Inventory Efficiency (mean)`),     na.rm = TRUE)
+mcpr_best <- min(as.numeric(df$`mCPR Loss (mean)`),     na.rm = TRUE)
+
+# 3) Bold & colour **only** the best cell in each column
+df_fmt <- df |>
+  mutate(
+    `MASE (mean)` = cell_spec(
+      `MASE (mean)`,
+      bold   = as.numeric(`MASE (mean)`) == mase_best,
+      color  = if_else(
+        as.numeric(`MASE (mean)`) == mase_best,
+        "#4D59AC",    # best → brand blue
+        "black",      # others → black
+        missing = "black"
+      ),
+      escape = FALSE
+    ),
+    `CSL (mean)` = cell_spec(
+      `CSL (mean)`,
+      bold   = as.numeric(`CSL (mean)`) == csl_best,
+      color  = if_else(
+        as.numeric(`CSL (mean)`) == csl_best,
+        "#4D59AC",
+        "black",
+        missing = "black"
+      ),
+      escape = FALSE
+    ),
+    `Lost Sales Rate (mean)` = cell_spec(
+      `Lost Sales Rate (mean)`,
+      bold   = as.numeric(`Lost Sales Rate (mean)`) == lsr_best,
+      color  = if_else(
+        as.numeric(`Lost Sales Rate (mean)`) == lsr_best,
+        "#4D59AC",
+        "black",
+        missing = "black"
+      ),
+      escape = FALSE
+    ),
+    `Inventory Efficiency (mean)` = cell_spec(
+      `Inventory Efficiency (mean)`,
+      bold   = as.numeric(`Inventory Efficiency (mean)`) == icov_best,
+      color  = if_else(
+        as.numeric(`Inventory Efficiency (mean)`) == icov_best,
+        "#DC5555",
+        "black",
+        missing = "black"
+      ),
+      escape = FALSE
+    ),
+    `mCPR Loss (mean)` = cell_spec(
+      `mCPR Loss (mean)`,
+      bold   = as.numeric(`mCPR Loss (mean)`) == mcpr_best,
+      color  = if_else(
+        as.numeric(`mCPR Loss (mean)`) == mcpr_best,
+        "#4D59AC",
+        "black",
+        missing = "black"
+      ),
+      escape = FALSE
+    ),
+  )
+
+# 4) Emit the HTML table with your custom class
+df_fmt |>
+  kbl(
+    format     = "html",
+    escape     = FALSE,
+    table.attr = 'class="table-custom"',
+    align      = "lrrrrr"
+  ) |>
+  kable_styling(full_width = FALSE, font_size = 40)
+
+```
+
+## Overall forecasting and inventory performance across models
+
+
+```{r}
+#| echo: false
+
+pal <- c(
+  'Linear Regression' = "black",
+  'Moving Average'              = "#E69F00",
+  'Naive'             = "#D55E00",
+  'TCKF'            = "#0072B2"
+)
+
+num_ex_quant |> 
+  filter(!model %in% c("tkf_cp","snaive")) |>
+  filter(leadtime_type == '1 month') |> 
+  group_by(model, target_csl) |>
+  summarise(
+    across(where(is.numeric), ~ mean(.x, na.rm = TRUE), .names = "{.col}_mean"),
+    .groups = "drop"
+  ) |>
+  mutate(model = case_when(
+    model == "lr"             ~ "Linear Regression",
+    model == "moving_average" ~ "Moving Average",
+    model == "naive"          ~ "Naive",
+    model == "tckf"      ~ "TCKF"
+  )) |> 
+  select(
+    model,
+    target_csl,
+    CSL_mean,
+    lost_sales_rate_mean,
+    avg_inventory_eff_mean,
+    pinball_score_mean
+  ) |> 
+  pivot_longer(cols = c(CSL_mean, lost_sales_rate_mean, avg_inventory_eff_mean, pinball_score_mean),
+               names_to = 'measure', values_to = 'value') |> 
+  mutate(
+    measure = factor(
+      measure,
+      levels = c("CSL_mean", "lost_sales_rate_mean", "avg_inventory_eff_mean", "pinball_score_mean"),
+      labels = c(
+        "Achieved CSL",
+        "Lost Sales Rate",
+        "Inventory Efficiency",
+        "Pinball Loss"
+      )
+    )
+  ) |> 
+  ggplot(aes(x = target_csl, y = value, group = model, colour = model, shape = model)) + 
+  geom_line(linewidth = 0.7) +
+  geom_point() +
+  facet_wrap(~measure, ncol = 2,  scales = "free_y") +
+  scale_colour_manual(name = "Model", values = pal) +
+  scale_shape_manual(name = 'Model', values = c(16, 17, 15, 18)) +
+  labs(x = "Target CSL", y = 'Value', title = 'Policy 2: quantile-based order-up-to level (uncertainty-aware target) - 1 month leadtime') +
+  theme_few(base_family = "Assistant", base_size = 18) +
+  theme(
+    legend.position = 'bottom',
+    strip.text = element_text(face = "bold"),
+    panel.grid.minor = element_blank(),
+    panel.border = element_rect(colour = "lightgrey", fill = NA),
+    panel.spacing = unit(0.5, "lines")
+  )
+  
+
+```
+
+## Public healthcare indicators across models
+
+
+```{r}
+#| echo: false
+
+pal <- c(
+  'Linear Regression' = "black",
+  'Moving Average'              = "#E69F00",
+  'Naive'             = "#D55E00",
+  'TCKF'            = "#0072B2"
+)
+
+num_ex_quant |> 
+  filter(!model %in% c("tkf_cp","snaive")) |>
+  filter(leadtime_type == '1 month') |> 
+  group_by(model, target_csl) |>
+  summarise(
+    across(where(is.numeric), ~ mean(.x, na.rm = TRUE), .names = "{.col}_mean"),
+    .groups = "drop"
+  ) |>
+  mutate(model = case_when(
+    model == "lr"             ~ "Linear Regression",
+    model == "moving_average" ~ "Moving Average",
+    model == "naive"          ~ "Naive",
+    model == "tckf"      ~ "TCKF"
+  )) |> 
+  select(
+    model,
+    target_csl,
+    mcpr_loss_mean,
+    users_lost_mean,
+    maternal_deaths_mean,
+    infant_deaths_mean,
+    abortions_mean,
+    unintended_pregnancies_mean
+  ) |> 
+  pivot_longer(cols = c(mcpr_loss_mean, users_lost_mean, maternal_deaths_mean, infant_deaths_mean, abortions_mean, unintended_pregnancies_mean),
+               names_to = 'measure', values_to = 'value') |> 
+  mutate(
+    measure = factor(
+      measure,
+      levels = c("mcpr_loss_mean", "users_lost_mean", "maternal_deaths_mean", "infant_deaths_mean", 'abortions_mean', 'unintended_pregnancies_mean'),
+      labels = c(
+        "mCPR Loss",
+        "Useres Lost",
+        "Maternal Deaths",
+        "Infant Deaths",
+        'Abortions',
+        'Unintended Pregnancies'
+      )
+    )
+  ) |> 
+  ggplot(aes(x = target_csl, y = value, group = model, colour = model, shape = model)) + 
+  geom_line(linewidth = 0.7) +
+  geom_point() +
+  facet_wrap(~measure, ncol = 3,  scales = "free_y") +
+  scale_colour_manual(name = "Model", values = pal) +
+  scale_shape_manual(name = 'Model', values = c(16, 17, 15, 18)) +
+  labs(x = "Target CSL", y = NULL, title = 'Policy 2: quantile-based order-up-to level (uncertainty-aware target) - 1 month leadtime',
+       subtitle = 'Assuming WRA = 100,000') +
+  theme_few(base_family = "Assistant", base_size = 18) +
+  theme(
+    legend.position = 'bottom',
+    strip.text = element_text(face = "bold"),
+    panel.grid.minor = element_blank(),
+    panel.border = element_rect(colour = "lightgrey", fill = NA),
+    panel.spacing = unit(0.5, "lines")
+  )
+
+```
+
+# WHATS NEXT {background-color="#4D59AC"}
+
+## Way forward
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: left;"}
+<img src="images/story_5.png"
+     alt="Story panel"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: left; text-align: left;"}
+Add more benchmarking methods
+→ `e.g., Censored ETS,...`
+
+<br>
+
+Extend empirical model with external covariates
+→ `Account for special events, disruptions, and policy shifts`
+
+<br>
+
+Conduct a lab experiment with real demand planners
+→ `Measure how model recommendations affect decision-making`
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+# Any questions or thoughts? 💬
+
+![](images/follow_us.png){fig-align="center"}
