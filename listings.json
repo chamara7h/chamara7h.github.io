@@ -1,25 +1,16 @@
 [
   {
-    "listing": "/talks/index.html",
-    "items": [
-      "/talks/qff_london/index.html",
-      "/talks/dl4sg_seminar/index.html",
-      "/talks/intro_method_skills/index.html"
-    ]
-  },
-  {
-    "listing": "/projects/publications/index.html",
-    "items": [
-      "/projects/publications/second-post/index.html",
-      "/projects/publications/first-post/index.html"
-    ]
-  },
-  {
     "listing": "/projects/index.html",
     "items": [
       "/projects/design/index.html",
       "/projects/projects/index.html",
       "/projects/publications/index.html"
+    ]
+  },
+  {
+    "listing": "/lab/intro_python/index.html",
+    "items": [
+      "/lab/intro_python/materials/index.html"
     ]
   },
   {
@@ -31,9 +22,18 @@
     ]
   },
   {
-    "listing": "/lab/intro_python/index.html",
+    "listing": "/projects/publications/index.html",
     "items": [
-      "/lab/intro_python/materials/index.html"
+      "/projects/publications/second-post/index.html",
+      "/projects/publications/first-post/index.html"
+    ]
+  },
+  {
+    "listing": "/talks/index.html",
+    "items": [
+      "/talks/qff_london/index.html",
+      "/talks/dl4sg_seminar/index.html",
+      "/talks/intro_method_skills/index.html"
     ]
   }
 ]

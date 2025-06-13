@@ -1,0 +1,208 @@
+.reveal .slides > section > section { 
+  text-align:left; 
+}
+
+.table-custom {
+  /* size to content and hug the left edge */
+  width: auto;
+  margin-left: 0;
+  margin-right: auto;
+
+  /* collapse borders so separators are single lines */
+  border-collapse: collapse;
+}
+
+.table-custom th {
+  background-color: #4D59AC; /* blue header */
+  color: #ffffff;            /* white header text */
+  text-align: left;          /* align header text */
+  padding: 0.5rem;           /* spacing */
+}
+
+.table-custom td {
+  border-bottom: 1px solid #ffffff; /* thin white separator */
+  padding: 0.5rem;                   /* spacing */
+}
+
+.table-custom {
+  margin: 0 auto 0 0;          /* top/right/bottom/left */
+  align-self: flex-start;      /* override parent’s stretch */
+}
+
+/* 1. reset the native bullets and spacing */
+ul.custom-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. give each <li> room on the left for our custom bullet */
+ul.custom-bullets li {
+  position: relative;
+  padding-left: 1.75rem;    /* bullet size + a little gap */
+  margin-bottom: 0.75rem;   /* vertical spacing between items */
+}
+
+/* 3. inject a big blue circle before each item */
+ul.custom-bullets li::before {
+  content: "\25CF";          /* Unicode “black circle” */
+  position: absolute;
+  left: 0;
+  top: 0.25rem;              /* vertically center against the text */
+  font-size: 1.25rem;        /* adjust to taste */
+  line-height: 1;
+  color: #4D59AC;            /* your brand-blue color */
+}
+
+
+/* ————————————————————————————————————————
+   Base font-size for body text = 10 pt
+   ———————————————————————————————————————— */
+body {
+  font-size: 10pt !important;
+  line-height: 1;       /* optional: adjust for readability */
+}
+
+/* ————————————————————————————————————————
+   Caption font-size = 8 pt
+   (for both <table> and <figure> captions)
+   ———————————————————————————————————————— */
+caption,
+figcaption {
+  font-size: 8pt !important;
+}
+
+
+/* 1) Flex‐row container, vertical center */
+.columns {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* 2) Left column = 20% width, image = 80vh tall */
+.column-left {
+  flex: 0 0 20%;
+}
+.column-left img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+
+/* 3) Right column = remaining space, with a gutter */
+.column-right {
+  flex: 1;
+  padding-left: 2rem;
+}
+
+.highlight-blue-big {
+  color: #4D59AC;
+  font-weight: bold;
+  font-size: 1.5em;    /* tweak this as needed */
+}
+
+.highlight-blue {
+  color: #4D59AC;
+  font-weight: bold;
+  font-size: 1em;    /* tweak this as needed */
+}
+
+
+/* create a wrapper that reserves 33.33% of slide height */
+.reveal .slides section .image-overlay {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  margin-bottom: 1em;
+}
+.reveal .slides section .image-overlay img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.reveal .slides section .image-overlay .overlay-text {
+  position: absolute;
+  top: 50%;                 /* vertical centering */
+  left: 1rem;               /* inset from left edge */
+  transform: translateY(-50%); /* only vertical shift */
+  color: white;
+  font-size: 1em;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+  text-align: left;         /* left-align the text */
+  max-width: 90%; 
+}
+
+/* styles.css */
+
+.step {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.step::before {
+  content: attr(data-step);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-right: 1.5rem;
+  color: #333;
+  flex: 0 0 auto;
+}
+
+.step .step-content {
+  flex: 1;
+  background-color: #f7f7f7;
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.step .step-content h3 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  color: #222;
+  margin-right: 1rem;
+}
+
+.step .step-content p {
+  margin: 0;
+  font-size: 1 rem;
+  color: #555;
+}
+
+/* styles.css */
+.algorithm {
+  background: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1em 0;
+  font-family: Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.9em;
+  position: relative;
+}
+.algorithm::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: #4D59AC;  /* teal accent on left */
+  border-radius: 4px 0 0 4px;
+}
+.algorithm ol {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.algorithm ol ol {
+  list-style-type: lower-alpha;
+  margin-left: 0.8em;
+}
+
+
+
