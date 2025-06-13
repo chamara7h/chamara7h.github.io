@@ -4,6 +4,7 @@ listing:
     - "intro_method_skills/*.qmd"
     - "dl4sg_seminar/*.qmd"
     - "qff_london/*.qmd"
+    - "euro_leeds/*.qmd"
   type: default
   sort: date desc
   filter-ui: true
