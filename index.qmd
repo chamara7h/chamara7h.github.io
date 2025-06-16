@@ -20,7 +20,7 @@ about:
       href: https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en
 ---
 
-  I am a second-year PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the [Data Lab for Social Good](https://www.cardiff.ac.uk/research/explore/research-units/data-lab-for-social-good).
+  I am a PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the [Data Lab for Social Good](https://www.cardiff.ac.uk/research/explore/research-units/data-lab-for-social-good).
 
   I have also led the research network at [Forecasting for Social Good (F4SG)](https://forecasters.org/programs/communities/forecasting-for-social-good-f4sg/), an official section of the International Institute of Forecasters. As part of this role, I managed the [Learning Labs workshop series](https://github.com/chamara7h/F4SG), providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives.
 

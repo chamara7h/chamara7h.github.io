@@ -828,6 +828,8 @@ df_fmt |>
 
 ## Overall forecasting and inventory performance across models
 
+<br>
+`Policy 2`: quantile-based order-up-to level (uncertainty-aware target) - 1 month leadtime
 
 ```{r}
 #| echo: false
@@ -876,12 +878,12 @@ num_ex_quant |>
     )
   ) |> 
   ggplot(aes(x = target_csl, y = value, group = model, colour = model, shape = model)) + 
-  geom_line(linewidth = 0.7) +
-  geom_point() +
+  geom_line(linewidth = 0.75) +
+  geom_point(size = 2) +
   facet_wrap(~measure, ncol = 2,  scales = "free_y") +
   scale_colour_manual(name = "Model", values = pal) +
   scale_shape_manual(name = 'Model', values = c(16, 17, 15, 18)) +
-  labs(x = "Target CSL", y = 'Value', title = 'Policy 2: quantile-based order-up-to level (uncertainty-aware target) - 1 month leadtime') +
+  labs(x = "Target CSL", y = 'Value') +
   theme_few(base_family = "Assistant", base_size = 18) +
   theme(
     legend.position = 'bottom',
@@ -896,6 +898,8 @@ num_ex_quant |>
 
 ## Public healthcare indicators across models
 
+<br>
+`Policy 2`: quantile-based order-up-to level (uncertainty-aware target) - 1 month leadtime
 
 ```{r}
 #| echo: false
@@ -948,12 +952,12 @@ num_ex_quant |>
     )
   ) |> 
   ggplot(aes(x = target_csl, y = value, group = model, colour = model, shape = model)) + 
-  geom_line(linewidth = 0.7) +
-  geom_point() +
+  geom_line(linewidth = 0.75) +
+  geom_point(size = 2) +
   facet_wrap(~measure, ncol = 3,  scales = "free_y") +
   scale_colour_manual(name = "Model", values = pal) +
   scale_shape_manual(name = 'Model', values = c(16, 17, 15, 18)) +
-  labs(x = "Target CSL", y = NULL, title = 'Policy 2: quantile-based order-up-to level (uncertainty-aware target) - 1 month leadtime',
+  labs(x = "Target CSL", y = 'Value',
        subtitle = 'Assuming WRA = 100,000') +
   theme_few(base_family = "Assistant", base_size = 18) +
   theme(
