@@ -351,7 +351,7 @@ Understocking → more stockouts.</p>
 <li><p><code>Stockouts</code>: Periods when demand is higher than available inventory, leading to censored observations of demand.</p></li>
 <li><p><code>Interruptions</code>: Periods when no products are issued despite available stock, thus artificially recorded as zero demand.</p></li>
 <li><p><code>Censored Demand</code>: Demand occurring during periods when products are unavailable (stockouts or interruptions), thus not fully observable.</p></li>
-<li><p><code>True Demand</code>: Actual demand that would have occurred if sufficient stock was available.</p></li>
+<li><p><code>True Demand</code>: Actual demand that would have occurred if sufficient stock was available or if there were no interruptions.</p></li>
 </ul>
 </section>
 <section id="censorship-scenarios" class="slide level2">
@@ -402,10 +402,6 @@ Figure&nbsp;1: Censorship scenarios in family planning supply chains.
 <img data-src="images/plan.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="first-stage-truncated-conformal-kalman-filter-tckf" class="slide level2">
 <h2><code>First stage</code>: Truncated Conformal Kalman Filter (TCKF)</h2>
-
-<img data-src="images/tckf_flow.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="first-stage-truncated-conformal-kalman-filter-tckf-1" class="slide level2">
-<h2><code>First stage</code>: Truncated Conformal Kalman Filter (TCKF)</h2>
 <div class="algorithm">
 <ol type="1">
 <li><strong>State-Space Formulation</strong></li>
@@ -434,7 +430,7 @@ H X_t + \nu_t &amp; \text{if uncensored} \\
 </ul>
 </div>
 </section>
-<section id="first-stage-truncated-conformal-kalman-filter-tckf-2" class="slide level2">
+<section id="first-stage-truncated-conformal-kalman-filter-tckf-1" class="slide level2">
 <h2><code>First stage</code>: Truncated Conformal Kalman Filter (TCKF)</h2>
 <div class="algorithm">
 <ol start="3" type="1">
@@ -458,7 +454,7 @@ H X_t + \nu_t &amp; \text{if uncensored} \\
 </ul>
 </div>
 </section>
-<section id="first-stage-truncated-conformal-kalman-filter-tckf-3" class="slide level2">
+<section id="first-stage-truncated-conformal-kalman-filter-tckf-2" class="slide level2">
 <h2><code>First stage</code>: Truncated Conformal Kalman Filter (TCKF)</h2>
 <div class="algorithm">
 <ol start="5" type="1">
@@ -472,7 +468,7 @@ D_t \in [\max(0, \mu_t - q_\alpha), \mu_t + q_\alpha]
 <li>Ensures valid coverage without assuming normality</li>
 </ul>
 <p><br></p>
-<p><strong>Note on Initialization:</strong> Initial state vector <span class="math inline">\(X_0 = [\ell_0, \tau_0, \gamma_0]^T\)</span> is extracted via STL decomposition from uncensored periods:</p>
+<p><strong>Note on Initialization:</strong> Initial state vector <span class="math inline">\(X_0 = [\ell_0, \tau_0, \gamma_0]^T\)</span> is extracted via STL decomposition:</p>
 <ul>
 <li><span class="math inline">\(\ell_0\)</span>: last STL trend</li>
 <li><span class="math inline">\(\tau_0\)</span>: average slope of recent trend</li>

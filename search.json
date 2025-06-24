@@ -1957,7 +1957,7 @@
     "href": "talks/euro_leeds/slides/euro_leeds_25.html#key-definitions",
     "title": "Home",
     "section": "Key definitions",
-    "text": "Key definitions\n\n\nStockouts: Periods when demand is higher than available inventory, leading to censored observations of demand.\nInterruptions: Periods when no products are issued despite available stock, thus artificially recorded as zero demand.\nCensored Demand: Demand occurring during periods when products are unavailable (stockouts or interruptions), thus not fully observable.\nTrue Demand: Actual demand that would have occurred if sufficient stock was available."
+    "text": "Key definitions\n\n\nStockouts: Periods when demand is higher than available inventory, leading to censored observations of demand.\nInterruptions: Periods when no products are issued despite available stock, thus artificially recorded as zero demand.\nCensored Demand: Demand occurring during periods when products are unavailable (stockouts or interruptions), thus not fully observable.\nTrue Demand: Actual demand that would have occurred if sufficient stock was available or if there were no interruptions."
   },
   {
     "objectID": "talks/euro_leeds/slides/euro_leeds_25.html#censorship-scenarios",
@@ -1985,28 +1985,21 @@
     "href": "talks/euro_leeds/slides/euro_leeds_25.html#first-stage-truncated-conformal-kalman-filter-tckf",
     "title": "Home",
     "section": "First stage: Truncated Conformal Kalman Filter (TCKF)",
-    "text": "First stage: Truncated Conformal Kalman Filter (TCKF)"
+    "text": "First stage: Truncated Conformal Kalman Filter (TCKF)\n\n\nState-Space Formulation\n\n\\[\nX_t = F X_{t-1} + \\eta_t, \\quad \\eta_t \\sim \\mathcal{N}(0, Q_t)\n\\]\n\n\\(X_t = [\\ell_t, \\tau_t, \\gamma_t]^T\\): level, trend, seasonality\n\\(F\\): state transition matrix with seasonal decay and trend\n\n\nObservation Equation with Censorship\n\n\\[\ny_t =\n\\begin{cases}\nH X_t + \\nu_t & \\text{if uncensored} \\\\\n0 & \\text{if fully censored} \\\\\n\\min(H X_t, s_t) & \\text{if partially censored}\n\\end{cases}\n\\]\n\n\\(H = [1, 0, 1]\\): maps level and seasonality to observation\n\\(s_t\\): stock available at time \\(t\\)"
   },
   {
     "objectID": "talks/euro_leeds/slides/euro_leeds_25.html#first-stage-truncated-conformal-kalman-filter-tckf-1",
     "href": "talks/euro_leeds/slides/euro_leeds_25.html#first-stage-truncated-conformal-kalman-filter-tckf-1",
     "title": "Home",
     "section": "First stage: Truncated Conformal Kalman Filter (TCKF)",
-    "text": "First stage: Truncated Conformal Kalman Filter (TCKF)\n\n\nState-Space Formulation\n\n\\[\nX_t = F X_{t-1} + \\eta_t, \\quad \\eta_t \\sim \\mathcal{N}(0, Q_t)\n\\]\n\n\\(X_t = [\\ell_t, \\tau_t, \\gamma_t]^T\\): level, trend, seasonality\n\\(F\\): state transition matrix with seasonal decay and trend\n\n\nObservation Equation with Censorship\n\n\\[\ny_t =\n\\begin{cases}\nH X_t + \\nu_t & \\text{if uncensored} \\\\\n0 & \\text{if fully censored} \\\\\n\\min(H X_t, s_t) & \\text{if partially censored}\n\\end{cases}\n\\]\n\n\\(H = [1, 0, 1]\\): maps level and seasonality to observation\n\\(s_t\\): stock available at time \\(t\\)"
+    "text": "First stage: Truncated Conformal Kalman Filter (TCKF)\n\n\nKalman Prediction Step\n\n\\[\n\\mu_t = H \\hat{X}_{t|t-1}, \\quad \\sigma_t^2 = H P_{t|t-1} H^T + R\n\\]\n\nCensored Observation Update\n\n\\[\n\\hat{y}_t = \\mu_t + \\sigma_t \\cdot \\frac{\\phi(z_t)}{1 - \\Phi(z_t)}, \\quad z_t = \\frac{y_t - \\mu_t}{\\sigma_t}\n\\]\n\\[\n\\hat{X}_{t|t} = \\hat{X}_{t|t-1} + K_t (\\hat{y}_t - \\mu_t)\n\\]\n\nUses expectation of truncated Gaussian\nFor fully censored (\\(y_t = 0\\)), skip state update; propagate uncertainty"
   },
   {
     "objectID": "talks/euro_leeds/slides/euro_leeds_25.html#first-stage-truncated-conformal-kalman-filter-tckf-2",
     "href": "talks/euro_leeds/slides/euro_leeds_25.html#first-stage-truncated-conformal-kalman-filter-tckf-2",
     "title": "Home",
     "section": "First stage: Truncated Conformal Kalman Filter (TCKF)",
-    "text": "First stage: Truncated Conformal Kalman Filter (TCKF)\n\n\nKalman Prediction Step\n\n\\[\n\\mu_t = H \\hat{X}_{t|t-1}, \\quad \\sigma_t^2 = H P_{t|t-1} H^T + R\n\\]\n\nCensored Observation Update\n\n\\[\n\\hat{y}_t = \\mu_t + \\sigma_t \\cdot \\frac{\\phi(z_t)}{1 - \\Phi(z_t)}, \\quad z_t = \\frac{y_t - \\mu_t}{\\sigma_t}\n\\]\n\\[\n\\hat{X}_{t|t} = \\hat{X}_{t|t-1} + K_t (\\hat{y}_t - \\mu_t)\n\\]\n\nUses expectation of truncated Gaussian\nFor fully censored (\\(y_t = 0\\)), skip state update; propagate uncertainty"
-  },
-  {
-    "objectID": "talks/euro_leeds/slides/euro_leeds_25.html#first-stage-truncated-conformal-kalman-filter-tckf-3",
-    "href": "talks/euro_leeds/slides/euro_leeds_25.html#first-stage-truncated-conformal-kalman-filter-tckf-3",
-    "title": "Home",
-    "section": "First stage: Truncated Conformal Kalman Filter (TCKF)",
-    "text": "First stage: Truncated Conformal Kalman Filter (TCKF)\n\n\nConformal Prediction for Interval Estimation\n\n\\[\nD_t \\in [\\max(0, \\mu_t - q_\\alpha), \\mu_t + q_\\alpha]\n\\]\n\nResiduals from uncensored periods used to calibrate \\(q_\\alpha\\)\nEnsures valid coverage without assuming normality\n\n\nNote on Initialization: Initial state vector \\(X_0 = [\\ell_0, \\tau_0, \\gamma_0]^T\\) is extracted via STL decomposition from uncensored periods:\n\n\\(\\ell_0\\): last STL trend\n\\(\\tau_0\\): average slope of recent trend\n\\(\\gamma_0\\): seasonal component or zero if undefined\n\\(P_0\\): diagonal matrix estimated from STL component variances"
+    "text": "First stage: Truncated Conformal Kalman Filter (TCKF)\n\n\nConformal Prediction for Interval Estimation\n\n\\[\nD_t \\in [\\max(0, \\mu_t - q_\\alpha), \\mu_t + q_\\alpha]\n\\]\n\nResiduals from uncensored periods used to calibrate \\(q_\\alpha\\)\nEnsures valid coverage without assuming normality\n\n\nNote on Initialization: Initial state vector \\(X_0 = [\\ell_0, \\tau_0, \\gamma_0]^T\\) is extracted via STL decomposition:\n\n\\(\\ell_0\\): last STL trend\n\\(\\tau_0\\): average slope of recent trend\n\\(\\gamma_0\\): seasonal component or zero if undefined\n\\(P_0\\): diagonal matrix estimated from STL component variances"
   },
   {
     "objectID": "talks/euro_leeds/slides/euro_leeds_25.html#experiment-setup",
