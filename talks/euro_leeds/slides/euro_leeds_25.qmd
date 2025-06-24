@@ -378,7 +378,7 @@ Sources: Bijvank et al., 2011; Karimi et al., 2021; Thanos et al., 2022 ; Traper
 
 - `Censored Demand`: Demand occurring during periods when products are unavailable (stockouts or interruptions), thus not fully observable.
 
-- `True Demand`: Actual demand that would have occurred if sufficient stock was available.
+- `True Demand`: Actual demand that would have occurred if sufficient stock was available or if there were no interruptions.
 
 ## Censorship scenarios
 
@@ -511,10 +511,7 @@ Image generated using 04-mini-high
 
 ![](images/plan.svg){fig-align="center"}
 
-## `First stage`: Truncated Conformal Kalman Filter (TCKF)
 
-![](images/tckf_flow.svg){fig-align="center"}
-     
 ## `First stage`: Truncated Conformal Kalman Filter (TCKF)
 
 ::: {.algorithm}
@@ -582,7 +579,7 @@ $$
 <br>
 
 **Note on Initialization:**
-Initial state vector $X_0 = [\ell_0, \tau_0, \gamma_0]^T$ is extracted via STL decomposition from uncensored periods:
+Initial state vector $X_0 = [\ell_0, \tau_0, \gamma_0]^T$ is extracted via STL decomposition:
 
 * $\ell_0$: last STL trend
 * $\tau_0$: average slope of recent trend
