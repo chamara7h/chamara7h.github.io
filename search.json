@@ -329,6 +329,132 @@
     "text": "Course Topics\n\nPython and IDE Essentials\n\nSection 1: Introduction to Python and IDEs\n\nIntroduction to Python\nInstalling Python\nSetting up an Integrated Development Environment (IDE)\nOverview of Jupyter Lab, VS Code, Google Colab, and Anaconda\n\n\n\nSection 2: Working with Jupyter Lab\n\nUnderstanding the basic syntax\nWriting and executing code in Python\nSetting up and organizing a Python project"
   },
   {
+    "objectID": "lab/energy_score/index.html",
+    "href": "lab/energy_score/index.html",
+    "title": "Evaluating Probabilistic Forecasts with Energy Score",
+    "section": "",
+    "text": "Accurately forecasting the demand for pharmaceutical products is crucial for optimizing inventory management and ensuring continuous availability. Traditional point forecasts provide a single predicted value but fail to capture the uncertainty inherent in real-world scenarios. Probabilistic forecasting addresses this by offering a range of possible outcomes with associated probabilities, enabling better decision-making in supply chain management."
+  },
+  {
+    "objectID": "lab/energy_score/index.html#univariate-energy-score-calculation",
+    "href": "lab/energy_score/index.html#univariate-energy-score-calculation",
+    "title": "Evaluating Probabilistic Forecasts with Energy Score",
+    "section": "Univariate Energy Score Calculation",
+    "text": "Univariate Energy Score Calculation\nFor a single time series (one product), the Energy Score (ES) is given by:\n\\[\n    ES(F, y) = \\mathbb{E}_F \\left[ \\|X - y\\| \\right] - \\frac{1}{2} \\mathbb{E}_F \\left[ \\|X - X' \\| \\right]\n\\]\nwhere:\n\n\\(F\\) is the forecasted probability distribution.\n\\(y\\) is the actual observed value.\n\\(X\\) and \\(X'\\) are independent samples from the forecasted distribution.\n\\(\\|\\cdot\\|\\) represents the absolute distance (since we are dealing with univariate values).\nThe first term, \\(\\mathbb{E}_F \\left[ \\|X - y\\| \\right]\\) measures how far the forecasted values are from the observed demand.\nThe second term, \\(\\frac{1}{2} \\mathbb{E}_F \\left[ \\|X - X' \\| \\right]\\) accounts for the spread of the forecasted distribution.\n\nLets take an example from demand for a pharmaceutical product, suppose:\nForecasted samples for Product 1 follow a normal distribution: \\(X \\sim \\mathcal{N}(550, 60^2)\\)\nObserved demand: \\(y = 600\\)\n\n\n\n\n\n\n\n\n\nThe histogram above shows the distribution of forecasted demands, with the red dashed line indicating the actual observed demand.\nStep-by-Step Calculation\nCompute the first term:  \\[\n\\mathbb{E}_F \\left[ \\|X - y\\| \\right]\n\\]\nTake the average absolute difference between each forecasted sample and the observed demand (600):\n\\[\n\\frac{1}{m} \\sum_{i=1}^{m} |X_i - 600|\n\\]\nCompute the second term:  \\[\n\\frac{1}{2} \\mathbb{E}_F \\left[ \\|X - X'\\| \\right]\n\\]\nTake all possible pairs of forecasted samples and compute their absolute differences:\n\\[\n\\frac{1}{2m^2} \\sum_{i=1}^{m} \\sum_{j=1}^{m} |X_i - X_j|\n\\]\nCompute the Energy Score:\nSubtract the two terms to get the final Energy Score.\nWe can compute the ES using scoringRules package in R (read more).\n\nlibrary(scoringRules)\n\nset.seed(123)\nforecast_samples_product1 &lt;- rnorm(1000, mean = 550, sd = 60)  # Forecasted demand\nactual_demand_product1 &lt;- 600  # Observed demand\n\n# Compute the Energy Score for Product 1\nes_univariate &lt;- es_sample(y = actual_demand_product1, dat = matrix(forecast_samples_product1, nrow = 1))\nprint(paste(\"Univariate Energy Score:\", round(es_univariate, 4)))\n\n[1] \"Univariate Energy Score: 29.457\""
+  },
+  {
+    "objectID": "lab/energy_score/index.html#multivariate-energy-score-calculation",
+    "href": "lab/energy_score/index.html#multivariate-energy-score-calculation",
+    "title": "Evaluating Probabilistic Forecasts with Energy Score",
+    "section": "Multivariate Energy Score Calculation",
+    "text": "Multivariate Energy Score Calculation\nFor multiple time series (joint demand forecasting), the multivariate Energy Score is:\n\\[\nES(F, y) = \\mathbb{E}_F \\left[ \\|X - y\\| \\right] - \\frac{1}{2} \\mathbb{E}_F \\left[ \\|X - X'\\| \\right]\n\\]\nwhere:\n\n( X ) and ( X’ ) are now vectors representing forecasted values for both Product 1 and Product 2.\n( y ) is now a vector containing the actual observed values for both products.\n( || ) is the Euclidean distance (not just absolute value) because we now have multiple dimensions.\n\nSuppose we have two products now;\nForecasted distributions: \\[\n\\begin{bmatrix} X_1 \\\\ X_2 \\end{bmatrix} \\sim \\mathcal{N} \\left( \\begin{bmatrix} 550 \\\\ 320 \\end{bmatrix}, \\begin{bmatrix} 3600 & 1500 \\\\ 1500 & 2500 \\end{bmatrix} \\right)\n\\]\nObserved demand vector: \\[\ny = \\begin{bmatrix} 600 \\\\ 280 \\end{bmatrix}\n\\]\n\n\n\n\n\n\n\n\n\nStep-by-Step Calculation\nCompute the first term:\n\\[\n\\mathbb{E}_F \\left[ \\|X - y\\| \\right]\n\\]\nCompute the Euclidean distance between each forecast sample and the actual observed demand vector:\n\\[\n\\frac{1}{m} \\sum_{i=1}^{m} \\sqrt{(X_{i,1} - y_1)^2 + (X_{i,2} - y_2)^2}\n\\]\nCompute the second term:\n\\[\n\\frac{1}{2} \\mathbb{E}_F \\left[ \\|X - X'\\| \\right]\n\\]\nCompute pairwise Euclidean distances between all forecasted sample pairs:\n\\[\n\\frac{1}{2m^2} \\sum_{i=1}^{m} \\sum_{j=1}^{m} \\sqrt{(X_{i,1} - X_{j,1})^2 + (X_{i,2} - X_{j,2})^2}\n\\]\nCompute the Multivariate Energy Score:\nSubtract the two terms to get the final Multivariate Energy Score.\n\nlibrary(MASS)\n\n# Define number of dimensions and samples\nd &lt;- 2  # Number of products\nm &lt;- 1000  # Number of forecast samples\n\n# Define mean vector and covariance matrix\nmu &lt;- c(550, 320)  \nSigma &lt;- matrix(c(3600, 1500, \n                  1500, 2500), nrow = d, ncol = d)\n\n# Generate forecast samples\ndemand_forecast_multi &lt;- t(mvrnorm(m, mu = mu, Sigma = Sigma))  \n\n# Define observed demand vector\nactual_demand_multi &lt;- c(600, 280)\n\n# Compute the Multivariate Energy Score\nes_multivariate &lt;- es_sample(y = actual_demand_multi, dat = demand_forecast_multi)\n\n# Print result\nprint(paste(\"Multivariate Energy Score:\", round(es_multivariate, 4)))\n\n[1] \"Multivariate Energy Score: 44.319\""
+  },
+  {
+    "objectID": "lab/energy_score/index.html#interpretation",
+    "href": "lab/energy_score/index.html#interpretation",
+    "title": "Evaluating Probabilistic Forecasts with Energy Score",
+    "section": "Interpretation",
+    "text": "Interpretation\nA lower Energy Score indicates a better probabilistic forecast. Comparing different forecasting models using the Energy Score helps in selecting the model that best represents the underlying demand uncertainty."
+  },
+  {
+    "objectID": "lab/energy_score/index.html#univariate-energy-score",
+    "href": "lab/energy_score/index.html#univariate-energy-score",
+    "title": "Evaluating Probabilistic Forecasts with Energy Score",
+    "section": "Univariate Energy Score:",
+    "text": "Univariate Energy Score:\n\nIf you compute es_sample(y, dat) for a single time series (one product), it returns one scalar value representing the accuracy of that probabilistic forecast compared to the observed value.\nExample: If forecasting demand for Product 1 only, it outputs one Energy Score."
+  },
+  {
+    "objectID": "lab/energy_score/index.html#multivariate-energy-score",
+    "href": "lab/energy_score/index.html#multivariate-energy-score",
+    "title": "Evaluating Probabilistic Forecasts with Energy Score",
+    "section": "Multivariate Energy Score:",
+    "text": "Multivariate Energy Score:\n\nWhen forecasting multiple time series jointly (e.g., multiple products), es_sample(y, dat) computes one single Energy Score that evaluates the overall accuracy of the joint probabilistic forecast.\nThe forecast considers both marginal distributions (each product’s demand) and their dependency structure (correlation between products)."
+  },
+  {
+    "objectID": "lab/energy_score/index.html#key-difference",
+    "href": "lab/energy_score/index.html#key-difference",
+    "title": "Evaluating Probabilistic Forecasts with Energy Score",
+    "section": "Key Difference:",
+    "text": "Key Difference:\n\n\n\n\n\n\n\n\nType\nForecasted Elements\nEnergy Score Output\n\n\n\n\nUnivariate\nOne product (single time series)\nOne Energy Score\n\n\nMultivariate\nMultiple products (joint time series)\nOne Energy Score for all series"
+  },
+  {
+    "objectID": "lab/energy_score/index.html#why-one-value-for-multivariate",
+    "href": "lab/energy_score/index.html#why-one-value-for-multivariate",
+    "title": "Evaluating Probabilistic Forecasts with Energy Score",
+    "section": "Why One Value for Multivariate?",
+    "text": "Why One Value for Multivariate?\n\nThe Energy Score is a proper scoring rule that measures the accuracy of the entire probabilistic distribution of multiple time series.\nIt captures how well the forecasted joint distribution matches the observed values across all series."
+  },
+  {
+    "objectID": "lab/energy_score/index.html#why-euclidean-distance",
+    "href": "lab/energy_score/index.html#why-euclidean-distance",
+    "title": "Evaluating Probabilistic Forecasts with Energy Score",
+    "section": "Why Euclidean Distance?",
+    "text": "Why Euclidean Distance?\n\nIn the univariate case, we use absolute difference \\(|X - y|\\) since we are dealing with a single variable.\nIn the multivariate case, we use Euclidean distance \\(\\|X - y\\|\\) because we now have multiple variables (e.g., multiple products with correlated forecasts).\n\nWhen evaluating multiple products together, we must assess how far off the entire forecast vector is from the actual vector. Euclidean distance considers both the magnitude of the forecast errors and their combined effect across multiple dimensions.\n\nCaptures Correlated Forecast Errors.\nMeasures Overall Forecast Accuracy Across Multiple Products.\n\nIf Product 1 and Product 2 have correlated demand patterns, Euclidean distance captures how well the joint forecast aligns with the observed reality. A simple sum of absolute differences (like in the univariate case) would ignore these relationships."
+  },
+  {
+    "objectID": "lab/energy_score/index.html#why-do-we-have-frac12-in-the-second-term-of-the-energy-score-formula",
+    "href": "lab/energy_score/index.html#why-do-we-have-frac12-in-the-second-term-of-the-energy-score-formula",
+    "title": "Evaluating Probabilistic Forecasts with Energy Score",
+    "section": "Why Do We Have \\(\\frac{1}{2}\\) in the Second Term of the Energy Score Formula?",
+    "text": "Why Do We Have \\(\\frac{1}{2}\\) in the Second Term of the Energy Score Formula?\nDouble Counting in Pairwise Distances\nThe second term involves taking all pairwise distances between forecasted samples:\n\\[\n\\mathbb{E}_F \\left[ \\|X - X'\\| \\right] = \\frac{1}{m^2} \\sum_{i=1}^{m} \\sum_{j=1}^{m} \\|X_i - X_j\\|\n\\]\nwhere:\n\n\\(m\\) is the number of forecast samples.\nEach pair \\((X_i, X_j)\\) is counted twice because we compute distances between all pairs \\(X_i\\) and \\(X_j\\).\nThus, to avoid over-weighting this term, we include \\(\\frac{1}{2}\\) to correct for double counting.\n\nMaintaining Proper Scale of the Score\n\nThe Energy Score is designed to measure how concentrated the forecast distribution is around the actual observed value.\nWithout the \\(\\frac{1}{2}\\), the second term would be too large, making the score too negative, distorting the interpretation."
+  },
+  {
+    "objectID": "lab/intro_method_skills/index.html#context",
+    "href": "lab/intro_method_skills/index.html#context",
+    "title": "Methodological Skills for Research",
+    "section": "Context",
+    "text": "Context\nUnderstanding research methodologies is essential for conducting rigorous, credible, and context-appropriate research in fields like transport, logistics, and beyond. This lecture introduces key philosophical foundations, paradigms, and methodological choices that shape how research questions are framed and investigated. It supports students in developing critical thinking and research design skills, which are foundational for academic projects and evidence-based decision-making in logistics and supply chain management."
+  },
+  {
+    "objectID": "lab/intro_method_skills/index.html#target-audience",
+    "href": "lab/intro_method_skills/index.html#target-audience",
+    "title": "Methodological Skills for Research",
+    "section": "Target Audience",
+    "text": "Target Audience\n\nUndergraduate students studying Transport and Logistics Management\nAnyone interested in gaining a practical understanding of research paradigms, methodologies, and methods\nStudents preparing to develop their undergraduate dissertations or research proposals"
+  },
+  {
+    "objectID": "lab/intro_method_skills/index.html#prerequisites",
+    "href": "lab/intro_method_skills/index.html#prerequisites",
+    "title": "Methodological Skills for Research",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nCuriosity about research and how knowledge is constructed\nNo prior experience with research philosophy is required\nBasic understanding of research goals (e.g., solving real-world problems, generating new insights)"
+  },
+  {
+    "objectID": "lab/intro_method_skills/index.html#learning-outcomes",
+    "href": "lab/intro_method_skills/index.html#learning-outcomes",
+    "title": "Methodological Skills for Research",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nBy the end of this lecture, students will be able to:\n\n✅ Distinguish between ontology, epistemology, axiology, methodology, and methods\n✅ Understand and compare major research paradigms: Positivism, Interpretivism, Critical Realism, Pragmatism, and Post-Structuralism\n✅ Recognize how paradigms influence research design choices\n✅ Identify suitable methodologies and data collection methods for different research problems\n✅ Apply these concepts to real-world examples in transport and logistics contexts\n✅ Critically reflect on their own positionality and philosophical assumptions in research"
+  },
+  {
+    "objectID": "projects/publications/index.html",
+    "href": "projects/publications/index.html",
+    "title": "Research Projects",
+    "section": "",
+    "text": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning\n\n\n\nWorkforce planning\n\nHealthcare\n\nMachine Learning\n\nSimulation\n\nR\n\nPython\n\n\n\nPre-print (under review)\n\n\n\n\n\n\n\n\n\n\n\n\nForecast adjustments during post-promotional periods\n\n\n\nForecasting\n\nRetail\n\nJudgmental adjustments\n\nR\n\nShiny\n\n\n\nJournal Publication\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "PROJECTS",
+    "section": "",
+    "text": "Creative Gallery\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\nData Science Projects\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Projects\n\n\nMy academic publications, along with their source code and data.\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/publications/first-post/index.html",
+    "href": "projects/publications/first-post/index.html",
+    "title": "Forecast adjustments during post-promotional periods",
+    "section": "",
+    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository.\n\n\n\n Journal article\n\n\n GitHub repo"
+  },
+  {
+    "objectID": "projects/publications/second-post/index.html",
+    "href": "projects/publications/second-post/index.html",
+    "title": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning",
+    "section": "",
+    "text": "We introduce a novel framework that predicts long-term mental healthcare workforce needs using real NHS data. This framework captures the dynamics of both patient needs and nurse availability, enabling effective long-term planning. It also tests policies and identifies strategies to address future staff shortages, providing valuable insights for decision-makers to develop resilient mental healthcare workforce policies.\n\n\n\n Pre-print\n\n\n GitHub repo"
+  },
+  {
     "objectID": "lab/intro_method_skills/slides/intro_method_skills.html#assumptions",
     "href": "lab/intro_method_skills/slides/intro_method_skills.html#assumptions",
     "title": "Home",
@@ -553,62 +679,6 @@
     "text": "Wrapping up\n\nMethodological skills involve making informed choices at each stage of research – from philosophical stance to data collection methods.\nNo single paradigm or method is “best” for all questions. The goal is to align your approach with your research question and objectives, and to be able to justify your choices.\nUnderstanding these foundations helps you critically evaluate others’ research and conduct your own studies in a rigorous, reflective, and ethical manner."
   },
   {
-    "objectID": "projects/publications/second-post/index.html",
-    "href": "projects/publications/second-post/index.html",
-    "title": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning",
-    "section": "",
-    "text": "We introduce a novel framework that predicts long-term mental healthcare workforce needs using real NHS data. This framework captures the dynamics of both patient needs and nurse availability, enabling effective long-term planning. It also tests policies and identifies strategies to address future staff shortages, providing valuable insights for decision-makers to develop resilient mental healthcare workforce policies.\n\n\n\n Pre-print\n\n\n GitHub repo"
-  },
-  {
-    "objectID": "projects/publications/first-post/index.html",
-    "href": "projects/publications/first-post/index.html",
-    "title": "Forecast adjustments during post-promotional periods",
-    "section": "",
-    "text": "Our research focuses on judgmental forecast adjustments during pre-promotional (normal), promotional, and post-promotional periods through behavioral experiments. The findings highlight the importance of providing forecasters with structured support to make effective adjustments, particularly during post-promotional periods. Additionally, offering quantitative information can help mitigate harmful judgmental adjustments in these periods. All materials related to the laboratory experiments will soon be available on my GitHub repository.\n\n\n\n Journal article\n\n\n GitHub repo"
-  },
-  {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "PROJECTS",
-    "section": "",
-    "text": "Creative Gallery\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\nData Science Projects\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Projects\n\n\nMy academic publications, along with their source code and data.\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/publications/index.html",
-    "href": "projects/publications/index.html",
-    "title": "Research Projects",
-    "section": "",
-    "text": "A hybrid predictive and prescriptive modelling framework for long-term mental healthcare workforce planning\n\n\n\nWorkforce planning\n\nHealthcare\n\nMachine Learning\n\nSimulation\n\nR\n\nPython\n\n\n\nPre-print (under review)\n\n\n\n\n\n\n\n\n\n\n\n\nForecast adjustments during post-promotional periods\n\n\n\nForecasting\n\nRetail\n\nJudgmental adjustments\n\nR\n\nShiny\n\n\n\nJournal Publication\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "lab/intro_method_skills/index.html#context",
-    "href": "lab/intro_method_skills/index.html#context",
-    "title": "Methodological Skills for Research",
-    "section": "Context",
-    "text": "Context\nUnderstanding research methodologies is essential for conducting rigorous, credible, and context-appropriate research in fields like transport, logistics, and beyond. This lecture introduces key philosophical foundations, paradigms, and methodological choices that shape how research questions are framed and investigated. It supports students in developing critical thinking and research design skills, which are foundational for academic projects and evidence-based decision-making in logistics and supply chain management."
-  },
-  {
-    "objectID": "lab/intro_method_skills/index.html#target-audience",
-    "href": "lab/intro_method_skills/index.html#target-audience",
-    "title": "Methodological Skills for Research",
-    "section": "Target Audience",
-    "text": "Target Audience\n\nUndergraduate students studying Transport and Logistics Management\nAnyone interested in gaining a practical understanding of research paradigms, methodologies, and methods\nStudents preparing to develop their undergraduate dissertations or research proposals"
-  },
-  {
-    "objectID": "lab/intro_method_skills/index.html#prerequisites",
-    "href": "lab/intro_method_skills/index.html#prerequisites",
-    "title": "Methodological Skills for Research",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\nCuriosity about research and how knowledge is constructed\nNo prior experience with research philosophy is required\nBasic understanding of research goals (e.g., solving real-world problems, generating new insights)"
-  },
-  {
-    "objectID": "lab/intro_method_skills/index.html#learning-outcomes",
-    "href": "lab/intro_method_skills/index.html#learning-outcomes",
-    "title": "Methodological Skills for Research",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\nBy the end of this lecture, students will be able to:\n\n✅ Distinguish between ontology, epistemology, axiology, methodology, and methods\n✅ Understand and compare major research paradigms: Positivism, Interpretivism, Critical Realism, Pragmatism, and Post-Structuralism\n✅ Recognize how paradigms influence research design choices\n✅ Identify suitable methodologies and data collection methods for different research problems\n✅ Apply these concepts to real-world examples in transport and logistics contexts\n✅ Critically reflect on their own positionality and philosophical assumptions in research"
-  },
-  {
     "objectID": "lab/intro_python/materials/index.html",
     "href": "lab/intro_python/materials/index.html",
     "title": "Introduction to Python",
@@ -697,7 +767,7 @@
     "href": "lab/index.html",
     "title": "Home",
     "section": "",
-    "text": "Introduction to Markov Processes in Healthcare Supply Chains\n\n\nWorkshop\n\n\n\n\n\nMay 15, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nMethodological Skills for Research\n\n\nLecture - University of Moratuwa Sri Lanka\n\n\n\n\n\nApr 11, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\nWorkshop\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nA basic introduction to Python\n\n\nTutorial\n\n\n\n\n\nMar 3, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\nNo matching items"
+    "text": "Introduction to Markov Processes in Healthcare Supply Chains\n\n\nWorkshop\n\n\n\n\n\nMay 15, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nMethodological Skills for Research\n\n\nLecture - University of Moratuwa Sri Lanka\n\n\n\n\n\nApr 11, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\nWorkshop\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nEvaluating Probabilistic Forecasts with Energy Score\n\n\nTutorial\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nA basic introduction to Python\n\n\nTutorial\n\n\n\n\n\nMar 3, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lab/epss_training/slides/epss_training.html#self-assessment",

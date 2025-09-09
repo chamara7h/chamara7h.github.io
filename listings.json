@@ -15,6 +15,13 @@
     ]
   },
   {
+    "listing": "/projects/publications/index.html",
+    "items": [
+      "/projects/publications/second-post/index.html",
+      "/projects/publications/first-post/index.html"
+    ]
+  },
+  {
     "listing": "/projects/index.html",
     "items": [
       "/projects/design/index.html",
@@ -23,18 +30,12 @@
     ]
   },
   {
-    "listing": "/projects/publications/index.html",
-    "items": [
-      "/projects/publications/second-post/index.html",
-      "/projects/publications/first-post/index.html"
-    ]
-  },
-  {
     "listing": "/lab/index.html",
     "items": [
       "/lab/dl4sg_marcov/index.html",
       "/lab/intro_method_skills/index.html",
       "/lab/epss_training/index.html",
+      "/lab/energy_score/index.html",
       "/lab/intro_python/index.html"
     ]
   }
