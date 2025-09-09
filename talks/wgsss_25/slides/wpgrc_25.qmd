@@ -405,7 +405,7 @@ How can a demand forecasting model that explicitly handles censored demand due t
 #| fig-height: 5
 #| fig-cap: "Censorship scenarios in family planning supply chains."
 
-synthetic_tsibble <- read_rds('data/tidy_data/synthetic_data.rds')
+synthetic_tsibble <- read_rds(here::here('data/tidy_data/synthetic_data.rds'))
 
 # pick one series per
 
@@ -775,7 +775,7 @@ RHSC Impact Calculator: [https://www.rhsupplies.org/activities-resources/tools/r
 
 # pick one series per (category × type)
 
-stock_tsb <- read_rds('data/tidy_data/stock_tsb_filtered.rds') |> 
+stock_tsb <- read_rds(here::here('data/tidy_data/stock_tsb_filtered.rds')) |> 
   as_tibble() |> 
   mutate(censorship_type = case_when(stock_out_indicator == 1 ~ 'censored',
                                      interruption_indicator == 1 ~ 'disruption',
@@ -962,9 +962,9 @@ p1 / (p2 | p3) +
 ```{r}
 #| include: false
 
-rel_iva <- read_rds('data/results/emp_rel_iva.rds')
+rel_iva <- read_rds(here::here('data/results/emp_rel_iva.rds'))
 
-num_ex_metrics_all <- read_rds('data/results/emp_ex_metrics_origin_all.rds')
+num_ex_metrics_all <- read_rds(here::here('data/results/emp_ex_metrics_origin_all.rds'))
 
 # pick 12 distinct, colour-blind–safe colours
 model_cols <- viridis(17)
