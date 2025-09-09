@@ -133,7 +133,7 @@ required_packages <- c(
   "ggthemes",
   "patchwork",
   "tsibble",
-  "feasts",
+  "fabletools",
   "viridis",
   "showtext",
   "ggdist",
