@@ -1,0 +1,121 @@
+---
+format:
+  pdf:
+    documentclass: scrartcl
+    geometry: "paperwidth=30in, paperheight=5in, margin=0.25in"
+    latex-engine: xelatex
+fontsize: 12pt
+header-includes:
+  - \usepackage{fontspec}
+  - \setmainfont[
+      Path        = {C:/Users/Chama/AppData/Local/Microsoft/Windows/Fonts/},
+      Extension   = .ttf,
+      UprightFont = *-Medium,
+      BoldFont    = *-Bold
+    ]{Assistant}
+  - \usepackage{tikz}
+  - \usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+  - |
+    %=== TikZ style definitions ===
+    \tikzset{
+      startstop/.style={
+        rectangle, rounded corners,
+        minimum width=3.5cm, minimum height=1.6cm,
+        text centered, draw=black, fill=blue!10
+      },
+      process/.style={
+        rectangle, minimum width=4.2cm,
+        minimum height=1.6cm, text centered,
+        draw=black, fill=gray!10
+      },
+      decision/.style={
+        diamond, aspect=2, text centered,
+        draw=black, fill=orange!20
+      },
+      arrow/.style={
+        thick,->,>=Stealth
+      }
+    }
+---
+  
+```{=latex}
+\thispagestyle{empty}
+\begin{tikzpicture}[node distance=2.0cm and 2.0cm, font=\small]
+
+  % 1. Input
+  \node (input) [startstop] {
+    \textbf{1. Input}\\
+    Observed Demand $y_t$\\
+    + Censorship Labels
+  };
+
+  % 2. State-space
+  \node (init) [process, right=of input] {
+    \textbf{2. State-Space Model}\\[3pt]
+    $\mathbf{x}_t = F\,\mathbf{x}_{t-1} + \mathbf{w}_t$\\
+    $y^*_t = H\,\mathbf{x}_t + v_t,\quad
+     y_t = \max(0,y^*_t)$
+  };
+
+  % 3. Prediction
+  \node (predict) [process, right=of init] {
+    \textbf{3. Kalman Prediction}\\[3pt]
+    $\hat{\mathbf{x}}_{t|t-1} = F\,\hat{\mathbf{x}}_{t-1|t-1}$\\
+    $P_{t|t-1} = F\,P_{t-1|t-1}\,F^\top + Q$
+  };
+
+  % 4. Decision: censored?
+  \node (decision) [decision, below=of predict] {
+    Is $y_t = 0$?
+  };
+
+  % 5a. Uncensored update
+  \node (uncensored) [process, right=3.5cm of decision] {
+    \textbf{4a. Std. Update}\\[3pt]
+    $K_t = P_{t|t-1}H^\top (H\,P_{t|t-1}H^\top+R)^{-1}$\\
+    $\hat{\mathbf{x}}_{t|t} = \hat{\mathbf{x}}_{t|t-1} + K_t\,(y_t - H\,\hat{\mathbf{x}}_{t|t-1})$
+  };
+
+  % 5b. Censored (Tobit) update
+  \node (censored) [process, below=of decision] {
+    \textbf{4b. Tobit Update}\\[3pt]
+    $\mu_t = H\,\hat{\mathbf{x}}_{t|t-1},\;
+     \sigma_t^2 = H\,P_{t|t-1}H^\top + R$\\
+    $\hat{\eta}_t = \dfrac{\phi(\mu_t/\sigma_t)}{\Phi(-\mu_t/\sigma_t)}$\\
+    $\hat{\mathbf{x}}_{t|t} = \hat{\mathbf{x}}_{t|t-1} + K_t\,\hat{\eta}_t$
+  };
+
+  % 6. One-step forecast
+  \node (forecast) [process, right=of uncensored] {
+    \textbf{5. One-Step Forecast}\\[3pt]
+    $\hat{y}_{t|t-1} = H\,\hat{\mathbf{x}}_{t|t-1}$\\
+    $\mathrm{Var}(y_t) = \sigma_t^2$
+  };
+
+  % 7. Residuals
+  \node (resid) [process, below=of forecast] {
+    \textbf{6. Residual Collection}\\[3pt]
+    $\varepsilon_t = y_t - \hat{y}_{t|t-1}$
+  };
+
+  % 8. Conformal calibration
+  \node (conformal) [process, right=of forecast] {
+    \textbf{7. Conformal Prediction}\\[3pt]
+    $S_t = |\varepsilon_t|$\\
+    Interval: $[\hat{y}_{t|t-1} \pm q_{1-\alpha}(S)]$
+  };
+
+  % Arrows
+  \draw[arrow] (input) -- (init);
+  \draw[arrow] (init) -- (predict);
+  \draw[arrow] (predict) -- (decision);
+  \draw[arrow] (decision) -- node[above]{No} (uncensored);
+  \draw[arrow] (decision) -- node[left]{Yes} (censored);
+  \draw[arrow] (uncensored) -- (forecast);
+  \draw[arrow] (censored.east) -- ++(1.2,0) |- (forecast.south);
+  \draw[arrow] (forecast) -- (conformal);
+  \draw[arrow] (forecast) -- (resid);
+  \draw[arrow] (resid.east) -- (conformal.south);
+
+\end{tikzpicture}
+```

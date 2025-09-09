@@ -1,0 +1,64 @@
+---
+title: "WHAT WAS LOST: Estimating censored demand in family planning supply chains with the Truncated Conformal Kalman Filter"
+description: "5th Welsh Postgraduate Research Cluster Workshop in Economy, Enterprise and Productivity"
+author: "Harsha Halgamuwe Hewage"
+date: "2025-09-16"
+image: "cover.png"
+categories:
+  - Forecasting
+  - Inventory
+  - Loss Sales
+  - R
+  - Tobit Kalman Filter
+  - Conformal Prediction
+link-external-newwindow: true
+---
+
+![](cover.png){fig-align="center"}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+/* Custom button style */
+button {
+  background-color: transparent; /* No filling */
+  border: 2px solid rgb(55, 58, 60); /* Gray border */
+  color: rgb(55, 58, 60); /* Gray text */
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect for Journal article */
+#journal-article-btn:hover {
+  border-color: #0066b2; /* Blue border on hover */
+  color: #0066b2; /* Blue text on hover */
+}
+
+/* Hover effect for GitHub repo */
+#github-repo-btn:hover {
+  border-color: #00A86B; /* Green border on hover */
+  color: #00A86B; /* Green text on hover */
+}
+</style>
+
+<button id="journal-article-btn" 
+        onclick="window.open('slides/wpgrc_25.html', '_blank')">
+  <i class="fas fa-bookmark"></i> Slides
+</button>
+
+<br>
+
+## Context
+
+At the *5th Welsh Postgraduate Research Cluster Workshop* in Swansea University, we present a new lens on forecasting for public health supply chains, where demand signals are often distorted by stockouts and service interruptions. When shelves are empty, demand doesn’t disappear, it goes unrecorded.
+
+We propose a Truncated Conformal Kalman Filter (TCKF) that reconstructs censored demand while generating uncertainty-aware forecasts, directly usable in inventory planning. Going beyond accuracy metrics, we evaluate how forecasts translate into inventory efficiency and ultimately public health outcomes.
+
+Using synthetic and real-world data from Côte d’Ivoire, we show how better forecasting doesn’t just improve service levels, it prevents stockouts, reduces unmet need, and saves lives. Our work offers a reproducible framework that links forecasting with reorder decisions and health impact—because what gets forecasted, gets funded and delivered.
+
