@@ -18,9 +18,6 @@ about:
     - icon: bookmark-star-fill
       text: Google Scholar
       href: https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en
-format:
-  html:
-    include-in-header: includes/head.html
 ---
 
   I am a PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the [Data Lab for Social Good](https://www.cardiff.ac.uk/research/explore/research-units/data-lab-for-social-good).
