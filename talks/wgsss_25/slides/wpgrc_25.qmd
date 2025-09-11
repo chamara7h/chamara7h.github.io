@@ -610,7 +610,7 @@ Initial state vector $X_0 = [\ell_0, \tau_0, \gamma_0]^T$ is extracted via STL d
 $$
 Forecast\ Value\ Added = (1 -Rel\ RMSE) \times 100\%
 $$
-Values above 1 indicate better performance than `TCKF`.
+Values above 0 indicate better performance than `TCKF`.
 
 $$
 Rel\ RMSE = \frac{RMSE_{\text{Method}}}{RMSE_{\text{TCKF}}}
@@ -638,7 +638,7 @@ $$
 \text{Skill Score} = \frac{\text{Pinball Score}_{\text{TCKF}} - \text{Pinball Score}_{\text{Method}}}{\text{Pinball Score}_{\text{TCKF}}} \times 100\%
 $$
 
-Values above 1 indicate better performance than `TCKF`.
+Values above 0 indicate better performance than `TCKF`.
 
 :::
 
