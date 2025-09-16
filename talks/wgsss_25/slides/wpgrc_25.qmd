@@ -713,7 +713,7 @@ $$
 IVA = w_{CSL} \cdot Rel\ CSL + w_{SOR} \cdot Rel\ SOR + w_{IT} \cdot Rel\ IT
 $$
 
-Values above 1 indicate better performance than `TCKF`.
+Values above 0 indicate better performance than `TCKF`.
 
 :::
 
