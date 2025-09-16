@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.34">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <title>Home – wpgrc_25</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-2c1b5f745a11cfad616ebade4a4a7d24.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
   <link rel="stylesheet" href="theme.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -549,7 +549,7 @@ Q_{p,t} =
 <p><span class="math display">\[
 IVA = w_{CSL} \cdot Rel\ CSL + w_{SOR} \cdot Rel\ SOR + w_{IT} \cdot Rel\ IT
 \]</span></p>
-<p>Values above 1 indicate better performance than <code>TCKF</code>.</p>
+<p>Values above 0 indicate better performance than <code>TCKF</code>.</p>
 </div>
 </section>
 <section id="performance-evaluation---healthcare-impact" class="slide level2">
@@ -603,7 +603,7 @@ IVA = w_{CSL} \cdot Rel\ CSL + w_{SOR} \cdot Rel\ SOR + w_{IT} \cdot Rel\ IT
 <section id="overall-forecasting-performance-across-models" class="slide level2">
 <h2>Overall forecasting performance across models</h2>
 <p><br></p>
-<table class="table-custom table caption-top" data-quarto-postprocess="true" style="font-size: 28px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table-custom table caption-top" style="font-size: 28px; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Method</th>
@@ -785,7 +785,7 @@ Figure&nbsp;3: Nemenyi post-hoc test with 95% confidence level on inverted FVA v
 <div class="column-left" style="flex: 0 0 65%; display: flex; justify-content: flex-start;">
 <div class="cell">
 <div class="cell-output-display">
-<table class="table-custom table caption-top" data-quarto-postprocess="true" style="font-size: 28px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table-custom table caption-top" style="font-size: 28px; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Method</th>
@@ -1253,7 +1253,7 @@ The full pipeline is openly implemented in R using both synthetic and empirical 
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1365,13 +1365,14 @@ The full pipeline is openly implemented in R using both synthetic and empirical 
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

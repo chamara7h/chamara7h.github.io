@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.34">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <title>Home – epss_training</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -94,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-2c1b5f745a11cfad616ebade4a4a7d24.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
   <link rel="stylesheet" href="theme.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -320,7 +320,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <h2>Loading libraries</h2>
 <p>We use the <code>fpp3</code> package in this workshop, which provides all the necessary packages for data manipulation, plotting, and forecasting.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Define required packages</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Define required packages</span></span>
 <span id="cb1-2"><a></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"fable"</span>, <span class="st">"tsibble"</span>, <span class="st">"feasts"</span>, <span class="st">'zoo'</span>)</span>
 <span id="cb1-3"><a></a></span>
 <span id="cb1-4"><a></a><span class="co"># Install missing packages</span></span>
@@ -335,7 +335,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <span id="cb1-13"><a></a>  <span class="fu">library</span>(fable) <span class="co"># Time series manipulation</span></span>
 <span id="cb1-14"><a></a>  <span class="fu">library</span>(tsibble) <span class="co"># Forecasting functions</span></span>
 <span id="cb1-15"><a></a>  <span class="fu">library</span>(feasts) <span class="co"># Time series graphics and statistics</span></span>
-<span id="cb1-16"><a></a>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-16"><a></a>}))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Read more at <a href="https://otexts.com/fpp3/">Forecasting: Principles and Practice (3rd ed)</a> by Rob J Hyndman and George Athanasopoulos.</p>
 </section>
@@ -353,8 +353,8 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <section id="read-csv-file" class="slide level2">
 <h2>Read <code>csv</code> file</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>med_qty <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/med_qty.csv'</span>)</span>
-<span id="cb2-2"><a></a>med_qty <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>med_qty <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/med_qty.csv'</span>)</span>
+<span id="cb2-2"><a></a>med_qty <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       date hub_id product_id quantity_issued
 1  2017 Jul  hub_4  product_1              60
@@ -374,19 +374,19 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <section id="check-for-na-and-duplicates" class="slide level2">
 <h2>Check for <code>NA</code> and duplicates</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># check NAs</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># check NAs</span></span>
 <span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a><span class="fu">anyNA</span>(med_qty)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a></a><span class="fu">anyNA</span>(med_qty)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co">#check duplicates</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co">#check duplicates</span></span>
 <span id="cb6-2"><a></a></span>
 <span id="cb6-3"><a></a>med_qty <span class="sc">|&gt;</span>  </span>
 <span id="cb6-4"><a></a>  <span class="fu">duplicated</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb6-5"><a></a>  <span class="fu">sum</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a></a>  <span class="fu">sum</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
@@ -395,11 +395,11 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <section id="create-tsibble" class="slide level2">
 <h2>Create tsibble</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>med_tsb <span class="ot">&lt;-</span> med_qty <span class="sc">|&gt;</span>  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>med_tsb <span class="ot">&lt;-</span> med_qty <span class="sc">|&gt;</span>  </span>
 <span id="cb8-2"><a></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">yearmonth</span>(date)) <span class="sc">|&gt;</span>  <span class="co"># convert chr to date format</span></span>
 <span id="cb8-3"><a></a>  <span class="fu">as_tsibble</span>(<span class="at">index =</span> date, <span class="at">key =</span> <span class="fu">c</span>(hub_id, product_id))</span>
 <span id="cb8-4"><a></a></span>
-<span id="cb8-5"><a></a>med_tsb </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a></a>med_tsb </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 6,745 x 4 [1M]
 # Key:       hub_id, product_id [133]
@@ -426,7 +426,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <section id="check-temporal-gaps-implicit-missing-values" class="slide level2">
 <h2>Check temporal gaps (implicit missing values)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">has_gaps</span>(med_tsb) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">3</span>) <span class="co">#check gaps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">has_gaps</span>(med_tsb) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">3</span>) <span class="co">#check gaps</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   hub_id product_id .gaps
@@ -435,7 +435,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 2 hub_1  product_2  TRUE 
 3 hub_1  product_3  TRUE </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">scan_gaps</span>(med_tsb) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">3</span>) <span class="co"># show gaps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">scan_gaps</span>(med_tsb) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">3</span>) <span class="co"># show gaps</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 3 x 3 [1M]
 # Key:       hub_id, product_id [1]
@@ -445,7 +445,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 2 hub_1  product_1  2018 Aug
 3 hub_1  product_1  2018 Sep</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">count_gaps</span>(med_tsb) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">3</span>) <span class="co"># count gaps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">count_gaps</span>(med_tsb) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">3</span>) <span class="co"># count gaps</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 5
   hub_id product_id    .from      .to    .n
@@ -460,7 +460,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <h2>Check temporal gaps (implicit missing values)</h2>
 <p>If there is any gap, then we fill it.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>med_tsb <span class="sc">|&gt;</span> <span class="fu">fill_gaps</span>(<span class="at">quantity_issued=</span><span class="dv">0</span>L) <span class="co"># we can fill it with zero</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>med_tsb <span class="sc">|&gt;</span> <span class="fu">fill_gaps</span>(<span class="at">quantity_issued=</span><span class="dv">0</span>L) <span class="co"># we can fill it with zero</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 8,795 x 4 [1M]
 # Key:       hub_id, product_id [133]
@@ -484,7 +484,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <h2>Check temporal gaps (implicit missing values)</h2>
 <p><em>Note:</em> Since the main focus of this study is to provide foundational knowledge on forecasting, we will filter out time series with many missing values and then fill the remaining gaps using <code>na.interp()</code> function <a href="https://search.r-project.org/CRAN/refmans/forecast/html/na.interp.html">(Read more)</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>item_ids <span class="ot">&lt;-</span> med_tsb <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>item_ids <span class="ot">&lt;-</span> med_tsb <span class="sc">|&gt;</span> </span>
 <span id="cb18-2"><a></a>  <span class="fu">count_gaps</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb18-3"><a></a>  <span class="fu">group_by</span>(hub_id, product_id) <span class="sc">|&gt;</span> </span>
 <span id="cb18-4"><a></a>  <span class="fu">summarise</span>(<span class="at">.n =</span> <span class="fu">max</span>(.n), <span class="at">.groups =</span> <span class="st">'drop'</span>) <span class="sc">|&gt;</span> </span>
@@ -503,15 +503,15 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <span id="cb18-17"><a></a>                                   <span class="fu">exp</span>(</span>
 <span id="cb18-18"><a></a>                                     forecast<span class="sc">::</span><span class="fu">na.interp</span>(</span>
 <span id="cb18-19"><a></a>                                     <span class="fu">ts</span>(<span class="fu">log</span>(quantity_issued), <span class="at">frequency =</span> <span class="dv">12</span>))), </span>
-<span id="cb18-20"><a></a>                                   quantity_issued))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-20"><a></a>                                   quantity_issued))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="data-wrangaling-using-tsibble" class="slide level2">
 <h2>Data wrangaling using <code>tsibble</code></h2>
 <p>We can use the <code>filter()</code> function to select rows.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>med_tsb <span class="sc">|&gt;</span> </span>
-<span id="cb19-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_10'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>med_tsb <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_10'</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 417 x 4 [1M]
 # Key:       hub_id, product_id [7]
@@ -535,9 +535,9 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <h2>Data wrangaling using <code>tsibble</code></h2>
 <p>We can use the <code>select()</code> function to select columns.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>med_tsb <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>med_tsb <span class="sc">|&gt;</span> </span>
 <span id="cb21-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_10'</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb21-3"><a></a>  <span class="fu">select</span>(date, product_id, quantity_issued)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-3"><a></a>  <span class="fu">select</span>(date, product_id, quantity_issued)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 417 x 3 [1M]
 # Key:       product_id [7]
@@ -561,9 +561,9 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <h2>Data wrangaling using <code>tsibble</code></h2>
 <p>We can use <code>group_by()</code> function to group over keys. We can use the <code>summarise()</code> function to summarise over keys.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>med_tsb <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>med_tsb <span class="sc">|&gt;</span> </span>
 <span id="cb23-2"><a></a>  <span class="fu">group_by</span>(product_id) <span class="sc">|&gt;</span> </span>
-<span id="cb23-3"><a></a>  <span class="fu">summarise</span>(<span class="at">total_quantity_issued =</span> <span class="fu">sum</span>(quantity_issued), <span class="at">.groups =</span> <span class="st">'drop'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-3"><a></a>  <span class="fu">summarise</span>(<span class="at">total_quantity_issued =</span> <span class="fu">sum</span>(quantity_issued), <span class="at">.groups =</span> <span class="st">'drop'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 471 x 3 [1M]
 # Key:       product_id [7]
@@ -587,8 +587,8 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <h2>Data wrangaling using <code>tsibble</code></h2>
 <p>We can use the <code>mutate()</code> function to create new variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>med_tsb <span class="sc">|&gt;</span> </span>
-<span id="cb25-2"><a></a>  <span class="fu">mutate</span>(<span class="at">quarter =</span> <span class="fu">yearquarter</span>(date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>med_tsb <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a></a>  <span class="fu">mutate</span>(<span class="at">quarter =</span> <span class="fu">yearquarter</span>(date))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 6,745 x 5 [1M]
 # Key:       hub_id, product_id [133]
@@ -612,10 +612,10 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <h2>Data wrangaling using <code>tsibble</code></h2>
 <p>We can use <code>index_by()</code> function to group over index We can use the <code>summarise()</code> function to summarise over index.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>med_tsb <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>med_tsb <span class="sc">|&gt;</span> </span>
 <span id="cb27-2"><a></a>  <span class="fu">mutate</span>(<span class="at">quarter =</span> <span class="fu">yearquarter</span>(date)) <span class="sc">|&gt;</span> </span>
 <span id="cb27-3"><a></a>  <span class="fu">index_by</span>(quarter) <span class="sc">|&gt;</span> </span>
-<span id="cb27-4"><a></a>  <span class="fu">summarise</span>(<span class="at">total_quantity_issues =</span> <span class="fu">sum</span>(quantity_issued))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-4"><a></a>  <span class="fu">summarise</span>(<span class="at">total_quantity_issues =</span> <span class="fu">sum</span>(quantity_issued))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 24 x 2 [1Q]
    quarter total_quantity_issues
@@ -638,7 +638,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <h1>Now it is your <code>turn</code>.</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_0ecea733" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_0fd2084a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -677,7 +677,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <h2>Time plots</h2>
 <p>You can create time plot using <code>autoplot()</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb29-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_2'</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb29-3"><a></a>  <span class="fu">autoplot</span>(quantity_issued) <span class="sc">+</span></span>
 <span id="cb29-4"><a></a>  <span class="fu">labs</span>(</span>
@@ -685,14 +685,14 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <span id="cb29-6"><a></a>    <span class="at">y =</span> <span class="st">"Quantity Issued"</span></span>
 <span id="cb29-7"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb29-8"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb29-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
 <section id="are-time-plots-best" class="slide level2">
 <h2>Are time plots best?</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb30-2"><a></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">paste0</span>(hub_id, product_id)) <span class="sc">|&gt;</span> </span>
 <span id="cb30-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> quantity_issued, <span class="at">group =</span> id)) <span class="sc">+</span></span>
 <span id="cb30-4"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
@@ -702,7 +702,7 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <span id="cb30-8"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb30-9"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb30-10"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb30-11"><a></a>        <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-11"><a></a>        <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
@@ -717,13 +717,13 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <section id="seasonal-plots-1" class="slide level2">
 <h2>Seasonal plots</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb31-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_14'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb31-3"><a></a>  <span class="fu">gg_season</span>(quantity_issued, <span class="at">labels =</span> <span class="st">"both"</span>) <span class="sc">+</span></span>
 <span id="cb31-4"><a></a>  <span class="fu">ylab</span>(<span class="st">"Quantity issued"</span>) <span class="sc">+</span></span>
 <span id="cb31-5"><a></a>  <span class="fu">ggtitle</span>(<span class="st">"Seasonal plot"</span>) <span class="sc">+</span></span>
 <span id="cb31-6"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb31-7"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-7"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
@@ -738,14 +738,14 @@ Harsha Halgamuwe Hewage <br> Data Lab for Social Good Research Lab <br> Cardiff 
 <section id="seasonal-sub-series-plots-1" class="slide level2">
 <h2>Seasonal sub series plots</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb32-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_14'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb32-3"><a></a>  <span class="fu">gg_subseries</span>(quantity_issued) <span class="sc">+</span></span>
 <span id="cb32-4"><a></a>  <span class="fu">ylab</span>(<span class="st">"Quantity issued"</span>) <span class="sc">+</span></span>
 <span id="cb32-5"><a></a>  <span class="fu">ggtitle</span>(<span class="st">"Seasonal sub series plot"</span>) <span class="sc">+</span></span>
 <span id="cb32-6"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb32-7"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb32-8"><a></a>        <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-8"><a></a>        <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
@@ -777,8 +777,8 @@ y_t = T_t + S_t + R_t
 <h2>Feature extraction and statistics</h2>
 <p>We can use <code>features()</code> function to extract the strength of trend and seasonality.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
-<span id="cb33-2"><a></a>  <span class="fu">features</span>(quantity_issued, feat_stl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<span id="cb33-2"><a></a>  <span class="fu">features</span>(quantity_issued, feat_stl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 21 × 11
    hub_id product_id trend_strength seasonal_strength_year seasonal_peak_year
@@ -802,14 +802,14 @@ y_t = T_t + S_t + R_t
 <section id="feature-extraction-and-statistics-1" class="slide level2">
 <h2>Feature extraction and statistics</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb35-2"><a></a>  <span class="fu">features</span>(quantity_issued, feat_stl) <span class="sc">|&gt;</span> </span>
 <span id="cb35-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> trend_strength, <span class="at">y =</span> seasonal_strength_year, <span class="at">shape =</span> product_id)) <span class="sc">+</span></span>
 <span id="cb35-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
 <span id="cb35-5"><a></a>  <span class="fu">ylab</span>(<span class="st">"Seasonal strength"</span>) <span class="sc">+</span></span>
 <span id="cb35-6"><a></a>  <span class="fu">xlab</span>(<span class="st">"Trend strength"</span>) <span class="sc">+</span></span>
 <span id="cb35-7"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb35-8"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-8"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
@@ -826,14 +826,14 @@ y_t = T_t + S_t + R_t
 <section id="lag-plots-and-autocorrelation-1" class="slide level2">
 <h2>Lag plots and autocorrelation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb36-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_14'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span></span>
 <span id="cb36-3"><a></a>  <span class="fu">gg_lag</span>(quantity_issued, <span class="at">lags =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">geom=</span><span class="st">'point'</span>) <span class="sc">+</span></span>
 <span id="cb36-4"><a></a>  <span class="fu">ylab</span>(<span class="st">"Quantity issued"</span>) <span class="sc">+</span></span>
 <span id="cb36-5"><a></a>  <span class="fu">xlab</span>(<span class="st">"Lag (Quantity issued, n)"</span>) <span class="sc">+</span></span>
 <span id="cb36-6"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb36-7"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb36-8"><a></a>         <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-8"><a></a>         <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section>
@@ -855,9 +855,9 @@ y_t = T_t + S_t + R_t
 <section id="autocorrelation-1" class="slide level2">
 <h2>Autocorrelation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb37-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_14'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb37-3"><a></a>  <span class="fu">ACF</span>(quantity_issued, <span class="at">lag_max =</span> <span class="dv">24</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-3"><a></a>  <span class="fu">ACF</span>(quantity_issued, <span class="at">lag_max =</span> <span class="dv">24</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 24 x 4 [1M]
 # Key:       hub_id, product_id [1]
@@ -880,12 +880,12 @@ y_t = T_t + S_t + R_t
 <section id="autocorrelation-2" class="slide level2">
 <h2>Autocorrelation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb39-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_14'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb39-3"><a></a>  <span class="fu">ACF</span>(quantity_issued, <span class="at">lag_max =</span> <span class="dv">36</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb39-4"><a></a>  <span class="fu">autoplot</span>() <span class="sc">+</span></span>
 <span id="cb39-5"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb39-6"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-6"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"><p>What autocorrelation will tell us? Which key features could be highlighted by ACF?</p>
@@ -902,7 +902,7 @@ y_t = T_t + S_t + R_t
 <h1>Now it is your <code>turn</code>.</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_0124d804" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_7b583de1" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -934,7 +934,7 @@ y_t = T_t + S_t + R_t
 <h2>Naive</h2>
 <p>We use <code>NAIVE()</code> function and <code>model()</code> function to build the Naive model.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb40-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span></span>
 <span id="cb40-3"><a></a>  <span class="fu">model</span>(<span class="at">naive =</span> <span class="fu">NAIVE</span>(quantity_issued)) <span class="sc">|&gt;</span> </span>
 <span id="cb40-4"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">12</span>) <span class="sc">|&gt;</span> </span>
@@ -942,7 +942,7 @@ y_t = T_t + S_t + R_t
 <span id="cb40-6"><a></a>             <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>), <span class="at">level =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
 <span id="cb40-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Quantity issued"</span>, <span class="at">x =</span> <span class="st">"Date"</span>) <span class="sc">+</span></span>
 <span id="cb40-8"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb40-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
@@ -964,7 +964,7 @@ y_t = T_t + S_t + R_t
 <section id="snaive" class="slide level2">
 <h2>sNaive</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb41-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span></span>
 <span id="cb41-3"><a></a>  <span class="fu">model</span>(<span class="at">snaive =</span> <span class="fu">SNAIVE</span>(quantity_issued <span class="sc">~</span> <span class="fu">lag</span>(<span class="st">"year"</span>))) <span class="sc">|&gt;</span> </span>
 <span id="cb41-4"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">12</span>) <span class="sc">|&gt;</span> </span>
@@ -972,7 +972,7 @@ y_t = T_t + S_t + R_t
 <span id="cb41-6"><a></a>             <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>), <span class="at">level =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
 <span id="cb41-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Quantity issued"</span>, <span class="at">x =</span> <span class="st">"Date"</span>) <span class="sc">+</span></span>
 <span id="cb41-8"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb41-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
@@ -995,7 +995,7 @@ y_t = T_t + S_t + R_t
 <section id="mean-1" class="slide level2">
 <h2>Mean</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb42-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span></span>
 <span id="cb42-3"><a></a>  <span class="fu">model</span>(<span class="fu">MEAN</span>(quantity_issued <span class="sc">~</span> <span class="fu">window</span>(<span class="at">size =</span> <span class="dv">3</span>))) <span class="sc">|&gt;</span> </span>
 <span id="cb42-4"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">12</span>) <span class="sc">|&gt;</span> </span>
@@ -1003,7 +1003,7 @@ y_t = T_t + S_t + R_t
 <span id="cb42-6"><a></a>             <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>), <span class="at">level =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
 <span id="cb42-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Quantity issued"</span>, <span class="at">x =</span> <span class="st">"Date"</span>) <span class="sc">+</span></span>
 <span id="cb42-8"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb42-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section>
@@ -1096,7 +1096,7 @@ y_t = T_t + S_t + R_t
 <section id="arima-automatic-modelling-1" class="slide level2">
 <h2>ARIMA automatic modelling</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb43-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span></span>
 <span id="cb43-3"><a></a>  <span class="fu">model</span>(<span class="fu">ARIMA</span>(quantity_issued)) <span class="sc">|&gt;</span> </span>
 <span id="cb43-4"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">12</span>) <span class="sc">|&gt;</span> </span>
@@ -1104,7 +1104,7 @@ y_t = T_t + S_t + R_t
 <span id="cb43-6"><a></a>             <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>), <span class="at">level =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
 <span id="cb43-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Quantity issued"</span>, <span class="at">x =</span> <span class="st">"Date"</span>) <span class="sc">+</span></span>
 <span id="cb43-8"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb43-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-35-1.png" width="960" class="r-stretch"></section>
@@ -1192,7 +1192,7 @@ y_t = T_t + S_t + R_t
 <section id="ets-automatic-modelling-1" class="slide level2">
 <h2>ETS automatic modelling</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb44-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span></span>
 <span id="cb44-3"><a></a>  <span class="fu">model</span>(<span class="fu">ETS</span>(quantity_issued)) <span class="sc">|&gt;</span> </span>
 <span id="cb44-4"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">12</span>) <span class="sc">|&gt;</span> </span>
@@ -1200,7 +1200,7 @@ y_t = T_t + S_t + R_t
 <span id="cb44-6"><a></a>             <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>), <span class="at">level =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
 <span id="cb44-7"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Quantity issued"</span>, <span class="at">x =</span> <span class="st">"Date"</span>) <span class="sc">+</span></span>
 <span id="cb44-8"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb44-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-36-1.png" width="960" class="r-stretch"></section>
@@ -1212,7 +1212,7 @@ y_t = T_t + S_t + R_t
 <li>A <code>mable</code> is a model table, each cell corresponds to a fitted model.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="co"># Fit the models</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="co"># Fit the models</span></span>
 <span id="cb45-2"><a></a></span>
 <span id="cb45-3"><a></a>fit_all <span class="ot">&lt;-</span> med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb45-4"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span></span>
@@ -1224,7 +1224,7 @@ y_t = T_t + S_t + R_t
 <span id="cb45-10"><a></a>    <span class="at">ets =</span> <span class="fu">ETS</span>(quantity_issued)</span>
 <span id="cb45-11"><a></a>    )</span>
 <span id="cb45-12"><a></a></span>
-<span id="cb45-13"><a></a>fit_all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-13"><a></a>fit_all</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A mable: 1 x 7
 # Key:     hub_id, product_id [1]
@@ -1238,9 +1238,9 @@ y_t = T_t + S_t + R_t
 <section id="extract-information-from-mable" class="slide level2">
 <h2>Extract information from <code>mable</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>fit_all  <span class="sc">|&gt;</span>  <span class="fu">select</span>(snaive) <span class="sc">|&gt;</span>  <span class="fu">report</span>()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>fit_all  <span class="sc">|&gt;</span>  <span class="fu">select</span>(snaive) <span class="sc">|&gt;</span>  <span class="fu">report</span>()</span>
 <span id="cb47-2"><a></a>fit_all <span class="sc">|&gt;</span>  <span class="fu">tidy</span>()</span>
-<span id="cb47-3"><a></a>fit_all  <span class="sc">|&gt;</span>  <span class="fu">glance</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-3"><a></a>fit_all  <span class="sc">|&gt;</span>  <span class="fu">glance</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>The <code>report()</code> function gives a formatted model-specific display.</li>
@@ -1263,12 +1263,12 @@ y_t = T_t + S_t + R_t
 <section id="producing-forecasts-1" class="slide level2">
 <h2>Producing forecasts</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>fit_all_fc <span class="ot">&lt;-</span> fit_all <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>fit_all_fc <span class="ot">&lt;-</span> fit_all <span class="sc">|&gt;</span> </span>
 <span id="cb48-2"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> <span class="st">'year'</span>)</span>
 <span id="cb48-3"><a></a></span>
 <span id="cb48-4"><a></a><span class="co">#h = "year" is equivalent to setting h = 12.</span></span>
 <span id="cb48-5"><a></a></span>
-<span id="cb48-6"><a></a>fit_all_fc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-6"><a></a>fit_all_fc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A fable: 60 x 6 [1M]
 # Key:     hub_id, product_id, .model [5]
@@ -1292,7 +1292,7 @@ y_t = T_t + S_t + R_t
 <section id="visualising-forecasts" class="slide level2">
 <h2>Visualising forecasts</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>fit_all_fc <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>fit_all_fc <span class="sc">|&gt;</span> </span>
 <span id="cb50-2"><a></a>  <span class="fu">autoplot</span>(<span class="at">level =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
 <span id="cb50-3"><a></a>  <span class="fu">autolayer</span>(med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb50-4"><a></a>              <span class="fu">filter_index</span>(<span class="st">"2022 JAn"</span> <span class="sc">~</span> .) <span class="sc">|&gt;</span> </span>
@@ -1300,7 +1300,7 @@ y_t = T_t + S_t + R_t
 <span id="cb50-6"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Forecasts for monthly quantity issued"</span>, <span class="at">y =</span> <span class="st">"Quantity issued"</span>, <span class="at">x =</span> <span class="st">"Date"</span>) <span class="sc">+</span></span>
 <span id="cb50-7"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb50-8"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>)) <span class="sc">+</span></span>
-<span id="cb50-9"><a></a>  <span class="fu">guides</span>(<span class="at">colour=</span><span class="fu">guide_legend</span>(<span class="at">title=</span><span class="st">"Forecast"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb50-9"><a></a>  <span class="fu">guides</span>(<span class="at">colour=</span><span class="fu">guide_legend</span>(<span class="at">title=</span><span class="st">"Forecast"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-40-1.png" width="960" class="r-stretch"></section></section>
@@ -1309,7 +1309,7 @@ y_t = T_t + S_t + R_t
 <h1>Now it is your <code>turn</code>.</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_0828ff5d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_3116191d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1363,20 +1363,20 @@ y_t = T_t + S_t + R_t
 <section id="generate-different-futures-forecast" class="slide level2">
 <h2>Generate different futures forecast</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb51-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span></span>
 <span id="cb51-3"><a></a>  <span class="fu">model</span>(<span class="at">snaive =</span> <span class="fu">SNAIVE</span>(quantity_issued <span class="sc">~</span> <span class="fu">lag</span>(<span class="st">"year"</span>))) <span class="sc">|&gt;</span> </span>
-<span id="cb51-4"><a></a>  <span class="fu">generate</span>(<span class="at">h =</span> <span class="dv">12</span>, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>, <span class="at">times =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb51-4"><a></a>  <span class="fu">generate</span>(<span class="at">h =</span> <span class="dv">12</span>, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>, <span class="at">times =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="epss_training_files/figure-revealjs/unnamed-chunk-43-1.png" width="960" class="r-stretch"></section>
 <section id="generate-probabilistic-forecast" class="slide level2">
 <h2>Generate probabilistic forecast</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb52-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span></span>
 <span id="cb52-3"><a></a>  <span class="fu">model</span>(<span class="at">snaive =</span> <span class="fu">SNAIVE</span>(quantity_issued <span class="sc">~</span> <span class="fu">lag</span>(<span class="st">"year"</span>))) <span class="sc">|&gt;</span> </span>
-<span id="cb52-4"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">12</span>, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>, <span class="at">times =</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb52-4"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">12</span>, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>, <span class="at">times =</span> <span class="dv">1000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A fable: 12 x 6 [1M]
 # Key:     hub_id, product_id, .model [1]
@@ -1401,12 +1401,12 @@ y_t = T_t + S_t + R_t
 <h2>Prediction intervals</h2>
 <p>Forecast intervals can be extracted using the <code>hilo()</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>med_tsb_filter <span class="sc">|&gt;</span> </span>
 <span id="cb54-2"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span></span>
 <span id="cb54-3"><a></a>  <span class="fu">model</span>(<span class="at">snaive =</span> <span class="fu">SNAIVE</span>(quantity_issued <span class="sc">~</span> <span class="fu">lag</span>(<span class="st">"year"</span>))) <span class="sc">|&gt;</span> </span>
 <span id="cb54-4"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> <span class="dv">12</span>, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>, <span class="at">times =</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb54-5"><a></a>  <span class="fu">hilo</span>(<span class="at">level =</span> <span class="dv">75</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb54-6"><a></a>  <span class="fu">unpack_hilo</span>(<span class="st">"75%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb54-6"><a></a>  <span class="fu">unpack_hilo</span>(<span class="st">"75%"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tsibble: 12 x 8 [1M]
 # Key:       hub_id, product_id, .model [1]
@@ -1432,7 +1432,7 @@ y_t = T_t + S_t + R_t
 <h1>Now it is your <code>turn</code>.</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_2a3cd17a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_e4db5fa9" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1546,7 +1546,7 @@ y_t = T_t + S_t + R_t
 <h2>Evaluating <code>point forecast</code> accuracy</h2>
 <p>Create train and test sets.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>f_horizon <span class="ot">&lt;-</span> <span class="dv">12</span> <span class="co"># forecast horizon</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>f_horizon <span class="ot">&lt;-</span> <span class="dv">12</span> <span class="co"># forecast horizon</span></span>
 <span id="cb56-2"><a></a></span>
 <span id="cb56-3"><a></a>train <span class="ot">&lt;-</span> med_tsb_filter <span class="sc">|&gt;</span> <span class="co"># create train set</span></span>
 <span id="cb56-4"><a></a>  <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>) <span class="sc">|&gt;</span> </span>
@@ -1563,16 +1563,16 @@ y_t = T_t + S_t + R_t
 <span id="cb56-15"><a></a>    )</span>
 <span id="cb56-16"><a></a></span>
 <span id="cb56-17"><a></a>fit_all_fc <span class="ot">&lt;-</span> fit_all <span class="sc">|&gt;</span> <span class="co"># forecasting</span></span>
-<span id="cb56-18"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> f_horizon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb56-18"><a></a>  <span class="fu">forecast</span>(<span class="at">h =</span> f_horizon)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="evaluating-point-forecast-accuracy-5" class="slide level2">
 <h2>Evaluating <code>point forecast</code> accuracy</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>fit_all_fc <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>fit_all_fc <span class="sc">|&gt;</span> </span>
 <span id="cb57-2"><a></a>  <span class="fu">accuracy</span>(med_tsb_filter <span class="sc">|&gt;</span></span>
 <span id="cb57-3"><a></a>             <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>),</span>
-<span id="cb57-4"><a></a>           <span class="at">measures =</span> <span class="fu">list</span>(point_accuracy_measures))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb57-4"><a></a>           <span class="at">measures =</span> <span class="fu">list</span>(point_accuracy_measures))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 12
   .model hub_id product_id .type     ME   RMSE    MAE    MPE  MAPE  MASE RMSSE
@@ -1644,11 +1644,11 @@ Q_{p,t} =
 <section id="evaluating-probabilistic-forecast-accuracy-5" class="slide level2">
 <h2>Evaluating <code>probabilistic forecast</code> accuracy</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>fit_all_fc <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>fit_all_fc <span class="sc">|&gt;</span> </span>
 <span id="cb59-2"><a></a>  <span class="fu">accuracy</span>(med_tsb_filter <span class="sc">|&gt;</span></span>
 <span id="cb59-3"><a></a>             <span class="fu">filter</span>(hub_id <span class="sc">==</span> <span class="st">'hub_1'</span> <span class="sc">&amp;</span> product_id <span class="sc">==</span> <span class="st">'product_5'</span>),</span>
 <span id="cb59-4"><a></a>           <span class="at">measures =</span> <span class="fu">list</span>(distribution_accuracy_measures)) <span class="sc">|&gt;</span> </span>
-<span id="cb59-5"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>percentile)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb59-5"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>percentile)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
   .model hub_id product_id .type  CRPS
@@ -1665,7 +1665,7 @@ Q_{p,t} =
 <h1>Now it is your <code>turn</code>.</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_df98611e" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_f90a36f9" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1682,7 +1682,7 @@ Q_{p,t} =
 <h2>Feature engineering</h2>
 <p>In this training, we only do a basic feature engineering.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a></a><span class="co"># Load data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a></a><span class="co"># Load data</span></span>
 <span id="cb61-2"><a></a><span class="im">from</span> google.colab <span class="im">import</span> files</span>
 <span id="cb61-3"><a></a>uploaded <span class="op">=</span> files.upload()</span>
 <span id="cb61-4"><a></a>df <span class="op">=</span> pd.read_csv(<span class="st">'med_tsb_filter.csv'</span>)</span>
@@ -1698,13 +1698,13 @@ Q_{p,t} =
 <span id="cb61-14"><a></a>df[[<span class="st">'hub_id_cat'</span>, <span class="st">'product_id_cat'</span>]] <span class="op">=</span> enc.fit_transform(df[[<span class="st">'hub_id'</span>, <span class="st">'product_id'</span>]])</span>
 <span id="cb61-15"><a></a></span>
 <span id="cb61-16"><a></a><span class="co"># Create unique identifier for series</span></span>
-<span id="cb61-17"><a></a>df[<span class="st">'unique_id'</span>] <span class="op">=</span> df[<span class="st">'hub_id'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> df[<span class="st">'product_id'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb61-17"><a></a>df[<span class="st">'unique_id'</span>] <span class="op">=</span> df[<span class="st">'hub_id'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> df[<span class="st">'product_id'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="feature-engineering-1" class="slide level2">
 <h2>Feature engineering</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a></a><span class="co"># Create series and exogenous data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a></a><span class="co"># Create series and exogenous data</span></span>
 <span id="cb62-2"><a></a>series <span class="op">=</span> df[[<span class="st">'date'</span>, <span class="st">'unique_id'</span>, <span class="st">'quantity_issued'</span>]]</span>
 <span id="cb62-3"><a></a>exog <span class="op">=</span> df[[<span class="st">'date'</span>, <span class="st">'unique_id'</span>, <span class="st">'month'</span>, <span class="st">'hub_id_cat'</span>, <span class="st">'product_id_cat'</span>]]</span>
 <span id="cb62-4"><a></a></span>
@@ -1723,20 +1723,20 @@ Q_{p,t} =
 <span id="cb62-17"><a></a>    series_id <span class="op">=</span> <span class="st">'unique_id'</span>,</span>
 <span id="cb62-18"><a></a>    index     <span class="op">=</span> <span class="st">'date'</span>,</span>
 <span id="cb62-19"><a></a>    freq      <span class="op">=</span> <span class="st">'M'</span></span>
-<span id="cb62-20"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb62-20"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="feature-engineering-2" class="slide level2">
 <h2>Feature engineering</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a></a><span class="co"># Partition data in train and test</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a></a><span class="co"># Partition data in train and test</span></span>
 <span id="cb63-2"><a></a>end_train <span class="op">=</span> <span class="st">'2022-06-30'</span></span>
 <span id="cb63-3"><a></a>start_test <span class="op">=</span> pd.to_datetime(end_train) <span class="op">+</span> pd.DateOffset(months<span class="op">=</span><span class="dv">1</span>)  <span class="co"># Add 1 month</span></span>
 <span id="cb63-4"><a></a></span>
 <span id="cb63-5"><a></a>series_dict_train <span class="op">=</span> {k: v.loc[:end_train] <span class="cf">for</span> k, v <span class="kw">in</span> series_dict.items()}</span>
 <span id="cb63-6"><a></a>exog_dict_train <span class="op">=</span> {k: v.loc[:end_train] <span class="cf">for</span> k, v <span class="kw">in</span> exog_dict.items()}</span>
 <span id="cb63-7"><a></a>series_dict_test <span class="op">=</span> {k: v.loc[start_test:] <span class="cf">for</span> k, v <span class="kw">in</span> series_dict.items()}</span>
-<span id="cb63-8"><a></a>exog_dict_test <span class="op">=</span> {k: v.loc[start_test:] <span class="cf">for</span> k, v <span class="kw">in</span> exog_dict.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb63-8"><a></a>exog_dict_test <span class="op">=</span> {k: v.loc[start_test:] <span class="cf">for</span> k, v <span class="kw">in</span> exog_dict.items()}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="xgboost" class="slide level2">
@@ -1763,7 +1763,7 @@ Q_{p,t} =
 <section id="xgboost-2" class="slide level2">
 <h2>XGBoost</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a></a><span class="co"># Fit xgboost forecaster</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a></a><span class="co"># Fit xgboost forecaster</span></span>
 <span id="cb64-2"><a></a>regressor_xgb <span class="op">=</span> XGBRegressor(tree_method <span class="op">=</span> <span class="st">'hist'</span>,</span>
 <span id="cb64-3"><a></a>                             enable_categorical <span class="op">=</span> <span class="va">True</span>)</span>
 <span id="cb64-4"><a></a></span>
@@ -1776,26 +1776,26 @@ Q_{p,t} =
 <span id="cb64-11"><a></a></span>
 <span id="cb64-12"><a></a>forecaster_xgb.fit(series<span class="op">=</span>series_dict_train, exog<span class="op">=</span>exog_dict_train, suppress_warnings<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb64-13"><a></a></span>
-<span id="cb64-14"><a></a>forecaster_xgb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb64-14"><a></a>forecaster_xgb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="xgboost-3" class="slide level2">
 <h2>XGBoost</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a></a><span class="co"># Feature importance plot for XGB</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a></a><span class="co"># Feature importance plot for XGB</span></span>
 <span id="cb65-2"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb65-3"><a></a>feat_xgb <span class="op">=</span> forecaster_xgb.get_feature_importances()</span>
 <span id="cb65-4"><a></a>sns.barplot(x<span class="op">=</span><span class="st">'importance'</span>, y<span class="op">=</span><span class="st">'feature'</span>, data<span class="op">=</span>feat_xgb.sort_values(<span class="st">'importance'</span>, ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>))</span>
 <span id="cb65-5"><a></a>plt.title(<span class="st">'XGBoost Feature Importance'</span>)</span>
 <span id="cb65-6"><a></a>plt.tight_layout()</span>
-<span id="cb65-7"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb65-7"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="images/xgb_feat.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="xgboost-4" class="slide level2">
 <h2>XGBoost</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a></a><span class="co"># XGB predictions and plot</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a></a><span class="co"># XGB predictions and plot</span></span>
 <span id="cb66-2"><a></a>boot <span class="op">=</span> <span class="dv">100</span></span>
 <span id="cb66-3"><a></a>predictions_xgb <span class="op">=</span> forecaster_xgb.predict_bootstrapping(steps<span class="op">=</span><span class="dv">12</span>, exog<span class="op">=</span>exog_dict_test, n_boot<span class="op">=</span>boot)</span>
 <span id="cb66-4"><a></a></span>
@@ -1806,13 +1806,13 @@ Q_{p,t} =
 <span id="cb66-9"><a></a><span class="co"># Calculate statistics</span></span>
 <span id="cb66-10"><a></a>mean_pred <span class="op">=</span> xgb_pred_test.mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb66-11"><a></a>lower_pred <span class="op">=</span> xgb_pred_test.quantile(<span class="fl">0.025</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb66-12"><a></a>upper_pred <span class="op">=</span> xgb_pred_test.quantile(<span class="fl">0.975</span>, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb66-12"><a></a>upper_pred <span class="op">=</span> xgb_pred_test.quantile(<span class="fl">0.975</span>, axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="xgboost-5" class="slide level2">
 <h2>XGBoost</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a></a><span class="co"># Plotting</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a></a><span class="co"># Plotting</span></span>
 <span id="cb67-2"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
 <span id="cb67-3"><a></a>plt.plot(series_dict_test[example_series], label<span class="op">=</span><span class="st">'Actual'</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
 <span id="cb67-4"><a></a>plt.plot(mean_pred, label<span class="op">=</span><span class="st">'XGB Prediction'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
@@ -1822,14 +1822,14 @@ Q_{p,t} =
 <span id="cb67-8"><a></a>                 color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
 <span id="cb67-9"><a></a>plt.title(<span class="st">'XGBoost Forecast with 95% Prediction Intervals'</span>)</span>
 <span id="cb67-10"><a></a>plt.legend()</span>
-<span id="cb67-11"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb67-11"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="images/xgb_pred.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="xgboost-6" class="slide level2">
 <h2>XGBoost</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a></a><span class="co"># Create prediciton df</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a></a><span class="co"># Create prediciton df</span></span>
 <span id="cb68-2"><a></a></span>
 <span id="cb68-3"><a></a>pred_id <span class="op">=</span> <span class="bu">list</span>(predictions_xgb.keys())</span>
 <span id="cb68-4"><a></a></span>
@@ -1844,7 +1844,7 @@ Q_{p,t} =
 <span id="cb68-13"><a></a>    xgb_pred_test[<span class="st">'model'</span>] <span class="op">=</span> <span class="st">'xgb'</span></span>
 <span id="cb68-14"><a></a>    xgb_pred <span class="op">=</span> pd.concat([xgb_pred, xgb_pred_test])</span>
 <span id="cb68-15"><a></a></span>
-<span id="cb68-16"><a></a>xgb_pred.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb68-16"><a></a>xgb_pred.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="lightgbm" class="slide level2">
@@ -1868,7 +1868,7 @@ Q_{p,t} =
 <section id="lightgbm-2" class="slide level2">
 <h2>LightGBM</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a></a><span class="co"># Fit lightgbm forecaster</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a></a><span class="co"># Fit lightgbm forecaster</span></span>
 <span id="cb69-2"><a></a></span>
 <span id="cb69-3"><a></a>regressor_lgbm <span class="op">=</span> LGBMRegressor(</span>
 <span id="cb69-4"><a></a>                boosting_type <span class="op">=</span> <span class="st">'gbdt'</span>,</span>
@@ -1887,26 +1887,26 @@ Q_{p,t} =
 <span id="cb69-17"><a></a></span>
 <span id="cb69-18"><a></a>forecaster_lgbm.fit(series<span class="op">=</span>series_dict_train, exog<span class="op">=</span>exog_dict_train, suppress_warnings<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb69-19"><a></a></span>
-<span id="cb69-20"><a></a>forecaster_lgbm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb69-20"><a></a>forecaster_lgbm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="lightgbm-3" class="slide level2">
 <h2>LightGBM</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a></a><span class="co"># Feature importance plot for LGBM</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a></a><span class="co"># Feature importance plot for LGBM</span></span>
 <span id="cb70-2"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb70-3"><a></a>feat_lgbm <span class="op">=</span> forecaster_lgbm.get_feature_importances()</span>
 <span id="cb70-4"><a></a>sns.barplot(x<span class="op">=</span><span class="st">'importance'</span>, y<span class="op">=</span><span class="st">'feature'</span>, data<span class="op">=</span>feat_lgbm.sort_values(<span class="st">'importance'</span>, ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>))</span>
 <span id="cb70-5"><a></a>plt.title(<span class="st">'LightGBM Feature Importance'</span>)</span>
 <span id="cb70-6"><a></a>plt.tight_layout()</span>
-<span id="cb70-7"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb70-7"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="images/lgbm_feat.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="lightgbm-4" class="slide level2">
 <h2>LightGBM</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a></a><span class="co"># LGBM predictions and plot</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a></a><span class="co"># LGBM predictions and plot</span></span>
 <span id="cb71-2"><a></a>boot <span class="op">=</span> <span class="dv">100</span></span>
 <span id="cb71-3"><a></a>predictions_lgbm <span class="op">=</span> forecaster_lgbm.predict_bootstrapping(steps<span class="op">=</span><span class="dv">12</span>, exog<span class="op">=</span>exog_dict_test, n_boot<span class="op">=</span>boot)</span>
 <span id="cb71-4"><a></a></span>
@@ -1917,13 +1917,13 @@ Q_{p,t} =
 <span id="cb71-9"><a></a><span class="co"># Calculate statistics</span></span>
 <span id="cb71-10"><a></a>mean_pred <span class="op">=</span> lgbm_pred_test.mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb71-11"><a></a>lower_pred <span class="op">=</span> lgbm_pred_test.quantile(<span class="fl">0.025</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb71-12"><a></a>upper_pred <span class="op">=</span> lgbm_pred_test.quantile(<span class="fl">0.975</span>, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb71-12"><a></a>upper_pred <span class="op">=</span> lgbm_pred_test.quantile(<span class="fl">0.975</span>, axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="lightgbm-5" class="slide level2">
 <h2>LightGBM</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a></a><span class="co"># Plotting</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a></a><span class="co"># Plotting</span></span>
 <span id="cb72-2"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
 <span id="cb72-3"><a></a>plt.plot(series_dict_test[example_series], label<span class="op">=</span><span class="st">'Actual'</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
 <span id="cb72-4"><a></a>plt.plot(mean_pred, label<span class="op">=</span><span class="st">'LGBM Prediction'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
@@ -1933,14 +1933,14 @@ Q_{p,t} =
 <span id="cb72-8"><a></a>                 color<span class="op">=</span><span class="st">'blue'</span>, alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
 <span id="cb72-9"><a></a>plt.title(<span class="st">'LGBM Forecast with 95% Prediction Intervals'</span>)</span>
 <span id="cb72-10"><a></a>plt.legend()</span>
-<span id="cb72-11"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb72-11"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="images/lgbm_pred.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="lightgbm-6" class="slide level2">
 <h2>LightGBM</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a></a><span class="co"># Create prediciton df</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a></a><span class="co"># Create prediciton df</span></span>
 <span id="cb73-2"><a></a></span>
 <span id="cb73-3"><a></a>pred_id <span class="op">=</span> <span class="bu">list</span>(predictions_lgbm.keys())</span>
 <span id="cb73-4"><a></a></span>
@@ -1955,15 +1955,15 @@ Q_{p,t} =
 <span id="cb73-13"><a></a>    lgbm_pred_test[<span class="st">'model'</span>] <span class="op">=</span> <span class="st">'lgbm'</span></span>
 <span id="cb73-14"><a></a>    lgbm_pred <span class="op">=</span> pd.concat([lgbm_pred, lgbm_pred_test])</span>
 <span id="cb73-15"><a></a></span>
-<span id="cb73-16"><a></a>lgbm_pred.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb73-16"><a></a>lgbm_pred.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="model-evaluation" class="slide level2">
 <h2>Model evaluation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a></a><span class="co"># Calculate metrics for both models</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a></a><span class="co"># Calculate metrics for both models</span></span>
 <span id="cb74-2"><a></a>xgb_mase, xgb_rmse, xgb_qs, xgb_crps <span class="op">=</span> calculate_metrics(predictions_xgb, series_dict_test, series_dict_train)</span>
-<span id="cb74-3"><a></a>lgbm_mase, lgbm_rmse, lgbm_qs, lgbm_crps <span class="op">=</span> calculate_metrics(predictions_lgbm, series_dict_test, series_dict_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb74-3"><a></a>lgbm_mase, lgbm_rmse, lgbm_qs, lgbm_crps <span class="op">=</span> calculate_metrics(predictions_lgbm, series_dict_test, series_dict_train)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <table class="caption-top">
@@ -2027,32 +2027,32 @@ Q_{p,t} =
 <li>Create new key and copy it</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a></a><span class="op">!</span>pip install nixtla</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a></a><span class="op">!</span>pip install nixtla</span>
 <span id="cb75-2"><a></a></span>
 <span id="cb75-3"><a></a><span class="co"># Load libraries</span></span>
 <span id="cb75-4"><a></a><span class="im">from</span> nixtla <span class="im">import</span> NixtlaClient</span>
 <span id="cb75-5"><a></a></span>
 <span id="cb75-6"><a></a><span class="co"># Initialize Nixtla client</span></span>
-<span id="cb75-7"><a></a>nixtla_client <span class="op">=</span> NixtlaClient(api_key<span class="op">=</span><span class="st">'your_api_key_here'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb75-7"><a></a>nixtla_client <span class="op">=</span> NixtlaClient(api_key<span class="op">=</span><span class="st">'your_api_key_here'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="timegpt-2" class="slide level2">
 <h2>TimeGPT</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a></a><span class="co"># Since we already have done the feature engineering, we dont need to do it again</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a></a><span class="co"># Since we already have done the feature engineering, we dont need to do it again</span></span>
 <span id="cb76-2"><a></a><span class="co"># Create unique identifier and rename columns for TimeGPT</span></span>
 <span id="cb76-3"><a></a>df_timegpt <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'date'</span>: <span class="st">'ds'</span>, <span class="st">'quantity_issued'</span>: <span class="st">'y'</span>}).drop(columns<span class="op">=</span>[<span class="st">'hub_id'</span>, <span class="st">'product_id'</span>])</span>
 <span id="cb76-4"><a></a></span>
 <span id="cb76-5"><a></a><span class="co"># Split data into train-test</span></span>
 <span id="cb76-6"><a></a>end_train <span class="op">=</span> <span class="st">'2022-06-30'</span></span>
 <span id="cb76-7"><a></a>train_df <span class="op">=</span> df_timegpt[df_timegpt[<span class="st">'ds'</span>] <span class="op">&lt;=</span> end_train]</span>
-<span id="cb76-8"><a></a>test_df <span class="op">=</span> df_timegpt[df_timegpt[<span class="st">'ds'</span>] <span class="op">&gt;</span> end_train]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb76-8"><a></a>test_df <span class="op">=</span> df_timegpt[df_timegpt[<span class="st">'ds'</span>] <span class="op">&gt;</span> end_train]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="timegpt-3" class="slide level2">
 <h2>TimeGPT</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a></a><span class="co"># TimeGPT Base Model</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a></a><span class="co"># TimeGPT Base Model</span></span>
 <span id="cb77-2"><a></a>timegpt_fcst <span class="op">=</span>  nixtla_client.forecast(</span>
 <span id="cb77-3"><a></a>    df<span class="op">=</span>train_df,</span>
 <span id="cb77-4"><a></a>    h<span class="op">=</span><span class="bu">len</span>(test_df[<span class="st">'ds'</span>].unique()),</span>
@@ -2060,14 +2060,14 @@ Q_{p,t} =
 <span id="cb77-6"><a></a>    level<span class="op">=</span>[<span class="dv">90</span>, <span class="dv">95</span>]  <span class="co"># 90% and 95% prediction intervals</span></span>
 <span id="cb77-7"><a></a>)</span>
 <span id="cb77-8"><a></a></span>
-<span id="cb77-9"><a></a>nixtla_client.plot(train_df, timegpt_fcst, time_col<span class="op">=</span><span class="st">'ds'</span>, target_col<span class="op">=</span><span class="st">'y'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb77-9"><a></a>nixtla_client.plot(train_df, timegpt_fcst, time_col<span class="op">=</span><span class="st">'ds'</span>, target_col<span class="op">=</span><span class="st">'y'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="images/timegpt.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="timegpt-4" class="slide level2">
 <h2>TimeGPT</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a></a><span class="co"># TimeGPT with Exogenous Variables</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a></a><span class="co"># TimeGPT with Exogenous Variables</span></span>
 <span id="cb78-2"><a></a></span>
 <span id="cb78-3"><a></a><span class="co"># Prepare exogenous data</span></span>
 <span id="cb78-4"><a></a>exog_features <span class="op">=</span> [<span class="st">'month'</span>, <span class="st">'hub_id_cat'</span>, <span class="st">'product_id_cat'</span>]</span>
@@ -2083,14 +2083,14 @@ Q_{p,t} =
 <span id="cb78-14"><a></a>    level<span class="op">=</span>[<span class="dv">90</span>, <span class="dv">95</span>]</span>
 <span id="cb78-15"><a></a>)</span>
 <span id="cb78-16"><a></a></span>
-<span id="cb78-17"><a></a>nixtla_client.plot(train_df, timegpt_reg_fcst, time_col<span class="op">=</span><span class="st">'ds'</span>, target_col<span class="op">=</span><span class="st">'y'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb78-17"><a></a>nixtla_client.plot(train_df, timegpt_reg_fcst, time_col<span class="op">=</span><span class="st">'ds'</span>, target_col<span class="op">=</span><span class="st">'y'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="images/timegpt.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="model-evaluation-1" class="slide level2">
 <h2>Model evaluation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a></a><span class="co"># Calculate metrics for both models</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a></a><span class="co"># Calculate metrics for both models</span></span>
 <span id="cb79-2"><a></a>xgb_mase, xgb_rmse, xgb_qs, xgb_crps <span class="op">=</span> calculate_metrics(predictions_xgb, series_dict_test, series_dict_train)</span>
 <span id="cb79-3"><a></a>lgbm_mase, lgbm_rmse, lgbm_qs, lgbm_crps <span class="op">=</span> calculate_metrics(predictions_lgbm, series_dict_test, series_dict_train)</span>
 <span id="cb79-4"><a></a></span>
@@ -2098,7 +2098,7 @@ Q_{p,t} =
 <span id="cb79-6"><a></a>base_metrics <span class="op">=</span> calculate_metrics(timegpt_fcst, test_df, train_df)</span>
 <span id="cb79-7"><a></a></span>
 <span id="cb79-8"><a></a><span class="co"># Calculate metrics for regressor model</span></span>
-<span id="cb79-9"><a></a>reg_metrics <span class="op">=</span> calculate_metrics(timegpt_reg_fcst, test_df, train_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb79-9"><a></a>reg_metrics <span class="op">=</span> calculate_metrics(timegpt_reg_fcst, test_df, train_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <table class="caption-top">
@@ -2479,7 +2479,7 @@ y_{i,t} = &amp; \left(\sum_{j=15}^{50} \text{mCPR}_{t,j} \times \text{WomenPopul
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -2591,13 +2591,14 @@ y_{i,t} = &amp; \left(\sum_{j=15}^{50} \text{mCPR}_{t,j} \times \text{WomenPopul
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

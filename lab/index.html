@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-43ffb32da9c5aa206d0abea635e78741.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c059414aed04a8b02c278411b8019dcb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +114,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -143,6 +144,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Home</span>
     </a>
@@ -219,7 +222,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="U3RvY2hhc3RpYyUyMG1vZGVsbGluZyUyQ0hlYWx0aGNhcmUlMkNSJTJDUHl0aG9u" data-listing-date-sort="1747267200000" data-listing-file-modified-sort="1757584608618" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="381">
+<div class="quarto-post image-right" data-index="0" data-categories="U3RvY2hhc3RpYyUyMG1vZGVsbGluZyUyQ0hlYWx0aGNhcmUlMkNSJTJDUHl0aG9u" data-listing-date-sort="1747267200000" data-listing-file-modified-sort="1758009139889" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="381">
 <div class="thumbnail"><a href="../lab/dl4sg_marcov/index.html" class="no-external">
 
 <img loading="lazy" src="../lab/dl4sg_marcov/cover.png" class="thumbnail-image">
@@ -244,7 +247,7 @@ Harsha Chamara Hewage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="UmVzZWFyY2glMkNNZXRob2RvbG9neSUyQ1BoaWxvc29waHk=" data-listing-date-sort="1744329600000" data-listing-file-modified-sort="1757584608743" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="334">
+<div class="quarto-post image-right" data-index="1" data-categories="UmVzZWFyY2glMkNNZXRob2RvbG9neSUyQ1BoaWxvc29waHk=" data-listing-date-sort="1744329600000" data-listing-file-modified-sort="1758009140013" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="334">
 <div class="thumbnail"><a href="../lab/intro_method_skills/index.html" class="no-external">
 
 <img loading="lazy" src="../lab/intro_method_skills/cover.png" class="thumbnail-image">
@@ -269,7 +272,7 @@ Harsha Halgamuwe Hewage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Rm9yZWNhc3RpbmclMkNIZWFsdGhjYXJlJTJDUiUyQ1B5dGhvbiUyQ01hY2hpbmUlMjBMZWFybmluZw==" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1757584608700" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="376">
+<div class="quarto-post image-right" data-index="2" data-categories="Rm9yZWNhc3RpbmclMkNIZWFsdGhjYXJlJTJDUiUyQ1B5dGhvbiUyQ01hY2hpbmUlMjBMZWFybmluZw==" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1758009139970" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="376">
 <div class="thumbnail"><a href="../lab/epss_training/index.html" class="no-external">
 
 <img loading="lazy" src="../lab/epss_training/cover.png" class="thumbnail-image">
@@ -294,7 +297,7 @@ Harsha Chamara Hewage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Rm9yZWNhc3RpbmclMkNTY29yaW5nJTIwUnVsZXMlMkNS" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1757584608695" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1715">
+<div class="quarto-post image-right" data-index="3" data-categories="Rm9yZWNhc3RpbmclMkNTY29yaW5nJTIwUnVsZXMlMkNS" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1758009139964" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1715">
 <div class="thumbnail"><a href="../lab/energy_score/index.html" class="no-external">
 
 <img loading="lazy" src="../lab/energy_score/point_vs_prob.jpg" class="thumbnail-image">
@@ -319,7 +322,7 @@ Harsha Chamara Hewage
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="UHl0aG9uJTJDSnVweXRlciUyMExhYiUyQ0RhdGElMjBhbmFseXRpY3M=" data-listing-date-sort="1740960000000" data-listing-file-modified-sort="1757584608795" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="168">
+<div class="quarto-post image-right" data-index="4" data-categories="UHl0aG9uJTJDSnVweXRlciUyMExhYiUyQ0RhdGElMjBhbmFseXRpY3M=" data-listing-date-sort="1740960000000" data-listing-file-modified-sort="1758009140065" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="168">
 <div class="thumbnail"><a href="../lab/intro_python/index.html" class="no-external">
 
 <img loading="lazy" src="../lab/intro_python/cover.jpg" class="thumbnail-image">
@@ -398,13 +401,14 @@ Harsha Chamara Hewage
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
