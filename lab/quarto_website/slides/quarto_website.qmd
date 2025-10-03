@@ -1,0 +1,1490 @@
+---
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1920
+    height: 1080
+    logo: "images/logo.png"
+    footer: "[Quarto Websites: Create and publish your first website](https://chamara7h.github.io/lab/)"
+    css: theme.css
+    theme: simple
+    echo: true
+execute:
+  warning: false
+  echo: false
+---   
+
+<div style="position: relative; width: 100%; height: 100%;">
+  <img
+    src="images/cardiff_logo.png"
+    alt="Cardiff University"
+    style="
+      position: absolute;
+      top: 40px;
+      left: 0px;
+      width: 110px;
+      height: auto;
+    "
+  />
+
+  <img
+    src="images/logo_white.png"
+    alt="Data Lab for Social Good"
+    style="
+      position: absolute;
+      top: 40px;
+      left: 150px;
+      width: 225px;
+      height: auto;
+    "
+  />
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# **Quarto Websites** {background-image="images/cover2.png" background-size="cover" background-color="black"}
+
+<h2>
+Create and publish your first website
+<h2>
+
+<h4>
+  Harsha Halgamuwe Hewage, Data Lab for Social Good Research Group, Cardiff University, UK 
+  
+  2025-11-12
+</h4>
+
+
+::: aside
+<span style="color: #fff;">Image generated using GPT-5 Thinking Mini</span>
+:::
+
+</div>
+
+```{r}
+#| echo: false
+
+library(knitr)
+options(knitr.graphics.auto_pdf = TRUE)
+```
+
+```{r}
+#| label: setup
+#| context: setup
+#| include: false
+
+required_packages <- c(
+  "countdown"
+)
+
+new_packages <- required_packages[!required_packages %in% installed.packages()[, "Package"]]
+if (length(new_packages)) {
+  install.packages(new_packages)
+}
+
+invisible(lapply(required_packages, library, character.only = TRUE))
+
+```
+
+## Outline
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/outline.png"
+     alt="Outline graphic"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+::: {.step data-step="01"}
+<div class="step-content">
+  <h3>Connect R Studio with GIT</h3>
+</div>
+::: 
+
+::: {.step data-step="02"}
+<div class="step-content">
+  <h3>Lets build the home page</h3>
+</div>
+:::
+
+::: {.step data-step="03"}
+<div class="step-content">
+  <h3>How to style your website</h3>
+</div>
+:::
+
+::: {.step data-step="04"}
+<div class="step-content">
+  <h3>Pages and listings</h3>
+</div>
+:::
+
+::: {.step data-step="05"}
+<div class="step-content">
+  <h3>Lets publish your website</h3>
+</div>
+:::
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+## Assumptions
+
+<br>
+
+- You are expected to be comfortable with R and Git.
+
+- Have used Quarto to generate documents (e.g. HTML, PDF, MS Word etc.)
+
+- Are comfortable editing plain text documents (e.g `.qmd`) in your IDE (e.g. RStudio, Visual Studio Code etc.)
+
+- Want to walk away with your own personal website.
+
+- We won't assume you have any HTML, CSS/SCSS or Git/GitHub experience.
+
+<br>
+
+::::: columns
+::: column
+
+::: {.fragment fragment-index=0}
+
+### What we will cover?
+
+-   Create the home page
+-   Simple styling such as font, colour, size
+-   Listing and navigation
+
+:::
+
+:::
+
+::: column
+
+::: {.fragment fragment-index=1}
+
+### What we will `not cover`
+
+- Advance styling using `css` and `scss`
+- Advance navigation options
+- Customise templates
+- Run code blocks
+
+:::
+
+:::
+:::::
+
+## Materials
+
+![](images/qr.png)
+
+You can find the workshop materials [https://chamara7h.github.io/lab/](https://chamara7h.github.io/lab/) or simply scan the QR code.
+
+<br>
+
+**Note**: These materials are based on my learnings at;
+
+- Posit PBC: [Quarto websites video series](https://www.youtube.com/watch?v=l7r24gTEkEY).
+
+- [Introduction to Git and GitHub for R Users](https://nrennie.rbind.io/talks/rladies-st-louis-git/) by Nicola Rennie. 
+
+- [Publish a Quarto project using GitHub Pages](https://www.youtube.com/watch?v=arzBRW5XIkg) by Melissa Van Bussel.
+
+
+# Connect R Studio with GIT {background-color="#4D59AC"}
+
+## Using Git and GitHub with RStudio
+
+<br>
+
+What you need:
+
+- R, RStudio, and Git installed on your laptop
+
+- A GitHub account
+
+- GitHub credentials
+
+Optional (but strongly recommended):
+
+- The usethis R package
+
+- [Happy Git with R](https://happygitwithr.com/)
+
+## Lets setup Git in R Studio - `Live demo`
+
+<br>
+
+``` {.default filename="Terminal"}
+# check git is installed
+git --version
+```
+
+<br>
+
+Then,
+
+``` {.default filename="R script"}
+# from R: configure git (usethis)
+library(usethis)
+use_git_config(
+  user.name = "your-username",
+  user.email = "you@example.org"
+)
+
+# create a GitHub personal access token (opens browser)
+create_github_token()
+
+# store credentials locally (prompts for token paste)
+library(gitcreds)
+gitcreds_set()
+```
+
+## Now it is your `turn`.
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/your_turn.png"
+     alt="Outline graphic"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+1. Create a GitHub account if you don’t already have one, and make sure you have Git installed on your laptop.
+
+2. Install and load the `usethis` and `gitcreds` packages.
+
+3. Configure git then run `create_github_token()`, and follow the instructions to generate a token.
+
+4. Run `gitcreds_set()` and paste in the token when prompted.
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 5, seconds = 00)
+```
+
+# Lets build the home page... {background-color="#4D59AC"}
+
+## Start with a `template`
+
+<br>
+
+Start somewhere logical:
+
+``` {.default filename="Terminal"}
+cd ~/Documents
+```
+
+OR
+
+``` {.default filename="Terminal"}
+cd /d/GIT
+```
+
+Get the website template:
+
+``` {.default filename="Terminal"}
+quarto use template chamara7h/quarto_website_template
+```
+
+Follow the prompts:
+
+``` {.default filename="Terminal"}
+Quarto templates may execute code when documents are rendered. If you do not 
+trust the authors of the template, we recommend that you do not install or 
+use the template.
+? Do you trust the authors of this template (Y/n) › Y
+? Create a subdirectory for template? (Y/n) › Y
+? Directory name: › website
+```
+
+## Now it is your `turn`.
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/your_turn.png"
+     alt="Outline graphic"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+1.  Get the starter template.
+
+2.  Open `index.qmd`
+
+3.  Preview `index.qmd`
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 2, seconds = 00)
+```
+
+## `Home page` structure
+
+<br>
+
+``` {.yaml filename="index.qmd"}
+---
+title: "Bruce Wayne"
+subtitle: "I am Batman"
+image: profile.jpg
+about: # https://quarto.org/docs/websites/website-about.html
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
+---
+
+A little bit about me and my life.
+
+## Education
+
+University of XYZ, City \| Location \| Sept 20XX - June 20XX
+
+## Experience
+
+Workplace \| Job title \| April 20XX - present
+```
+
+<br>
+
+Webpages are like any other `Quarto document`:
+
+- Start with a YAML header
+- Can include code cells
+- Everything else is markdown content
+
+## `About` key in YAML
+
+<br>
+
+- Landing/ home page controlled by the `about` key in YAML.
+
+- Content and YAML values are combined using a template:
+
+``` yaml
+---
+about: # https://quarto.org/docs/websites/website-about.html
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
+---
+```
+
+<br>
+
+Different templates: `jolla`, `trestles`, `solana`, `marquee`, or `broadside`
+
+
+## How to set the `image`
+
+<br>
+
+Used in `about` template, and social cards.
+
+::::: columns
+::: column
+``` {.yaml filename="index.qmd"}
+---
+image: images/profile.jpg
+about: # https://quarto.org/docs/websites/website-about.html
+  template: jolla
+  image-shape: round
+---
+```
+:::
+
+::: column
+```         
+website/
+├── _quarto.yml
+├── images/
+│   └──  profile.jpg
+└── index.qmd
+```
+:::
+:::::
+
+<br>
+
+Use a path relative to `index.qmd`
+
+Image shapes: `rectangle`, `round` and `rounded`
+
+## Now it is your `turn`.
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/your_turn.png"
+     alt="Outline graphic"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+1. Edit the content in `index.qmd` to reflect you.
+
+2. Try different templates and pick one.
+
+3. Edit the links to point at your own profiles, or add different links.
+
+4. Replace the image with your image. 
+
+5. Experiment with [`image-shape`](https://quarto.org/docs/websites/website-about.html#image).
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 5, seconds = 00)
+```
+
+
+# How to style your website {background-color="#4D59AC"}
+
+## Understand the `website structure`
+
+<br>
+
+A minimal website has two files: `index.qmd` and `_quarto.yml`
+
+* `index.qmd`: Renders to `index.html`, your home page.
+
+* `_quarto.yml`: Controls project and website properties.
+
+<br>
+
+When rendered you will get a  `_site/` folder. This contains everything needed to serve the site.
+
+## Styling using `YAML`
+
+- With Quarto [html output](https://quarto.org/docs/output-formats/html-themes.html) we have a number of ways to style the site.
+
+- A number of basic options allows us to change `colors`, `fonts`, and `SIZES.`
+
+<br>
+
+::: {.fragment fragment-index=1}
+
+:::: {.columns}
+:::: {.column}
+
+### Colours
+
+- `fontcolor`: The main color for text on the site
+
+- `linkcolor`: Color of the links
+
+- `backgroundcolor`: Background color of the whole site
+
+- `monobackgroundcolor`: background for code chunks
+
+:::
+:::: {.column}
+
+``` {.yaml filename="_quarto.yml"}
+---
+format:
+  html:
+    backgroundcolor: "#eeffee"
+    fontcolor: "darkgreen"
+    linkcolor: "black"
+---
+```
+:::
+:::
+
+Need more colours: [Figma colour pallet](https://www.figma.com/colors/)
+
+:::
+
+
+## Styling using `YAML`
+
+- With Quarto [html output](https://quarto.org/docs/output-formats/html-themes.html) we have a number of ways to style the site.
+
+- A number of basic options allows us to change `colors`, `fonts`, and `SIZES.`
+
+<br>
+
+:::: {.columns}
+:::: {.column}
+
+### Fonts
+
+- `mainfont`: The main font for text on the site
+
+- `monofont`: Font for code elements
+
+:::
+:::: {.column}
+
+``` {.yaml filename="_quarto.yml"}
+---
+format:
+  html:
+    backgroundcolor: "#eeffee"
+    fontcolor: "darkgreen"
+    linkcolor: "black"
+    mainfont: "monospace"
+---
+```
+:::
+:::
+
+<br>
+
+generic families include; `serif`, `sans-serif`, `monospace`, `cursive`, `fantasy`, `system-ui`, `ui-serif`, `ui-sans-serif`, `ui-monospace`, `ui-rounded`, and `fangsong`.
+
+
+## Styling using `YAML`
+
+- With Quarto [html output](https://quarto.org/docs/output-formats/html-themes.html) we have a number of ways to style the site.
+
+- A number of basic options allows us to change `colors`, `fonts`, and `SIZES.`
+
+<br>
+
+:::: {.columns}
+:::: {.column}
+
+### Sizes
+
+- `max-width`: Width of the main text area of the pages
+
+- `fontsize`: Base font size for website
+
+- `linestretch`: Distance between lines of text
+
+:::
+:::: {.column}
+
+
+``` {.yaml filename="_quarto.yml"}
+---
+format:
+  html:
+    backgroundcolor: "#eeffee"
+    fontcolor: "darkgreen"
+    linkcolor: "black"
+    mainfont: "monospace"
+    fontsize: 20px
+---
+```
+:::
+:::
+
+<br>
+
+> **Remember!!!** You can always do further styling using custom styles in CSS.
+
+## Now it is your `turn`.
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/your_turn.png"
+     alt="Outline graphic"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+1. Open up your `_quarto.yml` file and experiment with the colors.
+
+2. Open up your `_quarto.yml` file and experiment with the fonts.
+
+3. Open up your `_quarto.yml` file and experiment with the sizing.
+
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 5, seconds = 00)
+```
+
+# Lets add pages {background-color="#4D59AC"}
+
+## Adding Pages
+
+<br>
+
+Two decisions:
+
+1. **Structure** Where will it live in your website project?
+
+2. **Navigation** How will people discover it on your website?
+
+### `index.html` is special {.smaller}
+
+<br>
+
+::::: columns
+::: {.column width="40%"}
+File location
+
+`index.qmd`
+
+`talks/index.qmd`
+:::
+
+::: {.column width="60%"}
+URL
+
+`{ site url }`
+
+`{ site url }/talks`
+:::
+:::::
+
+`index.qmd` (or `.md`, or `.ipynb`) -\> `index.html`
+
+`index.html` acts like a default page for the site or directory.
+
+<br>
+
+> You aren’t limited to **.html**. We can also use other file types as `.pdf` or `.csv`.
+
+## Navigation bar
+
+<br>
+
+In `_quarto.yml` under `website: navbar`
+
+::::: columns
+::: column
+
+Give a path from site root
+
+``` {.yaml filename="_quarto.yml"}
+website:
+  navbar:
+    right:
+      - text: Projects
+        href: projects/index.qmd
+      - text: Talks
+        href: talks/index.qmd
+```
+:::
+
+::: column
+
+::: {.fragment fragment-index=1}
+
+Other customizations
+
+``` {.yaml filename="_quarto.yml"}
+website:
+  navbar:
+    title: Data Lab for Social Good 
+    logo: images/logo.png
+    search: true
+    left:
+      - text: Home
+        href: index.qmd
+        icon: house-door-fill
+    right:
+      - text: Projects
+        href: projects/index.qmd
+      - text: Talks
+        href: talks/index.qmd
+      tools:
+      - icon: github
+        href: https://github.com/
+      - icon: linkedin
+        href: https://www.linkedin.com/
+```
+:::
+
+:::
+
+:::::
+
+ <br>
+ 
+ Options for `icons`: [Bootstrap Icons](https://icons.getbootstrap.com)
+ 
+## Primary navigation
+
+<br>
+
+::::: columns
+::: column
+Top navigation
+
+``` {.yaml filename="_quarto.yml"}
+website:
+  navbar:
+    right:
+      - text: Projects
+        href: projects/index.qmd
+    tools:
+      - icon: github
+        href: https://github.com/
+```
+
+<br>
+
+Add items to `left`, `right` and `tools`
+:::
+
+::: column
+
+::: {.fragment fragment-index=1}
+
+Side navigation
+
+``` {.yaml filename="_quarto.yml"}
+website:
+  sidebar:
+    contents:
+      - text: Projects
+        href: projects/index.qmd
+    tools:
+      - icon: github
+        href: https://github.com/    
+```
+
+<br>
+
+Add items to `contents` and `tools`
+:::
+:::
+:::::
+
+## Nested navigation
+
+<br>
+
+::::: columns
+::: column
+Top navigation
+
+``` {.yaml filename="_quarto.yml"}
+website:
+  navbar:
+    left:
+      - index.qmd
+      - text: Work
+        menu: 
+          - talks/index.qmd
+          - projects/index.qmd
+```
+
+<br>
+
+Add a `text` item along with `menu`
+:::
+
+::: column
+::: {.fragment fragment-index=1}
+Side navigation
+
+``` {.yaml filename="_quarto.yml"}
+website:
+  sidebar:
+    contents:
+      - index.qmd
+      - section: Work
+        contents: 
+          - talks/index.qmd
+          - projects/index.qmd
+```
+
+<br> 
+Add a `section` with its own `contents`
+:::
+:::
+:::::
+
+<br>
+
+Read more about [**`page navigation`**](https://quarto.org/docs/websites/website-navigation.html#github-links)
+
+## `Bonus`: Page footer
+
+<br>
+
+``` {.yaml filename="_quarto.yml"}
+website:
+  page-footer: 
+    left: "Copyright 2025, DL4SG" 
+    right: 
+      - icon: github
+        href: https://github.com/
+      - icon: twitter 
+        href: https://twitter.com/ 
+```
+
+## Now it is your `turn`.
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/your_turn.png"
+     alt="Outline graphic"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+1. Customize your navigation bar `title`
+
+2. Experiment with the position of your links in the navbar: `left`, `right` or a `mix`
+
+3. Add at least one item to `tools` in your navbar
+
+4. Try both `top navigation` and `side navigation`
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 5, seconds = 00)
+```
+
+## <span style="color: #fff;">Break</span>
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/coffee.png"
+     alt="Outline graphic"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+<h1>Ctrl+Alt+Coffee ☕ — reboot in 10 mins. </h1>
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 10, seconds = 00)
+```
+
+# Listings... {background-color="#4D59AC"}
+
+## What is `listing` and why we need it?
+
+<br>
+
+::::: columns
+::: column
+
+### What?
+
+-   an automatically generated list of content
+-   styled via a template, (built-in `type`, or custom `template`)
+-   can be included on any page
+
+<br>
+
+::: {.fragment fragment-index=1}
+
+### Why?
+
+-   Great for large collections
+-   Great for collections that grow
+
+:::
+
+:::
+
+::: column
+
+::: {.fragment fragment-index=2}
+
+![](images/listings.png)
+
+:::
+:::
+:::::
+
+## Lets create `lisitng` for `blog page`
+
+<br>
+
+`blog/` has some folders with documents in them
+
+**Demo:**
+
+1.  Make a new page `blog/index.qmd`
+
+2.  Make it a listing:
+
+<br>
+
+::::: columns
+::: column
+As simple as:
+
+``` yaml
+---
+title: My Blog
+listing: default
+---
+```
+:::
+
+::: column
+
+::: {.fragment fragment-index=1}
+
+Explicit default options:
+
+``` yaml
+---
+title: My Blog
+listing:
+  contents: /
+  type: default
+---
+```
+
+<br>
+
+Explore more listing types; `default`, `grid` or `table`
+
+:::
+:::
+:::::
+
+## Now it is your `turn`.
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/your_turn.png"
+     alt="Outline graphic"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+1.  (Repeat) Make a new page `blog/index.qmd` which is a listing
+
+2.  Experiment with `type`: `default`, `grid` or `table`
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 5, seconds = 00)
+```
+
+## More options in `listings`
+
+<br>
+
+Use listings for `projects page`
+
+> Note: `contents` can be a YAML file
+
+<br>
+
+::: {.columns}
+::: {.column}
+```{.yaml filename="projects/index.qmd"}
+---
+title: Projects
+listing:
+  contents: projects.yml
+  type: grid
+  max-description-length: 250
+---
+```
+:::
+
+::: {.column}
+```{.yaml filename="project/projects.yml"}
+- title: Predicting House Prices with Machine Learning
+  path: https://example.com/house-prices
+  # Photo by Breno Assis on Unsplash https://unsplash.com/photos/aerial-photography-of-rural-r3WAWU5Fi5Q 
+  image: images/breno-assis-r3WAWU5Fi5Q-unsplash.jpg
+  description: >
+    This project involves using machine learning algorithms to predict house prices based on
+    various features such as location, size, and amenities. It includes data cleaning,
+    feature engineering, and model selection.
+  categories: [Python, Machine Learning, Data Cleaning]
+  date: 2024-01-01
+  ...
+```
+
+`Path` can be a relative path to a file in your site, or a URL
+
+You can use [Listing Fields](https://quarto.org/docs/websites/website-listings.html#listing-fields), or create custom ones.
+:::
+::: 
+
+## Simple customizations
+
+<br>
+
+:::: {.columns}
+::: {.column}
+
+Sort and filtering options
+
+<br>
+
+```{.yaml filename="projects/index.qmd"}
+---
+title: Projects
+listing:
+  contents: projects.yml
+  type: grid
+  max-description-length: 250
+  sort-ui: false
+  sort: date desc
+  filter-ui: true
+---
+```
+:::
+
+::: {.column}
+
+::: {.fragment fragment-index=1}
+
+Use `field-display-names` to provide a different label for a field 
+
+```{.yaml filename="projects/index.qmd"}
+---
+title: Projects
+listing:
+  contents: projects.yml
+  type: grid
+  max-description-length: 250
+  sort-ui: false
+  sort: date desc
+  filter-ui: true
+  fields: [title, description, categories]
+  field-display-names: 
+      title: 'Project'
+      categories: 'Skills'
+---
+```
+
+:::
+:::
+::::
+
+## `YMAL` keys for a blog or project file
+
+<br>
+
+Lets open `blog/third-post/index.qmd`
+
+<br>
+
+::::: columns
+::: column
+As simple as:
+
+``` yaml
+---
+title: "Second Post"
+description: "Post description for second post"
+author: "Bruce Wayne"
+date: "5/23/2021"
+---
+```
+:::
+
+::: column
+
+::: {.fragment fragment-index=1}
+
+Add `categories` and a cover `image`
+
+``` yaml
+---
+title: "Second Post"
+description: "Talk"
+author: "Bruce Wayne"
+date: "5/23/2021"
+image: "cover.jpg"
+categories:
+  - Forecasting
+  - Healthcare
+  - R
+  - Python
+  - Machine Learning
+link-external-newwindow: true
+---
+```
+
+<br>
+
+:::
+:::
+:::::
+
+## Lets add custom buttons
+
+::::: columns
+::: column
+
+Paste this in `styles.scss` 
+
+<br>
+
+```{.scss filename="styles.scss"}
+/* custom button */
+
+button {
+  background-color: transparent; /* No filling */
+  border: 2px solid rgb(55, 58, 60); /* Gray border */
+  color: rgb(55, 58, 60); /* Gray text */
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect */
+button:hover {
+  border-color: #0066b2; /* Blue border on hover */
+  color: #0066b2; /* Blue text on hover */
+}
+
+/* Hover effect for Journal article */
+#journal-article-btn:hover {
+  border-color: #0066b2; /* Blue border on hover */
+  color: #0066b2; /* Blue text on hover */
+}
+
+/* Hover effect for GitHub repo */
+#github-repo-btn:hover {
+  border-color: #00A86B; /* Green border on hover */
+  color: #00A86B; /* Green text on hover */
+}
+```
+:::
+
+::: column
+
+Add text to the body and a link:
+
+<br>
+
+```{.qmd}
+<button id="journal-article-btn" 
+        onclick="window.open('slides/intro_method_skills.html', '_blank')">
+  <i class="fas fa-bookmark"></i> Slides
+</button>
+
+<button id="github-repo-btn" onclick="window.open('https://github.com/', '_blank');">
+  <i class="fab fa-github"></i> GitHub repo
+</button>
+
+```
+
+<button id="journal-article-btn" 
+        onclick="window.open('slides/epss_training.html', '_blank')">
+  <i class="fas fa-bookmark"></i> Slides
+</button>
+
+<button id="github-repo-btn" onclick="window.open('https://github.com/chamara7h/epss_training', '_blank');">
+  <i class="fab fa-github"></i> GitHub repo
+</button>
+
+### Heading
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+:::
+:::
+
+## Now it is your `turn`.
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/your_turn.png"
+     alt="Outline graphic"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+1.  Test different customisations in `listing`
+
+2. Edit and customise `yml` in one of your `blog` posts
+
+2.  Add all the pages to your site navigation
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 10, seconds = 00)
+```
+
+# Lets publish your website {background-color="#4D59AC"}
+
+## Create a new `Quarto project`
+
+<br>
+
+- In RStudio, go to `File > New Project > New Directory > Quarto Website`.
+
+- For the directory name, use the URL you want for your website.
+
+  - If it's a personal site, use the format your-username.github.io. For example, if your username is "`batman`", the directory name would be `batman.github.io`.
+  
+  - If the site is for a GitHub organization, use the format organization-name.github.io.
+  
+- Choose a location on your computer to save the project.
+
+- Ensure that "`Create a git repository`" and "`Use renv with this project`" are both checked.
+
+- Click "`Create Project`".
+
+## Create a `GitHub repository`
+
+- Go to GitHub and create a new repository.
+
+- The repository name must exactly match the directory name you created in RStudio (e.g., your-username.github.io).
+
+- For free accounts, you must set the repository to Public for GitHub Pages to work.
+
+- Click "`Create repository`".
+
+- Link your `local project folder` to the `new GitHub repository` and push the initial files.
+
+<br>
+
+``` {.default filename="Terminal/ Bash"}
+# push an exisitng repo
+git remote add origin https://github.com/<your user name>.github.io
+git branch -M main
+
+# push your initial changes
+git status
+git add .
+git commit -m 'initial commit'
+git push origin main
+```
+
+## Create a `gh-pages` Branch
+
+<br>
+
+- After pushing your project, go to your repository on GitHub.
+
+- Click on the branch dropdown menu (which should say "`main`") and select "`View all branches`".
+
+- Click "`New branch`".
+
+- Name the new branch `gh-pages` and click "`Create new branch`".
+
+## Set up the `GitHub actions workflow`
+
+<br>
+
+- In your RStudio project, create a new folder named `.github`.
+
+- Inside the `.github folder`, create another folder named `workflows`.
+
+- Inside the `workflows folder`, create a new text file and name it `publish.yml`.
+
+- Go to the Quarto documentation page about publishing to GitHub Pages. Find the example for a GitHub Action that uses renv (go here: [https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv](https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv)).
+
+- Copy the entire code block from that example.
+
+- Paste this code into your publish.yml file and save it and commit changes.
+
+## Configure `GitHub pages` settings
+
+<br>
+
+-  On your GitHub repository page, go to `Settings` and then click `Pages` in the side menu.
+
+- Under the "`Branch`" section, use the dropdown menu to select the `gh-pages` branch as the source.
+
+- Click `Save`.
+
+- Click on the `Actions` tab at the top of your GitHub repository page.
+
+- ou will see that your recent commit has automatically started the workflow.
+
+- Once the action is complete, go back to `Settings > Pages`.
+
+- Click the "`Visit site`" button to see your live website at the URL you specified.
+
+## Now it is your `turn`.
+
+<br>
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column-left style="flex: 0 0 40%; display: flex; justify-content: flex-start;"}
+<img src="images/your_turn.png"
+     alt="Outline graphic"
+     style="max-width: 90%; height: auto; display: block;" />
+:::
+
+::: {.column style="flex: 0 0 60%; display: flex; flex-direction: column; justify-content: flex-start; text-align: left;"}
+
+1. Create the `quarto website project` folder
+
+2. Create `Github repo`
+
+3. Link your `local folder` with the `Github repo`
+
+4. Create the `workflow`
+
+3. Publish your `website`
+
+:::
+
+::::
+
+::: aside
+Image generated using 04-mini-high
+:::
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 7, seconds = 30)
+```
+    
+
+# Congratulations...
+
+:::: {.r-fit-text style="text-align: center;"}
+
+You have a website!
+
+🎉🥳🎉
+:::
+
+## Resources to keep learning
+
+- <https://quarto.org/>
+
+- <https://github.com/quarto-dev/quarto-cli/discussions>
+
+- <https://github.com/mcanouil/awesome-quarto>
+
+# Any questions or thoughts? 💬
+
+![](images/follow_us.png){fig-align="center"}
