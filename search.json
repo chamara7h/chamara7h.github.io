@@ -788,7 +788,7 @@
     "href": "lab/quarto_website/index.html#prerequisites-before-the-training",
     "title": "Quarto Websites: Create and Publish Your First Website",
     "section": "Prerequisites (Before the Training)",
-    "text": "Prerequisites (Before the Training)\nPlease ensure the following are completed before attending:\n\nInstall R, RStudio, RTools (for Windows users), Quarto, and Git\nInstall required R packages:\n\n\nconsole\n\n# check git is installed\ninstall.packages(c(\"countdown\", \"usethis\", \"gitcreds\"))\n\nCreate a GitHub account\nEnsure you are comfortable using:\n\n.qmd files in RStudio\nThe R Console and Terminal tabs\nBasic navigation of GitHub repositories\n\nBring a photo of yourself (.jpg or .png) — this will be used on your homepage.\nPrepare a short personal introduction (3–4 lines) — this will be added as your website bio."
+    "text": "Prerequisites (Before the Training)\nPlease ensure the following are completed before attending:\n\nInstall R, RStudio, RTools (for Windows users), Quarto, and Git\nInstall required R packages:\n\n\nconsole\n\ninstall.packages(c(\"countdown\", \"usethis\", \"gitcreds\"))\n\nCreate a GitHub account\nEnsure you are comfortable using:\n\n.qmd files in RStudio\nThe R Console and Terminal tabs\nBasic navigation of GitHub repositories\n\nBring a photo of yourself (.jpg or .png) — this will be used on your homepage.\nPrepare a short personal introduction (3–4 lines) — this will be added as your website bio."
   },
   {
     "objectID": "lab/quarto_website/index.html#topics-structure",

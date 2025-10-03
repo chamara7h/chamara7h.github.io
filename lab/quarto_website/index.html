@@ -233,6 +233,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></p>
+<style>
+/* Custom button style */
+button {
+  background-color: transparent; /* No filling */
+  border: 2px solid rgb(55, 58, 60); /* Gray border */
+  color: rgb(55, 58, 60); /* Gray text */
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Hover effect for Journal article */
+#journal-article-btn:hover {
+  border-color: #0066b2; /* Blue border on hover */
+  color: #0066b2; /* Blue text on hover */
+}
+
+/* Hover effect for GitHub repo */
+#github-repo-btn:hover {
+  border-color: #00A86B; /* Green border on hover */
+  color: #00A86B; /* Green text on hover */
+}
+</style>
 <button id="journal-article-btn" onclick="window.open('slides/quarto_website.html', '_blank')">
 <i class="fas fa-bookmark"></i> Slides
 </button>
@@ -267,8 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>console</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="console"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a># check git is installed</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>install.packages(c("countdown", "usethis", "gitcreds"))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="console"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>install.packages(c("countdown", "usethis", "gitcreds"))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 <li><p>Create a GitHub account</p></li>
 <li><p>Ensure you are comfortable using:</p>
