@@ -770,6 +770,34 @@
     "text": "Course Topics\n\nMarkov Chains for Healthcare Supply Chains\n\nSection 1: Foundations of Markov Chains\n\nState-based systems and probabilistic transitions\nThe Markov property and memoryless dynamics\nTransition probability matrices and system trajectories\n\n\n\nSection 2: Steady-State Analysis\n\nn-step transitions and convergence\nExistence and uniqueness of steady-state distributions\nInterpreting long-run behaviour in real systems\n\n\n\nSection 3: Brand Switching Case Study\n\nPromote-local strategy for paracetamol brands\nSimulate switching behaviour and market share convergence\nSolve steady-state equations using R\n\n\n\nSection 4: Applied Simulation in R\n\nVector-matrix calculations\nTransition matrix exponentiation\nPlotting and comparing convergence paths"
   },
   {
+    "objectID": "lab/quarto_website/index.html#who-is-the-course-for",
+    "href": "lab/quarto_website/index.html#who-is-the-course-for",
+    "title": "Quarto Websites: Create and Publish Your First Website",
+    "section": "Who is the Course For?",
+    "text": "Who is the Course For?\nThis course is designed for researchers, students, and practitioners, who wish to create a personal or project website using the Quarto framework.\nIt assumes familiarity with R and RStudio, but no prior experience with HTML, CSS, or GitHub Pages is required."
+  },
+  {
+    "objectID": "lab/quarto_website/index.html#learning-objectives",
+    "href": "lab/quarto_website/index.html#learning-objectives",
+    "title": "Quarto Websites: Create and Publish Your First Website",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this course, participants will be able to:\n\nSet up and connect Git with RStudio\nBuild and preview a basic website using Quarto templates\nCustomize website appearance using YAML\nCreate multiple pages, listings, and navigation bars\nPublish the website using GitHub Pages and GitHub Actions\nUnderstand how websites can be used to share research and project outputs"
+  },
+  {
+    "objectID": "lab/quarto_website/index.html#prerequisites-before-the-training",
+    "href": "lab/quarto_website/index.html#prerequisites-before-the-training",
+    "title": "Quarto Websites: Create and Publish Your First Website",
+    "section": "Prerequisites (Before the Training)",
+    "text": "Prerequisites (Before the Training)\nPlease ensure the following are completed before attending:\n\nInstall R, RStudio, RTools (for Windows users), Quarto, and Git\nInstall required R packages:\n\n\nconsole\n\n# check git is installed\ninstall.packages(c(\"countdown\", \"usethis\", \"gitcreds\"))\n\nCreate a GitHub account\nEnsure you are comfortable using:\n\n.qmd files in RStudio\nThe R Console and Terminal tabs\nBasic navigation of GitHub repositories\n\nBring a photo of yourself (.jpg or .png) — this will be used on your homepage.\nPrepare a short personal introduction (3–4 lines) — this will be added as your website bio."
+  },
+  {
+    "objectID": "lab/quarto_website/index.html#topics-structure",
+    "href": "lab/quarto_website/index.html#topics-structure",
+    "title": "Quarto Websites: Create and Publish Your First Website",
+    "section": "Topics & structure",
+    "text": "Topics & structure\n\n\n\n\n\n\n\n\nSection\nTopic\nActivities\n\n\n\n\n1\nConnect RStudio with Git\nLive demo + setup + token config\n\n\n2\nBuild the Homepage\nUse quarto use template\n\n\n3\nStyling your Website\nModify _quarto.yml\n\n\n4\nPages and Navigation\nAdd .qmd pages and navbar\n\n\n5\nListings\nCreate blog/projects listings\n\n\n6\nPublish using GitHub Pages\nConfigure workflow + publish\n\n\n7\nWrap-up & Q&A\nShare published sites"
+  },
+  {
     "objectID": "lab/epss_training/index.html",
     "href": "lab/epss_training/index.html",
     "title": "Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting",
@@ -928,7 +956,7 @@
     "href": "lab/index.html",
     "title": "Home",
     "section": "",
-    "text": "Introduction to Markov Processes in Healthcare Supply Chains\n\n\nWorkshop\n\n\n\n\n\nMay 15, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nMethodological Skills for Research\n\n\nLecture - University of Moratuwa Sri Lanka\n\n\n\n\n\nApr 11, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\nWorkshop\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nEvaluating Probabilistic Forecasts with Energy Score\n\n\nTutorial\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nA basic introduction to Python\n\n\nTutorial\n\n\n\n\n\nMar 3, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\nNo matching items"
+    "text": "Quarto Websites: Create and Publish Your First Website\n\n\nWorkshop\n\n\n\n\n\nNov 12, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Markov Processes in Healthcare Supply Chains\n\n\nWorkshop\n\n\n\n\n\nMay 15, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nMethodological Skills for Research\n\n\nLecture - University of Moratuwa Sri Lanka\n\n\n\n\n\nApr 11, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\nWorkshop\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nEvaluating Probabilistic Forecasts with Energy Score\n\n\nTutorial\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nA basic introduction to Python\n\n\nTutorial\n\n\n\n\n\nMar 3, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lab/epss_training/slides/epss_training.html#self-assessment",
@@ -1769,6 +1797,279 @@
     "title": "Home",
     "section": "Thank you!",
     "text": "Thank you!\n\n\nScan the QR Code and follow us on LinkedIn…"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#outline",
+    "href": "lab/quarto_website/slides/quarto_website.html#outline",
+    "title": "Home",
+    "section": "Outline",
+    "text": "Outline\n\n\n\n\n\n\n\n\nConnect R Studio with GIT\n\n\n\n\n\n\nLets build the home page\n\n\n\n\n\n\nHow to style your website\n\n\n\n\n\n\nPages and listings\n\n\n\n\n\n\nLets publish your website\n\n\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#assumptions",
+    "href": "lab/quarto_website/slides/quarto_website.html#assumptions",
+    "title": "Home",
+    "section": "Assumptions",
+    "text": "Assumptions\n\n\nYou are expected to be comfortable with R and Git.\nHave used Quarto to generate documents (e.g. HTML, PDF, MS Word etc.)\nAre comfortable editing plain text documents (e.g .qmd) in your IDE (e.g. RStudio, Visual Studio Code etc.)\nWant to walk away with your own personal website.\nWe won’t assume you have any HTML, CSS/SCSS or Git/GitHub experience.\n\n\n\n\n\nWhat we will cover?\n\nCreate the home page\nSimple styling such as font, colour, size\nListing and navigation\n\n\n\n\nWhat we will not cover\n\nAdvance styling using css and scss\nAdvance navigation options\nCustomise templates\nRun code blocks"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#materials",
+    "href": "lab/quarto_website/slides/quarto_website.html#materials",
+    "title": "Home",
+    "section": "Materials",
+    "text": "Materials\n\nYou can find the workshop materials https://chamara7h.github.io/lab/ or simply scan the QR code.\n\nNote: These materials are based on my learnings at;\n\nPosit PBC: Quarto websites video series.\nIntroduction to Git and GitHub for R Users by Nicola Rennie.\nPublish a Quarto project using GitHub Pages by Melissa Van Bussel."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#using-git-and-github-with-rstudio",
+    "href": "lab/quarto_website/slides/quarto_website.html#using-git-and-github-with-rstudio",
+    "title": "Home",
+    "section": "Using Git and GitHub with RStudio",
+    "text": "Using Git and GitHub with RStudio\n\nWhat you need:\n\nR, RStudio, and Git installed on your laptop\nA GitHub account\nGitHub credentials\n\nOptional (but strongly recommended):\n\nThe usethis R package\nHappy Git with R"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#lets-setup-git-in-r-studio---live-demo",
+    "href": "lab/quarto_website/slides/quarto_website.html#lets-setup-git-in-r-studio---live-demo",
+    "title": "Home",
+    "section": "Lets setup Git in R Studio - Live demo",
+    "text": "Lets setup Git in R Studio - Live demo\n\n\n\nTerminal\n\n# check git is installed\ngit --version\n\n\nThen,\n\n\nR script\n\n# from R: configure git (usethis)\nlibrary(usethis)\nuse_git_config(\n  user.name = \"your-username\",\n  user.email = \"you@example.org\"\n)\n\n# create a GitHub personal access token (opens browser)\ncreate_github_token()\n\n# store credentials locally (prompts for token paste)\nlibrary(gitcreds)\ngitcreds_set()"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nCreate a GitHub account if you don’t already have one, and make sure you have Git installed on your laptop.\nInstall and load the usethis and gitcreds packages.\nConfigure git then run create_github_token(), and follow the instructions to generate a token.\nRun gitcreds_set() and paste in the token when prompted.\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#start-with-a-template",
+    "href": "lab/quarto_website/slides/quarto_website.html#start-with-a-template",
+    "title": "Home",
+    "section": "Start with a template",
+    "text": "Start with a template\n\nStart somewhere logical:\n\n\nTerminal\n\ncd ~/Documents\n\nOR\n\n\nTerminal\n\ncd /d/GIT\n\nGet the website template:\n\n\nTerminal\n\nquarto use template chamara7h/quarto_website_template\n\nFollow the prompts:\n\n\nTerminal\n\nQuarto templates may execute code when documents are rendered. If you do not \ntrust the authors of the template, we recommend that you do not install or \nuse the template.\n? Do you trust the authors of this template (Y/n) › Y\n? Create a subdirectory for template? (Y/n) › Y\n? Directory name: › website"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-1",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-1",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nGet the starter template.\nOpen index.qmd\nPreview index.qmd\n\n\n\n\n\n\n−+\n02:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#home-page-structure",
+    "href": "lab/quarto_website/slides/quarto_website.html#home-page-structure",
+    "title": "Home",
+    "section": "Home page structure",
+    "text": "Home page structure\n\n\n\nindex.qmd\n\n---\ntitle: \"Bruce Wayne\"\nsubtitle: \"I am Batman\"\nimage: profile.jpg\nabout: # https://quarto.org/docs/websites/website-about.html\n  template: jolla\n  links:\n    - icon: github\n      text: Github\n      href: https://github.com\n    - icon: linkedin\n      text: LinkedIn\n      href: https://linkedin.com\n---\n\nA little bit about me and my life.\n\n## Education\n\nUniversity of XYZ, City \\| Location \\| Sept 20XX - June 20XX\n\n## Experience\n\nWorkplace \\| Job title \\| April 20XX - present\n\n\nWebpages are like any other Quarto document:\n\nStart with a YAML header\nCan include code cells\nEverything else is markdown content"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#about-key-in-yaml",
+    "href": "lab/quarto_website/slides/quarto_website.html#about-key-in-yaml",
+    "title": "Home",
+    "section": "About key in YAML",
+    "text": "About key in YAML\n\n\nLanding/ home page controlled by the about key in YAML.\nContent and YAML values are combined using a template:\n\n---\nabout: # https://quarto.org/docs/websites/website-about.html\n  template: jolla\n  links:\n    - icon: github\n      text: Github\n      href: https://github.com\n    - icon: linkedin\n      text: LinkedIn\n      href: https://linkedin.com\n---\n\nDifferent templates: jolla, trestles, solana, marquee, or broadside"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#how-to-set-the-image",
+    "href": "lab/quarto_website/slides/quarto_website.html#how-to-set-the-image",
+    "title": "Home",
+    "section": "How to set the image",
+    "text": "How to set the image\n\nUsed in about template, and social cards.\n\n\n\n\nindex.qmd\n\n---\nimage: images/profile.jpg\nabout: # https://quarto.org/docs/websites/website-about.html\n  template: jolla\n  image-shape: round\n---\n\n\nwebsite/\n├── _quarto.yml\n├── images/\n│   └──  profile.jpg\n└── index.qmd\n\n\nUse a path relative to index.qmd\nImage shapes: rectangle, round and rounded"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-2",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-2",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nEdit the content in index.qmd to reflect you.\nTry different templates and pick one.\nEdit the links to point at your own profiles, or add different links.\nReplace the image with your image.\nExperiment with image-shape.\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#understand-the-website-structure",
+    "href": "lab/quarto_website/slides/quarto_website.html#understand-the-website-structure",
+    "title": "Home",
+    "section": "Understand the website structure",
+    "text": "Understand the website structure\n\nA minimal website has two files: index.qmd and _quarto.yml\n\nindex.qmd: Renders to index.html, your home page.\n_quarto.yml: Controls project and website properties.\n\n\nWhen rendered you will get a _site/ folder. This contains everything needed to serve the site."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml",
+    "href": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml",
+    "title": "Home",
+    "section": "Styling using YAML",
+    "text": "Styling using YAML\n\nWith Quarto html output we have a number of ways to style the site.\nA number of basic options allows us to change colors, fonts, and SIZES.\n\n\n\n\n\nColours\n\nfontcolor: The main color for text on the site\nlinkcolor: Color of the links\nbackgroundcolor: Background color of the whole site\nmonobackgroundcolor: background for code chunks\n\n\n\n\n_quarto.yml\n\n---\nformat:\n  html:\n    backgroundcolor: \"#eeffee\"\n    fontcolor: \"darkgreen\"\n    linkcolor: \"black\"\n---\n\n\nNeed more colours: Figma colour pallet"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml-1",
+    "href": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml-1",
+    "title": "Home",
+    "section": "Styling using YAML",
+    "text": "Styling using YAML\n\nWith Quarto html output we have a number of ways to style the site.\nA number of basic options allows us to change colors, fonts, and SIZES.\n\n\n\n\nFonts\n\nmainfont: The main font for text on the site\nmonofont: Font for code elements\n\n\n\n\n_quarto.yml\n\n---\nformat:\n  html:\n    backgroundcolor: \"#eeffee\"\n    fontcolor: \"darkgreen\"\n    linkcolor: \"black\"\n    mainfont: \"monospace\"\n---\n\n\n\ngeneric families include; serif, sans-serif, monospace, cursive, fantasy, system-ui, ui-serif, ui-sans-serif, ui-monospace, ui-rounded, and fangsong."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml-2",
+    "href": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml-2",
+    "title": "Home",
+    "section": "Styling using YAML",
+    "text": "Styling using YAML\n\nWith Quarto html output we have a number of ways to style the site.\nA number of basic options allows us to change colors, fonts, and SIZES.\n\n\n\n\nSizes\n\nmax-width: Width of the main text area of the pages\nfontsize: Base font size for website\nlinestretch: Distance between lines of text\n\n\n\n\n_quarto.yml\n\n---\nformat:\n  html:\n    backgroundcolor: \"#eeffee\"\n    fontcolor: \"darkgreen\"\n    linkcolor: \"black\"\n    mainfont: \"monospace\"\n    fontsize: 20px\n---\n\n\n\n\nRemember!!! You can always do further styling using custom styles in CSS."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-3",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-3",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nOpen up your _quarto.yml file and experiment with the colors.\nOpen up your _quarto.yml file and experiment with the fonts.\nOpen up your _quarto.yml file and experiment with the sizing.\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#adding-pages",
+    "href": "lab/quarto_website/slides/quarto_website.html#adding-pages",
+    "title": "Home",
+    "section": "Adding Pages",
+    "text": "Adding Pages\n\nTwo decisions:\n\nStructure Where will it live in your website project?\nNavigation How will people discover it on your website?\n\nindex.html is special\n\n\n\nFile location\nindex.qmd\ntalks/index.qmd\n\nURL\n{ site url }\n{ site url }/talks\n\nindex.qmd (or .md, or .ipynb) -&gt; index.html\nindex.html acts like a default page for the site or directory.\n\n\nYou aren’t limited to .html. We can also use other file types as .pdf or .csv."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#navigation-bar",
+    "href": "lab/quarto_website/slides/quarto_website.html#navigation-bar",
+    "title": "Home",
+    "section": "Navigation bar",
+    "text": "Navigation bar\n\nIn _quarto.yml under website: navbar\n\n\nGive a path from site root\n\n\n_quarto.yml\n\nwebsite:\n  navbar:\n    right:\n      - text: Projects\n        href: projects/index.qmd\n      - text: Talks\n        href: talks/index.qmd\n\n\n\nOther customizations\n\n\n_quarto.yml\n\nwebsite:\n  navbar:\n    title: Data Lab for Social Good \n    logo: images/logo.png\n    search: true\n    left:\n      - text: Home\n        href: index.qmd\n        icon: house-door-fill\n    right:\n      - text: Projects\n        href: projects/index.qmd\n      - text: Talks\n        href: talks/index.qmd\n      tools:\n      - icon: github\n        href: https://github.com/\n      - icon: linkedin\n        href: https://www.linkedin.com/\n\n\n\n\nOptions for icons: Bootstrap Icons"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#primary-navigation",
+    "href": "lab/quarto_website/slides/quarto_website.html#primary-navigation",
+    "title": "Home",
+    "section": "Primary navigation",
+    "text": "Primary navigation\n\n\n\nTop navigation\n\n\n_quarto.yml\n\nwebsite:\n  navbar:\n    right:\n      - text: Projects\n        href: projects/index.qmd\n    tools:\n      - icon: github\n        href: https://github.com/\n\n\nAdd items to left, right and tools\n\n\nSide navigation\n\n\n_quarto.yml\n\nwebsite:\n  sidebar:\n    contents:\n      - text: Projects\n        href: projects/index.qmd\n    tools:\n      - icon: github\n        href: https://github.com/    \n\n\nAdd items to contents and tools"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#nested-navigation",
+    "href": "lab/quarto_website/slides/quarto_website.html#nested-navigation",
+    "title": "Home",
+    "section": "Nested navigation",
+    "text": "Nested navigation\n\n\n\nTop navigation\n\n\n_quarto.yml\n\nwebsite:\n  navbar:\n    left:\n      - index.qmd\n      - text: Work\n        menu: \n          - talks/index.qmd\n          - projects/index.qmd\n\n\nAdd a text item along with menu\n\n\nSide navigation\n\n\n_quarto.yml\n\nwebsite:\n  sidebar:\n    contents:\n      - index.qmd\n      - section: Work\n        contents: \n          - talks/index.qmd\n          - projects/index.qmd\n\n Add a section with its own contents\n\n\n\nRead more about page navigation"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#bonus-page-footer",
+    "href": "lab/quarto_website/slides/quarto_website.html#bonus-page-footer",
+    "title": "Home",
+    "section": "Bonus: Page footer",
+    "text": "Bonus: Page footer\n\n\n\n_quarto.yml\n\nwebsite:\n  page-footer: \n    left: \"Copyright 2025, DL4SG\" \n    right: \n      - icon: github\n        href: https://github.com/\n      - icon: twitter \n        href: https://twitter.com/"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-4",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-4",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nCustomize your navigation bar title\nExperiment with the position of your links in the navbar: left, right or a mix\nAdd at least one item to tools in your navbar\nTry both top navigation and side navigation\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#break",
+    "href": "lab/quarto_website/slides/quarto_website.html#break",
+    "title": "Home",
+    "section": "Break",
+    "text": "Break\n\n\n\n\n\n\nCtrl+Alt+Coffee ☕ — reboot in 10 mins.\n\n\n\n\n\n\n−+\n10:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#what-is-listing-and-why-we-need-it",
+    "href": "lab/quarto_website/slides/quarto_website.html#what-is-listing-and-why-we-need-it",
+    "title": "Home",
+    "section": "What is listing and why we need it?",
+    "text": "What is listing and why we need it?\n\n\n\nWhat?\n\nan automatically generated list of content\nstyled via a template, (built-in type, or custom template)\ncan be included on any page\n\n\n\nWhy?\n\nGreat for large collections\nGreat for collections that grow"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#lets-create-lisitng-for-blog-page",
+    "href": "lab/quarto_website/slides/quarto_website.html#lets-create-lisitng-for-blog-page",
+    "title": "Home",
+    "section": "Lets create lisitng for blog page",
+    "text": "Lets create lisitng for blog page\n\nblog/ has some folders with documents in them\nDemo:\n\nMake a new page blog/index.qmd\nMake it a listing:\n\n\n\n\nAs simple as:\n---\ntitle: My Blog\nlisting: default\n---\n\n\nExplicit default options:\n---\ntitle: My Blog\nlisting:\n  contents: /\n  type: default\n---\n\nExplore more listing types; default, grid or table"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-5",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-5",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\n(Repeat) Make a new page blog/index.qmd which is a listing\nExperiment with type: default, grid or table\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#more-options-in-listings",
+    "href": "lab/quarto_website/slides/quarto_website.html#more-options-in-listings",
+    "title": "Home",
+    "section": "More options in listings",
+    "text": "More options in listings\n\nUse listings for projects page\n\nNote: contents can be a YAML file\n\n\n\n\n\n\nprojects/index.qmd\n\n---\ntitle: Projects\nlisting:\n  contents: projects.yml\n  type: grid\n  max-description-length: 250\n---\n\n\n\n\nproject/projects.yml\n\n- title: Predicting House Prices with Machine Learning\n  path: https://example.com/house-prices\n  # Photo by Breno Assis on Unsplash https://unsplash.com/photos/aerial-photography-of-rural-r3WAWU5Fi5Q \n  image: images/breno-assis-r3WAWU5Fi5Q-unsplash.jpg\n  description: &gt;\n    This project involves using machine learning algorithms to predict house prices based on\n    various features such as location, size, and amenities. It includes data cleaning,\n    feature engineering, and model selection.\n  categories: [Python, Machine Learning, Data Cleaning]\n  date: 2024-01-01\n  ...\n\nPath can be a relative path to a file in your site, or a URL\nYou can use Listing Fields, or create custom ones."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#simple-customizations",
+    "href": "lab/quarto_website/slides/quarto_website.html#simple-customizations",
+    "title": "Home",
+    "section": "Simple customizations",
+    "text": "Simple customizations\n\n\n\nSort and filtering options\n\n\n\nprojects/index.qmd\n\n---\ntitle: Projects\nlisting:\n  contents: projects.yml\n  type: grid\n  max-description-length: 250\n  sort-ui: false\n  sort: date desc\n  filter-ui: true\n---\n\n\n\nUse field-display-names to provide a different label for a field\n\n\nprojects/index.qmd\n\n---\ntitle: Projects\nlisting:\n  contents: projects.yml\n  type: grid\n  max-description-length: 250\n  sort-ui: false\n  sort: date desc\n  filter-ui: true\n  fields: [title, description, categories]\n  field-display-names: \n      title: 'Project'\n      categories: 'Skills'\n---"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#ymal-keys-for-a-blog-or-project-file",
+    "href": "lab/quarto_website/slides/quarto_website.html#ymal-keys-for-a-blog-or-project-file",
+    "title": "Home",
+    "section": "YMAL keys for a blog or project file",
+    "text": "YMAL keys for a blog or project file\n\nLets open blog/third-post/index.qmd\n\n\n\nAs simple as:\n---\ntitle: \"Second Post\"\ndescription: \"Post description for second post\"\nauthor: \"Bruce Wayne\"\ndate: \"5/23/2021\"\n---\n\n\nAdd categories and a cover image\n---\ntitle: \"Second Post\"\ndescription: \"Talk\"\nauthor: \"Bruce Wayne\"\ndate: \"5/23/2021\"\nimage: \"cover.jpg\"\ncategories:\n  - Forecasting\n  - Healthcare\n  - R\n  - Python\n  - Machine Learning\nlink-external-newwindow: true\n---"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#lets-add-custom-buttons",
+    "href": "lab/quarto_website/slides/quarto_website.html#lets-add-custom-buttons",
+    "title": "Home",
+    "section": "Lets add custom buttons",
+    "text": "Lets add custom buttons\n\n\nPaste this in styles.scss\n\n\n\nstyles.scss\n\n/* custom button */\n\nbutton {\n  background-color: transparent; /* No filling */\n  border: 2px solid rgb(55, 58, 60); /* Gray border */\n  color: rgb(55, 58, 60); /* Gray text */\n  padding: 5px 10px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 12px;\n  margin: 4px 2px;\n  cursor: pointer;\n  border-radius: 5px; /* Rounded corners */\n}\n\n/* Hover effect */\nbutton:hover {\n  border-color: #0066b2; /* Blue border on hover */\n  color: #0066b2; /* Blue text on hover */\n}\n\n/* Hover effect for Journal article */\n#journal-article-btn:hover {\n  border-color: #0066b2; /* Blue border on hover */\n  color: #0066b2; /* Blue text on hover */\n}\n\n/* Hover effect for GitHub repo */\n#github-repo-btn:hover {\n  border-color: #00A86B; /* Green border on hover */\n  color: #00A86B; /* Green text on hover */\n}\n\n\nAdd text to the body and a link:\n\n&lt;button id=\"journal-article-btn\" \n        onclick=\"window.open('slides/intro_method_skills.html', '_blank')\"&gt;\n  &lt;i class=\"fas fa-bookmark\"&gt;&lt;/i&gt; Slides\n&lt;/button&gt;\n\n&lt;button id=\"github-repo-btn\" onclick=\"window.open('https://github.com/', '_blank');\"&gt;\n  &lt;i class=\"fab fa-github\"&gt;&lt;/i&gt; GitHub repo\n&lt;/button&gt;\n\n Slides\n\n\n GitHub repo\n\nHeading\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-6",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-6",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nTest different customisations in listing\nEdit and customise yml in one of your blog posts\nAdd all the pages to your site navigation\n\n\n\n\n\n\n−+\n10:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#create-a-new-quarto-project",
+    "href": "lab/quarto_website/slides/quarto_website.html#create-a-new-quarto-project",
+    "title": "Home",
+    "section": "Create a new Quarto project",
+    "text": "Create a new Quarto project\n\n\nIn RStudio, go to File &gt; New Project &gt; New Directory &gt; Quarto Website.\nFor the directory name, use the URL you want for your website.\n\nIf it’s a personal site, use the format your-username.github.io. For example, if your username is “batman”, the directory name would be batman.github.io.\nIf the site is for a GitHub organization, use the format organization-name.github.io.\n\nChoose a location on your computer to save the project.\nEnsure that “Create a git repository” and “Use renv with this project” are both checked.\nClick “Create Project”."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#create-a-github-repository",
+    "href": "lab/quarto_website/slides/quarto_website.html#create-a-github-repository",
+    "title": "Home",
+    "section": "Create a GitHub repository",
+    "text": "Create a GitHub repository\n\nGo to GitHub and create a new repository.\nThe repository name must exactly match the directory name you created in RStudio (e.g., your-username.github.io).\nFor free accounts, you must set the repository to Public for GitHub Pages to work.\nClick “Create repository”.\nLink your local project folder to the new GitHub repository and push the initial files.\n\n\n\n\nTerminal/ Bash\n\n# push an exisitng repo\ngit remote add origin https://github.com/&lt;your user name&gt;.github.io\ngit branch -M main\n\n# push your initial changes\ngit status\ngit add .\ngit commit -m 'initial commit'\ngit push origin main"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#create-a-gh-pages-branch",
+    "href": "lab/quarto_website/slides/quarto_website.html#create-a-gh-pages-branch",
+    "title": "Home",
+    "section": "Create a gh-pages Branch",
+    "text": "Create a gh-pages Branch\n\n\nAfter pushing your project, go to your repository on GitHub.\nClick on the branch dropdown menu (which should say “main”) and select “View all branches”.\nClick “New branch”.\nName the new branch gh-pages and click “Create new branch”."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#set-up-the-github-actions-workflow",
+    "href": "lab/quarto_website/slides/quarto_website.html#set-up-the-github-actions-workflow",
+    "title": "Home",
+    "section": "Set up the GitHub actions workflow",
+    "text": "Set up the GitHub actions workflow\n\n\nIn your RStudio project, create a new folder named .github.\nInside the .github folder, create another folder named workflows.\nInside the workflows folder, create a new text file and name it publish.yml.\nGo to the Quarto documentation page about publishing to GitHub Pages. Find the example for a GitHub Action that uses renv (go here: https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv).\nCopy the entire code block from that example.\nPaste this code into your publish.yml file and save it and commit changes."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#configure-github-pages-settings",
+    "href": "lab/quarto_website/slides/quarto_website.html#configure-github-pages-settings",
+    "title": "Home",
+    "section": "Configure GitHub pages settings",
+    "text": "Configure GitHub pages settings\n\n\nOn your GitHub repository page, go to Settings and then click Pages in the side menu.\nUnder the “Branch” section, use the dropdown menu to select the gh-pages branch as the source.\nClick Save.\nClick on the Actions tab at the top of your GitHub repository page.\nou will see that your recent commit has automatically started the workflow.\nOnce the action is complete, go back to Settings &gt; Pages.\nClick the “Visit site” button to see your live website at the URL you specified."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-7",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-7",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nCreate the quarto website project folder\nCreate Github repo\nLink your local folder with the Github repo\nCreate the workflow\nPublish your website\n\n\n\n\n\n\n−+\n07:30\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#resources-to-keep-learning",
+    "href": "lab/quarto_website/slides/quarto_website.html#resources-to-keep-learning",
+    "title": "Home",
+    "section": "Resources to keep learning",
+    "text": "Resources to keep learning\n\nhttps://quarto.org/\nhttps://github.com/quarto-dev/quarto-cli/discussions\nhttps://github.com/mcanouil/awesome-quarto"
   },
   {
     "objectID": "lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html",

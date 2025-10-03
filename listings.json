@@ -32,6 +32,7 @@
   {
     "listing": "/lab/index.html",
     "items": [
+      "/lab/quarto_website/index.html",
       "/lab/dl4sg_marcov/index.html",
       "/lab/intro_method_skills/index.html",
       "/lab/epss_training/index.html",
