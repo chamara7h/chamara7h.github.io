@@ -50,7 +50,9 @@
       "data_analytics/*.qmd",
       "epss_training/*.qmd",
       "intro_python/*.qmd",
-      "dl4sg_marcov/*.qmd"
+      "dl4sg_marcov/*.qmd",
+      "intro_method_skills/*.qmd",
+      "energy_score/*.qmd"
     ],
     "lab\\data_analytics\\index.qmd": [
       "intro_python/*.ipynb",

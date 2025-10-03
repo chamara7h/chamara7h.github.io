@@ -214,7 +214,7 @@
     "href": "lab/index.html",
     "title": "Home",
     "section": "",
-    "text": "Introduction to Markov Processes in Healthcare Supply Chains\n\n\n\n\n\nWorkshop\n\n\n\n\n\nMay 15, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\n\n\n\nWorkshop\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nA basic introduction to Python\n\n\n\n\n\nTutorial\n\n\n\n\n\nMar 3, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\nNo matching items"
+    "text": "Introduction to Markov Processes in Healthcare Supply Chains\n\n\n\n\n\nWorkshop\n\n\n\n\n\nMay 15, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nMethodological Skills for Research\n\n\n\n\n\nLecture - University of Moratuwa Sri Lanka\n\n\n\n\n\nApr 11, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nDemand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\n\n\n\n\n\nWorkshop\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nEvaluating Probabilistic Forecasts with Energy Score\n\n\n\n\n\nTutorial\n\n\n\n\n\nMar 17, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nA basic introduction to Python\n\n\n\n\n\nTutorial\n\n\n\n\n\nMar 3, 2025\n\n\nHarsha Chamara Hewage\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lab/forecasting/epss_training/index.html",
@@ -3547,5 +3547,656 @@
     "title": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains",
     "section": "Context",
     "text": "Context\nIn this presentation for the IIF UK Chapter: Quarterly Forecasting Forum seminar, we explore how traditional forecasting methods often fail to capture unmet demand in contraceptive supply chains—particularly when stockouts censor the data. Our work combines temporal kernel forecasting, conformal prediction, and inventory-aware simulation to estimate true demand beyond what the system records.\nWe show how “no demand” often just means “no stock,” and how our approach can support smarter, more equitable inventory decisions. Our next steps include expanding the policy framework, incorporating external covariates, and testing the model in both lab and field settings with real demand planners.\nBecause unmet demand isn’t invisible—our systems just fail to see it."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section",
+    "href": "lab/quarto_website/slides/index.html#section",
+    "title": "Home",
+    "section": "",
+    "text": "Calendar-based exploratory time series analysis\n\n\n30th June 2025 @ ISF\n\n\nMitchell O’Hara-Wild, Monash University\nCynthia Huang, Monash University\nRob Hyndman, Monash University\nMatthew Kay, Northwestern University\n\n\nUseful links\n social.mitchelloharawild.com\n slides.mitchelloharawild.com/isf2025\n mitchelloharawild/talk-isf-ggtime"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-1",
+    "href": "lab/quarto_website/slides/index.html#section-1",
+    "title": "Home",
+    "section": "",
+    "text": "Exploratory analysis in the forecasting workflow"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-2",
+    "href": "lab/quarto_website/slides/index.html#section-2",
+    "title": "Home",
+    "section": "",
+    "text": "Exploratory analysis in the forecasting workflow"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-3",
+    "href": "lab/quarto_website/slides/index.html#section-3",
+    "title": "Home",
+    "section": "",
+    "text": "Exploring special dimensions\nSeveral types of data require unique care.\n\n\n🍀 uncertainty\n{distributional} / {ggdist}\n🕸️ graph\n{tidygraph} / {ggraph}\n🗺️ space\n{sf} / {ggplot2}\n⌛ time\n{mixtime} / {ggtime}"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-4",
+    "href": "lab/quarto_website/slides/index.html#section-4",
+    "title": "Home",
+    "section": "",
+    "text": "Exploring temporal data\nTime is comparatively simple dimension, it is a continuous and ordered variable.\nWhy do we need specialised tools?\n\n\n\n\n📆 Calendrical time\n\n\nWhile time itself is simple, calendrical patterns are complex!\nTemporal data/patterns align with calendars.\n\n\nCalender systems (Gregorian, Islamic, Chinese, Jewish, …)\nTimezones (local/civil time, absolute time)\nGranularities (hourly, daily, weekly, monthly, annual, …)\nCorrections (leap years, leap seconds)\nSeasonality (weekdays/weekends, financial years, holidays)"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-5",
+    "href": "lab/quarto_website/slides/index.html#section-5",
+    "title": "Home",
+    "section": "",
+    "text": "Exploratory time series analysis\nThere are two main tasks in ETSA:\n\n\n\n\n💾 Data operations\n\n\n\n\n\nCleaning\nJoining\nAggregating\n\n\n\nSummaries / Features\nTransformation\nDecomposition\n\n\n\n\n\n\n\n:::{.callout-note icon = false} ## 🎨 Data visualisation\n\n\n\nTime plots\nSeason plots\n\n\n\nSeasonal sub-series plots\nACF plots\n\n\n\n\n:::"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-6",
+    "href": "lab/quarto_website/slides/index.html#section-6",
+    "title": "Home",
+    "section": "",
+    "text": "Data operations\nThere are many tools for manipulating time series data, which are generally great!\n\n\n\n\n\n\nPython packages\n\n\n\n\n\npandas\ngluonts\n\n\n\naeon\ndarts\n\n\n\n\n\n\n\n\n\n\n\nR packages\n\n\n\n\n\nts\nxts\nzoo\n\n\n\nlubridate\ntsibble\nclock\n\n\n\n\n\n\n\n\n\n\n\n\n\nTypical features\n\n\n\n\n\nRepresent time\nData cleaning\nTime slicing\n\n\n\nMissing values\nTransformation\nAggregation"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-7",
+    "href": "lab/quarto_website/slides/index.html#section-7",
+    "title": "Home",
+    "section": "",
+    "text": "Representing time\nTemporal data structures are often limited.\nMost time series datasets look like this:\n\n\n# A tibble: 24,320 × 5\n   Quarter    Region   State           Purpose  Trips\n   &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;           &lt;chr&gt;    &lt;dbl&gt;\n 1 1998-01-01 Adelaide South Australia Business  135.\n 2 1998-04-01 Adelaide South Australia Business  110.\n 3 1998-07-01 Adelaide South Australia Business  166.\n 4 1998-10-01 Adelaide South Australia Business  127.\n 5 1999-01-01 Adelaide South Australia Business  137.\n 6 1999-04-01 Adelaide South Australia Business  200.\n 7 1999-07-01 Adelaide South Australia Business  169.\n 8 1999-10-01 Adelaide South Australia Business  134.\n 9 2000-01-01 Adelaide South Australia Business  154.\n10 2000-04-01 Adelaide South Australia Business  169.\n# ℹ 24,310 more rows"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-8",
+    "href": "lab/quarto_website/slides/index.html#section-8",
+    "title": "Home",
+    "section": "",
+    "text": "Representing time\nIn tsibble time needs the right granularity.\n\n\n# A tsibble: 24,320 x 5 [1Q]\n# Key:       Region, State, Purpose [304]\n   Quarter Region   State           Purpose  Trips\n     &lt;qtr&gt; &lt;chr&gt;    &lt;chr&gt;           &lt;chr&gt;    &lt;dbl&gt;\n 1 1998 Q1 Adelaide South Australia Business  135.\n 2 1998 Q2 Adelaide South Australia Business  110.\n 3 1998 Q3 Adelaide South Australia Business  166.\n 4 1998 Q4 Adelaide South Australia Business  127.\n 5 1999 Q1 Adelaide South Australia Business  137.\n 6 1999 Q2 Adelaide South Australia Business  200.\n 7 1999 Q3 Adelaide South Australia Business  169.\n 8 1999 Q4 Adelaide South Australia Business  134.\n 9 2000 Q1 Adelaide South Australia Business  154.\n10 2000 Q2 Adelaide South Australia Business  169.\n# ℹ 24,310 more rows\n\n\n\n\n\n\n\n\n\nGranular time vectors in tsibble\n\n\nyearquarter(), yearmonth(), & yearweek()"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-9",
+    "href": "lab/quarto_website/slides/index.html#section-9",
+    "title": "Home",
+    "section": "",
+    "text": "Mixed temporal granularities\n\n\n\n\n\n\nExisting time vectors are limited\n\n\n\nGregorian calendar only\nLimited granularity options\nCannot mix temporal granularities\n\n\n\n\n\n\n\n\n\n\n\nA better solution?\n\n\nThe {mixtime} package works with…\n\nMany calendars via {calcal}\nGregorian, Chinese, Islamic, Hebrew, …\nCustom calendars / granularities\nBusiness hours, trading days, trimesters, …\nMixed temporal granularities in the same tsibble\nCritically important for temporal reconciliation!"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-10",
+    "href": "lab/quarto_website/slides/index.html#section-10",
+    "title": "Home",
+    "section": "",
+    "text": "Mixed temporal granularities\nMixed granularities enable more temporal tasks, e.g. joins, comparisons, & aggregation."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-11",
+    "href": "lab/quarto_website/slides/index.html#section-11",
+    "title": "Home",
+    "section": "",
+    "text": "Types of time\nUsually we work with continuous time points, however there are many other types of time.\n\ncontinuous time [2024 Jan, 2024 Feb]\ncyclical time [Oct, Nov, Dec, Jan]\norigin-less time [Month 3, Month 4]\nranges [2024 Jan - 2024 Jun]\ndurations [3 months]\nprogress [60% through month]"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-12",
+    "href": "lab/quarto_website/slides/index.html#section-12",
+    "title": "Home",
+    "section": "",
+    "text": "Time series visualisation\n\n\n\n\n\n\n\nggplot2 already supports temporal data\n\n\nSimply map a date (Date), datetime (POSIXct), or even time (hms) to any aesthetic. Scales to adjust temporal labels and breaks exist in ggplot2:\n\nscale_*_date() for Date,\nscale_*_datetime() for POSIXct,\nscale_*_time() for hms.\n\n\n\n\n\n\n\n\n\n⏰ So why do we need ggtime?\n\n\n{ggtime} visualises time with calendrical patterns.\n\nAlignment options for timezones, granularities & cycles\nCyclical and calendar layouts for seasonality & holidays"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-13",
+    "href": "lab/quarto_website/slides/index.html#section-13",
+    "title": "Home",
+    "section": "",
+    "text": "Common temporal graphics\nThese ‘visual idioms’ of time series plots can be categorised into two core groups:\n\nLinear time plots\nCircular time plots\n\n\n\n\n\n\n\nA grammar of temporal graphics\n\n\n{ggtime} aims to re-express these time series plots with common elements of a grammar.\nThose elements can be further remixed to create other useful temporal visualisations."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-14",
+    "href": "lab/quarto_website/slides/index.html#section-14",
+    "title": "Home",
+    "section": "",
+    "text": "Linear time plots\nThese show time as a continuous dimension."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-15",
+    "href": "lab/quarto_website/slides/index.html#section-15",
+    "title": "Home",
+    "section": "",
+    "text": "Time plots\nMaps time to the x/y-axis.\nThey reveal trends, seasons, cycles, outliers, and more.\n\n\n\n⚛️ Notable grammar elements\n\n\n\nmapping:\n\nx: time\ny: observations\n\ncoord: cartesian\n\n\n\n\n\n\n\nCode\nlibrary(fpp3)\npbs_scripts &lt;- tsibbledata::PBS |&gt;\n  summarise(Scripts = sum(Scripts))\npbs_scripts |&gt;\n  autoplot(Scripts)"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-16",
+    "href": "lab/quarto_website/slides/index.html#section-16",
+    "title": "Home",
+    "section": "",
+    "text": "Forecast plots\nThese are simply time plots.\nThey just happen to show forecasts, or uncertain values.\n\n\n\n⚛️ Notable grammar elements\n\n\n\nmapping:\n\nx: time\ny: observations\nydist: forecast\n\ncoord: cartesian\n\n\n\n\n\n\n\nCode\npbs_scripts |&gt; \n  model(ETS(Scripts)) |&gt; \n  forecast() |&gt; \n  autoplot(pbs_scripts) +\n  theme(legend.position = \"bottom\")"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-17",
+    "href": "lab/quarto_website/slides/index.html#section-17",
+    "title": "Home",
+    "section": "",
+    "text": "Circular time plots\nTransforms time to reveal circular patterns."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-18",
+    "href": "lab/quarto_website/slides/index.html#section-18",
+    "title": "Home",
+    "section": "",
+    "text": "Seasonal plots\nLoops seasons to align years.\n\n\n\n⚛️ Notable grammar elements\n\n\n\nmapping:\n\nx: season (e.g. hms)\ny: observations\ncolour: time\n\ncoord: cartesian\n\n\n\n\n\n\n\nCode\npbs_scripts |&gt;\n  gg_season(Scripts)"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-19",
+    "href": "lab/quarto_website/slides/index.html#section-19",
+    "title": "Home",
+    "section": "",
+    "text": "Seasonal sub-series\nSeason facets to show changes over time.\n\n\n\n⚛️ Notable grammar elements\n\n\n\nmapping:\n\nx: time\ny: observations\n\ncoord: cartesian\nfacet: season\n\n\n\n\n\n\n\nCode\npbs_scripts |&gt;\n  gg_subseries(Scripts)"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-20",
+    "href": "lab/quarto_website/slides/index.html#section-20",
+    "title": "Home",
+    "section": "",
+    "text": "Grammar of temporal graphics\n{ggtime} re-expresses these common plots with a composable ggplot2-like grammar.\n\n\n\n🎯 Goals\n\n\n\nDecompose temporal graphics into modular elements.\nProvide grammar extensions, and plot helpers using them.\nEncourage users to experiment beyond standard plots.\nInteroperability with other ggplot2 extensions (e.g. ggdist)\nOvercome current limitations of time series graphics."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-21",
+    "href": "lab/quarto_website/slides/index.html#section-21",
+    "title": "Home",
+    "section": "",
+    "text": "Data\n\n{mixtime} directly associates time with a calendar to enable plotting:\n\n\nMixed calendars (Gregorian, astronomical, …)\nMixed granularities (daily, weekly, monthly, …)\nLocal/civil time and global/absolute time operations\n\ne.g. \"2 aweeks\" vs \"2 weeks\" for absolute/civil\n\nCensored calendars (trading days, working hours, …)\nOrigin-less time (time of day, month of year, …)\nand much more…"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-22",
+    "href": "lab/quarto_website/slides/index.html#section-22",
+    "title": "Home",
+    "section": "",
+    "text": "Geometries / Layers\n\ngeom_time_line()\n\nA time-aware version of geom_line(). Shows calendrical jumps with dashed lines and/or open and closed circles.\n\n\nCode\ntz_shift &lt;- as_tibble(tsibbledata::gafa_stock) |&gt;\n  filter(\n    (Symbol == \"AAPL\" & Date &lt;= \"2014-01-15\") | \n      (Symbol == \"GOOG\" & Date &lt;= \"2014-01-13\")\n  ) |&gt;\n  mutate(Date = Sys.Date() + hours(c(1:3, 3:9, 1:2, 4:9)), DST = ifelse(Symbol == \"AAPL\", \"DST Ends\", \"DST Begins\")) |&gt; \n  slice(1:3, 3:12, 12:n()) |&gt; \n  mutate(\n    open = duplicated(Open),\n    closed = c(open[-1], FALSE),\n    Date = Date + open*3600*((DST==\"DST Begins\")*2-1)\n  ) \n\ntz_shift |&gt; \n  ggplot(aes(x = Date, y = Close)) + \n  geom_path(aes(group = cumsum(open))) + \n  geom_path(linetype = \"dashed\", data = filter(tz_shift, open | closed)) +\n  geom_point(aes(shape = closed), data = filter(tz_shift, open | closed), size = 3) +\n  facet_wrap(vars(DST), ncol = 2, scales = \"free_y\") + \n  scale_shape_manual(values = c(\"TRUE\" = 16, \"FALSE\" = 1)) + \n  guides(shape = \"none\")\n\n\n\n\n\n\n\n\n\n\n\n\n\ngeom_time_candle()\nShows calendrical value changes/ranges (e.g. daily, weekly, monthly, annual).\n\n\n\nCode\ntsibbledata::gafa_stock |&gt; \n  filter(Symbol == \"GOOG\") |&gt; \n  filter(yearmonth(Date) == yearmonth(\"2014 Jun\")) |&gt; \n  ggplot(aes(x = Date)) + \n  tidyquant::geom_candlestick(\n    aes(open = Open, high = High, low = Low, close = Close),\n    colour_up = \"#1FB974\", fill_up = \"#1FB974\", colour_down = \"#F4375D\", fill_down = \"#F4375D\"\n  ) + \n  scale_x_date(date_labels = \"%d %b %Y\") +\n  labs(y = \"GOOG Stock\")"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-23",
+    "href": "lab/quarto_website/slides/index.html#section-23",
+    "title": "Home",
+    "section": "",
+    "text": "Scales\nMuch like ggplot2 temporal scales, {ggtime} has a unified scale_*_mixtime() with:\n\n\ntime_labels (strftime-based, e.g. \"%Y %b\")\ntime_breaks (calendar-based, e.g. \"3 months\")\n\n\n\nThe scales also control calendrical alignment for:\n\ntimezones (civil_time boolean)\ngranularity (time_align 0-1)\ncycles (warp and time_warp)"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-24",
+    "href": "lab/quarto_website/slides/index.html#section-24",
+    "title": "Home",
+    "section": "",
+    "text": "Timezone alignment (local/absolute time)\n\n\n\n\n\n\n\n\n\nDaylight savings time misaligns daily seasonal patterns."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-25",
+    "href": "lab/quarto_website/slides/index.html#section-25",
+    "title": "Home",
+    "section": "",
+    "text": "Timezone alignment (local/absolute time)\n\n\n\n\n\n\n\n\n\n\n\n\n📅 Daily seasonality in local time\n\n\nDaily seasonal patterns are better aligned when local time is used with scale_x_mixtime(civil_time = TRUE)."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-26",
+    "href": "lab/quarto_website/slides/index.html#section-26",
+    "title": "Home",
+    "section": "",
+    "text": "Granularity alignment\n\n{ggtime} aligns mixed granularities.\nImagine Australian births (annual) compared with total births by state (monthly).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n📅 Temporal alignment across granularities\n\n\nWhen constrained to Date and POSIXct, left alignment is commonly used for less-frequent granularities.\ne.g. 2025-01-01 can be 2025, Jan 2025, or Jan 1 2025.\nConsequently, plotting is also often left-aligned."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-27",
+    "href": "lab/quarto_website/slides/index.html#section-27",
+    "title": "Home",
+    "section": "",
+    "text": "Granularity alignment\n{ggtime} center aligns granularities.\n\n\n\n\n\n\n\n\n\n\n\n\n📅 Aligning temporal granularities\n\n\nSpecify alignment of different granularities with scale_x_mixtime(align_time = &lt;0-1&gt;)."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-28",
+    "href": "lab/quarto_website/slides/index.html#section-28",
+    "title": "Home",
+    "section": "",
+    "text": "Time warping\n{ggtime} defaults to center alignment.\n\nCycles are repeating patterns with an irregular duration (and shape).\n\n\n\n\n\n\n\n\n\n\n\nWarping cycles to have the same length as “% of cycle” can help compare cycle shapes.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n📅 Temporal alignment across cycles\n\n\nIn scale_x_mixtime(), warp time with\n\nwarp (stretch time between specific time points)\ntime_warp (stretch time by calendar, e.g. \"1 month\")"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-29",
+    "href": "lab/quarto_website/slides/index.html#section-29",
+    "title": "Home",
+    "section": "",
+    "text": "Facets / Coordinates\nTwo calendar-plot approaches:\n\nfacet_calendar()\ncoord_calendar()\n\n\n\n\n📅 Calendar layouts for temporal graphics\n\n\nCalendars are useful for plotting long time series, they:\n\nuse a familiar layout for quickly identifying dates.\nreveal short annual patterns (e.g. holidays and events).\nhave a better aspect-ratio for dense time axis.\nmore effectively use vertical space.\n\nCalendars are not limited to the standard weekly layout, but are hierarchical in nature over any calendar structure."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-30",
+    "href": "lab/quarto_website/slides/index.html#section-30",
+    "title": "Home",
+    "section": "",
+    "text": "Calendar facets\nFacets separate each day (or calendar period)."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-31",
+    "href": "lab/quarto_website/slides/index.html#section-31",
+    "title": "Home",
+    "section": "",
+    "text": "Calendar coordinates\nEach day (or calendar period) shares the same panel."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-32",
+    "href": "lab/quarto_website/slides/index.html#section-32",
+    "title": "Home",
+    "section": "",
+    "text": "Facets / Coordinates\nSeason plots loop time over seasonalities.\n\ncoord_time_loop()\n\nThe time loop points can be specified with:\n\n\nloops (loop time over specific time points)\ntime_loops (loop time by calendar, e.g. \"1 week\")"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-33",
+    "href": "lab/quarto_website/slides/index.html#section-33",
+    "title": "Home",
+    "section": "",
+    "text": "Looping circular time periods\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLooping continuous time\n\n\nLooping the x-axis over seasonal granularities (e.g. day, week, or year) clearly shows seasonality.\ncoord_time_loop(time_loops = \"1 year\")"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#section-34",
+    "href": "lab/quarto_website/slides/index.html#section-34",
+    "title": "Home",
+    "section": "",
+    "text": "Looping circular time periods\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNon-cartesian coordinates\n\n\nLooping conceptually applies to other coordinate spaces too. Combining coord_loop() and coord_polar() shows seasonality in polar coordinates."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#thanks-for-your-time",
+    "href": "lab/quarto_website/slides/index.html#thanks-for-your-time",
+    "title": "Home",
+    "section": "Thanks for your time!",
+    "text": "Thanks for your time!\n\n\n\n\n\n\n\n\nClosing remarks\n\n\n\nUse appropriate granularities for storing time\nCreate new graphics by combining each element\nComposable code offer many benefits for exploration\n\n\n\n\n\nUseful links\n social.mitchelloharawild.com\n slides.mitchelloharawild.com/isf2025\n mitchelloharawild/talk-isf-ggtime"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#unsplash-credits",
+    "href": "lab/quarto_website/slides/index.html#unsplash-credits",
+    "title": "Home",
+    "section": "Unsplash credits",
+    "text": "Unsplash credits"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#useful-links",
+    "href": "lab/quarto_website/slides/index.html#useful-links",
+    "title": "Home",
+    "section": "Useful links",
+    "text": "Useful links\n social.mitchelloharawild.com\n slides.mitchelloharawild.com/isf2025\n mitchelloharawild/talk-isf-ggtime"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#useful-links-1",
+    "href": "lab/quarto_website/slides/index.html#useful-links-1",
+    "title": "Home",
+    "section": "Useful links",
+    "text": "Useful links\n social.mitchelloharawild.com\n slides.mitchelloharawild.com/isf2025\n mitchelloharawild/talk-isf-ggtime"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/index.html#thanks-to-these-unsplash-contributors-for-their-photos",
+    "href": "lab/quarto_website/slides/index.html#thanks-to-these-unsplash-contributors-for-their-photos",
+    "title": "Home",
+    "section": "Thanks to these Unsplash contributors for their photos",
+    "text": "Thanks to these Unsplash contributors for their photos"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#outline",
+    "href": "lab/quarto_website/slides/quarto_website.html#outline",
+    "title": "Home",
+    "section": "Outline",
+    "text": "Outline\n\n\n\n\n\n\n\n\nConnect R Studio with GIT\n\n\n\n\n\n\nLets build the home page\n\n\n\n\n\n\nHow to style your website\n\n\n\n\n\n\nPages and listings\n\n\n\n\n\n\nLets publish your website\n\n\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#seen-the-unseen",
+    "href": "lab/quarto_website/slides/quarto_website.html#seen-the-unseen",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\nHuman story: What data misses\n\n\n\n\nNilu went to a pharmacy for Product A. It wasn’t in stock.\n\nThe system logs it as zero demand.\n\nBut the need was real. The system just missed it.\n\nThis creates broken trust and leads to create\nUNMET DEMAND.\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#seen-the-unseen-1",
+    "href": "lab/quarto_website/slides/quarto_website.html#seen-the-unseen-1",
+    "title": "Home",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\nAnalytical reality: Why this matters\n\n\n\n\nIn supply chains like this, Stockouts censor demand.\nObserved sales ≠ actual demand.\n\nInventory decisions based on this false signal?\nUnderstocking → more stockouts.\n\nForecasts don’t just underperform. They miss the whole story.\n\nA lost sale = a lost opportunity for care.\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#contraceptive-products-arent-easily-substituted",
+    "href": "lab/quarto_website/slides/quarto_website.html#contraceptive-products-arent-easily-substituted",
+    "title": "Home",
+    "section": "Contraceptive products aren’t easily SUBSTITUTED",
+    "text": "Contraceptive products aren’t easily SUBSTITUTED\n\n\n\n\n*Percent of women who will get pregnant within the first year of typical use."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#the-big-picture",
+    "href": "lab/quarto_website/slides/quarto_website.html#the-big-picture",
+    "title": "Home",
+    "section": "The BIG PICTURE",
+    "text": "The BIG PICTURE\n\n\n\n\n\nIn reality…\nThere are more than\n218 million women\nlike Nilu still have an unmet need for family planning.\nUltimately, this results in dropouts, unwanted pregnancies, and almost 7 million hospitalizations each year in developing countries.\n\n\n\nImage generated using 04-mini-high\nSources: USAID, 2020; PATH, 2019; Mukasa et al., 2017; Gilda et al., 2016"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#why-this-is-critical",
+    "href": "lab/quarto_website/slides/quarto_website.html#why-this-is-critical",
+    "title": "Home",
+    "section": "Why this is critical",
+    "text": "Why this is critical\n\n\n\n\n\n\n\nCensorship is structural — stockouts and interruptions are common in FPSC, not rare events.\n\n\n\n\nField insight — in Côte d’Ivoire and Ethiopia, demand planners repeatedly flagged stockouts as the key barrier.\n\n\n\n\nForecasting fails under censorship — observed sales understate true demand.\n\n\n\n\nThe literature split - prior research often separates forecasting from inventory decisions.\n\n\n\n\nResources are tightening — with USAID withdrawal, high service levels must be achieved efficiently.\n\n\n\n\n\nImage generated using 04-mini-high\nSources: Bijvank et al., 2011; Karimi et al., 2021; Thanos et al., 2022 ; Trapero et al., 2024"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#illustrative-impact-why-forecast-quality-matters",
+    "href": "lab/quarto_website/slides/quarto_website.html#illustrative-impact-why-forecast-quality-matters",
+    "title": "Home",
+    "section": "Illustrative impact: Why forecast quality matters",
+    "text": "Illustrative impact: Why forecast quality matters\n\n\n\n\n\nIn Côte d’Ivoire, ~1.59 million women use modern contraceptives (Track20).\n\nReplacing TCKF with the current LMIS forecast under a q95 inventory policy would lead to:\n🔻 reduce 18,599 additional women losing access\n➕ save 5,124 unintended pregnancies\n➕ save 5,879 abortions\n➕ save 54 infant deaths\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#what-matters-linking-forecasts-inventory-health-impact",
+    "href": "lab/quarto_website/slides/quarto_website.html#what-matters-linking-forecasts-inventory-health-impact",
+    "title": "Home",
+    "section": "What matters: linking forecasts, inventory & health impact",
+    "text": "What matters: linking forecasts, inventory & health impact\n\n\n\n\n\n📌 Forecast accuracy ≠ forecast value\nMost models focus on error metrics, but ignore censorship, uncertainty, and how forecasts are used.\n\n📦 High service ≠ high performance\nDemand Planner & System Forecast look strong, but hide poor forecasts behind excess inventory.\n\n❤️ Forecast quality drives public health\nUnder lean policies (q80–q95), poor forecasts → more stockouts → more harm.\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#key-contributions-implications",
+    "href": "lab/quarto_website/slides/quarto_website.html#key-contributions-implications",
+    "title": "Home",
+    "section": "Key contributions & implications",
+    "text": "Key contributions & implications\n\n\n\n\n\n\n\n\nAddressing Censored Demand\n\n\nTCKF explicitly accounts for stockouts and service interruptions by reconstructing true demand.\n\n\n\n\n\n\nForecasts Aligned with Inventory\n\n\nOur study links forecasting with inventory decisions and public health outcomes.\n\n\n\n\n\n\nImproved Inventory Efficiency\n\n\nBy reducing stockouts without overstocking, TCKF enhances both service levels and inventory turnover.\n\n\n\n\n\n\nPractical Value for Planners & Donors\n\n\nTCKF enables risk-aware, evidence-based planning — particularly valuable under resource constraints, such as the phasing out of USAID support.\n\n\n\n\n\n\nReproducibility & Extendability\n\n\nThe full pipeline is openly implemented in R using both synthetic and empirical LMIS data, supporting reproducibility.\n\n\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#section",
+    "href": "lab/quarto_website/slides/quarto_website.html#section",
+    "title": "Home",
+    "section": "",
+    "text": "Ctrl+Alt+Coffee ☕ — reboot in 10 mins.\n\n\n\n\n\n\n−+\n10:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#start-with-a-template",
+    "href": "lab/quarto_website/slides/quarto_website.html#start-with-a-template",
+    "title": "Home",
+    "section": "Start with a template",
+    "text": "Start with a template\n\nStart somewhere logical:\n\n\nTerminal\n\ncd ~/Documents\n\nOR\n\n\nTerminal\n\ncd /d/GIT\n\nGet the website template:\n\n\nTerminal\n\nquarto use template chamara7h/quarto_website_template\n\nFollow the prompts:\n\n\nTerminal\n\nQuarto templates may execute code when documents are rendered. If you do not \ntrust the authors of the template, we recommend that you do not install or \nuse the template.\n? Do you trust the authors of this template (Y/n) › Y\n? Create a subdirectory for template? (Y/n) › Y\n? Directory name: › website"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nCreate a GitHub account if you don’t already have one, and make sure you have Git installed on your laptop.\nInstall and load the usethis and gitcreds packages.\nConfigure git then run create_github_token(), and follow the instructions to generate a token.\nRun gitcreds_set() and paste in the token when prompted.\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#home-page-structure",
+    "href": "lab/quarto_website/slides/quarto_website.html#home-page-structure",
+    "title": "Home",
+    "section": "Home page structure",
+    "text": "Home page structure\n\n\n\nindex.qmd\n\n---\ntitle: \"Bruce Wayne\"\nsubtitle: \"I am Batman\"\nimage: profile.jpg\nabout: # https://quarto.org/docs/websites/website-about.html\n  template: jolla\n  links:\n    - icon: github\n      text: Github\n      href: https://github.com\n    - icon: linkedin\n      text: LinkedIn\n      href: https://linkedin.com\n---\n\nA little bit about me and my life.\n\n## Education\n\nUniversity of XYZ, City \\| Location \\| Sept 20XX - June 20XX\n\n## Experience\n\nWorkplace \\| Job title \\| April 20XX - present\n\n\nWebpages are like any other Quarto document:\n\nStart with a YAML header\nCan include code cells\nEverything else is markdown content"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#about-key-in-yaml",
+    "href": "lab/quarto_website/slides/quarto_website.html#about-key-in-yaml",
+    "title": "Home",
+    "section": "About key in YAML",
+    "text": "About key in YAML\n\n\nLanding/ home page controlled by the about key in YAML.\nContent and YAML values are combined using a template:\n\n---\nabout: # https://quarto.org/docs/websites/website-about.html\n  template: jolla\n  links:\n    - icon: github\n      text: Github\n      href: https://github.com\n    - icon: linkedin\n      text: LinkedIn\n      href: https://linkedin.com\n---\n\nDifferent templates: jolla, trestles, solana, marquee, or broadside"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#how-to-set-the-image",
+    "href": "lab/quarto_website/slides/quarto_website.html#how-to-set-the-image",
+    "title": "Home",
+    "section": "How to set the image",
+    "text": "How to set the image\n\nUsed in about template, and social cards.\n\n\n\n\nindex.qmd\n\n---\nimage: images/profile.jpg\nabout: # https://quarto.org/docs/websites/website-about.html\n  template: jolla\n  image-shape: round\n---\n\n\nwebsite/\n├── _quarto.yml\n├── images/\n│   └──  profile.jpg\n└── index.qmd\n\n\nUse a path relative to index.qmd\nImage shapes: rectangle, round and rounded"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-1",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-1",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nGet the starter template.\nOpen index.qmd\nPreview index.qmd\n\n\n\n\n\n\n−+\n02:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#website-structure",
+    "href": "lab/quarto_website/slides/quarto_website.html#website-structure",
+    "title": "Home",
+    "section": "Website structure",
+    "text": "Website structure\n\nA minimal website has two files: index.qmd and _quarto.yml\n\nindex.qmd: Renders to index.html, your home page.\n_quarto.yml: Controls project and website properties.\n\n\nWhen rendered you will get a _site/ folder. This contains everything needed to serve the site."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#understand-the-website-structure",
+    "href": "lab/quarto_website/slides/quarto_website.html#understand-the-website-structure",
+    "title": "Home",
+    "section": "Understand the website structure",
+    "text": "Understand the website structure\n\nA minimal website has two files: index.qmd and _quarto.yml\n\nindex.qmd: Renders to index.html, your home page.\n_quarto.yml: Controls project and website properties.\n\n\nWhen rendered you will get a _site/ folder. This contains everything needed to serve the site."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml",
+    "href": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml",
+    "title": "Home",
+    "section": "Styling using YAML",
+    "text": "Styling using YAML\n\nWith Quarto html output we have a number of ways to style the site.\nA number of basic options allows us to change colors, fonts, and SIZES.\n\n\n\n\n\nColours\n\nfontcolor: The main color for text on the site\nlinkcolor: Color of the links\nbackgroundcolor: Background color of the whole site\nmonobackgroundcolor: background for code chunks\n\n\n\n\n_quarto.yml\n\n---\nformat:\n  html:\n    backgroundcolor: \"#eeffee\"\n    fontcolor: \"darkgreen\"\n    linkcolor: \"black\"\n---\n\n\nNeed more colours: Figma colour pallet"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml-1",
+    "href": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml-1",
+    "title": "Home",
+    "section": "Styling using YAML",
+    "text": "Styling using YAML\n\nWith Quarto html output we have a number of ways to style the site.\nA number of basic options allows us to change colors, fonts, and SIZES.\n\n\n\n\nFonts\n\nmainfont: The main font for text on the site\nmonofont: Font for code elements\n\n\n\n\n_quarto.yml\n\n---\nformat:\n  html:\n    backgroundcolor: \"#eeffee\"\n    fontcolor: \"darkgreen\"\n    linkcolor: \"black\"\n    mainfont: \"monospace\"\n---\n\n\n\ngeneric families include; serif, sans-serif, monospace, cursive, fantasy, system-ui, ui-serif, ui-sans-serif, ui-monospace, ui-rounded, and fangsong."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml-2",
+    "href": "lab/quarto_website/slides/quarto_website.html#styling-using-yaml-2",
+    "title": "Home",
+    "section": "Styling using YAML",
+    "text": "Styling using YAML\n\nWith Quarto html output we have a number of ways to style the site.\nA number of basic options allows us to change colors, fonts, and SIZES.\n\n\n\n\nSizes\n\nmax-width: Width of the main text area of the pages\nfontsize: Base font size for website\nlinestretch: Distance between lines of text\n\n\n\n\n_quarto.yml\n\n---\nformat:\n  html:\n    backgroundcolor: \"#eeffee\"\n    fontcolor: \"darkgreen\"\n    linkcolor: \"black\"\n    mainfont: \"monospace\"\n    fontsize: 20px\n---\n\n\n\n\nRemember!!! You can always do further styling using custom styles in CSS."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-2",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-2",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nEdit the content in index.qmd to reflect you.\nTry different templates and pick one.\nEdit the links to point at your own profiles, or add different links.\nReplace the image with your image.\nExperiment with image-shape.\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#adding-pages",
+    "href": "lab/quarto_website/slides/quarto_website.html#adding-pages",
+    "title": "Home",
+    "section": "Adding Pages",
+    "text": "Adding Pages\n\nTwo decisions:\n\nStructure Where will it live in your website project?\nNavigation How will people discover it on your website?\n\nindex.html is special\n\n\n\nFile location\nindex.qmd\ntalks/index.qmd\n\nURL\n{ site url }\n{ site url }/talks\n\nindex.qmd (or .md, or .ipynb) -&gt; index.html\nindex.html acts like a default page for the site or directory.\n\n\nYou aren’t limited to .html. We can also use other file types as .pdf or .csv."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#navigation-bar",
+    "href": "lab/quarto_website/slides/quarto_website.html#navigation-bar",
+    "title": "Home",
+    "section": "Navigation bar",
+    "text": "Navigation bar\n\nIn _quarto.yml under website: navbar\n\n\nGive a path from site root\n\n\n_quarto.yml\n\nwebsite:\n  navbar:\n    right:\n      - text: Projects\n        href: projects/index.qmd\n      - text: Talks\n        href: talks/index.qmd\n\n\n\nOther customizations\n\n\n_quarto.yml\n\nwebsite:\n  navbar:\n    title: Data Lab for Social Good \n    logo: images/logo.png\n    search: true\n    left:\n      - text: Home\n        href: index.qmd\n        icon: house-door-fill\n    right:\n      - text: Projects\n        href: projects/index.qmd\n      - text: Talks\n        href: talks/index.qmd\n      tools:\n      - icon: github\n        href: https://github.com/\n      - icon: linkedin\n        href: https://www.linkedin.com/\n\n\n\n\nOptions for icons: Bootstrap Icons"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#primary-navigation",
+    "href": "lab/quarto_website/slides/quarto_website.html#primary-navigation",
+    "title": "Home",
+    "section": "Primary navigation",
+    "text": "Primary navigation\n\n\n\nTop navigation\n\n\n_quarto.yml\n\nwebsite:\n  navbar:\n    right:\n      - text: Projects\n        href: projects/index.qmd\n    tools:\n      - icon: github\n        href: https://github.com/\n\n\nAdd items to left, right and tools\n\n\nSide navigation\n\n\n_quarto.yml\n\nwebsite:\n  sidebar:\n    contents:\n      - text: Projects\n        href: projects/index.qmd\n    tools:\n      - icon: github\n        href: https://github.com/    \n\n\nAdd items to contents and tools"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#nested-navigation",
+    "href": "lab/quarto_website/slides/quarto_website.html#nested-navigation",
+    "title": "Home",
+    "section": "Nested navigation",
+    "text": "Nested navigation\n\n\n\nTop navigation\n\n\n_quarto.yml\n\nwebsite:\n  navbar:\n    left:\n      - index.qmd\n      - text: Work\n        menu: \n          - talks/index.qmd\n          - projects/index.qmd\n\n\nAdd a text item along with menu\n\n\nSide navigation\n\n\n_quarto.yml\n\nwebsite:\n  sidebar:\n    contents:\n      - index.qmd\n      - section: Work\n        contents: \n          - talks/index.qmd\n          - projects/index.qmd\n\n Add a section with its own contents\n\n\n\nRead more about page navigation"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#nested-navigation-1",
+    "href": "lab/quarto_website/slides/quarto_website.html#nested-navigation-1",
+    "title": "Home",
+    "section": "Nested Navigation",
+    "text": "Nested Navigation\n\n\n\nTop navigation\n\n\n_quarto.yml\n\nwebsite:\n  navbar:\n    left:\n      - index.qmd\n      - text: Work\n        menu: \n          - talks/index.qmd\n          - projects/index.qmd\n\nAdd a text item along with menu\n\nSide navigation\n\n\n_quarto.yml\n\nwebsite:\n  sidebar:\n    contents:\n      - index.qmd\n      - section: Work\n        contents: \n          - talks/index.qmd\n          - projects/index.qmd\n\nAdd a section with its own contents"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-3",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-3",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nOpen up your _quarto.yml file and experiment with the colors.\nOpen up your _quarto.yml file and experiment with the fonts.\nOpen up your _quarto.yml file and experiment with the sizing.\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#bonus-page-footer",
+    "href": "lab/quarto_website/slides/quarto_website.html#bonus-page-footer",
+    "title": "Home",
+    "section": "Bonus: Page footer",
+    "text": "Bonus: Page footer\n\n\n\n_quarto.yml\n\nwebsite:\n  page-footer: \n    left: \"Copyright 2025, DL4SG\" \n    right: \n      - icon: github\n        href: https://github.com/\n      - icon: twitter \n        href: https://twitter.com/"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#what-is-listing-and-why-we-need-it",
+    "href": "lab/quarto_website/slides/quarto_website.html#what-is-listing-and-why-we-need-it",
+    "title": "Home",
+    "section": "What is listing and why we need it?",
+    "text": "What is listing and why we need it?\n\n\n\nWhat?\n\nan automatically generated list of content\nstyled via a template, (built-in type, or custom template)\ncan be included on any page\n\n\n\n\nWhy?\n\nGreat for large collections\nGreat for collections that grow"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#lets-create-lisitng-for-project-page",
+    "href": "lab/quarto_website/slides/quarto_website.html#lets-create-lisitng-for-project-page",
+    "title": "Home",
+    "section": "Lets create lisitng for project page",
+    "text": "Lets create lisitng for project page\n\nprojects/ has some folders with documents in them\nDemo:\n\nMake a new page projects/index.qmd\nMake it a listing:\n\n\n\n\nAs simple as:\n---\ntitle: My Projects\nlisting: default\n---\n\n\nExplicit default options:\n---\ntitle: My Blog\nlisting:\n  contents: /\n  type: default\n---\n\nExplore more listing types; grid or table"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#lets-create-lisitng-for-blog-page",
+    "href": "lab/quarto_website/slides/quarto_website.html#lets-create-lisitng-for-blog-page",
+    "title": "Home",
+    "section": "Lets create lisitng for blog page",
+    "text": "Lets create lisitng for blog page\n\nblog/ has some folders with documents in them\nDemo:\n\nMake a new page blog/index.qmd\nMake it a listing:\n\n\n\n\nAs simple as:\n---\ntitle: My Blog\nlisting: default\n---\n\n\nExplicit default options:\n---\ntitle: My Blog\nlisting:\n  contents: /\n  type: default\n---\n\nExplore more listing types; default, grid or table"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-4",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-4",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nCustomize your navigation bar title\nExperiment with the position of your links in the navbar: left, right or a mix\nAdd at least one item to tools in your navbar\nTry both top navigation and side navigation\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#more-options-in-listings",
+    "href": "lab/quarto_website/slides/quarto_website.html#more-options-in-listings",
+    "title": "Home",
+    "section": "More options in listings",
+    "text": "More options in listings\n\nUse listings for projects page\n\nNote: contents can be a YAML file\n\n\n\n\n\n\nprojects/index.qmd\n\n---\ntitle: Projects\nlisting:\n  contents: projects.yml\n  type: grid\n  max-description-length: 250\n---\n\n\n\n\nproject/projects.yml\n\n- title: Predicting House Prices with Machine Learning\n  path: https://example.com/house-prices\n  # Photo by Breno Assis on Unsplash https://unsplash.com/photos/aerial-photography-of-rural-r3WAWU5Fi5Q \n  image: images/breno-assis-r3WAWU5Fi5Q-unsplash.jpg\n  description: &gt;\n    This project involves using machine learning algorithms to predict house prices based on\n    various features such as location, size, and amenities. It includes data cleaning,\n    feature engineering, and model selection.\n  categories: [Python, Machine Learning, Data Cleaning]\n  date: 2024-01-01\n  ...\n\nPath can be a relative path to a file in your site, or a URL\nYou can use Listing Fields, or create custom ones."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#simple-customizations",
+    "href": "lab/quarto_website/slides/quarto_website.html#simple-customizations",
+    "title": "Home",
+    "section": "Simple customizations",
+    "text": "Simple customizations\n\n\n\nSort and filtering options\n\n\n\nprojects/index.qmd\n\n---\ntitle: Projects\nlisting:\n  contents: projects.yml\n  type: grid\n  max-description-length: 250\n  sort-ui: false\n  sort: date desc\n  filter-ui: true\n---\n\n\n\nUse field-display-names to provide a different label for a field\n\n\nprojects/index.qmd\n\n---\ntitle: Projects\nlisting:\n  contents: projects.yml\n  type: grid\n  max-description-length: 250\n  sort-ui: false\n  sort: date desc\n  filter-ui: true\n  fields: [title, description, categories]\n  field-display-names: \n      title: 'Project'\n      categories: 'Skills'\n---"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#ymal-keys-for-blog-or-project-files",
+    "href": "lab/quarto_website/slides/quarto_website.html#ymal-keys-for-blog-or-project-files",
+    "title": "Home",
+    "section": "YMAL keys for blog or project files",
+    "text": "YMAL keys for blog or project files\n\nLets open blog/third-post/index.qmd\n\n\n\nAs simple as:\n---\ntitle: \"Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\"\ndescription: \"Workshop\"\nauthor: \"Harsha Chamara Hewage\"\ndate: \"2025-03-17\"\n---\n\n\nAdd categories and a cover image\n---\ntitle: \"Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting\"\ndescription: \"Workshop\"\nauthor: \"Harsha Chamara Hewage\"\ndate: \"2025-03-17\"\nimage: \"cover.png\"\ncategories:\n  - Forecasting\n  - Healthcare\n  - R\n  - Python\n  - Machine Learning\nlink-external-newwindow: true\n---"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#ymal-keys-for-a-blog-or-project-file",
+    "href": "lab/quarto_website/slides/quarto_website.html#ymal-keys-for-a-blog-or-project-file",
+    "title": "Home",
+    "section": "YMAL keys for a blog or project file",
+    "text": "YMAL keys for a blog or project file\n\nLets open blog/third-post/index.qmd\n\n\n\nAs simple as:\n---\ntitle: \"Second Post\"\ndescription: \"Post description for second post\"\nauthor: \"Bruce Wayne\"\ndate: \"5/23/2021\"\n---\n\n\nAdd categories and a cover image\n---\ntitle: \"Second Post\"\ndescription: \"Talk\"\nauthor: \"Bruce Wayne\"\ndate: \"5/23/2021\"\nimage: \"cover.jpg\"\ncategories:\n  - Forecasting\n  - Healthcare\n  - R\n  - Python\n  - Machine Learning\nlink-external-newwindow: true\n---"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#lets-add-custom-buttons",
+    "href": "lab/quarto_website/slides/quarto_website.html#lets-add-custom-buttons",
+    "title": "Home",
+    "section": "Lets add custom buttons",
+    "text": "Lets add custom buttons\n\n\nPaste this in styles.scss\n\n\n\nstyles.scss\n\n/* custom button */\n\nbutton {\n  background-color: transparent; /* No filling */\n  border: 2px solid rgb(55, 58, 60); /* Gray border */\n  color: rgb(55, 58, 60); /* Gray text */\n  padding: 5px 10px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 12px;\n  margin: 4px 2px;\n  cursor: pointer;\n  border-radius: 5px; /* Rounded corners */\n}\n\n/* Hover effect */\nbutton:hover {\n  border-color: #0066b2; /* Blue border on hover */\n  color: #0066b2; /* Blue text on hover */\n}\n\n/* Hover effect for Journal article */\n#journal-article-btn:hover {\n  border-color: #0066b2; /* Blue border on hover */\n  color: #0066b2; /* Blue text on hover */\n}\n\n/* Hover effect for GitHub repo */\n#github-repo-btn:hover {\n  border-color: #00A86B; /* Green border on hover */\n  color: #00A86B; /* Green text on hover */\n}\n\n\nAdd text to the body and a link:\n\n&lt;button id=\"journal-article-btn\" \n        onclick=\"window.open('slides/intro_method_skills.html', '_blank')\"&gt;\n  &lt;i class=\"fas fa-bookmark\"&gt;&lt;/i&gt; Slides\n&lt;/button&gt;\n\n&lt;button id=\"github-repo-btn\" onclick=\"window.open('https://github.com/', '_blank');\"&gt;\n  &lt;i class=\"fab fa-github\"&gt;&lt;/i&gt; GitHub repo\n&lt;/button&gt;\n\n Slides\n\n\n GitHub repo\n\nHeading\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#materials",
+    "href": "lab/quarto_website/slides/quarto_website.html#materials",
+    "title": "Home",
+    "section": "Materials",
+    "text": "Materials\n\nYou can find the workshop materials https://chamara7h.github.io/lab/ or simply scan the QR code.\n\nNote: These materials are based on my learnings at;\n\nPosit PBC: Quarto websites video series.\nIntroduction to Git and GitHub for R Users by Nicola Rennie.\nPublish a Quarto project using GitHub Pages by Melissa Van Bussel."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-5",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-5",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\n(Repeat) Make a new page blog/index.qmd which is a listing\nExperiment with type: default, grid or table\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#assumptions",
+    "href": "lab/quarto_website/slides/quarto_website.html#assumptions",
+    "title": "Home",
+    "section": "Assumptions",
+    "text": "Assumptions\n\n\nYou are expected to be comfortable with R and Git.\nHave used Quarto to generate documents (e.g. HTML, PDF, MS Word etc.)\nAre comfortable editing plain text documents (e.g .qmd) in your IDE (e.g. RStudio, Visual Studio Code etc.)\nWant to walk away with your own personal website.\nWe won’t assume you have any HTML, CSS/SCSS or Git/GitHub experience.\n\n\n\n\n\n\nWhat we will cover?\n\nCreate the home page\nSimple styling such as font, colour, size\nListing and navigation\n\n\n\n\n\nWhat we will not cover\n\nAdvance styling using css and scss\nAdvance navigation options\nCustomise templates\nRun code blocks"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#resources-to-keep-learning",
+    "href": "lab/quarto_website/slides/quarto_website.html#resources-to-keep-learning",
+    "title": "Home",
+    "section": "Resources to keep learning",
+    "text": "Resources to keep learning\n\nhttps://quarto.org/\nhttps://github.com/quarto-dev/quarto-cli/discussions\nhttps://github.com/mcanouil/awesome-quarto"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#break",
+    "href": "lab/quarto_website/slides/quarto_website.html#break",
+    "title": "Home",
+    "section": "Break",
+    "text": "Break\n\n\n\n\n\n\nCtrl+Alt+Coffee ☕ — reboot in 10 mins.\n\n\n\n\n\n\n−+\n10:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#using-git-and-github-with-rstudio",
+    "href": "lab/quarto_website/slides/quarto_website.html#using-git-and-github-with-rstudio",
+    "title": "Home",
+    "section": "Using Git and GitHub with RStudio",
+    "text": "Using Git and GitHub with RStudio\n\nWhat you need:\n\nR, RStudio, and Git installed on your laptop\nA GitHub account\nGitHub credentials\n\nOptional (but strongly recommended):\n\nThe usethis R package\nHappy Git with R"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#lets-setup-git-in-r-studio",
+    "href": "lab/quarto_website/slides/quarto_website.html#lets-setup-git-in-r-studio",
+    "title": "Home",
+    "section": "Lets setup Git in R Studio",
+    "text": "Lets setup Git in R Studio\n\n\n\nTerminal\n\n# check git is installed\ngit --version\n\n\n\n\nR script\n\n# from R: configure git (usethis)\nlibrary(usethis)\nuse_git_config(\n  user.name = \"your-username\",\n  user.email = \"you@example.org\"\n)\n\n# create a GitHub personal access token (opens browser)\ncreate_github_token()\n\n# store credentials locally (prompts for token paste)\nlibrary(gitcreds)\ngitcreds_set()"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#lets-setup-git-in-r-studio---live-demo",
+    "href": "lab/quarto_website/slides/quarto_website.html#lets-setup-git-in-r-studio---live-demo",
+    "title": "Home",
+    "section": "Lets setup Git in R Studio - Live demo",
+    "text": "Lets setup Git in R Studio - Live demo\n\n\n\nTerminal\n\n# check git is installed\ngit --version\n\n\nThen,\n\n\nR script\n\n# from R: configure git (usethis)\nlibrary(usethis)\nuse_git_config(\n  user.name = \"your-username\",\n  user.email = \"you@example.org\"\n)\n\n# create a GitHub personal access token (opens browser)\ncreate_github_token()\n\n# store credentials locally (prompts for token paste)\nlibrary(gitcreds)\ngitcreds_set()"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-6",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-6",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nTest different customisations in listing\nEdit and customise yml in one of your blog posts\nAdd all the pages to your site navigation\n\n\n\n\n\n\n−+\n10:00\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#create-a-new-quarto-project",
+    "href": "lab/quarto_website/slides/quarto_website.html#create-a-new-quarto-project",
+    "title": "Home",
+    "section": "Create a new Quarto project",
+    "text": "Create a new Quarto project\n\n\nIn RStudio, go to File &gt; New Project &gt; New Directory &gt; Quarto Website.\nFor the directory name, use the URL you want for your website.\n\nIf it’s a personal site, use the format your-username.github.io. For example, if your username is “batman”, the directory name would be batman.github.io.\nIf the site is for a GitHub organization, use the format organization-name.github.io.\n\nChoose a location on your computer to save the project.\nEnsure that “Create a git repository” and “Use renv with this project” are both checked.\nClick “Create Project”."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#create-a-github-repository",
+    "href": "lab/quarto_website/slides/quarto_website.html#create-a-github-repository",
+    "title": "Home",
+    "section": "Create a GitHub repository",
+    "text": "Create a GitHub repository\n\nGo to GitHub and create a new repository.\nThe repository name must exactly match the directory name you created in RStudio (e.g., your-username.github.io).\nFor free accounts, you must set the repository to Public for GitHub Pages to work.\nClick “Create repository”.\nLink your local project folder to the new GitHub repository and push the initial files.\n\n\n\n\nTerminal/ Bash\n\n# push an exisitng repo\ngit remote add origin https://github.com/&lt;your user name&gt;.github.io\ngit branch -M main\n\n# push your initial changes\ngit status\ngit add .\ngit commit -m 'initial commit'\ngit push origin main"
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#create-a-gh-pages-branch",
+    "href": "lab/quarto_website/slides/quarto_website.html#create-a-gh-pages-branch",
+    "title": "Home",
+    "section": "Create a gh-pages Branch",
+    "text": "Create a gh-pages Branch\n\n\nAfter pushing your project, go to your repository on GitHub.\nClick on the branch dropdown menu (which should say “main”) and select “View all branches”.\nClick “New branch”.\nName the new branch gh-pages and click “Create new branch”."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#set-up-the-github-actions-workflow",
+    "href": "lab/quarto_website/slides/quarto_website.html#set-up-the-github-actions-workflow",
+    "title": "Home",
+    "section": "Set up the GitHub actions workflow",
+    "text": "Set up the GitHub actions workflow\n\n\nIn your RStudio project, create a new folder named .github.\nInside the .github folder, create another folder named workflows.\nInside the workflows folder, create a new text file and name it publish.yml.\nGo to the Quarto documentation page about publishing to GitHub Pages. Find the example for a GitHub Action that uses renv (go here: https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv).\nCopy the entire code block from that example.\nPaste this code into your publish.yml file and save it and commit changes."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#configure-github-pages-settings",
+    "href": "lab/quarto_website/slides/quarto_website.html#configure-github-pages-settings",
+    "title": "Home",
+    "section": "Configure GitHub pages settings",
+    "text": "Configure GitHub pages settings\n\n\nOn your GitHub repository page, go to Settings and then click Pages in the side menu.\nUnder the “Branch” section, use the dropdown menu to select the gh-pages branch as the source.\nClick Save.\nClick on the Actions tab at the top of your GitHub repository page.\nou will see that your recent commit has automatically started the workflow.\nOnce the action is complete, go back to Settings &gt; Pages.\nClick the “Visit site” button to see your live website at the URL you specified."
+  },
+  {
+    "objectID": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-7",
+    "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-7",
+    "title": "Home",
+    "section": "Now it is your turn.",
+    "text": "Now it is your turn.\n\n\n\n\n\n\nCreate the quarto website project folder\nCreate Github repo\nLink your local folder with the Github repo\nCreate the workflow\nPublish your website\n\n\n\n\n\n\n−+\n07:30\n\n\n\n\nImage generated using 04-mini-high"
   }
 ]
