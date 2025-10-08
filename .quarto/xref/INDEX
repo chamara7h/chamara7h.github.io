@@ -170,5 +170,8 @@
   },
   "talks/qff_london/index.qmd": {
     "index.html": "a7226f39"
+  },
+  "lab/quarto_website/slides/quarto_website.qmd": {
+    "quarto_website.html": "9e4974dc"
   }
 }

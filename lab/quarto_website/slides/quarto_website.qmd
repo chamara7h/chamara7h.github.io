@@ -1233,6 +1233,7 @@ Paste this in `styles.scss`
 <br>
 
 ```{.scss filename="styles.scss"}
+
 /* custom button */
 
 button {
@@ -1276,6 +1277,8 @@ Add text to the body and a link:
 <br>
 
 ```{.qmd}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <button id="journal-article-btn" 
         onclick="window.open('slides/intro_method_skills.html', '_blank')">
   <i class="fas fa-bookmark"></i> Slides
@@ -1287,6 +1290,10 @@ Add text to the body and a link:
 
 ```
 
+### Heading
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <button id="journal-article-btn" 
         onclick="window.open('slides/epss_training.html', '_blank')">
   <i class="fas fa-bookmark"></i> Slides
@@ -1295,8 +1302,6 @@ Add text to the body and a link:
 <button id="github-repo-btn" onclick="window.open('https://github.com/chamara7h/epss_training', '_blank');">
   <i class="fab fa-github"></i> GitHub repo
 </button>
-
-### Heading
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
