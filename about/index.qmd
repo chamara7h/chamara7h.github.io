@@ -14,27 +14,6 @@ body {
   line-height: 1.6;
 }
 
-/* NAVBAR ALIGNMENT FIX */
-/* This rule overrides Quarto's centering of the "Home" link */
-.navbar-brand-container.mx-auto {
-  margin-left: 0 !important;
-  margin-right: auto !important; /* This pushes other navbar items to the right */
-}
-
-/* This rule sets the max-width for the navbar's content */
-.navbar .container-fluid {
-  max-width: 1262.96px;
-}
-
-/* This is the main content container for the page */
-.container-fluid {
-  max-width: 1262.96px; 
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 5px;
-}
 
 /* Section Styling */
 .section {
@@ -191,10 +170,13 @@ h2.section-title {
     <h2 class="section-title">Who am I</h2>
     <div class="story-container">
       <p>
-        I am a forecaster and researcher driven by a passion for using quantitative methods to solve complex, real-world problems. My journey began in Sri Lanka with a foundation in transport and logistics, which sparked my interest in time series forecasting. As I delved deeper, I recognized the immense potential of data science and machine learning to revolutionize this field.
+        I’m a forecasting researcher passionate about using data science and machine learning to tackle real-world problems that matter. My journey started in Sri Lanka, where a foundation in transport and logistics sparked a lasting interest in time series forecasting and supply chain analytics.
       </p>
       <p>
-        Today, as a PhD candidate at Data Lab for Social Good Research Group at Cardiff University, my research is focused on critical global challenges, including forecastin gfor social good, climate health modelling and public healthcare supply chains. By developing data analytics solutions, I aim to enhance public health outcomes, ensuring that data-driven decisions can lead to tangible social good. I am fortunate to collaborate with impactful organizations like USAID, the Ethiopian Pharmaceutical Supply Chain Agency, and the HISP Center at the University of Oslo.
+        Today, I’m a PhD candidate at the Data Lab for Social Good (Cardiff University), where I develop forecasting and decision-support solutions for global health and climate-related challenges. My work focuses on healthcare supply chains, climate-sensitive disease forecasting, and forecasting for social good, with a strong emphasis on real-world impact.
+        </p>
+      <p>
+        I collaborate closely with organizations such as USAID, the Ethiopian Pharmaceutical Supply Chain Agency, and the HISP Centre at the University of Oslo, translating research into operational tools that improve public health outcomes.
       </p>
       <!-- 
       ACTION: Place your resume file (e.g., 'resume_harsha.pdf') in the 
