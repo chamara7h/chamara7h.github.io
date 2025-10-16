@@ -173,5 +173,17 @@
   },
   "lab/quarto_website/slides/quarto_website.qmd": {
     "quarto_website.html": "9e4974dc"
+  },
+  "phd/test.qmd": {
+    "test.html": "35ffc382"
+  },
+  "lab/quarto_website/index.qmd": {
+    "index.html": "d9e0bcb7"
+  },
+  "about/index.qmd": {
+    "index.html": "a380c0d1"
+  },
+  "talks/wgsss_25/slides/wpgrc_25.qmd": {
+    "wpgrc_25.html": "8a1347ec"
   }
 }

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Harsha Halgamuwe Hewage",
     "section": "",
-    "text": "I am a second-year PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the Data Lab for Social Good.\nI also lead the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I manage the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives.\nExplore my full list of publications on Google Scholar."
+    "text": "I am a PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator and Training Lead at the Data Lab for Social Good.\nI have also led the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I managed the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges, and I actively engage with the forecasting and social good communities through workshops, collaborations, and research initiatives.\nExplore my full list of publications on Google Scholar."
   },
   {
     "objectID": "projects/index.html",
@@ -74,7 +74,7 @@
     "href": "talks/index.html",
     "title": "Home",
     "section": "",
-    "text": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\n\n\nIIF UK Chapter: Quarterly Forecasting Forum\n\n\n\n\n\nMay 23, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\n\n\nData Lab for Social Good Seminar\n\n\n\n\n\nMay 20, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nMethodological Skills for Research\n\n\n\n\n\nLecture - University of Moratuwa Sri Lanka\n\n\n\n\n\nApr 11, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\nNo matching items"
+    "text": "WHAT WAS LOST: Estimating censored demand in family planning supply chains with the Truncated Conformal Kalman Filter\n\n\n\n\n\n5th Welsh Postgraduate Research Cluster Workshop in Economy, Enterprise and Productivity\n\n\n\n\n\nSep 16, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\n\n\nEURO 2025 Leeds, UK\n\n\n\n\n\nJun 24, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\n\n\nIIF UK Chapter: Quarterly Forecasting Forum\n\n\n\n\n\nMay 23, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\n\n\nData Lab for Social Good Seminar\n\n\n\n\n\nMay 20, 2025\n\n\nHarsha Halgamuwe Hewage\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/third-post/index.html",
@@ -3820,5 +3820,208 @@
     "title": "Home",
     "section": "Resources to keep learning",
     "text": "Resources to keep learning\n\nhttps://quarto.org/\nhttps://github.com/quarto-dev/quarto-cli/discussions\nhttps://github.com/mcanouil/awesome-quarto"
+  },
+  {
+    "objectID": "phd/test.html",
+    "href": "phd/test.html",
+    "title": "About Me",
+    "section": "",
+    "text": "&lt;!-- \nACTION: Replace this placeholder with your actual photo path. \nIt should be a square image for best results. e.g., images/harsha-profile.jpg\n--&gt;\n&lt;img src=\"https://placehold.co/180x180/005a9c/FFFFFF?text=HHH\" alt=\"Harsha Halgamuwe Hewage\"&gt;\n\n&lt;h1&gt;Harsha Halgamuwe Hewage&lt;/h1&gt;\n&lt;p class=\"subtitle\"&gt;PhD Candidate | Forecasting and Data Science Expert&lt;/p&gt;\n&lt;p class=\"mission\"&gt;\n  \"My work is aimed at solving tricky forecasting issues to ensure contraceptives are always available in developing countries, making a positive impact on millions of lives.\"\n&lt;/p&gt;\n\n\n\n\n\n&lt;h2 class=\"section-title\"&gt;My Story&lt;/h2&gt;\n&lt;div class=\"story-container\"&gt;\n  &lt;p&gt;\n    I am a data scientist and researcher driven by a passion for using quantitative methods to solve complex, real-world problems. My journey began in Sri Lanka with a foundation in transport and logistics, which sparked my interest in supply chain optimization. As I delved deeper, I recognized the immense potential of data science and machine learning to revolutionize this field.\n  &lt;/p&gt;\n  &lt;p&gt;\n    Today, as a PhD candidate at Cardiff University, my research is focused on a critical global challenge: improving forecasting for family planning supply chains. By developing novel probabilistic models, I aim to enhance reproductive health outcomes for women in developing nations, ensuring that data-driven decisions can lead to tangible social good.\n  &lt;/p&gt;\n&lt;/div&gt;\n\n\n\n&lt;h2 class=\"section-title\"&gt;PhD Research Showcase&lt;/h2&gt;\n&lt;div class=\"phd-grid\"&gt;\n  \n  &lt;div class=\"phd-card full-width\"&gt;\n    &lt;h3&gt;Forecasting Improvements in the Family Planning Supply Chain&lt;/h3&gt;\n  &lt;/div&gt;\n\n  &lt;div class=\"phd-card\"&gt;\n    &lt;h3&gt;&lt;i class=\"fa-solid fa-bullseye\"&gt;&lt;/i&gt; Overall Aim&lt;/h3&gt;\n    &lt;p&gt;\n      To introduce a novel forecasting and inventory management approach to tackle uncertainties in data and demand. By integrating innovative probabilistic forecasting with a robust inventory framework, this project aims to minimize stockouts and ensure consistent contraceptive availability in developing countries.\n    &lt;/p&gt;\n  &lt;/div&gt;\n\n  &lt;div class=\"phd-card\"&gt;\n    &lt;h3&gt;&lt;i class=\"fa-solid fa-hand-holding-dollar\"&gt;&lt;/i&gt; Funder & Collaborators&lt;/h3&gt;\n    &lt;p&gt;This research is proudly funded by the &lt;strong&gt;Welsh Graduate School for the Social Sciences (WGSSS)&lt;/strong&gt; and conducted in collaboration with the &lt;strong&gt;United States Agency for International Development (USAID)&lt;/strong&gt;.&lt;/p&gt;\n    &lt;!-- \n    ACTION: Replace these placeholders with your actual logo paths.\n    e.g., images/logos/wgss.png\n    --&gt;\n    &lt;div style=\"display: flex; gap: 15px; margin-top: 15px; align-items: center;\"&gt;\n        &lt;img src=\"https://placehold.co/150x50/FFFFFF/000000?text=WGSSS\" alt=\"WGSSS Logo\" style=\"height: 50px; width: auto; border: 1px solid #ccc;\"&gt;\n        &lt;img src=\"https://placehold.co/150x50/FFFFFF/000000?text=USAID\" alt=\"USAID Logo\" style=\"height: 50px; width: auto; border: 1px solid #ccc;\"&gt;\n        &lt;img src=\"https://placehold.co/150x50/FFFFFF/000000?text=Cardiff+Uni\" alt=\"Cardiff University Logo\" style=\"height: 50px; width: auto; border: 1px solid #ccc;\"&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n\n  &lt;div class=\"phd-card full-width\"&gt;\n    &lt;h3&gt;&lt;i class=\"fa-solid fa-users\"&gt;&lt;/i&gt; Supervision & Collaboration Team&lt;/h3&gt;\n    &lt;ul class=\"supervisor-list\"&gt;\n      &lt;li&gt;\n        &lt;!-- ACTION: Replace placeholders with supervisor photos --&gt;\n        &lt;img src=\"https://placehold.co/60x60/EEE/333?text=BRT\" alt=\"Prof Bahman Rostami-Tabar\"&gt;\n        &lt;div&gt;\n          &lt;div class=\"supervisor-name\"&gt;Prof. Bahman Rostami-Tabar (Lead)&lt;/div&gt;\n          &lt;div class=\"supervisor-title\"&gt;Professor of Data-Driven Decision Science, Cardiff University&lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/li&gt;\n      &lt;li&gt;\n        &lt;img src=\"https://placehold.co/60x60/EEE/333?text=AS\" alt=\"Prof Aris Syntetos\"&gt;\n        &lt;div&gt;\n          &lt;div class=\"supervisor-name\"&gt;Prof. Aris Syntetos (Co-supervisor)&lt;/div&gt;\n          &lt;div class=\"supervisor-title\"&gt;Professor of Decision Science, Cardiff University&lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/li&gt;\n      &lt;li&gt;\n        &lt;img src=\"https://placehold.co/60x60/EEE/333?text=FL\" alt=\"Dr Federico Liberatore\"&gt;\n        &lt;div&gt;\n          &lt;div class=\"supervisor-name\"&gt;Dr. Federico Liberatore (Co-supervisor)&lt;/div&gt;\n          &lt;div class=\"supervisor-title\"&gt;Senior Lecturer in Data & Knowledge Engineering, Cardiff University&lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/li&gt;\n      &lt;li&gt;\n        &lt;img src=\"https://placehold.co/60x60/EEE/333?text=GM\" alt=\"Glenn Milano\"&gt;\n        &lt;div&gt;\n          &lt;div class=\"supervisor-name\"&gt;Glenn Milano (Industry Collaborator)&lt;/div&gt;\n          &lt;div class=\"supervisor-title\"&gt;Advisor for Demand Planning and Analytics, USAID&lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/div&gt;\n\n&lt;/div&gt;\n\n\n\n&lt;h2 class=\"section-title\"&gt;Skills & Expertise&lt;/h2&gt;\n&lt;div class=\"skills-grid\"&gt;\n  &lt;div class=\"skill-item\"&gt;\n    &lt;i class=\"fa-solid fa-chart-line\"&gt;&lt;/i&gt;\n    &lt;h4&gt;Time Series Forecasting&lt;/h4&gt;\n  &lt;/div&gt;\n  &lt;div class=\"skill-item\"&gt;\n    &lt;i class=\"fa-solid fa-robot\"&gt;&lt;/i&gt;\n    &lt;h4&gt;Data Science & ML&lt;/h4&gt;\n  &lt;/div&gt;\n  &lt;div class=\"skill-item\"&gt;\n    &lt;i class=\"fa-solid fa-truck-fast\"&gt;&lt;/i&gt;\n    &lt;h4&gt;Supply Chain Optimization&lt;/h4&gt;\n  &lt;/div&gt;\n  &lt;div class=\"skill-item\"&gt;\n    &lt;i class=\"fa-brands fa-python\"&gt;&lt;/i&gt;\n    &lt;h4&gt;Python&lt;/h4&gt;\n  &lt;/div&gt;\n  &lt;div class=\"skill-item\"&gt;\n    &lt;i class=\"fa-brands fa-r-project\"&gt;&lt;/i&gt;\n    &lt;h4&gt;R&lt;/h4&gt;\n  &lt;/div&gt;\n  &lt;div class=\"skill-item\"&gt;\n    &lt;i class=\"fa-solid fa-file-powerpoint\"&gt;&lt;/i&gt;\n    &lt;h4&gt;Quarto, Shiny & Power BI&lt;/h4&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n\n\n&lt;h2 class=\"section-title\"&gt;My Journey&lt;/h2&gt;\n&lt;div class=\"timeline\"&gt;\n  &lt;div class=\"timeline-container left\"&gt;\n    &lt;div class=\"timeline-content\"&gt;\n      &lt;h3&gt;PhD in Forecasting & Data Science&lt;/h3&gt;\n      &lt;p class=\"date\"&gt;2023 - Present&lt;/p&gt;\n      &lt;p&gt;Cardiff University, UK. Recipient of WGSSS-ESRC Studentship Award.&lt;/p&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=\"timeline-container right\"&gt;\n    &lt;div class=\"timeline-content\"&gt;\n      &lt;h3&gt;MSc in Social Science Research Methods&lt;/h3&gt;\n      &lt;p class=\"date\"&gt;2022 - 2023&lt;/p&gt;\n      &lt;p&gt;Cardiff University, UK. Graduated with Distinction.&lt;/p&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=\"timeline-container left\"&gt;\n    &lt;div class=\"timeline-content\"&gt;\n      &lt;h3&gt;Senior Business Analyst & Strategist&lt;/h3&gt;\n      &lt;p class=\"date\"&gt;2021 - 2021&lt;/p&gt;\n      &lt;p&gt;Bridge Advisory and Consulting, Sri Lanka. Led digitization projects in agriculture and finance.&lt;/p&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n   &lt;div class=\"timeline-container right\"&gt;\n    &lt;div class=\"timeline-content\"&gt;\n      &lt;h3&gt;Business Analyst&lt;/h3&gt;\n      &lt;p class=\"date\"&gt;2020 - 2021&lt;/p&gt;\n      &lt;p&gt;ITX360 (Pvt) Ltd, Sri Lanka. Delivered digital solutions for retail, healthcare, and e-commerce.&lt;/p&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=\"timeline-container left\"&gt;\n    &lt;div class=\"timeline-content\"&gt;\n      &lt;h3&gt;MSc in Supply Chain and Data Science&lt;/h3&gt;\n      &lt;p class=\"date\"&gt;Completed 2022&lt;/p&gt;\n      &lt;p&gt;University of Moratuwa, Sri Lanka. Graduated with Distinction.&lt;/p&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class=\"timeline-container right\"&gt;\n    &lt;div class=\"timeline-content\"&gt;\n      &lt;h3&gt;BSc in Transport & Logistics Management&lt;/h3&gt;\n      &lt;p class=\"date\"&gt;Completed 2020&lt;/p&gt;\n      &lt;p&gt;University of Moratuwa, Sri Lanka. First-Class Honours.&lt;/p&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;"
+  },
+  {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Who am I\n    \n      \n        I am a forecaster and researcher driven by a passion for using quantitative methods to solve complex, real-world problems. My journey began in Sri Lanka with a foundation in transport and logistics, which sparked my interest in time series forecasting. As I delved deeper, I recognized the immense potential of data science and machine learning to revolutionize this field.\n      \n      \n        Today, as a PhD candidate at Data Lab for Social Good Research Group at Cardiff University, my research is focused on critical global challenges, including forecastin gfor social good, climate health modelling and public healthcare supply chains. By developing data analytics solutions, I aim to enhance public health outcomes, ensuring that data-driven decisions can lead to tangible social good. I am fortunate to collaborate with impactful organizations like USAID, the Ethiopian Pharmaceutical Supply Chain Agency, and the HISP Center at the University of Oslo.\n      \n      \n      \n         Download CV\n      \n    \n  \n\n  \n  \n    PhD Research\n    \n      \n      \n        Forecasting Improvements in Global Healthcare Supply Chains\n      \n\n      \n         Overall Aim\n        \n          To introduce a novel forecasting and inventory management approach to tackle uncertainties in data and demand. By integrating innovative probabilistic forecasting with a robust inventory framework, this project aims to minimize stockouts and ensure consistent availability of essential health commodities in developing countries.\n        \n      \n\n      \n         Funder & Collaborators\n        This research is proudly funded by the Welsh Graduate School for the Social Sciences (WGSSS) and conducted in collaboration with leading global health organizations.\n        \n            \n            \n            \n            \n        \n      \n\n      \n         Supervision & Collaboration Team\n        \n          \n            \n            \n              Prof. Bahman Rostami-Tabar (Lead)\n              Professor of Data-Driven Decision Science, Cardiff University\n            \n          \n          \n            \n            \n              Prof. Aris Syntetos (Co-supervisor)\n              Professor of Decision Science, Cardiff University\n            \n          \n          \n            \n            \n              Dr. Federico Liberatore (Co-supervisor)\n              Senior Lecturer in Data & Knowledge Engineering, Cardiff University\n            \n          \n          \n            \n            \n              Glenn Milano (Industry Collaborator)\n              Advisor for Demand Planning and Analytics, USAID"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#outline",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#outline",
+    "title": "WHAT WAS LOST",
+    "section": "Outline",
+    "text": "Outline\n\n\n\n\n\n\n\n\nWhat was never COUNTED . . .\n\n\n\n\n\n\nThe fundamental question\n\n\n\n\n\n\nWhat we are going to do\n\n\n\n\n\n\nEmpirical evaluation\n\n\n\n\n\n\nWhat NEXT?\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#seen-the-unseen",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#seen-the-unseen",
+    "title": "WHAT WAS LOST",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\nHuman story: What data misses\n\n\n\n\nNilu went to a pharmacy for Product A. It wasn’t in stock.\n\nThe system logs it as zero demand.\n\nBut the need was real. The system just missed it.\n\nThis creates broken trust and leads to create\nUNMET DEMAND.\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#seen-the-unseen-1",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#seen-the-unseen-1",
+    "title": "WHAT WAS LOST",
+    "section": "Seen the UNSEEN",
+    "text": "Seen the UNSEEN\n\nAnalytical reality: Why this matters\n\n\n\n\nIn supply chains like this, Stockouts censor demand.\nObserved sales ≠ actual demand.\n\nInventory decisions based on this false signal?\nUnderstocking → more stockouts.\n\nForecasts don’t just underperform. They miss the whole story.\n\nA lost sale = a lost opportunity for care.\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#contraceptive-products-arent-easily-substituted",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#contraceptive-products-arent-easily-substituted",
+    "title": "WHAT WAS LOST",
+    "section": "Contraceptive products aren’t easily SUBSTITUTED",
+    "text": "Contraceptive products aren’t easily SUBSTITUTED\n\n\n\n\n*Percent of women who will get pregnant within the first year of typical use."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#the-big-picture",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#the-big-picture",
+    "title": "WHAT WAS LOST",
+    "section": "The BIG PICTURE",
+    "text": "The BIG PICTURE\n\n\n\n\n\nIn reality…\nThere are more than\n218 million women\nlike Nilu still have an unmet need for family planning.\nUltimately, this results in dropouts, unwanted pregnancies, and almost 7 million hospitalizations each year in developing countries.\n\n\n\n\nImage generated using 04-mini-high\nSources: USAID, 2020; PATH, 2019; Mukasa et al., 2017; Gilda et al., 2016"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#why-this-is-critical",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#why-this-is-critical",
+    "title": "WHAT WAS LOST",
+    "section": "Why this is critical",
+    "text": "Why this is critical\n\n\n\n\n\n\n\nCensorship is structural — stockouts and interruptions are common in FPSC, not rare events.\n\n\n\n\nField insight — in Côte d’Ivoire and Ethiopia, demand planners repeatedly flagged stockouts as the key barrier.\n\n\n\n\nForecasting fails under censorship — observed sales understate true demand.\n\n\n\n\nThe literature split - prior research often separates forecasting from inventory decisions.\n\n\n\n\nResources are tightening — with USAID withdrawal, high service levels must be achieved efficiently.\n\n\n\n\n\n\nImage generated using 04-mini-high\nSources: Bijvank et al., 2011; Karimi et al., 2021; Thanos et al., 2022 ; Trapero et al., 2024"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#key-definitions",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#key-definitions",
+    "title": "WHAT WAS LOST",
+    "section": "Key definitions",
+    "text": "Key definitions\n\n\nStockouts: Periods when demand is higher than available inventory, leading to censored observations of demand.\nInterruptions: Periods when no products are issued despite available stock, thus artificially recorded as zero demand.\nCensored Demand: Demand occurring during periods when products are unavailable (stockouts or interruptions), thus not fully observable.\nTrue Demand: Actual demand that would have occurred if sufficient stock was available or no service interruptions."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#bridging-forecasting-inventory-and-impact",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#bridging-forecasting-inventory-and-impact",
+    "title": "WHAT WAS LOST",
+    "section": "Bridging forecasting, inventory, and impact",
+    "text": "Bridging forecasting, inventory, and impact\n\nHow can a demand forecasting model that explicitly handles censored demand due to stockouts and service interruptions improve inventory performance and public health outcomes in contraceptive supply chains?\n\n\n\n\n\n\n\n\nFigure 1: Censorship scenarios in family planning supply chains."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#how-we-can-fill-the-gaps",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#how-we-can-fill-the-gaps",
+    "title": "WHAT WAS LOST",
+    "section": "How we can fill the gaps",
+    "text": "How we can fill the gaps\n\n\n\n\n\n\n\n\nRQ1: How accurately can a Tobit Kalman Filter with conformal prediction estimate true demand under censorship?\n\n\n\n\n\nRQ2: How does demand reconstruction improve inventory performance and healthcare impact compared to baseline planning methods?\n\n\n\n\nRQ3: How do planner-adjusted forecasts compare to model-based methods in balancing availability and inventory efficiency?\n\n\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#overview-of-the-experimental-framework",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#overview-of-the-experimental-framework",
+    "title": "WHAT WAS LOST",
+    "section": "Overview of the experimental framework",
+    "text": "Overview of the experimental framework"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#truncated-conformal-kalman-filter-tckf",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#truncated-conformal-kalman-filter-tckf",
+    "title": "WHAT WAS LOST",
+    "section": "Truncated Conformal Kalman Filter (TCKF)",
+    "text": "Truncated Conformal Kalman Filter (TCKF)\n\nState-Space Formulation\n\\[\nX_t = F X_{t-1} + \\eta_t, \\quad \\eta_t \\sim \\mathcal{N}(0, Q_t)\n\\]\n\n\\(X_t = [\\ell_t, \\tau_t, \\gamma_t]^T\\): level, trend, seasonality\n\\(F\\): state transition matrix with seasonal decay and trend\n\n\nObservation Equation with Censorship\n\\[\ny_t =\n\\begin{cases}\nH X_t + \\nu_t & \\text{if uncensored} \\\\\n0 & \\text{if fully censored} \\\\\n\\min(H X_t, s_t) & \\text{if partially censored}\n\\end{cases}\n\\]\n\n\\(H = [1, 0, 1]\\): maps level and seasonality to observation\n\\(s_t\\): stock available at time \\(t\\)\n\n\nKalman Prediction Step\n\\[\n\\mu_t = H \\hat{X}_{t|t-1}, \\quad \\sigma_t^2 = H P_{t|t-1} H^T + R\n\\]"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#truncated-conformal-kalman-filter-tckf-1",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#truncated-conformal-kalman-filter-tckf-1",
+    "title": "WHAT WAS LOST",
+    "section": "Truncated Conformal Kalman Filter (TCKF)",
+    "text": "Truncated Conformal Kalman Filter (TCKF)\n\nCensored Observation Update\n\\[\n\\hat{y}_t = \\mu_t + \\sigma_t \\cdot \\frac{\\phi(z_t)}{1 - \\Phi(z_t)}, \\quad z_t = \\frac{y_t - \\mu_t}{\\sigma_t}\n\\]\n\\[\n\\hat{X}_{t|t} = \\hat{X}_{t|t-1} + K_t (\\hat{y}_t - \\mu_t)\n\\]\n\nUses expectation of truncated Gaussian\nFor fully censored (\\(y_t = 0\\)), skip state update; propagate uncertainty\n\n\nConformal Prediction for Interval Estimation\n\\[\nD_t \\in [\\max(0, \\mu_t - q_\\alpha), \\mu_t + q_\\alpha]\n\\]\n\nResiduals from uncensored periods used to calibrate \\(q_\\alpha\\)\nEnsures valid coverage without assuming normality\n\n\nNote on Initialization: Initial state vector \\(X_0 = [\\ell_0, \\tau_0, \\gamma_0]^T\\) is extracted via STL decomposition from uncensored periods."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#performance-evaluation---forecast",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#performance-evaluation---forecast",
+    "title": "WHAT WAS LOST",
+    "section": "Performance evaluation - Forecast",
+    "text": "Performance evaluation - Forecast\n\nPoint predictions\n\\[\nForecast\\ Value\\ Added = (1 -Rel\\ RMSE) \\times 100\\%\n\\] Values above 0 indicate better performance than TCKF.\n\\[\nRel\\ RMSE = \\frac{RMSE_{\\text{Method}}}{RMSE_{\\text{TCKF}}}\n\\]\n\\[\nRMSE = \\sqrt{\\frac{1}{n} \\sum_{t=1}^{n} (\\hat{y}_t - y_t)^2}\n\\]\nProbabilistic predictions\nThe pinball loss at time \\(t\\) for quantile level \\(p\\) is defined as:\n\\[\nQ_{p,t} =\n\\begin{cases}\n2(1 - p)(\\hat{f}_{p,t} - y_t), & \\text{if } y_t &lt; \\hat{f}_{p,t} \\\\\n2p(y_t - \\hat{f}_{p,t}), & \\text{if } y_t \\geq \\hat{f}_{p,t}\n\\end{cases}\n\\]\n\n\\[\n\\text{Skill Score} = \\frac{\\text{Pinball Score}_{\\text{TCKF}} - \\text{Pinball Score}_{\\text{Method}}}{\\text{Pinball Score}_{\\text{TCKF}}} \\times 100\\%\n\\]\nValues above 0 indicate better performance than TCKF."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#performance-evaluation---inventory",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#performance-evaluation---inventory",
+    "title": "WHAT WAS LOST",
+    "section": "Performance evaluation - Inventory",
+    "text": "Performance evaluation - Inventory\n\n\nCycle Service Level (CSL): proportion of periods in which stock was available\n\\[\n  CSL = \\frac{1}{N} \\sum_{t=1}^{N} \\mathbb{1}(in\\_stock_t = 1)\n\\]\nStock-Out Rate (SOR): proportion of periods experiencing a stockout\n\\[\n  SOR = \\frac{1}{N} \\sum_{t=1}^{N} \\mathbb{1}(stockout\\_ev_t = 1)\n\\]\nInventory Turnover (IT): average stock relative to the target level\n\\[\n  IT = \\frac{1}{N} \\sum_{t=1}^{N} \\frac{average\\_stock_t}{target\\_stock_t}, \\quad \\text{if } target\\_stock_t &gt; 0\n\\]"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#performance-evaluation---inventory-1",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#performance-evaluation---inventory-1",
+    "title": "WHAT WAS LOST",
+    "section": "Performance evaluation - Inventory",
+    "text": "Performance evaluation - Inventory\n\nRelative CSL (Rel CSL):\n\\[\n  Rel\\ CSL =\n  \\begin{cases}\n  \\frac{CSL - CSL_{TCKF}}{CSL_{TCKF}}, & CSL_{TCKF} \\ne 0 \\\\\n  CSL - CSL_{TCKF}, & \\text{otherwise}\n  \\end{cases}\n\\]\nRelative SOR (Rel SOR):\n\\[\n  Rel\\ SOR =\n  \\begin{cases}\n  \\frac{SOR_{TCKF} - SOR}{SOR_{TCKF}}, & SOR_{TCKF} &gt; 0 \\\\\n  0, & SOR_{TCKF} = 0 \\land SOR = 0 \\\\\n  -SOR, & SOR_{TCKF} = 0 \\land SOR &gt; 0\n  \\end{cases}\n\\]\nRelative IT (Rel IT):\nLet \\(\\Delta = |IT_{TCKF} - 1|\\), then:\n\\[\n  Rel\\ IT =\n  \\begin{cases}\n  0, & IT = 0 \\land IT_{TCKF} = 0 \\\\\n  IT - 1, & IT_{TCKF} = 1 \\\\\n  1 - \\frac{|IT - 1|}{\\Delta}, & \\text{otherwise}\n  \\end{cases}\n\\]\n\nThe composite Inventory Value Added score aggregates these components:\n\\[\nIVA = w_{CSL} \\cdot Rel\\ CSL + w_{SOR} \\cdot Rel\\ SOR + w_{IT} \\cdot Rel\\ IT\n\\]\nValues above 0 indicate better performance than TCKF."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#performance-evaluation---healthcare-impact",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#performance-evaluation---healthcare-impact",
+    "title": "WHAT WAS LOST",
+    "section": "Performance evaluation - Healthcare impact",
+    "text": "Performance evaluation - Healthcare impact\n\n\nStockout of one product can decrease mCPR by 6.5% points\n\\[\n\\Delta mCPR = 0.065 \\times M \\times (\\text{Stockout Rate}_{\\text{method}} - \\text{Stockout Rate}_{\\text{TCKF}})\n\\]\n\n\\[\n\\text{Users Lost} = \\Delta mCPR \\times \\text{WRA Population}\n\\]\nwhere \\(\\text{WRA Population}\\) is the number of women of reproductive age, and \\(M\\) is the number of distinct products considered.\n\n\nMaternal deaths averted: \\(\\frac{\\text{Users Lost}}{3153}\\)\nInfant deaths averted: \\(\\frac{\\text{Users Lost}}{251}\\)\nAbortions averted: \\(\\frac{\\text{Users Lost}}{6.46}\\)\nUnintended pregnancies averted: \\(\\frac{\\text{Users Lost}}{3.63}\\)\n\n\n\n\nSources: Rosen et al. (2018), Singh et al. (2009), Karim et al. (2008), Wang and Wang (2012), and Ross and Stover (2012)\nRHSC Impact Calculator: https://www.rhsupplies.org/activities-resources/tools/reducing-stockouts-impact-calculator"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#empirical-evaluation",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#empirical-evaluation",
+    "title": "WHAT WAS LOST",
+    "section": "Empirical evaluation",
+    "text": "Empirical evaluation\n\n\nData source: Monthly LMIS records from Côte d’Ivoire (Jan 2016–Dec 2019)\nScope: 507 site–product time series covering 9 contraceptive methods (male & female condoms, emergency contraception, oral pills, injectables, implants, IUDs)\nTraining window: January 2016 – December 2018\nTest window: January 2019 – December 2019\nCross-validation: Rolling-origin evaluation—re-train each month on all prior data, forecast 1-month ahead across the test year"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#empirical-data-exploration",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#empirical-data-exploration",
+    "title": "WHAT WAS LOST",
+    "section": "Empirical data exploration",
+    "text": "Empirical data exploration\n\n\n\n\n\n\n\n\n\n\n\n(a) Representative time series for each demand type; (b) Distribution of time series by trend and seasonality strength and; (c) Intermittency classification based on IDI and CV^2 thresholds.\n\n\n\n\n\n\nFigure 2: Timeseries characteristics of the realworld dataset used in the empirical evaluation."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#overall-forecasting-performance-across-models",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#overall-forecasting-performance-across-models",
+    "title": "WHAT WAS LOST",
+    "section": "Overall forecasting performance across models",
+    "text": "Overall forecasting performance across models\n\n\n\n\nMethod\nMean FVA\nMean Skill Score (q80)\nMean Skill Score (q85)\nMean Skill Score (q90)\nMean Skill Score (q95)\nMean Skill Score (q97.5)\n\n\n\n\nTCKF\n0\n0\n0\n0\n0\n0\n\n\nETS\n-0.86\n-2.72\n-2.67\n-2.28\n-2.05\n-2.52\n\n\nSystem Generated\n-0.97\n-1.37\n-1.69\n-1.6\n-1.81\n-1.57\n\n\nMean\n-0.97\n-2.73\n-2.39\n-2.38\n-2.18\n-2.26\n\n\nTimeGPT\n-0.98\n-4.05\n-4.93\n-6.84\n-13.28\n-20.99\n\n\nCensored TimeGPT\n-1.01\n-3.94\n-4.71\n-6.53\n-12.79\n-20.18\n\n\nCensored Mean\n-1.02\n-2.69\n-2.38\n-2.59\n-2.4\n-2.63\n\n\nSyntetos-Boylan Approx\n-1.03\n-2.74\n-2.63\n-3.22\n-2.87\n-3.16\n\n\nARIMA\n-1.19\n-3.11\n-3.05\n-3.04\n-3.06\n-3.84\n\n\nCensored ARIMA\n-1.19\n-3.77\n-3.45\n-3.39\n-3.28\n-4.03\n\n\nLightGBM\n-1.36\n-3.39\n-2.97\n-2.93\n-2.96\n-3.14\n\n\nCensored LightGBM\n-1.36\n-3.54\n-2.96\n-2.93\n-3.17\n-3.42\n\n\nNaive\n-1.7\n-3.78\n-3.43\n-2.76\n-2.85\n-3.98\n\n\nCensored Linear Regression\n-2.3\n-3.95\n-4.53\n-5.8\n-6.47\n-7.52\n\n\nLinear Regression\n-2.37\n-3.55\n-4.18\n-5.12\n-5.57\n-6.88\n\n\nDemand Planner\n-4.63\n-13.53\n-11.38\n-9.11\n-6.45\n-5.01"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#significance-test---point-forecast",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#significance-test---point-forecast",
+    "title": "WHAT WAS LOST",
+    "section": "Significance test - point forecast",
+    "text": "Significance test - point forecast\n\n\n\n\n\n\n\n\nFigure 3: Nemenyi post-hoc test with 95% confidence level on inverted FVA values from the empirical evaluation."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#overall-inventory-performance",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#overall-inventory-performance",
+    "title": "WHAT WAS LOST",
+    "section": "Overall inventory performance",
+    "text": "Overall inventory performance\nExisting mean based order-up-to level\n\n\n\n\n\n\n\nMethod\nMean CSL\nMean Stockout Rate\nMean Inventory Turnover\nMean IVA\n\n\n\n\nDemand Planner\n0.991\n0.004\n3.641\n-2.931\n\n\nLightGBM\n0.966\n0.034\n1.271\n-0.066\n\n\nSystem Generated\n0.955\n0.023\n4.048\n-4.155\n\n\nCensored LightGBM\n0.95\n0.041\n1.652\n-0.851\n\n\nTCKF\n0.929\n0.055\n1.087\n0\n\n\nCensored TimeGPT\n0.927\n0.061\n1.516\n-0.459\n\n\nETS\n0.916\n0.065\n1.199\n-0.191\n\n\nTimeGPT\n0.915\n0.07\n1.714\n-0.855\n\n\nSyntetos-Boylan Approx\n0.913\n0.077\n1.003\n-0.091\n\n\nARIMA\n0.911\n0.075\n1.184\n-0.256\n\n\nMean\n0.896\n0.078\n1.507\n-0.614\n\n\nLinear Regression\n0.892\n0.083\n1.878\n-1.308\n\n\nCensored Mean\n0.891\n0.082\n1.236\n-0.314\n\n\nCensored Linear Regression\n0.883\n0.084\n1.841\n-1.267\n\n\nNaive\n0.877\n0.072\n2.423\n-1.923\n\n\nCensored ARIMA\n0.876\n0.106\n1.041\n-0.238\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n⚠️ High CSL often comes at the cost of overstocking\n📉 Low inventory does not always equal efficiency\n✅ TCKF achieves the most efficient trade-off"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#overall-inventory-performance-1",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#overall-inventory-performance-1",
+    "title": "WHAT WAS LOST",
+    "section": "Overall inventory performance",
+    "text": "Overall inventory performance\nQuantile based order-up-to level\n\n\n\n\n\n\n\n\n\n\n\n(a) Achieved CSL; (b) stockout rate; (c) inventory turnover; (d) relative CSL vs. TCKF; (e) relative stockout rate vs. TCKF; (f) relative inventory turnover vs. TCKF\n\n\n\n\n\n\nFigure 4: Inventory performance under the quantile-based order-up-to level policy from the empirical evaluation."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#overall-inventory-performance-2",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#overall-inventory-performance-2",
+    "title": "WHAT WAS LOST",
+    "section": "Overall inventory performance",
+    "text": "Overall inventory performance\nQuantile based order-up-to level\n\n\n\n\n\n\n\n\nFigure 5: Inventory Value Added (IVA) vs. TCKF. under the quantile-based order-up-to level policy from the empirical evaluation."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#healthcare-metrics",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#healthcare-metrics",
+    "title": "WHAT WAS LOST",
+    "section": "Healthcare metrics",
+    "text": "Healthcare metrics\n\n\n\n\n\n\n\n\nFigure 6: mCRP loss the empirical evaluation, based on relative stockout loss compared to the TCKF."
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#illustrative-impact-why-forecast-quality-matters",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#illustrative-impact-why-forecast-quality-matters",
+    "title": "WHAT WAS LOST",
+    "section": "Illustrative impact: Why forecast quality matters",
+    "text": "Illustrative impact: Why forecast quality matters\n\n\n\n\n\nIn Côte d’Ivoire, ~1.59 million women use modern contraceptives (Track20).\n\nReplacing TCKF with the current LMIS forecast under a q95 inventory policy would lead to:\n🔻 reduce 18,599 additional women losing access\n➕ save 5,124 unintended pregnancies\n➕ save 5,879 abortions\n➕ save 54 infant deaths\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#what-matters-linking-forecasts-inventory-health-impact",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#what-matters-linking-forecasts-inventory-health-impact",
+    "title": "WHAT WAS LOST",
+    "section": "What matters: linking forecasts, inventory & health impact",
+    "text": "What matters: linking forecasts, inventory & health impact\n\n\n\n\n\n📌 Forecast accuracy ≠ forecast value\nMost models focus on error metrics, but ignore censorship, uncertainty, and how forecasts are used.\n\n📦 High service ≠ high performance\nDemand Planner & System Forecast look strong, but hide poor forecasts behind excess inventory.\n\n❤️ Forecast quality drives public health\nUnder lean policies (q80–q95), poor forecasts → more stockouts → more harm.\n\n\n\n\nImage generated using 04-mini-high"
+  },
+  {
+    "objectID": "talks/wgsss_25/slides/wpgrc_25.html#key-contributions-implications",
+    "href": "talks/wgsss_25/slides/wpgrc_25.html#key-contributions-implications",
+    "title": "WHAT WAS LOST",
+    "section": "Key contributions & implications",
+    "text": "Key contributions & implications\n\n\n\n\n\n\n\n\nAddressing Censored Demand\n\n\nTCKF explicitly accounts for stockouts and service interruptions by reconstructing true demand.\n\n\n\n\n\n\nForecasts Aligned with Inventory\n\n\nOur study links forecasting with inventory decisions and public health outcomes.\n\n\n\n\n\n\nImproved Inventory Efficiency\n\n\nBy reducing stockouts without overstocking, TCKF enhances both service levels and inventory turnover.\n\n\n\n\n\n\nPractical Value for Planners & Donors\n\n\nTCKF enables risk-aware, evidence-based planning — particularly valuable under resource constraints, such as the phasing out of USAID support.\n\n\n\n\n\n\nReproducibility & Extendability\n\n\nThe full pipeline is openly implemented in R using both synthetic and empirical LMIS data, supporting reproducibility.\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
   }
 ]
