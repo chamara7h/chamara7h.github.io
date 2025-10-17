@@ -1,151 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://chamara7h.github.io/talks/wgsss_25/slides/wpgrc_25.html</loc>
-    <lastmod>2025-10-16T14:13:55.910Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/talks/euro_leeds/slides/euro_leeds_25.html</loc>
-    <lastmod>2025-10-16T14:13:54.527Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/talks/qff_london/slides/qff_london.html</loc>
-    <lastmod>2025-10-16T14:13:54.818Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html</loc>
-    <lastmod>2025-10-16T14:13:54.326Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/talks/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.676Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/cv/index.html</loc>
-    <lastmod>2025-10-16T14:13:53.950Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/phd/test.html</loc>
-    <lastmod>2025-10-16T14:13:54.229Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/about.html</loc>
-    <lastmod>2025-10-16T14:13:53.944Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/lab/energy_score/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.030Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/lab/intro_method_skills/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.079Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/lab/dl4sg_marcov/materials/lab/00_dtcm.html</loc>
-    <lastmod>2025-10-16T14:13:54.029Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/lab/dl4sg_marcov/index.html</loc>
-    <lastmod>2025-10-16T14:13:53.954Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/lab/quarto_website/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.134Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/lab/epss_training/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.036Z</lastmod>
+    <loc>https://chamara7h.github.io/lab/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.094Z</lastmod>
   </url>
   <url>
     <loc>https://chamara7h.github.io/lab/intro_python/materials/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.131Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/index.html</loc>
-    <lastmod>2025-10-16T14:13:53.951Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/projects/publications/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.232Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/projects/design/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.230Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/projects/projects/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.232Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/projects/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.231Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/projects/publications/first-post/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.232Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/projects/publications/second-post/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.233Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/lab/intro_python/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.131Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/lab/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.073Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/lab/epss_training/slides/epss_training.html</loc>
-    <lastmod>2025-10-16T14:13:54.038Z</lastmod>
+    <lastmod>2025-10-17T09:38:13.152Z</lastmod>
   </url>
   <url>
     <loc>https://chamara7h.github.io/lab/quarto_website/slides/quarto_website.html</loc>
-    <lastmod>2025-10-16T14:13:54.220Z</lastmod>
+    <lastmod>2025-10-17T09:38:13.238Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/lab/epss_training/slides/epss_training.html</loc>
+    <lastmod>2025-10-17T09:38:13.057Z</lastmod>
   </url>
   <url>
     <loc>https://chamara7h.github.io/lab/dl4sg_marcov/materials/lab/01_markov_intro_lab.html</loc>
-    <lastmod>2025-10-16T14:13:54.029Z</lastmod>
+    <lastmod>2025-10-17T09:38:13.049Z</lastmod>
   </url>
   <url>
     <loc>https://chamara7h.github.io/lab/dl4sg_marcov/materials/dl4sg_markov.html</loc>
-    <lastmod>2025-10-16T14:13:53.954Z</lastmod>
+    <lastmod>2025-10-17T09:38:12.972Z</lastmod>
   </url>
   <url>
     <loc>https://chamara7h.github.io/lab/intro_method_skills/slides/intro_method_skills.html</loc>
-    <lastmod>2025-10-16T14:13:54.129Z</lastmod>
+    <lastmod>2025-10-17T09:38:13.148Z</lastmod>
   </url>
   <url>
-    <loc>https://chamara7h.github.io/resources/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.234Z</lastmod>
+    <loc>https://chamara7h.github.io/projects/projects/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.251Z</lastmod>
   </url>
   <url>
-    <loc>https://chamara7h.github.io/phd/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.229Z</lastmod>
+    <loc>https://chamara7h.github.io/projects/publications/second-post/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.253Z</lastmod>
   </url>
   <url>
-    <loc>https://chamara7h.github.io/about/index.html</loc>
-    <lastmod>2025-10-16T14:13:53.950Z</lastmod>
+    <loc>https://chamara7h.github.io/projects/publications/first-post/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.253Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/index.html</loc>
+    <lastmod>2025-10-17T09:38:12.970Z</lastmod>
   </url>
   <url>
     <loc>https://chamara7h.github.io/cv/phd.html</loc>
-    <lastmod>2025-10-16T14:13:53.950Z</lastmod>
+    <lastmod>2025-10-17T09:38:12.970Z</lastmod>
   </url>
   <url>
-    <loc>https://chamara7h.github.io/talks/dl4sg_seminar/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.240Z</lastmod>
-  </url>
-  <url>
-    <loc>https://chamara7h.github.io/talks/qff_london/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.680Z</lastmod>
+    <loc>https://chamara7h.github.io/talks/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.703Z</lastmod>
   </url>
   <url>
     <loc>https://chamara7h.github.io/talks/euro_leeds/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.429Z</lastmod>
+    <lastmod>2025-10-17T09:38:13.456Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/talks/qff_london/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.706Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/talks/dl4sg_seminar/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.259Z</lastmod>
   </url>
   <url>
     <loc>https://chamara7h.github.io/talks/wgsss_25/index.html</loc>
-    <lastmod>2025-10-16T14:13:54.823Z</lastmod>
+    <lastmod>2025-10-17T09:38:13.848Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/phd/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.247Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/about.html</loc>
+    <lastmod>2025-10-17T09:38:12.962Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/phd/test.html</loc>
+    <lastmod>2025-10-17T09:38:13.247Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/about/index.html</loc>
+    <lastmod>2025-10-17T09:38:12.968Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/talks/wgsss_25/slides/wpgrc_25.html</loc>
+    <lastmod>2025-10-17T09:38:14.895Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/talks/dl4sg_seminar/slides/dl4sg_seminar_wp2.html</loc>
+    <lastmod>2025-10-17T09:38:13.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/talks/qff_london/slides/qff_london.html</loc>
+    <lastmod>2025-10-17T09:38:13.844Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/talks/euro_leeds/slides/euro_leeds_25.html</loc>
+    <lastmod>2025-10-17T09:38:13.554Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/resources/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.253Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/cv/index.html</loc>
+    <lastmod>2025-10-17T09:38:12.968Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/projects/design/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/projects/publications/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.253Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/projects/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.250Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/lab/intro_method_skills/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.099Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/lab/dl4sg_marcov/index.html</loc>
+    <lastmod>2025-10-17T09:38:12.972Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/lab/dl4sg_marcov/materials/lab/00_dtcm.html</loc>
+    <lastmod>2025-10-17T09:38:13.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/lab/epss_training/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.054Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/lab/quarto_website/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.154Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/lab/intro_python/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.152Z</lastmod>
+  </url>
+  <url>
+    <loc>https://chamara7h.github.io/lab/energy_score/index.html</loc>
+    <lastmod>2025-10-17T09:38:13.050Z</lastmod>
   </url>
 </urlset>

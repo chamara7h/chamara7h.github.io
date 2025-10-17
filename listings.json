@@ -1,5 +1,16 @@
 [
   {
+    "listing": "/lab/index.html",
+    "items": [
+      "/lab/quarto_website/index.html",
+      "/lab/dl4sg_marcov/index.html",
+      "/lab/intro_method_skills/index.html",
+      "/lab/epss_training/index.html",
+      "/lab/energy_score/index.html",
+      "/lab/intro_python/index.html"
+    ]
+  },
+  {
     "listing": "/talks/index.html",
     "items": [
       "/talks/wgsss_25/index.html",
@@ -27,17 +38,6 @@
     "listing": "/lab/intro_python/index.html",
     "items": [
       "/lab/intro_python/materials/index.html"
-    ]
-  },
-  {
-    "listing": "/lab/index.html",
-    "items": [
-      "/lab/quarto_website/index.html",
-      "/lab/dl4sg_marcov/index.html",
-      "/lab/intro_method_skills/index.html",
-      "/lab/epss_training/index.html",
-      "/lab/energy_score/index.html",
-      "/lab/intro_python/index.html"
     ]
   }
 ]
