@@ -7,7 +7,7 @@ listing:
     - "dl4sg_marcov/*.qmd"
     - 'energy_score/*.qmd'
     - 'quarto_website/*.qmd'
-  type: default
+  type: grid
   sort: date desc
   filter-ui: true
 ---
