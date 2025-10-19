@@ -17,11 +17,11 @@ format: html
 ```{=html}
 <style>
 /* FONT IMPORT - Ensure this is loaded for consistent typography */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap');
 
 /* Apply font to the body */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Assistant', sans-serif;
 }
 
 /* --- QUARTO LISTING GRID STYLES --- */
@@ -67,7 +67,7 @@ body {
 
 /* Style for the listing title */
 .quarto-grid-item .listing-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Assistant', sans-serif;
   font-size: 1.3em;
   font-weight: 600;
   color: #1a2b48;
@@ -77,7 +77,7 @@ body {
 
 /* Style for the listing description */
 .quarto-grid-item .listing-description {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Assistant', sans-serif;
   font-size: 1em;
   line-height: 1.6;
   color: #555;
@@ -87,7 +87,7 @@ body {
 /* Style for the date and other metadata */
 .quarto-grid-item .listing-date,
 .quarto-grid-item .listing-author {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Assistant', sans-serif;
   font-size: 0.9em;
   color: #888;
   margin-top: 15px;
@@ -98,7 +98,7 @@ body {
     margin-top: 15px;
 }
 .quarto-grid-item .listing-category {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Assistant', sans-serif;
     background-color: #f0f0f0;
     color: #555;
     padding: 4px 10px;
