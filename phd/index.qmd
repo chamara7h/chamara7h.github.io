@@ -1,23 +1,220 @@
----
-title: Forecasting improvements for better reproductive health and family planning operations in global health supply chains
-description: 2nd year PhD Student, Data Lab for Social Good Research Group, Cardiff Business School, UK
-path: https://profiles.cardiff.ac.uk/staff/halgamuwehewagehr
-image: images/cover.jpg
-categories: [R, Python, Machine Learning, Hybrid Intelligence, Uncertainity, Social Good]
-date: 2022-09-27
----
 
-<iframe src="HC_poster.pdf" width="100%" height="450"></iframe>
+```{=html}
+<style>
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-My research focuses on addressing inefficiencies in supply chain management for contraceptive products in developing countries. These inefficiencies often lead to shortages, limiting women's reproductive autonomy and exacerbating societal challenges. By integrating probabilistic forecasting with inventory optimization, I aim to create a novel approach that accounts for uncertainties, poor data quality, and local demand variations. This interdisciplinary project involves collaboration with scholars from Cardiff Business School, the School of Computer Science & Informatics, and the United States Agency for International Development (USAID). The goal is to improve access to contraceptives, reduce unintended pregnancies, and prevent unsafe abortions, ultimately benefiting women, healthcare providers, governments, and donor organizations.
+/* GENERAL STYLING */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+}
 
-## Supervision team
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.content-section h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1a2b48;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+  text-align: center;
+}
 
-- Lead: [Prof Bahman Rostami-Tabar](https://profiles.cardiff.ac.uk/staff/rostami-tabarb), Data Lab for Social Good Research Group, Cardiff Business School, UK
-- Co: [Prof Aris Syntetos](https://www.cardiff.ac.uk/people/view/598321-syntetos-aris), Cardiff Business School, UK
-- Co: [Dr Federico Liberatore](https://www.cardiff.ac.uk/people/view/1721244-liberatore-federico), School of Computer Science and Informatics, UK
-- Collaborator: [Glenn Milano](https://www.linkedin.com/in/milano-glenn/), Global Health Supply Chain, Bureau for Global Health, United States Agency for International Development (USAID)
+/* Story Section */
+.story-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 1.7;
+}
 
-## Funder
+/* OBJECTIVES/RESEARCH GRID */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.objective-card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.objective-card .icon {
+  font-size: 2.5em;
+  color: #0A4C6A; /* Professional Teal/Blue */
+  margin-bottom: 15px;
+}
+.objective-card h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #1a2b48;
+  margin-bottom: 10px;
+}
+.objective-card p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 0;
+}
 
-Welsh Graduate School for the Social Sciences (WGSSS)
+/* Supervisor & Collaborator Styling */
+.supervisor-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+.supervisor-list img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  border: 1px solid #e0e0e0;
+}
+.supervisor-name {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+.supervisor-title {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.4;
+}
+.logo-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 25px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+.logo-display img {
+    height: 50px;
+    width: auto;
+}
+
+
+/* DOWNLOAD BUTTON */
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A;
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+
+</style>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="content-section">
+  <h2>Forecasting improvements in global health supply chains</h2>
+  <div class="objectives-grid">
+    <div class="objective-card">
+      <div class="icon"><i class="fa-solid fa-flask"></i></div>
+      <h3>Research Focus</h3>
+      <p>Developing novel forecasting and inventory management approaches for health commodity supply chains.</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+      <h3>Methodology</h3>
+      <p>Integrating advanced probabilistic forecasting models with robust inventory frameworks.</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
+      <h3>Global Health Impact</h3>
+      <p>Enhancing public health outcomes and supporting data-driven decisions for tangible social good.</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fa-solid fa-handshake"></i></div>
+      <h3>Collaborations</h3>
+      <p>Working with influential organizations like USAID, Ethiopian Pharmaceuticals Supply Service, and the HISP Center at the University of Oslo.</p>
+    </div>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2>Funder & Collaborators</h2>
+  <p style="text-align: center; max-width: 700px; margin: 0 auto 30px auto;">
+    This research is proudly funded by the <strong>Welsh Graduate School for the Social Sciences (WGSSS)</strong> and conducted in collaboration with leading global health organizations.
+  </p>
+  <div class="logo-display">
+      <img src="images/logo.png" alt="DL4SG Logo" style="height: 50px; width: auto;">
+      <img src=images/cardiff_logo.png alt="Cardiff University Logo" style="height: 50px; width: auto;">
+      <img src="images/wgss.png" alt="WGSSS Logo" style="height: 50px; width: auto;">
+      <img src="images/usaid.png" alt="USAID Logo" style="height: 50px; width: auto;">
+  </div>
+</div>
+
+<div class="content-section">
+  <h2>Supervision Team</h2>
+  <ul class="supervisor-list">
+    <li>
+      <img src="images/bahman.png" alt="Prof Bahman Rostami-Tabar">
+      <div>
+        <div class="supervisor-name">Prof. Bahman Rostami-Tabar (Lead)</div>
+        <div class="supervisor-title">Professor of Data-Driven Decision Science, Cardiff University</div>
+      </div>
+    </li>
+    <li>
+      <img src="images/aris.png" alt="Prof Aris Syntetos">
+      <div>
+        <div class="supervisor-name">Prof. Aris Syntetos (Co-supervisor)</div>
+        <div class="supervisor-title">Professor of Decision Science, Cardiff University</div>
+      </div>
+    </li>
+    <li>
+      <img src="images/federico.png" alt="Dr Federico Liberatore">
+      <div>
+        <div class="supervisor-name">Dr. Federico Liberatore (Co-supervisor)</div>
+        <div class="supervisor-title">Senior Lecturer in Data & Knowledge Engineering, Cardiff University</div>
+      </div>
+    </li>
+    <li>
+      <img src="images/glenn.png" alt="Glenn Milano">
+      <div>
+        <div class="supervisor-name">Glenn Milano (Industry Collaborator)</div>
+        <div class="supervisor-title">Advisor for Demand Planning and Analytics, USAID</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+```

@@ -185,5 +185,23 @@
   },
   "talks/wgsss_25/slides/wpgrc_25.qmd": {
     "wpgrc_25.html": "8a1347ec"
+  },
+  "lab/quarto_website/test.qmd": {
+    "test.html": "d5b68a9d"
+  },
+  "lab/intro_method_skills/index.qmd": {
+    "index.html": "0a67246e"
+  },
+  "lab/intro_python/materials/test.qmd": {
+    "test.html": "23a901ae"
+  },
+  "lab/energy_score/index.qmd": {
+    "index.html": "8f926099"
+  },
+  "talks/wgsss_25/index.qmd": {
+    "index.html": "813c1385"
+  },
+  "talks/euro_leeds/index.qmd": {
+    "index.html": "a438a2ef"
   }
 }

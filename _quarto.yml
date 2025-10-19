@@ -9,10 +9,10 @@ website:
     title: Home
     background: '#3e3e3e'
     right:
-      - text: About
-        href: about/index.qmd
-      # - text: PhD Project
-      #   href: phd/index.qmd
+      # - text: About
+      #   href: about/index.qmd
+      - text: PhD Project
+        href: phd/index.qmd
       # - text: CV
       #   href: cv/index.qmd
       # - text: Projects

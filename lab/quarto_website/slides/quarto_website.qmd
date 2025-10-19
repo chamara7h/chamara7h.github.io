@@ -303,13 +303,13 @@ countdown::countdown(minutes = 5, seconds = 00)
 
 <br>
 
-Start somewhere logical:
+Start somewhere logical (Mac and Windows OS):
 
 ``` {.default filename="Terminal"}
-cd ~/Documents
+cd ~/Documents/website  
 ```
 
-OR
+OR (Windows OS)
 
 ``` {.default filename="Terminal"}
 cd /d/GIT

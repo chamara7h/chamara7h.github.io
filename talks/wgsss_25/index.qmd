@@ -14,51 +14,114 @@ categories:
 link-external-newwindow: true
 ---
 
-![](cover.png){fig-align="center"}
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+```{=html}
 
 <style>
-/* Custom button style */
-button {
-  background-color: transparent; /* No filling */
-  border: 2px solid rgb(55, 58, 60); /* Gray border */
-  color: rgb(55, 58, 60); /* Gray text */
-  padding: 5px 10px;
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* GENERAL STYLING */
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
   text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hero-section h1 {
+  font-size: 2.6em; /* Slightly adjusted for a longer title */
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
   text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  margin: 4px 2px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   cursor: pointer;
-  border-radius: 5px; /* Rounded corners */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Professional Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
 }
 
-/* Hover effect for Journal article */
-#journal-article-btn:hover {
-  border-color: #0066b2; /* Blue border on hover */
-  color: #0066b2; /* Blue text on hover */
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.content-section h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1a2b48;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
 }
 
-/* Hover effect for GitHub repo */
-#github-repo-btn:hover {
-  border-color: #00A86B; /* Green border on hover */
-  color: #00A86B; /* Green text on hover */
-}
 </style>
 
-<button id="journal-article-btn" 
-        onclick="window.open('slides/wpgrc_25.html', '_blank')">
-  <i class="fas fa-bookmark"></i> Slides
-</button>
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<br>
 
-## Context
+<div class="hero-section">
+  <h1 class="title">WHAT WAS LOST: Estimating censored demand in family planning supply chains with the Truncated Conformal Kalman Filter</h1>
+  <p class="description">5th Welsh Postgraduate Research Cluster Workshop in Economy, Enterprise and Productivity</p>
+  <p class="author-date">Harsha Halgamuwe Hewage | 2025-09-16</p>
+  <div class="cta-buttons">
+    <a href="slides/wpgrc_25.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> View Slides
+    </a>
+  </div>
+</div>
 
-At the *5th Welsh Postgraduate Research Cluster Workshop* in Swansea University, we present a new lens on forecasting for public health supply chains, where demand signals are often distorted by stockouts and service interruptions. When shelves are empty, demand doesn’t disappear, it goes unrecorded.
-
-We propose a Truncated Conformal Kalman Filter (TCKF) that reconstructs censored demand while generating uncertainty-aware forecasts, directly usable in inventory planning. Going beyond accuracy metrics, we evaluate how forecasts translate into inventory efficiency and ultimately public health outcomes.
-
-Using synthetic and real-world data from Côte d’Ivoire, we show how better forecasting doesn’t just improve service levels, it prevents stockouts, reduces unmet need, and saves lives. Our work offers a reproducible framework that links forecasting with reorder decisions and health impact—because what gets forecasted, gets funded and delivered.
-
+<div class="content-section">
+  <h2>Context</h2>
+  <p>At the <em>5th Welsh Postgraduate Research Cluster Workshop</em> in Swansea University, we present a new lens on forecasting for public health supply chains, where demand signals are often distorted by stockouts and service interruptions. When shelves are empty, demand doesn’t disappear, it goes unrecorded.</p>
+  <p>We propose a Truncated Conformal Kalman Filter (TCKF) that reconstructs censored demand while generating uncertainty-aware forecasts, directly usable in inventory planning. Going beyond accuracy metrics, we evaluate how forecasts translate into inventory efficiency and ultimately public health outcomes.</p>
+  <p>Using synthetic and real-world data from Côte d’Ivoire, we show how better forecasting doesn’t just improve service levels, it prevents stockouts, reduces unmet need, and saves lives. Our work offers a reproducible framework that links forecasting with reorder decisions and health impact—because what gets forecasted, gets funded and delivered.</p>
+</div>
+```

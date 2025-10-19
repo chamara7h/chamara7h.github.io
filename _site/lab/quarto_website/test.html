@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Harsha Chamara Hewage">
+<meta name="dcterms.date" content="2025-11-12">
+<meta name="description" content="A hands-on workshop for researchers, students, and practitioners.">
 
-<title>index – Home</title>
+<title>Quarto Websites: Create and Publish Your First Website – Home</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,79 +69,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-image','listing-title','listing-description','listing-author','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Home">
-<meta property="og:image" content="../lab/quarto_website/cover.png">
+<meta property="og:title" content="Quarto Websites: Create and Publish Your First Website – Home">
+<meta property="og:description" content="A hands-on workshop for researchers, students, and practitioners.">
 <meta property="og:site_name" content="Home">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Home</span>
     </a>
   </div>
@@ -151,15 +94,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../phd/index.html"> 
-<span class="menu-text">PhD Project</span></a>
+    <a class="nav-link" href="../../about/index.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../lab/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../lab/index.html"> 
 <span class="menu-text">Learning Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../talks/index.html"> 
+    <a class="nav-link" href="../../talks/index.html"> 
 <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item compact">
@@ -190,354 +133,344 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Quarto Websites: Create and Publish Your First Website</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">Quarto</div>
+    <div class="quarto-category">Github</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    A hands-on workshop for researchers, students, and practitioners.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Harsha Chamara Hewage </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 12, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <style>
-/* FONT IMPORT - Ensure this is loaded for consistent typography */
+/* FONT IMPORT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* Apply font to the body */
+/* GENERAL STYLING */
 body {
-    font-family: 'Assistant', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
 }
 
-/* --- QUARTO LISTING GRID STYLES --- */
-
-/* This styles the container for the grid */
-.quarto-grid {
-  gap: 30px; /* Adds space between the cards */
-}
-
-/* This is the main card style for each listing item */
-.quarto-grid-item {
-  background-color: #ffffff;
-  border: 1px solid #e9ecef;
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* Ensures the image respects the rounded corners */
-  display: flex; 
-  flex-direction: column;
-  text-decoration: none; /* Remove underline from the whole card link */
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
-
-/* Hover effect for the card */
-.quarto-grid-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-/* CRUCIAL: This makes all images uniform */
-.quarto-grid-item img.listing-image {
-  aspect-ratio: 16 / 9; /* Creates a consistent widescreen aspect ratio */
-  object-fit: cover; /* Ensures the image fills the space without distortion */
-  width: 100%;
-}
-
-/* Style for the card's content area */
-.quarto-grid-item-content {
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; 
-}
-
-/* Style for the listing title */
-.quarto-grid-item .listing-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.3em;
-  font-weight: 600;
-  color: #1a2b48;
+.hero-section h1 {
+  font-size: 2.8em;
+  font-weight: 700;
   margin-bottom: 10px;
-  line-height: 1.3;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
 }
 
-/* Style for the listing description */
-.quarto-grid-item .listing-description {
-  font-family: 'Poppins', sans-serif;
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Updated Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54; /* Darker shade for hover */
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #1a2b48;
+  transform: translateY(-2px);
+}
+
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.content-section h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1a2b48;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+/* OBJECTIVES CARDS */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.objective-card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  text-align: center;
+}
+.objective-card .icon {
+  font-size: 2.5em;
+  color: #0A4C6A; /* Updated Teal/Blue */
+  margin-bottom: 15px;
+}
+.objective-card p {
   font-size: 1em;
   line-height: 1.6;
-  color: #555;
-  flex-grow: 1; /* Pushes metadata to the bottom */
+  color: #333;
 }
 
-/* Style for the date and other metadata */
-.quarto-grid-item .listing-date,
-.quarto-grid-item .listing-author {
-  font-family: 'Poppins', sans-serif;
+/* PREREQUISITES LIST */
+.prereq-list {
+  list-style: none;
+  padding-left: 0;
+}
+.prereq-list li {
+  font-size: 1.05em;
+  padding: 10px 0 10px 35px;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+.prereq-list li:last-child {
+  border-bottom: none;
+}
+.prereq-list li::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c"; /* Checkmark icon */
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: #28a745; /* Green */
+  font-size: 1.2em;
+}
+.prereq-list code {
+  background-color: #e9ecef;
+  padding: 3px 6px;
+  border-radius: 4px;
   font-size: 0.9em;
-  color: #888;
-  margin-top: 15px;
 }
 
-/* Style for the categories/tags */
-.quarto-grid-item .listing-categories {
-    margin-top: 15px;
+/* TABLE STYLING */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
-.quarto-grid-item .listing-category {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f0f0;
-    color: #555;
-    padding: 4px 10px;
-    border-radius: 15px;
-    font-size: 0.8em;
-    font-weight: 600;
-    display: inline-block;
-    margin-right: 5px;
-    margin-bottom: 5px;
+table th, table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
 }
-
+table th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+  color: #333;
+}
+table tr:hover {
+  background-color: #f9f9f9;
+}
 </style>
 
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
+<div class="hero-section">
+  <h1 class="title">Quarto Websites: Create and Publish Your First Website</h1>
+  <p class="description">A hands-on workshop for researchers, students, and practitioners.</p>
+  <p class="author-date">Harsha Chamara Hewage | 2025-11-12</p>
+  <div class="cta-buttons">
+    <a href="slides/quarto_website.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> View Slides
+    </a>
+    <a href="https://github.com/chamara7h/quarto_website_template" target="_blank" class="btn-custom btn-secondary">
+      <i class="fab fa-github"></i> GitHub Repo
+    </a>
+  </div>
+</div>
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+<div class="content-section">
+  <h2 class="anchored">Who is the Course For?</h2>
+  <p>This course is designed for researchers, students, and practitioners, who wish to create a personal or project website using the Quarto framework.</p>
+  <p>It assumes familiarity with R and RStudio, but no prior experience with HTML, CSS, or GitHub Pages is required.</p>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Learning Objectives</h2>
+  <div class="objectives-grid">
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-link"></i></div>
+      <p>Set up and connect <strong>Git with RStudio</strong></p>
     </div>
-</div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="R,Quarto,Github" data-listing-date-sort="1762902000000" data-listing-file-modified-sort="1760875637224" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1178">
-<a href="../lab/quarto_website/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../lab/quarto_website/cover.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Quarto Websites: Create and Publish Your First Website
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-Quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Github'); return false;">
-Github
-</div>
-</div>
-<div class="card-text listing-description">
-A hands-on workshop for researchers, students, and practitioners.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Harsha Chamara Hewage
-</div>
-<div class="listing-date">
-Nov 12, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Stochastic modelling,Healthcare,R,Python" data-listing-date-sort="1747260000000" data-listing-file-modified-sort="1760876375009" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1272">
-<a href="../lab/dl4sg_marcov/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../lab/dl4sg_marcov/cover.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Introduction to Markov Processes in Healthcare Supply Chains
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Stochastic modelling'); return false;">
-Stochastic modelling
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Healthcare'); return false;">
-Healthcare
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-</div>
-<div class="card-text listing-description">
-A hands-on workshop on stochastic modelling for logistical systems.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Harsha Chamara Hewage
-</div>
-<div class="listing-date">
-May 15, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Research,Methodology,Philosophy" data-listing-date-sort="1744322400000" data-listing-file-modified-sort="1760876601734" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="596">
-<a href="../lab/intro_method_skills/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../lab/intro_method_skills/cover.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Methodological Skills for Research
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Research'); return false;">
-Research
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Methodology'); return false;">
-Methodology
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Philosophy'); return false;">
-Philosophy
-</div>
-</div>
-<div class="card-text listing-description">
-Lecture - University of Moratuwa Sri Lanka
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Harsha Halgamuwe Hewage
-</div>
-<div class="listing-date">
-Apr 11, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Forecasting,Healthcare,R,Python,Machine Learning" data-listing-date-sort="1742166000000" data-listing-file-modified-sort="1760876517723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="800">
-<a href="../lab/epss_training/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../lab/epss_training/cover.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Demand Forecasting Models for Contraceptive Supply Chain
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Forecasting'); return false;">
-Forecasting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Healthcare'); return false;">
-Healthcare
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
-Machine Learning
-</div>
-</div>
-<div class="card-text listing-description">
-An introduction to time series forecasting
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Harsha Chamara Hewage
-</div>
-<div class="listing-date">
-Mar 17, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="Forecasting,Scoring Rules,R" data-listing-date-sort="1742166000000" data-listing-file-modified-sort="1760877211317" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1977">
-<a href="../lab/energy_score/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../lab/energy_score/point_vs_prob.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Evaluating Probabilistic Forecasts with Energy Score
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Forecasting'); return false;">
-Forecasting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Scoring Rules'); return false;">
-Scoring Rules
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-</div>
-<div class="card-text listing-description">
-Tutorial
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Harsha Chamara Hewage
-</div>
-<div class="listing-date">
-Mar 17, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="Python,Jupyter Lab,Data analytics" data-listing-date-sort="1740956400000" data-listing-file-modified-sort="1760876845765" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="819">
-<a href="../lab/intro_python/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../lab/intro_python/cover.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-A basic introduction to Python
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Jupyter Lab'); return false;">
-Jupyter Lab
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data analytics'); return false;">
-Data analytics
-</div>
-</div>
-<div class="card-text listing-description">
-Tutorial
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Harsha Chamara Hewage
-</div>
-<div class="listing-date">
-Mar 3, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-globe"></i></div>
+      <p>Build and preview a <strong>basic website</strong> using Quarto templates</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-palette"></i></div>
+      <p>Customize website appearance using <strong>YAML</strong></p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-file-alt"></i></div>
+      <p>Create <strong>multiple pages</strong>, listings, and navigation bars</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+      <p><strong>Publish</strong> the website using GitHub Pages and GitHub Actions</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-share-alt"></i></div>
+      <p>Understand how websites can be used to share research and project outputs</p>
+    </div>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Prerequisites (Before the Training)</h2>
+  <ul class="prereq-list">
+    <li>Install <strong>R</strong>, <strong>RStudio</strong>, <strong>RTools</strong> (for Windows users), <strong>Quarto</strong>, and <strong>Git</strong>.</li>
+    <li>Create a GitHub account.</li>
+    <li>Install required R packages: <code>install.packages(c("usethis", "gitcreds"))</code></li>
+    <li>Ensure you are comfortable using `.qmd` files, the R Console, the Terminal, and basic GitHub navigation.</li>
+    <li>Bring a photo of yourself (.jpg or .png) and prepare a short personal introduction (3–4 lines).</li>
+  </ul>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Topics &amp; Structure</h2>
+  
+<table class="caption-top table" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Section</th>
+<th data-quarto-table-cell-role="th">Topic</th>
+<th data-quarto-table-cell-role="th">Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Connect RStudio with Git</td>
+<td>Live demo + setup + token config</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Build the Homepage</td>
+<td>Use <code>quarto use template</code></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Styling your Website</td>
+<td>Modify <code>_quarto.yml</code></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Pages and Navigation</td>
+<td>Add `.qmd` pages and navbar</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Listings</td>
+<td>Create blog/projects listings</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Publish using GitHub Pages</td>
+<td>Configure workflow + publish</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Wrap-up &amp; Q&amp;A</td>
+<td>Share published sites</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -644,6 +577,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

@@ -1,35 +1,32 @@
 
 ```{=html}
-<!-- 
-This block contains all the custom CSS for styling the page.
--->
 <style>
-/* Font Import */
-@import url('[https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap](https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap)');
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* General Styling */
+/* GENERAL STYLING */
 body {
-  font-family: 'Assistant', sans-serif;
-  color: rgb(55, 58, 60);
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
 }
 
-
-/* Section Styling */
-.section {
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
-}
-.section:last-child {
-  border-bottom: none;
-}
-
-h2.section-title {
-  text-align: center;
-  font-size: 2em;
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-top: 20px;
   margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.content-section h2 {
+  font-size: 2em;
   font-weight: 700;
-  position: relative;
+  color: #1a2b48;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 /* Story Section */
@@ -38,222 +35,206 @@ h2.section-title {
   margin: 0 auto;
   text-align: center;
   font-size: 1.1em;
-}
-.story-container p {
-  margin-bottom: 1em; /* Ensure paragraphs have spacing */
+  line-height: 1.7;
 }
 
-/* PhD Project Showcase */
-.phd-grid {
+/* OBJECTIVES/RESEARCH GRID */
+.objectives-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
-
-.phd-card {
-  background: #fff;
-  border-radius: 10px;
+.objective-card {
+  background-color: #f9f9f9;
   padding: 25px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-}
-.phd-card.full-width {
-  grid-column: 1 / -1;
-  text-align: center;
-}
-.phd-card h3 {
-  font-size: 1.5em;
-  color: #005a9c;
-  margin-bottom: 15px;
-  text-align: center;
-}
-.phd-card p, .phd-card ul {
-  font-size: 1.0em;
-  margin-bottom: 0;
-}
-.supervisor-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-.supervisor-list li {
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 25px;
 }
-.supervisor-list img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+.objective-card .icon {
+  font-size: 2.5em;
+  color: #0A4C6A; /* Professional Teal/Blue */
+  margin-bottom: 15px;
+}
+.objective-card h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #1a2b48;
   margin-bottom: 10px;
-  object-fit: cover;
 }
-.supervisor-name {
-  font-weight: bold;
-}
-.supervisor-title {
-  font-size: 0.9em;
-  color: #666;
+.objective-card p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 0;
 }
 
-/* Download Button Styling */
-.btn-download {
-  display: inline-block;
-  padding: 12px 25px;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #fff;
-  background-color: #005a9c;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
-}
-.btn-download:hover {
-  background-color: #004a80;
-  transform: translateY(-2px);
-  color: #fff;
-}
-.btn-download i {
-  margin-right: 10px;
-}
-
-/* Small button variant for the story section */
-.story-container .btn-download {
-  font-size: 0.95em;
-  padding: 8px 18px;
-  margin-top: 20px;
-}
-
-/* Experience Section - NEW Minimalist Style */
-.experience-list {
-  max-width: 700px;
-  margin: 0 auto;
+/* Supervisor & Collaborator Styling */
+.supervisor-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
   text-align: center;
 }
-.experience-item {
-  margin-bottom: 35px;
+.supervisor-list img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  border: 1px solid #e0e0e0;
 }
-.experience-item h3 {
-  margin-top: 0;
-  color: #005a9c;
-  font-size: 1.4em;
+.supervisor-name {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #333;
   margin-bottom: 5px;
 }
-.experience-item .date {
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 8px;
-  font-size: 1em;
+.supervisor-title {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.4;
 }
-.experience-item p {
-  margin-bottom: 0;
-  font-size: 1em;
-  color: #444;
+.logo-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 25px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+.logo-display img {
+    height: 50px;
+    width: auto;
 }
 
+
+/* DOWNLOAD BUTTON */
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A;
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
 
 </style>
 
 <!-- Add Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<div class="container-fluid">
-
-  <!-- MY STORY SECTION -->
-  <div class="section">
-    <h2 class="section-title">Who am I</h2>
-    <div class="story-container">
-      <p>
-        I’m a forecasting researcher passionate about using data science and machine learning to tackle real-world problems that matter. My journey started in Sri Lanka, where a foundation in transport and logistics sparked a lasting interest in time series forecasting and supply chain analytics.
-      </p>
-      <p>
-        Today, I’m a PhD candidate at the Data Lab for Social Good (Cardiff University), where I develop forecasting and decision-support solutions for global health and climate-related challenges. My work focuses on healthcare supply chains, climate-sensitive disease forecasting, and forecasting for social good, with a strong emphasis on real-world impact.
-        </p>
-      <p>
-        I collaborate closely with organizations such as USAID, the Ethiopian Pharmaceutical Supply Chain Agency, and the HISP Centre at the University of Oslo, translating research into operational tools that improve public health outcomes.
-      </p>
-      <!-- 
-      ACTION: Place your resume file (e.g., 'resume_harsha.pdf') in the 
-      root directory of your Quarto project for this link to work.
-      -->
-      <a href="resume_harsha.pdf" class="btn-download" download>
+<div class="content-section">
+  <h2>My Story</h2>
+  <div class="story-container">
+    <p>
+      I’m a forecasting researcher passionate about using data science and machine learning to tackle real-world problems that matter. My journey started in Sri Lanka, where a foundation in transport and logistics sparked a lasting interest in time series forecasting and supply chain analytics.
+    </p>
+    <p>
+      Today, I’m a PhD candidate at the Data Lab for Social Good (Cardiff University), where I develop forecasting and decision-support solutions for global health and climate-related challenges. My work focuses on healthcare supply chains, climate-sensitive disease forecasting, and forecasting for social good, with a strong emphasis on real-world impact.
+    </p>
+    <p>
+      I collaborate closely with organizations such as USAID, the Ethiopian Pharmaceutical Supply Chain Agency, and the HISP Centre at the University of Oslo, translating research into operational tools that improve public health outcomes.
+    </p>
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="resume_harsha.pdf" class="btn-custom btn-primary" download>
         <i class="fa-solid fa-download"></i> Download CV
       </a>
     </div>
   </div>
-
-  <!-- PHD PROJECT SHOWCASE -->
-  <div class="section">
-    <h2 class="section-title">PhD Research</h2>
-    <div class="phd-grid">
-      
-      <div class="phd-card full-width">
-        <h3>Forecasting Improvements in Global Healthcare Supply Chains</h3>
-      </div>
-
-      <div class="phd-card">
-        <h3><i class="fa-solid fa-bullseye"></i> Overall Aim</h3>
-        <p>
-          To introduce a novel forecasting and inventory management approach to tackle uncertainties in data and demand. By integrating innovative probabilistic forecasting with a robust inventory framework, this project aims to minimize stockouts and ensure consistent availability of essential health commodities in developing countries.
-        </p>
-      </div>
-
-      <div class="phd-card">
-        <h3> Funder & Collaborators</h3>
-        <p>This research was proudly funded by the <strong>Welsh Graduate School for the Social Sciences (WGSSS)</strong> and carried out in collaboration with the Data Lab for Social Good Research Group at Cardiff University and USAID.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px; align-items: center; justify-content: center;">
-            <img src="images/logo.png" alt="DL4SG Logo" style="height: 50px; width: auto;">
-            <img src=images/cardiff_logo.png alt="Cardiff University Logo" style="height: 50px; width: auto;">
-            <img src="images/wgss.png" alt="WGSSS Logo" style="height: 50px; width: auto;">
-            <img src="images/usaid.png" alt="USAID Logo" style="height: 50px; width: auto;">
-        </div>
-      </div>
-
-      <div class="phd-card full-width">
-        <h3> Supervision & Collaboration Team</h3>
-        <ul class="supervisor-list">
-          <li>
-            <img src="images/bahman.png" alt="Prof Bahman Rostami-Tabar">
-            <div>
-              <div class="supervisor-name">Prof. Bahman Rostami-Tabar (Lead)</div>
-              <div class="supervisor-title">Professor of Data-Driven Decision Science, Cardiff University</div>
-            </div>
-          </li>
-          <li>
-            <img src="images/aris.png" alt="Prof Aris Syntetos">
-            <div>
-              <div class="supervisor-name">Prof. Aris Syntetos (Co-supervisor)</div>
-              <div class="supervisor-title">Professor of Decision Science, Cardiff University</div>
-            </div>
-          </li>
-          <li>
-            <img src="images/federico.png" alt="Dr Federico Liberatore">
-            <div>
-              <div class="supervisor-name">Dr. Federico Liberatore (Co-supervisor)</div>
-              <div class="supervisor-title">Senior Lecturer in Data & Knowledge Engineering, Cardiff University</div>
-            </div>
-          </li>
-          <li>
-            <img src="images/glenn.png" alt="Glenn Milano">
-            <div>
-              <div class="supervisor-name">Glenn Milano (Industry Collaborator)</div>
-              <div class="supervisor-title">Advisor for Demand Planning and Analytics, USAID</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
 </div>
 
+<div class="content-section">
+  <h2>PhD Research Showcase</h2>
+  <div class="objectives-grid">
+    <div class="objective-card">
+      <div class="icon"><i class="fa-solid fa-flask"></i></div>
+      <h3>Research Focus</h3>
+      <p>Developing novel forecasting and inventory management approaches for health commodity supply chains.</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+      <h3>Methodology</h3>
+      <p>Integrating advanced probabilistic forecasting models with robust inventory frameworks.</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
+      <h3>Global Health Impact</h3>
+      <p>Enhancing public health outcomes and supporting data-driven decisions for tangible social good.</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fa-solid fa-handshake"></i></div>
+      <h3>Collaborations</h3>
+      <p>Working with influential organizations like USAID, EPSA, and the HISP Center at the University of Oslo.</p>
+    </div>
+  </div>
+</div>
 
-``` 
+<div class="content-section">
+  <h2>Funder & Collaborators</h2>
+  <p style="text-align: center; max-width: 700px; margin: 0 auto 30px auto;">
+    This research is proudly funded by the <strong>Welsh Graduate School for the Social Sciences (WGSSS)</strong> and conducted in collaboration with leading global health organizations.
+  </p>
+  <div class="logo-display">
+      <img src="images/logo.png" alt="DL4SG Logo" style="height: 50px; width: auto;">
+      <img src=images/cardiff_logo.png alt="Cardiff University Logo" style="height: 50px; width: auto;">
+      <img src="images/wgss.png" alt="WGSSS Logo" style="height: 50px; width: auto;">
+      <img src="images/usaid.png" alt="USAID Logo" style="height: 50px; width: auto;">
+  </div>
+</div>
 
+<div class="content-section">
+  <h2>Supervision Team</h2>
+  <ul class="supervisor-list">
+    <li>
+      <img src="images/bahman.png" alt="Prof Bahman Rostami-Tabar">
+      <div>
+        <div class="supervisor-name">Prof. Bahman Rostami-Tabar (Lead)</div>
+        <div class="supervisor-title">Professor of Data-Driven Decision Science, Cardiff University</div>
+      </div>
+    </li>
+    <li>
+      <img src="images/aris.png" alt="Prof Aris Syntetos">
+      <div>
+        <div class="supervisor-name">Prof. Aris Syntetos (Co-supervisor)</div>
+        <div class="supervisor-title">Professor of Decision Science, Cardiff University</div>
+      </div>
+    </li>
+    <li>
+      <img src="images/federico.png" alt="Dr Federico Liberatore">
+      <div>
+        <div class="supervisor-name">Dr. Federico Liberatore (Co-supervisor)</div>
+        <div class="supervisor-title">Senior Lecturer in Data & Knowledge Engineering, Cardiff University</div>
+      </div>
+    </li>
+    <li>
+      <img src="images/glenn.png" alt="Glenn Milano">
+      <div>
+        <div class="supervisor-name">Glenn Milano (Industry Collaborator)</div>
+        <div class="supervisor-title">Advisor for Demand Planning and Analytics, USAID</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+```
