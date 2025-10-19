@@ -8,7 +8,7 @@
 
 <meta name="author" content="Harsha Chamara Hewage">
 <meta name="dcterms.date" content="2025-11-12">
-<meta name="description" content="Workshop">
+<meta name="description" content="A hands-on workshop for researchers, students, and practitioners.">
 
 <title>Quarto Websites: Create and Publish Your First Website – Home</title>
 <style>
@@ -22,41 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -109,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="Quarto Websites: Create and Publish Your First Website – Home">
-<meta property="og:description" content="Workshop">
+<meta property="og:description" content="A hands-on workshop for researchers, students, and practitioners.">
 <meta property="og:image" content="https://chamara7h.github.io/lab/quarto_website/cover.png">
 <meta property="og:site_name" content="Home">
 <meta property="og:image:height" content="1366">
@@ -136,8 +101,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about/index.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../phd/index.html"> 
+<span class="menu-text">PhD Project</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../lab/index.html"> 
@@ -194,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Workshop
+    A hands-on workshop for researchers, students, and practitioners.
   </div>
 </div>
 
@@ -223,143 +188,293 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="cover.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></p>
 <style>
-/* Custom button style */
-button {
-  background-color: transparent; /* No filling */
-  border: 2px solid rgb(55, 58, 60); /* Gray border */
-  color: rgb(55, 58, 60); /* Gray text */
-  padding: 5px 10px;
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* GENERAL STYLING */
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
   text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hero-section h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
   text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  margin: 4px 2px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   cursor: pointer;
-  border-radius: 5px; /* Rounded corners */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Updated Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54; /* Darker shade for hover */
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #1a2b48;
+  transform: translateY(-2px);
 }
 
-/* Hover effect for Journal article */
-#journal-article-btn:hover {
-  border-color: #0066b2; /* Blue border on hover */
-  color: #0066b2; /* Blue text on hover */
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.content-section h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1a2b48;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
 }
 
-/* Hover effect for GitHub repo */
-#github-repo-btn:hover {
-  border-color: #00A86B; /* Green border on hover */
-  color: #00A86B; /* Green text on hover */
+/* OBJECTIVES CARDS */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.objective-card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  text-align: center;
+}
+.objective-card .icon {
+  font-size: 2.5em;
+  color: #0A4C6A; /* Updated Teal/Blue */
+  margin-bottom: 15px;
+}
+.objective-card p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* PREREQUISITES LIST */
+.prereq-list {
+  list-style: none;
+  padding-left: 0;
+}
+.prereq-list li {
+  font-size: 1.05em;
+  padding: 10px 0 10px 35px;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+.prereq-list li:last-child {
+  border-bottom: none;
+}
+.prereq-list li::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c"; /* Checkmark icon */
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: #28a745; /* Green */
+  font-size: 1.2em;
+}
+.prereq-list code {
+  background-color: #e9ecef;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* TABLE STYLING */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table th, table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+table th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+  color: #333;
+}
+table tr:hover {
+  background-color: #f9f9f9;
 }
 </style>
-<button id="journal-article-btn" onclick="window.open('slides/quarto_website.html', '_blank')">
-<i class="fas fa-bookmark"></i> Slides
-</button>
-<button id="github-repo-btn" onclick="window.open('https://github.com/chamara7h/quarto_website_template', '_blank');">
-<i class="fab fa-github"></i> GitHub repo
-</button>
-<p><br> <br></p>
-<section id="who-is-the-course-for" class="level2">
-<h2 class="anchored" data-anchor-id="who-is-the-course-for">Who is the Course For?</h2>
-<p>This course is designed for researchers, students, and practitioners, who wish to create a personal or project website using the Quarto framework.</p>
-<p>It assumes familiarity with R and RStudio, but no prior experience with HTML, CSS, or GitHub Pages is required.</p>
-</section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<p>By the end of this course, participants will be able to:</p>
-<ul>
-<li>Set up and connect <strong>Git with RStudio</strong></li>
-<li>Build and preview a <strong>basic website</strong> using Quarto templates</li>
-<li>Customize website appearance using <strong>YAML</strong></li>
-<li>Create <strong>multiple pages</strong>, listings, and navigation bars</li>
-<li><strong>Publish</strong> the website using GitHub Pages and GitHub Actions</li>
-<li>Understand how websites can be used to share research and project outputs</li>
-</ul>
-</section>
-<section id="prerequisites-before-the-training" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites-before-the-training">Prerequisites (Before the Training)</h2>
-<p>Please ensure the following are completed <strong>before attending</strong>:</p>
-<ul>
-<li><p>Install <strong>R</strong>, <strong>RStudio</strong>, <strong>RTools</strong> (for Windows users), <strong>Quarto</strong>, and <strong>Git</strong></p></li>
-<li><p>Install required R packages:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>console</strong></pre>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<div class="hero-section">
+  <h1 class="title">Quarto Websites: Create and Publish Your First Website</h1>
+  <p class="description">A hands-on workshop for researchers, students, and practitioners.</p>
+  <p class="author-date">Harsha Chamara Hewage | 2025-11-12</p>
+  <div class="cta-buttons">
+    <a href="slides/quarto_website.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> View Slides
+    </a>
+    <a href="https://github.com/chamara7h/quarto_website_template" target="_blank" class="btn-custom btn-secondary">
+      <i class="fab fa-github"></i> GitHub Repo
+    </a>
+  </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="console"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>install.packages(c("countdown", "usethis", "gitcreds"))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
-<li><p>Create a GitHub account</p></li>
-<li><p>Ensure you are comfortable using:</p>
-<ul>
-<li><p><code>.qmd</code> files in RStudio</p></li>
-<li><p>The R Console and Terminal tabs</p></li>
-<li><p>Basic navigation of GitHub repositories</p></li>
-</ul></li>
-<li><p>Bring a photo of yourself (.jpg or .png) — this will be used on your homepage.</p></li>
-<li><p>Prepare a short personal introduction (3–4 lines) — this will be added as your website bio.</p></li>
-</ul>
-</section>
-<section id="topics-structure" class="level2">
-<h2 class="anchored" data-anchor-id="topics-structure">Topics &amp; structure</h2>
+
+<div class="content-section">
+  <h2 class="anchored">Who is the Course For?</h2>
+  <p>This course is designed for researchers, students, and practitioners, who wish to create a personal or project website using the Quarto framework.</p>
+  <p>It assumes familiarity with R and RStudio, but no prior experience with HTML, CSS, or GitHub Pages is required.</p>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Learning Objectives</h2>
+  <div class="objectives-grid">
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-link"></i></div>
+      <p>Set up and connect <strong>Git with RStudio</strong></p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-globe"></i></div>
+      <p>Build and preview a <strong>basic website</strong> using Quarto templates</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-palette"></i></div>
+      <p>Customize website appearance using <strong>YAML</strong></p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-file-alt"></i></div>
+      <p>Create <strong>multiple pages</strong>, listings, and navigation bars</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+      <p><strong>Publish</strong> the website using GitHub Pages and GitHub Actions</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-share-alt"></i></div>
+      <p>Understand how websites can be used to share research and project outputs</p>
+    </div>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Prerequisites (Before the Training)</h2>
+  <ul class="prereq-list">
+    <li>Install <strong>R</strong>, <strong>RStudio</strong>, <strong>RTools</strong> (for Windows users), <strong>Quarto</strong>, and <strong>Git</strong>.</li>
+    <li>Create a GitHub account.</li>
+    <li>Install required R packages: <code>install.packages(c("usethis", "gitcreds"))</code></li>
+    <li>Ensure you are comfortable using `.qmd` files, the R Console, the Terminal, and basic GitHub navigation.</li>
+    <li>Bring a photo of yourself (.jpg or .png) and prepare a short personal introduction (3–4 lines).</li>
+  </ul>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Topics &amp; Structure</h2>
+  
 <table class="caption-top table">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 40%">
-<col style="width: 49%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: right;">Section</th>
-<th>Topic</th>
-<th>Activities</th>
+<th data-quarto-table-cell-role="th">Section</th>
+<th data-quarto-table-cell-role="th">Topic</th>
+<th data-quarto-table-cell-role="th">Activities</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">1</td>
+<td>1</td>
 <td>Connect RStudio with Git</td>
 <td>Live demo + setup + token config</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">2</td>
+<td>2</td>
 <td>Build the Homepage</td>
 <td>Use <code>quarto use template</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">3</td>
+<td>3</td>
 <td>Styling your Website</td>
 <td>Modify <code>_quarto.yml</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">4</td>
+<td>4</td>
 <td>Pages and Navigation</td>
-<td>Add <code>.qmd</code> pages and navbar</td>
+<td>Add `.qmd` pages and navbar</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">5</td>
+<td>5</td>
 <td>Listings</td>
 <td>Create blog/projects listings</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">6</td>
+<td>6</td>
 <td>Publish using GitHub Pages</td>
 <td>Configure workflow + publish</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">7</td>
+<td>7</td>
 <td>Wrap-up &amp; Q&amp;A</td>
 <td>Share published sites</td>
 </tr>
 </tbody>
 </table>
 
+</div>
 
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

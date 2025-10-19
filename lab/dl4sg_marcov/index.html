@@ -8,7 +8,7 @@
 
 <meta name="author" content="Harsha Chamara Hewage">
 <meta name="dcterms.date" content="2025-05-15">
-<meta name="description" content="Workshop">
+<meta name="description" content="A hands-on workshop on stochastic modelling for logistical systems.">
 
 <title>Introduction to Markov Processes in Healthcare Supply Chains – Home</title>
 <style>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Introduction to Markov Processes in Healthcare Supply Chains – Home">
-<meta property="og:description" content="Workshop">
+<meta property="og:description" content="A hands-on workshop on stochastic modelling for logistical systems.">
 <meta property="og:image" content="https://chamara7h.github.io/lab/dl4sg_marcov/cover.png">
 <meta property="og:site_name" content="Home">
 <meta property="og:image:height" content="897">
@@ -101,8 +101,8 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about/index.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../phd/index.html"> 
+<span class="menu-text">PhD Project</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../lab/index.html"> 
@@ -160,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Workshop
+    A hands-on workshop on stochastic modelling for logistical systems.
   </div>
 </div>
 
@@ -189,116 +189,296 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="cover.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></p>
 <style>
-/* Custom button style */
-button {
-  background-color: transparent; /* No filling */
-  border: 2px solid rgb(55, 58, 60); /* Gray border */
-  color: rgb(55, 58, 60); /* Gray text */
-  padding: 5px 10px;
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* GENERAL STYLING */
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
   text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hero-section h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
   text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  margin: 4px 2px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   cursor: pointer;
-  border-radius: 5px; /* Rounded corners */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Professional Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #1a2b48;
+  transform: translateY(-2px);
 }
 
-/* Hover effect for Journal article */
-#journal-article-btn:hover {
-  border-color: #0066b2; /* Blue border on hover */
-  color: #0066b2; /* Blue text on hover */
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.content-section h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1a2b48;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
 }
 
-/* Hover effect for GitHub repo */
-#github-repo-btn:hover {
-  border-color: #00A86B; /* Green border on hover */
-  color: #00A86B; /* Green text on hover */
+/* OBJECTIVES CARDS */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.objective-card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  text-align: center;
+}
+.objective-card .icon {
+  font-size: 2.5em;
+  color: #0A4C6A; /* Professional Teal/Blue */
+  margin-bottom: 15px;
+}
+.objective-card p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* PREREQUISITES LIST */
+.prereq-list {
+  list-style: none;
+  padding-left: 0;
+}
+.prereq-list li {
+  font-size: 1.05em;
+  padding: 10px 0 10px 35px;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+.prereq-list li:last-child {
+  border-bottom: none;
+}
+.prereq-list li::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c"; /* Checkmark icon */
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: #28a745; /* Green */
+  font-size: 1.2em;
+}
+
+/* COURSE TOPICS STYLING */
+.topics-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: -10px;
+}
+.topics-list > li {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.topics-list > li:last-child {
+    border-bottom: none;
+}
+.topics-list h4 {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #0A4C6A;
+    margin-bottom: 15px;
+}
+.topics-list ul {
+    list-style: none;
+    padding-left: 20px;
+}
+.topics-list ul li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+.topics-list ul li::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f101"; /* Right angle arrow */
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: #0A4C6A;
 }
 </style>
-<button id="journal-article-btn" onclick="window.open('materials/dl4sg_markov.html', '_blank')">
-<i class="fas fa-bookmark"></i> Slides
-</button>
-<button id="journal-article-btn" onclick="window.open('materials/lab/00_dtcm.html', '_blank')">
-<i class="fas fa-bookmark"></i> Lab 1
-</button>
-<button id="journal-article-btn" onclick="window.open('materials/lab/01_markov_intro_lab.html', '_blank')">
-<i class="fas fa-bookmark"></i> Lab 2
-</button>
-<button id="github-repo-btn" onclick="window.open('https://github.com/chamara7h/dl4sg_markov', '_blank');">
-<i class="fab fa-github"></i> GitHub repo
-</button>
-<p><br> <br></p>
-<section id="who-is-the-course-for" class="level2">
-<h2 class="anchored" data-anchor-id="who-is-the-course-for">Who is the course for?</h2>
-<p>This course is intended for healthcare supply chain researchers, practitioners, and students who want to model uncertainty in logistical systems using <strong>Markov Chains</strong>. It assumes familiarity with basic probability and matrix manipulation in R.</p>
-</section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<ul>
-<li>Understand the structure and assumptions of <strong>discrete-time Markov chains (DTMCs)</strong></li>
-<li>Apply transition matrices to simulate system evolution over time</li>
-<li>Compute and interpret <strong>steady-state distributions</strong></li>
-<li>Model brand switching and service reliability in healthcare supply chains</li>
-<li>Simulate long-run outcomes and interpret them visually in R</li>
-<li>Link model insights to supply chain policy decisions (e.g.&nbsp;stockouts, demand, brand promotion)</li>
-</ul>
-</section>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<ul>
-<li>Comfortable with <strong>basic probability</strong> (random variables, distributions)</li>
-<li>Familiarity with <strong>R and tidyverse</strong> for matrix operations and plotting</li>
-<li>No prior knowledge of Markov chains is assumed</li>
-</ul>
-</section>
-<section id="course-topics" class="level2">
-<h2 class="anchored" data-anchor-id="course-topics">Course Topics</h2>
-<section id="markov-chains-for-healthcare-supply-chains" class="level3">
-<h3 class="anchored" data-anchor-id="markov-chains-for-healthcare-supply-chains">Markov Chains for Healthcare Supply Chains</h3>
-<section id="section-1-foundations-of-markov-chains" class="level4">
-<h4 class="anchored" data-anchor-id="section-1-foundations-of-markov-chains">Section 1: Foundations of Markov Chains</h4>
-<ul>
-<li>State-based systems and probabilistic transitions</li>
-<li>The Markov property and memoryless dynamics</li>
-<li>Transition probability matrices and system trajectories</li>
-</ul>
-</section>
-<section id="section-2-steady-state-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="section-2-steady-state-analysis">Section 2: Steady-State Analysis</h4>
-<ul>
-<li>n-step transitions and convergence</li>
-<li>Existence and uniqueness of steady-state distributions</li>
-<li>Interpreting long-run behaviour in real systems</li>
-</ul>
-</section>
-<section id="section-3-brand-switching-case-study" class="level4">
-<h4 class="anchored" data-anchor-id="section-3-brand-switching-case-study">Section 3: Brand Switching Case Study</h4>
-<ul>
-<li>Promote-local strategy for paracetamol brands</li>
-<li>Simulate switching behaviour and market share convergence</li>
-<li>Solve steady-state equations using R</li>
-</ul>
-</section>
-<section id="section-4-applied-simulation-in-r" class="level4">
-<h4 class="anchored" data-anchor-id="section-4-applied-simulation-in-r">Section 4: Applied Simulation in R</h4>
-<ul>
-<li>Vector-matrix calculations</li>
-<li>Transition matrix exponentiation</li>
-<li>Plotting and comparing convergence paths</li>
-</ul>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
-</section>
-</section>
-</section>
+<div class="hero-section">
+  <h1 class="title">Introduction to Markov Processes in Healthcare Supply Chains</h1>
+  <p class="description">A hands-on workshop on stochastic modelling for logistical systems.</p>
+  <p class="author-date">Harsha Chamara Hewage | 2025-05-15</p>
+  <div class="cta-buttons">
+    <a href="materials/dl4sg_markov.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> Slides
+    </a>
+     <a href="materials/lab/00_dtcm.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-flask"></i> Lab 1
+    </a>
+     <a href="materials/lab/01_markov_intro_lab.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-flask"></i> Lab 2
+    </a>
+    <a href="https://github.com/chamara7h/dl4sg_markov" target="_blank" class="btn-custom btn-secondary">
+      <i class="fab fa-github"></i> GitHub Repo
+    </a>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Who is the Course For?</h2>
+  <p>This course is intended for healthcare supply chain researchers, practitioners, and students who want to model uncertainty in logistical systems using <strong>Markov Chains</strong>. It assumes familiarity with basic probability and matrix manipulation in R.</p>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Learning Objectives</h2>
+  <div class="objectives-grid">
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-project-diagram"></i></div>
+      <p>Understand the structure and assumptions of <strong>discrete-time Markov chains (DTMCs)</strong></p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-calculator"></i></div>
+      <p>Apply transition matrices to <strong>simulate system evolution</strong> over time</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-infinity"></i></div>
+      <p>Compute and interpret <strong>steady-state distributions</strong></p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-pills"></i></div>
+      <p>Model <strong>brand switching and service reliability</strong> in healthcare supply chains</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fab fa-r-project"></i></div>
+      <p><strong>Simulate and visualize</strong> long-run outcomes in R</p>
+    </div>
+    <div class="objective-card">
+      <div class="icon"><i class="fas fa-lightbulb"></i></div>
+      <p>Link model insights to supply chain <strong>policy decisions</strong></p>
+    </div>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Prerequisites</h2>
+  <ul class="prereq-list">
+    <li>Comfortable with <strong>basic probability</strong> (random variables, distributions)</li>
+    <li>Familiarity with <strong>R and tidyverse</strong> for matrix operations and plotting</li>
+    <li>No prior knowledge of Markov chains is assumed</li>
+  </ul>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Course Topics</h2>
+  <ul class="topics-list">
+    <li>
+        <h4 class="anchored">Section 1: Foundations of Markov Chains</h4>
+        <ul>
+            <li>State-based systems and probabilistic transitions</li>
+            <li>The Markov property and memoryless dynamics</li>
+            <li>Transition probability matrices and system trajectories</li>
+        </ul>
+    </li>
+    <li>
+        <h4 class="anchored">Section 2: Steady-State Analysis</h4>
+        <ul>
+            <li>n-step transitions and convergence</li>
+            <li>Existence and uniqueness of steady-state distributions</li>
+            <li>Interpreting long-run behaviour in real systems</li>
+        </ul>
+    </li>
+    <li>
+        <h4 class="anchored">Section 3: Brand Switching Case Study</h4>
+        <ul>
+            <li>Promote-local strategy for paracetamol brands</li>
+            <li>Simulate switching behaviour and market share convergence</li>
+            <li>Solve steady-state equations using R</li>
+        </ul>
+    </li>
+    <li>
+        <h4 class="anchored">Section 4: Applied Simulation in R</h4>
+        <ul>
+            <li>Vector-matrix calculations</li>
+            <li>Transition matrix exponentiation</li>
+            <li>Plotting and comparing convergence paths</li>
+        </ul>
+    </li>
+  </ul>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

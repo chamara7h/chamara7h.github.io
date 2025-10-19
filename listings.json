@@ -33,11 +33,5 @@
       "/projects/projects/index.html",
       "/projects/publications/index.html"
     ]
-  },
-  {
-    "listing": "/lab/intro_python/index.html",
-    "items": [
-      "/lab/intro_python/materials/index.html"
-    ]
   }
 ]

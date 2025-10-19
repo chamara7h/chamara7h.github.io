@@ -163,8 +163,8 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about/index.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../phd/index.html"> 
+<span class="menu-text">PhD Project</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../lab/index.html"> 
@@ -274,6 +274,109 @@ window.Quarto = {
 
 </header>
 
+
+<style>
+/* FONT IMPORT */
+@import url('[https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap)');
+
+/* GENERAL STYLING */
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hero-section h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Professional Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #1a2b48;
+  transform: translateY(-2px);
+}
+
+
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+/* We remove the h2 styling from the generic content section
+   to let Quarto's markdown headings take precedence */
+
+</style>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+
+
+<div class="hero-section">
+  <h1 class="title">Evaluating Probabilistic Forecasts with Energy Score</h1>
+  <p class="description">A tutorial on using scoring rules for probabilistic forecasts.</p>
+  <p class="author-date">Harsha Chamara Hewage | 2025-03-17</p>
+</div>
+
+<div class="content-section">
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
@@ -525,7 +628,7 @@ y = \begin{bmatrix} 600 \\ 280 \end{bmatrix}
 
 </section>
 
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Harsha Chamara Hewage">
+<meta name="dcterms.date" content="2025-03-17">
+<meta name="description" content="A tutorial on using scoring rules for probabilistic forecasts.">
 
-<title>About – Home</title>
+<title>Evaluating Probabilistic Forecasts with Energy Score – Home</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,22 +60,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,20 +104,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="About – Home">
-<meta property="og:description" content="">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Evaluating Probabilistic Forecasts with Energy Score – Home">
+<meta property="og:description" content="A tutorial on using scoring rules for probabilistic forecasts.">
+<meta property="og:image" content="point_vs_prob.jpg">
 <meta property="og:site_name" content="Home">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Home</span>
     </a>
   </div>
@@ -125,23 +158,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./phd/index.html"> 
-<span class="menu-text">PhD Project</span></a>
+    <a class="nav-link" href="../../../about/index.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv/index.html"> 
-<span class="menu-text">CV</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./projects/index.html"> 
-<span class="menu-text">Projects</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./lab/index.html"> 
+    <a class="nav-link" href="../../../lab/index.html"> 
 <span class="menu-text">Learning Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./talks/index.html"> 
+    <a class="nav-link" href="../../../talks/index.html"> 
 <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item compact">
@@ -175,20 +200,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#deterministic-vs.-probabilistic-forecasting" id="toc-deterministic-vs.-probabilistic-forecasting" class="nav-link" data-scroll-target="#deterministic-vs.-probabilistic-forecasting">Deterministic vs.&nbsp;Probabilistic Forecasting</a></li>
+  <li><a href="#understanding-the-energy-score" id="toc-understanding-the-energy-score" class="nav-link" data-scroll-target="#understanding-the-energy-score">Understanding the Energy Score</a>
+  <ul class="collapse">
+  <li><a href="#univariate-energy-score-calculation" id="toc-univariate-energy-score-calculation" class="nav-link" data-scroll-target="#univariate-energy-score-calculation">Univariate Energy Score Calculation</a></li>
+  <li><a href="#multivariate-energy-score-calculation" id="toc-multivariate-energy-score-calculation" class="nav-link" data-scroll-target="#multivariate-energy-score-calculation">Multivariate Energy Score Calculation</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
+<h1 class="title">Evaluating Probabilistic Forecasts with Energy Score</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Forecasting</div>
+    <div class="quarto-category">Scoring Rules</div>
+    <div class="quarto-category">R</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    A tutorial on using scoring rules for probabilistic forecasts.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Harsha Chamara Hewage </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 17, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -198,17 +259,272 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>About this site</p>
+<style>
+/* FONT IMPORT */
+@import url('[https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap)');
+
+/* GENERAL STYLING */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hero-section h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Professional Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #1a2b48;
+  transform: translateY(-2px);
+}
+
+
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+/* We remove the h2 styling from the generic content section
+   to let Quarto's markdown headings take precedence */
+
+</style>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+
+
+<div class="hero-section">
+  <h1 class="title">Evaluating Probabilistic Forecasts with Energy Score</h1>
+  <p class="description">A tutorial on using scoring rules for probabilistic forecasts.</p>
+  <p class="author-date">Harsha Chamara Hewage | 2025-03-17</p>
+  <div class="cta-buttons">
+    <a href="#" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> Slides
+    </a>
+    <a href="#" target="_blank" class="btn-custom btn-secondary">
+      <i class="fab fa-github"></i> GitHub Repo
+    </a>
+  </div>
+</div>
+
+<div class="content-section">
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Accurately forecasting the demand for pharmaceutical products is crucial for optimizing inventory management and ensuring continuous availability. Traditional point forecasts provide a single predicted value but fail to capture the uncertainty inherent in real-world scenarios. Probabilistic forecasting addresses this by offering a range of possible outcomes with associated probabilities, enabling better decision-making in supply chain management.</p>
+</section>
+<section id="deterministic-vs.-probabilistic-forecasting" class="level1">
+<h1>Deterministic vs.&nbsp;Probabilistic Forecasting</h1>
+<p><strong>Deterministic (Point) Forecasting</strong> predicts a specific value for future demand. For example, forecasting that the demand for a specific drug next month will be 500 units. While straightforward, this approach does not convey the uncertainty or variability in demand, which can lead to stockouts or overstocking.</p>
+<p><strong>Probabilistic Forecasting</strong>, on the other hand, provides a distribution of possible demand outcomes. Instead of a single number, it might predict that there’s a 70% chance that demand will be between 480 and 520 units. This approach acknowledges uncertainty and enables supply chain planners to make more informed inventory decisions.</p>
+<p><em>Example: Demand Forecast for a Pharmaceutical Drug</em></p>
+<p><img src="point_vs_prob.jpg" class="img-fluid"> The first graph shows a deterministic forecast, which provides a single predicted demand value for the future but does not convey uncertainty. The second graph presents a probabilistic forecast, illustrating possible future paths, helping businesses plan for variability.</p>
+</section>
+<section id="understanding-the-energy-score" class="level1">
+<h1>Understanding the Energy Score</h1>
+<p>To evaluate the quality of probabilistic forecasts, we use scoring rules. The Energy Score (ES) is particularly useful for assessing both univariate and multivariate forecasts. It measures the accuracy of the predicted distribution compared to the actual observed demand (i.e., it quantifies how well the forecasted distribution aligns with the observed value).</p>
+<section id="univariate-energy-score-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="univariate-energy-score-calculation">Univariate Energy Score Calculation</h2>
+<p>For a single time series (one product), the Energy Score (ES) is given by:</p>
+<p><span class="math display">\[
+    ES(F, y) = \mathbb{E}_F \left[ \|X - y\| \right] - \frac{1}{2} \mathbb{E}_F \left[ \|X - X' \| \right]
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(F\)</span> is the forecasted probability distribution.</li>
+<li><span class="math inline">\(y\)</span> is the actual observed value.</li>
+<li><span class="math inline">\(X\)</span> and <span class="math inline">\(X'\)</span> are independent samples from the forecasted distribution.</li>
+<li><span class="math inline">\(\|\cdot\|\)</span> represents the absolute distance (since we are dealing with univariate values).</li>
+<li>The first term, <span class="math inline">\(\mathbb{E}_F \left[ \|X - y\| \right]\)</span> measures how far the forecasted values are from the observed demand.</li>
+<li>The second term, <span class="math inline">\(\frac{1}{2} \mathbb{E}_F \left[ \|X - X' \| \right]\)</span> accounts for the spread of the forecasted distribution.</li>
+</ul>
+<p>Lets take an example from demand for a pharmaceutical product, suppose:</p>
+<p>Forecasted samples for Product 1 follow a normal distribution: <span class="math inline">\(X \sim \mathcal{N}(550, 60^2)\)</span></p>
+<p>Observed demand: <span class="math inline">\(y = 600\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="test_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The histogram above shows the distribution of forecasted demands, with the red dashed line indicating the actual observed demand.</p>
+<p><strong>Step-by-Step Calculation</strong></p>
+<p><em>Compute the first term: </em> <span class="math display">\[
+\mathbb{E}_F \left[ \|X - y\| \right]
+\]</span></p>
+<p>Take the average absolute difference between each forecasted sample and the observed demand (600):</p>
+<p><span class="math display">\[
+\frac{1}{m} \sum_{i=1}^{m} |X_i - 600|
+\]</span></p>
+<p><em>Compute the second term: </em> <span class="math display">\[
+\frac{1}{2} \mathbb{E}_F \left[ \|X - X'\| \right]
+\]</span></p>
+<p>Take all possible pairs of forecasted samples and compute their absolute differences:</p>
+<p><span class="math display">\[
+\frac{1}{2m^2} \sum_{i=1}^{m} \sum_{j=1}^{m} |X_i - X_j|
+\]</span></p>
+<p><em>Compute the Energy Score:</em></p>
+<p>Subtract the two terms to get the final Energy Score.</p>
+<p>We can compute the ES using <code>scoringRules</code> package in R (<a href="https://www.rdocumentation.org/packages/scoringRules/versions/1.1.3">read more</a>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scoringRules)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>forecast_samples_product1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">550</span>, <span class="at">sd =</span> <span class="dv">60</span>)  <span class="co"># Forecasted demand</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>actual_demand_product1 <span class="ot">&lt;-</span> <span class="dv">600</span>  <span class="co"># Observed demand</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the Energy Score for Product 1</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>es_univariate <span class="ot">&lt;-</span> <span class="fu">es_sample</span>(<span class="at">y =</span> actual_demand_product1, <span class="at">dat =</span> <span class="fu">matrix</span>(forecast_samples_product1, <span class="at">nrow =</span> <span class="dv">1</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Univariate Energy Score:"</span>, <span class="fu">round</span>(es_univariate, <span class="dv">4</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>[1] "Univariate Energy Score: 29.457"</code></pre>
+</div>
+</div>
+</section>
+<section id="multivariate-energy-score-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="multivariate-energy-score-calculation">Multivariate Energy Score Calculation</h2>
+<p>For multiple time series (joint demand forecasting), the multivariate Energy Score is:</p>
+<p><span class="math display">\[
+ES(F, y) = \mathbb{E}_F \left[ \|X - y\| \right] - \frac{1}{2} \mathbb{E}_F \left[ \|X - X'\| \right]
+\]</span></p>
+<p>where:</p>
+<ul>
+<li>( X ) and ( X’ ) are now vectors representing forecasted values for both Product 1 and Product 2.</li>
+<li>( y ) is now a vector containing the actual observed values for both products.</li>
+<li>( || ) is the Euclidean distance (not just absolute value) because we now have multiple dimensions.</li>
+</ul>
+<p>Suppose we have two products now;</p>
+<p>Forecasted distributions: <span class="math display">\[
+\begin{bmatrix} X_1 \\ X_2 \end{bmatrix} \sim \mathcal{N} \left( \begin{bmatrix} 550 \\ 320 \end{bmatrix}, \begin{bmatrix} 3600 &amp; 1500 \\ 1500 &amp; 2500 \end{bmatrix} \right)
+\]</span></p>
+<p>Observed demand vector: <span class="math display">\[
+y = \begin{bmatrix} 600 \\ 280 \end{bmatrix}
+\]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="test_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Step-by-Step Calculation</strong></p>
+<p><em>Compute the first term:</em></p>
+<p><span class="math display">\[
+\mathbb{E}_F \left[ \|X - y\| \right]
+\]</span></p>
+<p>Compute the Euclidean distance between each forecast sample and the actual observed demand vector:</p>
+<p><span class="math display">\[
+\frac{1}{m} \sum_{i=1}^{m} \sqrt{(X_{i,1} - y_1)^2 + (X_{i,2} - y_2)^2}
+\]</span></p>
+<p><em>Compute the second term:</em></p>
+<p><span class="math display">\[
+\frac{1}{2} \mathbb{E}_F \left[ \|X - X'\| \right]
+\]</span></p>
+<p>Compute pairwise Euclidean distances between all forecasted sample pairs:</p>
+<p><span class="math display">\[
+\frac{1}{2m^2} \sum_{i=1}^{m} \sum_{j=1}^{m} \sqrt{(X_{i,1} - X_{j,1})^2 + (X_{i,2} - X_{j,2})^2}
+\]</span></p>
+<p><em>Compute the Multivariate Energy Score:</em></p>
+<p>Subtract the two terms to get the final Multivariate Energy Score.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define number of dimensions and samples</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="dv">2</span>  <span class="co"># Number of products</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">1000</span>  <span class="co"># Number of forecast samples</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define mean vector and covariance matrix</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">550</span>, <span class="dv">320</span>)  </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">3600</span>, <span class="dv">1500</span>, </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">1500</span>, <span class="dv">2500</span>), <span class="at">nrow =</span> d, <span class="at">ncol =</span> d)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate forecast samples</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>demand_forecast_multi <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">mvrnorm</span>(m, <span class="at">mu =</span> mu, <span class="at">Sigma =</span> Sigma))  </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Define observed demand vector</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>actual_demand_multi <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">600</span>, <span class="dv">280</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the Multivariate Energy Score</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>es_multivariate <span class="ot">&lt;-</span> <span class="fu">es_sample</span>(<span class="at">y =</span> actual_demand_multi, <span class="at">dat =</span> demand_forecast_multi)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Print result</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Multivariate Energy Score:"</span>, <span class="fu">round</span>(es_multivariate, <span class="dv">4</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Multivariate Energy Score: 44.319"</code></pre>
 </div>
 </div>
 
 
+</section>
+</section>
 
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -315,6 +631,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-description','listing-author','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
@@ -137,7 +137,7 @@ window.Quarto = {
 <meta property="og:image:width" content="2526">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -157,8 +157,8 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about/index.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="../phd/index.html"> 
+<span class="menu-text">PhD Project</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../lab/index.html" aria-current="page"> 
@@ -196,16 +196,112 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
+<style>
+/* FONT IMPORT - Ensure this is loaded for consistent typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Apply font to the body */
+body {
+    font-family: 'Assistant', sans-serif;
+}
+
+/* --- QUARTO LISTING GRID STYLES --- */
+
+/* This styles the container for the grid */
+.quarto-grid {
+  gap: 30px; /* Adds space between the cards */
+}
+
+/* This is the main card style for each listing item */
+.quarto-grid-item {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ensures the image respects the rounded corners */
+  display: flex; 
+  flex-direction: column;
+  text-decoration: none; /* Remove underline from the whole card link */
+}
+
+/* Hover effect for the card */
+.quarto-grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* CRUCIAL: This makes all images uniform */
+.quarto-grid-item img.listing-image {
+  aspect-ratio: 16 / 9; /* Creates a consistent widescreen aspect ratio */
+  object-fit: cover; /* Ensures the image fills the space without distortion */
+  width: 100%;
+}
+
+/* Style for the card's content area */
+.quarto-grid-item-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
+}
+
+/* Style for the listing title */
+.quarto-grid-item .listing-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #1a2b48;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+/* Style for the listing description */
+.quarto-grid-item .listing-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+  flex-grow: 1; /* Pushes metadata to the bottom */
+}
+
+/* Style for the date and other metadata */
+.quarto-grid-item .listing-date,
+.quarto-grid-item .listing-author {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 15px;
+}
+
+/* Style for the categories/tags */
+.quarto-grid-item .listing-categories {
+    margin-top: 15px;
+}
+.quarto-grid-item .listing-category {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+</style>
 
 
 
@@ -218,7 +314,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="UiUyQ1F1YXJ0byUyQ0dpdGh1Yg==" data-listing-date-sort="1762905600000" data-listing-file-modified-sort="1760693893154" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="631">
+<div class="g-col-1" data-index="0" data-categories="UiUyQ1F1YXJ0byUyQ0dpdGh1Yg==" data-listing-date-sort="1762905600000" data-listing-file-modified-sort="1760880120653" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1178">
 <a href="../lab/quarto_website/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -228,8 +324,17 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 Quarto Websites: Create and Publish Your First Website
 </h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRv'); return false;">Quarto</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('R2l0aHVi'); return false;">Github</div>
+
+</div>
 <div class="card-text listing-description delink">
-<p>Workshop</p>
+<p>A hands-on workshop for researchers, students, and practitioners.</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -242,7 +347,7 @@ Nov 12, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="U3RvY2hhc3RpYyUyMG1vZGVsbGluZyUyQ0hlYWx0aGNhcmUlMkNSJTJDUHl0aG9u" data-listing-date-sort="1747267200000" data-listing-file-modified-sort="1760693892972" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="381">
+<div class="g-col-1" data-index="1" data-categories="U3RvY2hhc3RpYyUyMG1vZGVsbGluZyUyQ0hlYWx0aGNhcmUlMkNSJTJDUHl0aG9u" data-listing-date-sort="1747267200000" data-listing-file-modified-sort="1760880120477" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1272">
 <a href="../lab/dl4sg_marcov/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -252,8 +357,19 @@ Nov 12, 2025
 <h5 class="no-anchor card-title listing-title">
 Introduction to Markov Processes in Healthcare Supply Chains
 </h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RvY2hhc3RpYyUyMG1vZGVsbGluZw=='); return false;">Stochastic modelling</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SGVhbHRoY2FyZQ=='); return false;">Healthcare</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+</div>
 <div class="card-text listing-description delink">
-<p>Workshop</p>
+<p>A hands-on workshop on stochastic modelling for logistical systems.</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -266,7 +382,7 @@ May 15, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="UmVzZWFyY2glMkNNZXRob2RvbG9neSUyQ1BoaWxvc29waHk=" data-listing-date-sort="1744329600000" data-listing-file-modified-sort="1760693893099" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="334">
+<div class="g-col-1" data-index="2" data-categories="UmVzZWFyY2glMkNNZXRob2RvbG9neSUyQ1BoaWxvc29waHk=" data-listing-date-sort="1744329600000" data-listing-file-modified-sort="1760880120598" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="596">
 <a href="../lab/intro_method_skills/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -276,6 +392,15 @@ May 15, 2025
 <h5 class="no-anchor card-title listing-title">
 Methodological Skills for Research
 </h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TWV0aG9kb2xvZ3k='); return false;">Methodology</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UGhpbG9zb3BoeQ=='); return false;">Philosophy</div>
+
+</div>
 <div class="card-text listing-description delink">
 <p>Lecture - University of Moratuwa Sri Lanka</p>
 </div>
@@ -290,7 +415,7 @@ Apr 11, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Rm9yZWNhc3RpbmclMkNIZWFsdGhjYXJlJTJDUiUyQ1B5dGhvbiUyQ01hY2hpbmUlMjBMZWFybmluZw==" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1760693893054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="376">
+<div class="g-col-1" data-index="3" data-categories="Rm9yZWNhc3RpbmclMkNIZWFsdGhjYXJlJTJDUiUyQ1B5dGhvbiUyQ01hY2hpbmUlMjBMZWFybmluZw==" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1760880120555" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="800">
 <a href="../lab/epss_training/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -298,10 +423,23 @@ Apr 11, 2025
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting
+Demand Forecasting Models for Contraceptive Supply Chain
 </h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Rm9yZWNhc3Rpbmc='); return false;">Forecasting</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SGVhbHRoY2FyZQ=='); return false;">Healthcare</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TWFjaGluZSUyMExlYXJuaW5n'); return false;">Machine Learning</div>
+
+</div>
 <div class="card-text listing-description delink">
-<p>Workshop</p>
+<p>An introduction to time series forecasting</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -314,7 +452,7 @@ Mar 17, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Rm9yZWNhc3RpbmclMkNTY29yaW5nJTIwUnVsZXMlMkNS" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1760693893050" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1715">
+<div class="g-col-1" data-index="4" data-categories="Rm9yZWNhc3RpbmclMkNTY29yaW5nJTIwUnVsZXMlMkNS" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1760880120554" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1977">
 <a href="../lab/energy_score/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -324,6 +462,15 @@ Mar 17, 2025
 <h5 class="no-anchor card-title listing-title">
 Evaluating Probabilistic Forecasts with Energy Score
 </h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Rm9yZWNhc3Rpbmc='); return false;">Forecasting</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U2NvcmluZyUyMFJ1bGVz'); return false;">Scoring Rules</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+</div>
 <div class="card-text listing-description delink">
 <p>Tutorial</p>
 </div>
@@ -338,7 +485,7 @@ Mar 17, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="UHl0aG9uJTJDSnVweXRlciUyMExhYiUyQ0RhdGElMjBhbmFseXRpY3M=" data-listing-date-sort="1740960000000" data-listing-file-modified-sort="1760693893152" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="168">
+<div class="g-col-1" data-index="5" data-categories="UHl0aG9uJTJDSnVweXRlciUyMExhYiUyQ0RhdGElMjBhbmFseXRpY3M=" data-listing-date-sort="1740960000000" data-listing-file-modified-sort="1760880120651" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="819">
 <a href="../lab/intro_python/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -348,6 +495,15 @@ Mar 17, 2025
 <h5 class="no-anchor card-title listing-title">
 A basic introduction to Python
 </h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SnVweXRlciUyMExhYg=='); return false;">Jupyter Lab</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMGFuYWx5dGljcw=='); return false;">Data analytics</div>
+
+</div>
 <div class="card-text listing-description delink">
 <p>Tutorial</p>
 </div>

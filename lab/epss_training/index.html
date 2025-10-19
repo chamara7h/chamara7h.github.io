@@ -8,9 +8,9 @@
 
 <meta name="author" content="Harsha Chamara Hewage">
 <meta name="dcterms.date" content="2025-03-17">
-<meta name="description" content="Workshop">
+<meta name="description" content="An introduction to time series forecasting">
 
-<title>Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting – Home</title>
+<title>Demand Forecasting Models for Contraceptive Supply Chain – Home</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,8 +73,8 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting – Home">
-<meta property="og:description" content="Workshop">
+<meta property="og:title" content="Demand Forecasting Models for Contraceptive Supply Chain – Home">
+<meta property="og:description" content="An introduction to time series forecasting">
 <meta property="og:image" content="https://chamara7h.github.io/lab/epss_training/cover.png">
 <meta property="og:site_name" content="Home">
 <meta property="og:image:height" content="893">
@@ -101,8 +101,8 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about/index.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../phd/index.html"> 
+<span class="menu-text">PhD Project</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../lab/index.html"> 
@@ -149,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Demand Forecasting Models for Contraceptive Supply Chain: An introduction to time series forecasting</h1>
+<h1 class="title">Demand Forecasting Models for Contraceptive Supply Chain</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Forecasting</div>
     <div class="quarto-category">Healthcare</div>
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Workshop
+    An introduction to time series forecasting
   </div>
 </div>
 
@@ -190,106 +190,214 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="cover.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></p>
+
 <style>
-/* Custom button style */
-button {
-  background-color: transparent; /* No filling */
-  border: 2px solid rgb(55, 58, 60); /* Gray border */
-  color: rgb(55, 58, 60); /* Gray text */
-  padding: 5px 10px;
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* GENERAL STYLING */
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
   text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hero-section h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
   text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  margin: 4px 2px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   cursor: pointer;
-  border-radius: 5px; /* Rounded corners */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Professional Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #1a2b48;
+  transform: translateY(-2px);
 }
 
-/* Hover effect for Journal article */
-#journal-article-btn:hover {
-  border-color: #0066b2; /* Blue border on hover */
-  color: #0066b2; /* Blue text on hover */
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.content-section h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1a2b48;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
 }
 
-/* Hover effect for GitHub repo */
-#github-repo-btn:hover {
-  border-color: #00A86B; /* Green border on hover */
-  color: #00A86B; /* Green text on hover */
+/* STYLED LISTS (for prerequisites, outcomes, etc.) */
+.styled-list {
+  list-style: none;
+  padding-left: 0;
 }
+.styled-list li {
+  font-size: 1.05em;
+  padding: 10px 0 10px 35px;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+.styled-list li:last-child {
+  border-bottom: none;
+}
+.styled-list li::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c"; /* Checkmark icon */
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: #28a745; /* Green */
+  font-size: 1.2em;
+}
+
+/* Two-column layout for Learning Outcomes */
+.outcomes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+@media (min-width: 768px) {
+    .outcomes-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.outcomes-grid h4 {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #0A4C6A;
+    margin-bottom: 15px;
+}
+
 </style>
-<button id="journal-article-btn" onclick="window.open('slides/epss_training.html', '_blank')">
-<i class="fas fa-bookmark"></i> Slides
-</button>
-<button id="github-repo-btn" onclick="window.open('https://github.com/chamara7h/epss_training', '_blank');">
-<i class="fab fa-github"></i> GitHub repo
-</button>
-<section id="context" class="level3">
-<h3 class="anchored" data-anchor-id="context">Context</h3>
-<p>Accurate demand forecasting is essential for ensuring reliable access to contraceptive products, supporting key processes like procurement, inventory management, and distribution. This course aims to equip pharmaceutical officers at healthcare site levels with the knowledge and tools to adopt modern forecasting methods using R and Python.</p>
-</section>
-<section id="target-audience" class="level3">
-<h3 class="anchored" data-anchor-id="target-audience">Target Audience</h3>
-<ul>
-<li>Pharmaceutical officers at healthcare site levels responsible for demand planning<br>
-</li>
-<li>Anyone interested in forecasting in the context of contraceptive supply chains</li>
-</ul>
-</section>
-<section id="prerequisites" class="level3">
-<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
-<ul>
-<li>Basic knowledge of R and Python<br>
-</li>
-<li>Basic understanding of statistics concepts</li>
-</ul>
-</section>
-<section id="learning-outcomes" class="level3">
-<h3 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h3>
-<section id="day-1" class="level4">
-<h4 class="anchored" data-anchor-id="day-1">Day 1:</h4>
-<ol type="1">
-<li>Familiarize with RStudio and R Notebooks.</li>
-<li>Install and load required packages in R.</li>
-<li>Learn data wrangling and feature engineering.</li>
-<li>Understand time series graphics.</li>
-<li>Explore forecasting models: sNAIVE, Moving Average, ARIMA, ETS, and Demographic Forecasting.</li>
-<li>Evaluate model performance.</li>
-</ol>
-</section>
-<section id="day-2" class="level4">
-<h4 class="anchored" data-anchor-id="day-2">Day 2:</h4>
-<ol type="1">
-<li>Familiarize with Google Colab and Python Notebooks.</li>
-<li>Install and load required Python packages.</li>
-<li>Import data into Python.</li>
-<li>Implement advanced forecasting models: LightGBM, XGBoost, and TimeGPT.</li>
-<li>Evaluate model performance.</li>
-<li>Explore additional learning resources.</li>
-</ol>
-</section>
-</section>
-<section id="preparation" class="level3">
-<h3 class="anchored" data-anchor-id="preparation">Preparation</h3>
-<p>The workshop will provide a quick-start overview of exploring time series data and producing forecasts. No prior experience in time series is required. However, familiarity with:</p>
-<ul>
-<li>Writing R code and using tidyverse packages (dplyr, ggplot2) is recommended. <a href="https://learnr.numbat.space/">Learn R here</a>.</li>
-<li>Writing Python code is beneficial. <a href="https://chamara7h.github.io/lab/data_analytics/intro_python/">Learn Python here</a>.</li>
-<li>Basic statistical concepts such as mean, variance, quantiles, and regression would be helpful.</li>
-</ul>
-</section>
-<section id="required-equipment" class="level3">
-<h3 class="anchored" data-anchor-id="required-equipment">Required Equipment</h3>
-<p>Please have a laptop capable of running both R and Python.</p>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
-</section>
+<div class="hero-section">
+  <h1 class="title">Demand Forecasting Models for Contraceptive Supply Chain</h1>
+  <p class="description">An introduction to time series forecasting</p>
+  <p class="author-date">Harsha Chamara Hewage | 2025-03-17</p>
+  <div class="cta-buttons">
+    <a href="slides/epss_training.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> Slides
+    </a>
+    <a href="https://github.com/chamara7h/epss_training" target="_blank" class="btn-custom btn-secondary">
+      <i class="fab fa-github"></i> GitHub Repo
+    </a>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Context</h2>
+  <p>Accurate demand forecasting is essential for ensuring reliable access to contraceptive products, supporting key processes like procurement, inventory management, and distribution. This course aims to equip pharmaceutical officers at healthcare site levels with the knowledge and tools to adopt modern forecasting methods using R and Python.</p>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Target Audience</h2>
+  <ul class="styled-list">
+    <li>Pharmaceutical officers at healthcare site levels responsible for demand planning</li>
+    <li>Anyone interested in forecasting in the context of contraceptive supply chains</li>
+  </ul>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Learning Outcomes</h2>
+  <div class="outcomes-grid">
+    <div>
+      <h4 class="anchored">Day 1: Forecasting with R</h4>
+      <ul class="styled-list">
+        <li>Familiarize with RStudio and R Notebooks.</li>
+        <li>Learn data wrangling and feature engineering.</li>
+        <li>Understand time series graphics.</li>
+        <li>Explore models: sNAIVE, Moving Average, ARIMA, ETS.</li>
+        <li>Evaluate model performance.</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="anchored">Day 2: Advanced Forecasting with Python</h4>
+      <ul class="styled-list">
+        <li>Familiarize with Google Colab and Python Notebooks.</li>
+        <li>Implement advanced models: LightGBM, XGBoost, and TimeGPT.</li>
+        <li>Evaluate advanced model performance.</li>
+        <li>Explore additional learning resources.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2 class="anchored">Preparation &amp; Prerequisites</h2>
+  <p>No prior experience in time series is required. However, familiarity with the following is recommended:</p>
+  <ul class="styled-list">
+    <li>Writing R code and using tidyverse packages (dplyr, ggplot2). <a href="https://learnr.numbat.space/" target="_blank">Learn R here</a>.</li>
+    <li>Writing basic Python code. <a href="https://chamara7h.github.io/lab/data_analytics/intro_python/" target="_blank">Learn Python here</a>.</li>
+    <li>Basic statistical concepts such as mean, variance, and regression.</li>
+    <li>Please have a laptop capable of running both R and Python.</li>
+  </ul>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
