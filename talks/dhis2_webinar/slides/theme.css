@@ -1,0 +1,139 @@
+/* theme.css */
+
+/* --- Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+/* --- General Slide Styles --- */
+.reveal .slides {
+  font-family: 'Assistant', sans-serif;
+}
+  
+
+/* --- Cover Slide Specific Styles --- */
+.title-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content blocks */
+  align-items: left;
+  text-align: left;
+  height: 100%;
+}
+
+/* --- Logo Container --- */
+.logo-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.logo-container img {
+  max-height: 80px; /* Control the height of the logos */
+  margin: 0 0.25em; /* Space between logos */
+}
+
+
+/* Style for the main title (h1) */
+.title-slide h1 {
+  font-size: 10em;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 0.25em 0;
+  line-height: 1.1;
+}
+
+/* Style for the subtitle (h2) */
+.title-slide h2 {
+  font-size: 1.5em;
+  color: #e9d8a6; /* Soft gold color */
+  margin: 0 0 0.25em 0;
+  font-weight: 400;
+  text-transform: none;
+  border-bottom: none;
+}
+
+.title-slide .author {
+  font-size: 0.75em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.title-slide .date {
+  font-size: 0.75em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*text highlight*/
+
+.highlight-blue-big {
+  color: #156082;
+  font-weight: bold;
+  font-size: 1.5em;    /* tweak this as needed */
+}
+
+.highlight-blue {
+  color: #156082;
+  font-weight: bold;
+  font-size: 1em;    /* tweak this as needed */
+}
+
+.highlight-big {
+  font-size: 1.5em;    /* tweak this as needed */
+}
+
+.highlight-title {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+
+.ch-icon {
+color: #156082; /* Chamara accent */
+font-size: 36px;
+vertical-align: middle;
+margin-right: 0.6rem;
+}
+
+
+/* Optional: smaller icon on very small screens */
+@media (max-width: 560px) {
+.ch-icon { font-size: 26px; }
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.step::before {
+  content: attr(data-step);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-right: 1.5rem;
+  color: #333;
+  flex: 0 0 auto;
+}
+
+.step .step-content {
+  flex: 1;
+  background-color: #f7f7f7;
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.step .step-content h3 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  color: #222;
+  margin-right: 1rem;
+}
+
+.step .step-content p {
+  margin: 0;
+  font-size: 1 rem;
+  color: #555;
+}

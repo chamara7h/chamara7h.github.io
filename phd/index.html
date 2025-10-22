@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3dee3bd4db690a57d03739581c5c6dc5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1b57771ad994a57b6ec2f73250ebb1a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,11 +71,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Home">
-<meta property="og:image" content="https://chamara7h.github.io/phd/images/logo.png">
+<meta property="og:image" content="https://chamara7h.github.io/phd/images/bahman.png">
 <meta property="og:site_name" content="Home">
-<meta property="og:image:alt" content="DL4SG Logo">
-<meta property="og:image:height" content="5992">
-<meta property="og:image:width" content="13056">
+<meta property="og:image:alt" content="Prof Bahman Rostami-Tabar">
+<meta property="og:image:height" content="82">
+<meta property="og:image:width" content="82">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -142,130 +142,160 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Forecasting for Health Supply Chains</h1></header>
 
 
 
 
 <style>
-/* FONT IMPORT */
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap');
-
-/* GENERAL STYLING */
+/* FONT IMPORT & GENERAL STYLING */
+@import url('[https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap](https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap)');
 body {
-  font-family: 'Assistant', sans-serif;
-  background-color: #f9f9f9;
+    font-family: 'Assistant', sans-serif;
+    background-color: #f9f9f9;
+    color: #1a2b48; 
 }
 
-/* CONTENT SECTION STYLING */
-.content-section {
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 10px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+/* --- LAYOUT & CARDS --- */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem; /* Reduced top padding */
 }
-.content-section h2 {
-  font-size: 2em;
-  font-weight: 700;
-  color: #1a2b48;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #e9ecef;
-  padding-bottom: 10px;
-  text-align: center;
+.content-card {
+    background-color: #FFFFFF;
+    border-radius: 0.75rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 2.5rem; /* Reduced bottom margin */
 }
 
-/* Story Section */
-.story-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.1em;
-  line-height: 1.7;
+/* --- HEADER --- */
+.header-section {
+    text-align: center;
+    margin-bottom: 2.5rem; /* Reduced margin */
+    padding: 0 1rem;
+}
+.header-section h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.header-section p {
+    font-size: 1.25rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* OBJECTIVES/RESEARCH GRID */
-.objectives-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-.objective-card {
-  background-color: #f9f9f9;
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.objective-card .icon {
-  font-size: 2.5em;
-  color: #0A4C6A; /* Professional Teal/Blue */
-  margin-bottom: 15px;
-}
-.objective-card h3 {
-  font-size: 1.2em;
-  font-weight: 600;
-  color: #1a2b48;
-  margin-bottom: 10px;
-}
-.objective-card p {
-  font-size: 1em;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 0;
+/* --- SECTION HEADINGS --- */
+.section-heading {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
 }
 
-/* Supervisor & Collaborator Styling */
-.supervisor-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  text-align: center;
+/* --- NEW SUBSECTION HEADING --- */
+.subsection-heading {
+    text-align: left;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1a2b48;
 }
-.supervisor-list img {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  object-fit: cover;
-  border: 1px solid #e0e0e0;
-}
-.supervisor-name {
-  font-weight: 700;
-  font-size: 1.1em;
-  color: #333;
-  margin-bottom: 5px;
-}
-.supervisor-title {
-  font-size: 0.95em;
-  color: #666;
-  line-height: 1.4;
-}
-.logo-display {
+
+
+/* --- WORKFLOW/METHODOLOGY --- */
+.workflow-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 25px;
+    flex-direction: column; /* Default to vertical */
     align-items: center;
-    justify-content: center;
-    padding: 20px 0;
+    gap: 1.5rem;
 }
-.logo-display img {
-    height: 50px;
-    width: auto;
+.workflow-step {
+    background-color: #FFFFFF;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.workflow-step h4 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: #0A4C6A;
+}
+.workflow-step p {
+    flex-grow: 1;
+    color: #333;
+}
+.workflow-arrow {
+    font-size: 2rem;
+    color: #ccc;
+    transform: rotate(90deg); /* Default to down arrow */
+    align-self: center; /* Center arrow vertically in column mode */
+}
+.award-highlight {
+    background-color: #E6F3F8;
+    border: 1px solid #BEE1F0;
+    color: #0A4C6A;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* Switch to horizontal layout on larger screens */
+@media (min-width: 1024px) {
+    .workflow-container {
+        flex-direction: row;
+        align-items: stretch; /* Make steps equal height */
+    }
+    .workflow-arrow {
+        transform: rotate(0deg); /* Switch to right arrow */
+    }
+}
+
+/* Hide arrow if it's the last step */
+.workflow-step:last-of-type + .workflow-arrow {
+    display: none;
 }
 
 
-/* DOWNLOAD BUTTON */
-.btn-custom {
-  padding: 12px 25px;
-  font-size: 1em;
+/* --- PUBLICATIONS & OUTPUTS --- */
+.publication-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.publication-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.pub-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+.pub-journal {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1rem;
+}
+.pub-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.btn-pub {
+  padding: 8px 18px;
+  font-size: 0.9em;
   font-weight: 600;
   text-decoration: none;
   border-radius: 8px;
@@ -274,94 +304,197 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-}
-.btn-primary {
   background-color: #0A4C6A;
   color: #fff;
   border: 2px solid #0A4C6A;
 }
-.btn-primary:hover {
+.btn-pub:hover {
   background-color: #083c54;
   border-color: #083c54;
-  transform: translateY(-2px);
+  color: #fff;
+}
+
+
+/* --- IMPACT CARD & NEW PUBLICATION CARD STYLE --- */
+.impact-card {
+    background: #1a2b48;
+    color: #fff;
+    border-radius: 0.75rem;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+}
+.impact-card h3, .impact-card .subsection-heading { /* Apply subsection style here too */
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-align: left; /* Align left */
+}
+.impact-card .pub-title {
+    color: #fff;
+}
+.impact-card .pub-journal {
+    color: #ccc;
+}
+.impact-card .publication-item {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+.impact-card .btn-pub {
+    color: #1a2b48;
+    background-color: #fff;
+    border-color: #fff;
+}
+.impact-card .btn-pub:hover {
+    background-color: #eee;
+    border-color: #eee;
+}
+
+/* --- SUPERVISOR & PARTNER STYLES --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  object-fit: cover;
+  border: 3px solid #e9ecef;
+}
+.member-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.member-title {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.logo-grid img {
+    height: 55px;
+    width: auto;
 }
 
 </style>
 
 <!-- Add Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
 
-<div class="content-section">
-  <h2 class="anchored">Forecasting improvements in global health supply chains</h2>
-  <div class="objectives-grid">
-    <div class="objective-card">
-      <div class="icon"><i class="fa-solid fa-flask"></i></div>
-      <h3 class="anchored">Research Focus</h3>
-      <p>Developing novel forecasting and inventory management approaches for health commodity supply chains.</p>
-    </div>
-    <div class="objective-card">
-      <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
-      <h3 class="anchored">Methodology</h3>
-      <p>Integrating advanced probabilistic forecasting models with robust inventory frameworks.</p>
-    </div>
-    <div class="objective-card">
-      <div class="icon"><i class="fa-solid fa-stethoscope"></i></div>
-      <h3 class="anchored">Global Health Impact</h3>
-      <p>Enhancing public health outcomes and supporting data-driven decisions for tangible social good.</p>
-    </div>
-    <div class="objective-card">
-      <div class="icon"><i class="fa-solid fa-handshake"></i></div>
-      <h3 class="anchored">Collaborations</h3>
-      <p>Working with influential organizations like USAID, Ethiopian Pharmaceuticals Supply Service, and the HISP Center at the University of Oslo.</p>
-    </div>
-  </div>
-</div>
+<div class="page-container">
 
-<div class="content-section">
-  <h2 class="anchored">Funder &amp; Collaborators</h2>
-  <p style="text-align: center; max-width: 700px; margin: 0 auto 30px auto;">
-    This research is proudly funded by the <strong>Welsh Graduate School for the Social Sciences (WGSSS)</strong> and conducted in collaboration with leading global health organizations.
-  </p>
-  <div class="logo-display">
-      <img src="images/logo.png" alt="DL4SG Logo" style="height: 50px; width: auto;">
-      <img src="images/cardiff_logo.png" alt="Cardiff University Logo" style="height: 50px; width: auto;">
-      <img src="images/wgss.png" alt="WGSSS Logo" style="height: 50px; width: auto;">
-      <img src="images/usaid.png" alt="USAID Logo" style="height: 50px; width: auto;">
-  </div>
-</div>
+    <header class="header-section">
+        
+        <p>My PhD research project is focused on improving demand forecasting for family planning to ensure contraceptives are always available when and where they are needed.</p>
+    </header>
 
-<div class="content-section">
-  <h2 class="anchored">Supervision Team</h2>
-  <ul class="supervisor-list">
-    <li>
-      <img src="images/bahman.png" alt="Prof Bahman Rostami-Tabar">
-      <div>
-        <div class="supervisor-name">Prof. Bahman Rostami-Tabar (Lead)</div>
-        <div class="supervisor-title">Professor of Data-Driven Decision Science, Cardiff University</div>
-      </div>
-    </li>
-    <li>
-      <img src="images/aris.png" alt="Prof Aris Syntetos">
-      <div>
-        <div class="supervisor-name">Prof. Aris Syntetos (Co-supervisor)</div>
-        <div class="supervisor-title">Professor of Decision Science, Cardiff University</div>
-      </div>
-    </li>
-    <li>
-      <img src="images/federico.png" alt="Dr Federico Liberatore">
-      <div>
-        <div class="supervisor-name">Dr. Federico Liberatore (Co-supervisor)</div>
-        <div class="supervisor-title">Senior Lecturer in Data &amp; Knowledge Engineering, Cardiff University</div>
-      </div>
-    </li>
-    <li>
-      <img src="images/glenn.png" alt="Glenn Milano">
-      <div>
-        <div class="supervisor-name">Glenn Milano (Industry Collaborator)</div>
-        <div class="supervisor-title">Advisor for Demand Planning and Analytics, USAID</div>
-      </div>
-    </li>
-  </ul>
+    <div class="content-card">
+        <h3 class="section-heading anchored">The Core Challenge: What Was Lost?</h3>
+        <p class="text-center max-w-4xl mx-auto">
+            In public health, "zero demand" doesn't mean "zero need"—it often just means the shelves were empty. When health facilities run out of stock, the true demand from the community goes unrecorded. This "censored" or "lost" demand data leads to flawed forecasts, which in turn causes chronic under-stocking and reinforces a cycle of supply failure. My research focuses on breaking this cycle.
+        </p>
+    </div>
+
+    <section>
+        <h2 class="section-heading anchored">My Research Approach</h2>
+        <div class="workflow-container">
+            <div class="workflow-step">
+                <h4 class="anchored">Hybrid Forecasting</h4>
+                <p>Develop a model combining modern machine learning with expert knowledge to create probabilistic forecasts that capture the full range of uncertainty in demand.</p>
+                <div class="award-highlight">
+                    <i class="fas fa-award"></i> Won Best Student Presentation at ISF 2024, Dijon
+                </div>
+            </div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-step">
+                <h4 class="anchored">Estimate Lost Demand</h4>
+                <p>Build the <strong>Truncated Conformal Kalman Filter (TCKF)</strong> to reconstruct true, unobserved demand from incomplete data caused by stockouts and service disruptions.</p>
+            </div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-step">
+                <h4 class="anchored">Optimize Inventory</h4>
+                <p>Use improved forecasts and data-driven prediction intervals to inform smarter inventory policies that reduce stockouts while maintaining efficiency.</p>
+            </div>
+            <!-- Arrow after last step is removed by CSS -->
+        </div>
+    </section>
+
+    <div class="content-card" style="margin-top: 4rem;">
+        <h3 class="subsection-heading anchored">Key Outputs &amp; Publications</h3>
+        
+        <div class="publication-item">
+            <div class="pub-title">A Novel Hybrid Approach to Contraceptive Demand Forecasting</div>
+            <div class="pub-journal">Published in International Journal of Production Research</div>
+            <div class="pub-links">
+                <a href="https://doi-org.cardiff.idm.oclc.org/10.1080/00207543.2025.2526169" class="btn-pub"><i class="fas fa-file-pdf"></i> Read Paper</a>
+                <a href="https://github.com/chamara7h/hybrid_forecasting_framework" class="btn-pub" target="_blank"><i class="fab fa-github"></i> View Code</a>
+            </div>
+        </div>
+
+        <div class="publication-item">
+            <div class="pub-title">Estimating censored demand in family planning supply chains: forecast accuracy, inventory implications, and public health outcomes</div>
+            <div class="pub-journal">Preprint - Submitted for review</div>
+            <div class="pub-links">
+                <a href="#" class="btn-pub"><i class="fas fa-file-pdf"></i> Read Paper</a>
+                <a href="#" class="btn-pub"><i class="fab fa-github"></i> View Code</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="impact-card">
+        <h3 class="anchored"><i class="fas fa-chalkboard-teacher"></i> Impact in Practice: EPSS Training</h3>
+        <p class="mb-6">Research is most valuable when it's put into practice. As part of my PhD, I developed and delivered a two-day training workshop for practitioners at the Ethiopian Pharmaceutical Supply Service (EPSS), equipping them with modern forecasting skills using R and Python.</p>
+        <div class="pub-links">
+            <a href="https://chamara7h.github.io/lab/epss_training/" class="btn-pub"><i class="fas fa-tools"></i> Training Materials</a>
+            <a href="https://github.com/chamara7h/epss_training" class="btn-pub"><i class="fab fa-github"></i> Code &amp; Labs</a>
+        </div>
+    </div>
+    
+    <div class="content-card">
+        <h3 class="section-heading anchored">Supervision &amp; Collaboration Team</h3>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="images/bahman.png" alt="Prof Bahman Rostami-Tabar">
+                <div class="member-name">Prof. Bahman Rostami-Tabar</div>
+                <div class="member-title">Lead Supervisor, Cardiff University</div>
+            </div>
+            <div class="team-member">
+                <img src="images/aris.png" alt="Prof Aris Syntetos">
+                <div class="member-name">Prof. Aris Syntetos</div>
+                <div class="member-title">Co-supervisor, Cardiff University</div>
+            </div>
+            <div class="team-member">
+                <img src="images/federico.png" alt="Dr Federico Liberatore">
+                <div class="member-name">Dr. Federico Liberatore</div>
+                <div class="member-title">Co-supervisor, Cardiff University</div>
+            </div>
+            <div class="team-member">
+                <img src="images/glenn.png" alt="Glenn Milano">
+                <div class="member-name">Glenn Milano</div>
+                <div class="member-title">Industry Collaborator, USAID</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-card">
+        <h3 class="section-heading anchored">Funding &amp; Partners</h3>
+        <div class="logo-grid">
+            <img src="images/cardiff_logo.png" alt="Cardiff University Logo">
+            <img src="images/logo.png" alt="Data Lab for Social Good Logo">
+            <img src="images/wgss.png" alt="WGSSS Logo">
+            <img src="images/usaid.png" alt="USAID Logo">
+        </div>
+    </div>
+
 </div>
 
 
