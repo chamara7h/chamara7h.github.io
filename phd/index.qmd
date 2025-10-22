@@ -260,31 +260,7 @@ body {
             In public health, "zero demand" doesn't mean "zero need"—it often just means the shelves were empty. When health facilities run out of stock, the true demand from the community goes unrecorded. This "censored" or "lost" demand data leads to flawed forecasts, which in turn causes chronic under-stocking and reinforces a cycle of supply failure. My research focuses on breaking this cycle.
         </p>
     </div>
-
-    <section>
-        <h2 class="section-heading">My Research Approach</h2>
-        <div class="workflow-container">
-            <div class="workflow-step">
-                <h4>Hybrid Forecasting</h4>
-                <p>Develop a model combining modern machine learning with expert knowledge to create probabilistic forecasts that capture the full range of uncertainty in demand.</p>
-                <div class="award-highlight">
-                    <i class="fas fa-award"></i> Won Best Student Presentation at ISF 2024, Dijon
-                </div>
-            </div>
-            <div class="workflow-arrow">&rarr;</div>
-            <div class="workflow-step">
-                <h4>Estimate Lost Demand</h4>
-                <p>Build the <strong>Truncated Conformal Kalman Filter (TCKF)</strong> to reconstruct true, unobserved demand from incomplete data caused by stockouts and service disruptions.</p>
-            </div>
-            <div class="workflow-arrow">&rarr;</div>
-            <div class="workflow-step">
-                <h4>Optimize Inventory</h4>
-                <p>Use improved forecasts and data-driven prediction intervals to inform smarter inventory policies that reduce stockouts while maintaining efficiency.</p>
-            </div>
-            <!-- Arrow after last step is removed by CSS -->
-        </div>
-    </section>
-
+    
     <div class="content-card" style="margin-top: 4rem;">
         <h3 class="subsection-heading">Key Outputs & Publications</h3>
         
