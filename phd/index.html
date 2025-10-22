@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Forecasting for Health Supply Chains</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
@@ -393,7 +393,7 @@ body {
 <div class="page-container">
 
     <header class="header-section">
-        
+        <h2 class="anchored">Forecasting for Health Supply Chains</h2>
         <p>My PhD research project is focused on improving demand forecasting for family planning to ensure contraceptives are always available when and where they are needed.</p>
     </header>
 
@@ -588,6 +588,11 @@ body {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
