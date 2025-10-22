@@ -1,3 +1,8 @@
+---
+link-external-newwindow: true
+---
+
+
 ```{=html}
 <style>
 /* FONT IMPORT & GENERAL STYLING */
@@ -245,7 +250,7 @@ body {
 <div class="page-container">
 
     <header class="header-section">
-        <h1>Forecasting for Health Supply Chains</h1>
+        <h2>Forecasting for Health Supply Chains</h2>
         <p>My PhD research project is focused on improving demand forecasting for family planning to ensure contraceptives are always available when and where they are needed.</p>
     </header>
 
