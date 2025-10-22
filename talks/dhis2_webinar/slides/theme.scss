@@ -1,0 +1,97 @@
+/* theme.scss */
+
+/* --- Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap');
+
+/* --- Quarto Theming Variables --- */
+$font-family-sans-serif: 'Assistant', sans-serif;
+$presentation-heading-font: 'Assistant', sans-serif;
+$presentation-font-size-root: 32px;
+
+/*-- scss:rules --*/
+
+/* --- Title Slide Wrapper --- */
+/* We add !important to override Quarto's default slide styles */
+.title-slide {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    text-align: left;
+}
+
+/* --- 1. Header Section (White Bar) --- */
+.title-header {
+    background-color: white;
+    flex-shrink: 0;
+    padding: 2em 6%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    max-height: 60px;
+    margin-right: 2.5em;
+}
+
+/* --- 2. Main Content Section (Dark Blue Area) --- */
+.title-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 6%;
+    color: #f9f9f9;
+}
+
+.title-content h1 {
+    font-size: 5em;
+    font-weight: 800;
+    margin: 0 0 0.25em 0;
+    line-height: 1.1;
+}
+
+.title-content h2 {
+    font-size: 1.75em;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 1em 0;
+}
+
+.title-content .author {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- 3. Footer Section (For the Date) --- */
+.title-footer {
+    flex-shrink: 0;
+    padding: 2em 6%;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.title-footer .date {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .title-content h1 {
+        font-size: 3em;
+    }
+    .title-content h2 {
+        font-size: 1.25em;
+    }
+    .title-content .author {
+        font-size: 1em;
+    }
+    .logo-container img {
+        max-height: 40px;
+    }
+}
+

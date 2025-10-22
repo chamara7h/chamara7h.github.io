@@ -1,0 +1,322 @@
+---
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1920
+    height: 1080
+    logo: "images/logo.png"
+    footer: "[From Cases to Consumption: Evaluating CHAP/DHIS2 Model Portability for Health Supply Chains](https://chamara7h.github.io/talks/)"
+    css: theme.css
+    echo: true
+execute:
+  warning: false
+  echo: false
+header-includes:
+  - '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">'
+  
+
+---   
+
+# {.title-slide background-image="images/cover.png" background-size="cover"}
+
+<div class="logo-container">
+  <img src="images/cardiff_logo.png" alt="Cardiff University Logo">
+  <img src="images/logo.png" alt="Data Lab Logo">
+  <img src="images/uio_HISP.svg" alt="HISP UIO Logo">
+  <img src="images/wgss.png" alt="WGSSS Logo">
+  <img src="images/ukri.png" alt="UKRI Logo">
+</div>
+
+<div class="title-slide">
+  <h1>From Cases to Consumption</h1>
+  <h2>Evaluating CHAP/DHIS2 Model Portability for Health Supply Chains</h2>
+  <p class="author">Data Lab for Social Good, Cardiff University in collaboration with HISP Centre, University of Oslo</p>
+  <p class="date">2025/10/29</p>
+</div>
+
+## {} 
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/outline.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+
+<br>
+
+<br>
+
+[Outline]{.highlight-title}
+
+::: {.step data-step="01"}
+<div class="step-content">
+  <h3>[Background]{.highlight-blue}</h3>
+</div>
+::: 
+
+::: {.step data-step="02"}
+<div class="step-content">
+  <h3>The fundamental question</h3>
+</div>
+:::
+
+::: {.step data-step="03"}
+<div class="step-content">
+  <h3>What we are going to do</h3>
+</div>
+:::
+
+::: {.step data-step="04"}
+<div class="step-content">
+  <h3>Our current plan</h3>
+</div>
+:::
+
+::: {.step data-step="05"}
+<div class="step-content">
+  <h3>What [NEXT?]{.highlight-blue}</h3>
+</div>
+:::
+
+:::
+
+::::
+
+## {}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/background.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+[The Problem: A tale of two data streams]{.highlight-title}
+
+<br>
+
+Health supply chains are struggling with forecasting at sub-national/ facility level.
+
+- Operational realities: Incomplete records, irregular orders, frequent manual adjustments.
+
+- This masks true demand and leads to a cycle of...
+
+- Persistent, critical stockouts 📉.
+
+::: {.fragment fragment-index=1}
+
+[But... we have a success story.]{.highlight-blue-big}
+
+Platforms like [DHIS2]{.highlight-blue} and [CHAP]{.highlight-blue} have robust, high-performing models for forecasting disease cases (morbidity).
+
+:::
+
+:::
+
+::::
+
+
+## The fundemental question
+
+<br>
+
+✅ We're good at forecasting cases (e.g., malaria).
+
+<br>
+
+❌ We're struggling with forecasting consumption (e.g., antimalarials).
+
+<br>
+
+::: {.fragment}
+[Can we repurpose the successful morbidity models to forecast product consumption?]{.highlight-blue-big}
+:::
+
+## The challenge: Why isn't this easy?
+
+<br>
+
+Case data and consumption data are different.
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.fragment fragment-index=1}
+
+<i class="fa-solid fa-database ch-icon" aria-hidden="true"></i> **Different Data Structures** 
+
+Consumption data is ["messier"]{.highlight-blue}.
+
+- Missing entries (e.g., "0" = no consumption, or "0" = data not entered?)
+
+- Intermittency (infrequent demand).
+
+- Inconsistent recording.
+  
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.fragment fragment-index=2}
+
+<i class="fa-solid fa-list-check ch-icon" aria-hidden="true"></i> **Different Metadata**
+
+Consumption is affected by logistics.
+
+- Lead times.
+- Procurement cycles.
+- Existing stock levels.
+  
+:::
+
+:::
+
+::::
+
+## {} 
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/rqs.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+
+[Our research questions]{.highlight-title}
+
+<br>
+
+To solve this, we are investigating three key questions:
+
+<br>
+
+::: {.fragment fragment-index=1}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **Portability**: When can we transfer a model? (Morbidity $\rightarrow$ Consumption? One product $\rightarrow$ Another?)
+
+:::
+
+<br>
+
+::: {.fragment fragment-index=2}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **Decision Translation**: How do we turn a statistical forecast into a better inventory order? (Forecast $\rightarrow$ Action)
+
+:::
+
+<br>
+
+::: {.fragment fragment-index=3}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **Hierarchical Coherence**: Do site-level forecasts reliably add up for district and national planning?
+
+:::
+
+:::
+
+::::
+
+## What we are going to do
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/model.png){style="width:100%; height:auto; "}
+
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="47.5%"}
+
+<br>
+
+We've organized our work into three interconnected Work Packages (WPs).
+
+<br>
+
+[WP1: Portability]{.highlight-blue} (Test reuse/transfer. Create "if/then" rules.)
+
+$\downarrow$
+
+[WP2: Forecast $\rightarrow$ Inventory]{.highlight-blue} (Translate forecasts into real-world inventory policy.)
+
+$\downarrow$
+
+[WP3: Hierarchical Coherence]{.highlight-blue} (Test aggregation for national procurement.)
+
+:::
+
+::::
+
+## Our current plan
+
+Our immediate focus is on WP1 (*Portability*) and linking to WP2 (*Inventory Simulation*).
+
+<br>
+
+![](images/wp1.svg){style="width:100%; height:auto; "}
+
+
+## {} 
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/wp2.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+
+[Key takeaways]{.highlight-title}
+
+<br>
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **The Idea**: Reusing morbidity models for supply chains is a promising but non-trivial opportunity.
+
+<br>
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **Our Contribution**: We're building an evidence-based, practical guide to show when and how to do this.
+
+<br>
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **The Impact**: This work directly links forecasting models to operational decisions, aiming to reduce stockouts and improve procurement.
+
+:::
+
+::::
+
+## Any questions or thoughts? 💬 
+
+![](images/follow_us.png){fig-align="center"}
+
+
+
+

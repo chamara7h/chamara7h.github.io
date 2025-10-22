@@ -1,0 +1,127 @@
+---
+title: "From Cases to Consumption: Evaluating CHAP/DHIS2 Model Portability for Health Supply Chains"
+description: "Webinar: DHIS2 Climate and Health Tools for Planning and Monitoring Immunization Programmes."
+author: "Harsha Halgamuwe Hewage"
+date: "2025-10-29"
+image: "cover.png"
+categories:
+  - Forecasting
+  - Inventory
+  - Climate Health
+  - DHIS2
+  - CHAP
+link-external-newwindow: true
+---
+
+```{=html}
+
+<style>
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap');
+
+/* GENERAL STYLING */
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hero-section h1 {
+  font-size: 2.6em; /* Slightly adjusted for a longer title */
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Professional Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.content-section h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1a2b48;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+</style>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<div class="hero-section">
+  <h1 class="title">From Cases to Consumption: Evaluating CHAP/DHIS2 Model Portability for Health Supply Chains</h1>
+  <p class="description">Webinar: DHIS2 Climate and Health Tools for Planning and Monitoring Immunization Programmes.</p>
+  <p class="author-date">Harsha Halgamuwe Hewage | 2025-10-29</p>
+  <div class="cta-buttons">
+    <a href="slides/dhis2_webinar.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> View Slides
+    </a>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2>Context</h2>
+  <p>At the <em>Webinar: DHIS2 Climate and Health Tools for Planning and Monitoring Immunization Programmes</em>, we address a critical gap between disease forecasting and supply chain logistics.</p>
+  <p>Platforms like DHIS2 and CHAP are increasingly powerful at forecasting disease cases, often leveraging climate data to predict outbreaks. However, forecasting the product consumption needed to respond (e.g., vaccines, antimalarials) remains a persistent challenge. Consumption data is notoriously incomplete, inconsistent, and distorted by stockouts, making it difficult to plan effectively.</p>
+  <p>This presentation investigates model portability: can the robust, high-performing models built for cases be effectively repurposed to forecast consumption? We evaluate when to reuse, when to fine-tune (e.g., with climate or campaign data as external regressors), and when to retrain models from scratch.</p>
+  <p>Our work provides a practical framework that links statistical forecasts to inventory decisions. By understanding which model to trust, health systems can move from reactive ordering to predictive logistics, ensuring life-saving commodities are available to meet climate-driven health needs.</p>
+</div>
+```

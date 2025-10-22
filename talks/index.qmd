@@ -5,6 +5,7 @@ listing:
     - "qff_london/*.qmd"
     - "euro_leeds/*.qmd"
     - 'wgsss_25/*.qmd'
+    - 'dhis2_webinar/*.qmd'
   type: grid
   sort: "date desc"
   filter-ui: true

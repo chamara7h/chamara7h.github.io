@@ -203,5 +203,14 @@
   },
   "talks/euro_leeds/index.qmd": {
     "index.html": "a438a2ef"
+  },
+  "publications/index.qmd": {
+    "index.html": "f167e782"
+  },
+  "talks/dhis2_webinar/index.qmd": {
+    "index.html": "7851ebe8"
+  },
+  "talks/dhis2_webinar/slides/dhis2_webinar.qmd": {
+    "dhis2_webinar.html": "a89e4821"
   }
 }
