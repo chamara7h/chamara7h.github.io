@@ -121,6 +121,8 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <meta property="og:title" content="Home">
 <meta property="og:site_name" content="Home">
@@ -134,7 +136,7 @@
 <section id="section" class="title-slide slide level1 center" data-background-image="images/cover.png" data-background-size="cover">
 <h1></h1>
 <div class="logo-container">
-<p><img src="images/cardiff_logo.png" alt="Cardiff University Logo"> <img src="images/logo.png" alt="Data Lab Logo"> <img src="images/uio_HISP.svg" alt="HISP UIO Logo"> <img src="images/wgss.png" alt="WGSSS Logo"> <img src="images/ukri.png" alt="UKRI Logo"></p>
+<p><img src="images/cardiff_logo.png" alt="Cardiff University Logo"> <img src="images/logo.png" alt="Data Lab Logo"> <img src="images/uio_HISP.svg" alt="HISP UIO Logo"> <img src="images/DHIS2_logo.svg" alt="DHIS2 Logo"> <img src="images/wgss.png" alt="WGSSS Logo"> <img src="images/ukri.png" alt="UKRI Logo"></p>
 </div>
 <div class="title-slide center">
 <h1>
@@ -165,7 +167,7 @@ Data Lab for Social Good, Cardiff University in collaboration with HISP Centre, 
 <div class="step" data-step="01">
 <div class="step-content">
 <h3>
-<span class="highlight-blue">Background</span>
+Background
 </h3>
 </div>
 </div>
@@ -193,13 +195,29 @@ Our current plan
 <div class="step" data-step="05">
 <div class="step-content">
 <h3>
+Initial results
+</h3>
+</div>
+</div>
+<div class="step" data-step="06">
+<div class="step-content">
+<h3>
 What <span class="highlight-blue">NEXT?</span>
 </h3>
 </div>
 </div>
 </div></div>
+</section></section>
+<section>
+<section id="section-2" class="title-slide slide level1 center" data-background-color="#212B49">
+<h1></h1>
+<div class="title-slide center">
+<h1>
+BACKGROUND
+</h1>
+</div>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -216,6 +234,7 @@ What <span class="highlight-blue">NEXT?</span>
 <li><p>Persistent, critical stockouts 📉.</p></li>
 </ul>
 <div class="fragment" data-fragment-index="1">
+<p><br></p>
 <p><span class="highlight-blue-big">But… we have a success story.</span></p>
 <p>Platforms like <span class="highlight-blue">DHIS2</span> and <span class="highlight-blue">CHAP</span> have robust, high-performing models for forecasting disease cases (morbidity).</p>
 </div>
@@ -227,9 +246,9 @@ What <span class="highlight-blue">NEXT?</span>
 <p>✅ We’re good at forecasting cases (e.g., malaria).</p>
 <p><br></p>
 <p>❌ We’re struggling with forecasting consumption (e.g., antimalarials).</p>
-<p><br></p>
+<p><br> <br></p>
 <div class="fragment">
-<p><span class="highlight-blue-big">Can we repurpose the successful morbidity models to forecast product consumption?</span></p>
+<p><span class="highlight-blue-big">Can we leverage the CHAP/DHIS2 morbidity models to forecast product consumption in supply chains?</span></p>
 </div>
 </section>
 <section id="the-challenge-why-isnt-this-easy" class="slide level2">
@@ -237,30 +256,41 @@ What <span class="highlight-blue">NEXT?</span>
 <p><br></p>
 <p>Case data and consumption data are different.</p>
 <p><br></p>
+<div class="stretch-cols">
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="fragment" data-fragment-index="1">
+<div class="fragment minimal-box" data-fragment-index="1">
 <p><i class="fa-solid fa-database ch-icon" aria-hidden="true"></i> <strong>Different Data Structures</strong></p>
 <p>Consumption data is <span class="highlight-blue">“messier”</span>.</p>
 <ul>
-<li><p>Missing entries (e.g., “0” = no consumption, or “0” = data not entered?)</p></li>
-<li><p>Intermittency (infrequent demand).</p></li>
-<li><p>Inconsistent recording.</p></li>
+<li>Missing entries (e.g., “0” = no consumption, or “0” = data not entered?)</li>
+<li>Intermittency (infrequent demand).</li>
+<li>Inconsistent recording.</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
-<div class="fragment" data-fragment-index="2">
+<div class="fragment minimal-box" data-fragment-index="2">
 <p><i class="fa-solid fa-list-check ch-icon" aria-hidden="true"></i> <strong>Different Metadata</strong></p>
 <p>Consumption is affected by logistics.</p>
 <ul>
 <li>Lead times.</li>
 <li>Procurement cycles.</li>
-<li>Existing stock levels.</li>
+<li>Existing stock levels and stockouts.</li>
 </ul>
 </div>
 </div></div>
+</div>
+</section></section>
+<section>
+<section id="section-4" class="title-slide slide level1 center" data-background-color="#212B49">
+<h1></h1>
+<div class="title-slide center">
+<h1>
+OUR APPROACH
+</h1>
+</div>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -306,10 +336,173 @@ What <span class="highlight-blue">NEXT?</span>
 <section id="our-current-plan" class="slide level2">
 <h2>Our current plan</h2>
 <p>Our immediate focus is on WP1 (<em>Portability</em>) and linking to WP2 (<em>Inventory Simulation</em>).</p>
-<p><br></p>
 <p><img data-src="images/wp1.svg" style="width:100%; height:auto; "></p>
+</section></section>
+<section>
+<section id="section-6" class="title-slide slide level1 center" data-background-color="#212B49">
+<h1></h1>
+<div class="title-slide center">
+<h1>
+INITIAL FINDINGS
+</h1>
+<h2>
+Forecasting using morbidity data.
+</h2>
+</div>
 </section>
-<section id="section-4" class="slide level2">
+<section id="data-exploration" class="slide level2">
+<h2>Data exploration</h2>
+<p>We used number of dengue cases in Laos to test the forecasting models.</p>
+
+<img data-src="dhis2_webinar_files/figure-revealjs/fig-ts_feat-1.png" style="width:100.0%" class="r-stretch quarto-figure-center" id="fig-ts_feat"><p class="caption">
+Figure&nbsp;1: Monthly dengue cases by location.
+</p></section>
+<section id="ovreall-forecast-performance" class="slide level2">
+<h2>Ovreall forecast performance</h2>
+<p>Best values in each column are highlighted in bold.</p>
+<div id="tbl-fc_acc" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-fc_acc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
+</figcaption>
+<div aria-describedby="tbl-fc_acc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-custom table caption-top" style="font-size: 32px; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">MASE</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Quantile Loss (q10)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Quantile Loss (q50)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Quantile Loss (q90)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Random Forest</td>
+<td style="text-align: right;"><strong>0.864</strong></td>
+<td style="text-align: right;">107.360</td>
+<td style="text-align: right;">383.058</td>
+<td style="text-align: right;">607.857</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ARIMA Madagaskar</td>
+<td style="text-align: right;">0.902</td>
+<td style="text-align: right;">165.565</td>
+<td style="text-align: right;"><strong>360.123</strong></td>
+<td style="text-align: right;">310.765</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Auto ARIMA Reg</td>
+<td style="text-align: right;">0.913</td>
+<td style="text-align: right;">173.929</td>
+<td style="text-align: right;">367.735</td>
+<td style="text-align: right;">322.289</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Auto ARIMA</td>
+<td style="text-align: right;">0.950</td>
+<td style="text-align: right;">176.069</td>
+<td style="text-align: right;">376.163</td>
+<td style="text-align: right;">309.962</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Linear Regression</td>
+<td style="text-align: right;">1.008</td>
+<td style="text-align: right;">129.647</td>
+<td style="text-align: right;">416.129</td>
+<td style="text-align: right;">278.839</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LightGBM</td>
+<td style="text-align: right;">1.009</td>
+<td style="text-align: right;"><strong>96.771</strong></td>
+<td style="text-align: right;">452.020</td>
+<td style="text-align: right;">752.016</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Linear Regression Reg</td>
+<td style="text-align: right;">1.035</td>
+<td style="text-align: right;">127.927</td>
+<td style="text-align: right;">391.573</td>
+<td style="text-align: right;">284.118</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Auto EWARS</td>
+<td style="text-align: right;">1.041</td>
+<td style="text-align: right;">125.371</td>
+<td style="text-align: right;">421.408</td>
+<td style="text-align: right;">296.665</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">xgBoost</td>
+<td style="text-align: right;">1.057</td>
+<td style="text-align: right;">103.980</td>
+<td style="text-align: right;">485.837</td>
+<td style="text-align: right;">817.878</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">INLA baseline</td>
+<td style="text-align: right;">1.082</td>
+<td style="text-align: right;">126.139</td>
+<td style="text-align: right;">432.163</td>
+<td style="text-align: right;"><strong>239.886</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mean</td>
+<td style="text-align: right;">1.090</td>
+<td style="text-align: right;">138.155</td>
+<td style="text-align: right;">461.150</td>
+<td style="text-align: right;">347.705</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ETS</td>
+<td style="text-align: right;">1.099</td>
+<td style="text-align: right;">124.722</td>
+<td style="text-align: right;">428.761</td>
+<td style="text-align: right;">299.443</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sNaive</td>
+<td style="text-align: right;">1.217</td>
+<td style="text-align: right;">138.155</td>
+<td style="text-align: right;">510.311</td>
+<td style="text-align: right;">276.443</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Naïve</td>
+<td style="text-align: right;">1.221</td>
+<td style="text-align: right;">143.645</td>
+<td style="text-align: right;">506.282</td>
+<td style="text-align: right;">319.259</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="ovreall-point-forecast-performance-across-forecast-origins" class="slide level2">
+<h2>Ovreall point forecast performance across forecast origins</h2>
+
+<img data-src="dhis2_webinar_files/figure-revealjs/fig-fcc_ac_origins-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-fcc_ac_origins"><p class="caption">
+Figure&nbsp;2: Overall MASE accross forecast origins
+</p></section>
+<section id="ovreall-point-forecast-performance-across-each-location" class="slide level2">
+<h2>Ovreall point forecast performance across each location</h2>
+
+<img data-src="dhis2_webinar_files/figure-revealjs/fig-fcc_ac_locations-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-fcc_ac_locations"><p class="caption">
+Figure&nbsp;3: Overall MASE accross forecast origins for each location.
+</p></section></section>
+<section>
+<section id="section-7" class="title-slide slide level1 center" data-background-color="#212B49">
+<h1></h1>
+<div class="title-slide center">
+<h1>
+WHAT NEXT
+</h1>
+</div>
+</section>
+<section id="section-8" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -317,13 +510,40 @@ What <span class="highlight-blue">NEXT?</span>
 </div><div class="column" style="width:2.5%;">
 
 </div><div class="column" style="width:57.5%;">
+<p><span class="highlight-title">Way forward</span></p>
+<p><br></p>
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Leverage CHAP/DHIS2 based models for supply chain data.</p>
+<p><br></p>
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Evaluate forecast perfromance based on time series structure, region and across products.</p>
+<p><br></p>
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Run order up-to-level based inventory simulations.</p>
+<p><br></p>
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Evaluate how forecast performance translate into inventory decisions.</p>
+</div></div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="images/cover2.png" class="absolute" style="max-height: unset;top: -10%; left: -10%; height: 120%; "></p>
+</div><div class="column" style="width:2.5%;">
+
+</div><div class="column" style="width:57.5%;">
 <p><span class="highlight-title">Key takeaways</span></p>
 <p><br></p>
 <p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>The Idea</strong>: Reusing morbidity models for supply chains is a promising but non-trivial opportunity.</p>
 <p><br></p>
-<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>Our Contribution</strong>: We’re building an evidence-based, practical guide to show when and how to do this.</p>
+<div class="fragment" data-fragment-index="1">
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>Our Contribution</strong>: We’re building an evidence-based, practical guide for when and how to repurpose morbidity models for consumption forecasting, leveraging CHAP’s modelling infrastructure and DHIS2-linked data.</p>
+</div>
 <p><br></p>
-<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>The Impact</strong>: This work directly links forecasting models to operational decisions, aiming to reduce stockouts and improve procurement.</p>
+<div class="fragment" data-fragment-index="2">
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>The Impact</strong>: By aligning forecasts with operational decisions, this work aims to improve stock availability, and inform sourcing/procurement decisions.</p>
+</div>
+<p><br></p>
+<div class="fragment" data-fragment-index="3">
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>Compatibility</strong>: CHAP/DHIS2’s external model interface makes it possible to integrate these forecasting tools seamlessly, no new platform required.</p>
+</div>
 </div></div>
 </section>
 <section id="any-questions-or-thoughts" class="slide level2">
@@ -548,6 +768,44 @@ What <span class="highlight-blue">NEXT?</span>
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

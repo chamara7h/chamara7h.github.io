@@ -193,32 +193,32 @@
     "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-1",
     "title": "Home",
     "section": "",
-    "text": "Outline\n\n\n\nBackground\n\n\n\n\n\n\nThe fundamental question\n\n\n\n\n\n\nWhat we are going to do\n\n\n\n\n\n\nOur current plan\n\n\n\n\n\n\nWhat NEXT?"
+    "text": "Outline\n\n\n\nBackground\n\n\n\n\n\n\nThe fundamental question\n\n\n\n\n\n\nWhat we are going to do\n\n\n\n\n\n\nOur current plan\n\n\n\n\n\n\nInitial results\n\n\n\n\n\n\nWhat NEXT?"
   },
   {
-    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-2",
-    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-2",
+    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-3",
+    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-3",
     "title": "Home",
     "section": "",
-    "text": "The Problem: A tale of two data streams\n\nHealth supply chains are struggling with forecasting at sub-national/ facility level.\n\nOperational realities: Incomplete records, irregular orders, frequent manual adjustments.\nThis masks true demand and leads to a cycle of…\nPersistent, critical stockouts 📉.\n\n\nBut… we have a success story.\nPlatforms like DHIS2 and CHAP have robust, high-performing models for forecasting disease cases (morbidity)."
+    "text": "The Problem: A tale of two data streams\n\nHealth supply chains are struggling with forecasting at sub-national/ facility level.\n\nOperational realities: Incomplete records, irregular orders, frequent manual adjustments.\nThis masks true demand and leads to a cycle of…\nPersistent, critical stockouts 📉.\n\n\n\nBut… we have a success story.\nPlatforms like DHIS2 and CHAP have robust, high-performing models for forecasting disease cases (morbidity)."
   },
   {
     "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#the-fundemental-question",
     "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#the-fundemental-question",
     "title": "Home",
     "section": "The fundemental question",
-    "text": "The fundemental question\n\n✅ We’re good at forecasting cases (e.g., malaria).\n\n❌ We’re struggling with forecasting consumption (e.g., antimalarials).\n\n\nCan we repurpose the successful morbidity models to forecast product consumption?"
+    "text": "The fundemental question\n\n✅ We’re good at forecasting cases (e.g., malaria).\n\n❌ We’re struggling with forecasting consumption (e.g., antimalarials).\n \n\nCan we leverage the CHAP/DHIS2 morbidity models to forecast product consumption in supply chains?"
   },
   {
     "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#the-challenge-why-isnt-this-easy",
     "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#the-challenge-why-isnt-this-easy",
     "title": "Home",
     "section": "The challenge: Why isn’t this easy?",
-    "text": "The challenge: Why isn’t this easy?\n\nCase data and consumption data are different.\n\n\n\n\n Different Data Structures\nConsumption data is “messier”.\n\nMissing entries (e.g., “0” = no consumption, or “0” = data not entered?)\nIntermittency (infrequent demand).\nInconsistent recording.\n\n\n\n\n Different Metadata\nConsumption is affected by logistics.\n\nLead times.\nProcurement cycles.\nExisting stock levels."
+    "text": "The challenge: Why isn’t this easy?\n\nCase data and consumption data are different.\n\n\n\n\n\n Different Data Structures\nConsumption data is “messier”.\n\nMissing entries (e.g., “0” = no consumption, or “0” = data not entered?)\nIntermittency (infrequent demand).\nInconsistent recording.\n\n\n\n\n Different Metadata\nConsumption is affected by logistics.\n\nLead times.\nProcurement cycles.\nExisting stock levels and stockouts."
   },
   {
-    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-3",
-    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-3",
+    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-5",
+    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-5",
     "title": "Home",
     "section": "",
     "text": "Our research questions\n\nTo solve this, we are investigating three key questions:\n\n\n Portability: When can we transfer a model? (Morbidity \\(\\rightarrow\\) Consumption? One product \\(\\rightarrow\\) Another?)\n\n\n\n Decision Translation: How do we turn a statistical forecast into a better inventory order? (Forecast \\(\\rightarrow\\) Action)\n\n\n\n Hierarchical Coherence: Do site-level forecasts reliably add up for district and national planning?"
@@ -238,11 +238,46 @@
     "text": "Our current plan\nOur immediate focus is on WP1 (Portability) and linking to WP2 (Inventory Simulation)."
   },
   {
-    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-4",
-    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-4",
+    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#data-exploration",
+    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#data-exploration",
+    "title": "Home",
+    "section": "Data exploration",
+    "text": "Data exploration\nWe used number of dengue cases in Laos to test the forecasting models.\n\n\nFigure 1: Monthly dengue cases by location."
+  },
+  {
+    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#ovreall-forecast-performance",
+    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#ovreall-forecast-performance",
+    "title": "Home",
+    "section": "Ovreall forecast performance",
+    "text": "Ovreall forecast performance\nBest values in each column are highlighted in bold.\n\n\n\nTable 1\n\n\n\n\n\nModel\nMASE\nQuantile Loss (q10)\nQuantile Loss (q50)\nQuantile Loss (q90)\n\n\n\n\nRandom Forest\n0.864\n107.360\n383.058\n607.857\n\n\nARIMA Madagaskar\n0.902\n165.565\n360.123\n310.765\n\n\nAuto ARIMA Reg\n0.913\n173.929\n367.735\n322.289\n\n\nAuto ARIMA\n0.950\n176.069\n376.163\n309.962\n\n\nLinear Regression\n1.008\n129.647\n416.129\n278.839\n\n\nLightGBM\n1.009\n96.771\n452.020\n752.016\n\n\nLinear Regression Reg\n1.035\n127.927\n391.573\n284.118\n\n\nAuto EWARS\n1.041\n125.371\n421.408\n296.665\n\n\nxgBoost\n1.057\n103.980\n485.837\n817.878\n\n\nINLA baseline\n1.082\n126.139\n432.163\n239.886\n\n\nMean\n1.090\n138.155\n461.150\n347.705\n\n\nETS\n1.099\n124.722\n428.761\n299.443\n\n\nsNaive\n1.217\n138.155\n510.311\n276.443\n\n\nNaïve\n1.221\n143.645\n506.282\n319.259"
+  },
+  {
+    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#ovreall-point-forecast-performance-across-forecast-origins",
+    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#ovreall-point-forecast-performance-across-forecast-origins",
+    "title": "Home",
+    "section": "Ovreall point forecast performance across forecast origins",
+    "text": "Ovreall point forecast performance across forecast origins\n\n\nFigure 2: Overall MASE accross forecast origins"
+  },
+  {
+    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#ovreall-point-forecast-performance-across-each-location",
+    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#ovreall-point-forecast-performance-across-each-location",
+    "title": "Home",
+    "section": "Ovreall point forecast performance across each location",
+    "text": "Ovreall point forecast performance across each location\n\n\nFigure 3: Overall MASE accross forecast origins for each location."
+  },
+  {
+    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-8",
+    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-8",
     "title": "Home",
     "section": "",
-    "text": "Key takeaways\n\n The Idea: Reusing morbidity models for supply chains is a promising but non-trivial opportunity.\n\n Our Contribution: We’re building an evidence-based, practical guide to show when and how to do this.\n\n The Impact: This work directly links forecasting models to operational decisions, aiming to reduce stockouts and improve procurement."
+    "text": "Way forward\n\n Leverage CHAP/DHIS2 based models for supply chain data.\n\n Evaluate forecast perfromance based on time series structure, region and across products.\n\n Run order up-to-level based inventory simulations.\n\n Evaluate how forecast performance translate into inventory decisions."
+  },
+  {
+    "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-9",
+    "href": "talks/dhis2_webinar/slides/dhis2_webinar.html#section-9",
+    "title": "Home",
+    "section": "",
+    "text": "Key takeaways\n\n The Idea: Reusing morbidity models for supply chains is a promising but non-trivial opportunity.\n\n\n Our Contribution: We’re building an evidence-based, practical guide for when and how to repurpose morbidity models for consumption forecasting, leveraging CHAP’s modelling infrastructure and DHIS2-linked data.\n\n\n\n The Impact: By aligning forecasts with operational decisions, this work aims to improve stock availability, and inform sourcing/procurement decisions.\n\n\n\n Compatibility: CHAP/DHIS2’s external model interface makes it possible to integrate these forecasting tools seamlessly, no new platform required."
   },
   {
     "objectID": "talks/dhis2_webinar/slides/dhis2_webinar.html#any-questions-or-thoughts",
