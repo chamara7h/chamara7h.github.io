@@ -23,6 +23,7 @@ header-includes:
   <img src="images/cardiff_logo.png" alt="Cardiff University Logo">
   <img src="images/logo.png" alt="Data Lab Logo">
   <img src="images/uio_HISP.svg" alt="HISP UIO Logo">
+  <img src="images/DHIS2_logo.svg" alt="DHIS2 Logo">
   <img src="images/wgss.png" alt="WGSSS Logo">
   <img src="images/ukri.png" alt="UKRI Logo">
 </div>
@@ -56,7 +57,7 @@ header-includes:
 
 ::: {.step data-step="01"}
 <div class="step-content">
-  <h3>[Background]{.highlight-blue}</h3>
+  <h3>Background</h3>
 </div>
 ::: 
 
@@ -80,6 +81,12 @@ header-includes:
 
 ::: {.step data-step="05"}
 <div class="step-content">
+  <h3>Initial results</h3>
+</div>
+:::
+
+::: {.step data-step="06"}
+<div class="step-content">
   <h3>What [NEXT?]{.highlight-blue}</h3>
 </div>
 :::
@@ -87,6 +94,12 @@ header-includes:
 :::
 
 ::::
+
+# {.title-slide background-color="#212B49"}
+
+<div class="title-slide">
+  <h1>BACKGROUND</h1>
+</div>
 
 ## {}
 
@@ -115,6 +128,8 @@ Health supply chains are struggling with forecasting at sub-national/ facility l
 
 ::: {.fragment fragment-index=1}
 
+<br>
+
 [But... we have a success story.]{.highlight-blue-big}
 
 Platforms like [DHIS2]{.highlight-blue} and [CHAP]{.highlight-blue} have robust, high-performing models for forecasting disease cases (morbidity).
@@ -137,9 +152,10 @@ Platforms like [DHIS2]{.highlight-blue} and [CHAP]{.highlight-blue} have robust,
 ❌ We're struggling with forecasting consumption (e.g., antimalarials).
 
 <br>
+<br>
 
 ::: {.fragment}
-[Can we repurpose the successful morbidity models to forecast product consumption?]{.highlight-blue-big}
+[Can we leverage the CHAP/DHIS2 morbidity models to forecast product consumption in supply chains?]{.highlight-blue-big}
 :::
 
 ## The challenge: Why isn't this easy?
@@ -150,20 +166,20 @@ Case data and consumption data are different.
 
 <br>
 
+<div class="stretch-cols">
+
 :::: {.columns}
 
 ::: {.column width="50%"}
 
-::: {.fragment fragment-index=1}
+::: {.fragment fragment-index=1 .minimal-box} 
 
 <i class="fa-solid fa-database ch-icon" aria-hidden="true"></i> **Different Data Structures** 
 
 Consumption data is ["messier"]{.highlight-blue}.
 
 - Missing entries (e.g., "0" = no consumption, or "0" = data not entered?)
-
 - Intermittency (infrequent demand).
-
 - Inconsistent recording.
   
 :::
@@ -172,7 +188,7 @@ Consumption data is ["messier"]{.highlight-blue}.
 
 ::: {.column width="50%"}
 
-::: {.fragment fragment-index=2}
+::: {.fragment fragment-index=2 .minimal-box}  
 
 <i class="fa-solid fa-list-check ch-icon" aria-hidden="true"></i> **Different Metadata**
 
@@ -180,13 +196,21 @@ Consumption is affected by logistics.
 
 - Lead times.
 - Procurement cycles.
-- Existing stock levels.
+- Existing stock levels and stockouts.
   
 :::
 
 :::
 
 ::::
+
+</div>
+
+# {.title-slide background-color="#212B49"}
+
+<div class="title-slide">
+  <h1>OUR APPROACH</h1>
+</div>
 
 ## {} 
 
@@ -276,17 +300,279 @@ $\downarrow$
 
 Our immediate focus is on WP1 (*Portability*) and linking to WP2 (*Inventory Simulation*).
 
-<br>
-
 ![](images/wp1.svg){style="width:100%; height:auto; "}
 
+# {.title-slide background-color="#212B49"}
+
+<div class="title-slide">
+  <h1>INITIAL FINDINGS</h1>
+  <h2>Forecasting using morbidity data.</h2>
+</div>
+
+
+## Data exploration
+
+We used number of dengue cases in Laos to test the forecasting models.
+
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(tsibble)
+library(fable)
+library(feasts)
+library(ggthemes)
+library(viridis)
+library(patchwork)
+library(kableExtra)
+
+# Read and prepare monthly data -------------------------------------------
+
+dengue_monthly <- read_csv('data/tidy_data/historic_data.csv') |> 
+  mutate(time_period = yearmonth(time_period)) |> 
+  select(-c(`...1`, parent)) |> 
+  as_tsibble(index = time_period,
+             key = location) |> 
+  mutate(disease_cases = if_else(is.na(disease_cases), 0, disease_cases))
+
+# Forecast accuracy
+
+fc_acc <- read.csv('data/results/fc_evaluations.csv') |> 
+  mutate(origin = yearmonth(forecast_start),
+         model = factor(model))
+
+```
+
+```{r}
+#| label: fig-ts_feat
+#| echo: false
+#| cache: true
+#| out.width: "100%"
+#| fig-cap: "Monthly dengue cases by location."
+
+# plot
+
+dengue_monthly |>
+  ggplot(aes(x = time_period, y = disease_cases, group = location, colour = location)) +
+  geom_line(size = 0.7, colour = "#1a2b48", alpha = 0.95) +
+  facet_wrap(~ location, scales = "free_y", ncol = 4) + 
+  labs(
+    x = "Date",
+    y = "Number of cases",
+    # title = "Monthly dengue cases by location",
+  ) +
+  scale_colour_viridis_d(begin = 0.15, end = 0.85) +
+  theme_few(base_size = 11) +
+  theme(
+    panel.background   = element_rect(fill = "#f9f9f9", colour = NA),
+    panel.grid.major.y = element_line(colour = "grey92", size = 0.35),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor   = element_blank(),
+    panel.border       = element_rect(color = "lightgrey", fill = NA, size = 0.4),
+    strip.background   = element_rect(fill = "#ffffff", colour = "#e6e6e6"),
+    strip.text         = element_text(face = "bold", size = 9, colour = "#1a2b48"),
+    axis.title         = element_text(face = "bold", size = 10, colour = "#1a2b48"),
+    axis.text          = element_text(size = 8, colour = "#1a2b48"),
+    plot.title         = element_text(face = "bold", size = 13, colour = "#1a2b48", hjust = 0),
+    plot.subtitle      = element_text(size = 10, colour = "#1a2b48", margin = margin(b = 8)),
+    legend.position    = "none",
+    panel.spacing      = unit(0.6, "lines")
+  )
+
+
+```
+
+
+## Ovreall forecast performance
+
+Best values in each column are highlighted in bold.
+
+```{r}
+#| echo: false
+#| results: asis
+#| label: tbl-fc_acc
+
+set_to_bold_min_html <- function(tbl, cols = 2:3, digits = 3) {
+  df <- as.data.frame(tbl, stringsAsFactors = FALSE)
+  cols <- cols[cols <= ncol(df)]
+  if (length(cols) == 0) return(df)
+  
+  for (i in cols) {
+    vec_num <- suppressWarnings(as.numeric(as.character(df[[i]])))
+    
+    if (all(is.na(vec_num))) {
+      df[[i]] <- rep("", nrow(df))
+      next
+    }
+    
+    rounded <- round(vec_num, digits)
+    best_mask <- !is.na(rounded) & rounded == min(rounded, na.rm = TRUE)
+    
+    fmt <- paste0("%.", digits, "f")
+    formatted <- ifelse(is.na(rounded), "", sprintf(fmt, rounded))
+    
+    formatted[best_mask] <- paste0("<strong>", formatted[best_mask], "</strong>")
+    
+    df[[i]] <- formatted
+  }
+  
+  return(df)
+}
+
+fc_acc |> 
+  select(model, item_id, MASE, QuantileLoss.0.1., QuantileLoss.0.5., QuantileLoss.0.9.) |> 
+  rename(quantile_loss_10 = `QuantileLoss.0.1.`,
+         quantile_loss_50 = `QuantileLoss.0.5.`,
+         quantile_loss_90 = `QuantileLoss.0.9.`,
+         location = item_id) |> 
+  group_by(model) |> 
+  summarise(mase = round(mean(MASE), 3),
+            quantile_loss_10 = round(mean(quantile_loss_10), 3),
+            quantile_loss_50 = round(mean(quantile_loss_50), 3),
+            quantile_loss_90 = round(mean(quantile_loss_90), 3),
+            .groups = 'drop') |> 
+  arrange(mase) |> 
+  rename('Model' = model, 
+         'MASE' = mase,
+         'Quantile Loss (q10)' = quantile_loss_10,
+         'Quantile Loss (q50)' = quantile_loss_50,
+         'Quantile Loss (q90)' = quantile_loss_90) |> 
+  
+  set_to_bold_min_html(cols = 2:5, digits = 3) |> 
+  
+  kbl(
+    format     = "html",
+    escape     = FALSE, 
+    table.attr = 'class="table-custom"',
+    align      = "lrrrr" 
+  ) |>
+  kable_styling(full_width = FALSE, font_size = 32)
+
+```
+
+## Ovreall point forecast performance across forecast origins
+
+```{r}
+#| label: fig-fcc_ac_origins
+#| echo: false
+#| cache: false
+#| fig-cap: "Overall MASE accross forecast origins"
+
+fc_acc |> 
+  group_by(origin, model) |>
+  summarise(MASE = mean(MASE)) |>
+  ggplot(aes(x = origin, y = MASE, group = model, colour = model)) +
+  geom_line(size = 0.5, alpha = 0.95) +
+  geom_point(aes(shape = model), size = 2, stroke = 0.75) +   # shapes here
+  scale_color_viridis_d(option = "viridis", begin = 0.1, end = 0.95) +
+  scale_shape_manual(values = 1:14) +
+  labs(
+    x = "Forecast Origin",
+    y = "MASE",
+    colour = "Model",
+    shape = "Model"
+  ) +
+  theme_few(base_size = 10) +
+  theme(
+    panel.background   = element_rect(fill = "#f9f9f9", colour = NA),
+    panel.grid.major.y = element_line(size = 0.35, colour = "grey90"),
+    panel.grid.minor   = element_blank(),
+    strip.background   = element_rect(fill = "#ffffff", colour = "#e6e6e6"),
+    strip.text         = element_text(face = "bold", size = 8, colour = "#1a2b48"),
+    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
+    axis.text          = element_text(colour = "#1a2b48"),
+    legend.position    = "right",
+    legend.title       = element_text(size = 10, face = 'bold'),
+    legend.text        = element_text(size = 8)
+  ) 
+
+```
+
+## Ovreall point forecast performance across each location
+
+```{r}
+#| label: fig-fcc_ac_locations
+#| echo: false
+#| cache: false
+#| fig-cap: "Overall MASE accross forecast origins for each location."
+
+fc_acc |> 
+  ggplot(aes(x = origin, y = MASE, group = model, colour = model)) +
+  geom_line(size = 0.5, alpha = 0.95) +
+  geom_point(aes(shape = model), size = 2, stroke = 0.75) +   # shapes here
+  scale_color_viridis_d(option = "viridis", begin = 0.1, end = 0.95) +
+  scale_shape_manual(values = 1:14) +
+  facet_wrap(~ item_id, scales = "free", ncol = 3) +
+  labs(
+    x = "Forecast Origin",
+    y = "MASE",
+    colour = "Model",
+    shape = "Model"
+  ) +
+  theme_few(base_size = 8) +
+  theme(
+    panel.background   = element_rect(fill = "#f9f9f9", colour = NA),
+    panel.grid.major.y = element_line(size = 0.35, colour = "grey90"),
+    panel.grid.minor   = element_blank(),
+    strip.background   = element_rect(fill = "#ffffff", colour = "#e6e6e6"),
+    strip.text         = element_text(face = "bold", size = 5, colour = "#1a2b48"),
+    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
+    axis.text          = element_text(colour = "#1a2b48"),
+    legend.position    = "right",
+    legend.title       = element_text(size = 8, face = 'bold'),
+    legend.text        = element_text(size = 6)
+  )
+
+```
+# {.title-slide background-color="#212B49"}
+
+<div class="title-slide">
+  <h1>WHAT NEXT</h1>
+</div>
+
+## {}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/wp2.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+
+[Way forward]{.highlight-title}
+
+<br>
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Leverage CHAP/DHIS2 based models for supply chain data.
+
+<br>
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Evaluate forecast perfromance based on time series structure, region and across products.
+
+<br>
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Run order up-to-level based inventory simulations.
+
+<br>
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Evaluate how forecast performance translate into inventory decisions.
+
+:::
+
+::::
 
 ## {} 
 
 :::: {.columns}
 
 ::: {.column width="40%"}
-![](images/wp2.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+![](images/cover2.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
 :::
 
 ::: {.column width="2.5%"}
@@ -303,11 +589,27 @@ Our immediate focus is on WP1 (*Portability*) and linking to WP2 (*Inventory Sim
 
 <br>
 
-<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **Our Contribution**: We're building an evidence-based, practical guide to show when and how to do this.
+::: {.fragment fragment-index=1}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **Our Contribution**: We’re building an evidence-based, practical guide for when and how to repurpose morbidity models for consumption forecasting, leveraging CHAP’s modelling infrastructure and DHIS2-linked data.
+
+:::
 
 <br>
 
-<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **The Impact**: This work directly links forecasting models to operational decisions, aiming to reduce stockouts and improve procurement.
+::: {.fragment fragment-index=2}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **The Impact**: By aligning forecasts with operational decisions, this work aims to improve stock availability, and inform sourcing/procurement decisions.
+
+:::
+
+<br>
+
+::: {.fragment fragment-index=3}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **Compatibility**: CHAP/DHIS2’s external model interface makes it possible to integrate these forecasting tools seamlessly, no new platform required.
+
+:::
 
 :::
 
