@@ -1,0 +1,163 @@
+---
+title: "From Cases to Consumption: Evaluating Forecasting Model Portability for Public-Health Supply Chains"
+description: "Conference: LOM Section Annual Conference (LOMSAC) 2026, Cardiff Business School."
+author: "Harsha Halgamuwe Hewage"
+date: "2026-01-15"
+image: "cover.png"
+categories:
+  - Forecasting
+  - Inventory
+  - Climate Health
+  - DHIS2
+  - CHAP
+link-external-newwindow: true
+---
+
+```{=html}
+
+<style>
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap');
+
+/* GENERAL STYLING */
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hero-section h1 {
+  font-size: 2.6em; /* Slightly adjusted for a longer title */
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Professional Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.content-section h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1a2b48;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+</style>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<div class="hero-section">
+  <h1 class="title">From Cases to Consumption: Evaluating Forecasting Model Portability for Public-Health Supply Chains</h1>
+  <p class="description">Conference: LOM Section Annual Conference (LOMSAC) 2026, Cardiff Business School.</p>
+  <p class="author-date">Harsha Halgamuwe Hewage | 2026-01-15</p>
+  <div class="cta-buttons">
+    <a href="slides/lomsac_2026.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> View Slides
+    </a>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2>Context</h2>
+
+  <p>
+    This work is motivated by a persistent disconnect in public health analytics between
+    <strong>what is forecast</strong> and <strong>what is procured</strong>.
+    Platforms such as :contentReference[oaicite:0]{index=0} and the
+    :contentReference[oaicite:1]{index=1}
+    have substantially advanced the forecasting of disease incidence, often incorporating
+    climate and environmental signals to provide early warning of outbreaks.
+  </p>
+
+  <p>
+    Yet, operational decisions do not act on cases alone.
+    Health systems must translate predicted morbidity into product requirements such as
+    vaccines, antimalarials, and diagnostics.
+    At this point, forecasting performance often deteriorates.
+    Consumption data are incomplete, irregular, and frequently censored by stockouts,
+    reporting delays, and supply interruptions, making direct modelling of demand both
+    unreliable and inconsistent across settings.
+  </p>
+
+  <p>
+    This presentation examines <strong>forecasting model portability</strong> across this divide.
+    We ask whether models developed and validated for disease cases can be meaningfully
+    transferred to forecast health commodity consumption, and under what conditions this
+    transfer fails.
+    Using routine surveillance and logistics data, we compare three strategies:
+    direct reuse of case-based models, targeted fine-tuning using supply-chain covariates
+    such as campaign timing or climate signals, and full retraining on consumption data.
+  </p>
+
+  <p>
+    The contribution is practical rather than purely methodological.
+    We provide evidence on when portability is viable, when it introduces systematic bias,
+    and how forecasting choices propagate into inventory decisions.
+    By linking predictive performance to downstream ordering and stock availability,
+    the work supports a shift from reactive replenishment to anticipatory logistics.
+    This is particularly relevant for climate-sensitive diseases, where early warning only
+    delivers value if commodities arrive before demand materialises.
+  </p>
+</div>
+
+```
