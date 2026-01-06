@@ -700,11 +700,130 @@
     "text": "Materials\n\n\nYou can find the slides here."
   },
   {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-1",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-1",
+    "title": "Home",
+    "section": "",
+    "text": "Outline\n\n\n\nBackground\n\n\n\n\n\n\nThe fundamental question\n\n\n\n\n\n\nWhat we are going to do\n\n\n\n\n\n\nOur initial scope\n\n\n\n\n\n\nWhat did we find\n\n\n\n\n\n\nWhat NEXT?"
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-3",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-3",
+    "title": "Home",
+    "section": "",
+    "text": "The Problem: A tale of two data streams\n\nHealth supply chains are struggling with forecasting at sub-national/ facility level.\n\nOperational realities: Incomplete records, irregular orders, frequent manual adjustments.\nThis masks true demand and leads to a cycle of…\nPersistent, critical stockouts 📉.\n\n\n\nBut… we have a success story.\n\nPlatforms like DHIS2 and CHAP have robust, high-performing models for forecasting disease cases (morbidity)."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-4",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-4",
+    "title": "Home",
+    "section": "",
+    "text": "What is DHIS2 and CHAP?\n\n\n DHIS2 (District Health Information Software 2) is a free, open-source, web-based health information platform.\n\n\n\n It is the world’s largest Health Management Information System (HMIS), used by Ministries of Health in over 80 countries.\n\n\n\n CHAP stands for the Climate Health Analytics Platform.\n\n\n\n CHAP is a predictive modelling layer integrated within DHIS2, designed to support climate-informed disease forecasting and early warning."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#the-fundemental-question",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#the-fundemental-question",
+    "title": "Home",
+    "section": "The fundemental question",
+    "text": "The fundemental question\n\n✅ We’re good at forecasting cases (e.g., malaria).\n\n❌ We’re struggling with forecasting consumption (e.g., antimalarials) at sub-national level.\n\n\nCan the same CHAP morbidity models and pipelines be ported to health commodity demand and inventory decisions?\n\n\n\n\nPortability lens\n\nSame platform (DHIS2/CHAP)\nSame model pipelines\nNew target (consumption)"
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#the-challenge-why-isnt-this-easy",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#the-challenge-why-isnt-this-easy",
+    "title": "Home",
+    "section": "The challenge: Why isn’t this easy?",
+    "text": "The challenge: Why isn’t this easy?\n\nCase data and consumption data are different.\n\n\n\n\n\n Different Data Structures\nConsumption data is “messier”.\n\nMissing entries (e.g., “0” = no consumption, or “0” = data not entered?)\nIntermittency (infrequent demand).\nInconsistent recording.\n\n\n\n\n Different Metadata\nConsumption is affected by logistics.\n\nLead times.\nProcurement cycles.\nExisting stock levels and stockouts."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-6",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-6",
+    "title": "Home",
+    "section": "",
+    "text": "What we are going to do\n\n\n Apply the same CHAP morbidity models (no extra tuning) to product demand (malaria commodities, vaccines).\n\n\n\n Link forecasts to operations: evaluate both forecast accuracy and inventory impact.\n\n\n\n Build a portability matrix: when can we transfer a model?\n\n\n\n Design an implementation workflow for DHIS2/CHAP.\n\n\n\n Provide R scripts, CHAP YAML configs and sample datasets for full reproducibility."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#our-experimental-workflow",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#our-experimental-workflow",
+    "title": "Home",
+    "section": "Our experimental workflow",
+    "text": "Our experimental workflow"
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#overview-of-the-candidate-models",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#overview-of-the-candidate-models",
+    "title": "Home",
+    "section": "Overview of the candidate models",
+    "text": "Overview of the candidate models\n\n\n\n\n\nMethod\nCovariates\n\n\n\n\nAuto EWARS\nPopulation, rainfall, teamperature\n\n\nINLA Baseline\nNone\n\n\nNaïve\nNone\n\n\nsNaive\nNone\n\n\nMean\nNone\n\n\nETS\nNone\n\n\nARIMA\nNone\n\n\nARIMA Climate\nRainfall, temperature\n\n\nARIMA Madagaskar\nRainfall (Lag 3), temperature (Lag 3)\n\n\nLinear Regression\nTrend, seasonality\n\n\nLinear Regression Climate\nTrend, seasonality, rainfall, teamperature\n\n\nLightGBM\nPercentage of zero values, lags of target variable (lag 6 - 12), rainfall, temperature, month, healthcare facility code, product code\n\n\nXGBoost\nPercentage of zero values, lags of target variable (lag 6 - 12), rainfall, temperature, month, healthcare facility code, product code\n\n\nRandom Forest\nPercentage of zero values, lags of target variable (lag 6 - 12), rainfall, temperature, month, healthcare facility code, product code"
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#data-exploration",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#data-exploration",
+    "title": "Home",
+    "section": "Data exploration",
+    "text": "Data exploration\n\n\nFigure 1: Classification of all morbidity and consumption series using the ln(CV²) and ln(IDI) map. Each point represents a monthly series plotted on the logarithmic CV²–IDI scale."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#average-forecast-model-rankings",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#average-forecast-model-rankings",
+    "title": "Home",
+    "section": "Average forecast model rankings",
+    "text": "Average forecast model rankings\n\n\nFigure 2: Average point forecast (MASE) and probabilistic (quantile loss) ranks. Methods on the y-axis are ordered from best (top) to worst (bottom) based on their overall average rank across all domains. Lower ranks indicate better performance."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#point-forecast-accuracy-distribution",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#point-forecast-accuracy-distribution",
+    "title": "Home",
+    "section": "Point forecast accuracy distribution",
+    "text": "Point forecast accuracy distribution\n\n\nFigure 3: Distribution of MASE across morbidity and supply chain datasets. Methods are sorted by median error, with the best-performing methods positioned at the bottom of each facet."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#probabilistic-forecast-accuracy-distribution",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#probabilistic-forecast-accuracy-distribution",
+    "title": "Home",
+    "section": "Probabilistic forecast accuracy distribution",
+    "text": "Probabilistic forecast accuracy distribution\n\n\nFigure 4: Distribution of quantile loss (q90) across morbidity and supply chain datasets. Methods are sorted by median error, with the best-performing methods positioned at the bottom of each facet. The x-axis employs an inverse hyperbolic sine (\\(asinh\\)) transformation to visualize extreme outliers."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#overall-inventory-performance",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#overall-inventory-performance",
+    "title": "Home",
+    "section": "Overall inventory performance",
+    "text": "Overall inventory performance\n\n\nFigure 5: Inventory performance across malaria-product and vaccine-product simulations using quantile-based order-up-to policies (q80–q97.5)."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#execution-scalability-of-all-forecasting-methods",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#execution-scalability-of-all-forecasting-methods",
+    "title": "Home",
+    "section": "Execution scalability of all forecasting methods",
+    "text": "Execution scalability of all forecasting methods\n\n\nFigure 6: Model portability metrics for all candidate forecasting methods, relative to the Mean method. Relative MASE and QL(0.9) are reported separately for malaria and vaccine products; values below 1 indicate improvement over the Mean method."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#proposed-end-to-end-forecasting-to-inventory-architecture",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#proposed-end-to-end-forecasting-to-inventory-architecture",
+    "title": "Home",
+    "section": "Proposed end-to-end forecasting-to-inventory architecture",
+    "text": "Proposed end-to-end forecasting-to-inventory architecture\n \n\n\nSolid arrows represent data flow, and dashed arrows represent information feedback for learning."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-9",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-9",
+    "title": "Home",
+    "section": "",
+    "text": "Way forward\n\n\n Build a harmonised data foundation for supply chain forecasting.\n\n\n\n Conduct a controlled pilot using Auto ARIMA / Auto ETS.\n\n\n\n Implement quantile-based, uncertainty-driven inventory policies.\n\n\n\n Evaluate the pilot instance against real operational outcomes.\n\n\n\n Introduce preference learning and automated model selection.\n\n\n\n Automate contextual knowledge capture in the logistics stream."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#any-questions-or-thoughts",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#any-questions-or-thoughts",
+    "title": "Home",
+    "section": "Any questions or thoughts? 💬",
+    "text": "Any questions or thoughts? 💬"
+  },
+  {
     "objectID": "talks/index.html",
     "href": "talks/index.html",
     "title": "Home",
     "section": "",
-    "text": "From Cases to Consumption: Evaluating CHAP/DHIS2 Model Portability for Health Supply Chains\n\n\n\nForecasting\n\nInventory\n\nClimate Health\n\nDHIS2\n\nCHAP\n\n\n\nWebinar: DHIS2 Climate and Health Tools for Planning and Monitoring Immunization Programmes.\n\n\n\nHarsha Halgamuwe Hewage\n\n\nOct 29, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: Estimating censored demand in family planning supply chains with the Truncated Conformal Kalman Filter\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\n5th Welsh Postgraduate Research Cluster Workshop in Economy, Enterprise and Productivity\n\n\n\nHarsha Halgamuwe Hewage\n\n\nSep 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nEURO 2025 Leeds, UK\n\n\n\nHarsha Halgamuwe Hewage\n\n\nJun 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nIIF UK Chapter: Quarterly Forecasting Forum\n\n\n\nHarsha Halgamuwe Hewage\n\n\nMay 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nData Lab for Social Good Seminar\n\n\n\nHarsha Halgamuwe Hewage\n\n\nMay 20, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "From Cases to Consumption: Evaluating Forecasting Model Portability for Public-Health Supply Chains\n\n\n\nForecasting\n\nInventory\n\nClimate Health\n\nDHIS2\n\nCHAP\n\n\n\nConference: LOM Section Annual Conference (LOMSAC) 2026, Cardiff Business School.\n\n\n\nHarsha Halgamuwe Hewage\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Cases to Consumption: Evaluating CHAP/DHIS2 Model Portability for Health Supply Chains\n\n\n\nForecasting\n\nInventory\n\nClimate Health\n\nDHIS2\n\nCHAP\n\n\n\nWebinar: DHIS2 Climate and Health Tools for Planning and Monitoring Immunization Programmes.\n\n\n\nHarsha Halgamuwe Hewage\n\n\nOct 29, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: Estimating censored demand in family planning supply chains with the Truncated Conformal Kalman Filter\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\n5th Welsh Postgraduate Research Cluster Workshop in Economy, Enterprise and Productivity\n\n\n\nHarsha Halgamuwe Hewage\n\n\nSep 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nEURO 2025 Leeds, UK\n\n\n\nHarsha Halgamuwe Hewage\n\n\nJun 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nIIF UK Chapter: Quarterly Forecasting Forum\n\n\n\nHarsha Halgamuwe Hewage\n\n\nMay 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nData Lab for Social Good Seminar\n\n\n\nHarsha Halgamuwe Hewage\n\n\nMay 20, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "phd/index.html",
@@ -1845,7 +1964,7 @@
     "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.",
     "title": "Home",
     "section": "Now it is your turn.",
-    "text": "Now it is your turn.\n\n\n\n\n\n\nCreate a GitHub account if you don’t already have one, and make sure you have Git installed on your laptop.\nInstall and load the usethis and gitcreds packages.\nConfigure git then run create_github_token(), and follow the instructions to generate a token.\nRun gitcreds_set() and paste in the token when prompted.\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+    "text": "Now it is your turn.\n\n\n\n\n\n\nCreate a GitHub account if you don’t already have one, and make sure you have Git installed on your laptop.\nInstall and load the usethis and gitcreds packages.\nConfigure git then run create_github_token(), and follow the instructions to generate a token.\nRun gitcreds_set() and paste in the token when prompted.\n\n\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
   },
   {
     "objectID": "lab/quarto_website/slides/quarto_website.html#start-with-a-template",
@@ -1859,7 +1978,7 @@
     "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-1",
     "title": "Home",
     "section": "Now it is your turn.",
-    "text": "Now it is your turn.\n\n\n\n\n\n\nGet the starter template.\nOpen index.qmd\nPreview index.qmd\n\n\n\n\n\n\n−+\n02:00\n\n\n\n\nImage generated using 04-mini-high"
+    "text": "Now it is your turn.\n\n\n\n\n\n\nGet the starter template.\nOpen index.qmd\nPreview index.qmd\n\n\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
   },
   {
     "objectID": "lab/quarto_website/slides/quarto_website.html#home-page-structure",
@@ -1887,7 +2006,7 @@
     "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-2",
     "title": "Home",
     "section": "Now it is your turn.",
-    "text": "Now it is your turn.\n\n\n\n\n\n\nEdit the content in index.qmd to reflect you.\nTry different templates and pick one.\nEdit the links to point at your own profiles, or add different links.\nReplace the image with your image.\nExperiment with image-shape.\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+    "text": "Now it is your turn.\n\n\n\n\n\n\nEdit the content in index.qmd to reflect you.\nTry different templates and pick one.\nEdit the links to point at your own profiles, or add different links.\nReplace the image with your image.\nExperiment with image-shape.\n\n\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
   },
   {
     "objectID": "lab/quarto_website/slides/quarto_website.html#understand-the-website-structure",
@@ -1922,7 +2041,7 @@
     "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-3",
     "title": "Home",
     "section": "Now it is your turn.",
-    "text": "Now it is your turn.\n\n\n\n\n\n\nOpen up your _quarto.yml file and experiment with the colors.\nOpen up your _quarto.yml file and experiment with the fonts.\nOpen up your _quarto.yml file and experiment with the sizing.\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+    "text": "Now it is your turn.\n\n\n\n\n\n\nOpen up your _quarto.yml file and experiment with the colors.\nOpen up your _quarto.yml file and experiment with the fonts.\nOpen up your _quarto.yml file and experiment with the sizing.\n\n\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
   },
   {
     "objectID": "lab/quarto_website/slides/quarto_website.html#adding-pages",
@@ -1964,14 +2083,14 @@
     "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-4",
     "title": "Home",
     "section": "Now it is your turn.",
-    "text": "Now it is your turn.\n\n\n\n\n\n\nCustomize your navigation bar title\nExperiment with the position of your links in the navbar: left, right or a mix\nAdd at least one item to tools in your navbar\nTry both top navigation and side navigation\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+    "text": "Now it is your turn.\n\n\n\n\n\n\nCustomize your navigation bar title\nExperiment with the position of your links in the navbar: left, right or a mix\nAdd at least one item to tools in your navbar\nTry both top navigation and side navigation\n\n\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
   },
   {
     "objectID": "lab/quarto_website/slides/quarto_website.html#break",
     "href": "lab/quarto_website/slides/quarto_website.html#break",
     "title": "Home",
     "section": "Break",
-    "text": "Break\n\n\n\n\n\n\nCtrl+Alt+Coffee ☕ — reboot in 10 mins.\n\n\n\n\n\n\n−+\n10:00\n\n\n\n\nImage generated using 04-mini-high"
+    "text": "Break\n\n\n\n\n\n\nCtrl+Alt+Coffee ☕ — reboot in 10 mins.\n\n\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
   },
   {
     "objectID": "lab/quarto_website/slides/quarto_website.html#what-is-listing-and-why-we-need-it",
@@ -1992,7 +2111,7 @@
     "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-5",
     "title": "Home",
     "section": "Now it is your turn.",
-    "text": "Now it is your turn.\n\n\n\n\n\n\n(Repeat) Make a new page blog/index.qmd which is a listing\nExperiment with type: default, grid or table\n\n\n\n\n\n\n−+\n05:00\n\n\n\n\nImage generated using 04-mini-high"
+    "text": "Now it is your turn.\n\n\n\n\n\n\n(Repeat) Make a new page blog/index.qmd which is a listing\nExperiment with type: default, grid or table\n\n\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
   },
   {
     "objectID": "lab/quarto_website/slides/quarto_website.html#more-options-in-listings",
@@ -2027,7 +2146,7 @@
     "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-6",
     "title": "Home",
     "section": "Now it is your turn.",
-    "text": "Now it is your turn.\n\n\n\n\n\n\nTest different customisations in listing\nEdit and customise yml in one of your blog posts\nAdd all the pages to your site navigation\n\n\n\n\n\n\n−+\n10:00\n\n\n\n\nImage generated using 04-mini-high"
+    "text": "Now it is your turn.\n\n\n\n\n\n\nTest different customisations in listing\nEdit and customise yml in one of your blog posts\nAdd all the pages to your site navigation\n\n\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
   },
   {
     "objectID": "lab/quarto_website/slides/quarto_website.html#create-a-new-quarto-project",
@@ -2069,7 +2188,7 @@
     "href": "lab/quarto_website/slides/quarto_website.html#now-it-is-your-turn.-7",
     "title": "Home",
     "section": "Now it is your turn.",
-    "text": "Now it is your turn.\n\n\n\n\n\n\nCreate the quarto website project folder\nCreate Github repo\nLink your local folder with the Github repo\nCreate the workflow\nPublish your website\n\n\n\n\n\n\n−+\n07:30\n\n\n\n\nImage generated using 04-mini-high"
+    "text": "Now it is your turn.\n\n\n\n\n\n\nCreate the quarto website project folder\nCreate Github repo\nLink your local folder with the Github repo\nCreate the workflow\nPublish your website\n\n\n\n\n\n\n\n\n\nImage generated using 04-mini-high"
   },
   {
     "objectID": "lab/quarto_website/slides/quarto_website.html#resources-to-keep-learning",
@@ -2265,7 +2384,7 @@
     "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.",
     "title": "Home",
     "section": "Lets promote Brand A cont.",
-    "text": "Lets promote Brand A cont.\n\n\n\n−+\n10:00\n\n\n\n\nWe can represent this situation using a discrete-time Markov chain:\n\nWe are using some shorthand notation: \\(p_{ij} = Pr(X_{n+1} = j \\,|\\, X_n = i)\\)"
+    "text": "Lets promote Brand A cont.\n\n\n\n\n\n\nWe can represent this situation using a discrete-time Markov chain:\n\nWe are using some shorthand notation: \\(p_{ij} = Pr(X_{n+1} = j \\,|\\, X_n = i)\\)"
   },
   {
     "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-1",
@@ -2300,7 +2419,7 @@
     "href": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-5",
     "title": "Home",
     "section": "Lets promote Brand A cont.",
-    "text": "Lets promote Brand A cont.\n\n\n\n−+\n10:00\n\n\n\n\nRecall that: \\(\\mathbf{q}^{(n)}\\) = vector of state probabilities after \\(n\\) time steps (this is the vector of expected market shares in our task) and \\(\\mathbf{P}\\) = transition matrix.\n\nWe have already seen that \\(\\mathbf{q}^{(n)}\\) appears to converge towards a limit as \\(n\\) increases. If we use \\(\\boldsymbol{\\pi}\\) to denote the limiting vector, i.e. \\(\\boldsymbol{\\pi} \\;=\\;\\lim_{n \\to \\infty}\\mathbf{q}^{(n)},\\) then we can take limits to obtain:\n\\[\n\\boldsymbol{\\pi}P = \\boldsymbol{\\pi}\n\\]\nNote: \\(\\boldsymbol{\\pi} = (\\pi_1,\\pi_2)\\), where the numbers \\(\\pi_1\\) and \\(\\pi_2\\) are “unknowns.”"
+    "text": "Lets promote Brand A cont.\n\n\n\n\n\n\nRecall that: \\(\\mathbf{q}^{(n)}\\) = vector of state probabilities after \\(n\\) time steps (this is the vector of expected market shares in our task) and \\(\\mathbf{P}\\) = transition matrix.\n\nWe have already seen that \\(\\mathbf{q}^{(n)}\\) appears to converge towards a limit as \\(n\\) increases. If we use \\(\\boldsymbol{\\pi}\\) to denote the limiting vector, i.e. \\(\\boldsymbol{\\pi} \\;=\\;\\lim_{n \\to \\infty}\\mathbf{q}^{(n)},\\) then we can take limits to obtain:\n\\[\n\\boldsymbol{\\pi}P = \\boldsymbol{\\pi}\n\\]\nNote: \\(\\boldsymbol{\\pi} = (\\pi_1,\\pi_2)\\), where the numbers \\(\\pi_1\\) and \\(\\pi_2\\) are “unknowns.”"
   },
   {
     "objectID": "lab/dl4sg_marcov/materials/dl4sg_markov.html#lets-promote-brand-a-cont.-6",
@@ -2468,7 +2587,7 @@
     "href": "lab/intro_method_skills/slides/intro_method_skills.html#activity-locating-your-paradigm",
     "title": "Home",
     "section": "Activity – Locating your paradigm",
-    "text": "Activity – Locating your paradigm\n\n\n\n−+\n05:00\n\n\n\n\nThink-Pair-Share: What discipline or field are you in? Discuss which research paradigm(s) are common in your field.\nAre there taken-for-granted assumptions about what should be studied, how to study it, and what counts as evidence in your field?"
+    "text": "Activity – Locating your paradigm\n\n\n\n\n\n\nThink-Pair-Share: What discipline or field are you in? Discuss which research paradigm(s) are common in your field.\nAre there taken-for-granted assumptions about what should be studied, how to study it, and what counts as evidence in your field?"
   },
   {
     "objectID": "lab/intro_method_skills/slides/intro_method_skills.html#principle-objectivity",
@@ -2503,7 +2622,7 @@
     "href": "lab/intro_method_skills/slides/intro_method_skills.html#activity-ethics-scenario",
     "title": "Home",
     "section": "Activity – Ethics scenario",
-    "text": "Activity – Ethics scenario\n\n\n\n−+\n05:00\n\n\n\n\nImagine you are conducting interviews on a sensitive topic (e.g., mental health). How would you ensure your study is ethical?"
+    "text": "Activity – Ethics scenario\n\n\n\n\n\n\nImagine you are conducting interviews on a sensitive topic (e.g., mental health). How would you ensure your study is ethical?"
   },
   {
     "objectID": "lab/intro_method_skills/slides/intro_method_skills.html#quantitative-research",
@@ -2545,7 +2664,7 @@
     "href": "lab/intro_method_skills/slides/intro_method_skills.html#activity-plan-a-study",
     "title": "Home",
     "section": "Activity – Plan a study",
-    "text": "Activity – Plan a study\n\n\n\n−+\n10:00\n\n\n\n\nChoose a research question of interest (e.g., “How does social media use affect academic performance?”).\nWhat research approach would you use (qualitative, quantitative, or mixed) and why? What paradigm might this align with?\nIdentify one or two specific methods you would use to collect data, and explain how these methods fit your research question and paradigm."
+    "text": "Activity – Plan a study\n\n\n\n\n\n\nChoose a research question of interest (e.g., “How does social media use affect academic performance?”).\nWhat research approach would you use (qualitative, quantitative, or mixed) and why? What paradigm might this align with?\nIdentify one or two specific methods you would use to collect data, and explain how these methods fit your research question and paradigm."
   },
   {
     "objectID": "lab/intro_method_skills/slides/intro_method_skills.html#wrapping-up",
@@ -2560,6 +2679,13 @@
     "title": "Home",
     "section": "",
     "text": "My Story\n  \n    \n      I’m a forecasting researcher passionate about using data science and machine learning to tackle real-world problems that matter. My journey started in Sri Lanka, where a foundation in transport and logistics sparked a lasting interest in time series forecasting and supply chain analytics.\n    \n    \n      Today, I’m a PhD candidate at the Data Lab for Social Good (Cardiff University), where I develop forecasting and decision-support solutions for global health and climate-related challenges. My work focuses on healthcare supply chains, climate-sensitive disease forecasting, and forecasting for social good, with a strong emphasis on real-world impact.\n    \n    \n      I collaborate closely with organizations such as USAID, the Ethiopian Pharmaceutical Supply Chain Agency, and the HISP Centre at the University of Oslo, translating research into operational tools that improve public health outcomes.\n    \n    \n      \n         Download CV\n      \n    \n  \n\n\n\n  PhD Research Showcase\n  \n    \n      \n      Research Focus\n      Developing novel forecasting and inventory management approaches for health commodity supply chains.\n    \n    \n      \n      Methodology\n      Integrating advanced probabilistic forecasting models with robust inventory frameworks.\n    \n    \n      \n      Global Health Impact\n      Enhancing public health outcomes and supporting data-driven decisions for tangible social good.\n    \n    \n      \n      Collaborations\n      Working with influential organizations like USAID, EPSA, and the HISP Center at the University of Oslo.\n    \n  \n\n\n\n  Funder & Collaborators\n  \n    This research is proudly funded by the Welsh Graduate School for the Social Sciences (WGSSS) and conducted in collaboration with leading global health organizations.\n  \n  \n      \n      \n      \n      \n  \n\n\n\n  Supervision Team\n  \n    \n      \n      \n        Prof. Bahman Rostami-Tabar (Lead)\n        Professor of Data-Driven Decision Science, Cardiff University\n      \n    \n    \n      \n      \n        Prof. Aris Syntetos (Co-supervisor)\n        Professor of Decision Science, Cardiff University\n      \n    \n    \n      \n      \n        Dr. Federico Liberatore (Co-supervisor)\n        Senior Lecturer in Data & Knowledge Engineering, Cardiff University\n      \n    \n    \n      \n      \n        Glenn Milano (Industry Collaborator)\n        Advisor for Demand Planning and Analytics, USAID"
+  },
+  {
+    "objectID": "talks/lomsac_2026/index.html",
+    "href": "talks/lomsac_2026/index.html",
+    "title": "From Cases to Consumption: Evaluating Forecasting Model Portability for Public-Health Supply Chains",
+    "section": "",
+    "text": "From Cases to Consumption: Evaluating Forecasting Model Portability for Public-Health Supply Chains\n  Conference: LOM Section Annual Conference (LOMSAC) 2026, Cardiff Business School.\n  Harsha Halgamuwe Hewage | 2026-01-15\n  \n    \n       View Slides\n    \n  \n\n\n\n  Context\n\n  \n    This work is motivated by a persistent disconnect in public health analytics between\n    what is forecast and what is procured.\n    Platforms such as DHIS2 and CHAP have substantially advanced the forecasting of disease incidence, often incorporating\n    climate and environmental signals to provide early warning of outbreaks.\n  \n\n  \n    Yet, operational decisions do not act on cases alone.\n    Health systems must translate predicted morbidity into product requirements such as\n    vaccines, antimalarials, and diagnostics.\n    At this point, forecasting performance often deteriorates.\n    Consumption data are incomplete, irregular, and frequently censored by stockouts,\n    reporting delays, and supply interruptions, making direct modelling of demand both\n    unreliable and inconsistent across settings.\n  \n\n  \n    This presentation examines forecasting model portability across this divide.\n    We ask whether models developed and validated for disease cases can be meaningfully\n    transferred to forecast health commodity consumption, and under what conditions this\n    transfer fails.\n    Using routine surveillance and logistics data, we compare three strategies:\n    direct reuse of case-based models, targeted fine-tuning using supply-chain covariates\n    such as campaign timing or climate signals, and full retraining on consumption data.\n  \n\n  \n    The contribution is practical rather than purely methodological.\n    We provide evidence on when portability is viable, when it introduces systematic bias,\n    and how forecasting choices propagate into inventory decisions.\n    By linking predictive performance to downstream ordering and stock availability,\n    the work supports a shift from reactive replenishment to anticipatory logistics.\n    This is particularly relevant for climate-sensitive diseases, where early warning only\n    delivers value if commodities arrive before demand materialises."
   },
   {
     "objectID": "talks/dl4sg_seminar/index.html",
