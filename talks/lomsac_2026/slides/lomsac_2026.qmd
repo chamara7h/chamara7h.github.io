@@ -337,7 +337,7 @@ Consumption is affected by logistics.
 
 <br>
 
-![](images/scope.svg){style="width:80%; height:auto; "}
+![](images/scope.png){style="width:80%; height:auto; "}
 
 ## Overview of the candidate models
 
@@ -1269,7 +1269,7 @@ fc_rel |>
 
 ## Proposed end-to-end forecasting-to-inventory architecture 
 
-![](images/functional_diagram.svg){style="width:75%; height:auto; "}
+![](images/functional_diagram.png){style="width:75%; height:auto; "}
 <br>
 
 ::: aside
