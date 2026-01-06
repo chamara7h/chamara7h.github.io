@@ -215,5 +215,8 @@
   },
   "talks/lomsac_2026/slides/lomsac_2026.qmd": {
     "lomsac_2026.html": "27301383"
+  },
+  "talks/lomsac_2026/index.qmd": {
+    "index.html": "78484875"
   }
 }
