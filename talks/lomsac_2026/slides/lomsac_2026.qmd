@@ -344,21 +344,7 @@ Consumption is affected by logistics.
 ```{r}
 #| include: false
 
-load_or_install <- function(pkgs, repos = "https://cloud.r-project.org") {
-  installed <- rownames(installed.packages())
-  for (pkg in pkgs) {
-    if (!pkg %in% installed) {
-      message("Installing package: ", pkg)
-      install.packages(pkg, repos = repos, dependencies = TRUE)
-    }
-    suppressPackageStartupMessages(
-      library(pkg, character.only = TRUE)
-    )
-  }
-}
-
-
-packages <- c(
+required_packages <- c(
   "tidyverse",
   "knitr",
   "kableExtra",
@@ -374,7 +360,12 @@ packages <- c(
   "ggrepel"
 )
 
-load_or_install(packages)
+new_packages <- required_packages[!required_packages %in% installed.packages()[, "Package"]]
+if (length(new_packages)) {
+  install.packages(new_packages)
+}
+
+invisible(lapply(required_packages, library, character.only = TRUE))
 
 font_add_google("Inter")
 showtext_auto()
