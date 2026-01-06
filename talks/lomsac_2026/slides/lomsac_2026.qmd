@@ -371,8 +371,7 @@ packages <- c(
   "tidytext",
   "scales",
   "ggbreak",
-  "ggrepel",
-  "svglite"
+  "ggrepel"
 )
 
 load_or_install(packages)
