@@ -704,18 +704,25 @@
     "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-1",
     "title": "Home",
     "section": "",
-    "text": "Outline\n\n\n\nBackground\n\n\n\n\n\n\nThe fundamental question\n\n\n\n\n\n\nWhat we are going to do\n\n\n\n\n\n\nOur initial scope\n\n\n\n\n\n\nWhat did we find\n\n\n\n\n\n\nWhat NEXT?"
+    "text": "Three-month Overseas Institutional Visit (OIV) at the HISP Centre, University of Oslo, Norway\n\n\n\nCollaborated with:\n– DHIS2 core development team\n– Climate and health modelling team (CHAP)\n\n\n\n\nFocus of the collaboration:\n– Understanding how disease forecasts are produced, validated, and deployed in DHIS2\n– Model reuse across domains is attractive, but largely untested"
   },
   {
-    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-3",
-    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-3",
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-2",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-2",
     "title": "Home",
     "section": "",
-    "text": "The Problem: A tale of two data streams\n\nHealth supply chains are struggling with forecasting at sub-national/ facility level.\n\nOperational realities: Incomplete records, irregular orders, frequent manual adjustments.\nThis masks true demand and leads to a cycle of…\nPersistent, critical stockouts 📉.\n\n\n\nBut… we have a success story.\n\nPlatforms like DHIS2 and CHAP have robust, high-performing models for forecasting disease cases (morbidity)."
+    "text": "Outline\n\n\n\nBackground\n\n\n\n\n\n\nThe fundamental question\n\n\n\n\n\n\nWhat we are going to do\n\n\n\n\n\n\nWhat did we find\n\n\n\n\n\n\nWhat NEXT?"
   },
   {
     "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-4",
     "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-4",
+    "title": "Home",
+    "section": "",
+    "text": "The Problem: A tale of two data streams\n\nHealth supply chains are struggling with forecasting at sub-national/ facility level.\n\nOperational realities: Incomplete records, irregular orders, frequent manual adjustments.\nThis masks true demand and leads to a cycle of persistent, critical stockouts.\n\n\n\nBut… we have a success story.\n\nPlatforms like DHIS2 and CHAP have robust, high-performing models for forecasting disease cases (morbidity)."
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-5",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-5",
     "title": "Home",
     "section": "",
     "text": "What is DHIS2 and CHAP?\n\n\n DHIS2 (District Health Information Software 2) is a free, open-source, web-based health information platform.\n\n\n\n It is the world’s largest Health Management Information System (HMIS), used by Ministries of Health in over 80 countries.\n\n\n\n CHAP stands for the Climate Health Analytics Platform.\n\n\n\n CHAP is a predictive modelling layer integrated within DHIS2, designed to support climate-informed disease forecasting and early warning."
@@ -735,8 +742,8 @@
     "text": "The challenge: Why isn’t this easy?\n\nCase data and consumption data are different.\n\n\n\n\n\n Different Data Structures\nConsumption data is “messier”.\n\nMissing entries (e.g., “0” = no consumption, or “0” = data not entered?)\nIntermittency (infrequent demand).\nInconsistent recording.\n\n\n\n\n Different Metadata\nConsumption is affected by logistics.\n\nLead times.\nProcurement cycles.\nExisting stock levels and stockouts."
   },
   {
-    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-6",
-    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-6",
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-7",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-7",
     "title": "Home",
     "section": "",
     "text": "What we are going to do\n\n\n Apply the same CHAP morbidity models (no extra tuning) to product demand (malaria commodities, vaccines).\n\n\n\n Link forecasts to operations: evaluate both forecast accuracy and inventory impact.\n\n\n\n Build a portability matrix: when can we transfer a model?\n\n\n\n Design an implementation workflow for DHIS2/CHAP.\n\n\n\n Provide R scripts, CHAP YAML configs and sample datasets for full reproducibility."
@@ -747,6 +754,13 @@
     "title": "Home",
     "section": "Our experimental workflow",
     "text": "Our experimental workflow"
+  },
+  {
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#data-sources",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#data-sources",
+    "title": "Home",
+    "section": "Data sources",
+    "text": "Data sources\n\n\n\n\n\n\n\n\n\n\n\n\n\nData source\nDomain\nGeography / Sites\nCoverage period\nGranularity\n\n\n\n\nDHIS2\nDengue cases\nBrazil (23 locations)\n2001 Jan – 2017 Dec\nMonthly, subnational\n\n\n\n\nLaos (7 locations)\n2000 Jul – 2013 Jun\nMonthly, subnational\n\n\n\n\nParaguay (16 locations)\n2012 Mar – 2017 Dec\nMonthly, subnational\n\n\n\n\nVietnam (19 locations)\n2000 Jul – 2017 Jun\nMonthly, subnational\n\n\nDHIS2\nMalaria incidence\nRwanda (30 locations)\n2015 Jan – 2024 Dec\nMonthly, subnational\n\n\nDHIS2 / LMIS\nMalaria commodities\nLaos (11 products, 18 facilities)\n2019 Feb – 2021 Jun\nMonthly, subnational\n\n\nDHIS2 / LMIS\nVaccine consumption\nLaos (21 products, 10 facilities)\n2021 Feb – 2024 Jan\nMonthly, subnational\n\n\nDHIS2 Climate App\nClimate covariates\nAll study settings\nStudy-specific\nMonthly, subnational"
   },
   {
     "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#overview-of-the-candidate-models",
@@ -763,32 +777,32 @@
     "text": "Data exploration\n\n\nFigure 1: Classification of all morbidity and consumption series using the ln(CV²) and ln(IDI) map. Each point represents a monthly series plotted on the logarithmic CV²–IDI scale."
   },
   {
-    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#average-forecast-model-rankings",
-    "href": "talks/lomsac_2026/slides/lomsac_2026.html#average-forecast-model-rankings",
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#average-forecast-method-rankings",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#average-forecast-method-rankings",
     "title": "Home",
-    "section": "Average forecast model rankings",
-    "text": "Average forecast model rankings\n\n\nFigure 2: Average point forecast (MASE) and probabilistic (quantile loss) ranks. Methods on the y-axis are ordered from best (top) to worst (bottom) based on their overall average rank across all domains. Lower ranks indicate better performance."
+    "section": "Average forecast method rankings",
+    "text": "Average forecast method rankings\n\n\nFigure 2: Average point forecast (MASE) ranks. Methods on the y-axis are ordered from best (top) to worst (bottom) based on their overall average rank across all domains. Lower ranks indicate better performance."
   },
   {
-    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#point-forecast-accuracy-distribution",
-    "href": "talks/lomsac_2026/slides/lomsac_2026.html#point-forecast-accuracy-distribution",
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#average-forecast-method-rankings-1",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#average-forecast-method-rankings-1",
     "title": "Home",
-    "section": "Point forecast accuracy distribution",
-    "text": "Point forecast accuracy distribution\n\n\nFigure 3: Distribution of MASE across morbidity and supply chain datasets. Methods are sorted by median error, with the best-performing methods positioned at the bottom of each facet."
+    "section": "Average forecast method rankings",
+    "text": "Average forecast method rankings\n\n\nFigure 3: Average probabilistic forecast (quantile loss) ranks. Methods on the y-axis are ordered from best (top) to worst (bottom) based on their overall average rank across all domains. Lower ranks indicate better performance."
   },
   {
-    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#probabilistic-forecast-accuracy-distribution",
-    "href": "talks/lomsac_2026/slides/lomsac_2026.html#probabilistic-forecast-accuracy-distribution",
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#overall-inventory-performance---malaria-products",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#overall-inventory-performance---malaria-products",
     "title": "Home",
-    "section": "Probabilistic forecast accuracy distribution",
-    "text": "Probabilistic forecast accuracy distribution\n\n\nFigure 4: Distribution of quantile loss (q90) across morbidity and supply chain datasets. Methods are sorted by median error, with the best-performing methods positioned at the bottom of each facet. The x-axis employs an inverse hyperbolic sine (\\(asinh\\)) transformation to visualize extreme outliers."
+    "section": "Overall inventory performance - Malaria products",
+    "text": "Overall inventory performance - Malaria products\n\n\nFigure 4: Inventory performance across malaria-product simulations using quantile-based order-up-to policies (q80–q97.5)."
   },
   {
-    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#overall-inventory-performance",
-    "href": "talks/lomsac_2026/slides/lomsac_2026.html#overall-inventory-performance",
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#overall-inventory-performance---vaccine",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#overall-inventory-performance---vaccine",
     "title": "Home",
-    "section": "Overall inventory performance",
-    "text": "Overall inventory performance\n\n\nFigure 5: Inventory performance across malaria-product and vaccine-product simulations using quantile-based order-up-to policies (q80–q97.5)."
+    "section": "Overall inventory performance - Vaccine",
+    "text": "Overall inventory performance - Vaccine\n\n\nFigure 5: Inventory performance across vaccine-product simulations using quantile-based order-up-to policies (q80–q97.5)."
   },
   {
     "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#execution-scalability-of-all-forecasting-methods",
@@ -805,11 +819,11 @@
     "text": "Proposed end-to-end forecasting-to-inventory architecture\n \n\n\nSolid arrows represent data flow, and dashed arrows represent information feedback for learning."
   },
   {
-    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#section-9",
-    "href": "talks/lomsac_2026/slides/lomsac_2026.html#section-9",
+    "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#research-impact-and-engagement",
+    "href": "talks/lomsac_2026/slides/lomsac_2026.html#research-impact-and-engagement",
     "title": "Home",
-    "section": "",
-    "text": "Way forward\n\n\n Build a harmonised data foundation for supply chain forecasting.\n\n\n\n Conduct a controlled pilot using Auto ARIMA / Auto ETS.\n\n\n\n Implement quantile-based, uncertainty-driven inventory policies.\n\n\n\n Evaluate the pilot instance against real operational outcomes.\n\n\n\n Introduce preference learning and automated model selection.\n\n\n\n Automate contextual knowledge capture in the logistics stream."
+    "section": "Research impact and engagement",
+    "text": "Research impact and engagement\n\n\n DHIS2 community webinar (90+ participants across industry, NGOs, and implementers)\n\n\n\n Technical briefing to the DHIS2 development team and country representatives\n\n\n\n Open release of code, YAML configurations, and deployable DHIS2/CHAP pipelines\n\n\n\n Planned hands-on practitioner demo using the existing DHIS2 ecosystem\n\n\n\n Co-delivered one-week, in-person forecasting training (Kigali, February)\n\n\n\n Long-term collaboration between DL4SG (Cardiff) and HISP (Oslo)"
   },
   {
     "objectID": "talks/lomsac_2026/slides/lomsac_2026.html#any-questions-or-thoughts",
