@@ -6,7 +6,7 @@
 
 /* --- General Slide Styles --- */
 .reveal .slides {
-  font-family: 'Assistant', 'Inter', sans-serif;
+  font-family: 'Inter';
 }
   
 
@@ -174,7 +174,7 @@ margin-right: 0.6rem;
 /* This is the .table-custom class you set in kbl() */
 .table-custom {
   width: auto !important; /* Overrides kableExtra's 100% width */
-  font-size: 20px;       /* Smaller font, more readable */
+  font-size: 30px;       /* Smaller font, more readable */
   border-collapse: collapse !important;
   margin-left: 0 !important;
   margin-right: auto !important;
@@ -186,7 +186,7 @@ margin-right: 0.6rem;
 .table-custom th {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 1.25em;
   color: #ffffff; /* White text */
   background-color: #2A6083; /* Dark blue/gray from example */
   text-align: left; /* Headers should be left aligned */

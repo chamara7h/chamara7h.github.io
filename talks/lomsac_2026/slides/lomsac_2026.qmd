@@ -34,6 +34,49 @@ header-includes:
   <p class="date">2026/01/15</p>
 </div>
 
+
+## {} 
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/uio.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+
+<br>
+
+<br>
+
+- Three-month Overseas Institutional Visit (OIV) at the HISP Centre, University of Oslo, Norway
+
+::: {.fragment fragment-index=2}
+- Collaborated with:
+
+  – DHIS2 core development team
+  
+  – Climate and health modelling team (CHAP)
+:::
+
+::: {.fragment fragment-index=3}
+- Focus of the collaboration:
+
+  – Understanding how disease forecasts are produced, validated, and deployed in DHIS2
+  
+  – Model reuse across domains is attractive, but largely untested
+:::
+
+
+:::
+
+::::
+
+
 ## {} 
 
 :::: {.columns}
@@ -74,17 +117,11 @@ header-includes:
 
 ::: {.step data-step="04"}
 <div class="step-content">
-  <h3>Our initial scope</h3>
-</div>
-:::
-
-::: {.step data-step="05"}
-<div class="step-content">
   <h3>What did we find</h3>
 </div>
 :::
 
-::: {.step data-step="06"}
+::: {.step data-step="05"}
 <div class="step-content">
   <h3>What [NEXT?]{.highlight-blue}</h3>
 </div>
@@ -121,9 +158,7 @@ Health supply chains are struggling with forecasting at sub-national/ facility l
 
 - Operational realities: Incomplete records, irregular orders, frequent manual adjustments.
 
-- This masks true demand and leads to a cycle of...
-
-- Persistent, critical stockouts 📉.
+- This masks true demand and leads to a cycle of persistent, critical stockouts.
 
 ::: {.fragment fragment-index=1}
 
@@ -339,6 +374,31 @@ Consumption is affected by logistics.
 
 ![](images/scope.png){style="width:80%; height:auto; "}
 
+## Data sources
+
+<br>
+
+<div style="float:left; margin:0 1em 1em 0;">
+
+::: {.table-custom}
+
+| Data source        | Domain              | Geography / Sites                     | Coverage period        | Granularity                 |
+|--------------------|---------------------|---------------------------------------|------------------------|-----------------------------|
+| DHIS2              | Dengue cases        | Brazil (23 locations)                 | 2001 Jan – 2017 Dec    | Monthly, subnational        |
+|                    |                     | Laos (7 locations)                    | 2000 Jul – 2013 Jun    | Monthly, subnational        |
+|                    |                     | Paraguay (16 locations)               | 2012 Mar – 2017 Dec    | Monthly, subnational        |
+|                    |                     | Vietnam (19 locations)                | 2000 Jul – 2017 Jun    | Monthly, subnational        |
+| DHIS2              | Malaria incidence   | Rwanda (30 locations)                 | 2015 Jan – 2024 Dec    | Monthly, subnational        |
+| DHIS2 / LMIS       | Malaria commodities | Laos (11 products, 18 facilities)     | 2019 Feb – 2021 Jun    | Monthly, subnational        |
+| DHIS2 / LMIS       | Vaccine consumption | Laos (21 products, 10 facilities)     | 2021 Feb – 2024 Jan    | Monthly, subnational        |
+| DHIS2 Climate App  | Climate covariates  | All study settings                    | Study-specific         | Monthly, subnational        |
+| | | | | |
+
+:::
+
+</div>
+
+
 ## Overview of the candidate models
 
 ```{r}
@@ -512,7 +572,7 @@ idi_cv2 |>
   ) |>
   ggplot(aes(x = ln_CV2, y = ln_IDI, colour = country, shape = country)) +
   
-  geom_point(size = 2, stroke = 1.5, alpha = 0.8) +
+  geom_point(size = 2.5, stroke = 2, alpha = 0.8) +
   
   # geom_vline(xintercept = log(0.5), linetype = "dashed") +
   # geom_hline(yintercept = log(4/3), linetype = "dashed") +
@@ -559,7 +619,7 @@ idi_cv2 |>
   
   scale_shape_manual(values = 1:15) +
   
-  theme_minimal(base_family = "Inter", base_size = 32) +
+  theme_minimal(base_family = "Inter", base_size = 40) +
   theme(
     panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
     panel.grid.major   = element_line(colour = "#6d8196", size = 0.35),
@@ -709,16 +769,17 @@ fc_case_summary <- fc_acc |>
 ```
 
 
-## Average forecast model rankings
+## Average forecast method rankings
 
 ```{r}
-#| label: fig-ts_rank
+#| label: fig-ts_rank_mase
 #| cache: true
 #| echo: false
-#| out.width: "50%"
-#| fig-cap: "Average point forecast (MASE) and probabilistic (quantile loss) ranks. Methods on the y-axis are ordered from best (top) to worst (bottom) based on their overall average rank across all domains. Lower ranks indicate better performance."
+#| fig-width: 16
+#| fig-height: 10
+#| fig-cap: "Average point forecast (MASE) ranks. Methods on the y-axis are ordered from best (top) to worst (bottom) based on their overall average rank across all domains. Lower ranks indicate better performance."
 
-p1 <- fc_acc |>
+fc_acc |>
   group_by(origin, case, country, location) |> 
   mutate(rank = rank(MASE, ties.method = "min")) |>
   ungroup() |>
@@ -733,7 +794,7 @@ p1 <- fc_acc |>
        label = round(avg_rank, 1),
        color = ifelse(avg_rank < 6, "black", "white") 
      ),
-     fontface = "bold",  size = 3.5) +
+     fontface = "bold",  size = 10) +
    scale_color_identity() +
   scale_fill_viridis_c(direction = -1, name = "Average Rank") +
   # scale_x_discrete(position = "top") + 
@@ -741,20 +802,31 @@ p1 <- fc_acc |>
     y = "Method",
     x = 'Average MASE rank'
   ) +
-   theme_minimal(base_family = "Inter", base_size = 16) +
+   theme_minimal(base_family = "Inter", base_size = 40) +
    theme(
      panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
      panel.grid.major   = element_line(colour = "grey92", size = 0.35),
      panel.grid.minor   = element_blank(),
      axis.title         = element_text(face = "bold", colour = "#1a2b48"),
      axis.text          = element_text(colour = "#1a2b48"),
-     legend.position    = "none",
+     legend.position    = "right",
      legend.title       = element_text(face = "bold", colour = "#1a2b48"),
      legend.text        = element_text(colour = "#1a2b48")
    )
- 
- 
-p2 <- fc_acc |>
+
+```
+
+## Average forecast method rankings
+
+```{r}
+#| label: fig-ts_rank_ql
+#| cache: true
+#| echo: false
+#| fig-width: 16
+#| fig-height: 10
+#| fig-cap: "Average probabilistic forecast (quantile loss) ranks. Methods on the y-axis are ordered from best (top) to worst (bottom) based on their overall average rank across all domains. Lower ranks indicate better performance."
+
+fc_acc |>
   group_by(origin, case, country, location) |> 
    mutate(rank = rank(quantile_loss_90, ties.method = "min")) |>
    ungroup() |>
@@ -769,15 +841,15 @@ p2 <- fc_acc |>
        label = round(avg_rank, 1),
        color = ifelse(avg_rank < 6, "black", "white") 
      ),
-     fontface = "bold",  size = 3.5) +
+     fontface = "bold",  size = 10) +
    scale_color_identity() +
    scale_fill_viridis_c(direction = -1, name = "Average Rank") +
    # scale_x_discrete(position = "top") + 
    labs(
      x = 'Average quantile loss rank',
-     y = NULL
+     y = 'Method'
    ) +
-   theme_minimal(base_family = "Inter", base_size = 16) +
+   theme_minimal(base_family = "Inter", base_size = 40) +
    theme(
      panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
      panel.grid.major   = element_line(colour = "grey92", size = 0.35),
@@ -789,245 +861,10 @@ p2 <- fc_acc |>
      legend.text        = element_text(colour = "#1a2b48")
    )
 
-(p1 | p2) +
-  plot_layout(guides = "collect") +
-  plot_annotation(theme = theme(legend.position = "right"))
-
-```
-
-## Point forecast accuracy distribution
-
-```{r}
-#| label: fig-fc_dist_point
-#| cache: true
-#| echo: false
-#| out.width: "80%"
-#| fig-cap: "Distribution of MASE across morbidity and supply chain datasets. Methods are sorted by median error, with the best-performing methods positioned at the bottom of each facet."
-
-p1 <- fc_acc |> 
-  filter(case == 'Dengue Cases') |> 
-  mutate(model_ordered = fct_reorder(model, MASE, .fun = median, .desc = TRUE)) |>
-  ggplot(aes(x = MASE, y = model_ordered)) +
-  geom_boxplot(outlier.shape = 1, outlier.alpha = 0.5) +
-  facet_wrap(~case, scales = "free", ncol = 2) +
-  scale_x_continuous(trans = "pseudo_log", breaks = c(0, 1, 5, 10, 100)) +
-  scale_y_reordered() +
-  labs(
-    x = "MASE",
-    y = "Method"
-  ) +
-  theme_minimal(base_family = "Inter", base_size = 16) +
-  theme(
-    panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
-    panel.grid.major   = element_line(colour = "grey92", size = 0.35),
-    panel.grid.minor   = element_blank(),
-    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
-    axis.text          = element_text(colour = "#1a2b48")
-  ) 
-
-p2 <- fc_acc |> 
-  filter(case == 'Malaria Cases') |> 
-  mutate(model_ordered = fct_reorder(model, MASE, .fun = median, .desc = TRUE)) |>
-  ggplot(aes(x = MASE, y = model_ordered)) +
-  geom_boxplot(outlier.shape = 1, outlier.alpha = 0.5) +
-  facet_wrap(~case, scales = "free", ncol = 2) +
-  scale_x_continuous(trans = "pseudo_log", breaks = c(0, 1, 5, 10, 100)) +
-  scale_y_reordered() +
-  labs(
-    x = "MASE",
-    y = "Method"
-  ) +
-  theme_minimal(base_family = "Inter", base_size = 16) +
-  theme(
-    panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
-    panel.grid.major   = element_line(colour = "grey92", size = 0.35),
-    panel.grid.minor   = element_blank(),
-    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
-    axis.text          = element_text(colour = "#1a2b48")
-  ) 
-
-p3 <- fc_acc |> 
-  filter(case == 'Malaria Products') |> 
-  mutate(model_ordered = fct_reorder(model, MASE, .fun = median, .desc = TRUE)) |>
-  ggplot(aes(x = MASE, y = model_ordered)) +
-  geom_boxplot(outlier.shape = 1, outlier.alpha = 0.5) +
-  facet_wrap(~case, scales = "free", ncol = 2) +
-  scale_x_continuous(trans = "pseudo_log", breaks = c(0, 1, 5, 10, 100)) +
-  scale_y_reordered() +
-  labs(
-    x = "MASE",
-    y = "Method"
-  ) +
-  theme_minimal(base_family = "Inter", base_size = 16) +
-  theme(
-    panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
-    panel.grid.major   = element_line(colour = "grey92", size = 0.35),
-    panel.grid.minor   = element_blank(),
-    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
-    axis.text          = element_text(colour = "#1a2b48")
-  ) 
-
-p4 <- fc_acc |> 
-  filter(case == 'Vaccine Products') |> 
-  mutate(model_ordered = fct_reorder(model, MASE, .fun = median, .desc = TRUE)) |>
-  ggplot(aes(x = MASE, y = model_ordered)) +
-  geom_boxplot(outlier.shape = 1, outlier.alpha = 0.5) +
-  facet_wrap(~case, scales = "free", ncol = 2) +
-  scale_x_continuous(trans = "pseudo_log", breaks = c(0, 1, 5, 10, 100)) +
-  scale_y_reordered() +
-  labs(
-    x = "MASE",
-    y = "Method"
-  ) +
-  theme_minimal(base_family = "Inter", base_size = 16) +
-  theme(
-    panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
-    panel.grid.major   = element_line(colour = "grey92", size = 0.35),
-    panel.grid.minor   = element_blank(),
-    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
-    axis.text          = element_text(colour = "#1a2b48")
-  ) 
-
-(p1 | p2) / (p3 | p4) +
-  plot_layout(guides = "collect")
-
-```
-
-## Probabilistic forecast accuracy distribution
-
-```{r}
-#| label: fig-fc_dist_prob
-#| cache: true
-#| echo: false
-#| out.width: "80%"
-#| fig-cap: "Distribution of quantile loss (q90) across morbidity and supply chain datasets. Methods are sorted by median error, with the best-performing methods positioned at the bottom of each facet. The x-axis employs an inverse hyperbolic sine ($asinh$) transformation to visualize extreme outliers."
-
-my_breaks <- function(x) {
-  max_val <- max(x, na.rm = TRUE)
-  
-  if (max_val > 1000000) { 
-    # Range for Malaria Products (huge numbers)
-    return(c(0, 300000, 600000, 900000, 1200000))
-  } else if (max_val > 100000) { 
-    # Range for Dengue/Malaria Cases (medium numbers)
-    return(c(0, 50000, 100000, 150000))
-  } else { 
-    # Range for Vaccines (small numbers)
-    return(c(0, 2000, 4000, 6000))
-  }
-}
-
-p1a <- fc_acc |> 
-  filter(case == 'Dengue Cases') |> 
-  mutate(model_ordered = fct_reorder(model, quantile_loss_90, .fun = median, .desc = TRUE)) |>
-  ggplot(aes(x = quantile_loss_90, y = model_ordered)) +
-  geom_boxplot(outlier.shape = 1, outlier.alpha = 0.5) +
-  facet_wrap(~case, scales = "free", ncol = 2) +
-  scale_x_continuous(
-    trans = "asinh", 
-    labels = label_number(scale_cut = cut_short_scale()),
-    n.breaks = 6 
-  ) +
-  scale_y_reordered() +
-  labs(
-    x = "Quantile Loss (q90)",
-    y = "Method"
-  ) +
-  theme_minimal(base_family = "Inter", base_size = 16) +
-  theme(
-    panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
-    panel.grid.major   = element_line(colour = "grey92", size = 0.35),
-    panel.grid.minor   = element_blank(),
-    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
-    axis.text          = element_text(colour = "#1a2b48"),
-    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)
-  ) 
-
-p2a <- fc_acc |> 
-  filter(case == 'Malaria Cases') |> 
-  mutate(model_ordered = fct_reorder(model, quantile_loss_90, .fun = median, .desc = TRUE)) |>
-  ggplot(aes(x = quantile_loss_90, y = model_ordered)) +
-  geom_boxplot(outlier.shape = 1, outlier.alpha = 0.5) +
-  facet_wrap(~case, scales = "free", ncol = 2) +
-  scale_x_continuous(
-    trans = "asinh", 
-    labels = label_number(scale_cut = cut_short_scale()),
-    n.breaks = 6 
-  ) +
-  scale_y_reordered() +
-  labs(
-    x = "Quantile Loss (q90)",
-    y = "Method"
-  ) +
-  theme_minimal(base_family = "Inter", base_size = 16) +
-  theme(
-    panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
-    panel.grid.major   = element_line(colour = "grey92", size = 0.35),
-    panel.grid.minor   = element_blank(),
-    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
-    axis.text          = element_text(colour = "#1a2b48"),
-    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)
-  )
-
-p3a <- fc_acc |> 
-  filter(case == 'Malaria Products') |> 
-  mutate(model_ordered = fct_reorder(model, quantile_loss_90, .fun = median, .desc = TRUE)) |>
-  ggplot(aes(x = quantile_loss_90, y = model_ordered)) +
-  geom_boxplot(outlier.shape = 1, outlier.alpha = 0.5) +
-  facet_wrap(~case, scales = "free", ncol = 2) +
-  scale_x_continuous(
-    trans = "asinh", 
-    labels = label_number(scale_cut = cut_short_scale()),
-    n.breaks = 6 
-  ) +
-  scale_y_reordered() +
-  labs(
-    x = "Quantile Loss (q90)",
-    y = "Method"
-  ) +
-  theme_minimal(base_family = "Inter", base_size = 16) +
-  theme(
-    panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
-    panel.grid.major   = element_line(colour = "grey92", size = 0.35),
-    panel.grid.minor   = element_blank(),
-    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
-    axis.text          = element_text(colour = "#1a2b48"),
-    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)
-  ) 
-
-p4a <- fc_acc |> 
-  filter(case == 'Vaccine Products') |> 
-  mutate(model_ordered = fct_reorder(model, quantile_loss_90, .fun = median, .desc = TRUE)) |>
-  ggplot(aes(x = quantile_loss_90, y = model_ordered)) +
-  geom_boxplot(outlier.shape = 1, outlier.alpha = 0.5) +
-  facet_wrap(~case, scales = "free", ncol = 2) +
-  scale_x_continuous(
-    trans = "asinh", 
-    labels = label_number(scale_cut = cut_short_scale()),
-    n.breaks = 6 
-  ) +
-  scale_y_reordered() +
-  labs(
-    x = "Quantile Loss (q90)",
-    y = "Method"
-  ) +
-  theme_minimal(base_family = "Inter", base_size = 16) +
-  theme(
-    panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
-    panel.grid.major   = element_line(colour = "grey92", size = 0.35),
-    panel.grid.minor   = element_blank(),
-    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
-    axis.text          = element_text(colour = "#1a2b48"),
-    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)
-  )
-
-(p1a | p2a) / (p3a | p4a) +
-  plot_layout(guides = "collect")
-
 ```
 
 
-## Overall inventory performance
+## Overall inventory performance - Malaria products
 
 ```{r}
 #| include: false
@@ -1113,16 +950,16 @@ distinct_colors <- c(
 model_colors[names(distinct_colors)] <- distinct_colors
 ```
 
-
 ```{r}
-#| label: fig-inv_overall
+#| label: fig-inv_overall_malaria
 #| cache: true
 #| echo: false
-#| fig-width: 14
+#| fig-width: 16
 #| fig-height: 8
-#| fig-cap: "Inventory performance across malaria-product and vaccine-product simulations using quantile-based order-up-to policies (q80–q97.5)."
+#| fig-cap: "Inventory performance across malaria-product simulations using quantile-based order-up-to policies (q80–q97.5)."
 
 plot_data |>
+  filter(case == 'Malaria products') |> 
   ggplot(mapping = aes(x = avg_inventory_mean, y = csl_mean, group = model, color = model, shape = model)) +
 
   geom_line(
@@ -1133,9 +970,9 @@ plot_data |>
   geom_point(size = 2, alpha = 0.9, stroke = 1.5) +
 
   geom_text_repel(
-    data = label_data,
+    data = label_data |> filter(case == 'Malaria products'),
     aes(label = model),
-    size = 7,
+    size = 8,
     fontface = "bold",
     nudge_y = Inf, 
     hjust = 0,
@@ -1156,12 +993,12 @@ plot_data |>
     shape = "Method"
   ) +
   
-  facet_wrap(~case, ncol = 1, scales = 'free') +
+  # facet_wrap(~case, ncol = 1, scales = 'free') +
 
   scale_color_manual(values = model_colors) +
 
   scale_shape_manual(values = 1:length(all_models)) +
-  theme_minimal(base_family = "Inter", base_size = 24) +
+  theme_minimal(base_family = "Inter", base_size = 30) +
   theme(
     panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
     panel.grid.major   = element_line(colour = "grey92", size = 0.35),
@@ -1174,6 +1011,71 @@ plot_data |>
   ) 
 
 ```
+
+## Overall inventory performance - Vaccine
+
+```{r}
+#| label: fig-inv_overall_vaccine
+#| cache: true
+#| echo: false
+#| fig-width: 16
+#| fig-height: 8
+#| fig-cap: "Inventory performance across vaccine-product simulations using quantile-based order-up-to policies (q80–q97.5)."
+
+plot_data |>
+  filter(case != 'Malaria products') |> 
+  ggplot(mapping = aes(x = avg_inventory_mean, y = csl_mean, group = model, color = model, shape = model)) +
+
+  geom_line(
+    linewidth = 0.8, 
+    alpha = 0.8
+  ) +
+
+  geom_point(size = 2, alpha = 0.9, stroke = 1.5) +
+
+  geom_text_repel(
+    data = label_data |> filter(case != 'Malaria products'),
+    aes(label = model),
+    size = 8,
+    fontface = "bold",
+    nudge_y = Inf, 
+    hjust = 0,
+    direction = "x",
+    box.padding = 0.5,
+    segment.size = 0.4,
+    segment.linetype = "dotted", 
+    min.segment.length = 0,
+    max.overlaps = Inf
+  ) +
+  
+  # scale_x_continuous(expand = expansion(mult = c(0.05, 0.2))) +
+  
+  labs(
+    x = "Average Inventory", 
+    y = "Achieved CSL",
+    color = "Method",
+    shape = "Method"
+  ) +
+  
+  # facet_wrap(~case, ncol = 1, scales = 'free') +
+
+  scale_color_manual(values = model_colors) +
+
+  scale_shape_manual(values = 1:length(all_models)) +
+  theme_minimal(base_family = "Inter", base_size = 30) +
+  theme(
+    panel.border       = element_rect(colour = "#6d8196", fill = NA, size = 0.4),
+    panel.grid.major   = element_line(colour = "grey92", size = 0.35),
+    panel.grid.minor   = element_blank(),
+    axis.title         = element_text(face = "bold", colour = "#1a2b48"),
+    axis.text          = element_text(colour = "#1a2b48"),
+    legend.position    = "right",
+    legend.title       = element_text(face = "bold", colour = "#1a2b48"),
+    legend.text        = element_text(colour = "#1a2b48")
+  ) 
+
+```
+
 
 
 ## Execution scalability of all forecasting methods
@@ -1260,80 +1162,56 @@ fc_rel |>
 
 ## Proposed end-to-end forecasting-to-inventory architecture 
 
-![](images/functional_diagram.png){style="width:75%; height:auto; "}
+![](images/functional_diagram.png){style="width:87.5%; height:auto; "}
 <br>
 
 ::: aside
 Solid arrows represent data flow, and dashed arrows represent information feedback for learning.
 :::
 
-## {}
-
-:::: {.columns}
-
-::: {.column width="38%"}
-![](images/wp2.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
-:::
-
-::: {.column width="2.5%"}
-
-:::
-
-::: {.column width="59.5%"}
-
-[Way forward]{.highlight-title}
+## Research impact and engagement
 
 <br>
 
 ::: {.fragment fragment-index=1}
-
-<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Build a harmonised data foundation for supply chain forecasting.
-
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i>
+DHIS2 community webinar (90+ participants across industry, NGOs, and implementers)
 :::
 
 <br>
 
 ::: {.fragment fragment-index=2}
-
-<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Conduct a controlled pilot using Auto ARIMA / Auto ETS.
-
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i>
+Technical briefing to the DHIS2 development team and country representatives
 :::
 
 <br>
 
 ::: {.fragment fragment-index=3}
-
-<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Implement quantile-based, uncertainty-driven inventory policies.
-
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i>
+Open release of code, YAML configurations, and deployable DHIS2/CHAP pipelines
 :::
 
 <br>
 
 ::: {.fragment fragment-index=4}
-
-<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Evaluate the pilot instance against real operational outcomes.
-
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i>
+Planned hands-on practitioner demo using the existing DHIS2 ecosystem
 :::
 
 <br>
 
 ::: {.fragment fragment-index=5}
-
-<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Introduce preference learning and automated model selection.
-
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i>
+Co-delivered one-week, in-person forecasting training (Kigali, February)
 :::
 
 <br>
 
 ::: {.fragment fragment-index=6}
-
-<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Automate contextual knowledge capture in the logistics stream.
-
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i>
+Long-term collaboration between DL4SG (Cardiff) and HISP (Oslo)
 :::
-
-:::
-
-::::
 
 
 ## Any questions or thoughts? 💬 
