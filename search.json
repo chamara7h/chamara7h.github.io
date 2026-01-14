@@ -420,6 +420,139 @@
     "text": "Way forward\n\n\n\n\n\nAdd more benchmarking methods → e.g., Censored ETS,...\n\nExtend empirical model with external covariates → Account for special events, disruptions, and policy shifts\n\nConduct a lab experiment with real demand planners → Measure how model recommendations affect decision-making\n\n\n\nImage generated using 04-mini-high"
   },
   {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#section-1",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#section-1",
+    "title": "Home",
+    "section": "",
+    "text": "Outline\n\n\n\nBackground\n\n\n\n\n\n\nThe fundamental question\n\n\n\n\n\n\nWhat we are going to do\n\n\n\n\n\n\nWhat did we find\n\n\n\n\n\n\nLive demo"
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#section-3",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#section-3",
+    "title": "Home",
+    "section": "",
+    "text": "The Problem: A tale of two data streams\n\nHealth supply chains are struggling with forecasting at sub-national/ facility level.\n\nOperational realities: Incomplete records, irregular orders, frequent manual adjustments.\nThis masks true demand and leads to a cycle of persistent, critical stockouts.\n\n\n\nBut… we have a success story.\n\nPlatforms like DHIS2 and CHAP have robust, high-performing models for forecasting disease cases (morbidity)."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#the-fundemental-question",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#the-fundemental-question",
+    "title": "Home",
+    "section": "The fundemental question",
+    "text": "The fundemental question\n\n✅ We’re good at forecasting cases (e.g., malaria).\n\n❌ We’re struggling with forecasting consumption (e.g., antimalarials) at sub-national level.\n\n\nCan the same CHAP morbidity models and pipelines be ported to health commodity demand and inventory decisions?\n\n\n\n\nPortability lens\n\nSame platform (DHIS2/CHAP)\nSame model pipelines\nNew target (consumption)"
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#the-challenge-why-isnt-this-easy",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#the-challenge-why-isnt-this-easy",
+    "title": "Home",
+    "section": "The challenge: Why isn’t this easy?",
+    "text": "The challenge: Why isn’t this easy?\n\nCase data and consumption data are different.\n\n\n\n\n\n Different Data Structures\nConsumption data is “messier”.\n\nMissing entries (e.g., “0” = no consumption, or “0” = data not entered?)\nIntermittency (infrequent demand).\nInconsistent recording.\n\n\n\n\n Different Metadata\nConsumption is affected by logistics.\n\nLead times.\nProcurement cycles.\nExisting stock levels and stockouts."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#section-5",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#section-5",
+    "title": "Home",
+    "section": "",
+    "text": "What we are going to do\n\n\n Apply the same CHAP morbidity models (no extra tuning) to product demand (malaria commodities, vaccines).\n\n\n\n Link forecasts to operations: evaluate both forecast accuracy and inventory impact.\n\n\n\n Build a portability matrix: when can we transfer a model?\n\n\n\n Design an implementation workflow for DHIS2/CHAP.\n\n\n\n Provide R scripts, CHAP YAML configs and sample datasets for full reproducibility."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#our-experimental-workflow",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#our-experimental-workflow",
+    "title": "Home",
+    "section": "Our experimental workflow",
+    "text": "Our experimental workflow"
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#data-sources",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#data-sources",
+    "title": "Home",
+    "section": "Data sources",
+    "text": "Data sources\n\n\n\n\n\n\n\n\n\n\n\n\n\nData source\nDomain\nGeography / Sites\nCoverage period\nGranularity\n\n\n\n\nDHIS2\nDengue cases\nBrazil (23 locations)\n2001 Jan – 2017 Dec\nMonthly, subnational\n\n\n\n\nLaos (7 locations)\n2000 Jul – 2013 Jun\nMonthly, subnational\n\n\n\n\nParaguay (16 locations)\n2012 Mar – 2017 Dec\nMonthly, subnational\n\n\n\n\nVietnam (19 locations)\n2000 Jul – 2017 Jun\nMonthly, subnational\n\n\nDHIS2\nMalaria incidence\nRwanda (30 locations)\n2015 Jan – 2024 Dec\nMonthly, subnational\n\n\nDHIS2 / LMIS\nMalaria commodities\nLaos (11 products, 18 facilities)\n2019 Feb – 2021 Jun\nMonthly, subnational\n\n\nDHIS2 / LMIS\nVaccine consumption\nLaos (21 products, 10 facilities)\n2021 Feb – 2024 Jan\nMonthly, subnational\n\n\nDHIS2 Climate App\nClimate covariates\nAll study settings\nStudy-specific\nMonthly, subnational"
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#overview-of-the-candidate-models",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#overview-of-the-candidate-models",
+    "title": "Home",
+    "section": "Overview of the candidate models",
+    "text": "Overview of the candidate models\n\n\n\n\n\nMethod\nCovariates\n\n\n\n\nAuto EWARS\nPopulation, rainfall, teamperature\n\n\nINLA Baseline\nNone\n\n\nNaïve\nNone\n\n\nsNaive\nNone\n\n\nMean\nNone\n\n\nETS\nNone\n\n\nARIMA\nNone\n\n\nARIMA Climate\nRainfall, temperature\n\n\nARIMA Madagaskar\nRainfall (Lag 3), temperature (Lag 3)\n\n\nLinear Regression\nTrend, seasonality\n\n\nLinear Regression Climate\nTrend, seasonality, rainfall, teamperature\n\n\nLightGBM\nPercentage of zero values, lags of target variable (lag 6 - 12), rainfall, temperature, month, healthcare facility code, product code\n\n\nXGBoost\nPercentage of zero values, lags of target variable (lag 6 - 12), rainfall, temperature, month, healthcare facility code, product code\n\n\nRandom Forest\nPercentage of zero values, lags of target variable (lag 6 - 12), rainfall, temperature, month, healthcare facility code, product code"
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#data-exploration",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#data-exploration",
+    "title": "Home",
+    "section": "Data exploration",
+    "text": "Data exploration\n\n\nFigure 1: Classification of all morbidity and consumption series using the ln(CV²) and ln(IDI) map. Each point represents a monthly series plotted on the logarithmic CV²–IDI scale."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#average-forecast-method-rankings",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#average-forecast-method-rankings",
+    "title": "Home",
+    "section": "Average forecast method rankings",
+    "text": "Average forecast method rankings\n\n\nFigure 2: Average point forecast (MASE) ranks. Methods on the y-axis are ordered from best (top) to worst (bottom) based on their overall average rank across all domains. Lower ranks indicate better performance."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#average-forecast-method-rankings-1",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#average-forecast-method-rankings-1",
+    "title": "Home",
+    "section": "Average forecast method rankings",
+    "text": "Average forecast method rankings\n\n\nFigure 3: Average probabilistic forecast (quantile loss) ranks. Methods on the y-axis are ordered from best (top) to worst (bottom) based on their overall average rank across all domains. Lower ranks indicate better performance."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#overall-inventory-performance---malaria-products",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#overall-inventory-performance---malaria-products",
+    "title": "Home",
+    "section": "Overall inventory performance - Malaria products",
+    "text": "Overall inventory performance - Malaria products\n\n\nFigure 4: Inventory performance across malaria-product simulations using quantile-based order-up-to policies (q80–q97.5)."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#overall-inventory-performance---vaccine",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#overall-inventory-performance---vaccine",
+    "title": "Home",
+    "section": "Overall inventory performance - Vaccine",
+    "text": "Overall inventory performance - Vaccine\n\n\nFigure 5: Inventory performance across vaccine-product simulations using quantile-based order-up-to policies (q80–q97.5)."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#execution-scalability-of-all-forecasting-methods",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#execution-scalability-of-all-forecasting-methods",
+    "title": "Home",
+    "section": "Execution scalability of all forecasting methods",
+    "text": "Execution scalability of all forecasting methods\n\n\nFigure 6: Model portability metrics for all candidate forecasting methods, relative to the Mean method. Relative MASE and QL(0.9) are reported separately for malaria and vaccine products; values below 1 indicate improvement over the Mean method."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#resources",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#resources",
+    "title": "Home",
+    "section": "Resources",
+    "text": "Resources\n\n GitHub repo with all R codes and YML configurations\n\n Documentation for Model Developers\n\n Running models through Chap\n\n Configure DHIS2 Modeling App and Chap Core\n\n\n\n\n\n\n\nPay Attention\n\n\nThis demo shows how existing CHAP pipelines can run external forecasting and inventory models using external data, without modifying core workflows; therefore, some variables are renamed purely for schema compatibility (e.g., dispensed → disease_cases), with no change to data meaning or modelling logic."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#minimalistic-model-example-using-r",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#minimalistic-model-example-using-r",
+    "title": "Home",
+    "section": "Minimalistic model example using R",
+    "text": "Minimalistic model example using R\n\ntrain.Rpredict.Risolated_run.RMLproject.YMLDockerfile\n\n\n# List packages\nlibrary(tidyverse)\nlibrary(fable)\nlibrary(tsibble)\n\n# train models - # auto ets model \n\ntrain_chap &lt;- function(csv_fn, model_fn) {\n  df &lt;- read_csv(csv_fn) |&gt; \n    mutate(target = if_else(is.na(target), 0, target),\n           time_period = yearmonth(time_period))\n  \n  df &lt;- df |&gt; distinct() |&gt; \n    as_tsibble(index = time_period, key = location) |&gt; \n    fill_gaps(target=0L, .full = TRUE)\n  \n  model &lt;- df |&gt; \n    model(ets = ETS(target))\n  \n  saveRDS(model, file=model_fn)\n  \n  print('train done')\n  \n}\n\nargs &lt;- commandArgs(trailingOnly = TRUE)\n\nif (length(args) == 2) {\n  csv_fn &lt;- args[1]\n  model_fn &lt;- args[2]\n  \n  train_chap(csv_fn, model_fn)\n}# else {\n#  stop(\"Usage: Rscript train.R &lt;csv_fn&gt; &lt;model_fn&gt;\")\n#}\n\n\n# Load required libraries\nlibrary(tidyverse)\nlibrary(fable)\nlibrary(tsibble)\n\n# Define the predict function\npredict_chap &lt;- function(model_fn, historic_data_fn, future_climatedata_fn, predictions_fn) {\n  \n  # Load the pre-trained model structure\n  model &lt;- readRDS(model_fn)\n  \n  print('read model')\n  \n  # Load the complete historical data\n  historic_df &lt;- read_csv(historic_data_fn) |&gt;\n    mutate(target = if_else(is.na(target), 0, target),\n           time_period = yearmonth(time_period)) |&gt;\n    as_tsibble(index = time_period, key = location) |&gt; \n    fill_gaps(target=0L, .full = TRUE) \n  \n  # Load the future data (covariates only)\n  future_df &lt;- read_csv(future_climatedata_fn) |&gt;\n    mutate(time_period = yearmonth(time_period)) |&gt;\n    as_tsibble(index = time_period, key = location)\n  \n  print('load_data')\n  \n  # Refit the model with all historic data and forecast\n  \n  model &lt;- model |&gt;\n    refit(historic_df)\n  \n  y_pred &lt;- model |&gt;\n    generate(new_data = future_df, bootstrap = FALSE, times = 1000) |&gt; \n    mutate(.rep = as.integer(.rep)) |&gt; \n    arrange(.rep) |&gt; \n    pivot_wider(names_from = .rep, values_from = .sim, names_prefix = \"sample_\")\n  \n  print(y_pred)\n  \n  # saveRDS(model, file = model_fn)\n  \n  df_out &lt;- future_df |&gt;\n    left_join(y_pred |&gt;\n                select(-.model) |&gt; \n                mutate(across(starts_with(\"sample_\"), ~ if_else(. &lt; 0, 0, .))) |&gt;\n                rename_with(~ paste0(\"sample_\", as.integer(str_extract(., \"\\\\d+\")) - 1), starts_with(\"sample_\")),\n              by = c('location', 'time_period')\n    ) |&gt;\n    as_tibble() |&gt;\n    mutate(time_period = format(as.Date(time_period), \"%Y-%m\")) |&gt; \n    select(time_period, location, starts_with(\"sample_\"))\n  \n  \n  print('made predictions')\n  \n  df_out |&gt; print()\n  \n  \n  write.csv(df_out, predictions_fn, row.names = FALSE)\n  \n  fname &lt;- paste0(\"df_out_\", format(Sys.time(), \"%Y%m%d_%H%M%S\"), predictions_fn)\n  write_csv(y_pred, fname)\n  \n}\n\n# --- Command Line Argument Handling (No change here) ---\n\nargs &lt;- commandArgs(trailingOnly = TRUE)\n\nif (length(args) == 4) {\n  model_fn &lt;- args[1]\n  historic_data_fn &lt;- args[2]\n  future_climatedata_fn &lt;- args[3]\n  predictions_fn &lt;- args[4]\n  \n  predict_chap(model_fn, historic_data_fn, future_climatedata_fn, predictions_fn)\n}\n\n# Inventory sim\n\nsource('quantile_based_inventory_sim.R')\n\n\nsource(\"ets-r/train.R\")\nsource(\"ets-r/predict.R\")\n\ntrain_chap(\"ets-r/training_data.csv\", \n           \"ets-r/output/model.bin\")\n\npredict_chap(\"ets-r/output/model.bin\", \n             \"ets-r/historic_data.csv\", \n             \"ets-r/future_data.csv\", \n             \"ets-r/predictions.csv\")\n\n\nname: ets-r\n\ntarget: disease_cases\n\nadapters: {'target': 'disease_cases'}\n\ndocker_env:\n  image: ets-r:latest\n\nentry_points:\n  train:\n    parameters:\n      train_data: path\n      model: path\n    command: \"Rscript train.R {train_data} {model}\"\n  predict:\n    parameters:\n      historic_data: path\n      future_data: path\n      model: str\n      out_file: path\n    command: \"Rscript predict.R {model} {historic_data} {future_data} {out_file}\"\n\n\nFROM ghcr.io/dhis2-chap/docker_r_inla:master\n\nRUN apt-get update\nRUN apt-get install -y libharfbuzz-dev libfribidi-dev\nRUN R -e 'r = getOption(\"repos\"); r[\"CRAN\"] = \"http://cran.us.r-project.org\"; options(repos = r); install.packages(c(\"tidyverse\", \"fable\", \"tsibble\", \"fabletools\", \"fpp3\", \"doParallel\"), repos=c(getOption(\"repos\"), dep=TRUE))'"
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#inventory-policy-order-upto-level-with-lost-sales",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#inventory-policy-order-upto-level-with-lost-sales",
+    "title": "Home",
+    "section": "Inventory policy: Order-upto-level with lost sales",
+    "text": "Inventory policy: Order-upto-level with lost sales\n\nPrepare dataInventory function\n\n\n# Inventory simulation\n\nlibrary(tidyverse)\nlibrary(tsibble)\nlibrary(doParallel)\n\nset.seed(100)\n\n# Read data ---------------------------------------------------------------\n\nactual_df &lt;- read.csv('data/laos/laos_epi_cleaned.csv') |&gt; \n  rename(date = time_period,\n         dispensed = disease_cases) |&gt; \n  select(date, location, dispensed) |&gt; \n  as_tibble()\n\npred_all &lt;- read.csv('predictions.csv')\n\npred_master_df &lt;- pred_all |&gt; \n  rename(date = time_period) |&gt; \n  mutate(across(starts_with(\"sample\"), ~ pmax(., 0))) |&gt; \n  rowwise() |&gt; \n  mutate(\n    mean = mean(c_across(starts_with(\"sample\")), na.rm = TRUE) * 3,\n    q80  = quantile(c_across(starts_with(\"sample\")), probs = 0.80, na.rm = TRUE, names = FALSE),\n    q85  = quantile(c_across(starts_with(\"sample\")), probs = 0.85, na.rm = TRUE, names = FALSE),\n    q90  = quantile(c_across(starts_with(\"sample\")), probs = 0.90, na.rm = TRUE, names = FALSE),\n    q95  = quantile(c_across(starts_with(\"sample\")), probs = 0.95, na.rm = TRUE, names = FALSE),\n    q975 = quantile(c_across(starts_with(\"sample\")), probs = 0.975, na.rm = TRUE, names = FALSE)\n  )  |&gt; \n  ungroup() |&gt; \n  select(date, location, mean, q80, q85, q90, q95, q975)\n\nmaster_df &lt;- pred_master_df |&gt; \n  left_join(actual_df, by = c('date', 'location')) |&gt; \n  mutate(date = as.Date(paste0(date, \"-01\")))\n\n\n# Inventory function ------------------------------------------------------\n\nmaster_long &lt;- master_df |&gt; \n  # filter(location == '0701larmany-0701 Xamnua-BCG diluent' & model == 'ETS') |&gt; \n  pivot_longer(cols = c('mean', 'q80', 'q85', 'q90', 'q95', 'q975'), names_to = 'target_csl', values_to = 'quantity') |&gt; \n  mutate(id = paste0(location, ':', target_csl))\n\nid_list &lt;- master_long |&gt; \n  pull(id) |&gt; \n  unique() \n\n# Register outer parallel backend with multiple cores\n\nn_cores &lt;- detectCores(logical = FALSE) - 1   # 16 physical cores – 1 = 15\ncl_outer &lt;- makeCluster(n_cores)\nregisterDoParallel(cl_outer)\n\n# parallel loop\n\nsystem.time(inventory_sim_full &lt;- foreach(i = id_list,\n                                          .combine = 'rbind',\n                                          .packages=c(\"doParallel\", \"foreach\", \"tidyverse\", \"tsibble\", \"fable\")) %dopar% {\n                                            \n                                            # i &lt;- id_list[1]\n                                            \n                                            df &lt;- master_long |&gt;\n                                              filter(id == i) |&gt; \n                                              group_by(location, target_csl) |&gt; \n                                              arrange(date) |&gt;\n                                              mutate(\n                                                target_stock = quantity,\n                                                opening_stock = 0,\n                                                received = 0,\n                                                closing_stock = 0,\n                                                order_qty = 0,\n                                                delivery_due = NA,\n                                                fixed_lead_time = 1\n                                              )\n                                            \n                                            deliveries &lt;- list()\n                                            \n                                            for (i in seq_len(nrow(df))) {\n                                              today &lt;- df$date[i]\n                                              \n                                              # Receive orders\n                                              arrivals &lt;- deliveries |&gt;\n                                                keep(~.x$arrival_date == today) |&gt;\n                                                map_dbl(\"amount\") |&gt;\n                                                sum()\n                                              \n                                              df$opening_stock[i] &lt;- if (i == 1) arrivals else df$closing_stock[i - 1] + arrivals\n                                              actual &lt;- df$dispensed[i]\n                                              \n                                              df$received[i] &lt;- arrivals\n                                              df$closing_stock[i] &lt;- max(0, df$opening_stock[i] - actual)\n                                              \n                                              # Place order\n                                              order_qty &lt;- max(0, df$target_stock[i] - df$closing_stock[i])\n                                              lead_time &lt;- df$fixed_lead_time[i]\n                                              delivery_date &lt;- today %m+% months(lead_time)\n                                              \n                                              deliveries &lt;- append(deliveries, list(list(arrival_date = delivery_date, amount = order_qty)))\n                                              \n                                              df$order_qty[i] &lt;- order_qty\n                                              df$delivery_due[i] &lt;- delivery_date\n                                            }\n                                            \n                                            \n                                            inventory_sim &lt;- df |&gt;\n                                              mutate(\n                                                lost_sales = pmax(0, dispensed - pmin(dispensed, opening_stock)),\n                                                met_demand = dispensed &lt;= opening_stock,\n                                                stockout = dispensed &gt; opening_stock\n                                              )\n                                            \n                                            inventory_sim\n                                            \n                                          })\n\n# Stop outer cluster\n\nstopCluster(cl_outer)\n\n\n# Final data\n\nwrite_csv(inventory_sim_full, 'inventory_sim.csv')\n\n\n# Inventory value added ---------------------------------------------------\n\ninv_metrics &lt;- inventory_sim_full |&gt; \n  group_by(location, target_csl) |&gt; \n  slice(-1) |&gt; \n  summarise(\n    CSL = round(mean(met_demand, na.rm=TRUE), 1),\n    stockout_rate = round(mean(stockout, na.rm=TRUE), 1),\n    avg_inventory = round(mean(mean((opening_stock+closing_stock)/2, na.rm=TRUE), 1)),\n    # avg_inventory = round(mean(if_else(order_qty &gt;= 0.1,\n    #                                     ((opening_stock+closing_stock)/2)/order_qty, NA_real_), \n    #                             na.rm=TRUE), 1),\n    .groups        = \"drop\"\n  )\n\nfname &lt;- paste0(\"df_out_\", format(Sys.time(), \"%Y%m%d_%H%M%S\"), 'inventory.csv')\nwrite_csv(inv_metrics, fname)"
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#running-models-through-chap-docker-wsl",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#running-models-through-chap-docker-wsl",
+    "title": "Home",
+    "section": "Running models through Chap (docker + WSL)",
+    "text": "Running models through Chap (docker + WSL)\n\n Connect with CHAP Core\ncd chap-core/\n\nsource .venv/bin/activate\n\n Create docker image\ncd /mnt/d/GIT/dhis2_demo/ets-r\n\ndocker build -t ets-r:latest .\n\n# Return to CHAP Core\n\ncd ~\n\ncd chap-core/\n\n Run CHAP evaluation\nchap evaluate --model-name /mnt/d/GIT/dhis2_demo/ets-r --dataset-csv /mnt/d/GIT/dhis2_demo/ets-r/data/laos/laos_epi_cleaned.csv"
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#any-questions-or-thoughts",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#any-questions-or-thoughts",
+    "title": "Home",
+    "section": "Any questions or thoughts? 💬",
+    "text": "Any questions or thoughts? 💬"
+  },
+  {
     "objectID": "talks/qff_london/slides/qff_london.html#outline",
     "href": "talks/qff_london/slides/qff_london.html#outline",
     "title": "Home",
@@ -837,7 +970,7 @@
     "href": "talks/index.html",
     "title": "Home",
     "section": "",
-    "text": "From Cases to Consumption: Evaluating Forecasting Model Portability for Public-Health Supply Chains\n\n\n\nForecasting\n\nInventory\n\nClimate Health\n\nDHIS2\n\nCHAP\n\n\n\nConference: LOM Section Annual Conference (LOMSAC) 2026, Cardiff Business School.\n\n\n\nHarsha Halgamuwe Hewage\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Cases to Consumption: Evaluating CHAP/DHIS2 Model Portability for Health Supply Chains\n\n\n\nForecasting\n\nInventory\n\nClimate Health\n\nDHIS2\n\nCHAP\n\n\n\nWebinar: DHIS2 Climate and Health Tools for Planning and Monitoring Immunization Programmes.\n\n\n\nHarsha Halgamuwe Hewage\n\n\nOct 29, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: Estimating censored demand in family planning supply chains with the Truncated Conformal Kalman Filter\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\n5th Welsh Postgraduate Research Cluster Workshop in Economy, Enterprise and Productivity\n\n\n\nHarsha Halgamuwe Hewage\n\n\nSep 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nEURO 2025 Leeds, UK\n\n\n\nHarsha Halgamuwe Hewage\n\n\nJun 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nIIF UK Chapter: Quarterly Forecasting Forum\n\n\n\nHarsha Halgamuwe Hewage\n\n\nMay 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nData Lab for Social Good Seminar\n\n\n\nHarsha Halgamuwe Hewage\n\n\nMay 20, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Leveraging Chap and the DHIS2 Platform for Stock Forecasting\n\n\n\nForecasting\n\nInventory\n\nClimate Health\n\nDHIS2\n\nCHAP\n\n\n\nA hands-on workshop on stock forecasting using CHAP platform.\n\n\n\nHarsha Chamara Hewage\n\n\nJan 27, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Cases to Consumption: Evaluating Forecasting Model Portability for Public-Health Supply Chains\n\n\n\nForecasting\n\nInventory\n\nClimate Health\n\nDHIS2\n\nCHAP\n\n\n\nConference: LOM Section Annual Conference (LOMSAC) 2026, Cardiff Business School.\n\n\n\nHarsha Halgamuwe Hewage\n\n\nJan 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom Cases to Consumption: Evaluating CHAP/DHIS2 Model Portability for Health Supply Chains\n\n\n\nForecasting\n\nInventory\n\nClimate Health\n\nDHIS2\n\nCHAP\n\n\n\nWebinar: DHIS2 Climate and Health Tools for Planning and Monitoring Immunization Programmes.\n\n\n\nHarsha Halgamuwe Hewage\n\n\nOct 29, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: Estimating censored demand in family planning supply chains with the Truncated Conformal Kalman Filter\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\n5th Welsh Postgraduate Research Cluster Workshop in Economy, Enterprise and Productivity\n\n\n\nHarsha Halgamuwe Hewage\n\n\nSep 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nEURO 2025 Leeds, UK\n\n\n\nHarsha Halgamuwe Hewage\n\n\nJun 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nIIF UK Chapter: Quarterly Forecasting Forum\n\n\n\nHarsha Halgamuwe Hewage\n\n\nMay 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n\n\n\nForecasting\n\nInventory\n\nLoss Sales\n\nR\n\nTobit Kalman Filter\n\nConformal Prediction\n\n\n\nData Lab for Social Good Seminar\n\n\n\nHarsha Halgamuwe Hewage\n\n\nMay 20, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "phd/index.html",
@@ -2714,6 +2847,13 @@
     "title": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains",
     "section": "",
     "text": "WHAT WAS LOST: tracing unmet demand in contraceptive supply chains\n  IIF UK Chapter: Quarterly Forecasting Forum\n  Harsha Halgamuwe Hewage | 2025-05-23\n  \n    \n       View Slides\n    \n  \n\n\n\n  Context\n  In this presentation for the IIF UK Chapter: Quarterly Forecasting Forum seminar, we explore how traditional forecasting methods often fail to capture unmet demand in contraceptive supply chains—particularly when stockouts censor the data. Our work combines tobit kalman filter, conformal prediction, and inventory-aware simulation to estimate true demand beyond what the system records.\n  We show how \"no demand\" often just means \"no stock,\" and how our approach can support smarter, more equitable inventory decisions. Our next steps include expanding the policy framework, incorporating external covariates, and testing the model in both lab and field settings with real demand planners.\n  Because unmet demand isn’t invisible—our systems just fail to see it."
+  },
+  {
+    "objectID": "talks/dhis2_demo/index.html",
+    "href": "talks/dhis2_demo/index.html",
+    "title": "Leveraging Chap and the DHIS2 Platform for Stock Forecasting",
+    "section": "",
+    "text": "Leveraging Chap and the DHIS2 Platform for Stock Forecasting\n  A hands-on workshop on stock forecasting using CHAP platform.\n  Harsha Chamara Hewage | 2026-01-27\n  \n    \n       Slides\n    \n    \n       GitHub Repo\n    \n    \n       Register\n    \n  \n\n\n\n  Well-functioning health supply chains are essential to ensure patient care. Stock availability is a key indicator of supply chain performance at the last mile. The extremes include stockouts, where medicines and products are unavailable to treat patients, or overstock, which may lead to product destruction due to expiry and other negative impacts. To optimize stock availability at the sub-national level, proper demand planning based on forecasts is essential. In this webinar, we will explore research on leveraging the AI-powered DHIS2 Chap Modeling Platform to generate forecasts and inform demand planning activities.\n  \n   In this webinar, we will explore: \n  \n  \n    How last-mile stock data can be collected and used in DHIS2\n    Research on adapting the Chap machine learning platform for stock forecasting\n    How this method provides stock forecasts and informs inventory policy\n    A live demo of the system\n    Q&A session\n  \n  \n  Join us to learn more about the research and implementation possibilities!"
   },
   {
     "objectID": "talks/euro_leeds/index.html",
