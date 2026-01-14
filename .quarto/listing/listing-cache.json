@@ -33,7 +33,8 @@
       "euro_leeds/*.qmd",
       "wgsss_25/*.qmd",
       "dhis2_webinar/*.qmd",
-      "lomsac_2026/*.qmd"
+      "lomsac_2026/*.qmd",
+      "dhis2_demo/*.qmd"
     ],
     "phd\\index.qmd": [
       "projects.yml",

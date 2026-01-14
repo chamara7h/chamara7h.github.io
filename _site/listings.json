@@ -33,6 +33,7 @@
   {
     "listing": "/talks/index.html",
     "items": [
+      "/talks/dhis2_demo/index.html",
       "/talks/lomsac_2026/index.html",
       "/talks/dhis2_webinar/index.html",
       "/talks/wgsss_25/index.html",

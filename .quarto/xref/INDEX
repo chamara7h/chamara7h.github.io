@@ -218,5 +218,11 @@
   },
   "talks/lomsac_2026/index.qmd": {
     "index.html": "78484875"
+  },
+  "talks/dhis2_demo/index.qmd": {
+    "index.html": "463e0cd5"
+  },
+  "talks/dhis2_demo/slides/dhis2_demo.qmd": {
+    "dhis2_demo.html": "272e82b8"
   }
 }
