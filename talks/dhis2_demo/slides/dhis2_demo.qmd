@@ -1069,7 +1069,7 @@ fc_rel |>
 
 <br>
 
-<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> [GitHub repo with all R codes and YML configurations](www.github.com)
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> [GitHub repo with all R codes and YML configurations](https://github.com/chamara7h/dhis2_demo#)
 
 <br>
 

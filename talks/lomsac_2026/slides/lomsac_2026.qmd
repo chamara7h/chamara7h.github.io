@@ -1116,14 +1116,14 @@ fc_rel |>
   )) +
   geom_point(
     # position = position_jitter(width = 0.03, height = 0.03),
-    size     = 3,
-    stroke   = 1
+    size     = 3.5,
+    stroke   = 1.5
   ) +
   facet_grid(cols = vars(case), rows = vars(measure), scales = "free", switch = "y") +
   scale_colour_manual(
   values = c(
-    "Model Faliure" = "#D55E00",  # red (failure)
-    "None"          = "#009E73"   # green (no failure)
+    "Model Faliure" = "#B31B1B",  # red (failure)
+    "None"          = "#2e6f40"   # green (no failure)
   )) +
   scale_shape_manual(values = 0:14) +
   labs(
@@ -1173,16 +1173,14 @@ Solid arrows represent data flow, and dashed arrows represent information feedba
 
 <br>
 
-::: {.fragment fragment-index=1}
 <i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i>
 DHIS2 community webinar (90+ participants across industry, NGOs, and implementers)
-:::
 
 <br>
 
 ::: {.fragment fragment-index=2}
 <i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i>
-Technical briefing to the DHIS2 development team and country representatives
+Technical briefing to the DHIS2 development team and country representatives from Ministries
 :::
 
 <br>
@@ -1203,7 +1201,7 @@ Planned hands-on practitioner demo using the existing DHIS2 ecosystem
 
 ::: {.fragment fragment-index=5}
 <i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i>
-Co-delivered one-week, in-person forecasting training (Kigali, February)
+Co-delivering one-week, in-person forecasting training (Kigali, February)
 :::
 
 <br>
