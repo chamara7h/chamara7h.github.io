@@ -518,6 +518,13 @@
     "text": "Execution scalability of all forecasting methods\n\n\nFigure 6: Model portability metrics for all candidate forecasting methods, relative to the Mean method. Relative MASE and QL(0.9) are reported separately for malaria and vaccine products; values below 1 indicate improvement over the Mean method."
   },
   {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#what-does-this-mean-for-supply-chain-forecasting",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#what-does-this-mean-for-supply-chain-forecasting",
+    "title": "Home",
+    "section": "What does this mean for supply chain forecasting?",
+    "text": "What does this mean for supply chain forecasting?\n\n\n Can the same DHIS2 / CHAP platform be used for supply chain forecasting?\nYes, the platform is generic and extensible beyond disease surveillance.\n\n\n\n Can one model work well for all supply chain problems?\nNot really, demand patterns, data quality, and decision contexts differ. However, a small set of models tend to perform consistently well across settings.\n\n\n\n How does CHAP handle this heterogeneity?\nCHAP gives full autonomy to plug in, test, and select models based on the use case, rather than enforcing a single “best” model.\n\n\n\n Do we need system-level adaptations for supply chains?\nYes, modest but important tweaks are needed (data structures, evaluation metrics, and decision-oriented outputs)."
+  },
+  {
     "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#resources",
     "href": "talks/dhis2_demo/slides/dhis2_demo.html#resources",
     "title": "Home",
