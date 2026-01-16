@@ -1059,6 +1059,50 @@ fc_rel |>
 
 ```
 
+## What does this mean for supply chain forecasting?
+
+<br>
+
+::: {.fragment}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **Can the same DHIS2 / CHAP platform be used for supply chain forecasting?**
+
+Yes, the platform is generic and extensible beyond disease surveillance.
+
+:::
+
+<br>
+
+::: {.fragment}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **Can one model work well for all supply chain problems?**
+
+Not really, demand patterns, data quality, and decision contexts differ.
+However, a small set of models tend to perform consistently well across settings.
+
+:::
+
+<br>
+
+::: {.fragment}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **How does CHAP handle this heterogeneity?**
+
+CHAP gives full autonomy to plug in, test, and select models based on the use case, rather than enforcing a single “best” model.
+
+:::
+
+<br>
+
+::: {.fragment}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> **Do we need system-level adaptations for supply chains?**
+
+Yes, modest but important tweaks are needed (data structures, evaluation metrics, and decision-oriented outputs).
+
+:::
+
+
 # {.title-slide background-color="#212B49"}
 
 <div class="title-slide">
