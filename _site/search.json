@@ -4687,7 +4687,7 @@
     "href": "talks/dhis2_demo/slides/dhis2_demo.html#any-questions-or-thoughts",
     "title": "Home",
     "section": "Any questions or thoughts? 💬",
-    "text": "Any questions or thoughts? 💬\n\n\n\n\n\n\n\n\n\nLeveraging Chap and the DHIS2 Platform for Stock Forecasting"
+    "text": "Any questions or thoughts? 💬"
   },
   {
     "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#what-does-this-mean-for-supply-chain-forecasting",
@@ -4695,5 +4695,12 @@
     "title": "Home",
     "section": "What does this mean for supply chain forecasting?",
     "text": "What does this mean for supply chain forecasting?\n\n\n Can the same DHIS2 / CHAP platform be used for supply chain forecasting?\nYes, the platform is generic and extensible beyond disease surveillance.\n\n\n\n Can one model work well for all supply chain problems?\nNot really, demand patterns, data quality, and decision contexts differ. However, a small set of models tend to perform consistently well across settings.\n\n\n\n How does CHAP handle this heterogeneity?\nCHAP gives full autonomy to plug in, test, and select models based on the use case, rather than enforcing a single “best” model.\n\n\n\n Do we need system-level adaptations for supply chains?\nYes, modest but important tweaks are needed (data structures, evaluation metrics, and decision-oriented outputs)."
+  },
+  {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#why-forecasting-is-not-one-ai-model",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#why-forecasting-is-not-one-ai-model",
+    "title": "Home",
+    "section": "Why forecasting is not “one AI model”",
+    "text": "Why forecasting is not “one AI model”\n\n In practice, forecasting relies on many different types of models, each designed for different data patterns and decisions.\n\n\n\n\n This is where CHAP within DHIS2 differs from AI agents: CHAP is model-agnostic. It lets users run, compare, and select models, rather than delegating all decisions to a single AI agent."
   }
 ]

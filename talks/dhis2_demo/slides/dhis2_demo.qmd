@@ -274,6 +274,26 @@ Consumption is affected by logistics.
 
 ::::
 
+## Why forecasting is not “one AI model”
+
+<br>
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> In practice, forecasting relies on many different types of models, each designed for different data patterns and decisions.
+
+::: {.fragment}
+
+![](images/fc_models.svg){style="width:80%; height:auto; "}
+
+:::
+
+
+::: {.fragment}
+
+<i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> This is where CHAP within DHIS2 differs from AI agents:
+[CHAP is model-agnostic. It lets users run, compare, and select models, rather than delegating all decisions to a single AI agent.]{.highlight-blue}
+
+:::
+
 ## Our experimental workflow
 
 <br>
@@ -353,6 +373,7 @@ read_csv("tables/candidate_models.csv") |>
   kable_styling(latex_options = "scale_down", font_size = 30)
 
 ```
+
 
 # {.title-slide background-color="#212B49"}
 
