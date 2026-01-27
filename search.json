@@ -455,6 +455,13 @@
     "text": "What we are going to do\n\n\n Apply the same CHAP morbidity models (no extra tuning) to product demand (malaria commodities, vaccines).\n\n\n\n Link forecasts to operations: evaluate both forecast accuracy and inventory impact.\n\n\n\n Build a portability matrix: when can we transfer a model?\n\n\n\n Design an implementation workflow for DHIS2/CHAP.\n\n\n\n Provide R scripts, CHAP YAML configs and sample datasets for full reproducibility."
   },
   {
+    "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#why-forecasting-is-not-one-ai-model",
+    "href": "talks/dhis2_demo/slides/dhis2_demo.html#why-forecasting-is-not-one-ai-model",
+    "title": "Home",
+    "section": "Why forecasting is not “one AI model”",
+    "text": "Why forecasting is not “one AI model”\n\n In practice, forecasting relies on many different types of models, each designed for different data patterns and decisions.\n\n\n\n\n This is where CHAP within DHIS2 differs from AI agents: CHAP is model-agnostic. It lets users run, compare, and select models, rather than delegating all decisions to a single AI agent."
+  },
+  {
     "objectID": "talks/dhis2_demo/slides/dhis2_demo.html#our-experimental-workflow",
     "href": "talks/dhis2_demo/slides/dhis2_demo.html#our-experimental-workflow",
     "title": "Home",
