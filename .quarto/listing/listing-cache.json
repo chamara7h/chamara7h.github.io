@@ -58,7 +58,8 @@
       "dl4sg_marcov/*.qmd",
       "intro_method_skills/*.qmd",
       "energy_score/*.qmd",
-      "quarto_website/*.qmd"
+      "quarto_website/*.qmd",
+      "causal_inference/*.qmd"
     ],
     "lab\\data_analytics\\index.qmd": [
       "intro_python/*.ipynb",
