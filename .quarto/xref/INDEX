@@ -224,5 +224,14 @@
   },
   "talks/dhis2_demo/slides/dhis2_demo.qmd": {
     "dhis2_demo.html": "272e82b8"
+  },
+  "lab/causal_inference/index.qmd": {
+    "index.html": "a216bea9"
+  },
+  "talks/jsi_session/index.qmd": {
+    "index.html": "344b8e0a"
+  },
+  "talks/jsi_session/slides/dhis2_demo.qmd": {
+    "dhis2_demo.html": "c079dd34"
   }
 }

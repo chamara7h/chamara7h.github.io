@@ -1,0 +1,15 @@
+﻿Method,Failures,Running time (second per iteration per series)
+INLA Baseline,0,7.03
+Auto EWARS,0,15.1
+Naïve,0,3.87
+sNaive,0,3.93
+ETS,0,4.63
+Mean,0,3
+ARIMA,0,3.23
+ARIMA Climate,7 (vaccine series) + 1 (malaria series),5.3
+ARIMA Madagaskar,7 (vaccine series) + 1 (malaria series),6.8
+Linear Regression,0,2.83
+Linear Regression Climate,0,5.1
+LightGBM,0,21
+xgBoost,0,25.03
+Random Forest,0,33.23

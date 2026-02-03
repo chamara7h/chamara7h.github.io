@@ -1,0 +1,15 @@
+﻿Method,Covariates
+Auto EWARS,"Population, rainfall, teamperature"
+INLA Baseline,None
+Naïve,None
+sNaive,None
+Mean,None
+ETS,None
+ARIMA,None
+ARIMA Climate,"Rainfall, temperature"
+ARIMA Madagaskar,"Rainfall (Lag 3), temperature (Lag 3)"
+Linear Regression,"Trend, seasonality"
+Linear Regression Climate,"Trend, seasonality, rainfall, teamperature"
+LightGBM,"Percentage of zero values, lags of target variable (lag 6 - 12), rainfall, temperature, month, healthcare facility code, product code"
+XGBoost,"Percentage of zero values, lags of target variable (lag 6 - 12), rainfall, temperature, month, healthcare facility code, product code"
+Random Forest,"Percentage of zero values, lags of target variable (lag 6 - 12), rainfall, temperature, month, healthcare facility code, product code"

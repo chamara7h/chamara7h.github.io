@@ -1,0 +1,237 @@
+---
+title: "Leveraging Chap and the DHIS2 Platform for Stock Forecasting"
+description: "A hands-on workshop on stock forecasting using CHAP platform."
+author: "Harsha Chamara Hewage"
+date: "2026-01-27"
+image: "cover.png"
+categories:
+  - Forecasting
+  - Inventory
+  - Climate Health
+  - DHIS2
+  - CHAP
+link-external-newwindow: true
+---
+
+
+```{=html}
+<style>
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap');
+
+/* GENERAL STYLING */
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hero-section h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Professional Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #1a2b48;
+  transform: translateY(-2px);
+}
+
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.content-section h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1a2b48;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+/* OBJECTIVES CARDS */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.objective-card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  text-align: center;
+}
+.objective-card .icon {
+  font-size: 2.5em;
+  color: #0A4C6A; /* Professional Teal/Blue */
+  margin-bottom: 15px;
+}
+.objective-card p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* PREREQUISITES LIST */
+.prereq-list {
+  list-style: none;
+  padding-left: 0;
+}
+.prereq-list li {
+  font-size: 1.05em;
+  padding: 10px 0 10px 35px;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+.prereq-list li:last-child {
+  border-bottom: none;
+}
+.prereq-list li::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c"; /* Checkmark icon */
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: #28a745; /* Green */
+  font-size: 1.2em;
+}
+
+/* COURSE TOPICS STYLING */
+.topics-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: -10px;
+}
+.topics-list > li {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.topics-list > li:last-child {
+    border-bottom: none;
+}
+.topics-list h4 {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #0A4C6A;
+    margin-bottom: 15px;
+}
+.topics-list ul {
+    list-style: none;
+    padding-left: 20px;
+}
+.topics-list ul li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+.topics-list ul li::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f101"; /* Right angle arrow */
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: #0A4C6A;
+}
+</style>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<div class="hero-section">
+  <h1 class="title">Leveraging Chap and the DHIS2 Platform for Stock Forecasting</h1>
+  <p class="description">A hands-on workshop on stock forecasting using CHAP platform.</p>
+  <p class="author-date">Harsha Chamara Hewage | 2026-01-27</p>
+  <div class="cta-buttons">
+    <a href="slides/dhis2_demo.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> Slides
+    </a>
+    <a href="https://github.com/chamara7h/dhis2_demo#" target="_blank" class="btn-custom btn-secondary">
+      <i class="fab fa-github"></i> GitHub Repo
+    </a>
+    <a href="https://us06web.zoom.us/meeting/register/katMi0aISru0kR5sgrrTYg" target="_blank" class="btn-custom btn-primary">
+      <i class="fa-user-plus"></i> Register
+    </a>
+  </div>
+</div>
+
+<div class="content-section">
+  <p>Well-functioning health supply chains are essential to ensure patient care. Stock availability is a key indicator of supply chain performance at the last mile. The extremes include stockouts, where medicines and products are unavailable to treat patients, or overstock, which may lead to product destruction due to expiry and other negative impacts. To optimize stock availability at the sub-national level, proper demand planning based on forecasts is essential. In this webinar, we will explore research on leveraging the AI-powered DHIS2 Chap Modeling Platform to generate forecasts and inform demand planning activities.</p>
+  
+  <p> In this webinar, we will explore: </p>
+  
+  <ul class="prereq-list">
+    <li>How last-mile stock data can be collected and used in DHIS2</li>
+    <li>Research on adapting the Chap machine learning platform for stock forecasting</li>
+    <li>How this method provides stock forecasts and informs inventory policy</li>
+    <li>A live demo of the system</li>
+    <li>Q&A session</li>
+  </ul>
+  
+  <p>Join us to learn more about the research and implementation possibilities!</p>
+</div>
+```
