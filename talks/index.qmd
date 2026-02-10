@@ -8,6 +8,7 @@ listing:
     - 'dhis2_webinar/*.qmd'
     - 'lomsac_2026/*.qmd'
     - 'dhis2_demo/*.qmd'
+    - 'jsi_session/*.qmd'
   type: grid
   sort: "date desc"
   filter-ui: true

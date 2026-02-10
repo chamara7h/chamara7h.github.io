@@ -7,7 +7,7 @@ listing:
     - "dl4sg_marcov/*.qmd"
     - 'energy_score/*.qmd'
     - 'quarto_website/*.qmd'
-    - 'causal_inference/*.qmd'
+    # - 'causal_inference/*.qmd'
   type: grid
   sort: "date desc"
   filter-ui: true

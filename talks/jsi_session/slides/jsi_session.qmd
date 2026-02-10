@@ -1,0 +1,477 @@
+---
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1920
+    height: 1080
+    logo: "images/logo.png"
+    footer: "[Forecasting & decision support for public health supply chains](https://chamara7h.github.io/talks/)"
+    css: theme.css
+    echo: true
+execute:
+  warning: false
+  echo: false
+header-includes:
+  - '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">'
+---   
+
+# {.title-slide background-image="images/cover.png" background-size="cover"}
+
+<div class="logo-container">
+  <img src="images/cardiff_logo.png" alt="Cardiff University Logo">
+  <img src="images/logo.png" alt="Data Lab Logo">
+  <img src="images/wgss.png" alt="WGSSS Logo">
+  <img src="images/ukri.png" alt="UKRI Logo">
+</div>
+
+<div class="title-slide">
+  <h1>Forecasting & decision support for public health supply chains</h1>
+  <h2>Learning, engagement, and research from the Data Lab for Social Good, Cardiff University, UK</h2>
+  <p class="author">Harsha Halgamuwe Hewage</p>
+  <p class="date">2026/02/12</p>
+</div>
+
+::: aside
+**Image credits**: AI-generated visuals created with OpenAI Sora. No real patient or facility images are used.
+:::
+
+
+## {} 
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/outline.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+
+<br>
+
+<br>
+
+[Outline]{.highlight-title}
+
+::: {.step data-step="01"}
+<div class="step-content">
+  <p>Overview of our projects</p>
+</div>
+:::
+
+::: {.step data-step="02"}
+<div class="step-content">
+  <p>Project 01: Contraceptive demand forecasting</p>
+</div>
+:::
+
+::: {.step data-step="03"}
+<div class="step-content">
+  <p>Project 02: Demand forecasting with lost sales</p>
+</div>
+:::
+
+::: {.step data-step="04"}
+<div class="step-content">
+  <p>Project 03: Supply chain forecasting using DHIS2/CHAP</p>
+</div>
+:::
+
+::: {.step data-step="05"}
+<div class="step-content">
+  <p>Project 04: Foundation/LLMs models for demand forecasting</p>
+</div>
+:::
+
+:::
+
+::::
+
+
+## Portfolio map: four connected projects
+
+<br>
+
+![](images/projects.svg){style="width:100%; height:auto; "}
+
+## Projects timeline and progress
+
+Blue colour bars indicate the timelines from project start to draft manuscript completion.
+
+<br>
+
+![](images/timeline.svg){style="width:100%; height:auto; "}
+
+
+## {}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/background.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+[Project 01: Family planning demand forecasting]{.highlight-title}
+
+<br>
+
+::: {.fragment}
+
+**Problem**
+
+- Stock decisions are risk-based, point forecasts are not enough
+
+- Real LMIS data are irregular and often short-history
+
+- Planners need a transparent adjustment mechanism to incorporate expert knowledge
+
+:::
+
+
+::: {.fragment}
+
+**What we built**
+
+- Hybrid approach: Combine probabilistic forecast with expert point forecast
+
+- Benchmark a wide range of forecasting methods for contraceptive forecasting
+
+:::
+
+:::
+
+::::
+
+
+
+
+## Project 01: Family planning demand forecasting 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/project1_img1.svg)
+
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="47.5%"}
+
+<br>
+
+::: {.fragment}
+
+**Outputs**
+
+- Facility-level probabilistic forecasts (quantiles & intervals)
+
+- Hybrid method that balances accuracy and computational requirements
+
+- Guidance on when to use which method family
+
+- A hands-on training on demand forecasting for contraceptives
+
+:::
+
+::: {.fragment}
+
+**Key message**
+
+- Use stable baselines by default; escalate to richer models selectively
+
+- Treat bias adjustment as a governance issue (who can override, when, and why)
+
+:::
+
+:::
+
+::::
+
+
+## {}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/wp2.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+[Project 02: Demand forecasting with lost sales]{.highlight-title}
+
+<br>
+
+::: {.fragment}
+
+**Problem**
+
+- Observed consumption underestimates true need when shelves are empty
+
+- Stockouts create partial censoring
+
+- Interruptions/closures create full censoring
+
+- Biased data → biased forecasts → under-ordering cycles
+
+:::
+
+
+::: {.fragment}
+
+**What we built**
+
+- Truncated Conformal Kalman Filter (TCKF), forecasting method that adapts under lost sales
+
+- Prediction intervals suitable for decision rules (e.g., order-up-to policies)
+
+:::
+
+:::
+
+::::
+
+
+## Project 02: Demand forecasting with lost sales
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/project2_img2.svg)
+
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="47.5%"}
+
+<br>
+
+::: {.fragment}
+
+**Outputs**
+
+- TCKF method for lost sales (stockouts and interruptions).
+
+- Prediction intervals via conformal prediction.
+
+- Integrated forecast and inventory pipeline linking accuracy to ordering decisions.
+
+- Public health translation from stock outcomes to program impact.
+
+:::
+
+::: {.fragment}
+
+**Key message**
+
+- Stock data often hides need, so we must estimate “true demand,” not just forecast observed consumption.
+
+- Evaluate methods by decision impact (availability/ public health), not forecast scores alone.
+
+:::
+
+:::
+
+::::
+
+
+## {}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/rqs.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+[Project 3: DHIS2/CHAP deployment for supply chain forecasting]{.highlight-title}
+
+<br>
+
+::: {.fragment}
+
+**Problem**
+
+- CHAP supports advanced probabilistic forecasting, mainly for morbidity use-cases 
+
+- Supply chain forecasting is not routinely linked to inventory decisions in the same workflow
+
+- Facility-level planning needs low-burden tools that run unattended across many series
+
+:::
+
+
+::: {.fragment}
+
+**What we built**
+
+- A model portability experiment inside the DHIS2/CHAP pipeline (cases → consumption) 
+
+- A standard workflow that produces forecast objects (mean, quantiles, sample paths) and feeds an order-up-to inventory simulation
+
+:::
+
+:::
+
+::::
+
+
+## Project 3: DHIS2/CHAP deployment for supply chain forecasting
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/project3_img3.svg)
+
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="47.5%"}
+
+<br>
+
+::: {.fragment}
+
+**Outputs**
+
+- Portability evidence across accuracy, uncertainty, runtime, and failure risk
+
+- A practical default set: Auto ARIMA / Auto ETS as stable, scalable baselines
+
+- A proposed end-to-end architecture and deployment steps
+
+:::
+
+::: {.fragment}
+
+**Key message**
+
+- Reuse the platform at scale, but treat model choice as conditional (target structure and decision context).
+
+- Start with autonomous baselines; add complex models only where inputs and governance justify them.
+
+:::
+
+:::
+
+::::
+
+## {}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/llm.png){.absolute top="-10%" left="-10%" height="120%" style="max-height: unset;"}
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+[Project 4: Foundation/LLM models for public healthcare demand forecasting]{.highlight-title}
+
+<br>
+
+::: {.fragment}
+
+**Problem**
+
+- Foundational/ LLM models are trained on commercial-scale time series, but public health LMIS data are different 
+
+- In LMIS we see intermittency, censoring, short histories, and data quality constraints 
+
+- Their value for facility planning (zero-shot vs fine-tuned) is still unknown
+
+:::
+
+
+::: {.fragment}
+
+**What we built**
+
+- A controlled benchmark of foundation/LLM models vs strong statistical baselines on public health demand series 
+
+- A Model Portability Matrix to explain when/why transfer works across domains, data regimes, and decision contexts 
+
+:::
+
+:::
+
+::::
+
+
+## Project 4: Foundation/LLM models for public healthcare demand forecasting
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](images/project4_img4.svg){style="width:90%; height:auto; "}
+
+:::
+
+::: {.column width="2.5%"}
+
+:::
+
+::: {.column width="57.5%"}
+
+<br>
+
+::: {.fragment}
+
+**Outputs**
+
+- A portability matrix covering: domain, data regime, model complexity and computational requirements
+
+- Zero-shot vs fine-tuned results for models such as TimeGPT, Chronos, LagLlama, Moirai, TimesFM, etc
+
+- Practical guidance: “*where foundation models help, where they don’t, and what to run instead*” 
+
+:::
+
+::: {.fragment}
+
+**Key message**
+
+- Treat foundation/LLM models as candidates, not defaults: test portability under LMIS realities before deployment.
+
+:::
+
+:::
+
+::::
+
+## Any questions or thoughts? 💬
+
+![](images/follow_us.png){fig-align="center"}
+
+

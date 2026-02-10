@@ -227,5 +227,11 @@
   },
   "lab/causal_inference/index.qmd": {
     "index.html": "d7093dd0"
+  },
+  "talks/jsi_session/index.qmd": {
+    "index.html": "f54cfaee"
+  },
+  "talks/jsi_session/slides/jsi_session.qmd": {
+    "jsi_session.html": "39c4b195"
   }
 }

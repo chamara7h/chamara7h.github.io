@@ -33,6 +33,7 @@
   {
     "listing": "/talks/index.html",
     "items": [
+      "/talks/jsi_session/index.html",
       "/talks/dhis2_demo/index.html",
       "/talks/lomsac_2026/index.html",
       "/talks/dhis2_webinar/index.html",
@@ -67,7 +68,6 @@
   {
     "listing": "/lab/index.html",
     "items": [
-      "/lab/causal_inference/index.html",
       "/lab/quarto_website/index.html",
       "/lab/dl4sg_marcov/index.html",
       "/lab/intro_method_skills/index.html",
