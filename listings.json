@@ -13,10 +13,15 @@
     ]
   },
   {
-    "listing": "/projects/publications/index.html",
+    "listing": "/lab/index.html",
     "items": [
-      "/projects/publications/second-post/index.html",
-      "/projects/publications/first-post/index.html"
+      "/lab/causal_inference/index.html",
+      "/lab/quarto_website/index.html",
+      "/lab/dl4sg_marcov/index.html",
+      "/lab/intro_method_skills/index.html",
+      "/lab/epss_training/index.html",
+      "/lab/energy_score/index.html",
+      "/lab/intro_python/index.html"
     ]
   },
   {
@@ -28,14 +33,10 @@
     ]
   },
   {
-    "listing": "/lab/index.html",
+    "listing": "/projects/publications/index.html",
     "items": [
-      "/lab/quarto_website/index.html",
-      "/lab/dl4sg_marcov/index.html",
-      "/lab/intro_method_skills/index.html",
-      "/lab/epss_training/index.html",
-      "/lab/energy_score/index.html",
-      "/lab/intro_python/index.html"
+      "/projects/publications/second-post/index.html",
+      "/projects/publications/first-post/index.html"
     ]
   }
 ]
