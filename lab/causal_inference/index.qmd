@@ -1,0 +1,158 @@
+---
+title: "Causal inference using Machine Learning"
+description: "Tutorial"
+author: "Harsha Chamara Hewage"
+date: "2026-02-13"
+image: "cover.png"
+categories:
+  - Causal Inference
+  - Machine Learning
+  - Double ML
+  - R
+link-external-newwindow: true
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+
+```{=html}
+<style>
+/* FONT IMPORT */
+@import url('[https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap)');
+
+/* GENERAL STYLING */
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #1a2b48; /* Dark Navy Blue */
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hero-section h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero-section .description {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+.hero-section .author-date {
+  font-size: 1em;
+  color: #ccc;
+}
+
+/* CALL-TO-ACTION BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background-color: #0A4C6A; /* Professional Teal/Blue */
+  color: #fff;
+  border: 2px solid #0A4C6A;
+}
+.btn-primary:hover {
+  background-color: #083c54;
+  border-color: #083c54;
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #1a2b48;
+  transform: translateY(-2px);
+}
+
+
+/* CONTENT SECTION STYLING */
+.content-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+/* We remove the h2 styling from the generic content section
+   to let Quarto's markdown headings take precedence */
+
+</style>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+
+```
+
+```{r}
+#| label: setup
+#| context: setup
+#| include: false
+
+# 1. list your CRAN packages
+required_packages <- c(
+  "tidyverse",
+  "scoringRules",
+  'MASS'
+)
+
+# 2. install any that are missing
+new_packages <- required_packages[!required_packages %in% installed.packages()[, "Package"]]
+if (length(new_packages)) {
+  install.packages(new_packages)
+}
+
+# 3. load them
+invisible(lapply(required_packages, library, character.only = TRUE))
+
+```
+
+```{=html}
+
+<div class="hero-section">
+  <h1 class="title">Causal inference using Machine Learning</h1>
+  <p class="description">A tutorial on using Double ML for causal inferencing.</p>
+  <p class="author-date">Harsha Chamara Hewage | 2026-02-13</p>
+</div>
+
+<div class="content-section">
+
+```
+
+# Introduction
+
+Accurately forecasting the demand for pharmaceutical products is crucial for optimizing inventory management and ensuring continuous availability. Traditional point forecasts provide a single predicted value but fail to capture the uncertainty inherent in real-world scenarios. Probabilistic forecasting addresses this by offering a range of possible outcomes with associated probabilities, enabling better decision-making in supply chain management.
+
+
+   
