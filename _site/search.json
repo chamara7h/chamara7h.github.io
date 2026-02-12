@@ -4750,7 +4750,7 @@
     "href": "lab/causal_inference/index.html#setup-1",
     "title": "Causal inference using Machine Learning",
     "section": "Setup",
-    "text": "Setup\n\n\n\n\n\n\nTipInstall packages (run once)\n\n\n\nIf you are running this notebook for the first time, install these packages.\nThis chunk is set to eval: false so it will not run automatically when you render.\n\n\n\ninstall.packages(c(\"remotes\", \"mlr3\", \"mlr3learners\", \"DoubleML\", \"glmnet\", \"ranger\", \"xgboost\", \"data.table\"))\n\n\nlibrary(remotes)\nlibrary(mlr3)\nlibrary(mlr3learners)\nlibrary(DoubleML)\nlibrary(glmnet)\n\nLoading required package: Matrix\n\n\n\nAttaching package: 'Matrix'\n\n\nThe following objects are masked from 'package:tidyr':\n\n    expand, pack, unpack\n\n\nLoaded glmnet 4.1-10\n\nlibrary(ranger)\nlibrary(xgboost)\nlibrary(tidyverse)\n\n# suppress messages during fitting\nlgr::get_logger(\"mlr3\")$set_threshold(\"warn\")"
+    "text": "Setup\n\n\n\n\n\n\nTipInstall packages (run once)\n\n\n\nIf you are running this notebook for the first time, install these packages.\nThis chunk is set to eval: false so it will not run automatically when you render.\n\n\n\ninstall.packages(c(\"remotes\", \"mlr3\", \"mlr3learners\", \"DoubleML\", \"glmnet\", \"ranger\", \"xgboost\", \"data.table\"))\n\n\nlibrary(remotes)\nlibrary(mlr3)\nlibrary(mlr3learners)\nlibrary(DoubleML)\nlibrary(glmnet)\nlibrary(ranger)\nlibrary(xgboost)\nlibrary(tidyverse)\n\n# suppress messages during fitting\nlgr::get_logger(\"mlr3\")$set_threshold(\"warn\")"
   },
   {
     "objectID": "lab/causal_inference/index.html#data",
@@ -4876,7 +4876,7 @@
     "href": "lab/causal_inference/index.html#read-more",
     "title": "Causal inference using Machine Learning",
     "section": "Read more",
-    "text": "Read more\nDouble Machine Learning Approach\n\nChernozhukov, V., Chetverikov, D., Demirer, M., Duflo, E., Hansen, C., Newey, W. and Robins, J. (2018), Double/debiased machine learning for treatment and structural parameters. The Econometrics Journal, 21: C1-C68, doi:10.1111/ectj.12097.\nChernozhukov, V., Hansen, C., Kallus, N., Spindler, M., and Syrgkanis, V. (forthcoming), Applied Causal Inference Powered by ML and AI.\n\nDoubleML Package for Python and R\n\nBach, P., Chernozhukov, V., Kurz, M. S., and Spindler, M. (2021), DoubleML - An Object-Oriented Implementation of Double Machine Learning in R, arXiv:2103.09603.\nBach, P., Chernozhukov, V., Kurz, M. S., and Spindler, M. (2022), DoubleML - An Object-Oriented Implementation of Double Machine Learning in Python, Journal of Machine Learning Research, 23(53): 1-6, https://www.jmlr.org/papers/v23/21-0862.html."
+    "text": "Read more\n\nBelloni, Alexandre, Victor Chernozhukov, and Christian Hansen. 2014. “Inference on Treatment Effects After Selection Among High-Dimensional Controls.” Review of Economic Studies 81 (2): 608–50.\nChernozhukov, Victor, Denis Chetverikov, Mert Demirer, Esther Duflo, Christian Hansen, Whitney Newey, and James Robins. 2018. “Double/Debiased Machine Learning for Treatment and Structural Parameters.” Econometrics Journal 21 (1): C1–68. https://doi.org/10.1111/ectj.12097."
   },
   {
     "objectID": "talks/jsi_session/index.html",
