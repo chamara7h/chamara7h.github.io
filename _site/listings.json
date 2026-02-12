@@ -68,6 +68,7 @@
   {
     "listing": "/lab/index.html",
     "items": [
+      "/lab/causal_inference/index.html",
       "/lab/quarto_website/index.html",
       "/lab/dl4sg_marcov/index.html",
       "/lab/intro_method_skills/index.html",
