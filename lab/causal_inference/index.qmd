@@ -122,7 +122,7 @@ body {
 
 # 1. list your CRAN packages
 required_packages <- c(
-  "tidyverse", "hdm", "broom", "modelsummary", "gt"
+  "tidyverse", "hdm", "broom", "modelsummary", "gt", "remotes", "mlr3", "mlr3learners", "DoubleML", "glmnet", "ranger", "xgboost", "data.table"
 )
 
 # 2. install any that are missing
