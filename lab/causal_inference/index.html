@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -43,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1b57771ad994a57b6ec2f73250ebb1a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1e97fe9ca5198b8bd5f6c795842923de.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,13 +107,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta property="og:title" content="Causal inference using Machine Learning – Home">
 <meta property="og:description" content="Tutorial">
-<meta property="og:image" content="https://chamara7h.github.io/lab/causal_inference/cover.png">
+<meta property="og:image" content="cover.png">
 <meta property="og:site_name" content="Home">
-<meta property="og:image:height" content="1024">
-<meta property="og:image:width" content="1536">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -146,7 +208,41 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#part-1-double-lasso-for-testing-the-convergence-hypothesis" id="toc-part-1-double-lasso-for-testing-the-convergence-hypothesis" class="nav-link active" data-scroll-target="#part-1-double-lasso-for-testing-the-convergence-hypothesis">PART 1: Double Lasso for Testing the Convergence Hypothesis</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  </ul></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
+  <ul class="collapse">
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data analysis</a></li>
+  <li><a href="#fit-the-model" id="toc-fit-the-model" class="nav-link" data-scroll-target="#fit-the-model">Fit the model</a></li>
+  <li><a href="#extract-the-coefficient-of-interest-gdpsh465" id="toc-extract-the-coefficient-of-interest-gdpsh465" class="nav-link" data-scroll-target="#extract-the-coefficient-of-interest-gdpsh465">Extract the coefficient of interest (<code>gdpsh465</code>)</a></li>
+  <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link" data-scroll-target="#interpreting-the-results">Interpreting the results</a></li>
+  </ul></li>
+  <li><a href="#part-2-impact-of-401k-on-financial-wealth-using-double-machine-learning" id="toc-part-2-impact-of-401k-on-financial-wealth-using-double-machine-learning" class="nav-link" data-scroll-target="#part-2-impact-of-401k-on-financial-wealth-using-double-machine-learning">PART 2: Impact of 401(k) on Financial Wealth using Double Machine Learning</a>
+  <ul class="collapse">
+  <li><a href="#setup-1" id="toc-setup-1" class="nav-link" data-scroll-target="#setup-1">Setup</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#quick-eda" id="toc-quick-eda" class="nav-link" data-scroll-target="#quick-eda">Quick EDA</a></li>
+  <li><a href="#a-simple-baseline-unconditional-mean-differences" id="toc-a-simple-baseline-unconditional-mean-differences" class="nav-link" data-scroll-target="#a-simple-baseline-unconditional-mean-differences">A simple baseline: unconditional mean differences</a></li>
+  <li><a href="#the-doubleml-package-estimating-the-average-treatment-effect-of-401k-eligibility-on-net-financial-assets" id="toc-the-doubleml-package-estimating-the-average-treatment-effect-of-401k-eligibility-on-net-financial-assets" class="nav-link" data-scroll-target="#the-doubleml-package-estimating-the-average-treatment-effect-of-401k-eligibility-on-net-financial-assets">The <code>DoubleML</code> package: Estimating the Average Treatment Effect of 401(k) Eligibility on Net Financial Assets</a></li>
+  <li><a href="#the-data-backend-doublemldata" id="toc-the-data-backend-doublemldata" class="nav-link" data-scroll-target="#the-data-backend-doublemldata">The Data Backend: <code>DoubleMLData</code></a></li>
+  <li><a href="#base-controls" id="toc-base-controls" class="nav-link" data-scroll-target="#base-controls">Base controls</a></li>
+  <li><a href="#flexible-controls" id="toc-flexible-controls" class="nav-link" data-scroll-target="#flexible-controls">Flexible controls</a></li>
+  <li><a href="#partially-linear-regression-model-plr" id="toc-partially-linear-regression-model-plr" class="nav-link" data-scroll-target="#partially-linear-regression-model-plr">Partially Linear Regression Model (PLR)</a></li>
+  <li><a href="#learners" id="toc-learners" class="nav-link" data-scroll-target="#learners">Learners</a></li>
+  <li><a href="#plr-results-summary" id="toc-plr-results-summary" class="nav-link" data-scroll-target="#plr-results-summary">PLR results summary</a></li>
+  <li><a href="#interactive-regression-model-irm" id="toc-interactive-regression-model-irm" class="nav-link" data-scroll-target="#interactive-regression-model-irm">Interactive Regression Model (IRM)</a></li>
+  <li><a href="#irm-with-trees" id="toc-irm-with-trees" class="nav-link" data-scroll-target="#irm-with-trees">IRM with Trees</a></li>
+  <li><a href="#irm-with-boosted-trees" id="toc-irm-with-boosted-trees" class="nav-link" data-scroll-target="#irm-with-boosted-trees">IRM with Boosted Trees</a></li>
+  <li><a href="#irm-results-summary" id="toc-irm-results-summary" class="nav-link" data-scroll-target="#irm-results-summary">IRM results summary</a></li>
+  <li><a href="#iivm-interactive-iv-model" id="toc-iivm-interactive-iv-model" class="nav-link" data-scroll-target="#iivm-interactive-iv-model">IIVM: Interactive IV Model</a></li>
+  <li><a href="#iivm-results-summary" id="toc-iivm-results-summary" class="nav-link" data-scroll-target="#iivm-results-summary">IIVM results summary</a></li>
+  </ul></li>
+  <li><a href="#all-results-together" id="toc-all-results-together" class="nav-link" data-scroll-target="#all-results-together">All results together</a>
+  <ul class="collapse">
+  <li><a href="#read-more" id="toc-read-more" class="nav-link" data-scroll-target="#read-more">Read more</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -298,11 +394,1822 @@ body {
 
 <div class="content-section">
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>Accurately forecasting the demand for pharmaceutical products is crucial for optimizing inventory management and ensuring continuous availability. Traditional point forecasts provide a single predicted value but fail to capture the uncertainty inherent in real-world scenarios. Probabilistic forecasting addresses this by offering a range of possible outcomes with associated probabilities, enabling better decision-making in supply chain management.</p>
+<section id="part-1-double-lasso-for-testing-the-convergence-hypothesis" class="level1">
+<h1>PART 1: Double Lasso for Testing the Convergence Hypothesis</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>We provide an empirical example of <strong>partialling-out with Lasso</strong> (often called <strong>Double Lasso</strong>) to estimate the regression coefficient <span class="math inline">\(\beta_1\)</span> in the high-dimensional linear regression model:</p>
+<p><span class="math display">\[
+Y = \beta_1 D + \beta_2'W + \epsilon.
+\]</span></p>
+<p>Specifically, we are interested in how the rates at which economies of different countries grow (<span class="math inline">\(Y\)</span>) are related to the initial wealth levels in each country (<span class="math inline">\(D\)</span>), while controlling for institutional, educational, and other country characteristics (<span class="math inline">\(W\)</span>).</p>
+<p>The relationship is captured by <span class="math inline">\(\beta_1\)</span>, the <strong>speed of convergence/divergence</strong>:</p>
+<ul>
+<li><p><span class="math inline">\(\beta_1 &lt; 0\)</span>: poorer countries catch up (<strong>convergence</strong>)</p></li>
+<li><p><span class="math inline">\(\beta_1 &gt; 0\)</span>: poorer countries fall behind (<strong>divergence</strong>)</p></li>
+</ul>
+<p>Our inference question is:</p>
+<p>Our inference question here is: <em>do poor countries grow faster than rich countries, controlling for educational and other characteristics?</em> In other words, is the speed of convergence negative: <span class="math inline">\(\beta_1 &lt;0?\)</span></p>
+<p>This idea is closely related to the <strong>Convergence Hypothesis</strong> predicted by the Solow Growth Model. This is a structural economic model. Under some strong assumptions (not discussed here), this predictive exercise can be given a causal interpretation.</p>
+<p><strong>In this dataset:</strong></p>
+<ul>
+<li><p><span class="math inline">\(Y\)</span> is the realised annual growth rate of a country’s wealth (GDP per capita growth),</p></li>
+<li><p><span class="math inline">\(D\)</span> is the initial level of wealth (GDP per capita at baseline),</p></li>
+<li><p><span class="math inline">\(W\)</span> includes education, institutions, openness, political stability, and similar controls.</p></li>
+</ul>
+</section>
+</section>
+<section id="setup" class="level1">
+<h1>Setup</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Install packages (run once)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are running this notebook for the first time, install these packages.<br>
+This chunk is set to <code>eval: false</code> so it will not run automatically when you render.</p>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"hdm"</span>, <span class="st">"broom"</span>, <span class="st">"modelsummary"</span>, <span class="st">"gt"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hdm)          <span class="co"># high-dimensional methods including rlasso and rlassoEffect</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)        <span class="co"># tidy model summaries</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modelsummary) <span class="co"># clean regression tables</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis">Data analysis</h2>
+<p>We consider the dataset GrowthData, which is included in the package hdm.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>growth <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(GrowthData) <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="sc">-</span>intercept)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>growth <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 62
+  Outcome gdpsh465 bmp1l freeop freetar   h65  hm65  hf65   p65  pm65  pf65
+    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 -0.0243     6.59 0.284  0.153 0.0439  0.007 0.013 0.001  0.29  0.37  0.21
+2  0.100      6.83 0.614  0.314 0.0618  0.019 0.032 0.007  0.91  1     0.65
+3  0.0671     8.90 0      0.204 0.00919 0.26  0.325 0.201  1     1     1   
+4  0.0641     7.57 0.200  0.249 0.0363  0.061 0.07  0.051  1     1     1   
+5  0.0279     7.16 0.174  0.299 0.0374  0.017 0.027 0.007  0.82  0.85  0.81
+# ℹ 51 more variables: s65 &lt;dbl&gt;, sm65 &lt;dbl&gt;, sf65 &lt;dbl&gt;, fert65 &lt;dbl&gt;,
+#   mort65 &lt;dbl&gt;, lifee065 &lt;dbl&gt;, gpop1 &lt;dbl&gt;, fert1 &lt;dbl&gt;, mort1 &lt;dbl&gt;,
+#   invsh41 &lt;dbl&gt;, geetot1 &lt;dbl&gt;, geerec1 &lt;dbl&gt;, gde1 &lt;dbl&gt;, govwb1 &lt;dbl&gt;,
+#   govsh41 &lt;dbl&gt;, gvxdxe41 &lt;dbl&gt;, high65 &lt;dbl&gt;, highm65 &lt;dbl&gt;, highf65 &lt;dbl&gt;,
+#   highc65 &lt;dbl&gt;, highcm65 &lt;dbl&gt;, highcf65 &lt;dbl&gt;, human65 &lt;dbl&gt;,
+#   humanm65 &lt;dbl&gt;, humanf65 &lt;dbl&gt;, hyr65 &lt;dbl&gt;, hyrm65 &lt;dbl&gt;, hyrf65 &lt;dbl&gt;,
+#   no65 &lt;dbl&gt;, nom65 &lt;dbl&gt;, nof65 &lt;dbl&gt;, pinstab1 &lt;dbl&gt;, pop65 &lt;int&gt;, …</code></pre>
+</div>
+</div>
+<p><strong>Exercise 1:</strong> To check the convergence hypothesis, analyze the relationship between the country’s growth rate <span class="math inline">\(Y\)</span> and the country’s other characteristics by running a linear regression (ols) in the first step. Determine the regression coefficient <span class="math inline">\(\beta_1\)</span> of the target regressor <em>gdpsh465</em> (initial wealth level, <span class="math inline">\(D\)</span>), its 95% confidence interval and the standard error.</p>
+<p>We begin by estimating a standard regression model using all available controls:</p>
+<p><span class="math display">\[
+Outcome = \alpha + \beta_1 \, gdpsh465 + \text{(other controls)} + \epsilon.
+\]</span></p>
+<p>Our focus is the coefficient on <strong><code>gdpsh465</code></strong> (initial GDP per capita), because it corresponds to the target regressor <span class="math inline">\(D\)</span> and the parameter <span class="math inline">\(\beta_1\)</span>.</p>
+</section>
+<section id="fit-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="fit-the-model">Fit the model</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ols_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Outcome <span class="sc">~</span> ., <span class="at">data =</span> growth)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="extract-the-coefficient-of-interest-gdpsh465" class="level2">
+<h2 class="anchored" data-anchor-id="extract-the-coefficient-of-interest-gdpsh465">Extract the coefficient of interest (<code>gdpsh465</code>)</h2>
+<p>Instead of printing the full table (which is long), we extract only the one coefficient we care about.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ols_key <span class="ot">&lt;-</span> <span class="fu">tidy</span>(ols_fit, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">"gdpsh465"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ols_key</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 7
+  term     estimate std.error statistic p.value conf.low conf.high
+  &lt;chr&gt;       &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 gdpsh465 -0.00938    0.0299    -0.314   0.756  -0.0706    0.0518</code></pre>
+</div>
+</div>
+<p>How to read this row:</p>
+<ul>
+<li><p><code>estimate</code>: our estimate of <span class="math inline">\(\beta_1\)</span></p></li>
+<li><p><code>std.error</code>: the standard error of the estimate</p></li>
+<li><p><code>conf.low</code> and <code>conf.high</code>: the 95% confidence interval</p></li>
+</ul>
+<p>If the confidence interval includes 0, the evidence for convergence/divergence is weaker (based on this model). So, least squares provides a rather noisy estimate of the speed of convergence, and does not allow us to answer the question about the convergence hypothesis as the confidence interval includes zero.</p>
+<p>If you want a more “report-style” table:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="st">"OLS (all controls)"</span> <span class="ot">=</span> ols_fit),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">coef_map =</span> <span class="fu">c</span>(<span class="st">"gdpsh465"</span> <span class="ot">=</span> <span class="st">"Initial GDP per capita (gdpsh465)"</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">statistic =</span> <span class="fu">c</span>(<span class="st">"std.error"</span>, <span class="st">"conf.int"</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">"gt"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="hqxgomjuwe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hqxgomjuwe table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hqxgomjuwe thead, #hqxgomjuwe tbody, #hqxgomjuwe tfoot, #hqxgomjuwe tr, #hqxgomjuwe td, #hqxgomjuwe th {
+  border-style: none;
+}
+
+#hqxgomjuwe p {
+  margin: 0;
+  padding: 0;
+}
+
+#hqxgomjuwe .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hqxgomjuwe .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hqxgomjuwe .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hqxgomjuwe .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hqxgomjuwe .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hqxgomjuwe .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hqxgomjuwe .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hqxgomjuwe .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hqxgomjuwe .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hqxgomjuwe .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hqxgomjuwe .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hqxgomjuwe .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hqxgomjuwe .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hqxgomjuwe .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hqxgomjuwe .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hqxgomjuwe .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hqxgomjuwe .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hqxgomjuwe .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hqxgomjuwe .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hqxgomjuwe .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hqxgomjuwe .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hqxgomjuwe .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hqxgomjuwe .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hqxgomjuwe .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hqxgomjuwe .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hqxgomjuwe .gt_left {
+  text-align: left;
+}
+
+#hqxgomjuwe .gt_center {
+  text-align: center;
+}
+
+#hqxgomjuwe .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hqxgomjuwe .gt_font_normal {
+  font-weight: normal;
+}
+
+#hqxgomjuwe .gt_font_bold {
+  font-weight: bold;
+}
+
+#hqxgomjuwe .gt_font_italic {
+  font-style: italic;
+}
+
+#hqxgomjuwe .gt_super {
+  font-size: 65%;
+}
+
+#hqxgomjuwe .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hqxgomjuwe .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hqxgomjuwe .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hqxgomjuwe .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hqxgomjuwe .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hqxgomjuwe .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hqxgomjuwe .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#hqxgomjuwe .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#hqxgomjuwe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="OLS-(all-controls)" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">OLS (all controls)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Initial GDP per capita (gdpsh465)</td>
+<td class="gt_row gt_center" headers="OLS (all controls)">-0.009</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" "></td>
+<td class="gt_row gt_center" headers="OLS (all controls)">(0.030)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" " style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="OLS (all controls)" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">[-0.071, 0.052]</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">Num.Obs.</td>
+<td class="gt_row gt_center" headers="OLS (all controls)">90</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">R2</td>
+<td class="gt_row gt_center" headers="OLS (all controls)">0.887</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">R2 Adj.</td>
+<td class="gt_row gt_center" headers="OLS (all controls)">0.641</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">AIC</td>
+<td class="gt_row gt_center" headers="OLS (all controls)">-350.5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">BIC</td>
+<td class="gt_row gt_center" headers="OLS (all controls)">-193.0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Log.Lik.</td>
+<td class="gt_row gt_center" headers="OLS (all controls)">238.237</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" ">RMSE</td>
+<td class="gt_row gt_center" headers="OLS (all controls)">0.02</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>Exercise 2:</strong> First, get familiar with the data. Determine the dimensions of our data set and calculate the <span class="math inline">\(p/n\)</span> ratio. Do we have a high-dimensional setting?</p>
+<p>First, check the number of observations and variables.</p>
+<p>A simple way to judge whether we are in a “high-dimensional” regime is to compare:</p>
+<ul>
+<li><p><span class="math inline">\(n\)</span> = number of observations (countries)</p></li>
+<li><p><span class="math inline">\(p\)</span> = number of variables (columns)</p></li>
+</ul>
+<p>If <span class="math inline">\(p/n\)</span> is not small, OLS can become unstable (high variance, noisy estimates), especially when many controls are weakly related to the outcome.</p>
+<p>Compute <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span>, and <span class="math inline">\(p/n\)</span>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>growth <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">p =</span> <span class="fu">ncol</span>(growth),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_over_n =</span> p <span class="sc">/</span> n</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+      n     p p_over_n
+  &lt;int&gt; &lt;int&gt;    &lt;dbl&gt;
+1    90    62    0.689</code></pre>
+</div>
+</div>
+<p>We can also print the dimensions directly.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(growth)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 90 62</code></pre>
+</div>
+</div>
+<p>The sample contains about 90 countries and about 63 variables, so <span class="math inline">\(p/n\)</span> is not small. In this setting, the least squares method may provide a noisy estimate of <span class="math inline">\(\beta_1\)</span>, especially when many controls are weakly informative.</p>
+<p>This is one reason methods based on regularisation (such as Lasso) become useful: they help us focus on the most relevant controls, rather than estimating everything with equal weight.</p>
+<p><strong>Exercise 3:</strong> In contrast, use the partialling-out approach based on lasso regression (“Double Lasso”). Again, determine the regression coefficient <span class="math inline">\(\beta_1\)</span> of the target regressor <em>gdpsh465</em> (initial wealth level, <span class="math inline">\(D\)</span>), its 95% confidence interval and the standard error.</p>
+<p>When we have many controls (and especially when <span class="math inline">\(p/n\)</span> is not small), a full OLS regression can become noisy and unstable. Double Lasso (also called partialling-out with Lasso) is designed to estimate <span class="math inline">\(\beta_1\)</span> while handling high-dimensional controls.</p>
+<p>The key idea is:</p>
+<ul>
+<li><p>Use Lasso to partial out controls <span class="math inline">\(W\)</span> from the outcome <span class="math inline">\(Y\)</span></p></li>
+<li><p>Use Lasso to partial out controls <span class="math inline">\(W\)</span> from the regressor <span class="math inline">\(D\)</span></p></li>
+<li><p>Regress the residualised outcome on the residualised regressor</p></li>
+</ul>
+<p>This helps ensure the controls we include are the ones that matter for predicting either <span class="math inline">\(Y\)</span> or <span class="math inline">\(D\)</span>.</p>
+<p><strong>Step 1:</strong> Define <span class="math inline">\(Y\)</span>, <span class="math inline">\(D\)</span>, and <span class="math inline">\(W\)</span></p>
+<p>We define:</p>
+<ul>
+<li><p><span class="math inline">\(Y\)</span>: <code>Outcome</code></p></li>
+<li><p><span class="math inline">\(D\)</span>: <code>gdpsh465</code></p></li>
+<li><p><span class="math inline">\(W\)</span>: everything else (all other columns)</p></li>
+</ul>
+<p>We use name-based selection (more readable and safer than column positions).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> growth <span class="sc">|&gt;</span> <span class="fu">pull</span>(Outcome)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> growth <span class="sc">|&gt;</span> <span class="fu">pull</span>(gdpsh465)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>W <span class="ot">&lt;-</span> growth <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="sc">-</span>Outcome, <span class="sc">-</span>gdpsh465) <span class="sc">|&gt;</span> <span class="fu">as.matrix</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Step 2:</strong> Partial out <span class="math inline">\(W\)</span> from <span class="math inline">\(Y\)</span> using Lasso</p>
+<p>Here we regress <span class="math inline">\(Y\)</span> on <span class="math inline">\(W\)</span> using Lasso, and keep the residuals:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rY <span class="ot">&lt;-</span> <span class="fu">rlasso</span>(<span class="at">x =</span> W, <span class="at">y =</span> Y)<span class="sc">$</span>res</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><code>rY</code> is the part of the outcome not explained by controls.</p>
+<p><strong>Step 3:</strong> Partial out <span class="math inline">\(W\)</span> from <span class="math inline">\(D\)</span> using Lasso</p>
+<p>Now we regress <span class="math inline">\(D\)</span> on <span class="math inline">\(W\)</span> using Lasso, and keep the residuals:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>rD <span class="ot">&lt;-</span> <span class="fu">rlasso</span>(<span class="at">x =</span> W, <span class="at">y =</span> D)<span class="sc">$</span>res</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><code>rD</code> is the part of the regressor not explained by controls.</p>
+<p><strong>Step 4:</strong> Regress residualised <span class="math inline">\(Y\)</span> on residualised <span class="math inline">\(D\)</span></p>
+<p>Finally, regress <code>rY</code> on <code>rD</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dl_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(rY <span class="sc">~</span> rD)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>This last step estimates <span class="math inline">\(\beta_1\)</span> using the variation that remains after removing what controls explain.</p>
+<p><strong>Step 5:</strong> Extract the Double Lasso estimate</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>dl_key <span class="ot">&lt;-</span> <span class="fu">tidy</span>(dl_fit, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">"rD"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>dl_key</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 7
+  term  estimate std.error statistic  p.value conf.low conf.high
+  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 rD     -0.0498    0.0139     -3.57 0.000573  -0.0775   -0.0221</code></pre>
+</div>
+</div>
+<p>Lasso provides a more precise estimate (lower standard error). The Lasso based point estimate is about <span class="math inline">\(-5\%\)</span> and the <span class="math inline">\(95\%\)</span> confidence interval for the (annual) rate of convergence is <span class="math inline">\(-7.8\%\)</span> to <span class="math inline">\(-2.2\%\)</span>. This empirical evidence does support the convergence hypothesis.</p>
+<p>Note: Alternatively, one could also use the <em>rlassoEffect</em> funtion from the <em>hdm</em> package that directly applies the partialling-out approach.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>dl_effect <span class="ot">&lt;-</span> <span class="fu">rlassoEffect</span>(<span class="at">x =</span> W, <span class="at">y =</span> Y, <span class="at">d =</span> D, <span class="at">method =</span> <span class="st">"partialling out"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>dl_effect</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+rlassoEffect(x = W, y = Y, d = D, method = "partialling out")
+
+Coefficients:
+[1]  -0.04981</code></pre>
+</div>
+</div>
+<p><strong>Exercise 4:</strong> Finally, let us have a look at the results. Compare the results of Exercise 2 and Exercise 3 and interpret your findings.</p>
+<p>Now we compare the two estimates (OLS and Double Lasso) side-by-side.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>compare_tbl <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  ols_key <span class="sc">|&gt;</span> <span class="fu">transmute</span>(<span class="at">model =</span> <span class="st">"OLS"</span>, estimate, std.error, conf.low, conf.high),</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  dl_key  <span class="sc">|&gt;</span> <span class="fu">transmute</span>(<span class="at">model =</span> <span class="st">"Double Lasso"</span>, estimate, std.error, conf.low, conf.high)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="sc">~</span><span class="fu">round</span>(.x, <span class="dv">4</span>)))</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>compare_tbl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  model        estimate std.error conf.low conf.high
+  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 OLS           -0.0094    0.0299  -0.0706    0.0518
+2 Double Lasso  -0.0498    0.0139  -0.0775   -0.0221</code></pre>
+</div>
+</div>
+<p>The least square method provides a rather noisy estimate of the speed of convergence. We cannot answer the question of whether poor countries grow faster than rich countries. The least square method does not work when the ratio <span class="math inline">\(p/n\)</span> is large.</p>
+<p>In sharp contrast, partialling-out via Lasso provides a more precise estimate. The Lasso-based point estimate is <span class="math inline">\(-5\%\)</span> and the <span class="math inline">\(95\%\)</span> confidence interval for the (annual) rate of convergence <span class="math inline">\([-7.8\%,-2.2\%]\)</span> only includes negative numbers. This empirical evidence does support the convergence hypothesis.</p>
+</section>
+<section id="interpreting-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-the-results">Interpreting the results</h2>
+<p>For the OLS regression, the estimated coefficient on <strong><code>gdpsh465</code></strong> is:</p>
+<ul>
+<li>estimate = -0.0094<br>
+</li>
+<li>95% CI = [-0.0706, 0.0518]</li>
+</ul>
+<p>This interval includes zero, so <strong>OLS does not provide strong evidence</strong> for convergence or divergence in this specification. This does not mean OLS is “wrong”, but in settings with many controls relative to sample size, OLS estimates can be <strong>imprecise</strong> (large standard errors), making inference difficult.</p>
+<p>For Double Lasso (partialling-out), the estimated coefficient is:</p>
+<ul>
+<li>estimate = -0.0498<br>
+</li>
+<li>95% CI = [-0.0775, -0.0221]</li>
+</ul>
+<p>This interval is fully below zero. Since <strong><span class="math inline">\(\beta_1 &lt; 0\)</span> corresponds to convergence</strong>, the Double Lasso results provide evidence consistent with the convergence hypothesis: <strong>poorer countries tend to grow faster than richer countries, conditional on the selected controls</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Causal interpretation (important):</strong><br>
+A causal interpretation requires additional assumptions (e.g., after controlling for <span class="math inline">\((W)\)</span>, there are no unobserved confounders affecting both initial wealth and subsequent growth). Double Lasso helps with <strong>high-dimensional controls</strong>, but it does not automatically guarantee causality.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="part-2-impact-of-401k-on-financial-wealth-using-double-machine-learning" class="level1">
+<h1>PART 2: Impact of 401(k) on Financial Wealth using Double Machine Learning</h1>
+<p>In this real-data example, we illustrate how the <a href="https://docs.doubleml.org/stable/index.html">DoubleML</a> package can be used to estimate the effect of 401(k) eligibility and participation on accumulated assets. The 401(k) data set has been analyzed in several studies, among others <a href="https://arxiv.org/abs/1608.00060">Chernozhukov et al.&nbsp;(2018)</a>.</p>
+<p>401(k) plans are pension accounts sponsored by employers. The key problem in determining the effect of participation in 401(k) plans on accumulated assets is saver heterogeneity coupled with the fact that the decision to enroll in a 401(k) is non-random. It is generally recognized that some people have a higher preference for saving than others. It also seems likely that those individuals with high unobserved preference for saving would be most likely to choose to participate in tax-advantaged retirement savings plans and would tend to have otherwise high amounts of accumulated assets. The presence of unobserved savings preferences with these properties then implies that conventional estimates that do not account for saver heterogeneity and endogeneity of participation will be biased upward, tending to overstate the savings effects of 401(k) participation.</p>
+<p>One can argue that eligibility for enrolling in a 401(k) plan in this data can be taken as exogenous after conditioning on a few observables of which the most important for their argument is income. The basic idea is that, at least around the time 401(k)’s initially became available, people were unlikely to be basing their employment decisions on whether an employer offered a 401(k) but would instead focus on income and other aspects of the job.</p>
+<section id="setup-1" class="level2">
+<h2 class="anchored" data-anchor-id="setup-1">Setup</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Install packages (run once)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are running this notebook for the first time, install these packages.<br>
+This chunk is set to <code>eval: false</code> so it will not run automatically when you render.</p>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"remotes"</span>, <span class="st">"mlr3"</span>, <span class="st">"mlr3learners"</span>, <span class="st">"DoubleML"</span>, <span class="st">"glmnet"</span>, <span class="st">"ranger"</span>, <span class="st">"xgboost"</span>, <span class="st">"data.table"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(remotes)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mlr3)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mlr3learners)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DoubleML)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glmnet)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ranger)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xgboost)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># suppress messages during fitting</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>lgr<span class="sc">::</span><span class="fu">get_logger</span>(<span class="st">"mlr3"</span>)<span class="sc">$</span><span class="fu">set_threshold</span>(<span class="st">"warn"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The preprocessed data can be fetched by calling <a href="https://docs.doubleml.org/r/stable/reference/fetch_401k.html">fetch_401k()</a>. The arguments <code>polynomial_features</code> and <code>instrument</code> can be used to replicate the models used in <a href="https://arxiv.org/abs/1608.00060">Chernozhukov et al.&nbsp;(2018)</a>. Note that an internet connection is required for loading the data. We start with a baseline specification of the regression model and reload the data later in case we want to use another specification.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data (instrument = TRUE is important for IIVM later)</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">fetch_401k</span>(<span class="at">return_type =</span> <span class="st">"data.table"</span>, <span class="at">instrument =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Classes 'data.table' and 'data.frame':  9915 obs. of  12 variables:
+ $ net_tfa: num  0 1015 -2000 15000 0 ...
+ $ age    : num  47 36 37 58 32 34 28 54 43 32 ...
+ $ inc    : num  6765 28452 3300 52590 21804 ...
+ $ educ   : num  8 16 12 16 11 16 12 11 14 18 ...
+ $ fsize  : num  2 1 6 2 1 1 3 3 2 3 ...
+ $ marr   : num  0 0 0 1 0 0 1 0 1 1 ...
+ $ twoearn: num  0 0 0 1 0 0 1 0 1 0 ...
+ $ db     : num  0 0 1 0 0 0 0 0 1 0 ...
+ $ pira   : num  0 0 0 0 0 1 1 0 1 0 ...
+ $ hown   : num  1 1 0 1 1 1 1 1 1 1 ...
+ $ p401   : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ e401   : int  0 0 0 0 0 0 0 0 0 0 ...
+ - attr(*, ".internal.selfref")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<p>See the “Details” section on the description of the data set, which can be accessed by typing <a href="https://docs.doubleml.org/r/stable/reference/fetch_401k.html">help(fetch_401k)</a>.</p>
+<p>We load the 401(k) dataset. We keep <code>instrument = TRUE</code> because we will use <strong>eligibility (<code>e401</code>)</strong> as an instrument later in the IV model.</p>
+<p>The data consist of 9,915 observations at the household level drawn from the 1991 Survey of Income and Program Participation (SIPP). All the variables are referred to 1990. We use net financial assets (<em>net_tfa</em>) as the outcome variable, <span class="math inline">\(Y\)</span>, in our analysis. The net financial assets are computed as the sum of IRA balances, 401(k) balances, checking accounts, saving bonds, other interest-earning accounts, other interest-earning assets, stocks, and mutual funds less non mortgage debts.</p>
+<p>Among the <span class="math inline">\(9915\)</span> individuals, <span class="math inline">\(3682\)</span> are eligible to participate in the program. The variable <em>e401</em> indicates eligibility and <em>p401</em> indicates participation, respectively.</p>
+</section>
+<section id="quick-eda" class="level2">
+<h2 class="anchored" data-anchor-id="quick-eda">Quick EDA</h2>
+<p>Eligibility and participation are binary variables.</p>
+<ul>
+<li><code>e401</code>: eligible for 401(k)</li>
+<li><code>p401</code>: participates in 401(k)</li>
+<li><code>net_tfa</code>: net total financial assets (outcome)</li>
+</ul>
+<section id="eligibility" class="level3">
+<h3 class="anchored" data-anchor-id="eligibility">Eligibility</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> e401, <span class="at">fill =</span> <span class="fu">factor</span>(e401))) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Eligibility, 401(k)"</span>) <span class="sc">+</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="participation" class="level3">
+<h3 class="anchored" data-anchor-id="participation">Participation</h3>
+<p>Participation is a choice, so this plot often reflects selection. People who participate may differ systematically (income, job type, financial literacy etc.). So, the raw difference between participants and non-participants is not causal.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> p401, <span class="at">fill =</span> <span class="fu">factor</span>(p401))) <span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Participation, 401(k)"</span>) <span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="outcome-distribution-by-eligibility" class="level3">
+<h3 class="anchored" data-anchor-id="outcome-distribution-by-eligibility">Outcome distribution by eligibility</h3>
+<p>Eligibility is highly associated with financial wealth: but eligibility is not randomly assigned in real life (it’s tied to employer/plan rules), so we still need to adjust for covariates. The density plot motivates the causal question, but doesn’t answer it.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> net_tfa, <span class="at">color =</span> <span class="fu">factor</span>(e401), <span class="at">fill =</span> <span class="fu">factor</span>(e401))) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">20000</span>, <span class="dv">150000</span>)) <span class="sc">+</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(. <span class="sc">~</span> e401) <span class="sc">+</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 340 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="a-simple-baseline-unconditional-mean-differences" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-baseline-unconditional-mean-differences">A simple baseline: unconditional mean differences</h2>
+<p>Before using DML, it is helpful to see the <em>raw difference</em> in average outcomes.</p>
+<p>As a first estimate, we calculate the unconditional average predictive effect (APE) of 401(k) eligibility on accumulated assets. This effect corresponds to the average treatment effect if 401(k) eligibility would be assigned to individuals in an entirely randomized way.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>APE_e401_uncond <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(e401) <span class="sc">|&gt;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_net_tfa =</span> <span class="fu">mean</span>(net_tfa), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(e401) <span class="sc">|&gt;</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">diff =</span> mean_net_tfa[e401 <span class="sc">==</span> <span class="dv">1</span>] <span class="sc">-</span> mean_net_tfa[e401 <span class="sc">==</span> <span class="dv">0</span>]) <span class="sc">|&gt;</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(diff)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(APE_e401_uncond, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19559.34</code></pre>
+</div>
+</div>
+<p>The unconditional APE of e401 is about <span class="math inline">\(19559\)</span>.</p>
+<p>Among the <span class="math inline">\(3682\)</span> individuals that are eligible, <span class="math inline">\(2594\)</span> decided to participate in the program. The unconditional APE of p401 is about <span class="math inline">\(27372\)</span>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>APE_p401_uncond <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(p401) <span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_net_tfa =</span> <span class="fu">mean</span>(net_tfa), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(p401) <span class="sc">|&gt;</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">diff =</span> mean_net_tfa[p401 <span class="sc">==</span> <span class="dv">1</span>] <span class="sc">-</span> mean_net_tfa[p401 <span class="sc">==</span> <span class="dv">0</span>]) <span class="sc">|&gt;</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(diff)</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(APE_p401_uncond, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 27371.58</code></pre>
+</div>
+</div>
+<p>These raw differences are not causal. They ignore differences in age, income, education, and other confounders. It mixes treatment effects with differences in who ends up eligible/participating</p>
+</section>
+<section id="the-doubleml-package-estimating-the-average-treatment-effect-of-401k-eligibility-on-net-financial-assets" class="level2">
+<h2 class="anchored" data-anchor-id="the-doubleml-package-estimating-the-average-treatment-effect-of-401k-eligibility-on-net-financial-assets">The <code>DoubleML</code> package: Estimating the Average Treatment Effect of 401(k) Eligibility on Net Financial Assets</h2>
+<p>Let’s use the package <a href="https://docs.doubleml.org/stable/index.html">DoubleML</a> to estimate the average treatment effect of 401(k) eligibility, i.e.&nbsp;<code>e401</code>, and participation, i.e.&nbsp;<code>p401</code>, on net financial assets <code>net_tfa</code>.</p>
+<p>We first look at the treatment effect of <code>e401</code> on net total financial assets. We give estimates of the ATE in the linear model</p>
+<p><span class="math display">\[
+\begin{equation*}
+Y = D \alpha + f(X)'\beta+ \epsilon,
+\end{equation*}
+\]</span></p>
+<p>where <span class="math inline">\(f(X)\)</span> is a dictonary applied to the raw regressors. <span class="math inline">\(X\)</span> contains variables on marital status, two-earner status, defined benefit pension status, IRA participation, home ownership, family size, education, age, and income.</p>
+<p>In the following, we will consider two different models,</p>
+<ul>
+<li><p>a basic model specification that includes the raw regressors, i.e., <span class="math inline">\(f(X) = X\)</span>, and</p></li>
+<li><p>a flexible model specification, where <span class="math inline">\(f(X)\)</span> includes the raw regressors <span class="math inline">\(X\)</span> and the orthogonal polynomials of degree 2 for the variables family size education, age, and income.</p></li>
+</ul>
+<p>We will use the basic model specification whenever we use nonlinear methods, for example regression trees or random forests, and use the flexible model for linear methods such as the lasso. There are, of course, multiple ways how the model can be specified even more flexibly, for example including interactions of variable and higher order interaction. However, for the sake of simplicity we stick to the specification above. Users who are interested in varying the model can manipulate the model formula below (<code>formula_flex</code>), for example implementing the orignal specification in <a href="https://arxiv.org/abs/1608.00060">Chernozhukov et al.&nbsp;(2018)</a>.</p>
+<p>In the first step, we report estimates of the average treatment effect (ATE) of 401(k) eligibility on net financial assets both in the partially linear regression (PLR) model and in the interactive regression model (IRM) allowing for heterogeneous treatment effects.</p>
+</section>
+<section id="the-data-backend-doublemldata" class="level2">
+<h2 class="anchored" data-anchor-id="the-data-backend-doublemldata">The Data Backend: <code>DoubleMLData</code></h2>
+<p>To start our analysis, we initialize the data backend, i.e., a new instance of a <a href="https://docs.doubleml.org/r/stable/reference/DoubleMLData.html">DoubleMLData</a> object. Here, we manually implement the regression model by using R’s formula interface. A shortcut would be to directly specify the options <code>polynomial_features</code> and <code>instrument</code> when calling <a href="https://docs.doubleml.org/r/stable/reference/fetch_401k.html">fetch_401k()</a>.<span class="math inline">\(^{**}\)</span></p>
+<p>To implement both models (basic and flexible), we generate two data backends: <code>data_dml_base</code> and <code>data_dml_flex</code>.</p>
+<ul>
+<li><strong>Base controls</strong> (simple)</li>
+<li><strong>Flexible controls</strong> (polynomials + richer feature space)</li>
+</ul>
+<p>DoubleML uses a <code>DoubleMLData</code> object to store:</p>
+<ul>
+<li>outcome column (<code>y_col</code>)</li>
+<li>treatment column (<code>d_cols</code>)</li>
+<li>control columns (<code>x_cols</code>)</li>
+<li>(optionally) instrument column (<code>z_cols</code>)</li>
+</ul>
+</section>
+<section id="base-controls" class="level2">
+<h2 class="anchored" data-anchor-id="base-controls">Base controls</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up basic model: Specify variables for data-backend</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>features_base <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"age"</span>, <span class="st">"inc"</span>, <span class="st">"educ"</span>, <span class="st">"fsize"</span>,</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"marr"</span>, <span class="st">"twoearn"</span>, <span class="st">"db"</span>, <span class="st">"pira"</span>, <span class="st">"hown"</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize DoubleMLData (data-backend of DoubleML)</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>data_dml_base <span class="ot">=</span> DoubleMLData<span class="sc">$</span><span class="fu">new</span>(data,</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">y_col =</span> <span class="st">"net_tfa"</span>,</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">d_cols =</span> <span class="st">"e401"</span>,</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">x_cols =</span> features_base)</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>data_dml_base</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>================= DoubleMLData Object ==================
 
 
+------------------ Data summary      ------------------
+Outcome variable: net_tfa
+Treatment variable(s): e401
+Covariates: age, inc, educ, fsize, marr, twoearn, db, pira, hown
+Instrument(s): 
+Selection variable: 
+No. Observations: 9915</code></pre>
+</div>
+</div>
+</section>
+<section id="flexible-controls" class="level2">
+<h2 class="anchored" data-anchor-id="flexible-controls">Flexible controls</h2>
+<p>We build polynomial terms using <code>model.matrix()</code> and convert them to a tibble.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up a model according to regression formula with polynomials</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>formula_flex <span class="ot">=</span> <span class="fu">formula</span>(<span class="st">" ~ -1 + poly(age, 2, raw=TRUE) +</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="st">                        poly(inc, 2, raw=TRUE) + poly(educ, 2, raw=TRUE) +</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="st">                        poly(fsize, 2, raw=TRUE) + marr + twoearn +</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="st">                        db + pira + hown"</span>)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>features_flex <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">model.matrix</span>(formula_flex, data))</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>model_data <span class="ot">=</span> <span class="fu">data.table</span>(<span class="st">"net_tfa"</span> <span class="ot">=</span> data[, net_tfa],</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"e401"</span> <span class="ot">=</span> data[, e401],</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>                        features_flex)</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize DoubleMLData (data-backend of DoubleML)</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>data_dml_flex <span class="ot">=</span> DoubleMLData<span class="sc">$</span><span class="fu">new</span>(model_data,</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">y_col =</span> <span class="st">"net_tfa"</span>,</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">d_cols =</span> <span class="st">"e401"</span>)</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>data_dml_flex</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>================= DoubleMLData Object ==================
+
+
+------------------ Data summary      ------------------
+Outcome variable: net_tfa
+Treatment variable(s): e401
+Covariates: poly.age..2..raw...TRUE.1, poly.age..2..raw...TRUE.2, poly.inc..2..raw...TRUE.1, poly.inc..2..raw...TRUE.2, poly.educ..2..raw...TRUE.1, poly.educ..2..raw...TRUE.2, poly.fsize..2..raw...TRUE.1, poly.fsize..2..raw...TRUE.2, marr, twoearn, db, pira, hown
+Instrument(s): 
+Selection variable: 
+No. Observations: 9915</code></pre>
+</div>
+</div>
+</section>
+<section id="partially-linear-regression-model-plr" class="level2">
+<h2 class="anchored" data-anchor-id="partially-linear-regression-model-plr">Partially Linear Regression Model (PLR)</h2>
+<p><strong>Goal:</strong> estimate the effect of <strong>eligibility (<code>e401</code>)</strong> on <strong>net financial assets (<code>net_tfa</code>)</strong>.</p>
+<p>We start using lasso to estimate the function <span class="math inline">\(g_0\)</span> and <span class="math inline">\(m_0\)</span> in the following PLR model:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+&amp; Y = D\theta_0 + g_0(X) + \zeta, &amp;\quad E[\zeta \mid D,X]= 0,\\
+&amp; D = m_0(X) +  V, &amp;\quad E[V \mid X] = 0.
+\end{eqnarray}
+\]</span></p>
+<p>To estimate the causal parameter <span class="math inline">\(\theta_0\)</span> here, we use double machine learning with 3-fold cross-fitting.</p>
+<p>Estimation of the nuisance components <span class="math inline">\(g_0\)</span> and <span class="math inline">\(m_0\)</span>, is based on the lasso with cross-validated choice of the penalty term , <span class="math inline">\(\lambda\)</span>, as provided by the <a href="https://glmnet.stanford.edu/reference/cv.glmnet.html">glmnet package</a>. We load the learner by using the <a href="https://mlr3.mlr-org.com/">mlr3</a> function <a href="https://mlr3.mlr-org.com/reference/Learner.html">lrn()</a>. Hyperparameters and options can be set during instantiation of the learner. Here we specify that the lasso should use that value of <span class="math inline">\(\lambda\)</span> that minimizes the cross-validated mean squared error which is based on 5-fold cross validation.</p>
+<p>In order to use a learner, the underlying R packages have to be installed. In this case, the package <a href="https://glmnet.stanford.edu/reference/cv.glmnet.html">glmnet package</a> needs to be installed. Moreover, installation of the package <a href="https://mlr3learners.mlr-org.com/">mlr3learners</a> is required.</p>
+<p>We start by estimation the ATE in the basic model and then repeat the estimation in the flexible model.</p>
+</section>
+<section id="learners" class="level2">
+<h2 class="anchored" data-anchor-id="learners">Learners</h2>
+<p>We define the ML learners used for nuisance functions.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>lasso <span class="ot">&lt;-</span> <span class="fu">lrn</span>(<span class="st">"regr.cv_glmnet"</span>, <span class="at">nfolds =</span> <span class="dv">5</span>, <span class="at">s =</span> <span class="st">"lambda.min"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>lasso_class <span class="ot">&lt;-</span> <span class="fu">lrn</span>(<span class="st">"classif.cv_glmnet"</span>, <span class="at">nfolds =</span> <span class="dv">5</span>, <span class="at">s =</span> <span class="st">"lambda.min"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="plr-with-lasso-base" class="level3">
+<h3 class="anchored" data-anchor-id="plr-with-lasso-base">PLR with Lasso (base)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>dml_plr_lasso_base <span class="ot">&lt;-</span> DoubleMLPLR<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  data_dml_base,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_l =</span> lasso,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_m =</span> lasso_class,</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_folds =</span> <span class="dv">3</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>dml_plr_lasso_base<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>dml_plr_lasso_base<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+e401      6133       1465   4.185 2.85e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="plr-with-lasso-flex" class="level3">
+<h3 class="anchored" data-anchor-id="plr-with-lasso-flex">PLR with Lasso (flex)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>lasso <span class="ot">&lt;-</span> <span class="fu">lrn</span>(<span class="st">"regr.cv_glmnet"</span>, <span class="at">nfolds =</span> <span class="dv">5</span>, <span class="at">s =</span> <span class="st">"lambda.min"</span>)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>lasso_class <span class="ot">&lt;-</span> <span class="fu">lrn</span>(<span class="st">"classif.cv_glmnet"</span>, <span class="at">nfolds =</span> <span class="dv">5</span>, <span class="at">s =</span> <span class="st">"lambda.min"</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>dml_plr_lasso <span class="ot">&lt;-</span> DoubleMLPLR<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  data_dml_flex,</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_l =</span> lasso,</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_m =</span> lasso_class,</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_folds =</span> <span class="dv">3</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>dml_plr_lasso<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>dml_plr_lasso<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+e401      9580       1325   7.229 4.87e-13 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Alternatively, we can repeat this procedure with other machine learning methods, for example a random forest learner as provided by the <a href="https://github.com/imbs-hl/ranger">ranger</a> package for R. The website of the <a href="https://mlr3extralearners.mlr-org.com/articles/learners/list_learners.html">mlr3extralearners</a> package has a searchable list of all learners that are available in the <a href="https://mlr3verse.mlr-org.com/">mlr3verse</a>.</p>
+</section>
+<section id="plr-with-random-forest" class="level3">
+<h3 class="anchored" data-anchor-id="plr-with-random-forest">PLR with Random Forest</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>randomForest <span class="ot">&lt;-</span> <span class="fu">lrn</span>(<span class="st">"regr.ranger"</span>, <span class="at">max.depth =</span> <span class="dv">7</span>, <span class="at">mtry =</span> <span class="dv">3</span>, <span class="at">min.node.size =</span> <span class="dv">3</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>randomForest_class <span class="ot">&lt;-</span> <span class="fu">lrn</span>(<span class="st">"classif.ranger"</span>, <span class="at">max.depth =</span> <span class="dv">5</span>, <span class="at">mtry =</span> <span class="dv">4</span>, <span class="at">min.node.size =</span> <span class="dv">7</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>dml_plr_forest <span class="ot">&lt;-</span> DoubleMLPLR<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  data_dml_base,</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_l =</span> randomForest,</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_m =</span> randomForest_class,</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_folds =</span> <span class="dv">3</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>dml_plr_forest<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>dml_plr_forest<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+e401      9127       1313   6.952 3.61e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="plr-with-trees" class="level3">
+<h3 class="anchored" data-anchor-id="plr-with-trees">PLR with Trees</h3>
+<p>Now, let’s use a regression tree as provided by the R package <a href="https://github.com/bethatkinson/rpart">rpart</a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>trees <span class="ot">&lt;-</span> <span class="fu">lrn</span>(<span class="st">"regr.rpart"</span>, <span class="at">cp =</span> <span class="fl">0.0047</span>, <span class="at">minsplit =</span> <span class="dv">203</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>trees_class <span class="ot">&lt;-</span> <span class="fu">lrn</span>(<span class="st">"classif.rpart"</span>, <span class="at">cp =</span> <span class="fl">0.0042</span>, <span class="at">minsplit =</span> <span class="dv">104</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>dml_plr_tree <span class="ot">&lt;-</span> DoubleMLPLR<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>  data_dml_base,</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_l =</span> trees,</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_m =</span> trees_class,</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_folds =</span> <span class="dv">3</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>dml_plr_tree<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>dml_plr_tree<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+e401      8210       1324   6.203 5.55e-10 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="plr-with-boosted-trees" class="level3">
+<h3 class="anchored" data-anchor-id="plr-with-boosted-trees">PLR with Boosted Trees</h3>
+<p>We can also experiment with extreme gradient boosting as provided by <a href="https://xgboost.readthedocs.io/en/latest/">xgboost</a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>boost <span class="ot">&lt;-</span> <span class="fu">lrn</span>(<span class="st">"regr.xgboost"</span>,</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">objective =</span> <span class="st">"reg:squarederror"</span>,</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">eta =</span> <span class="fl">0.1</span>, <span class="at">nrounds =</span> <span class="dv">35</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>boost_class <span class="ot">&lt;-</span> <span class="fu">lrn</span>(<span class="st">"classif.xgboost"</span>,</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">objective =</span> <span class="st">"binary:logistic"</span>,</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">eval_metric =</span> <span class="st">"logloss"</span>,</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">eta =</span> <span class="fl">0.1</span>, <span class="at">nrounds =</span> <span class="dv">34</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>dml_plr_boost <span class="ot">&lt;-</span> DoubleMLPLR<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>  data_dml_base,</span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_l =</span> boost,</span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_m =</span> boost_class,</span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_folds =</span> <span class="dv">3</span></span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>dml_plr_boost<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>dml_plr_boost<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+e401      9334       1415   6.598 4.17e-11 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="plr-results-summary" class="level2">
+<h2 class="anchored" data-anchor-id="plr-results-summary">PLR results summary</h2>
+<p>Let’s sum up the results:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>confints_plr <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  dml_plr_lasso<span class="sc">$</span><span class="fu">confint</span>(),</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  dml_plr_forest<span class="sc">$</span><span class="fu">confint</span>(),</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  dml_plr_tree<span class="sc">$</span><span class="fu">confint</span>(),</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  dml_plr_boost<span class="sc">$</span><span class="fu">confint</span>()</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>estimates_plr <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>  dml_plr_lasso<span class="sc">$</span>coef,</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>  dml_plr_forest<span class="sc">$</span>coef,</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>  dml_plr_tree<span class="sc">$</span>coef,</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>  dml_plr_boost<span class="sc">$</span>coef</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>result_plr <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"PLR"</span>,</span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">ML =</span> <span class="fu">c</span>(<span class="st">"lasso"</span>, <span class="st">"random forest"</span>, <span class="st">"decision tree"</span>, <span class="st">"xgboost"</span>),</span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">Estimate =</span> estimates_plr,</span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower =</span> confints_plr[, <span class="dv">1</span>],</span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper =</span> confints_plr[, <span class="dv">2</span>]</span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>result_plr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  model ML            Estimate lower  upper
+  &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1 PLR   lasso            9580. 6982. 12177.
+2 PLR   random forest    9127. 6554. 11700.
+3 PLR   decision tree    8210. 5616. 10804.
+4 PLR   xgboost          9334. 6562. 12107.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(result_plr, <span class="fu">aes</span>(<span class="at">x =</span> ML, <span class="at">y =</span> Estimate, <span class="at">color =</span> ML)) <span class="sc">+</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper, <span class="at">color =</span> ML))  <span class="sc">+</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Coefficients and 0.95- confidence interval"</span>) <span class="sc">+</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>), <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Note: Why use flex for Lasso but often base for trees/boosting?</em></p>
+<p>Lasso / linear models</p>
+<ul>
+<li><p>Lasso is still a linear model in the features.</p></li>
+<li><p>If the real relationship is nonlinear, you need to create nonlinear features (like squared terms) so the linear model can represent curvature.</p></li>
+</ul>
+<p>Random forests / trees / boosting</p>
+<ul>
+<li><p>These learners are already nonlinear and naturally capture interactions.</p></li>
+<li><p>Feeding them lots of hand-made polynomial terms often:</p>
+<ul>
+<li><p>adds redundancy</p></li>
+<li><p>increases noise/complexity</p></li>
+<li><p>doesn’t help much (and can hurt)</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="interactive-regression-model-irm" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-regression-model-irm">Interactive Regression Model (IRM)</h2>
+<p><strong>Goal:</strong> estimate the effect of eligibility (<code>e401</code>) allowing for more flexible outcome models across treated/untreated groups.</p>
+<p>Next, we consider estimation of average treatment effects when treatment effects are fully heterogeneous:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+&amp; Y = g_0(D,X) + U, &amp;\quad E[U\mid X,D] = 0,\\
+&amp; D = m_0(X) + V, &amp;\quad E[V\mid X] = 0.
+\end{eqnarray}
+\]</span> To reduce the disproportionate impact of extreme propensity score weights in the interactive model, we trim the propensity scores which are close to the bounds.</p>
+<section id="irm-with-lasso-flex" class="level3">
+<h3 class="anchored" data-anchor-id="irm-with-lasso-flex">IRM with Lasso (flex)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>dml_irm_lasso <span class="ot">&lt;-</span> DoubleMLIRM<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  data_dml_flex,</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_g =</span> lasso,</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_m =</span> lasso_class,</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">trimming_threshold =</span> <span class="fl">0.01</span>,</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_folds =</span> <span class="dv">3</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>dml_irm_lasso<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>dml_irm_lasso<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+e401      8850       1341   6.601 4.08e-11 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="irm-with-random-forest" class="level3">
+<h3 class="anchored" data-anchor-id="irm-with-random-forest">IRM with Random Forest</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Learner</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>randomForest <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"regr.ranger"</span>)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>randomForest_class <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"classif.ranger"</span>)</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Random Forest</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>dml_irm_forest <span class="ot">=</span> DoubleMLIRM<span class="sc">$</span><span class="fu">new</span>(data_dml_base,</span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">ml_g =</span> randomForest,</span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">ml_m =</span> randomForest_class,</span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">trimming_threshold =</span> <span class="fl">0.01</span>,</span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">n_folds =</span> <span class="dv">3</span>)</span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Set nuisance-part specific parameters</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>dml_irm_forest<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_g0"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">max.depth =</span> <span class="dv">6</span>, <span class="at">mtry =</span> <span class="dv">4</span>, <span class="at">min.node.size =</span> <span class="dv">7</span>))</span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>dml_irm_forest<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_g1"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">max.depth =</span> <span class="dv">6</span>, <span class="at">mtry =</span> <span class="dv">3</span>, <span class="at">min.node.size =</span> <span class="dv">5</span>))</span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>dml_irm_forest<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_m"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">max.depth =</span> <span class="dv">6</span>, <span class="at">mtry =</span> <span class="dv">3</span>, <span class="at">min.node.size =</span> <span class="dv">6</span>))</span>
+<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>dml_irm_forest<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a>dml_irm_forest<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+e401      8202       1118   7.334 2.23e-13 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="irm-with-trees" class="level2">
+<h2 class="anchored" data-anchor-id="irm-with-trees">IRM with Trees</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Learner</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>trees <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"regr.rpart"</span>)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>trees_class <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"classif.rpart"</span>)</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Trees</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>dml_irm_tree <span class="ot">=</span> DoubleMLIRM<span class="sc">$</span><span class="fu">new</span>(data_dml_base,</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ml_g =</span> trees,</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ml_m =</span> trees_class,</span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">trimming_threshold =</span> <span class="fl">0.01</span>,</span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">n_folds =</span> <span class="dv">3</span>)</span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Set nuisance-part specific parameters</span></span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>dml_irm_tree<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_g0"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">cp =</span> <span class="fl">0.0016</span>, <span class="at">minsplit =</span> <span class="dv">74</span>))</span>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>dml_irm_tree<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_g1"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">cp =</span> <span class="fl">0.0018</span>, <span class="at">minsplit =</span> <span class="dv">70</span>))</span>
+<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>dml_irm_tree<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_m"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">cp =</span> <span class="fl">0.0028</span>, <span class="at">minsplit =</span> <span class="dv">167</span>))</span>
+<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a>dml_irm_tree<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a>dml_irm_tree<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+e401      8415       1186   7.098 1.26e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="irm-with-boosted-trees" class="level2">
+<h2 class="anchored" data-anchor-id="irm-with-boosted-trees">IRM with Boosted Trees</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Learners</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>boost <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"regr.xgboost"</span>, <span class="at">objective =</span> <span class="st">"reg:squarederror"</span>)</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>boost_class <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"classif.xgboost"</span>, <span class="at">objective =</span> <span class="st">"binary:logistic"</span>, <span class="at">eval_metric =</span> <span class="st">"logloss"</span>)</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Boosted Trees</span></span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>dml_irm_boost <span class="ot">=</span> DoubleMLIRM<span class="sc">$</span><span class="fu">new</span>(data_dml_base,</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">ml_g =</span> boost,</span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>                                <span class="at">ml_m =</span> boost_class,</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>                                <span class="at">trimming_threshold =</span> <span class="fl">0.01</span>,</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>                                <span class="at">n_folds =</span> <span class="dv">3</span>)</span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Set nuisance-part specific parameters</span></span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">compareVersion</span>(<span class="fu">as.character</span>(<span class="fu">packageVersion</span>(<span class="st">"DoubleML"</span>)), <span class="st">"0.2.1"</span>) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>    dml_irm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_g0"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">8</span>, <span class="at">eta =</span> <span class="fl">0.1</span>))</span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a>    dml_irm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_g1"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">29</span>, <span class="at">eta =</span> <span class="fl">0.1</span>))</span>
+<span id="cb60-19"><a href="#cb60-19" aria-hidden="true" tabindex="-1"></a>    dml_irm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb60-20"><a href="#cb60-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_m"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">23</span>, <span class="at">eta =</span> <span class="fl">0.1</span>))</span>
+<span id="cb60-21"><a href="#cb60-21" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb60-22"><a href="#cb60-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># behavior of set_ml_nuisance_params() changed in https://github.com/DoubleML/doubleml-for-r/pull/89</span></span>
+<span id="cb60-23"><a href="#cb60-23" aria-hidden="true" tabindex="-1"></a>    dml_irm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb60-24"><a href="#cb60-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_g0"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">8</span>, <span class="at">eta =</span> <span class="fl">0.1</span>, <span class="at">objective =</span> <span class="st">"reg:squarederror"</span>, <span class="at">verbose=</span><span class="dv">0</span>))</span>
+<span id="cb60-25"><a href="#cb60-25" aria-hidden="true" tabindex="-1"></a>    dml_irm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb60-26"><a href="#cb60-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_g1"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">29</span>, <span class="at">eta =</span> <span class="fl">0.1</span>, <span class="at">objective =</span> <span class="st">"reg:squarederror"</span>, <span class="at">verbose=</span><span class="dv">0</span>))</span>
+<span id="cb60-27"><a href="#cb60-27" aria-hidden="true" tabindex="-1"></a>    dml_irm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb60-28"><a href="#cb60-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_m"</span>, <span class="st">"e401"</span>, <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">23</span>, <span class="at">eta =</span> <span class="fl">0.1</span>, <span class="at">objective =</span> <span class="st">"binary:logistic"</span>, <span class="at">eval_metric =</span> <span class="st">"logloss"</span>, <span class="at">verbose=</span><span class="dv">0</span>))</span>
+<span id="cb60-29"><a href="#cb60-29" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb60-30"><a href="#cb60-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-31"><a href="#cb60-31" aria-hidden="true" tabindex="-1"></a>dml_irm_boost<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb60-32"><a href="#cb60-32" aria-hidden="true" tabindex="-1"></a>dml_irm_boost<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+e401      8356       1170   7.139 9.37e-13 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="irm-results-summary" class="level2">
+<h2 class="anchored" data-anchor-id="irm-results-summary">IRM results summary</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>confints_irm <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  dml_irm_lasso<span class="sc">$</span><span class="fu">confint</span>(),</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  dml_irm_forest<span class="sc">$</span><span class="fu">confint</span>(),</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  dml_irm_tree<span class="sc">$</span><span class="fu">confint</span>(),</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>  dml_irm_boost<span class="sc">$</span><span class="fu">confint</span>()</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>estimates_irm <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>  dml_irm_lasso<span class="sc">$</span>coef,</span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>  dml_irm_forest<span class="sc">$</span>coef,</span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>  dml_irm_tree<span class="sc">$</span>coef,</span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>  dml_irm_boost<span class="sc">$</span>coef</span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a>result_irm <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"IRM"</span>,</span>
+<span id="cb62-17"><a href="#cb62-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">ML =</span> <span class="fu">c</span>(<span class="st">"lasso"</span>, <span class="st">"random forest"</span>, <span class="st">"decision tree"</span>, <span class="st">"xgboost"</span>),</span>
+<span id="cb62-18"><a href="#cb62-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">Estimate =</span> estimates_irm,</span>
+<span id="cb62-19"><a href="#cb62-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower =</span> confints_irm[, <span class="dv">1</span>],</span>
+<span id="cb62-20"><a href="#cb62-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper =</span> confints_irm[, <span class="dv">2</span>]</span>
+<span id="cb62-21"><a href="#cb62-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb62-22"><a href="#cb62-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-23"><a href="#cb62-23" aria-hidden="true" tabindex="-1"></a>result_irm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  model ML            Estimate lower  upper
+  &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1 IRM   lasso            8850. 6222. 11478.
+2 IRM   random forest    8202. 6010. 10394.
+3 IRM   decision tree    8415. 6092. 10739.
+4 IRM   xgboost          8356. 6062. 10650.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(result_irm, <span class="fu">aes</span>(<span class="at">x =</span> ML, <span class="at">y =</span> Estimate, <span class="at">color =</span> ML)) <span class="sc">+</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper, <span class="at">color =</span> ML))  <span class="sc">+</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Coefficients and 0.95- confidence interval"</span>) <span class="sc">+</span></span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>), <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>These estimates that flexibly account for confounding are substantially reduced relative to the baseline estimate (<em>19559</em>) that does not account for confounding. They suggest much smaller causal effects of 401(k) eligiblity on financial asset holdings.</p>
+</section>
+<section id="iivm-interactive-iv-model" class="level2">
+<h2 class="anchored" data-anchor-id="iivm-interactive-iv-model">IIVM: Interactive IV Model</h2>
+<p><strong>Goal:</strong> estimate the effect of <strong>participation (<code>p401</code>)</strong> on <strong>net financial assets (<code>net_tfa</code>)</strong>, using <strong>eligibility (<code>e401</code>)</strong> as an instrument.</p>
+<p>In the examples above, we estimated the average treatment effect of <em>eligibility</em> on financial asset holdings. Now, we consider estimation of local average treatment effects (LATE) of <em>participation</em> using eligibility as an instrument for the participation decision. Under appropriate assumptions, the LATE identifies the treatment effect for so-called compliers, i.e., individuals who would only participate if eligible and otherwise not participate in the program.</p>
+<p>As before, <span class="math inline">\(Y\)</span> denotes the outcome <code>net_tfa</code>, and <span class="math inline">\(X\)</span> is the vector of covariates. We use <code>e401</code> as a binary instrument for the treatment variable <code>p401</code>. Here the structural equation model is:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+&amp; Y = g_0(D,X) + U, &amp;\quad E[U\mid D,X] = 0,\\
+&amp; D = r_0(Z,X) + V, &amp;\quad E[V\mid Z, X] = 0,\\
+&amp; Z = m_0(X) + \zeta, &amp;\quad E[\zeta \mid X] = 0.
+\end{eqnarray}
+\]</span></p>
+<section id="iivm-data-base" class="level3">
+<h3 class="anchored" data-anchor-id="iivm-data-base">IIVM data (base)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize DoubleMLData with an instrument</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic model</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>data_dml_base_iv <span class="ot">=</span> DoubleMLData<span class="sc">$</span><span class="fu">new</span>(data,</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">y_col =</span> <span class="st">"net_tfa"</span>,</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">d_cols =</span> <span class="st">"p401"</span>,</span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">x_cols =</span> features_base,</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">z_cols =</span> <span class="st">"e401"</span>)</span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>data_dml_base_iv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>================= DoubleMLData Object ==================
+
+
+------------------ Data summary      ------------------
+Outcome variable: net_tfa
+Treatment variable(s): p401
+Covariates: age, inc, educ, fsize, marr, twoearn, db, pira, hown
+Instrument(s): e401
+Selection variable: 
+No. Observations: 9915</code></pre>
+</div>
+</div>
+</section>
+<section id="iivm-data-flex" class="level3">
+<h3 class="anchored" data-anchor-id="iivm-data-flex">IIVM data (flex)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Flexible model</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>model_data <span class="ot">=</span> <span class="fu">data.table</span>(<span class="st">"net_tfa"</span> <span class="ot">=</span> data[, net_tfa],</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"e401"</span> <span class="ot">=</span> data[, e401],</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"p401"</span> <span class="ot">=</span> data[, p401],</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>                        features_flex)</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>data_dml_flex_iv <span class="ot">=</span> DoubleMLData<span class="sc">$</span><span class="fu">new</span>(model_data,</span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">y_col =</span> <span class="st">"net_tfa"</span>,</span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">d_cols =</span> <span class="st">"p401"</span>,</span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">z_cols =</span> <span class="st">"e401"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="iivm-with-lasso-flex" class="level3">
+<h3 class="anchored" data-anchor-id="iivm-with-lasso-flex">IIVM with Lasso (flex)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>dml_iivm_lasso <span class="ot">&lt;-</span> DoubleMLIIVM<span class="sc">$</span><span class="fu">new</span>(</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>  data_dml_flex_iv,</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_g =</span> lasso,</span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_m =</span> lasso_class,</span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ml_r =</span> lasso_class,</span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_folds =</span> <span class="dv">3</span>,</span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">trimming_threshold =</span> <span class="fl">0.01</span>,</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">subgroups =</span> <span class="fu">list</span>(<span class="at">always_takers =</span> <span class="cn">FALSE</span>, <span class="at">never_takers =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a>dml_iivm_lasso<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a>dml_iivm_lasso<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+p401     12802       1941   6.597  4.2e-11 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Again, we repeat the procedure for the other machine learning methods:</p>
+</section>
+<section id="iivm-with-random-forest" class="level3">
+<h3 class="anchored" data-anchor-id="iivm-with-random-forest">IIVM with Random Forest</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Learner</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>randomForest <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"regr.ranger"</span>)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>randomForest_class <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"classif.ranger"</span>)</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Random Forest</span></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>dml_iivm_forest <span class="ot">=</span> DoubleMLIIVM<span class="sc">$</span><span class="fu">new</span>(data_dml_base_iv,</span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>                              <span class="at">ml_g =</span> randomForest,</span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>                              <span class="at">ml_m =</span> randomForest_class,</span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a>                              <span class="at">ml_r =</span> randomForest_class,</span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a>                              <span class="at">n_folds =</span> <span class="dv">3</span>,</span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a>                              <span class="at">trimming_threshold =</span> <span class="fl">0.01</span>,</span>
+<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a>                              <span class="at">subgroups =</span> <span class="fu">list</span>(<span class="at">always_takers =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>                                               <span class="at">never_takers =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-16"><a href="#cb70-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Set nuisance-part specific parameters</span></span>
+<span id="cb70-17"><a href="#cb70-17" aria-hidden="true" tabindex="-1"></a>dml_iivm_forest<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb70-18"><a href="#cb70-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_g0"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb70-19"><a href="#cb70-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">max.depth =</span> <span class="dv">6</span>, <span class="at">mtry =</span> <span class="dv">4</span>, <span class="at">min.node.size =</span> <span class="dv">7</span>))</span>
+<span id="cb70-20"><a href="#cb70-20" aria-hidden="true" tabindex="-1"></a>dml_iivm_forest<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb70-21"><a href="#cb70-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_g1"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb70-22"><a href="#cb70-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">max.depth =</span> <span class="dv">6</span>, <span class="at">mtry =</span> <span class="dv">3</span>, <span class="at">min.node.size =</span> <span class="dv">5</span>))</span>
+<span id="cb70-23"><a href="#cb70-23" aria-hidden="true" tabindex="-1"></a>dml_iivm_forest<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb70-24"><a href="#cb70-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_m"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb70-25"><a href="#cb70-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">max.depth =</span> <span class="dv">6</span>, <span class="at">mtry =</span> <span class="dv">3</span>, <span class="at">min.node.size =</span> <span class="dv">6</span>))</span>
+<span id="cb70-26"><a href="#cb70-26" aria-hidden="true" tabindex="-1"></a>dml_iivm_forest<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb70-27"><a href="#cb70-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_r1"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb70-28"><a href="#cb70-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">max.depth =</span> <span class="dv">4</span>, <span class="at">mtry =</span> <span class="dv">7</span>, <span class="at">min.node.size =</span> <span class="dv">6</span>))</span>
+<span id="cb70-29"><a href="#cb70-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-30"><a href="#cb70-30" aria-hidden="true" tabindex="-1"></a>dml_iivm_forest<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb70-31"><a href="#cb70-31" aria-hidden="true" tabindex="-1"></a>dml_iivm_forest<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+p401     11792       1604   7.352 1.95e-13 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="iivm-with-trees" class="level3">
+<h3 class="anchored" data-anchor-id="iivm-with-trees">IIVM with Trees</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Learner</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>trees <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"regr.rpart"</span>)</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>trees_class <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"classif.rpart"</span>)</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Trees</span></span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>dml_iivm_tree <span class="ot">=</span> DoubleMLIIVM<span class="sc">$</span><span class="fu">new</span>(data_dml_base_iv,</span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">ml_g =</span> trees,</span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">ml_m =</span> trees_class,</span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">ml_r =</span> trees_class,</span>
+<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">n_folds =</span> <span class="dv">3</span>,</span>
+<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">trimming_threshold =</span> <span class="fl">0.01</span>,</span>
+<span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">subgroups =</span> <span class="fu">list</span>(<span class="at">always_takers =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a>                                                  <span class="at">never_takers =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-16"><a href="#cb72-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Set nuisance-part specific parameters</span></span>
+<span id="cb72-17"><a href="#cb72-17" aria-hidden="true" tabindex="-1"></a>dml_iivm_tree<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb72-18"><a href="#cb72-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_g0"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb72-19"><a href="#cb72-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">cp =</span> <span class="fl">0.0016</span>, <span class="at">minsplit =</span> <span class="dv">74</span>))</span>
+<span id="cb72-20"><a href="#cb72-20" aria-hidden="true" tabindex="-1"></a>dml_iivm_tree<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb72-21"><a href="#cb72-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_g1"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb72-22"><a href="#cb72-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">cp =</span> <span class="fl">0.0018</span>, <span class="at">minsplit =</span> <span class="dv">70</span>))</span>
+<span id="cb72-23"><a href="#cb72-23" aria-hidden="true" tabindex="-1"></a>dml_iivm_tree<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb72-24"><a href="#cb72-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_m"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb72-25"><a href="#cb72-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">cp =</span> <span class="fl">0.0028</span>, <span class="at">minsplit =</span> <span class="dv">167</span>))</span>
+<span id="cb72-26"><a href="#cb72-26" aria-hidden="true" tabindex="-1"></a>dml_iivm_tree<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb72-27"><a href="#cb72-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ml_r1"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb72-28"><a href="#cb72-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">cp =</span> <span class="fl">0.0576</span>, <span class="at">minsplit =</span> <span class="dv">55</span>))</span>
+<span id="cb72-29"><a href="#cb72-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-30"><a href="#cb72-30" aria-hidden="true" tabindex="-1"></a>dml_iivm_tree<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb72-31"><a href="#cb72-31" aria-hidden="true" tabindex="-1"></a>dml_iivm_tree<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+p401     12214       1714   7.128 1.02e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="iivm-with-boosted-trees" class="level3">
+<h3 class="anchored" data-anchor-id="iivm-with-boosted-trees">IIVM with Boosted Trees</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Learner</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>boost <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"regr.xgboost"</span>, <span class="at">objective =</span> <span class="st">"reg:squarederror"</span>)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>boost_class <span class="ot">=</span> <span class="fu">lrn</span>(<span class="st">"classif.xgboost"</span>, <span class="at">objective =</span> <span class="st">"binary:logistic"</span>, <span class="at">eval_metric =</span> <span class="st">"logloss"</span>)</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Boosted Trees</span></span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>dml_iivm_boost <span class="ot">=</span> DoubleMLIIVM<span class="sc">$</span><span class="fu">new</span>(data_dml_base_iv,</span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>                              <span class="at">ml_g =</span> boost,</span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>                              <span class="at">ml_m =</span> boost_class,</span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a>                              <span class="at">ml_r =</span> boost_class,</span>
+<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a>                              <span class="at">n_folds =</span> <span class="dv">3</span>,</span>
+<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a>                              <span class="at">trimming_threshold =</span> <span class="fl">0.01</span>,</span>
+<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a>                              <span class="at">subgroups =</span> <span class="fu">list</span>(<span class="at">always_takers =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a>                                               <span class="at">never_takers =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb74-15"><a href="#cb74-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-16"><a href="#cb74-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Set nuisance-part specific parameters</span></span>
+<span id="cb74-17"><a href="#cb74-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">compareVersion</span>(<span class="fu">as.character</span>(<span class="fu">packageVersion</span>(<span class="st">"DoubleML"</span>)), <span class="st">"0.2.1"</span>) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb74-18"><a href="#cb74-18" aria-hidden="true" tabindex="-1"></a>    dml_iivm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb74-19"><a href="#cb74-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_g0"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb74-20"><a href="#cb74-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">9</span>, <span class="at">eta =</span> <span class="fl">0.1</span>))</span>
+<span id="cb74-21"><a href="#cb74-21" aria-hidden="true" tabindex="-1"></a>    dml_iivm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb74-22"><a href="#cb74-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_g1"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb74-23"><a href="#cb74-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">33</span>, <span class="at">eta =</span> <span class="fl">0.1</span>))</span>
+<span id="cb74-24"><a href="#cb74-24" aria-hidden="true" tabindex="-1"></a>    dml_iivm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb74-25"><a href="#cb74-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_m"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb74-26"><a href="#cb74-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">12</span>, <span class="at">eta =</span> <span class="fl">0.1</span>))</span>
+<span id="cb74-27"><a href="#cb74-27" aria-hidden="true" tabindex="-1"></a>    dml_iivm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb74-28"><a href="#cb74-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_r1"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb74-29"><a href="#cb74-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">25</span>, <span class="at">eta =</span> <span class="fl">0.1</span>))</span>
+<span id="cb74-30"><a href="#cb74-30" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb74-31"><a href="#cb74-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># behavior of set_ml_nuisance_params() changed in https://github.com/DoubleML/doubleml-for-r/pull/89</span></span>
+<span id="cb74-32"><a href="#cb74-32" aria-hidden="true" tabindex="-1"></a>    dml_iivm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb74-33"><a href="#cb74-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_g0"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb74-34"><a href="#cb74-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">9</span>, <span class="at">eta =</span> <span class="fl">0.1</span>, <span class="at">objective =</span> <span class="st">"reg:squarederror"</span>, <span class="at">verbose=</span><span class="dv">0</span>))</span>
+<span id="cb74-35"><a href="#cb74-35" aria-hidden="true" tabindex="-1"></a>    dml_iivm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb74-36"><a href="#cb74-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_g1"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb74-37"><a href="#cb74-37" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">33</span>, <span class="at">eta =</span> <span class="fl">0.1</span>, <span class="at">objective =</span> <span class="st">"reg:squarederror"</span>, <span class="at">verbose=</span><span class="dv">0</span>))</span>
+<span id="cb74-38"><a href="#cb74-38" aria-hidden="true" tabindex="-1"></a>    dml_iivm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb74-39"><a href="#cb74-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_m"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb74-40"><a href="#cb74-40" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">12</span>, <span class="at">eta =</span> <span class="fl">0.1</span>, <span class="at">objective =</span> <span class="st">"binary:logistic"</span>, <span class="at">eval_metric =</span> <span class="st">"logloss"</span>, <span class="at">verbose=</span><span class="dv">0</span>))</span>
+<span id="cb74-41"><a href="#cb74-41" aria-hidden="true" tabindex="-1"></a>    dml_iivm_boost<span class="sc">$</span><span class="fu">set_ml_nuisance_params</span>(</span>
+<span id="cb74-42"><a href="#cb74-42" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ml_r1"</span>, <span class="st">"p401"</span>,</span>
+<span id="cb74-43"><a href="#cb74-43" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(<span class="at">nrounds =</span> <span class="dv">25</span>, <span class="at">eta =</span> <span class="fl">0.1</span>, <span class="at">objective =</span> <span class="st">"binary:logistic"</span>, <span class="at">eval_metric =</span> <span class="st">"logloss"</span>, <span class="at">verbose=</span><span class="dv">0</span>))</span>
+<span id="cb74-44"><a href="#cb74-44" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb74-45"><a href="#cb74-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-46"><a href="#cb74-46" aria-hidden="true" tabindex="-1"></a>dml_iivm_boost<span class="sc">$</span><span class="fu">fit</span>()</span>
+<span id="cb74-47"><a href="#cb74-47" aria-hidden="true" tabindex="-1"></a>dml_iivm_boost<span class="sc">$</span><span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimates and significance testing of the effect of target variables
+     Estimate. Std. Error t value Pr(&gt;|t|)    
+p401     12624       1624   7.775 7.53e-15 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="iivm-results-summary" class="level2">
+<h2 class="anchored" data-anchor-id="iivm-results-summary">IIVM results summary</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>confints_iivm <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  dml_iivm_lasso<span class="sc">$</span><span class="fu">confint</span>(),</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>  dml_iivm_forest<span class="sc">$</span><span class="fu">confint</span>(),</span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>  dml_iivm_tree<span class="sc">$</span><span class="fu">confint</span>(),</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>  dml_iivm_boost<span class="sc">$</span><span class="fu">confint</span>()</span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a>estimates_iivm <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a>  dml_iivm_lasso<span class="sc">$</span>coef,</span>
+<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a>  dml_iivm_forest<span class="sc">$</span>coef,</span>
+<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a>  dml_iivm_tree<span class="sc">$</span>coef,</span>
+<span id="cb76-12"><a href="#cb76-12" aria-hidden="true" tabindex="-1"></a>  dml_iivm_boost<span class="sc">$</span>coef</span>
+<span id="cb76-13"><a href="#cb76-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb76-14"><a href="#cb76-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-15"><a href="#cb76-15" aria-hidden="true" tabindex="-1"></a>result_iivm <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb76-16"><a href="#cb76-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"IIVM"</span>,</span>
+<span id="cb76-17"><a href="#cb76-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">ML =</span> <span class="fu">c</span>(<span class="st">"lasso"</span>, <span class="st">"random forest"</span>, <span class="st">"decision tree"</span>, <span class="st">"xgboost"</span>),</span>
+<span id="cb76-18"><a href="#cb76-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">Estimate =</span> estimates_iivm,</span>
+<span id="cb76-19"><a href="#cb76-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower =</span> confints_iivm[, <span class="dv">1</span>],</span>
+<span id="cb76-20"><a href="#cb76-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper =</span> confints_iivm[, <span class="dv">2</span>]</span>
+<span id="cb76-21"><a href="#cb76-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb76-22"><a href="#cb76-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-23"><a href="#cb76-23" aria-hidden="true" tabindex="-1"></a>result_iivm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  model ML            Estimate lower  upper
+  &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1 IIVM  lasso           12802. 8999. 16606.
+2 IIVM  random forest   11792. 8649. 14936.
+3 IIVM  decision tree   12214. 8856. 15573.
+4 IIVM  xgboost         12624. 9442. 15806.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(result_iivm, <span class="fu">aes</span>(<span class="at">x =</span> ML, <span class="at">y =</span> Estimate, <span class="at">color =</span> ML)) <span class="sc">+</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper, <span class="at">color =</span> ML))  <span class="sc">+</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Coefficients and 0.95- confidence interval"</span>) <span class="sc">+</span></span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>), <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-48-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="all-results-together" class="level1">
+<h1>All results together</h1>
+<p>Finally, we combine results across PLR, IRM, and IIVM into one table and plot.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>summary_result <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(result_plr, result_irm, result_iivm) <span class="sc">|&gt;</span></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">model =</span> <span class="fu">factor</span>(model, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"PLR"</span>, <span class="st">"IRM"</span>, <span class="st">"IIVM"</span>)))</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>summary_result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 5
+   model ML            Estimate lower  upper
+   &lt;fct&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+ 1 PLR   lasso            9580. 6982. 12177.
+ 2 PLR   random forest    9127. 6554. 11700.
+ 3 PLR   decision tree    8210. 5616. 10804.
+ 4 PLR   xgboost          9334. 6562. 12107.
+ 5 IRM   lasso            8850. 6222. 11478.
+ 6 IRM   random forest    8202. 6010. 10394.
+ 7 IRM   decision tree    8415. 6092. 10739.
+ 8 IRM   xgboost          8356. 6062. 10650.
+ 9 IIVM  lasso           12802. 8999. 16606.
+10 IIVM  random forest   11792. 8649. 14936.
+11 IIVM  decision tree   12214. 8856. 15573.
+12 IIVM  xgboost         12624. 9442. 15806.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summary_result, <span class="fu">aes</span>(<span class="at">x =</span> ML, <span class="at">y =</span> Estimate, <span class="at">color =</span> ML)) <span class="sc">+</span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower, <span class="at">ymax =</span> upper, <span class="at">color =</span> ML))  <span class="sc">+</span></span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Coefficients and 0.95- confidence interval"</span>) <span class="sc">+</span></span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>), <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">facet_wrap</span>(model <span class="sc">~</span>., <span class="at">ncol =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-50-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We report results based on four ML methods for estimating the nuisance functions used in forming the orthogonal estimating equations. We find again that the estimates of the treatment effect are stable across ML methods. The estimates are highly significant, hence we would reject the hypothesis that 401(k) participation has no effect on financial wealth.</p>
+<p>Across PLR and IRM, the estimated effect of eligibility (e401) on net financial assets (net_tfa) is consistently positive across all learners. The estimates fall roughly in the range of $8k–$9.6k, and the 95% confidence intervals remain above zero, suggesting a robust positive association after adjusting for observed covariates.</p>
+<p>In the IIVM results, the target changes: we estimate the effect of participation (p401) using eligibility (e401) as an instrument. These estimates are larger (around $11.8k–$12.8k), which is common in IV settings because the effect is identified for compliers and depends on how strongly the instrument shifts participation. Therefore, IIVM should be read as a LATE (complier effect), not directly comparable to PLR/IRM as a population average.</p>
+<section id="read-more" class="level2">
+<h2 class="anchored" data-anchor-id="read-more">Read more</h2>
+<ul>
+<li><p>Belloni, Alexandre, Victor Chernozhukov, and Christian Hansen. 2014. “Inference on Treatment Effects After Selection Among High-Dimensional Controls.” Review of Economic Studies 81 (2): 608–50.</p></li>
+<li><p>Chernozhukov, Victor, Denis Chetverikov, Mert Demirer, Esther Duflo, Christian Hansen, Whitney Newey, and James Robins. 2018. “Double/Debiased Machine Learning for Treatment and Structural Parameters.” Econometrics Journal 21 (1): C1–68. <a href="https://doi.org/10.1111/ectj.12097">https://doi.org/10.1111/ectj.12097</a>.</p></li>
+</ul>
+
+
+</section>
 </section>
 
 </div></main> <!-- /main -->
@@ -379,7 +2286,7 @@ body {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/chamara7h\.github\.io\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
