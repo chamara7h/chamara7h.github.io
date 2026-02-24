@@ -233,5 +233,11 @@
   },
   "talks/jsi_session/slides/jsi_session.qmd": {
     "jsi_session.html": "39c4b195"
+  },
+  "lab/kigali_workshop/slides/kigali_workshop.qmd": {
+    "kigali_workshop.html": "af739fab"
+  },
+  "lab/kigali_workshop/index.qmd": {
+    "index.html": "f91bc938"
   }
 }

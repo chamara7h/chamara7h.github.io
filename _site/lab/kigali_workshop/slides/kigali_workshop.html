@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
+
+  <title>Home – kigali_workshop</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="theme.css">
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link href="../../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+
+  <script src="../../../site_libs/countdown-0.4.0/countdown.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta property="og:title" content="Home">
+<meta property="og:site_name" content="Home">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="section" class="title-slide slide level1 center" data-background-image="images/cover.png" data-background-size="cover">
+<h1></h1>
+<div class="logo-container">
+<p><img src="images/logo_all.svg"></p>
+</div>
+<div class="title-slide center">
+<h1>
+Modelling forecast uncertainty
+</h1>
+<h2>
+A Practical Guide to Model-Based, Bootstrap, and Conformal Prediction in R
+</h2>
+<p class="author">
+Harsha Halgamuwe Hewage
+</p>
+<p class="author">
+Data Lab for Social Good Research Group, Cardiff University UK
+</p>
+<p class="date">
+2026/02/25
+</p>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="images/outline.png" class="absolute" style="max-height: unset;top: -10%; left: -10%; height: 120%; "></p>
+</div><div class="column" style="width:2.5%;">
+
+</div><div class="column" style="width:57.5%;">
+<p><br></p>
+<p><span class="highlight-title">What we will cover</span></p>
+<div class="step" data-step="01">
+<div class="step-content">
+<p>
+Why point forecasts fail and the necessity of quantifying risk
+</p>
+</div>
+</div>
+<div class="step" data-step="02">
+<div class="step-content">
+<p>
+Model-Based Approaches: Using standard deviations and parametric assumptions
+</p>
+</div>
+</div>
+<div class="step" data-step="03">
+<div class="step-content">
+<p>
+Bootstrapping: Generating sample paths to simulate complex, non-normal risks and “possible futures”
+</p>
+</div>
+</div>
+<div class="step" data-step="04">
+<div class="step-content">
+<p>
+Conformal Prediction: Using calibration sets to create model-agnostic intervals with statistical guarantees
+</p>
+</div>
+</div>
+<div class="step" data-step="05">
+<div class="step-content">
+<p>
+Comparative guide on picking the right method for your specific data challenges
+</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="assumptions" class="slide level2">
+<h2>Assumptions</h2>
+<ul>
+<li><strong>Technical Setup:</strong> You must have <strong>R</strong> and <strong>RStudio</strong> installed and be comfortable with basic coding syntax.</li>
+<li><strong>Version Control:</strong> You should be able to use <strong>git</strong> to clone the workshop repository.</li>
+<li><strong>No Proofs:</strong> This is <strong>not</strong> a theory-based course, we will not derive formulas or mathematical proofs for convergence.</li>
+<li><strong>Practical Focus:</strong> Our goal is applied <strong>Uncertainty Quantification</strong>: understanding <em>when</em> to use specific tools to assess risk effectively.</li>
+</ul>
+</section>
+<section id="what-we-will-not-cover" class="slide level2">
+<h2>What we will <span class="highlight-blue">not cover</span></h2>
+<ul>
+<li><strong>Deep Theory:</strong> Detailed mathematical derivations or proofs of coverage guarantees.</li>
+<li><strong>Different Distributions:</strong> Deep dives into specific distribution types (e.g., Poisson, Negative Binomial) beyond the fundamental Normal vs.&nbsp;Empirical distinction.</li>
+<li><strong>Advanced Variants:</strong> We will not cover complex variations like Sieve Bootstrap or Adaptive Conformal Inference in depth.</li>
+<li><strong>Model Tuning:</strong> We assume you can fit a basic model; we focus strictly on quantifying the <em>errors</em> of that model.</li>
+<li><strong>Performance Evaluation:</strong> In this session, we will not cover how to evaluate probabilistic forecasts.</li>
+</ul>
+</section>
+<section id="materials" class="slide level2">
+<h2>Materials</h2>
+<p>You can find the workshop materials <a href="https://chamara7h.github.io/lab/">here</a>.</p>
+<p><br></p>
+
+<img data-src="images/qr.png" class="r-stretch"></section>
+<section id="section-2" class="slide level2 center" data-background-color="#242B4A">
+<h2></h2>
+<p><span class="big">What is wrong with point forecasts?</span></p>
+</section>
+<section id="the-illusion-of-certainty-in-disease-forecasting" class="slide level2">
+<h2>The illusion of certainty in disease forecasting</h2>
+
+<img data-src="images/point_pred.svg" class="r-stretch"><ul>
+<li>A point forecast is typically just the <span class="highlight-blue">mean</span> or <span class="highlight-blue">median</span> of a distribution.</li>
+</ul>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>In public health, the cost of being wrong is not symmetrical.</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>Over-estimating cases might waste some supplies or under-estimating cases (missing an outbreak) costs lives.</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>Point forecasts are of almost no value without accompanying prediction intervals because <span class="highlight-blue">they tell you nothing about the probability of exceeding critical thresholds.</span></li>
+</ul>
+</div>
+</section>
+<section id="from-will-it-happen-to-what-is-the-probability" class="slide level2">
+<h2>From “Will it happen?” to “What is the probability?”</h2>
+
+<img data-src="images/prob_pred.svg" class="r-stretch"><ul>
+<li>We move from guessing a specific number to defining a range (e.g., 90% likely to fall between 100 and 500 cases).</li>
+</ul>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>Climate data (rainfall, temperature) is inherently noisy and non-stationary.</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>As climate volatility increases, the uncertainty in our disease models expands.</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>We do not prepare for the mean scenario; we prepare for the extreme scenario. Uncertainty quantification allows us to ask: <span class="highlight-blue">What is the probability we exceed hospital bed capacity?</span></li>
+</ul>
+</div>
+</section>
+<section id="section-3" class="slide level2 center" data-background-color="#242B4A">
+<h2></h2>
+<p><span class="big">Moving from <strong>“What is the number?”</strong> to <strong>“What is the risk?”</strong> using uncertainty quantification.</span></p>
+</section>
+<section id="types-of-uncertainty-output" class="slide level2">
+<h2>Types of uncertainty output</h2>
+<div class=".{columns}">
+<div class="column" style="width:32%;">
+<div class="fragment">
+<p><img data-src="images/dist.svg"></p>
+<p><strong>Distributions</strong></p>
+<p>The full range of possible future case counts, capturing the full range of potential outcomes across all time horizons. The point forecast is just the “typical” outcome.</p>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:32%;">
+<div class="fragment">
+<p><img data-src="images/paths.svg"></p>
+<p><strong>Sample Paths</strong></p>
+<p>Many simulated “possible futures” that help you see what could happen and summarize risk for totals, peaks, or other real-world planning questions.</p>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:32%;">
+<div class="fragment">
+<p><img data-src="images/interval.svg"></p>
+<p><strong>Prediction Intervals</strong></p>
+<p>A range (e.g., 95%) that shows where cases are likely to fall, helping you plan for high-demand scenarios, not just the average.</p>
+</div>
+</div></div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="images/types.png" class="absolute" style="max-height: unset;top: -10%; left: -10%; height: 120%; "></p>
+</div><div class="column" style="width:2.5%;">
+
+</div><div class="column" style="width:57.5%;">
+<p><span class="highlight-title">Uncertainty estimation in forecasting</span></p>
+<div class="fragment" data-fragment-index="0">
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>Model-based Approaches</strong></p>
+<ul>
+<li>Examples: ARIMA/state-space models</li>
+<li>Assumption: Explicit parametric error distribution</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>Model-agnostic Approaches</strong></p>
+<ul>
+<li>Bootstrap: Residual bootstrap, block bootstrap</li>
+<li>Conformal predictions</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>Bayesian Approaches</strong></p>
+<ul>
+<li>Bayesian: Posterior predictive distribution</li>
+<li>Depend on prior / resampling scheme</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>Model-dependent / Heuristic Approaches</strong></p>
+<ul>
+<li>Quantile regression, ML-based quantile models</li>
+<li>Heuristic ML: Ensembles, MC dropout</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="images/types.png" class="absolute" style="max-height: unset;top: -10%; left: -10%; height: 120%; "></p>
+</div><div class="column" style="width:2.5%;">
+
+</div><div class="column" style="width:57.5%;">
+<p><span class="highlight-title">Uncertainty estimation in forecasting</span></p>
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <span class="green"><strong>Model-based Approaches</strong></span></p>
+<ul>
+<li><span class="green">Examples: ARIMA/state-space models</span></li>
+<li><span class="green">Assumption: Explicit parametric error distribution</span></li>
+</ul>
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <span class="green"><strong>Model-agnostic Approaches</strong></span></p>
+<ul>
+<li><span class="green">Bootstrap: Residual bootstrap, block bootstrap</span></li>
+<li><span class="green">Conformal predictions</span></li>
+</ul>
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>Bayesian Approaches</strong></p>
+<ul>
+<li>Bayesian: Posterior predictive distribution</li>
+<li>Depend on prior / resampling scheme</li>
+</ul>
+<p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> <strong>Model-dependent / Heuristic Approaches</strong></p>
+<ul>
+<li>Quantile regression, ML-based quantile models</li>
+<li>Heuristic ML: Ensembles, MC dropout</li>
+</ul>
+</div></div>
+</section>
+<section id="section-6" class="slide level2 center" data-background-color="#242B4A">
+<h2></h2>
+<p><span class="bigger">01</span></p>
+<p><span class="big">Model-based approaches using ARIMAX</span></p>
+</section>
+<section id="forecast-distributions" class="slide level2">
+<h2>Forecast distributions</h2>
+<p>In model-based approaches, we do not simulate future paths one by one. Instead, we assume that the forecast errors (residuals) follow a specific probability distribution.</p>
+<ul>
+<li><p>A forecast <span class="math inline">\(\hat{y}_{T+h \mid T}\)</span> is (usually) the mean of the conditional distribution<br>
+<span class="math inline">\(y_{T+h} \mid y_{1}, \ldots, y_{T}\)</span>.</p></li>
+<li><p>Most time series models produce normally (i.e., Gaussian) distributed forecasts.</p></li>
+<li><p>The forecast distribution describes the probability of observing any future value.</p></li>
+</ul>
+<div class="columns">
+<div class="fragment">
+<div class="column" style="width:40%;">
+<p><img data-src="images/density_fc.png"></p>
+</div><div class="column" style="width:2.5%;">
+
+</div><div class="column" style="width:57.5%;">
+<p><br> <br></p>
+<p>The model estimates the “center” (point forecast) and the “spread” (standard deviation) mathematically.</p>
+<ul>
+<li><p><strong>The Center (<span class="math inline">\(\hat{y}\)</span>):</strong> The mean of the distribution.</p></li>
+<li><p><strong>The Spread (<span class="math inline">\(\sigma_h\)</span>):</strong> The standard deviation of the forecast errors at horizon <span class="math inline">\(h\)</span>.</p></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="forecast-distributions-using-fable-in-r" class="slide level2">
+<h2>Forecast distributions using <code>fable</code> in <code>R</code></h2>
+<p>Load Libraries</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(fable)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tsibble)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(distributional)</span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(conformalForecast)</span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(forecast)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Load data and create the tsibble</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>brazil_dengue <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'data/brazil_dengue.csv'</span>)</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="co"># make a tissble</span></span>
+<span id="cb2-4"><a></a></span>
+<span id="cb2-5"><a></a>brazil_dengue_tsb <span class="ot">&lt;-</span> brazil_dengue <span class="sc">|&gt;</span> </span>
+<span id="cb2-6"><a></a>  <span class="fu">mutate</span>(<span class="at">time_period =</span> <span class="fu">yearmonth</span>(time_period)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-7"><a></a>  <span class="fu">as_tsibble</span>(<span class="at">index =</span> time_period, <span class="at">key =</span> location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Explore the timeseries plot</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>brazil_dengue_tsb <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a></a>  <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">'Bahia'</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a></a>  <span class="fu">autoplot</span>(disease_cases) <span class="sc">+</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-5"><a></a>    <span class="at">x =</span> <span class="st">"Month"</span>,</span>
+<span id="cb3-6"><a></a>    <span class="at">y =</span> <span class="st">"Disease Cases"</span></span>
+<span id="cb3-7"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb3-8"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"Inter"</span>, <span class="at">base_size =</span> <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+
+</section>
+<section id="forecast-distributions-using-fable-in-r-output" class="slide level2 output-location-slide"><h2>Forecast distributions using <code>fable</code> in <code>R</code></h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="kigali_workshop_files/figure-revealjs/unnamed-chunk-4-1.png" width="1728"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="forecast-distributions-using-fable-in-r-1" class="slide level2">
+<h2>Forecast distributions using <code>fable</code> in <code>R</code></h2>
+<p>Create <code>train</code> (2021 Feb - 2023 Jan) and <code>test</code> (2023 Feb - 2024 Jan) samples</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>brazil_dengue_tsb_train <span class="ot">&lt;-</span> brazil_dengue_tsb <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a></a>  <span class="fu">filter_index</span>(. <span class="sc">~</span> <span class="st">'2015 Dec'</span>)</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a>brazil_dengue_tsb_future <span class="ot">&lt;-</span> brazil_dengue_tsb <span class="sc">|&gt;</span> </span>
+<span id="cb4-5"><a></a>  <span class="fu">filter_index</span>(<span class="st">'2016 Jan'</span> <span class="sc">~</span> .) <span class="sc">|&gt;</span> </span>
+<span id="cb4-6"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>disease_cases)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Fit <code>ARIMAX</code> model using <code>disease_cases</code> as target variable and <code>rainfall</code> and <code>temperature</code> as predictors</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># model fitting</span></span>
+<span id="cb5-2"><a></a>fit_arimax <span class="ot">&lt;-</span> brazil_dengue_tsb_train <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a></a>  <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">'Bahia'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a></a>  <span class="fu">model</span>(<span class="at">arimax =</span> <span class="fu">ARIMA</span>(disease_cases <span class="sc">~</span> rainfall <span class="sc">+</span> mean_temperature))</span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a><span class="co"># producing forecasts</span></span>
+<span id="cb5-7"><a></a>fc_arimax <span class="ot">&lt;-</span> fit_arimax <span class="sc">|&gt;</span> </span>
+<span id="cb5-8"><a></a>  <span class="fu">forecast</span>(<span class="at">new_data =</span> brazil_dengue_tsb_future)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Visualise forecast distribution</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>fcst <span class="ot">&lt;-</span> fc_arimax <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a></a>  <span class="fu">mutate</span>(<span class="at">disease_cases =</span> distributional<span class="sc">::</span><span class="fu">dist_truncated</span>(disease_cases, <span class="at">lower =</span> <span class="dv">0</span>), <span class="at">.mean=</span><span class="fu">mean</span>(disease_cases))</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a>fitted_arimax <span class="ot">&lt;-</span> fit_arimax <span class="sc">|&gt;</span> <span class="fu">augment</span>()</span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> fcst, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time_period, <span class="at">ydist =</span> disease_cases))<span class="sc">+</span></span>
+<span id="cb6-7"><a></a>  ggdist<span class="sc">::</span><span class="fu">stat_halfeye</span>(<span class="at">alpha =</span> .<span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb6-8"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>.mean, <span class="at">colour =</span><span class="st">"Point Forecast"</span>)) <span class="sc">+</span></span>
+<span id="cb6-9"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .fitted, <span class="at">colour =</span><span class="st">"Fitted"</span>), <span class="at">data =</span> <span class="fu">filter_index</span>(fitted_arimax, <span class="st">"2015 Jan"</span> <span class="sc">~</span> .)) <span class="sc">+</span></span>
+<span id="cb6-10"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> .fitted, <span class="at">colour =</span><span class="st">"Fitted"</span>), <span class="at">data =</span> <span class="fu">filter_index</span>(fitted_arimax, <span class="st">"2015 Jan"</span> <span class="sc">~</span> .)) <span class="sc">+</span></span>
+<span id="cb6-11"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> disease_cases, <span class="at">colour =</span><span class="st">"Actual"</span>), <span class="at">data =</span> <span class="fu">filter_index</span>(brazil_dengue_tsb <span class="sc">|&gt;</span> <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">'Bahia'</span>), <span class="st">"2016 Jan"</span> <span class="sc">~</span> .)) <span class="sc">+</span></span>
+<span id="cb6-12"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> disease_cases, <span class="at">colour =</span><span class="st">"Actual"</span>), <span class="at">data =</span> <span class="fu">filter_index</span>(brazil_dengue_tsb <span class="sc">|&gt;</span> <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">'Bahia'</span>), <span class="st">"2016 Jan"</span> <span class="sc">~</span> .))<span class="sc">+</span></span>
+<span id="cb6-13"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">name=</span><span class="cn">NULL</span>,</span>
+<span id="cb6-14"><a></a>                     <span class="at">breaks=</span><span class="fu">c</span>(<span class="st">'Fitted'</span>, <span class="st">'Actual'</span>,<span class="st">"Point Forecast"</span>),</span>
+<span id="cb6-15"><a></a>                     <span class="at">values=</span><span class="fu">c</span>(<span class="st">'Fitted'</span><span class="ot">=</span><span class="st">'#E69F00'</span>, <span class="st">'Actual'</span><span class="ot">=</span><span class="st">'#0072B2'</span>,<span class="st">"Point Forecast"</span><span class="ot">=</span><span class="st">"#000000"</span>))<span class="sc">+</span></span>
+<span id="cb6-16"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"Inter"</span>, <span class="at">base_size =</span> <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb6-17"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+
+</section>
+<section id="forecast-distributions-using-fable-in-r-1-output" class="slide level2 output-location-slide"><h2>Forecast distributions using <code>fable</code> in <code>R</code></h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="kigali_workshop_files/figure-revealjs/unnamed-chunk-7-1.png" width="1728"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="section-7" class="slide level2 center" data-background-color="#242B4A">
+<h2></h2>
+<p><span class="bigger">Now it is your turn.</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_0de3b058" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="prediction-intervals" class="slide level2">
+<h2>Prediction intervals</h2>
+<ul>
+<li><p>A prediction interval gives a region within which we expect <span class="math inline">\(y_{T+h}\)</span> to lie with a specified probability.</p></li>
+<li><p>Assuming forecast errors are normally distributed, then a 95% PI is</p></li>
+</ul>
+<p><span class="math display">\[
+\hat{y}_{T+h \mid T} \pm 1.96\,\hat{\sigma}_h
+\]</span></p>
+<p>where <span class="math inline">\(\hat{\sigma}_h\)</span> is the standard deviation of the <span class="math inline">\(h\)</span>-step-ahead forecast distribution.</p>
+<ul>
+<li>When <span class="math inline">\(h = 1\)</span>, <span class="math inline">\(\hat{\sigma}_h\)</span> can be estimated from the residuals.</li>
+</ul>
+<div class="columns">
+<div class="fragment">
+<div class="column" style="width:40%;">
+<p><img data-src="images/interval_fc.png"></p>
+</div><div class="column" style="width:2.5%;">
+
+</div><div class="column" style="width:57.5%;">
+<p><br> <br></p>
+<ul>
+<li><p>Prediction intervals require a stochastic model (with random errors, etc.).</p></li>
+<li><p>For most models, prediction intervals get wider as the forecast horizon increases.</p></li>
+<li><p>Check residual assumptions before believing them.</p></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="prediction-intervals-using-fable-in-r" class="slide level2">
+<h2>Prediction intervals using <code>fable</code> in <code>R</code></h2>
+<p>Forecast intervals can be extracted using the <code>hilo()</code> function</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>fit_arimax <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a></a>  <span class="fu">forecast</span>(<span class="at">new_data =</span> brazil_dengue_tsb_future) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a></a>  <span class="fu">hilo</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a></a>  <span class="fu">select</span>(location, .model, .mean, <span class="st">`</span><span class="at">80%</span><span class="st">`</span>, <span class="st">`</span><span class="at">95%</span><span class="st">`</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-5"><a></a>  <span class="fu">head</span>(<span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tsibble: 6 x 6 [1M]
+# Key:       location, .model [1]
+  location .model .mean                     `80%`                    `95%`
+  &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt;                    &lt;hilo&gt;                   &lt;hilo&gt;
+1 Bahia    arimax 5800. [ 2510.9616,  9088.174]80 [  770.0785, 10829.06]95
+2 Bahia    arimax 4896. [ -180.5130,  9971.543]80 [-2867.6000, 12658.63]95
+3 Bahia    arimax 6358. [  643.5446, 12073.263]80 [-2381.7190, 15098.53]95
+4 Bahia    arimax 5504. [ -280.3819, 11287.723]80 [-3342.2744, 14349.62]95
+5 Bahia    arimax 4511. [-1273.7354, 10295.688]80 [-4335.9768, 13357.93]95
+6 Bahia    arimax 3396. [-2389.1946,  9181.817]80 [-5451.8564, 12244.48]95
+# ℹ 1 more variable: time_period &lt;mth&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="prediction-intervals-using-fable-in-r-1" class="slide level2">
+<h2>Prediction intervals using <code>fable</code> in <code>R</code></h2>
+<p>Use <code>level</code> argument to control coverage.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>fit_arimax <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a></a>  <span class="fu">forecast</span>(<span class="at">new_data =</span> brazil_dengue_tsb_future) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a></a>  <span class="fu">hilo</span>(<span class="at">level =</span> <span class="dv">90</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a></a>  <span class="fu">select</span>(location, .model, .mean, <span class="st">`</span><span class="at">90%</span><span class="st">`</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a></a>  <span class="fu">unpack_hilo</span>(<span class="st">"90%"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-6"><a></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tsibble: 3 x 6 [1M]
+# Key:       location, .model [1]
+  location .model .mean `90%_lower` `90%_upper` time_period
+  &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;       &lt;mth&gt;
+1 Bahia    arimax 5800.       1579.      10020.    2016 Jan
+2 Bahia    arimax 4896.      -1619.      11411.    2016 Feb
+3 Bahia    arimax 6358.       -977.      13693.    2016 Mar</code></pre>
+</div>
+</div>
+<p>Visualise the prediction intervals</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>fit_arimax <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a></a>  <span class="fu">forecast</span>(<span class="at">new_data =</span> brazil_dengue_tsb_future) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a></a>  <span class="fu">autoplot</span>(brazil_dengue_tsb <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a></a>             <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">'Bahia'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a></a>             <span class="fu">filter_index</span>(<span class="st">'2015 Jan'</span> <span class="sc">~</span> .)) <span class="sc">+</span></span>
+<span id="cb11-6"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"Inter"</span>, <span class="at">base_size =</span> <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb11-7"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+
+</section>
+<section id="prediction-intervals-using-fable-in-r-1-output" class="slide level2 output-location-slide"><h2>Prediction intervals using <code>fable</code> in <code>R</code></h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="kigali_workshop_files/figure-revealjs/unnamed-chunk-11-1.png" width="1728"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="section-8" class="slide level2 center" data-background-color="#242B4A">
+<h2></h2>
+<p><span class="bigger">Now it is your turn.</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_735049b7" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="key-assumptions" class="slide level2">
+<h2>Key assumptions</h2>
+<ol type="1">
+<li><strong>Normality:</strong> The forecast errors (residuals) follow a symmetric Bell Curve.</li>
+<li><strong>Uncorrelated:</strong> The model has captured all signal; the remaining errors have no pattern (white noise).</li>
+<li><strong>Homoscedasticity:</strong> The volatility (variance) of errors is constant over time and does not explode during specific seasons.</li>
+<li><strong>Best for:</strong> Stable, high-volume data where you need a quick, standard answer.</li>
+</ol>
+<div class="table-custom">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Pros</th>
+<th style="text-align: left;">Cons</th>
+<th style="text-align: left;">When to Select</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Speed &amp; Standardization:</strong> Instant calculation using analytic formulas (e.g., <span class="math inline">\(\pm 1.96\sigma\)</span>). It is the default output in almost all software, making it easy to reproduce and audit.</td>
+<td style="text-align: left;"><strong>Symmetry Assumption:</strong> Assumes errors are symmetric. For low disease counts, this often produces physically impossible negative lower bounds.</td>
+<td style="text-align: left;"><strong>High-Volume Data:</strong> When case counts are high (e.g., &gt;100/month) and the distribution looks roughly Bell-shaped.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Stability:</strong> Performs reliably on data that is consistent, has a long history, and follows standard seasonal patterns.</td>
+<td style="text-align: left;"><strong>Underestimated Risk:</strong> Often too narrow because it ignores parameter uncertainty (the risk that the model parameters themselves are slightly wrong).</td>
+<td style="text-align: left;"><strong>Short Horizons:</strong> For 1-step ahead forecasts where the “fan” of uncertainty hasn’t had time to compound or break down.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Simplicity:</strong> Easy to explain to stakeholders as a “standard statistical range.”</td>
+<td style="text-align: left;"><strong>Tail Sensitivity:</strong> If the data has “fat tails” (extreme outbreaks), the Normality assumption fails, and a 95% interval will not actually cover 95% of events.</td>
+<td style="text-align: left;"><strong>Establishing a Baseline:</strong> Use this first to set a benchmark. If complex methods don’t beat this, stick with this.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="section-9" class="slide level2 center" data-background-color="#242B4A">
+<h2></h2>
+<p><span class="bigger">02</span></p>
+<p><span class="big">Bootstrapping time series</span></p>
+</section>
+<section id="forecast-sample-paths-bootstrapping" class="slide level2">
+<h2>Forecast sample paths (Bootstrapping)</h2>
+<p>When a Normal distribution for the residuals is an unreasonable assumption (e.g., extreme outbreaks, skewed data), we use <strong>bootstrapping</strong>. This assumes that “future errors will look like past errors”.</p>
+<ul>
+<li>Instead of using a fixed formula, we simulate <span class="math inline">\(B\)</span> different “possible futures” (sample paths) by randomly sampling from past residuals.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:32%;">
+<div class="fragment">
+<p><img data-src="images/bt1.svg"></p>
+<p><strong>Resample:</strong> Take a random error (<span class="math inline">\(e^*\)</span>) from the past.</p>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:32%;">
+<div class="fragment">
+<p><img data-src="images/bt2.svg"></p>
+<p><strong>Step 1:</strong> <span class="math inline">\(y^*_{T+1} = \hat{y}_{T+1|T} + e^*_{T+1}\)</span></p>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:32%;">
+<div class="fragment">
+<p><img data-src="images/bt3.svg"></p>
+<p><strong>Iterate:</strong> Add <span class="math inline">\(y^*_{T+1}\)</span> to the history and repeat: <span class="math inline">\(y^*_{T+2} = \hat{y}_{T+2|T+1} + e^*_{T+2}\)</span></p>
+</div>
+</div></div>
+</section>
+<section id="bootstrap-sampling-using-fable-in-r" class="slide level2">
+<h2>Bootstrap sampling using <code>fable</code> in <code>R</code></h2>
+<p>Use <code>generate</code> argument to forecast multiple paths.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>fit_arimax <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a></a>  <span class="fu">generate</span>(<span class="at">new_data =</span> brazil_dengue_tsb_future, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>, <span class="at">times =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tsibble: 3 x 5 [1M]
+# Key:       location, .model, .rep [1]
+  location .model time_period .rep   .sim
+  &lt;chr&gt;    &lt;chr&gt;        &lt;mth&gt; &lt;chr&gt; &lt;dbl&gt;
+1 Bahia    arimax    2016 Jan 1     5547.
+2 Bahia    arimax    2016 Feb 1     3482.
+3 Bahia    arimax    2016 Mar 1     5116.</code></pre>
+</div>
+</div>
+<p>Visualise sample future paths</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>sim <span class="ot">&lt;-</span> fit_arimax <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a></a>  <span class="fu">generate</span>(<span class="at">new_data =</span> brazil_dengue_tsb_future, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>, <span class="at">times =</span> <span class="dv">5</span>)</span>
+<span id="cb14-3"><a></a></span>
+<span id="cb14-4"><a></a>brazil_dengue_tsb <span class="sc">|&gt;</span> </span>
+<span id="cb14-5"><a></a>  <span class="fu">filter_index</span>(<span class="st">'2015 Jan'</span> <span class="sc">~</span> .) <span class="sc">|&gt;</span> </span>
+<span id="cb14-6"><a></a>  <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">'Bahia'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-7"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time_period)) <span class="sc">+</span></span>
+<span id="cb14-8"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> disease_cases)) <span class="sc">+</span></span>
+<span id="cb14-9"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .sim, <span class="at">colour =</span> <span class="fu">as.factor</span>(.rep)),</span>
+<span id="cb14-10"><a></a>    <span class="at">data =</span> sim)<span class="sc">+</span></span>
+<span id="cb14-11"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Disease Cases"</span>, <span class="at">x =</span> <span class="st">"Month"</span>, <span class="at">colour=</span><span class="st">"Future"</span>) <span class="sc">+</span></span>
+<span id="cb14-12"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"Inter"</span>, <span class="at">base_size =</span> <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb14-13"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+
+</section>
+<section id="bootstrap-sampling-using-fable-in-r-output" class="slide level2 output-location-slide"><h2>Bootstrap sampling using <code>fable</code> in <code>R</code></h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="kigali_workshop_files/figure-revealjs/unnamed-chunk-14-1.png" width="1728"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="forecast-intervals-from-bootstrapped-residuals" class="slide level2">
+<h2>Forecast intervals from bootstrapped residuals</h2>
+<p>Forecast intervals can be extracted using the <code>hilo()</code> function</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>fit_arimax <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a></a>  <span class="fu">forecast</span>(<span class="at">new_data =</span> brazil_dengue_tsb_future, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>, <span class="at">times =</span> <span class="dv">100</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a></a>  <span class="fu">hilo</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb15-4"><a></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tsibble: 3 x 9 [1M]
+# Key:       location, .model [1]
+  location .model time_period disease_cases .mean rainfall mean_temperature
+  &lt;chr&gt;    &lt;chr&gt;        &lt;mth&gt;        &lt;dist&gt; &lt;dbl&gt;    &lt;dbl&gt;            &lt;dbl&gt;
+1 Bahia    arimax    2016 Jan   sample[100] 5761.     224.             26.3
+2 Bahia    arimax    2016 Feb   sample[100] 5097.     194.             26.0
+3 Bahia    arimax    2016 Mar   sample[100] 6627.     382.             25.5
+# ℹ 2 more variables: `80%` &lt;hilo&gt;, `95%` &lt;hilo&gt;</code></pre>
+</div>
+</div>
+<p>Visualize the prediction intervals</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>fit_arimax <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a></a>  <span class="fu">forecast</span>(<span class="at">new_data =</span> brazil_dengue_tsb_future, <span class="at">bootstrap =</span> <span class="cn">TRUE</span>, <span class="at">times =</span> <span class="dv">100</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a></a>  <span class="fu">autoplot</span>(brazil_dengue_tsb <span class="sc">|&gt;</span> </span>
+<span id="cb17-4"><a></a>             <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">'Bahia'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-5"><a></a>             <span class="fu">filter_index</span>(<span class="st">'2015 Jan'</span> <span class="sc">~</span> .)) <span class="sc">+</span></span>
+<span id="cb17-6"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"Inter"</span>, <span class="at">base_size =</span> <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb17-7"><a></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+
+</section>
+<section id="forecast-intervals-from-bootstrapped-residuals-output" class="slide level2 output-location-slide"><h2>Forecast intervals from bootstrapped residuals</h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="kigali_workshop_files/figure-revealjs/unnamed-chunk-16-1.png" width="1728"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="section-10" class="slide level2 center" data-background-color="#242B4A">
+<h2></h2>
+<p><span class="bigger">Now it is your turn.</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_5454b235" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="key-assumptions-1" class="slide level2">
+<h2>Key assumptions</h2>
+<ol type="1">
+<li><strong>Representativeness:</strong> The past residuals are a good sample of what could happen in the future.</li>
+<li><strong>Independence (Standard):</strong> Residuals are uncorrelated (IID).</li>
+<li><strong>Independence (Block):</strong> If residuals are dependent (autocorrelated), we must sample “blocks” of errors rather than single points to preserve the structure.</li>
+<li><strong>Best for:</strong> “What-if” scenarios, cumulative risk, and explosive outbreaks.</li>
+</ol>
+<div class="table-custom">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Pros</th>
+<th style="text-align: left;">Cons</th>
+<th style="text-align: left;">When to Select</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Captures Asymmetry:</strong> Does not force a Bell Curve. It naturally handles skewed risk (e.g., cases can spike to 5,000 but cannot go below zero).</td>
+<td style="text-align: left;"><strong>Computationally Expensive:</strong> Slower than model-based methods; requires generating and storing 1,000+ sample paths per series.</td>
+<td style="text-align: left;"><strong>Explosive Outbreaks:</strong> When the risk is one-sided (e.g., a potential exponential spike in Dengue cases).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Path Dependency:</strong> Simulates connected trajectories. This allows you to calculate cumulative risk (e.g., “Probability that cases exceed capacity for 3 weeks in a row”).</td>
+<td style="text-align: left;"><strong>The Autocorrelation Trap:</strong> Standard bootstrapping destroys temporal patterns. If residuals are dependent (sticky), you must use “Block Bootstrap,” which adds complexity.</td>
+<td style="text-align: left;"><strong>Cumulative Risk Analysis:</strong> When stakeholders need to know the total case count over the next season, not just the peak.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Robustness:</strong> Works well when residuals have extreme outliers or “fat tails” that would break a normal distribution.</td>
+<td style="text-align: left;"><strong>Data Hungry:</strong> Requires a long enough history of residuals to draw a representative sample.</td>
+<td style="text-align: left;"><strong>Low Count Data:</strong> When a standard model is predicting negative numbers and you need a strict zero-bound.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="section-11" class="slide level2 center" data-background-color="#242B4A">
+<h2></h2>
+<p><span class="bigger">03</span></p>
+<p><span class="big">Conformal predictions</span></p>
+</section>
+<section id="conformal-prediction-intervals" class="slide level2">
+<h2>Conformal prediction intervals</h2>
+<p>Unlike Model-Based methods (which assume a distribution) or Bootstrapping (which assumes history repeats), Conformal Prediction focuses on the model’s past performance on unseen data. It asks: <span class="highlight-blue">“How wrong was this model on the calibration set?”</span> and uses that to build a rigorous interval for the future.</p>
+<div class="columns">
+<div class="column" style="width:32%;">
+<div class="fragment">
+<p><img data-src="images/cp1.svg"></p>
+<p>Train point forecast model on the training set and forecast on calibration set</p>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:32%;">
+<div class="fragment">
+<p><img data-src="images/cp2.svg"></p>
+<p>Get conformity scores and create a sorted list with absolute conformity scores</p>
+</div>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:32%;">
+<div class="fragment">
+<p><img data-src="images/cp3.svg"></p>
+<p>Select the quantile of the prediction interval</p>
+</div>
+</div></div>
+</section>
+<section id="conformal-prediction-intervals-1" class="slide level2">
+<h2>Conformal prediction intervals</h2>
+<p>Unlike Model-Based methods (which assume a distribution) or Bootstrapping (which assumes history repeats), Conformal Prediction focuses on the model’s past performance on unseen data. It asks: <span class="highlight-blue">“How wrong was this model on the calibration set?”</span> and uses that to build a rigorous interval for the future.</p>
+<div class="columns">
+<div class="column" style="width:32%;">
+<p><img data-src="images/cp4.svg"></p>
+<p>Forecast with a point forecast model</p>
+</div><div class="column" style="width:2%;">
+
+</div><div class="column" style="width:64%;">
+<div class="fragment">
+<p><img data-src="images/cp5.svg"></p>
+<p>Add prediction interval based on conformity scores</p>
+</div>
+</div></div>
+</section>
+<section id="conformal-prediciton-using-conformalforecast-in-r" class="slide level2">
+<h2>Conformal prediciton using <code>ConformalForecast</code> in <code>R</code></h2>
+<p>Pick one series and prepare data</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>bahia <span class="ot">&lt;-</span> brazil_dengue_tsb <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">"Bahia"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a></a>  <span class="fu">arrange</span>(time_period) <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a></a>  <span class="fu">as_tibble</span>()</span>
+<span id="cb18-5"><a></a></span>
+<span id="cb18-6"><a></a>y_all <span class="ot">&lt;-</span> <span class="fu">ts</span>(bahia<span class="sc">$</span>disease_cases, <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb18-7"><a></a></span>
+<span id="cb18-8"><a></a>xreg_all <span class="ot">&lt;-</span> bahia <span class="sc">|&gt;</span></span>
+<span id="cb18-9"><a></a>  <span class="fu">select</span>(rainfall, mean_temperature) <span class="sc">|&gt;</span></span>
+<span id="cb18-10"><a></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb18-11"><a></a></span>
+<span id="cb18-12"><a></a><span class="co"># Define split dates</span></span>
+<span id="cb18-13"><a></a>train_end  <span class="ot">&lt;-</span> <span class="fu">yearmonth</span>(<span class="st">"2014 Dec"</span>)</span>
+<span id="cb18-14"><a></a>calib_start <span class="ot">&lt;-</span> <span class="fu">yearmonth</span>(<span class="st">"2015 Jan"</span>)</span>
+<span id="cb18-15"><a></a>calib_end   <span class="ot">&lt;-</span> <span class="fu">yearmonth</span>(<span class="st">"2015 Dec"</span>)</span>
+<span id="cb18-16"><a></a>test_start  <span class="ot">&lt;-</span> <span class="fu">yearmonth</span>(<span class="st">"2016 Jan"</span>)</span>
+<span id="cb18-17"><a></a>test_end    <span class="ot">&lt;-</span> <span class="fu">yearmonth</span>(<span class="st">"2016 Dec"</span>)</span>
+<span id="cb18-18"><a></a></span>
+<span id="cb18-19"><a></a>idx <span class="ot">&lt;-</span> bahia<span class="sc">$</span>time_period</span>
+<span id="cb18-20"><a></a></span>
+<span id="cb18-21"><a></a>i_train_end  <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">which</span>(idx <span class="sc">&lt;=</span> train_end))</span>
+<span id="cb18-22"><a></a>i_calib_end  <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">which</span>(idx <span class="sc">&lt;=</span> calib_end))</span>
+<span id="cb18-23"><a></a>i_test_start <span class="ot">&lt;-</span> <span class="fu">min</span>(<span class="fu">which</span>(idx <span class="sc">&gt;=</span> test_start))</span>
+<span id="cb18-24"><a></a>i_test_end   <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">which</span>(idx <span class="sc">&lt;=</span> test_end))</span>
+<span id="cb18-25"><a></a></span>
+<span id="cb18-26"><a></a><span class="co"># train length used as rolling window size in cvforecast</span></span>
+<span id="cb18-27"><a></a>window_len <span class="ot">&lt;-</span> i_train_end</span>
+<span id="cb18-28"><a></a></span>
+<span id="cb18-29"><a></a><span class="co"># series up to end of calibration (train + calibration)</span></span>
+<span id="cb18-30"><a></a>y_train_calib <span class="ot">&lt;-</span> <span class="fu">ts</span>(bahia<span class="sc">$</span>disease_cases[<span class="dv">1</span><span class="sc">:</span>i_calib_end], <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb18-31"><a></a>xreg_train_calib <span class="ot">&lt;-</span> xreg_all[<span class="dv">1</span><span class="sc">:</span>i_calib_end, , drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Create forecast function for cvforecast (ARIMAX via forecast::Arima)</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>farimax_1step <span class="ot">&lt;-</span> <span class="cf">function</span>(x, h, level) {</span>
+<span id="cb19-2"><a></a>  t <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb19-3"><a></a></span>
+<span id="cb19-4"><a></a>  xreg_train  <span class="ot">&lt;-</span> xreg_train_calib[<span class="dv">1</span><span class="sc">:</span>t, , drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb19-5"><a></a>  xreg_future <span class="ot">&lt;-</span> xreg_train_calib[(t <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>(t <span class="sc">+</span> h), , drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb19-6"><a></a></span>
+<span id="cb19-7"><a></a>  fit <span class="ot">&lt;-</span> forecast<span class="sc">::</span><span class="fu">Arima</span>(x, <span class="at">xreg =</span> xreg_train)</span>
+<span id="cb19-8"><a></a>  forecast<span class="sc">::</span><span class="fu">forecast</span>(fit, <span class="at">h =</span> h, <span class="at">level =</span> level, <span class="at">xreg =</span> xreg_future)</span>
+<span id="cb19-9"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>“Calibration” residuals via cvforecast across the 12 calibration months</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># This produces 1-step-ahead errors for each month in the calibration year.</span></span>
+<span id="cb20-2"><a></a>fc_cal <span class="ot">&lt;-</span> <span class="fu">cvforecast</span>(</span>
+<span id="cb20-3"><a></a>  <span class="at">y =</span> y_train_calib,</span>
+<span id="cb20-4"><a></a>  <span class="at">forecastfun =</span> farimax_1step,</span>
+<span id="cb20-5"><a></a>  <span class="at">h =</span> <span class="dv">1</span>,</span>
+<span id="cb20-6"><a></a>  <span class="at">level =</span> <span class="dv">95</span>,</span>
+<span id="cb20-7"><a></a>  <span class="at">forward =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb20-8"><a></a>  <span class="at">window =</span> window_len,</span>
+<span id="cb20-9"><a></a>  <span class="at">initial =</span> <span class="dv">1</span></span>
+<span id="cb20-10"><a></a>)</span>
+<span id="cb20-11"><a></a></span>
+<span id="cb20-12"><a></a><span class="co"># absolute errors (conformity scores)</span></span>
+<span id="cb20-13"><a></a>scores <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">as.numeric</span>(fc_cal<span class="sc">$</span>ERROR))</span>
+<span id="cb20-14"><a></a>q_95 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(scores, <span class="fl">0.95</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="conformal-prediciton-using-conformalforecast-in-r-1" class="slide level2">
+<h2>Conformal prediciton using <code>ConformalForecast</code> in <code>R</code></h2>
+<p>Forecast the 12-month test period (fit on train+calib, forecast test)</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># Fit on all available up to calibration end:</span></span>
+<span id="cb21-2"><a></a>fit_final <span class="ot">&lt;-</span> forecast<span class="sc">::</span><span class="fu">Arima</span>(</span>
+<span id="cb21-3"><a></a>  <span class="fu">ts</span>(bahia<span class="sc">$</span>disease_cases[<span class="dv">1</span><span class="sc">:</span>i_calib_end], <span class="at">frequency =</span> <span class="dv">12</span>),</span>
+<span id="cb21-4"><a></a>  <span class="at">xreg =</span> xreg_all[<span class="dv">1</span><span class="sc">:</span>i_calib_end, , <span class="at">drop =</span> <span class="cn">FALSE</span>]</span>
+<span id="cb21-5"><a></a>)</span>
+<span id="cb21-6"><a></a></span>
+<span id="cb21-7"><a></a>fc_test <span class="ot">&lt;-</span> forecast<span class="sc">::</span><span class="fu">forecast</span>(</span>
+<span id="cb21-8"><a></a>  fit_final,</span>
+<span id="cb21-9"><a></a>  <span class="at">h =</span> (i_test_end <span class="sc">-</span> i_test_start <span class="sc">+</span> <span class="dv">1</span>),</span>
+<span id="cb21-10"><a></a>  <span class="at">xreg =</span> xreg_all[i_test_start<span class="sc">:</span>i_test_end, , <span class="at">drop =</span> <span class="cn">FALSE</span>]</span>
+<span id="cb21-11"><a></a>)</span>
+<span id="cb21-12"><a></a></span>
+<span id="cb21-13"><a></a>test_dates <span class="ot">&lt;-</span> bahia<span class="sc">$</span>time_period[i_test_start<span class="sc">:</span>i_test_end]</span>
+<span id="cb21-14"><a></a>yhat <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(fc_test<span class="sc">$</span>mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Visualise the conformal prediction intervals</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>plot_fc <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb22-2"><a></a>  <span class="at">time_period =</span> test_dates,</span>
+<span id="cb22-3"><a></a>  <span class="at">point =</span> yhat,</span>
+<span id="cb22-4"><a></a>  <span class="at">lower_95 =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, yhat <span class="sc">-</span> q_95),</span>
+<span id="cb22-5"><a></a>  <span class="at">upper_95 =</span> yhat <span class="sc">+</span> q_95,</span>
+<span id="cb22-6"><a></a>  <span class="at">actual =</span> bahia<span class="sc">$</span>disease_cases[i_test_start<span class="sc">:</span>i_test_end]</span>
+<span id="cb22-7"><a></a>)</span>
+<span id="cb22-8"><a></a></span>
+<span id="cb22-9"><a></a>history <span class="ot">&lt;-</span> bahia <span class="sc">|&gt;</span></span>
+<span id="cb22-10"><a></a>  <span class="fu">filter</span>(time_period <span class="sc">&gt;=</span> <span class="fu">yearmonth</span>(<span class="st">"2014 Jan"</span>) <span class="sc">&amp;</span> time_period <span class="sc">&lt;=</span> calib_end)</span>
+<span id="cb22-11"><a></a></span>
+<span id="cb22-12"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb22-13"><a></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb22-14"><a></a>    <span class="at">data =</span> history,</span>
+<span id="cb22-15"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> time_period, <span class="at">y =</span> disease_cases, <span class="at">colour =</span> <span class="st">"Actual"</span>),</span>
+<span id="cb22-16"><a></a>    <span class="at">linewidth =</span> <span class="fl">1.2</span></span>
+<span id="cb22-17"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb22-18"><a></a>  <span class="fu">geom_ribbon</span>(</span>
+<span id="cb22-19"><a></a>    <span class="at">data =</span> plot_fc,</span>
+<span id="cb22-20"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> time_period, <span class="at">ymin =</span> lower_95, <span class="at">ymax =</span> upper_95, <span class="at">fill =</span> <span class="st">"95% Conformal PI"</span>),</span>
+<span id="cb22-21"><a></a>    <span class="at">alpha =</span> <span class="fl">0.2</span></span>
+<span id="cb22-22"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb22-23"><a></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb22-24"><a></a>    <span class="at">data =</span> plot_fc,</span>
+<span id="cb22-25"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> time_period, <span class="at">y =</span> point, <span class="at">colour =</span> <span class="st">"Point Forecast"</span>),</span>
+<span id="cb22-26"><a></a>    <span class="at">linewidth =</span> <span class="fl">1.75</span></span>
+<span id="cb22-27"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb22-28"><a></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb22-29"><a></a>    <span class="at">data =</span> plot_fc,</span>
+<span id="cb22-30"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> time_period, <span class="at">y =</span> actual, <span class="at">colour =</span> <span class="st">"Actual"</span>),</span>
+<span id="cb22-31"><a></a>    <span class="at">linewidth =</span> <span class="fl">1.2</span></span>
+<span id="cb22-32"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb22-33"><a></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb22-34"><a></a>    <span class="at">name =</span> <span class="cn">NULL</span>,</span>
+<span id="cb22-35"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb22-36"><a></a>      <span class="st">"Point Forecast"</span> <span class="ot">=</span> <span class="st">"#0072B2"</span>,</span>
+<span id="cb22-37"><a></a>      <span class="st">"Actual"</span> <span class="ot">=</span> <span class="st">"black"</span></span>
+<span id="cb22-38"><a></a>    )</span>
+<span id="cb22-39"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb22-40"><a></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb22-41"><a></a>    <span class="at">name =</span> <span class="cn">NULL</span>,</span>
+<span id="cb22-42"><a></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"95% Conformal PI"</span> <span class="ot">=</span> <span class="st">"#0072B2"</span>)</span>
+<span id="cb22-43"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb22-44"><a></a>  <span class="fu">guides</span>(</span>
+<span id="cb22-45"><a></a>    <span class="at">colour =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">1</span>, <span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">linewidth =</span> <span class="fl">1.6</span>)),</span>
+<span id="cb22-46"><a></a>    <span class="at">fill   =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">2</span>)</span>
+<span id="cb22-47"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb22-48"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Month"</span>, <span class="at">y =</span> <span class="st">"Disease Cases"</span>) <span class="sc">+</span></span>
+<span id="cb22-49"><a></a>  <span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"Inter"</span>, <span class="at">base_size =</span> <span class="dv">36</span>) <span class="sc">+</span></span>
+<span id="cb22-50"><a></a>  <span class="fu">theme</span>(</span>
+<span id="cb22-51"><a></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>),</span>
+<span id="cb22-52"><a></a>    <span class="at">legend.position =</span> <span class="st">"right"</span></span>
+<span id="cb22-53"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+
+</section>
+<section id="conformal-prediciton-using-conformalforecast-in-r-1-output" class="slide level2 output-location-slide"><h2>Conformal prediciton using <code>ConformalForecast</code> in <code>R</code></h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="kigali_workshop_files/figure-revealjs/unnamed-chunk-22-1.png" width="1920"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="section-12" class="slide level2 center" data-background-color="#242B4A">
+<h2></h2>
+<p><span class="bigger">Now it is your turn.</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_271854dc" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="key-assumptions-2" class="slide level2">
+<h2>Key Assumptions</h2>
+<ol type="1">
+<li><strong>Exchangeability:</strong> The calibration data (recent past) looks statistically similar to the test data (near future).</li>
+<li><strong>Symmetry:</strong> Standard “Split Conformal” produces symmetric intervals (constant width), though advanced versions (CQR) can handle asymmetry.</li>
+<li><strong>Best for:</strong> Complex “Black Box” models (AI/ML) and strict policy requirements.</li>
+</ol>
+<div class="table-custom">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Pros</th>
+<th style="text-align: left;">Cons</th>
+<th style="text-align: left;">When to Select</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Model Agnostic:</strong> Works with <em>any</em> model (Neural Networks, Random Forest, XGBoost). You do not need to understand the math inside the “black box”.</td>
+<td style="text-align: left;"><strong>Data Hungry (Splitting):</strong> Requires a separate “Calibration Set” withheld from training. In short time series, sacrificing 20% of data for calibration is painful.</td>
+<td style="text-align: left;"><strong>Using Machine Learning:</strong> When you are using complex non-linear models where calculating a standard deviation (<span class="math inline">\(\sigma\)</span>) is impossible.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Finite-Sample Guarantee:</strong> Mathematically guaranteed to cover the true value <span class="math inline">\((1-\alpha)\%\)</span> of the time, regardless of the underlying distribution.</td>
+<td style="text-align: left;"><strong>The Drift Problem:</strong> Relies on “Exchangeability.” If the climate shifts effectively (Distribution Drift), the calibration data no longer represents the future, and coverage fails.</td>
+<td style="text-align: left;"><strong>Regulatory/Policy Compliance:</strong> When you must prove to stakeholders that your intervals are statistically valid (e.g., “guaranteed 90% coverage”).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Distribution Free:</strong> Does not assume errors are Normal, Poisson, or Skewed. It constructs intervals based purely on empirical past performance.</td>
+<td style="text-align: left;"><strong>Constant Widths:</strong> Basic Split Conformal produces a fixed-width “tube” that doesn’t adapt to local volatility (unless using advanced Adaptive Conformal).</td>
+<td style="text-align: left;"><strong>Complex Distributions:</strong> When data is messy, multi-modal, or refuses to fit any standard statistical distribution.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<p><br></p>
+<ul>
+<li><p><a href="https://otexts.com/fpp3/">Forecasting: Principles and Practice by Rob J Hyndman and George Athanasopoulos</a></p></li>
+<li><p><a href="https://xqnwang.github.io/conformalForecast/articles/conformalForecast.html#conformal-prediction">Introduction to conformalForecast</a></p></li>
+<li><p><a href="https://petolau.github.io/Bootstrapping-time-series-for-improving-forecasting-in-R/">Bootstrapping time series for improving forecasting accuracy</a></p></li>
+<li><p><a href="https://arxiv.org/abs/2307.16895">Conformal PID Control for Time Series Prediction</a></p></li>
+</ul>
+</section>
+<section id="any-questions-or-thoughts" class="slide level2">
+<h2>Any questions or thoughts? 💬</h2>
+
+
+
+<img data-src="images/follow_us.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://chamara7h.github.io/labs/">Modelling prediction uncertainty</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+
+        height: 1080,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
