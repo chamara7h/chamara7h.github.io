@@ -255,9 +255,13 @@ This course is intended for public health researchers, epidemiologists, and prac
 *   Visualizing the bounds, shape, and dynamics of forecast risk
 
 **Section 2: Model-Based Uncertainty (The Baseline)**
+
 *   Parametric assumptions (Normality, Homoscedasticity)
+
 *   The "fan chart" and how standard deviation scales over time
+
 *   Implementing analytic formulas in R (`fable`)
+
 *   The "symmetry trap" (predicting negative case counts) and fat tails
 
 **Section 3: Bootstrapping Sample Paths (The Simulation)**
@@ -271,6 +275,7 @@ This course is intended for public health researchers, epidemiologists, and prac
 *   Introduction to IID vs. Block bootstrapping for autocorrelated climate data
 
 **Section 4: Conformal Prediction (The Guarantee)**
+
 *   Moving from distribution-based to empirical, model-agnostic intervals
 
 *   The Split Conformal workflow: Training vs. Calibration sets
