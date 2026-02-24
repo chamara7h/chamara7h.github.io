@@ -1,16 +1,5 @@
 [
   {
-    "listing": "/lab/index.html",
-    "items": [
-      "/lab/quarto_website/index.html",
-      "/lab/dl4sg_marcov/index.html",
-      "/lab/intro_method_skills/index.html",
-      "/lab/epss_training/index.html",
-      "/lab/energy_score/index.html",
-      "/lab/intro_python/index.html"
-    ]
-  },
-  {
     "listing": "/talks/index.html",
     "items": [
       "/talks/jsi_session/index.html",
@@ -36,6 +25,18 @@
       "/projects/design/index.html",
       "/projects/projects/index.html",
       "/projects/publications/index.html"
+    ]
+  },
+  {
+    "listing": "/lab/index.html",
+    "items": [
+      "/lab/kigali_workshop/index.html",
+      "/lab/quarto_website/index.html",
+      "/lab/dl4sg_marcov/index.html",
+      "/lab/intro_method_skills/index.html",
+      "/lab/epss_training/index.html",
+      "/lab/energy_score/index.html",
+      "/lab/intro_python/index.html"
     ]
   }
 ]
