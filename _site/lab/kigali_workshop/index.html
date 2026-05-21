@@ -395,12 +395,12 @@ body {
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li>Understand the critical flaw of point forecasts and why asymmetric risk matters in public health resource planning.</li>
-<li>Distinguish between prediction intervals, forecast distributions, and sample paths.</li>
-<li>Apply and extract Model-Based prediction intervals (e.g., ARIMA) as a baseline benchmark.</li>
-<li>Simulate and visualize non-linear outbreak trajectories using Bootstrapping.</li>
-<li>Construct model-agnostic prediction intervals with finite-sample guarantees using Conformal Prediction.</li>
-<li>Link data characteristics (e.g., volume, skewness, climate drift) to the appropriate uncertainty quantification method.</li>
+<li><p>Understand the critical flaw of point forecasts and why asymmetric risk matters in public health resource planning.</p></li>
+<li><p>Distinguish between prediction intervals, forecast distributions, and sample paths.</p></li>
+<li><p>Apply and extract Model-Based prediction intervals (e.g., ARIMA) as a baseline benchmark.</p></li>
+<li><p>Simulate and visualize non-linear outbreak trajectories using Bootstrapping.</p></li>
+<li><p>Construct model-agnostic prediction intervals with finite-sample guarantees using Conformal Prediction.</p></li>
+<li><p>Link data characteristics (e.g., volume, skewness, climate drift) to the appropriate uncertainty quantification method.</p></li>
 </ul>
 </section>
 <section id="prerequisites" class="level2">
@@ -413,11 +413,39 @@ body {
 </section>
 <section id="course-topics" class="level2">
 <h2 class="anchored" data-anchor-id="course-topics">Course Topics</h2>
-<p><strong>Section 1: The Illusion of Certainty (Foundations)</strong> * The point forecast fallacy and asymmetric risk in disease management * Defining Prediction Intervals vs.&nbsp;Forecast Distributions * Visualizing the bounds, shape, and dynamics of forecast risk</p>
-<p><strong>Section 2: Model-Based Uncertainty (The Baseline)</strong> * Parametric assumptions (Normality, Homoscedasticity) * The “fan chart” and how standard deviation scales over time * Implementing analytic formulas in R (<code>fable</code>) * The “symmetry trap” (predicting negative case counts) and fat tails</p>
-<p><strong>Section 3: Bootstrapping Sample Paths (The Simulation)</strong> * Overcoming the Normal distribution assumption using past residuals * Generating and plotting multiple “possible futures” (sample paths) * Capturing skewed risk and explosive outbreak dynamics * Introduction to IID vs.&nbsp;Block bootstrapping for autocorrelated climate data</p>
-<p><strong>Section 4: Conformal Prediction (The Guarantee)</strong> * Moving from distribution-based to empirical, model-agnostic intervals * The Split Conformal workflow: Training vs.&nbsp;Calibration sets * Calculating conformity scores (residuals) to guarantee valid coverage * The exchangeability assumption and the challenge of climate drift</p>
-<p><strong>Section 5: Decision Framework &amp; Application</strong> * Evaluating trade-offs: Computational speed vs.&nbsp;flexibility vs.&nbsp;guarantees * Choosing the right method based on dataset size and outbreak volatility * Summary matrix: When to select Model-Based, Bootstrap, or Conformal methods</p>
+<p><strong>Section 1: The Illusion of Certainty (Foundations)</strong></p>
+<ul>
+<li><p>The point forecast fallacy and asymmetric risk in disease management</p></li>
+<li><p>Defining Prediction Intervals vs.&nbsp;Forecast Distributions</p></li>
+<li><p>Visualizing the bounds, shape, and dynamics of forecast risk</p></li>
+</ul>
+<p><strong>Section 2: Model-Based Uncertainty (The Baseline)</strong></p>
+<ul>
+<li><p>Parametric assumptions (Normality, Homoscedasticity)</p></li>
+<li><p>The “fan chart” and how standard deviation scales over time</p></li>
+<li><p>Implementing analytic formulas in R (<code>fable</code>)</p></li>
+<li><p>The “symmetry trap” (predicting negative case counts) and fat tails</p></li>
+</ul>
+<p><strong>Section 3: Bootstrapping Sample Paths (The Simulation)</strong></p>
+<ul>
+<li><p>Overcoming the Normal distribution assumption using past residuals</p></li>
+<li><p>Generating and plotting multiple “possible futures” (sample paths)</p></li>
+<li><p>Capturing skewed risk and explosive outbreak dynamics</p></li>
+<li><p>Introduction to IID vs.&nbsp;Block bootstrapping for autocorrelated climate data</p></li>
+</ul>
+<p><strong>Section 4: Conformal Prediction (The Guarantee)</strong></p>
+<ul>
+<li><p>Moving from distribution-based to empirical, model-agnostic intervals</p></li>
+<li><p>The Split Conformal workflow: Training vs.&nbsp;Calibration sets</p></li>
+<li><p>Calculating conformity scores (residuals) to guarantee valid coverage</p></li>
+<li><p>The exchangeability assumption and the challenge of climate drift</p></li>
+</ul>
+<p><strong>Section 5: Decision Framework &amp; Application</strong></p>
+<ul>
+<li><p>Evaluating trade-offs: Computational speed vs.&nbsp;flexibility vs.&nbsp;guarantees</p></li>
+<li><p>Choosing the right method based on dataset size and outbreak volatility</p></li>
+<li><p>Summary matrix: When to select Model-Based, Bootstrap, or Conformal methods</p></li>
+</ul>
 
 
 </section>

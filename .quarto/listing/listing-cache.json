@@ -60,7 +60,8 @@
       "intro_method_skills/*.qmd",
       "energy_score/*.qmd",
       "quarto_website/*.qmd",
-      "causal_inference/*.qmd"
+      "causal_inference/*.qmd",
+      "kigali_workshop/*.qmd"
     ],
     "lab\\data_analytics\\index.qmd": [
       "intro_python/*.ipynb",
