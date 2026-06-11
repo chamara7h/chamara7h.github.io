@@ -120,7 +120,8 @@ body.quarto-light {
 .landing-links {
   flex-wrap: nowrap;
   margin-top: 1.55rem;
-  max-width: 980px;
+  max-width: min(44vw, 1040px);
+  width: max-content;
 }
 
 .landing-social {
@@ -156,8 +157,9 @@ body.quarto-light {
   font-size: 1rem;
   justify-content: center;
   min-height: 54px;
-  min-width: 154px;
-  padding: .8rem 1.25rem;
+  min-width: 148px;
+  padding: .8rem 1.15rem;
+  white-space: nowrap;
 }
 
 .landing-social a {
