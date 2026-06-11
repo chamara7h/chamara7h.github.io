@@ -3,33 +3,21 @@ project:
 
 website:
   title: "Home"
-  open-graph: true 
+  open-graph: true
+  search: false
   page-footer: "Made with ❤️ and Quarto"
   navbar:
-    title: Home
-    background: '#3e3e3e'
+    background: '#FAFBFD'
     right:
-      # - text: About
-      #   href: about/index.qmd
-      - text: PhD Project
-        href: phd/index.qmd
-      # - text: CV
-      #   href: cv/index.qmd
-      # - text: Projects
-      #   href: projects/index.qmd
+      - text: About
+        href: about/index.qmd
+      - text: Projects
+        href: projects/index.qmd
       - text: Learning Lab
         href: lab/index.qmd
       - text: Talks
         href: talks/index.qmd
-      - icon: envelope-at-fill
-        href: mailto:hewagehrc@gamil.com
-      - icon: github
-        href: https://github.com/chamara7h
-      - icon: linkedin
-        href: https://www.linkedin.com/in/harshachamara/
-      - icon: bookmark-star-fill
-        href: https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en
+
 format:
   html:
     theme: [cosmo, styles.scss]
-

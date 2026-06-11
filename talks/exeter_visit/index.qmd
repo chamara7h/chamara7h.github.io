@@ -1,0 +1,35 @@
+---
+title: "What is a 'good' forecast?"
+description: "A project sharing talk at the University of Exeter on what makes forecasts useful for decision-making."
+author: "Prof. Bahman Rostami-Tabar and Harsha Halgamuwe Hewage"
+date: "2026-06-10"
+image: "cover.png"
+categories:
+  - Forecasting
+  - Decision Support
+  - Uncertainty
+  - Social Good
+link-external-newwindow: true
+---
+
+
+```{=html}
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<div class="hero-section">
+  <h1 class="title">What is a 'good' forecast?</h1>
+  <p class="description">A project sharing talk at the University of Exeter on what makes forecasts useful for decision-making.</p>
+  <p class="author-date">Prof. Bahman Rostami-Tabar and Harsha Halgamuwe Hewage | 2026-06-10</p>
+  <div class="cta-buttons">
+    <a href="slides/exeter_visit.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> Slides
+    </a>
+  </div>
+</div>
+
+<div class="content-section">
+  <p>This talk was prepared for a visit to the University of Exeter to share ongoing project work on what makes a forecast useful in practice. The presentation frames forecasting as more than accuracy, connecting model performance with decision-making, uncertainty, implementation, and social-good outcomes.</p>
+</div>
+```

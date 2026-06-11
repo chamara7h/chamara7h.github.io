@@ -1,176 +1,42 @@
 ---
-title: "Harsha Halgamuwe Hewage"
-subtitle: "Forecaster & Researcher"
-image: images/profile.jpg
-about:
-  template: jolla
-  image-shape: round
-  links:
-    - icon: envelope-at-fill
-      text: e-mail
-      href: mailto:hewagehrc@gmail.com
-    - icon: github
-      text: Github
-      href: https://github.com/chamara7h
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/harshachamara/
-    - icon: bookmark-star-fill
-      text: Google Scholar
-      href: https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en
+pagetitle: "Home"
+page-layout: full
 format: html
 ---
 
-```{=html}
-<style>
-/* FONT IMPORT */
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap');
+<section class="landing-page">
+<img class="landing-chart-bg" src="images/home-chart1.png" alt="">
 
-/* GENERAL STYLING */
-body {
-  font-family: 'Assistant', sans-serif;
-  background-color: #f9f9f9;
-}
+<div class="landing-hero">
+<div class="landing-copy">
+<div class="landing-name" role="heading" aria-level="1">Harsha<br>Halgamuwe<br>Hewage</div>
 
-/* Style the main "jolla" container to look like our content cards */
-.quarto-about-jolla {
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 10px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
+<p class="landing-tagline">
+I work on forecasting for social good, uncertainty, and decision-making, turning data into practical tools and learning materials for real-world problems.
+</p>
 
-/* Style the main title and subtitle */
-.quarto-title .title {
-    font-family: 'Assistant', sans-serif;
-    font-size: 2.8em;
-    font-weight: 700;
-    color: #1a2b48;
-}
-.quarto-title .subtitle {
-    font-family: 'Assistant', sans-serif;
-    font-size: 1.2em;
-    color: #555;
-}
-
-/* Style the body text */
-.quarto-about-jolla .content p {
-    font-size: 1.1em;
-    line-height: 1.7;
-    color: #333;
-}
-
-/* Style the social/contact links */
-.about-links .about-link {
-    color: #555;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-.about-links .about-link:hover {
-    color: #0A4C6A;
-}
-
-/* --- SKILLS SECTION STYLING --- */
-.skills-section {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 1px solid #e9ecef;
-}
-.skills-section h3 {
-    font-family: 'Assistant', sans-serif;
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-}
-.skill-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #f0f0f0;
-    color: #555;
-    padding: 8px 15px;
-    border-radius: 20px; /* pill shape */
-    font-size: 0.95em;
-    font-weight: 600;
-}
-.skill-badge i {
-    color: #0A4C6A; /* Use the accent color for icons */
-}
-  
-
-/* --- DOWNLOAD CV BUTTON STYLING --- */
-.button-container {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-.btn-custom {
-  padding: 12px 25px;
-  font-size: 1em;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.btn-primary {
-  background-color: #0A4C6A;
-  color: #fff;
-  border: 2px solid #0A4C6A;
-}
-.btn-primary:hover {
-  background-color: #083c54;
-  border-color: #083c54;
-  transform: translateY(-2px);
-  color: #fff;
-}
-
-</style>
-```
-
-<!-- Add Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-I am a PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator at the [Data Lab for Social Good](https://www.cardiff.ac.uk/research/explore/research-units/data-lab-for-social-good).
-
-I have also led the research network at [Forecasting for Social Good (F4SG)](https://forecasters.org/programs/communities/forecasting-for-social-good-f4sg/), an official section of the International Institute of Forecasters. As part of this role, I managed the [Learning Labs workshop series](https://github.com/chamara7h/F4SG), providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges.
-
-I collaborate closely with organizations such as USAID, the Ethiopian Pharmaceutical Supply Service, and the HISP Centre at the University of Oslo, translating research into operational tools that improve public health outcomes.
-
-Explore my [full list of publications](https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en) on Google Scholar.
-
-```{=html}
-<div class="skills-section">
-  <h3>Core Skills</h3>
-  <div class="skills-grid">
-    <div class="skill-badge"><i class="fas fa-chart-line"></i> Time Series Forecasting</div>
-    <div class="skill-badge"><i class="fab fa-r-project"></i> R</div>
-    <div class="skill-badge"><i class="fab fa-python"></i> Python</div>
-    <div class="skill-badge"><i class="fas fa-book-open"></i> Quarto</div>
-    <div class="skill-badge"><i class="fas fa-chart-bar"></i> Data Visualization</div>
-    <div class="skill-badge"><i class="fas fa-palette"></i> Creative Designing</div>
-  </div>
+<div class="landing-social" aria-label="Social links">
+<a href="mailto:hewagehrc@gmail.com" aria-label="E-mail"><i class="bi bi-envelope"></i></a>
+<a href="https://github.com/chamara7h" aria-label="GitHub"><i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/harshachamara/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+<a href="https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en" aria-label="Google Scholar"><i class="bi bi-bookmark-star-fill"></i></a>
 </div>
 
-<div class="button-container">
-  <a href="resume_harsha.pdf" class="btn-custom btn-primary" download>
-    <i class="fas fa-download"></i> Download CV
-  </a>
+<div class="landing-links">
+<a href="about/"><i class="bi bi-person-fill"></i><span>About</span></a>
+<a href="projects/"><i class="bi bi-bar-chart-fill"></i><span>Projects</span></a>
+<a href="lab/"><i class="bi bi-mortarboard-fill"></i><span>Learning Lab</span></a>
+<a href="talks/"><i class="bi bi-mic-fill"></i><span>Talks</span></a>
 </div>
-```
+
+<p class="landing-note">Design inspired by traditional Sri Lankan Wes Muna motifs, which I connect with healing, community care, and the social good spirit behind my work.</p>
+</div>
+
+<div class="landing-visual">
+<img class="landing-flower landing-flower-top" src="images/landing-flower-gold.png" alt="">
+<img class="landing-artifact" src="images/landing-wes-muna.png" alt="Wes Muna inspired figure using a laptop in blue and gold tones">
+<img class="landing-flower landing-flower-bottom" src="images/landing-flower-gold.png" alt="">
+<img class="landing-divider-art" src="images/landing-divider-gold.png" alt="">
+</div>
+</div>
+</section>

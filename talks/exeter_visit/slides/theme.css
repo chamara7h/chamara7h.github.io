@@ -1,0 +1,752 @@
+/* theme.css */
+
+/* --- Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+/* --- General Slide Styles --- */
+.reveal .slides {
+  font-family: 'Inter', sans-serif;
+}
+
+.reveal h1,
+.reveal h2 {
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Cover Slide Specific Styles --- */
+.title-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content blocks */
+  align-items: left;
+  text-align: left;
+  height: 100%;
+}
+
+/* --- Logo Container --- */
+.logo-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.logo-container img {
+  max-height: 80px; /* Control the height of the logos */
+  margin: 0 0.25em; /* Space between logos */
+}
+
+
+/* Style for the main title (h1) */
+.title-slide h1 {
+  font-size: 10em;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 0.25em 0;
+  line-height: 1.1;
+}
+
+/* Style for the subtitle (h2) */
+.title-slide h2 {
+  font-size: 1.5em;
+  color: #e9d8a6; /* Soft gold color */
+  margin: 0 0 0.25em 0;
+  font-weight: 400;
+  text-transform: none;
+  border-bottom: none;
+}
+
+.title-slide .author {
+  font-size: 0.75em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.title-slide .date {
+  font-size: 0.75em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*text highlight*/
+
+.highlight-blue-big {
+  color: #212B49;
+  font-weight: bold;
+  font-size: 1.5em;    /* tweak this as needed */
+}
+
+.highlight-blue {
+  color: #212B49;
+  font-weight: bold;
+  font-size: 1em;    /* tweak this as needed */
+}
+
+.highlight-big {
+  font-size: 1.5em;    /* tweak this as needed */
+}
+
+.highlight-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+
+.ch-icon {
+color: #2A6083; 
+font-size: 36px;
+vertical-align: middle;
+margin-right: 0.6rem;
+}
+
+
+/* Optional: smaller icon on very small screens */
+@media (max-width: 560px) {
+.ch-icon { font-size: 26px; }
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.step::before {
+  content: attr(data-step);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-right: 1.5rem;
+  color: #333;
+  flex: 0 0 auto;
+}
+
+.step .step-content {
+  flex: 1;
+  background-color: #f7f7f7;
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.step .step-content h3 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #222;
+  margin-right: 1rem;
+}
+
+.step .step-content p {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #333;
+
+}
+
+
+/* --- Minimalistic Box for Columns --- */
+
+/* This wrapper makes the columns align and stretch */
+.stretch-cols .columns {
+  display: flex;
+  align-items: stretch; /* This is the key for the columns */
+}
+
+/* This makes the column a flex container too */
+.stretch-cols .column {
+  display: flex;
+  flex-direction: column;
+}
+
+.minimal-box {
+  background-color: #f7f7f7 ;  /* A very light gray background */
+  border: 1px solid #D9D9D9;  /* A light, subtle border */
+  border-radius: 12px;         /* Rounded corners */
+  padding: 1.5em;              /* Space inside the box */
+  flex-grow: 1;               /* This makes both boxes the same height! */
+}
+
+/* --- Minimalist Table Style (Zebra) --- */
+
+/* This is the class from kable_styling(..., position = "left") */
+/* It wraps the table and left-aligns it */
+.kable_wrapper {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* This is the .table-custom class you set in kbl() */
+.table-custom {
+  width: auto !important; /* Overrides kableExtra's 100% width */
+  font-size: 30px;       /* Smaller font, more readable */
+  border-collapse: collapse !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  border-radius: 8px; /* Rounded corners for the container */
+  overflow: hidden;   /* Clips the contents to the rounded corners */
+}
+
+/* Table Header */
+.table-custom th {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.25em;
+  color: #ffffff; /* White text */
+  background-color: #2A6083; /* Dark blue/gray from example */
+  text-align: left; /* Headers should be left aligned */
+  padding: 14px 18px; /* A bit more padding */
+  border: none; /* Remove all borders */
+}
+
+/* Table Body Cells */
+.table-custom td {
+  padding: 14px 18px;
+  /* text-align is removed, kbl(align=...) will now control this */
+  border: none; /* Remove all borders */
+  background-color: #ffffff; /* Default row color */
+}
+
+/* Zebra Striping for even rows */
+.table-custom tr:nth-child(even) td {
+  background-color: #f7f7f7; /* Light blue from example */
+}
+
+/* Remove all vertical borders (redundant, but good to keep) */
+.table-custom th,
+.table-custom td {
+  border-left: none;
+  border-right: none;
+}
+
+/* Remove default kableExtra borders */
+.table-custom tr {
+  border: none;
+}
+.table-custom tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* maek code blocks dark */
+
+$code-block-bg-alpha: -.9;
+
+.reveal .big {
+  background-color: $body-color;
+  font-size: 2em;      /* makes it 3× the base size */
+  font-weight: 200;   /* optional: make it stand out */
+  line-height: .9;    /* adjust spacing */
+}
+
+.reveal .bigger {
+  font-size: 3em;      /* makes it 3× the base size */
+  font-weight: 200;   /* optional: make it stand out */
+  line-height: .9;    /* adjust spacing */
+}
+
+.note-source {
+  font-size: 20pt;
+  font-style: italic;
+}
+
+.white-quote,
+.white-quote blockquote,
+.white-quote .note-source {
+  color: white;
+}
+
+.white-quote blockquote {
+  border-left-color: white;
+}
+
+
+.setting-list h3 {
+  color: #212B49;
+  font-size: 0.92em;
+  font-weight: 700;
+  margin-top: 1.15em;
+  margin-bottom: 0.35em;
+}
+
+.setting-list p {
+  font-size: 0.82em;
+  line-height: 1.22;
+  margin-top: 0;
+  margin-bottom: 1.15em;
+  color: #222222;
+}
+
+.setting-list h3:first-child {
+  margin-top: 0;
+}
+
+.setting-list {
+  padding-top: 0.2em;
+}
+
+/* Research outputs two-column slide */
+
+.reveal .research-output-slide {
+  padding-top: 0.5em;
+}
+
+.reveal .research-output-slide h3 {
+  color: #212B49;
+  font-size: 0.78em;
+  font-weight: 800;
+  margin-top: 0.75em;
+  margin-bottom: 0.25em;
+}
+
+.reveal .research-output-slide h3:first-of-type {
+  margin-top: 0.2em;
+}
+
+.reveal .research-output-slide ul {
+  margin-top: 0.15em;
+}
+
+.reveal .research-output-slide li {
+  font-size: 0.54em;
+  line-height: 1.18;
+  margin-bottom: 0.28em;
+}
+
+
+.reveal .research-output-slide h3 {
+  color: #212B49;
+  font-size: 0.78em;
+  font-weight: 800;
+  margin-top: 0.75em;
+  margin-bottom: 0.25em;
+}
+
+.reveal .research-output-slide .section-underline {
+  width: 75%;
+  height: 4px;
+  background-color: #212B49;
+  margin-top: 0.1em;
+  margin-bottom: 1.1em;
+}
+
+.reveal .research-output-slide .output-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.reveal .research-output-slide .output-list li {
+  position: relative;
+  color: #222222;
+  font-size: 1em;
+  line-height: 1.28;
+  margin-bottom: 1.45em;
+  padding-left: 1.6em;
+}
+
+.reveal .research-output-slide .output-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: -0.05em;
+  color: #212B49;
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+.reveal .research-output-slide .vertical-divider {
+  width: 2px;
+  height: 60vh;
+  background-color: #cbd3df;
+  margin: 0 auto;
+}
+
+/* Research outputs showcase slide */
+
+.reveal .outputs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.42em;
+  width: 100%;
+  margin-top: 0.32em;
+}
+
+.reveal .outputs-panel {
+  min-width: 0;
+}
+
+.reveal .outputs-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.65em;
+  margin-bottom: 0.22em;
+  padding-bottom: 0.12em;
+  border-bottom: 3px solid #212B49;
+}
+
+.reveal .outputs-heading h3 {
+  margin: 0;
+  color: #212B49;
+  font-size: 0.58em;
+  font-weight: 800;
+}
+
+.reveal .outputs-kicker {
+  color: #6b7280;
+  font-size: 0.28em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reveal .output-row {
+  display: grid;
+  grid-template-columns: 5.4em minmax(0, 1fr);
+  gap: 0.65em;
+  align-items: center;
+  margin-bottom: 0.18em;
+  padding: 0.28em 0.45em;
+  border: 1px solid #e1e5ec;
+  border-left: 6px solid #2A6083;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.reveal .output-row h4 {
+  margin: 0 0 0.12em 0;
+  color: #111827;
+  font-size: 0.34em;
+  font-weight: 800;
+  line-height: 1.16;
+  text-transform: none;
+}
+
+.reveal .output-row p {
+  margin: 0;
+  color: #374151;
+  font-size: 0.25em;
+  line-height: 1.18;
+}
+
+.reveal .status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2em;
+  padding: 0.24em 0.5em;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 0.24em;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.reveal .status-pill.published {
+  background-color: #212B49;
+}
+
+.reveal .status-pill.review {
+  background-color: #2A6083;
+}
+
+.reveal .status-pill.revision {
+  background-color: #b45309;
+}
+
+.reveal .status-pill.training {
+  background-color: #212B49;
+}
+
+.reveal .training-panel .outputs-heading {
+  border-bottom-color: #2A6083;
+}
+
+/* Minimal research outputs slide */
+
+.reveal .research-output-slide {
+  padding-top: 0.35em;
+}
+
+.reveal .research-output-slide h2 {
+  margin-bottom: 0.35em;
+}
+
+.reveal .research-output-slide .outputs-simple {
+  padding-top: 0.05em;
+}
+
+.reveal .research-output-slide .outputs-simple h3 {
+  color: #212B49;
+  font-size: 0.9em;
+  font-weight: 700;
+  margin-top: 0.82em;
+  margin-bottom: 0.22em;
+  border-left: none;
+  padding-left: 0;
+  line-height: 1.05;
+}
+
+.reveal .research-output-slide .outputs-simple h3:first-child {
+  margin-top: 0;
+}
+
+.reveal .research-output-slide .outputs-simple p {
+  margin-top: 0;
+  margin-bottom: 0.15em;
+  color: #222222;
+  font-size: 0.66em;
+  line-height: 1.26;
+}
+
+.reveal .research-output-slide .outputs-simple em {
+  color: #111827;
+  font-weight: 700;
+}
+
+.reveal .research-output-slide .outputs-citations {
+  margin-top: 0.15em;
+}
+
+.reveal .research-output-slide .outputs-citations h3 {
+  color: #212B49;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.74em;
+  font-weight: 800;
+  margin-top: 0.4em;
+  margin-bottom: 0.18em;
+  padding-bottom: 0.1em;
+  border-bottom: 3px solid #cbd3df;
+}
+
+.reveal .research-output-slide .outputs-citations h3:first-child {
+  margin-top: 0;
+}
+
+.reveal .research-output-slide .paper-entry {
+  margin-bottom: 0.18em;
+  color: #333333;
+  font-size: 0.49em;
+  line-height: 1.16;
+}
+
+.reveal .research-output-slide .paper-entry strong {
+  color: #111827;
+  font-weight: 800;
+}
+
+.reveal .research-output-slide .paper-entry em {
+  color: #212B49;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.reveal .research-output-slide .training-lines {
+  color: #333333;
+  font-size: 0.43em;
+  line-height: 1.28;
+}
+
+.reveal .research-output-slide .outputs-flat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  margin-top: 0.45em;
+}
+
+.reveal .research-output-slide .output-band {
+  display: grid;
+  grid-template-columns: 4.2em minmax(0, 1fr);
+  column-gap: 0.9em;
+  align-items: start;
+  padding-bottom: 0.45em;
+  border-bottom: 2px solid #d9dfe8;
+}
+
+.reveal .research-output-slide .output-band:last-child {
+  border-bottom: none;
+}
+
+.reveal .research-output-slide .output-count {
+  color: #212B49;
+  font-size: 4.45em;
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.reveal .research-output-slide .output-count p {
+  margin: 0;
+}
+
+.reveal .research-output-slide .output-content h3 {
+  margin: 0 0 0.22em 0;
+  color: #212B49;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.86em;
+  font-weight: 800;
+  line-height: 1;
+  border: none;
+  padding: 0;
+}
+
+.reveal .research-output-slide .output-content ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.reveal .research-output-slide .output-content li {
+  position: relative;
+  margin: 0 0 0.18em 0;
+  padding-left: 0.9em;
+  border: none;
+  color: #222222;
+  font-size: 0.72em;
+  line-height: 1.18;
+}
+
+.reveal .research-output-slide .output-content li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.46em;
+  width: 0.3em;
+  height: 0.3em;
+  background-color: #2A6083;
+}
+
+.reveal .research-output-slide .outputs-clean-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0;
+  margin-top: 0.2em;
+}
+
+.reveal .research-output-slide .outputs-clean-list h3 {
+  margin: 0.42em 0 0.16em 0;
+  padding: 0;
+  border: none;
+  color: #212B49;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9em;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.reveal .research-output-slide .outputs-clean-list h3:first-child {
+  margin-top: 0;
+}
+
+.reveal .research-output-slide .output-item {
+  display: block;
+  position: relative;
+  margin: 0 0 0.12em 0;
+  padding: 0.13em 0 0.2em 0.95em;
+  border-bottom: 1px solid #d9dfe8;
+  color: #333333;
+  font-size: 0.68em;
+  line-height: 1.08;
+}
+
+.reveal .research-output-slide .output-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.34em;
+  height: 0.34em;
+  border-radius: 50%;
+  background-color: #2A6083;
+}
+
+.reveal .research-output-slide .output-item p {
+  margin: 0;
+}
+
+.reveal .research-output-slide .output-title {
+  display: block;
+  color: #111827;
+  font-weight: 400;
+}
+
+.reveal .research-output-slide .output-meta {
+  display: block;
+  margin-top: 0.1em;
+  color: #212B49;
+  font-weight: 600;
+  font-size: 0.86em;
+  text-align: left;
+}
+
+.reveal .engagement-slide {
+  background-color: #ffffff;
+}
+
+.engagement-collage {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.05fr 1fr;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: min(100%, 1720px);
+  height: 85%;
+  margin: 0 auto;
+}
+
+.engagement-collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(33, 43, 73, 0.18);
+}
+
+.engagement-collage img:nth-child(1) {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.engagement-collage img:nth-child(2) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.engagement-collage img:nth-child(3) {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+}
+
+.engagement-collage img:nth-child(4) {
+  grid-column: 5;
+  grid-row: 1;
+}
+
+.engagement-collage img:nth-child(5) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.engagement-collage img:nth-child(6) {
+  grid-column: 5;
+  grid-row: 2;
+}
+
+.engagement-collage img:nth-child(7) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.engagement-collage img:nth-child(8) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.engagement-collage img:nth-child(9) {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.engagement-collage img:nth-child(10) {
+  grid-column: 4 / span 2;
+  grid-row: 3;
+}

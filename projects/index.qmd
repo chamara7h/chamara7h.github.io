@@ -1,11 +1,28 @@
 ---
-title: PROJECTS
-description: 'Overview of academic research, data science and creative designing projects.'
-listing: 
-  contents: 
-    - "publications/*.qmd"
-    - "projects/*.qmd"
-    - "design/*.qmd"
-  type: grid
-  fields: [image, title, description, categories]
+title: "Projects"
+description: "Research projects and applied forecasting work."
+page-layout: full
+format: html
 ---
+
+::: {.content-section}
+## Research Projects
+
+::: {.project-grid}
+::: {.project-card}
+<i class="bi bi-diagram-3"></i>
+
+### PhD Project
+
+Forecasting and decision-support methods for health commodity supply chains, with a focus on uncertainty, inventory decisions, and practical tools for social good.
+
+::: {.project-tags}
+<span class="project-tag">Forecasting</span>
+<span class="project-tag">Uncertainty</span>
+<span class="project-tag">Supply chains</span>
+:::
+
+[View project](../phd/index.qmd){.btn-custom .btn-primary}
+:::
+:::
+:::
