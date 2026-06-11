@@ -1127,14 +1127,14 @@ table tr:hover {
 
 .about-shell {
   align-items: start;
-  column-gap: clamp(6rem, 10vw, 10rem);
-  gap: clamp(6rem, 10vw, 10rem);
+  column-gap: clamp(7.5rem, 12vw, 12rem);
+  gap: clamp(7.5rem, 12vw, 12rem);
   justify-content: center;
 }
 
 .about-side {
   align-items: center;
-  flex-basis: 340px;
+  flex-basis: 410px;
   padding-top: .75rem;
 }
 
@@ -1241,7 +1241,7 @@ table tr:hover {
   flex-direction: column;
   gap: .75rem;
   max-width: none;
-  width: 360px;
+  width: 410px;
 }
 
 .about-social-row {
