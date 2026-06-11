@@ -951,8 +951,8 @@ p3 <- idi_cv2 |>
   coord_cartesian(xlim = c(0, 10))
 
 p1 / (p2 | p3) +
-  plot_layout(guides = "collect") &
-  theme(legend.position = "right")
+  plot_layout(guides = "collect") +
+  plot_annotation(theme = theme(legend.position = "right"))
 
 ```
 
@@ -1472,8 +1472,8 @@ p3a <- plot3_df |>
 
 
 (p1a | p2a | p3a) / (p1 | p2 | p3) +
-  plot_layout(guides = "collect") &
-  theme(legend.position = "right")
+  plot_layout(guides = "collect") +
+  plot_annotation(theme = theme(legend.position = "right"))
 
 ```
 
