@@ -16,18 +16,18 @@ I work on forecasting for social good, uncertainty, and decision-making, turning
 </p>
 
 <div class="landing-social" aria-label="Social links">
-<a href="mailto:hewagehrc@gmail.com" aria-label="E-mail"><i class="bi bi-envelope"></i></a>
-<a href="https://github.com/chamara7h" aria-label="GitHub"><i class="bi bi-github"></i></a>
-<a href="https://www.linkedin.com/in/harshachamara/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-<a href="https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en" aria-label="Google Scholar"><i class="bi bi-bookmark-star-fill"></i></a>
+<a href="mailto:hewagehrc@gmail.com" aria-label="E-mail" title="E-mail"><i class="bi bi-envelope"></i></a>
+<a href="https://github.com/chamara7h" aria-label="GitHub" title="GitHub"><i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/harshachamara/" aria-label="LinkedIn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+<a href="https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en" aria-label="Google Scholar" title="Google Scholar"><i class="bi bi-bookmark-star-fill"></i></a>
 </div>
 
-<div class="landing-links">
+<!-- <div class="landing-links">
 <a href="about/"><i class="bi bi-person-fill"></i><span>About</span></a>
 <a href="projects/"><i class="bi bi-bar-chart-fill"></i><span>Projects</span></a>
 <a href="lab/"><i class="bi bi-mortarboard-fill"></i><span>Learning Lab</span></a>
 <a href="talks/"><i class="bi bi-mic-fill"></i><span>Talks</span></a>
-</div>
+</div> -->
 
 <p class="landing-note">Design inspired by traditional Sri Lankan Wes Muna motifs, which I connect with healing, community care, and the social good spirit behind my work.</p>
 </div>

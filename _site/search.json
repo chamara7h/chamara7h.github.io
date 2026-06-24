@@ -2,16 +2,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Harsha Halgamuwe Hewage",
+    "title": "Home",
     "section": "",
-    "text": "I am a PhD student at the Data Lab for Social Good research group at Cardiff University, UK. My research focuses on improving forecast methodologies for family planning supply chains in developing countries, with the goal of enhancing their efficiency and accessibility. In addition to my PhD work, I serve as the Coordinator at the Data Lab for Social Good.\nI have also led the research network at Forecasting for Social Good (F4SG), an official section of the International Institute of Forecasters. As part of this role, I managed the Learning Labs workshop series, providing free training on forecasting methodologies using R and Python. I am passionate about leveraging data science and forecasting techniques to address global challenges.\nI collaborate closely with organizations such as USAID, the Ethiopian Pharmaceutical Supply Service, and the HISP Centre at the University of Oslo, translating research into operational tools that improve public health outcomes.\nExplore my full list of publications on Google Scholar.\n\n  Core Skills\n  \n     Time Series Forecasting\n     R\n     Python\n     Quarto\n     Data Visualization\n     Creative Designing\n  \n\n\n  \n     Download CV"
+    "text": "HarshaHalgamuweHewage\n\n\nI work on forecasting for social good, uncertainty, and decision-making, turning data into practical tools and learning materials for real-world problems.\n\n\n   \n\n\n\nDesign inspired by traditional Sri Lankan Wes Muna motifs, which I connect with healing, community care, and the social good spirit behind my work."
   },
   {
     "objectID": "projects/index.html",
     "href": "projects/index.html",
-    "title": "PROJECTS",
+    "title": "Home",
     "section": "",
-    "text": "Creative Gallery\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Science Projects\n\n\nSomething is cooking\n\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Projects\n\n\nMy academic publications, along with their source code and data.\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Forecasting and Decision Support for Health Supply Chains\n\n\n\nForecasting\n\nUncertainty\n\nSupply Chains\n\nSocial Good\n\n\n\nDeveloping forecasting methods and practical decision-support tools for health commodity supply chains, with particular attention to uncertainty, censored demand, inventory decisions, and public-health outcomes.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/first-post/index.html",
@@ -151,7 +151,7 @@
     "href": "phd/index.html",
     "title": "Home",
     "section": "",
-    "text": "Forecasting for Health Supply Chains\n        My PhD research project is focused on improving demand forecasting for family planning to ensure contraceptives are always available when and where they are needed.\n    \n\n    \n        The Core Challenge: What Was Lost?\n        \n            In public health, \"zero demand\" doesn't mean \"zero need\"—it often just means the shelves were empty. When health facilities run out of stock, the true demand from the community goes unrecorded. This \"censored\" or \"lost\" demand data leads to flawed forecasts, which in turn causes chronic under-stocking and reinforces a cycle of supply failure. My research focuses on breaking this cycle.\n        \n    \n    \n    \n        Key Outputs & Publications\n        \n        \n            A Novel Hybrid Approach to Contraceptive Demand Forecasting\n            Published in International Journal of Production Research\n            \n                 Read Paper\n                 View Code\n            \n        \n\n        \n            Estimating censored demand in family planning supply chains: forecast accuracy, inventory implications, and public health outcomes\n            Preprint - Submitted for review\n            \n                 Read Paper\n                 View Code\n            \n        \n    \n\n    \n         Impact in Practice: EPSS Training\n        Research is most valuable when it's put into practice. As part of my PhD, I developed and delivered a two-day training workshop for practitioners at the Ethiopian Pharmaceutical Supply Service (EPSS), equipping them with modern forecasting skills using R and Python.\n        \n             Training Materials\n             Code & Labs\n        \n    \n    \n    \n        Supervision & Collaboration Team\n        \n            \n                \n                Prof. Bahman Rostami-Tabar\n                Lead Supervisor, Cardiff University\n            \n            \n                \n                Prof. Aris Syntetos\n                Co-supervisor, Cardiff University\n            \n            \n                \n                Dr. Federico Liberatore\n                Co-supervisor, Cardiff University\n            \n            \n                \n                Glenn Milano\n                Industry Collaborator, USAID\n            \n        \n    \n    \n    \n        Funding & Partners"
+    "text": "PhD Research Project\n\n\n\nImproving demand forecasting for family planning so that contraceptives are available when and where they are needed.\n\n\nForecasting Uncertainty Inventory Public health\n\n\n\n\n\n\nThe Core Challenge\n\n\n\nIn public health, zero recorded demand does not necessarily mean zero need. It can mean that the shelves were empty. When a health facility runs out of stock, the community’s true demand goes unrecorded. This censored or lost demand leads to flawed forecasts, chronic under-stocking, and a cycle of supply failure. My research focuses on breaking this cycle.\n\n\n\n\n\n\nResearch Outputs\n\n\n\n\n\n\n\n\nInternational Journal of Production Research\n\n\n\nRead paper View code\n\n\n\n\n\n\nForecast accuracy, inventory implications, and public-health outcomes · Preprint under review\n\n\n\nPaper forthcoming Code forthcoming\n\n\n\n\n\n\n\n\n\nResearch in Practice\n\n\n\nResearch is most valuable when it is put into practice. As part of this project, I developed and delivered a two-day workshop for practitioners at the Ethiopian Pharmaceutical Supply Service, supporting modern forecasting with R and Python.\n\nTraining materials Code and labs\n\n\n\n\n\n\n\nProject Team\n\n\n\n\n\n\n\n\nLead Supervisor · Cardiff University\n\n\n\n\n\n\nCo-supervisor · Cardiff University\n\n\n\n\n\n\nCo-supervisor · Cardiff University\n\n\n\n\n\n\nIndustry Collaborator · USAID\n\n\n\n\n\n\n\n\n\nSupport"
   },
   {
     "objectID": "phd/index.html#supervision-team",
@@ -5339,5 +5339,257 @@
     "title": "Home",
     "section": "Conformal prediciton using ConformalForecast in R",
     "text": "Conformal prediciton using ConformalForecast in R"
+  },
+  {
+    "objectID": "phd/index.html#what-was-lost",
+    "href": "phd/index.html#what-was-lost",
+    "title": "Home",
+    "section": "",
+    "text": "In public health, zero recorded demand does not necessarily mean zero need. It can mean that the shelves were empty. When a health facility runs out of stock, the community’s true demand goes unrecorded. This censored or lost demand leads to flawed forecasts, chronic under-stocking, and a cycle of supply failure. My research focuses on breaking this cycle."
+  },
+  {
+    "objectID": "phd/index.html#publications-and-code",
+    "href": "phd/index.html#publications-and-code",
+    "title": "Home",
+    "section": "",
+    "text": "International Journal of Production Research\n\n\n\nRead paper View code\n\n\n\n\n\n\nForecast accuracy, inventory implications, and public-health outcomes · Preprint under review\n\n\n\nPaper forthcoming Code forthcoming"
+  },
+  {
+    "objectID": "phd/index.html#epss-forecasting-training",
+    "href": "phd/index.html#epss-forecasting-training",
+    "title": "Home",
+    "section": "",
+    "text": "Research is most valuable when it is put into practice. As part of this project, I developed and delivered a two-day workshop for practitioners at the Ethiopian Pharmaceutical Supply Service, supporting modern forecasting with R and Python.\n\nTraining materials Code and labs"
+  },
+  {
+    "objectID": "phd/index.html#supervision-and-collaboration",
+    "href": "phd/index.html#supervision-and-collaboration",
+    "title": "Home",
+    "section": "",
+    "text": "Lead Supervisor · Cardiff University\n\n\n\n\n\n\nCo-supervisor · Cardiff University\n\n\n\n\n\n\nCo-supervisor · Cardiff University\n\n\n\n\n\n\nIndustry Collaborator · USAID"
+  },
+  {
+    "objectID": "talks/isf_2026/index.html",
+    "href": "talks/isf_2026/index.html",
+    "title": "Evaluating and Benchmarking Time Series Foundation Models for Public Healthcare Demand Forecasting",
+    "section": "",
+    "text": "Evaluating and Benchmarking Time Series Foundation Models for Public Healthcare Demand Forecasting\n  International Symposium on Forecasting 2026\n  Harsha Halgamuwe Hewage | 2026-06-30\n\n  \n    \n       View Slides\n    \n  \n\n\n\n  Context\n\n  Public health supply chains must forecast demand across many related but individually sparse, intermittent, and weakly structured time series. Time series foundation models appear promising because they may transfer patterns learned from large collections of data, reducing the need for long local histories and repeated model development.\n\n  This talk examines whether that promise translates into better forecast quality than established statistical baselines. Using monthly family planning demand data from Côte d’Ivoire, Lao PDR, and Pakistan, we compare point and probabilistic performance across one-, three-, and six-month forecast horizons.\n\n  The evaluation moves beyond aggregate accuracy to consider calibration, computational runtime, implementation robustness, maintainability, and debuggability. The results show that a small group of foundation models achieves strong forecast rankings, but performance is uneven, aggregate loss can conceal miscalibration, and the largest accuracy gains may require substantial computational resources.\n\n  The operational question is therefore not simply whether to use a foundation model, but which model provides enough forecast quality to justify its complexity under real public health system constraints."
+  },
+  {
+    "objectID": "projects/phd-project/index.html",
+    "href": "projects/phd-project/index.html",
+    "title": "Forecasting and Decision Support for Health Supply Chains",
+    "section": "",
+    "text": "Forecasting and Decision Support for Health Supply Chains\n  My PhD research project on improving forecasting and operational decisions in public-health supply chains.\n  \n    \n       Explore the project\n    \n  \n\n\n\n  The project develops and evaluates forecasting approaches for settings where demand is sparse, uncertain, and sometimes hidden by stockouts. It connects forecast quality with inventory performance and practical public-health outcomes."
+  },
+  {
+    "objectID": "talks/exeter_visit/index.html",
+    "href": "talks/exeter_visit/index.html",
+    "title": "What is a ‘good’ forecast?",
+    "section": "",
+    "text": "What is a 'good' forecast?\n  A project sharing talk at the University of Exeter on what makes forecasts useful for decision-making.\n  Prof. Bahman Rostami-Tabar and Harsha Halgamuwe Hewage | 2026-06-10\n  \n    \n       Slides\n    \n  \n\n\n\n  This talk was prepared for a visit to the University of Exeter to share ongoing project work on what makes a forecast useful in practice. The presentation frames forecasting as more than accuracy, connecting model performance with decision-making, uncertainty, implementation, and social-good outcomes."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html",
+    "href": "talks/isf_2026/slides/isf_2026.html",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "by Harsha Halgamuwe Hewage, PhD student\n\n\nLead supervisor: Prof. Bahman Rostami-Tabar\n\n\nCo supervisors: Prof. Aris Syntetos & Dr. Federico Liberatore\n\n\n2026/06/30\n\n\n\n\nImage credits: AI-generated visuals created with OpenAI. No real patient or facility images are used.\n\n\n\n\n\nSources: MalayMail; NationAfrica; TimesofMalta\n\n\n\n\n\n\n\n\n\n\n\nOutline\n\n\n\nMotivation: why this problem matters\n\n\n\n\n\n\nThe planning reality\n\n\n\n\n\n\nWhy TSFMs look attractive\n\n\n\n\n\n\nForecast quality beyond accuracy\n\n\n\n\n\n\nExperimental design and results\n\n\n\n\n\n\nWhere this work goes next\n\n\n\n\n\n\n\n\n   \n121 million unintended pregnancies occur each year worldwide.\n\n\nOver 60% of unintended pregnancies end in abortion,\n\n\n\nand over 45% of abortions are unsafe.\n\n\n\nSources: United Nations Department of Economic and Social Affairs 2020; Sully et al. 2020; Bearak et al. 2020.\n\n\n\n\n\n\n\n\n\n\nWhat the planning reality looks like\n\n\n“Forecasting tools exist, but the last-mile planning reality is still Excel, paper forms, manual adjustments, and fragmented systems.”\n\nEthiopia field visit and collaborator feedback\n\n\n\n“A tool can be ‘in use’, but only in a limited scope, during a project period, or in central sites, without scaling to the whole country.”\n\nDHIS2/HISP collaborator feedback\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy time series foundation models look attractive\n\n\nPublic health systems have many related but weak individual time series.\n\n\n\nTSFMs may transfer learned temporal patterns from large-scale pretraining.\n\n\n\n\nThey can reduce the need for long local histories, manual feature engineering, and repeated local model building.\n\n\n\n\nThis creates the potential to democratise forecasting support for facilities where planning is often done by nurses, store managers, or non-specialist staff.\n\n\n\n\n\n\n\n\n\n\n\n\nSources: Accuracy is (not) all we need presentation by Stephan Kolassa (2025)\n\n\n\n\n\n\n\n\nSources: Accuracy is (not) all we need presentation by Stephan Kolassa (2025)\n\n\n\nDo time series foundation models provide better forecast quality than statistical baselines in public health supply chains?\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\nCountry\nDomains\nPeriod\nGeographic granularity\nProduct granularity\nSeries\n\n\n\n\nCôte d’Ivoire\nFamily planning\nApr 2016 to Sep 2019\nFacility / site\nContraceptive product\n1,360\n\n\nLao PDR\nFamily planning\nJan 2019 to Dec 2023\nService delivery unit / org unit\nContraceptive product\n1,446\n\n\nPakistan\nFamily planning\nJan 2019 to Jun 2025\nService delivery unit / org unit\nContraceptive product\n1,313\n\n\nLao PDR\nGeneral/ acute care\nMaternal & newborn health\nMalaria\nImmunisation/ EPI\nNon-communicable diseases\nJan 2019 to Dec 2023\nService delivery unit / org unit\nHealth commodity product\n20,736\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote: Experiments were run locally on an Intel Core Ultra 9 185H processor with 32 GB RAM between Jan–Mar 2026. Runtime bottlenecks and execution failures should be interpreted in this testing context.\nResults shown: family planning data, 3-month forecast horizon.\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Time series characteristics across the family planning dataset. Panel (a) illustrates trend versus seasonal strength, while Panel (b) displays demand variability against intermittency. The color scale encodes spectral entropy, where lighter colors indicate more predictable, structured dynamics.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Multiple Comparisons with the Best (MCB) test results for RMSSE.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Multiple Comparisons with the Best (MCB) test results for sPIN.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Scaled quantile loss and empirical versus nominal coverage at forecast horizon 3 for the highlighted models.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Scaled quantile loss and empirical versus nominal coverage at forecast horizon 3 for the top-ranked models.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Scaled quantile loss and empirical versus nominal coverage at forecast horizon 3 for the bottom-ranked models.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Models with total cross-validation runtime of up to 10 minutes are highlighted.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: Models with total cross-validation runtime of up to one hour are highlighted.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 9: Average point-forecast rank versus total cross-validation runtime across all evaluated models.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaintainability and debuggability\n\n\nHigh runtime\nToo slow for large rolling evaluations.\ne.g.; Chronos-t5-large, TimesFM-2-500m\n\n\n\nUnstable outputs\nNegative or extreme forecast values.\ne.g.; Chronos-2-synthetic\n\n\n\n\nConfiguration failure\nModel paths, dependencies, API issues.\ne.g.; LagLlama, Chronos-2-LoRA\n\n\n\n\nFine-tuning risk\nLocal fine tune can worsen performance.\ne.g.; TimeGPT, Chronos-2\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe operational question is not “TSFM or baseline?”\n it is;\nWhich model gives enough forecast quality to justify its complexity?\n\n\n\nAccuracy show whether it improves forecasts.\n\n\n\n\nCalibration shows whether uncertainty can be trusted.\n\n\n\n\nRuntime shows whether it can scale.\n\n\n\n\nMaintainability and debuggability show whether it can survive deployment.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhere this work goes next\n\n\nFrom forecast accuracy to decision value\nEvaluate whether better forecasts improve ordering, allocation, stock availability, and budget use.\n\n\n\nFrom benchmark results to model-selection guidance\nDevelop a practical framework for deciding when simple baselines are enough, when TSFMs are justified.\n\n\n\n\nFrom cloud inference to data governance\nAccount for country-level data residency, privacy, and infrastructure constraints.\n\n\n\n\nFrom offline evaluation to embedded systems\nTest how these methods work inside LMIS, DHIS2, CHAP, or other routine planning workflows.\n\n\n\n\n\n\n\n\n\n\nThank you to Breno Horsth at DHIS2, Mariana Menchero at Nixtla, and Laila Akhlaghi at JSI.\n\n\n\n\n\n\n\n\n\nIf you found this talk useful, I would be grateful if you considered voting for me for the Best Student Presentation in the Whova app.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\nModel\nReason for exclusion / screening flag\n\n\n\n\nChronos-2-synthetic\nUnreliable forecast outputs, with many forecasts taking negative values.\n\n\nChronos-2-LoRA\nIncluded in Stage 1 only; excluded from Stage 2 due to dependency issues.\n\n\nChronos-t5-large\nExcluded during screening due to high computational runtime.\n\n\nChronos-t5-base\nFlagged/excluded from later screening due to high computational runtime.\n\n\nFlan-T5\nExcluded during screening due to high computational runtime.\n\n\nLag-Llama\nExcluded during screening due to model path errors.\n\n\nMoirai-1.0-R-large\nExcluded during screening due to high computational runtime.\n\n\nSundial\nExcluded during screening due to high computational runtime.\n\n\nTimeGPT-1-FT-Full\nExcluded because global fine-tuning requires uniform time series lengths, incompatible with heterogeneous operational supply chain data.\n\n\nTimesFM-2-500m\nExcluded during screening due to high computational runtime.\n\n\nToto\nExcluded during screening due to high computational runtime.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 10: Country-level Multiple Comparisons with the Best (MCB) test results for RMSSE at forecast horizon 3.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 11: Country-level Multiple Comparisons with the Best (MCB) test results for sPIN at forecast horizon 3.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 12: Average probabilistic-forecast rank versus total cross-validation runtime at forecast horizon 3."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-1",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-1",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Sources: MalayMail; NationAfrica; TimesofMalta"
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-2",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-2",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Outline\n\n\n\nMotivation: why this problem matters\n\n\n\n\n\n\nThe planning reality\n\n\n\n\n\n\nWhy TSFMs look attractive\n\n\n\n\n\n\nForecast quality beyond accuracy\n\n\n\n\n\n\nExperimental design and results\n\n\n\n\n\n\nWhere this work goes next"
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-3",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-3",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "121 million unintended pregnancies occur each year worldwide.\n\n\nOver 60% of unintended pregnancies end in abortion,\n\n\n\nand over 45% of abortions are unsafe.\n\n\n\nSources: United Nations Department of Economic and Social Affairs 2020; Sully et al. 2020; Bearak et al. 2020."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-4",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-4",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "What the planning reality looks like\n\n\n“Forecasting tools exist, but the last-mile planning reality is still Excel, paper forms, manual adjustments, and fragmented systems.”\n\nEthiopia field visit and collaborator feedback\n\n\n\n“A tool can be ‘in use’, but only in a limited scope, during a project period, or in central sites, without scaling to the whole country.”\n\nDHIS2/HISP collaborator feedback"
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-5",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-5",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Why time series foundation models look attractive\n\n\nPublic health systems have many related but weak individual time series.\n\n\n\nTSFMs may transfer learned temporal patterns from large-scale pretraining.\n\n\n\n\nThey can reduce the need for long local histories, manual feature engineering, and repeated local model building.\n\n\n\n\nThis creates the potential to democratise forecasting support for facilities where planning is often done by nurses, store managers, or non-specialist staff."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#but-accuracy-is-not-all-we-need",
+    "href": "talks/isf_2026/slides/isf_2026.html#but-accuracy-is-not-all-we-need",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Sources: Accuracy is (not) all we need presentation by Stephan Kolassa (2025)"
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#but-accuracy-is-not-all-we-need-1",
+    "href": "talks/isf_2026/slides/isf_2026.html#but-accuracy-is-not-all-we-need-1",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Sources: Accuracy is (not) all we need presentation by Stephan Kolassa (2025)"
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-6",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-6",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Do time series foundation models provide better forecast quality than statistical baselines in public health supply chains?"
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#data-used-in-this-study",
+    "href": "talks/isf_2026/slides/isf_2026.html#data-used-in-this-study",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Country\nDomains\nPeriod\nGeographic granularity\nProduct granularity\nSeries\n\n\n\n\nCôte d’Ivoire\nFamily planning\nApr 2016 to Sep 2019\nFacility / site\nContraceptive product\n1,360\n\n\nLao PDR\nFamily planning\nJan 2019 to Dec 2023\nService delivery unit / org unit\nContraceptive product\n1,446\n\n\nPakistan\nFamily planning\nJan 2019 to Jun 2025\nService delivery unit / org unit\nContraceptive product\n1,313\n\n\nLao PDR\nGeneral/ acute care\nMaternal & newborn health\nMalaria\nImmunisation/ EPI\nNon-communicable diseases\nJan 2019 to Dec 2023\nService delivery unit / org unit\nHealth commodity product\n20,736"
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-7",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-7",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Note: Experiments were run locally on an Intel Core Ultra 9 185H processor with 32 GB RAM between Jan–Mar 2026. Runtime bottlenecks and execution failures should be interpreted in this testing context.\nResults shown: family planning data, 3-month forecast horizon."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#a-quick-look-at-the-data",
+    "href": "talks/isf_2026/slides/isf_2026.html#a-quick-look-at-the-data",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 1: Time series characteristics across the family planning dataset. Panel (a) illustrates trend versus seasonal strength, while Panel (b) displays demand variability against intermittency. The color scale encodes spectral entropy, where lighter colors indicate more predictable, structured dynamics."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#tsfms-can-improve-point-accuracy",
+    "href": "talks/isf_2026/slides/isf_2026.html#tsfms-can-improve-point-accuracy",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 2: Multiple Comparisons with the Best (MCB) test results for RMSSE."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#probabilistic-performance-tells-a-similar-story",
+    "href": "talks/isf_2026/slides/isf_2026.html#probabilistic-performance-tells-a-similar-story",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 3: Multiple Comparisons with the Best (MCB) test results for sPIN."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#aggregate-loss-can-hide-miscalibration",
+    "href": "talks/isf_2026/slides/isf_2026.html#aggregate-loss-can-hide-miscalibration",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 4: Scaled quantile loss and empirical versus nominal coverage at forecast horizon 3 for the highlighted models."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#aggregate-loss-can-hide-miscalibration-1",
+    "href": "talks/isf_2026/slides/isf_2026.html#aggregate-loss-can-hide-miscalibration-1",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 5: Scaled quantile loss and empirical versus nominal coverage at forecast horizon 3 for the top-ranked models."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#aggregate-loss-can-hide-miscalibration-2",
+    "href": "talks/isf_2026/slides/isf_2026.html#aggregate-loss-can-hide-miscalibration-2",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 6: Scaled quantile loss and empirical versus nominal coverage at forecast horizon 3 for the bottom-ranked models."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#useful-gains-are-available-within-minutes",
+    "href": "talks/isf_2026/slides/isf_2026.html#useful-gains-are-available-within-minutes",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 7: Models with total cross-validation runtime of up to 10 minutes are highlighted."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#the-operational-shortlist-expands-within-one-hour",
+    "href": "talks/isf_2026/slides/isf_2026.html#the-operational-shortlist-expands-within-one-hour",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 8: Models with total cross-validation runtime of up to one hour are highlighted."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#accuracy-gains-come-with-computational-costs",
+    "href": "talks/isf_2026/slides/isf_2026.html#accuracy-gains-come-with-computational-costs",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 9: Average point-forecast rank versus total cross-validation runtime across all evaluated models."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-8",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-8",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Maintainability and debuggability\n\n\nHigh runtime\nToo slow for large rolling evaluations.\ne.g.; Chronos-t5-large, TimesFM-2-500m\n\n\n\nUnstable outputs\nNegative or extreme forecast values.\ne.g.; Chronos-2-synthetic\n\n\n\n\nConfiguration failure\nModel paths, dependencies, API issues.\ne.g.; LagLlama, Chronos-2-LoRA\n\n\n\n\nFine-tuning risk\nLocal fine tune can worsen performance.\ne.g.; TimeGPT, Chronos-2"
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-9",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-9",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "The operational question is not “TSFM or baseline?”\n it is;\nWhich model gives enough forecast quality to justify its complexity?\n\n\n\nAccuracy show whether it improves forecasts.\n\n\n\n\nCalibration shows whether uncertainty can be trusted.\n\n\n\n\nRuntime shows whether it can scale.\n\n\n\n\nMaintainability and debuggability show whether it can survive deployment."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-10",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-10",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Where this work goes next\n\n\nFrom forecast accuracy to decision value\nEvaluate whether better forecasts improve ordering, allocation, stock availability, and budget use.\n\n\n\nFrom benchmark results to model-selection guidance\nDevelop a practical framework for deciding when simple baselines are enough, when TSFMs are justified.\n\n\n\n\nFrom cloud inference to data governance\nAccount for country-level data residency, privacy, and infrastructure constraints.\n\n\n\n\nFrom offline evaluation to embedded systems\nTest how these methods work inside LMIS, DHIS2, CHAP, or other routine planning workflows."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-11",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-11",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Thank you to Breno Horsth at DHIS2, Mariana Menchero at Nixtla, and Laila Akhlaghi at JSI."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#section-12",
+    "href": "talks/isf_2026/slides/isf_2026.html#section-12",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "If you found this talk useful, I would be grateful if you considered voting for me for the Best Student Presentation in the Whova app."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#tsfm-pre-screening-exclusions",
+    "href": "talks/isf_2026/slides/isf_2026.html#tsfm-pre-screening-exclusions",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Model\nReason for exclusion / screening flag\n\n\n\n\nChronos-2-synthetic\nUnreliable forecast outputs, with many forecasts taking negative values.\n\n\nChronos-2-LoRA\nIncluded in Stage 1 only; excluded from Stage 2 due to dependency issues.\n\n\nChronos-t5-large\nExcluded during screening due to high computational runtime.\n\n\nChronos-t5-base\nFlagged/excluded from later screening due to high computational runtime.\n\n\nFlan-T5\nExcluded during screening due to high computational runtime.\n\n\nLag-Llama\nExcluded during screening due to model path errors.\n\n\nMoirai-1.0-R-large\nExcluded during screening due to high computational runtime.\n\n\nSundial\nExcluded during screening due to high computational runtime.\n\n\nTimeGPT-1-FT-Full\nExcluded because global fine-tuning requires uniform time series lengths, incompatible with heterogeneous operational supply chain data.\n\n\nTimesFM-2-500m\nExcluded during screening due to high computational runtime.\n\n\nToto\nExcluded during screening due to high computational runtime."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#country-level-model-ranking-rmsse",
+    "href": "talks/isf_2026/slides/isf_2026.html#country-level-model-ranking-rmsse",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 10: Country-level Multiple Comparisons with the Best (MCB) test results for RMSSE at forecast horizon 3."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#country-level-model-ranking-spin",
+    "href": "talks/isf_2026/slides/isf_2026.html#country-level-model-ranking-spin",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 11: Country-level Multiple Comparisons with the Best (MCB) test results for sPIN at forecast horizon 3."
+  },
+  {
+    "objectID": "talks/isf_2026/slides/isf_2026.html#accuracy-gains-come-with-computational-costs-1",
+    "href": "talks/isf_2026/slides/isf_2026.html#accuracy-gains-come-with-computational-costs-1",
+    "title": "\nEvaluating and Benchmarking Time Series Foundational Models\n",
+    "section": "",
+    "text": "Figure 12: Average probabilistic-forecast rank versus total cross-validation runtime at forecast horizon 3."
   }
 ]

@@ -239,5 +239,17 @@
   },
   "lab/kigali_workshop/index.qmd": {
     "index.html": "f91bc938"
+  },
+  "projects/phd-project/index.qmd": {
+    "index.html": "8e32d296"
+  },
+  "talks/exeter_visit/index.qmd": {
+    "index.html": "ea16aafb"
+  },
+  "talks/isf_2026/index.qmd": {
+    "index.html": "2ce06c0f"
+  },
+  "talks/isf_2026/slides/isf_2026.qmd": {
+    "isf_2026.html": "3cccaa92"
   }
 }

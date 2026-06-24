@@ -10,22 +10,6 @@ format: html
 <div class="about-shell">
 <aside class="about-side">
 <img class="about-portrait" src="../images/profile.jpg" alt="Portrait of Harsha Halgamuwe Hewage">
-
-<a class="cv-button" href="resume_harsha.pdf" target="_blank" rel="noopener">
-<i class="bi bi-download"></i>
-<span>Download CV</span>
-</a>
-
-<div class="side-divider"></div>
-
-<div class="about-socials" aria-label="Social links">
-<div class="about-social-row">
-<a href="mailto:hewagehrc@gmail.com"><i class="bi bi-envelope-fill"></i><span>E-mail</span></a>
-<a href="https://github.com/chamara7h" target="_blank" rel="noopener"><i class="bi bi-github"></i><span>GitHub</span></a>
-<a href="https://www.linkedin.com/in/harshachamara/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i><span>LinkedIn</span></a>
-</div>
-<a class="about-scholar-link" href="https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en" target="_blank" rel="noopener"><i class="bi bi-bookmark-star-fill"></i><span>Google Scholar</span></a>
-</div>
 </aside>
 
 <main class="about-main">
@@ -46,11 +30,23 @@ I also lead the research network at <a href="https://forecasters.org/programs/co
 I collaborate closely with organizations such as USAID, the Ethiopian Pharmaceutical Supply Service, and the HISP Centre at the University of Oslo, translating research into operational tools that improve public health outcomes.
 </p>
 
-<div class="section-divider"></div>
-
 <p class="publication-line">
 Explore my <a href="https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en" target="_blank" rel="noopener">full list of publications</a> on Google Scholar.
 </p>
+
+<div class="about-actions">
+<div class="about-socials" aria-label="Social links">
+<a href="mailto:hewagehrc@gmail.com" aria-label="E-mail" title="E-mail"><i class="bi bi-envelope-fill"></i></a>
+<a href="https://github.com/chamara7h" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/harshachamara/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+<a href="https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><i class="bi bi-bookmark-star-fill"></i></a>
+</div>
+
+<a class="cv-button" href="resume_harsha.pdf" target="_blank" rel="noopener">
+<i class="bi bi-download"></i>
+<span>Download CV</span>
+</a>
+</div>
 </section>
 </main>
 </div>

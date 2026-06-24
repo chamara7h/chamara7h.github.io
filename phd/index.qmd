@@ -1,333 +1,146 @@
 ---
+pagetitle: "Forecasting for Health Supply Chains"
+page-layout: full
 link-external-newwindow: true
 ---
 
+::: {.phd-page}
 
-```{=html}
-<style>
-/* FONT IMPORT & GENERAL STYLING */
-@import url('[https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap](https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap)');
-body {
-    font-family: 'Assistant', sans-serif;
-    background-color: #f9f9f9;
-    color: #1a2b48; 
-}
+::: {.phd-hero}
+::: {.phd-hero-inner}
+<p class="phd-kicker">PhD Research Project</p>
 
-/* --- LAYOUT & CARDS --- */
-.page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem 1rem; /* Reduced top padding */
-}
-.content-card {
-    background-color: #FFFFFF;
-    border-radius: 0.75rem;
-    padding: 2.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-bottom: 2.5rem; /* Reduced bottom margin */
-}
+<h2>Forecasting for Health Supply Chains</h2>
 
-/* --- HEADER --- */
-.header-section {
-    text-align: center;
-    margin-bottom: 2.5rem; /* Reduced margin */
-    padding: 0 1rem;
-}
-.header-section h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
-.header-section p {
-    font-size: 1.25rem;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
-}
+<p class="phd-lead">
+Improving demand forecasting for family planning so that contraceptives are available when and where they are needed.
+</p>
 
-/* --- SECTION HEADINGS --- */
-.section-heading {
-    text-align: center;
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin-bottom: 2.5rem;
-}
+::: {.phd-topics}
+<span>Forecasting</span>
+<span>Uncertainty</span>
+<span>Inventory</span>
+<span>Public health</span>
+:::
+:::
+:::
 
-/* --- NEW SUBSECTION HEADING --- */
-.subsection-heading {
-    text-align: left;
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #1a2b48;
-}
+::: {.phd-section}
+::: {.phd-section-inner}
+<p class="phd-section-label">The Core Challenge</p>
 
+## What Was Lost?
 
-/* --- WORKFLOW/METHODOLOGY --- */
-.workflow-container {
-    display: flex;
-    flex-direction: column; /* Default to vertical */
-    align-items: center;
-    gap: 1.5rem;
-}
-.workflow-step {
-    background-color: #FFFFFF;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.workflow-step h4 {
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-bottom: 0.75rem;
-    color: #0A4C6A;
-}
-.workflow-step p {
-    flex-grow: 1;
-    color: #333;
-}
-.workflow-arrow {
-    font-size: 2rem;
-    color: #ccc;
-    transform: rotate(90deg); /* Default to down arrow */
-    align-self: center; /* Center arrow vertically in column mode */
-}
-.award-highlight {
-    background-color: #E6F3F8;
-    border: 1px solid #BEE1F0;
-    color: #0A4C6A;
-    padding: 0.75rem;
-    border-radius: 8px;
-    margin-top: 1rem;
-    font-weight: 600;
-    font-size: 0.9em;
-}
+In public health, zero recorded demand does not necessarily mean zero need. It can mean that the shelves were empty. When a health facility runs out of stock, the community's true demand goes unrecorded. This censored or lost demand leads to flawed forecasts, chronic under-stocking, and a cycle of supply failure. My research focuses on breaking this cycle.
+:::
+:::
 
-/* Switch to horizontal layout on larger screens */
-@media (min-width: 1024px) {
-    .workflow-container {
-        flex-direction: row;
-        align-items: stretch; /* Make steps equal height */
-    }
-    .workflow-arrow {
-        transform: rotate(0deg); /* Switch to right arrow */
-    }
-}
+::: {.phd-section}
+::: {.phd-section-inner}
+<p class="phd-section-label">Research Outputs</p>
 
-/* Hide arrow if it's the last step */
-.workflow-step:last-of-type + .workflow-arrow {
-    display: none;
-}
+## Publications and Code
 
+::: {.phd-output-list}
+::: {.phd-output}
+::: {.phd-output-copy}
+### A Novel Hybrid Approach to Contraceptive Demand Forecasting
 
-/* --- PUBLICATIONS & OUTPUTS --- */
-.publication-item {
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #e9ecef;
-}
-.publication-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-.pub-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-.pub-journal {
-    font-style: italic;
-    color: #555;
-    margin-bottom: 1rem;
-}
-.pub-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-.btn-pub {
-  padding: 8px 18px;
-  font-size: 0.9em;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #0A4C6A;
-  color: #fff;
-  border: 2px solid #0A4C6A;
-}
-.btn-pub:hover {
-  background-color: #083c54;
-  border-color: #083c54;
-  color: #fff;
-}
+<p class="phd-output-meta">International Journal of Production Research</p>
+:::
 
+::: {.phd-output-actions}
+[Read paper](https://doi-org.cardiff.idm.oclc.org/10.1080/00207543.2025.2526169){.phd-button}
+[View code](https://github.com/chamara7h/hybrid_forecasting_framework){.phd-button .phd-button-secondary}
+:::
+:::
 
-/* --- IMPACT CARD & NEW PUBLICATION CARD STYLE --- */
-.impact-card {
-    background: #1a2b48;
-    color: #fff;
-    border-radius: 0.75rem;
-    padding: 2.5rem;
-    margin-bottom: 3rem;
-}
-.impact-card h3, .impact-card .subsection-heading { /* Apply subsection style here too */
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #fff;
-    text-align: left; /* Align left */
-}
-.impact-card .pub-title {
-    color: #fff;
-}
-.impact-card .pub-journal {
-    color: #ccc;
-}
-.impact-card .publication-item {
-    border-bottom-color: rgba(255, 255, 255, 0.2);
-}
-.impact-card .btn-pub {
-    color: #1a2b48;
-    background-color: #fff;
-    border-color: #fff;
-}
-.impact-card .btn-pub:hover {
-    background-color: #eee;
-    border-color: #eee;
-}
+::: {.phd-output}
+::: {.phd-output-copy}
+### Estimating Censored Demand in Family Planning Supply Chains
 
-/* --- SUPERVISOR & PARTNER STYLES --- */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-.team-member img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 0 auto 1rem auto;
-  object-fit: cover;
-  border: 3px solid #e9ecef;
-}
-.member-name {
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-.member-title {
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.4;
-}
-.logo-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    align-items: center;
-    justify-content: center;
-}
-.logo-grid img {
-    height: 55px;
-    width: auto;
-}
+<p class="phd-output-meta">Forecast accuracy, inventory implications, and public-health outcomes · Preprint under review</p>
+:::
 
-</style>
+::: {.phd-output-actions}
+[Paper forthcoming](#){.phd-button}
+[Code forthcoming](#){.phd-button .phd-button-secondary}
+:::
+:::
+:::
+:::
+:::
 
-<!-- Add Font Awesome for icons -->
-<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+::: {.phd-impact}
+::: {.phd-section-inner}
+<p class="phd-section-label">Research in Practice</p>
 
-<div class="page-container">
+## EPSS Forecasting Training
 
-    <header class="header-section">
-        <h2>Forecasting for Health Supply Chains</h2>
-        <p>My PhD research project is focused on improving demand forecasting for family planning to ensure contraceptives are always available when and where they are needed.</p>
-    </header>
+Research is most valuable when it is put into practice. As part of this project, I developed and delivered a two-day workshop for practitioners at the Ethiopian Pharmaceutical Supply Service, supporting modern forecasting with R and Python.
 
-    <div class="content-card">
-        <h3 class="section-heading">The Core Challenge: What Was Lost?</h3>
-        <p class="text-center max-w-4xl mx-auto">
-            In public health, "zero demand" doesn't mean "zero need"—it often just means the shelves were empty. When health facilities run out of stock, the true demand from the community goes unrecorded. This "censored" or "lost" demand data leads to flawed forecasts, which in turn causes chronic under-stocking and reinforces a cycle of supply failure. My research focuses on breaking this cycle.
-        </p>
-    </div>
-    
-    <div class="content-card" style="margin-top: 4rem;">
-        <h3 class="subsection-heading">Key Outputs & Publications</h3>
-        
-        <div class="publication-item">
-            <div class="pub-title">A Novel Hybrid Approach to Contraceptive Demand Forecasting</div>
-            <div class="pub-journal">Published in International Journal of Production Research</div>
-            <div class="pub-links">
-                <a href="https://doi-org.cardiff.idm.oclc.org/10.1080/00207543.2025.2526169" class="btn-pub"><i class="fas fa-file-pdf"></i> Read Paper</a>
-                <a href="https://github.com/chamara7h/hybrid_forecasting_framework" class="btn-pub" target="_blank"><i class="fab fa-github"></i> View Code</a>
-            </div>
-        </div>
+::: {.phd-impact-actions}
+[Training materials](../lab/epss_training/){.phd-button .phd-button-light}
+[Code and labs](https://github.com/chamara7h/epss_training){.phd-button .phd-button-outline-light}
+:::
+:::
+:::
 
-        <div class="publication-item">
-            <div class="pub-title">Estimating censored demand in family planning supply chains: forecast accuracy, inventory implications, and public health outcomes</div>
-            <div class="pub-journal">Preprint - Submitted for review</div>
-            <div class="pub-links">
-                <a href="#" class="btn-pub"><i class="fas fa-file-pdf"></i> Read Paper</a>
-                <a href="#" class="btn-pub"><i class="fab fa-github"></i> View Code</a>
-            </div>
-        </div>
-    </div>
+::: {.phd-section}
+::: {.phd-section-inner}
+<p class="phd-section-label">Project Team</p>
 
-    <div class="impact-card">
-        <h3><i class="fas fa-chalkboard-teacher"></i> Impact in Practice: EPSS Training</h3>
-        <p class="mb-6">Research is most valuable when it's put into practice. As part of my PhD, I developed and delivered a two-day training workshop for practitioners at the Ethiopian Pharmaceutical Supply Service (EPSS), equipping them with modern forecasting skills using R and Python.</p>
-        <div class="pub-links">
-            <a href="https://chamara7h.github.io/lab/epss_training/" class="btn-pub"><i class="fas fa-tools"></i> Training Materials</a>
-            <a href="https://github.com/chamara7h/epss_training" class="btn-pub"><i class="fab fa-github"></i> Code & Labs</a>
-        </div>
-    </div>
-    
-    <div class="content-card">
-        <h3 class="section-heading">Supervision & Collaboration Team</h3>
-        <div class="team-grid">
-            <div class="team-member">
-                <img src="images/bahman.png" alt="Prof Bahman Rostami-Tabar">
-                <div class="member-name">Prof. Bahman Rostami-Tabar</div>
-                <div class="member-title">Lead Supervisor, Cardiff University</div>
-            </div>
-            <div class="team-member">
-                <img src="images/aris.png" alt="Prof Aris Syntetos">
-                <div class="member-name">Prof. Aris Syntetos</div>
-                <div class="member-title">Co-supervisor, Cardiff University</div>
-            </div>
-            <div class="team-member">
-                <img src="images/federico.png" alt="Dr Federico Liberatore">
-                <div class="member-name">Dr. Federico Liberatore</div>
-                <div class="member-title">Co-supervisor, Cardiff University</div>
-            </div>
-            <div class="team-member">
-                <img src="images/glenn.png" alt="Glenn Milano">
-                <div class="member-name">Glenn Milano</div>
-                <div class="member-title">Industry Collaborator, USAID</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="content-card">
-        <h3 class="section-heading">Funding & Partners</h3>
-        <div class="logo-grid">
-            <img src="images/cardiff_logo.png" alt="Cardiff University Logo">
-            <img src="images/logo.png" alt="Data Lab for Social Good Logo">
-            <img src="images/wgss.png" alt="WGSSS Logo">
-            <img src="images/usaid.png" alt="USAID Logo">
-        </div>
-    </div>
+## Supervision and Collaboration
 
-</div>
+::: {.phd-team}
+::: {.phd-person}
+![](images/bahman.png){alt="Prof. Bahman Rostami-Tabar"}
 
-```
+### Prof. Bahman Rostami-Tabar
+
+Lead Supervisor · Cardiff University
+:::
+
+::: {.phd-person}
+![](images/aris.png){alt="Prof. Aris Syntetos"}
+
+### Prof. Aris Syntetos
+
+Co-supervisor · Cardiff University
+:::
+
+::: {.phd-person}
+![](images/federico.png){alt="Dr. Federico Liberatore"}
+
+### Dr. Federico Liberatore
+
+Co-supervisor · Cardiff University
+:::
+
+::: {.phd-person}
+![](images/glenn.png){alt="Glenn Milano"}
+
+### Glenn Milano
+
+Industry Collaborator · USAID
+:::
+:::
+:::
+:::
+
+::: {.phd-section .phd-partners-section}
+::: {.phd-section-inner}
+<p class="phd-section-label">Support</p>
+
+## Funding and Partners
+
+::: {.phd-partners}
+![](images/cardiff_logo.png){alt="Cardiff University"}
+![](images/logo.png){alt="Data Lab for Social Good"}
+![](images/wgss.png){alt="Wales Graduate School for the Social Sciences"}
+![](images/usaid.png){alt="USAID"}
+:::
+:::
+:::
+
+:::

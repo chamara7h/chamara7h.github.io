@@ -1,28 +1,49 @@
 ---
-title: "Projects"
-description: "Research projects and applied forecasting work."
 page-layout: full
 format: html
+listing:
+  id: project-listing
+  contents:
+    - "phd-project/index.qmd"
+  type: default
+  sort-ui: false
+  filter-ui: false
+  fields: [image, title, description, categories]
 ---
 
-::: {.content-section}
-## Research Projects
-
-::: {.project-grid}
-::: {.project-card}
-<i class="bi bi-diagram-3"></i>
-
-### PhD Project
-
-Forecasting and decision-support methods for health commodity supply chains, with a focus on uncertainty, inventory decisions, and practical tools for social good.
-
-::: {.project-tags}
-<span class="project-tag">Forecasting</span>
-<span class="project-tag">Uncertainty</span>
-<span class="project-tag">Supply chains</span>
+::: {#project-listing}
 :::
 
-[View project](../phd/index.qmd){.btn-custom .btn-primary}
-:::
-:::
-:::
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const destination = "../phd/";
+
+  document.querySelectorAll("#listing-project-listing .quarto-post").forEach((project) => {
+    project.setAttribute("role", "link");
+    project.setAttribute("tabindex", "0");
+
+    project.querySelectorAll("a").forEach((link) => {
+      link.href = destination;
+    });
+
+    project.querySelectorAll(".listing-category").forEach((category) => {
+      category.removeAttribute("onclick");
+    });
+
+    project.addEventListener("click", (event) => {
+      if (!event.target.closest("a")) {
+        window.location.href = destination;
+      }
+    });
+
+    project.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        window.location.href = destination;
+      }
+    });
+  });
+});
+</script>
+```

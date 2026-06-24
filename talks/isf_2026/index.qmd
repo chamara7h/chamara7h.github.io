@@ -1,0 +1,46 @@
+---
+title: "Evaluating and Benchmarking Time Series Foundation Models for Public Healthcare Demand Forecasting"
+description: "International Symposium on Forecasting 2026"
+author: "Harsha Halgamuwe Hewage"
+date: "2026-06-30"
+image: "cover.png"
+categories:
+  - Forecasting
+  - Time Series Foundation Models
+  - Public Health
+  - Supply Chains
+  - Probabilistic Forecasting
+  - Model Evaluation
+link-external-newwindow: true
+---
+
+```{=html}
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="hero-section">
+  <h1 class="title">Evaluating and Benchmarking Time Series Foundation Models for Public Healthcare Demand Forecasting</h1>
+  <p class="description">International Symposium on Forecasting 2026</p>
+  <p class="author-date">Harsha Halgamuwe Hewage | 2026-06-30</p>
+
+  <div class="cta-buttons">
+    <a href="slides/isf_2026.html" target="_blank" class="btn-custom btn-primary">
+      <i class="fas fa-bookmark"></i> View Slides
+    </a>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2>Context</h2>
+
+  <p>Public health supply chains must forecast demand across many related but individually sparse, intermittent, and weakly structured time series. Time series foundation models appear promising because they may transfer patterns learned from large collections of data, reducing the need for long local histories and repeated model development.</p>
+
+  <p>This talk examines whether that promise translates into better <em>forecast quality</em> than established statistical baselines. Using monthly family planning demand data from Côte d’Ivoire, Lao PDR, and Pakistan, we compare point and probabilistic performance across one-, three-, and six-month forecast horizons.</p>
+
+  <p>The evaluation moves beyond aggregate accuracy to consider calibration, computational runtime, implementation robustness, maintainability, and debuggability. The results show that a small group of foundation models achieves strong forecast rankings, but performance is uneven, aggregate loss can conceal miscalibration, and the largest accuracy gains may require substantial computational resources.</p>
+
+  <p>The operational question is therefore not simply whether to use a foundation model, but which model provides enough forecast quality to justify its complexity under real public health system constraints.</p>
+</div>
+```
+

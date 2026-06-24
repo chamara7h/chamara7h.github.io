@@ -1,0 +1,27 @@
+---
+title: "Forecasting and Decision Support for Health Supply Chains"
+description: "Developing forecasting methods and practical decision-support tools for health commodity supply chains, with particular attention to uncertainty, censored demand, inventory decisions, and public-health outcomes."
+image: "cover.png"
+categories:
+  - Forecasting
+  - Uncertainty
+  - Supply Chains
+  - Social Good
+page-layout: full
+---
+
+```{=html}
+<div class="hero-section">
+  <h1 class="title">Forecasting and Decision Support for Health Supply Chains</h1>
+  <p class="description">My PhD research project on improving forecasting and operational decisions in public-health supply chains.</p>
+  <div class="cta-buttons">
+    <a href="../../phd/" class="btn-custom btn-primary">
+      <i class="bi bi-arrow-right"></i> Explore the project
+    </a>
+  </div>
+</div>
+
+<div class="content-section">
+  <p>The project develops and evaluates forecasting approaches for settings where demand is sparse, uncertain, and sometimes hidden by stockouts. It connects forecast quality with inventory performance and practical public-health outcomes.</p>
+</div>
+```

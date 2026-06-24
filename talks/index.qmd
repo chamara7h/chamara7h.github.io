@@ -7,9 +7,9 @@ listing:
     - 'wgsss_25/*.qmd'
     - 'dhis2_webinar/*.qmd'
     - 'lomsac_2026/*.qmd'
-    - 'exeter_visit/*.qmd'
     - 'dhis2_demo/*.qmd'
     - 'jsi_session/*.qmd'
+    - 'isf_2026/*.qmd'
   type: grid
   sort: "date desc"
   filter-ui: true
