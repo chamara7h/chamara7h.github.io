@@ -1,5 +1,19 @@
 [
   {
+    "listing": "/talks/index.html",
+    "items": [
+      "/talks/isf_2026/index.html",
+      "/talks/jsi_session/index.html",
+      "/talks/dhis2_demo/index.html",
+      "/talks/lomsac_2026/index.html",
+      "/talks/dhis2_webinar/index.html",
+      "/talks/wgsss_25/index.html",
+      "/talks/euro_leeds/index.html",
+      "/talks/qff_london/index.html",
+      "/talks/dl4sg_seminar/index.html"
+    ]
+  },
+  {
     "listing": "/lab/index.html",
     "items": [
       "/lab/kigali_workshop/index.html",
@@ -12,24 +26,16 @@
     ]
   },
   {
-    "listing": "/talks/index.html",
-    "items": [
-      "/talks/exeter_visit/index.html",
-      "/talks/jsi_session/index.html",
-      "/talks/dhis2_demo/index.html",
-      "/talks/lomsac_2026/index.html",
-      "/talks/dhis2_webinar/index.html",
-      "/talks/wgsss_25/index.html",
-      "/talks/euro_leeds/index.html",
-      "/talks/qff_london/index.html",
-      "/talks/dl4sg_seminar/index.html"
-    ]
-  },
-  {
     "listing": "/projects/publications/index.html",
     "items": [
       "/projects/publications/second-post/index.html",
       "/projects/publications/first-post/index.html"
+    ]
+  },
+  {
+    "listing": "/projects/index.html",
+    "items": [
+      "/projects/phd-project/index.html"
     ]
   }
 ]
