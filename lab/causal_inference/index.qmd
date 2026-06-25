@@ -81,7 +81,7 @@ If you are running this notebook for the first time, install these packages.\
 This chunk is set to `eval: false` so it will not run automatically when you render.
 :::
 
-```{r eval=true}
+```{r}
 install.packages(c("tidyverse", "hdm", "broom", "modelsummary", "gt"))
 ```
 
