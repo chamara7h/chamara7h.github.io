@@ -8,7 +8,7 @@ listing:
     - 'energy_score/*.qmd'
     - 'quarto_website/*.qmd'
     - 'kigali_workshop/*.qmd'
-    # - 'causal_inference/*.qmd'
+    - 'causal_inference/*.qmd'
   type: grid
   sort: "date desc"
   filter-ui: true

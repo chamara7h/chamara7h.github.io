@@ -6,22 +6,19 @@ date: "2026-02-25"
 image: "cover.png"
 categories:
   - Forecasting
-  - Uncertainity
+  - Uncertainty
   - Climate Health
   - DHIS2
   - Conformal Predictions
 link-external-newwindow: true
 ---
 
-
 ```{=html}
-<!-- Add Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
 <div class="hero-section">
-  <h1 class="title">Modelling prediction uncertainty</h1>
-  <p class="description">A Practical Guide to Model-Based, Bootstrap, and Conformal Prediction in R.</p>
+  <h1 class="title">Modelling forecast uncertainty</h1>
+  <p class="description">A practical guide to model-based, bootstrap, and conformal prediction in R.</p>
   <p class="author-date">Harsha Chamara Hewage | 2026-02-25</p>
   <div class="cta-buttons">
     <a href="slides/kigali_workshop.html" target="_blank" class="btn-custom btn-primary">
@@ -32,79 +29,66 @@ link-external-newwindow: true
     </a>
   </div>
 </div>
-
-
 ```
 
+::: {.content-section}
 ## Who is the Course For?
 
-This course is intended for public health researchers, epidemiologists, and practitioners who want to quantify uncertainty and measure "tail risks" in climate-sensitive disease forecasting. It assumes familiarity with basic time series forecasting and data manipulation in R.
+This course is intended for public health researchers, epidemiologists, and practitioners who want to quantify uncertainty and measure tail risks in climate-sensitive disease forecasting. It assumes familiarity with basic time series forecasting and data manipulation in R.
+:::
 
+::: {.content-section}
 ## Learning Objectives
 
+* Understand the limitations of point forecasts and why asymmetric risk matters in public health resource planning.
+* Distinguish between prediction intervals, forecast distributions, and sample paths.
+* Apply model-based prediction intervals, such as ARIMA, as a baseline benchmark.
+* Simulate and visualize non-linear outbreak trajectories using bootstrapping.
+* Construct model-agnostic prediction intervals with finite-sample guarantees using conformal prediction.
+* Link data characteristics, including volume, skewness, and climate drift, to an appropriate uncertainty quantification method.
+:::
 
-*   Understand the critical flaw of point forecasts and why asymmetric risk matters in public health resource planning.
-
-*   Distinguish between prediction intervals, forecast distributions, and sample paths.
-
-*   Apply and extract Model-Based prediction intervals (e.g., ARIMA) as a baseline benchmark.
-
-*   Simulate and visualize non-linear outbreak trajectories using Bootstrapping.
-
-*   Construct model-agnostic prediction intervals with finite-sample guarantees using Conformal Prediction.
-
-*   Link data characteristics (e.g., volume, skewness, climate drift) to the appropriate uncertainty quantification method.
-
+::: {.content-section}
 ## Prerequisites
 
-*   Comfortable with basic probability (e.g., Normal distributions, mean, variance).
-*   Familiarity with R, `tidyverse`, and basic forecasting workflows (e.g., the `fable` package).
-*   No deep theoretical mathematics, proofs, or prior knowledge of conformal inference is assumed.
+* Comfort with basic probability, including normal distributions, means, and variances.
+* Familiarity with R, `tidyverse`, and basic forecasting workflows such as `fable`.
+* No deep theoretical mathematics, proofs, or prior knowledge of conformal inference is required.
+:::
 
+::: {.content-section}
 ## Course Topics
 
-**Section 1: The Illusion of Certainty (Foundations)**
+### 1. The Illusion of Certainty
 
-*   The point forecast fallacy and asymmetric risk in disease management
+* The point forecast fallacy and asymmetric risk in disease management
+* Prediction intervals versus forecast distributions
+* Visualizing the bounds, shape, and dynamics of forecast risk
 
-*   Defining Prediction Intervals vs. Forecast Distributions
+### 2. Model-Based Uncertainty
 
-*   Visualizing the bounds, shape, and dynamics of forecast risk
+* Parametric assumptions, normality, and homoscedasticity
+* Fan charts and how uncertainty scales over time
+* Implementing analytic intervals in R with `fable`
+* The symmetry trap, negative case counts, and fat tails
 
-**Section 2: Model-Based Uncertainty (The Baseline)**
+### 3. Bootstrapping Sample Paths
 
-*   Parametric assumptions (Normality, Homoscedasticity)
+* Using historical residuals to relax distributional assumptions
+* Generating and plotting multiple possible futures
+* Capturing skewed risk and explosive outbreak dynamics
+* IID versus block bootstrapping for autocorrelated climate data
 
-*   The "fan chart" and how standard deviation scales over time
+### 4. Conformal Prediction
 
-*   Implementing analytic formulas in R (`fable`)
+* Moving from distribution-based to empirical, model-agnostic intervals
+* The split conformal workflow with training and calibration sets
+* Calculating conformity scores to guarantee valid coverage
+* Exchangeability and the challenge of climate drift
 
-*   The "symmetry trap" (predicting negative case counts) and fat tails
+### 5. Decision Framework and Application
 
-**Section 3: Bootstrapping Sample Paths (The Simulation)**
-
-*   Overcoming the Normal distribution assumption using past residuals
-
-*   Generating and plotting multiple "possible futures" (sample paths)
-
-*   Capturing skewed risk and explosive outbreak dynamics
-
-*   Introduction to IID vs. Block bootstrapping for autocorrelated climate data
-
-**Section 4: Conformal Prediction (The Guarantee)**
-
-*   Moving from distribution-based to empirical, model-agnostic intervals
-
-*   The Split Conformal workflow: Training vs. Calibration sets
-
-*   Calculating conformity scores (residuals) to guarantee valid coverage
-
-*   The exchangeability assumption and the challenge of climate drift
-
-**Section 5: Decision Framework & Application**
-
-*   Evaluating trade-offs: Computational speed vs. flexibility vs. guarantees
-
-*   Choosing the right method based on dataset size and outbreak volatility
-
-*   Summary matrix: When to select Model-Based, Bootstrap, or Conformal methods
+* Trade-offs between computational speed, flexibility, and guarantees
+* Choosing a method based on dataset size and outbreak volatility
+* When to select model-based, bootstrap, or conformal methods
+:::

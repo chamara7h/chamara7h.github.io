@@ -10,7 +10,7 @@ link-external-newwindow: true
 ::: {.phd-hero-inner}
 <p class="phd-kicker">PhD Research Project</p>
 
-<h2>Forecasting for Health Supply Chains</h2>
+<h1>Forecasting for Health Supply Chains</h1>
 
 <p class="phd-lead">
 Improving demand forecasting for family planning so that contraceptives are available when and where they are needed.

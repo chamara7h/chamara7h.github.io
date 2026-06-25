@@ -9,11 +9,7 @@ categories:
   - Scoring Rules
   - R
 link-external-newwindow: true
-format:
-  html:
-    toc: true
-    toc-depth: 2
-    number-sections: false
+format: html
 ---
 
 
