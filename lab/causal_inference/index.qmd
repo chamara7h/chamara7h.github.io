@@ -89,6 +89,7 @@ install.packages(c("tidyverse", "hdm", "broom"))
 library(tidyverse)
 library(hdm)          # high-dimensional methods including rlasso and rlassoEffect
 library(broom)        # tidy model summaries
+library(ggrepel)
 ```
 
 ## Data analysis
