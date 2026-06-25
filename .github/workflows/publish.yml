@@ -28,20 +28,7 @@ jobs:
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
         with:
-          cache-version: 2
-
-      - name: Install causal inference tutorial dependencies
-        shell: Rscript {0}
-        run: |
-          renv::install(c(
-            "hdm",
-            "mlr3",
-            "mlr3learners",
-            "DoubleML",
-            "glmnet",
-            "ranger",
-            "xgboost"
-          ))
+          cache-version: 1
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
