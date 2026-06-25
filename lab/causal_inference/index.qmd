@@ -81,16 +81,14 @@ If you are running this notebook for the first time, install these packages.\
 This chunk is set to `eval: false` so it will not run automatically when you render.
 :::
 
-```{r}
-install.packages(c("tidyverse", "hdm", "broom", "modelsummary", "gt"))
+```{r eval=FALSE}
+install.packages(c("tidyverse", "hdm", "broom"))
 ```
 
 ```{r}
 library(tidyverse)
 library(hdm)          # high-dimensional methods including rlasso and rlassoEffect
 library(broom)        # tidy model summaries
-library(modelsummary) # clean regression tables
-library(gt)
 ```
 
 ## Data analysis
@@ -142,16 +140,17 @@ How to read this row:
 
 If the confidence interval includes 0, the evidence for convergence/divergence is weaker (based on this model). So, least squares provides a rather noisy estimate of the speed of convergence, and does not allow us to answer the question about the convergence hypothesis as the confidence interval includes zero.
 
-If you want a more “report-style” table:
+If you want a more report-style table:
 
 ```{r}
-modelsummary(
-  list("OLS (all controls)" = ols_fit),
-  coef_map = c("gdpsh465" = "Initial GDP per capita (gdpsh465)"),
-  statistic = c("std.error", "conf.int"),
-  output = "gt"
-)
-
+ols_key |>
+  transmute(
+    Term = "Initial GDP per capita (gdpsh465)",
+    Estimate = round(estimate, 4),
+    `Std. Error` = round(std.error, 4),
+    `95% CI` = sprintf("[%.4f, %.4f]", conf.low, conf.high)
+  ) |>
+  knitr::kable()
 ```
 
 **Exercise 2:** First, get familiar with the data. Determine the dimensions of our data set and calculate the $p/n$ ratio. Do we have a high-dimensional setting?
@@ -324,11 +323,10 @@ This chunk is set to `eval: false` so it will not run automatically when you ren
 :::
 
 ```{r eval=FALSE}
-install.packages(c("remotes", "mlr3", "mlr3learners", "DoubleML", "glmnet", "ranger", "xgboost", "data.table"))
+install.packages(c("mlr3", "mlr3learners", "DoubleML", "glmnet", "ranger", "xgboost", "data.table"))
 ```
 
 ```{r}
-library(remotes)
 library(mlr3)
 library(mlr3learners)
 library(DoubleML)
