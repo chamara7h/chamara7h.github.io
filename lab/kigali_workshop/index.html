@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-cb8858fce8fc78a51a93926ec7f46644.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1cc74f7cd64b28643e92cbc722963743.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -119,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Modelling forecast uncertainty</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Forecasting</div>
-    <div class="quarto-category">Uncertainity</div>
+    <div class="quarto-category">Uncertainty</div>
     <div class="quarto-category">Climate Health</div>
     <div class="quarto-category">DHIS2</div>
     <div class="quarto-category">Conformal Predictions</div>
@@ -157,13 +157,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- Add Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
 <div class="hero-section">
-  <h1 class="title">Modelling prediction uncertainty</h1>
-  <p class="description">A Practical Guide to Model-Based, Bootstrap, and Conformal Prediction in R.</p>
+  <h1 class="title">Modelling forecast uncertainty</h1>
+  <p class="description">A practical guide to model-based, bootstrap, and conformal prediction in R.</p>
   <p class="author-date">Harsha Chamara Hewage | 2026-02-25</p>
   <div class="cta-buttons">
     <a href="slides/kigali_workshop.html" target="_blank" class="btn-custom btn-primary">
@@ -174,69 +172,77 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
 </div>
-
-
-<section id="who-is-the-course-for" class="level2">
+<section id="who-is-the-course-for" class="level2 content-section">
 <h2 class="anchored" data-anchor-id="who-is-the-course-for">Who is the Course For?</h2>
-<p>This course is intended for public health researchers, epidemiologists, and practitioners who want to quantify uncertainty and measure “tail risks” in climate-sensitive disease forecasting. It assumes familiarity with basic time series forecasting and data manipulation in R.</p>
+<p>This course is intended for public health researchers, epidemiologists, and practitioners who want to quantify uncertainty and measure tail risks in climate-sensitive disease forecasting. It assumes familiarity with basic time series forecasting and data manipulation in R.</p>
 </section>
-<section id="learning-objectives" class="level2">
+<section id="learning-objectives" class="level2 content-section">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <ul>
-<li><p>Understand the critical flaw of point forecasts and why asymmetric risk matters in public health resource planning.</p></li>
-<li><p>Distinguish between prediction intervals, forecast distributions, and sample paths.</p></li>
-<li><p>Apply and extract Model-Based prediction intervals (e.g., ARIMA) as a baseline benchmark.</p></li>
-<li><p>Simulate and visualize non-linear outbreak trajectories using Bootstrapping.</p></li>
-<li><p>Construct model-agnostic prediction intervals with finite-sample guarantees using Conformal Prediction.</p></li>
-<li><p>Link data characteristics (e.g., volume, skewness, climate drift) to the appropriate uncertainty quantification method.</p></li>
+<li>Understand the limitations of point forecasts and why asymmetric risk matters in public health resource planning.</li>
+<li>Distinguish between prediction intervals, forecast distributions, and sample paths.</li>
+<li>Apply model-based prediction intervals, such as ARIMA, as a baseline benchmark.</li>
+<li>Simulate and visualize non-linear outbreak trajectories using bootstrapping.</li>
+<li>Construct model-agnostic prediction intervals with finite-sample guarantees using conformal prediction.</li>
+<li>Link data characteristics, including volume, skewness, and climate drift, to an appropriate uncertainty quantification method.</li>
 </ul>
 </section>
-<section id="prerequisites" class="level2">
+<section id="prerequisites" class="level2 content-section">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <ul>
-<li>Comfortable with basic probability (e.g., Normal distributions, mean, variance).</li>
-<li>Familiarity with R, <code>tidyverse</code>, and basic forecasting workflows (e.g., the <code>fable</code> package).</li>
-<li>No deep theoretical mathematics, proofs, or prior knowledge of conformal inference is assumed.</li>
+<li>Comfort with basic probability, including normal distributions, means, and variances.</li>
+<li>Familiarity with R, <code>tidyverse</code>, and basic forecasting workflows such as <code>fable</code>.</li>
+<li>No deep theoretical mathematics, proofs, or prior knowledge of conformal inference is required.</li>
 </ul>
 </section>
-<section id="course-topics" class="level2">
+<section id="course-topics" class="level2 content-section">
 <h2 class="anchored" data-anchor-id="course-topics">Course Topics</h2>
-<p><strong>Section 1: The Illusion of Certainty (Foundations)</strong></p>
+<section id="the-illusion-of-certainty" class="level3">
+<h3 class="anchored" data-anchor-id="the-illusion-of-certainty">1. The Illusion of Certainty</h3>
 <ul>
-<li><p>The point forecast fallacy and asymmetric risk in disease management</p></li>
-<li><p>Defining Prediction Intervals vs.&nbsp;Forecast Distributions</p></li>
-<li><p>Visualizing the bounds, shape, and dynamics of forecast risk</p></li>
+<li>The point forecast fallacy and asymmetric risk in disease management</li>
+<li>Prediction intervals versus forecast distributions</li>
+<li>Visualizing the bounds, shape, and dynamics of forecast risk</li>
 </ul>
-<p><strong>Section 2: Model-Based Uncertainty (The Baseline)</strong></p>
-<ul>
-<li><p>Parametric assumptions (Normality, Homoscedasticity)</p></li>
-<li><p>The “fan chart” and how standard deviation scales over time</p></li>
-<li><p>Implementing analytic formulas in R (<code>fable</code>)</p></li>
-<li><p>The “symmetry trap” (predicting negative case counts) and fat tails</p></li>
-</ul>
-<p><strong>Section 3: Bootstrapping Sample Paths (The Simulation)</strong></p>
-<ul>
-<li><p>Overcoming the Normal distribution assumption using past residuals</p></li>
-<li><p>Generating and plotting multiple “possible futures” (sample paths)</p></li>
-<li><p>Capturing skewed risk and explosive outbreak dynamics</p></li>
-<li><p>Introduction to IID vs.&nbsp;Block bootstrapping for autocorrelated climate data</p></li>
-</ul>
-<p><strong>Section 4: Conformal Prediction (The Guarantee)</strong></p>
-<ul>
-<li><p>Moving from distribution-based to empirical, model-agnostic intervals</p></li>
-<li><p>The Split Conformal workflow: Training vs.&nbsp;Calibration sets</p></li>
-<li><p>Calculating conformity scores (residuals) to guarantee valid coverage</p></li>
-<li><p>The exchangeability assumption and the challenge of climate drift</p></li>
-</ul>
-<p><strong>Section 5: Decision Framework &amp; Application</strong></p>
-<ul>
-<li><p>Evaluating trade-offs: Computational speed vs.&nbsp;flexibility vs.&nbsp;guarantees</p></li>
-<li><p>Choosing the right method based on dataset size and outbreak volatility</p></li>
-<li><p>Summary matrix: When to select Model-Based, Bootstrap, or Conformal methods</p></li>
-</ul>
-
-
 </section>
+<section id="model-based-uncertainty" class="level3">
+<h3 class="anchored" data-anchor-id="model-based-uncertainty">2. Model-Based Uncertainty</h3>
+<ul>
+<li>Parametric assumptions, normality, and homoscedasticity</li>
+<li>Fan charts and how uncertainty scales over time</li>
+<li>Implementing analytic intervals in R with <code>fable</code></li>
+<li>The symmetry trap, negative case counts, and fat tails</li>
+</ul>
+</section>
+<section id="bootstrapping-sample-paths" class="level3">
+<h3 class="anchored" data-anchor-id="bootstrapping-sample-paths">3. Bootstrapping Sample Paths</h3>
+<ul>
+<li>Using historical residuals to relax distributional assumptions</li>
+<li>Generating and plotting multiple possible futures</li>
+<li>Capturing skewed risk and explosive outbreak dynamics</li>
+<li>IID versus block bootstrapping for autocorrelated climate data</li>
+</ul>
+</section>
+<section id="conformal-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="conformal-prediction">4. Conformal Prediction</h3>
+<ul>
+<li>Moving from distribution-based to empirical, model-agnostic intervals</li>
+<li>The split conformal workflow with training and calibration sets</li>
+<li>Calculating conformity scores to guarantee valid coverage</li>
+<li>Exchangeability and the challenge of climate drift</li>
+</ul>
+</section>
+<section id="decision-framework-and-application" class="level3">
+<h3 class="anchored" data-anchor-id="decision-framework-and-application">5. Decision Framework and Application</h3>
+<ul>
+<li>Trade-offs between computational speed, flexibility, and guarantees</li>
+<li>Choosing a method based on dataset size and outbreak volatility</li>
+<li>When to select model-based, bootstrap, or conformal methods</li>
+</ul>
+</section>
+</section>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
