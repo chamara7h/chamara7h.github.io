@@ -1523,7 +1523,7 @@ ggplot(
   )
 ```
 
-## Experimental design
+## Forecasting quality framework
 
 <center>
   <img src="images/deploy_framework.png" width="80%">
