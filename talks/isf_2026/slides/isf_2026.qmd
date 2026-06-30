@@ -777,7 +777,9 @@ distinct_colors <- c(
   "Moirai-2.0-R-small" = "#CC79A7",
   "TimesFM-2.5-200m" = "#e67e22",
   "Chronos-2-FT-Full" = "#568203",
-  "TiRex" = "#E6AB02"
+  "TiRex" = "#E6AB02",
+  "TimeGPT-1" = "#6A3D9A",
+  "TimeGPT-1-FT" = "#6A3D9A"
 )
 
 highlight_models <- names(distinct_colors)
@@ -790,7 +792,9 @@ highlight_shapes <- c(
   "Moirai-2.0-R-small" = 11,
   "TimesFM-2.5-200m" = 9,
   "Chronos-2-FT-Full" = 4,
-  "TiRex" = 6
+  "TiRex" = 6,
+  "TimeGPT-1" = 5,
+  "TimeGPT-1-FT" = 18
 )
 
 time_refs <- tibble(
