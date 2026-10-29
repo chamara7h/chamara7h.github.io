@@ -126,12 +126,14 @@ main#quarto-document-content {
 .listing-result-count { margin-left: auto; font-size: 14px; color: var(--muted); white-space: nowrap; }
 .quarto-listing .list.grid {
   display: grid;
+  align-items: start;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 42px 28px;
 }
 .quarto-listing .g-col-1 { min-width: 0; }
-.quarto-grid-link { display: block; height: 100%; color: var(--ink); text-decoration: none; }
+.quarto-grid-link { display: block; color: var(--ink); text-decoration: none; }
 .quarto-grid-item.card {
+  height: auto !important;
   background: transparent;
   border: 0;
   border-bottom: 1px solid var(--line);
@@ -156,14 +158,14 @@ main#quarto-document-content {
   transition: transform .3s;
 }
 .quarto-grid-link:hover img.thumbnail-image { transform: scale(1.025); }
-.quarto-grid-item .card-body { padding: 0; display: flex; flex-direction: column; }
+.quarto-grid-item .card-body { padding: 0; display: flex; flex-direction: column; flex-grow: 0; }
 .quarto-grid-item .listing-title {
   font: 400 26px/1.2 var(--serif);
   color: var(--ink);
   margin: 0 0 16px;
 }
 .quarto-grid-item .listing-description { font-size: 15px; line-height: 1.8; color: var(--muted); }
-.quarto-grid-item .listing-description p { margin-bottom: 18px; }
+.quarto-grid-item .listing-description p { margin-bottom: 12px; }
 .listing-categories { display: flex; flex-wrap: wrap; gap: 5px 8px; margin: 0 0 16px; }
 .listing-category,
 .quarto-grid-item .listing-category {
@@ -175,7 +177,19 @@ main#quarto-document-content {
   font: 400 12px/1.6 var(--sans);
   text-transform: none;
 }
-.card-attribution { margin-top: auto; font-size: 12px; color: var(--muted); gap: 10px; }
+.quarto-grid-item .card-attribution {
+  margin-top: 0;
+  padding-top: 0;
+  flex-grow: 0;
+  align-items: baseline;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--muted);
+  gap: 6px 10px;
+}
+.quarto-listing .pagination { justify-content: center; gap: 8px; margin-top: 36px; }
+.quarto-listing .page-link { color: var(--ink); background: transparent; border-color: var(--line); border-radius: 50%; min-width: 40px; text-align: center; }
+.quarto-listing .page-item.active .page-link { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .listing-author, .listing-date { font-size: 12px; font-weight: 400; color: var(--muted); }
 .listing-no-matching { font-size: 16px; padding: 25px 0; color: var(--muted); }
 #listing-project-listing .quarto-post {
@@ -244,36 +258,17 @@ main#quarto-document-content {
 
 .footer { padding: 0; border-top: 1px solid var(--line); background: transparent; }
 .nav-footer {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  display: flex;
+  justify-content: center;
   padding: 25px 4.1%;
   align-items: center;
   gap: 20px;
   font-size: 13px;
   color: var(--muted);
 }
-.nav-footer > div { min-width: 0; }
-.nav-footer-left { justify-self: start; text-align: left; }
-.nav-footer-center { justify-self: end; text-align: right; }
-.nav-footer-right { justify-self: center; text-align: center; }
-.nav-footer .nav-footer-right .footer-items { justify-content: center; gap: 9px; }
+.nav-footer .nav-footer-left, .nav-footer .nav-footer-right { display: none; }
+.nav-footer .nav-footer-center { flex: 0 1 auto; text-align: center; font-size: inherit; margin: 0; padding: 0; min-height: 0; }
 .nav-footer p { margin: 0; }
-.nav-footer .nav-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  color: var(--ink);
-  padding: 0;
-  margin: 0;
-}
-.nav-footer .nav-link:hover { color: var(--paper); background: var(--ink); }
-.nav-footer .bi { font-size: 17px; }
-.nav-footer-center { order: 3; }
-.nav-footer-right { order: 2; }
 
 @media (max-width: 1200px) {
   .quarto-listing .list.grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -302,8 +297,7 @@ main#quarto-document-content {
   #listing-project-listing .quarto-post { grid-template-columns: 1fr; gap: 28px; }
   #listing-project-listing .thumbnail img { height: 260px; }
   #listing-project-listing .listing-title { font-size: 31px; }
-  .nav-footer { grid-template-columns: 1fr; padding: 25px 7%; }
-  .nav-footer > div { justify-self: center; text-align: center; width: auto; }
+  .nav-footer { padding: 25px 7%; }
   .article-toc { width: 86%; margin-left: 7%; margin-right: 7%; }
   .detail-page .content-section h1 { font-size: 28px; }
 }

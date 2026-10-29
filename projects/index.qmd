@@ -7,6 +7,7 @@ listing:
   contents:
     - "phd-project/index.qmd"
   type: default
+  page-size: 6
   sort-ui: false
   filter-ui: false
   fields: [image, title, description, categories]

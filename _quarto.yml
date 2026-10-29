@@ -8,21 +8,7 @@ website:
   open-graph: true
   search: false
   page-footer:
-    left: "Harsha Halgamuwe Hewage"
-    center: "Made with Quarto"
-    right:
-      - icon: envelope
-        href: mailto:hewagehrc@gmail.com
-        aria-label: E-mail
-      - icon: github
-        href: https://github.com/chamara7h
-        aria-label: GitHub
-      - icon: linkedin
-        href: https://www.linkedin.com/in/harshachamara/
-        aria-label: LinkedIn
-      - icon: mortarboard-fill
-        href: https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en
-        aria-label: Google Scholar
+    center: "Made with ♥ and Quarto"
   navbar:
     title: "Home"
     collapse-below: md

@@ -12,6 +12,7 @@ listing:
     - 'jsi_session/*.qmd'
     - 'isf_2026/*.qmd'
   type: grid
+  page-size: 6
   sort: "date desc"
   filter-ui: true
   fields: [image, title, description, author, date, categories]
