@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
 
   <title>Home – dhis2_demo</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -682,168 +685,168 @@ LIVE DEMO
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">train.R</a></li><li><a href="#tabset-1-2">predict.R</a></li><li><a href="#tabset-1-3">isolated_run.R</a></li><li><a href="#tabset-1-4">MLproject.YML</a></li><li><a href="#tabset-1-5">Dockerfile</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># List packages</span></span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(fable)</span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(tsibble)</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a><span class="co"># train models - # auto ets model </span></span>
-<span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a>train_chap <span class="ot">&lt;-</span> <span class="cf">function</span>(csv_fn, model_fn) {</span>
-<span id="cb1-9"><a></a>  df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(csv_fn) <span class="sc">|&gt;</span> </span>
-<span id="cb1-10"><a></a>    <span class="fu">mutate</span>(<span class="at">target =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(target), <span class="dv">0</span>, target),</span>
-<span id="cb1-11"><a></a>           <span class="at">time_period =</span> <span class="fu">yearmonth</span>(time_period))</span>
-<span id="cb1-12"><a></a>  </span>
-<span id="cb1-13"><a></a>  df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb1-14"><a></a>    <span class="fu">as_tsibble</span>(<span class="at">index =</span> time_period, <span class="at">key =</span> location) <span class="sc">|&gt;</span> </span>
-<span id="cb1-15"><a></a>    <span class="fu">fill_gaps</span>(<span class="at">target=</span><span class="dv">0</span>L, <span class="at">.full =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-16"><a></a>  </span>
-<span id="cb1-17"><a></a>  model <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb1-18"><a></a>    <span class="fu">model</span>(<span class="at">ets =</span> <span class="fu">ETS</span>(target))</span>
-<span id="cb1-19"><a></a>  </span>
-<span id="cb1-20"><a></a>  <span class="fu">saveRDS</span>(model, <span class="at">file=</span>model_fn)</span>
-<span id="cb1-21"><a></a>  </span>
-<span id="cb1-22"><a></a>  <span class="fu">print</span>(<span class="st">'train done'</span>)</span>
-<span id="cb1-23"><a></a>  </span>
-<span id="cb1-24"><a></a>}</span>
-<span id="cb1-25"><a></a></span>
-<span id="cb1-26"><a></a>args <span class="ot">&lt;-</span> <span class="fu">commandArgs</span>(<span class="at">trailingOnly =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-27"><a></a></span>
-<span id="cb1-28"><a></a><span class="cf">if</span> (<span class="fu">length</span>(args) <span class="sc">==</span> <span class="dv">2</span>) {</span>
-<span id="cb1-29"><a></a>  csv_fn <span class="ot">&lt;-</span> args[<span class="dv">1</span>]</span>
-<span id="cb1-30"><a></a>  model_fn <span class="ot">&lt;-</span> args[<span class="dv">2</span>]</span>
-<span id="cb1-31"><a></a>  </span>
-<span id="cb1-32"><a></a>  <span class="fu">train_chap</span>(csv_fn, model_fn)</span>
-<span id="cb1-33"><a></a>}<span class="co"># else {</span></span>
-<span id="cb1-34"><a></a><span class="co">#  stop("Usage: Rscript train.R &lt;csv_fn&gt; &lt;model_fn&gt;")</span></span>
-<span id="cb1-35"><a></a><span class="co">#}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="co"># List packages</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="fu">library</span>(fable)</span>
+<span id="cb1-4"><a aria-label="4"></a><span class="fu">library</span>(tsibble)</span>
+<span id="cb1-5"><a aria-label="5"></a></span>
+<span id="cb1-6"><a aria-label="6"></a><span class="co"># train models - # auto ets model </span></span>
+<span id="cb1-7"><a aria-label="7"></a></span>
+<span id="cb1-8"><a aria-label="8"></a>train_chap <span class="ot">&lt;-</span> <span class="cf">function</span>(csv_fn, model_fn) {</span>
+<span id="cb1-9"><a aria-label="9"></a>  df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(csv_fn) <span class="sc">|&gt;</span> </span>
+<span id="cb1-10"><a aria-label="10"></a>    <span class="fu">mutate</span>(<span class="at">target =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(target), <span class="dv">0</span>, target),</span>
+<span id="cb1-11"><a aria-label="11"></a>           <span class="at">time_period =</span> <span class="fu">yearmonth</span>(time_period))</span>
+<span id="cb1-12"><a aria-label="12"></a>  </span>
+<span id="cb1-13"><a aria-label="13"></a>  df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> <span class="fu">distinct</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-14"><a aria-label="14"></a>    <span class="fu">as_tsibble</span>(<span class="at">index =</span> time_period, <span class="at">key =</span> location) <span class="sc">|&gt;</span> </span>
+<span id="cb1-15"><a aria-label="15"></a>    <span class="fu">fill_gaps</span>(<span class="at">target=</span><span class="dv">0</span>L, <span class="at">.full =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-16"><a aria-label="16"></a>  </span>
+<span id="cb1-17"><a aria-label="17"></a>  model <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
+<span id="cb1-18"><a aria-label="18"></a>    <span class="fu">model</span>(<span class="at">ets =</span> <span class="fu">ETS</span>(target))</span>
+<span id="cb1-19"><a aria-label="19"></a>  </span>
+<span id="cb1-20"><a aria-label="20"></a>  <span class="fu">saveRDS</span>(model, <span class="at">file=</span>model_fn)</span>
+<span id="cb1-21"><a aria-label="21"></a>  </span>
+<span id="cb1-22"><a aria-label="22"></a>  <span class="fu">print</span>(<span class="st">'train done'</span>)</span>
+<span id="cb1-23"><a aria-label="23"></a>  </span>
+<span id="cb1-24"><a aria-label="24"></a>}</span>
+<span id="cb1-25"><a aria-label="25"></a></span>
+<span id="cb1-26"><a aria-label="26"></a>args <span class="ot">&lt;-</span> <span class="fu">commandArgs</span>(<span class="at">trailingOnly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-27"><a aria-label="27"></a></span>
+<span id="cb1-28"><a aria-label="28"></a><span class="cf">if</span> (<span class="fu">length</span>(args) <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb1-29"><a aria-label="29"></a>  csv_fn <span class="ot">&lt;-</span> args[<span class="dv">1</span>]</span>
+<span id="cb1-30"><a aria-label="30"></a>  model_fn <span class="ot">&lt;-</span> args[<span class="dv">2</span>]</span>
+<span id="cb1-31"><a aria-label="31"></a>  </span>
+<span id="cb1-32"><a aria-label="32"></a>  <span class="fu">train_chap</span>(csv_fn, model_fn)</span>
+<span id="cb1-33"><a aria-label="33"></a>}<span class="co"># else {</span></span>
+<span id="cb1-34"><a aria-label="34"></a><span class="co">#  stop("Usage: Rscript train.R &lt;csv_fn&gt; &lt;model_fn&gt;")</span></span>
+<span id="cb1-35"><a aria-label="35"></a><span class="co">#}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Load required libraries</span></span>
-<span id="cb2-2"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-3"><a></a><span class="fu">library</span>(fable)</span>
-<span id="cb2-4"><a></a><span class="fu">library</span>(tsibble)</span>
-<span id="cb2-5"><a></a></span>
-<span id="cb2-6"><a></a><span class="co"># Define the predict function</span></span>
-<span id="cb2-7"><a></a>predict_chap <span class="ot">&lt;-</span> <span class="cf">function</span>(model_fn, historic_data_fn, future_climatedata_fn, predictions_fn) {</span>
-<span id="cb2-8"><a></a>  </span>
-<span id="cb2-9"><a></a>  <span class="co"># Load the pre-trained model structure</span></span>
-<span id="cb2-10"><a></a>  model <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(model_fn)</span>
-<span id="cb2-11"><a></a>  </span>
-<span id="cb2-12"><a></a>  <span class="fu">print</span>(<span class="st">'read model'</span>)</span>
-<span id="cb2-13"><a></a>  </span>
-<span id="cb2-14"><a></a>  <span class="co"># Load the complete historical data</span></span>
-<span id="cb2-15"><a></a>  historic_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(historic_data_fn) <span class="sc">|&gt;</span></span>
-<span id="cb2-16"><a></a>    <span class="fu">mutate</span>(<span class="at">target =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(target), <span class="dv">0</span>, target),</span>
-<span id="cb2-17"><a></a>           <span class="at">time_period =</span> <span class="fu">yearmonth</span>(time_period)) <span class="sc">|&gt;</span></span>
-<span id="cb2-18"><a></a>    <span class="fu">as_tsibble</span>(<span class="at">index =</span> time_period, <span class="at">key =</span> location) <span class="sc">|&gt;</span> </span>
-<span id="cb2-19"><a></a>    <span class="fu">fill_gaps</span>(<span class="at">target=</span><span class="dv">0</span>L, <span class="at">.full =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb2-20"><a></a>  </span>
-<span id="cb2-21"><a></a>  <span class="co"># Load the future data (covariates only)</span></span>
-<span id="cb2-22"><a></a>  future_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(future_climatedata_fn) <span class="sc">|&gt;</span></span>
-<span id="cb2-23"><a></a>    <span class="fu">mutate</span>(<span class="at">time_period =</span> <span class="fu">yearmonth</span>(time_period)) <span class="sc">|&gt;</span></span>
-<span id="cb2-24"><a></a>    <span class="fu">as_tsibble</span>(<span class="at">index =</span> time_period, <span class="at">key =</span> location)</span>
-<span id="cb2-25"><a></a>  </span>
-<span id="cb2-26"><a></a>  <span class="fu">print</span>(<span class="st">'load_data'</span>)</span>
-<span id="cb2-27"><a></a>  </span>
-<span id="cb2-28"><a></a>  <span class="co"># Refit the model with all historic data and forecast</span></span>
-<span id="cb2-29"><a></a>  </span>
-<span id="cb2-30"><a></a>  model <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span></span>
-<span id="cb2-31"><a></a>    <span class="fu">refit</span>(historic_df)</span>
-<span id="cb2-32"><a></a>  </span>
-<span id="cb2-33"><a></a>  y_pred <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span></span>
-<span id="cb2-34"><a></a>    <span class="fu">generate</span>(<span class="at">new_data =</span> future_df, <span class="at">bootstrap =</span> <span class="cn">FALSE</span>, <span class="at">times =</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb2-35"><a></a>    <span class="fu">mutate</span>(<span class="at">.rep =</span> <span class="fu">as.integer</span>(.rep)) <span class="sc">|&gt;</span> </span>
-<span id="cb2-36"><a></a>    <span class="fu">arrange</span>(.rep) <span class="sc">|&gt;</span> </span>
-<span id="cb2-37"><a></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> .rep, <span class="at">values_from =</span> .sim, <span class="at">names_prefix =</span> <span class="st">"sample_"</span>)</span>
-<span id="cb2-38"><a></a>  </span>
-<span id="cb2-39"><a></a>  <span class="fu">print</span>(y_pred)</span>
-<span id="cb2-40"><a></a>  </span>
-<span id="cb2-41"><a></a>  <span class="co"># saveRDS(model, file = model_fn)</span></span>
-<span id="cb2-42"><a></a>  </span>
-<span id="cb2-43"><a></a>  df_out <span class="ot">&lt;-</span> future_df <span class="sc">|&gt;</span></span>
-<span id="cb2-44"><a></a>    <span class="fu">left_join</span>(y_pred <span class="sc">|&gt;</span></span>
-<span id="cb2-45"><a></a>                <span class="fu">select</span>(<span class="sc">-</span>.model) <span class="sc">|&gt;</span> </span>
-<span id="cb2-46"><a></a>                <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"sample_"</span>), <span class="sc">~</span> <span class="fu">if_else</span>(. <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="dv">0</span>, .))) <span class="sc">|&gt;</span></span>
-<span id="cb2-47"><a></a>                <span class="fu">rename_with</span>(<span class="sc">~</span> <span class="fu">paste0</span>(<span class="st">"sample_"</span>, <span class="fu">as.integer</span>(<span class="fu">str_extract</span>(., <span class="st">"</span><span class="sc">\\</span><span class="st">d+"</span>)) <span class="sc">-</span> <span class="dv">1</span>), <span class="fu">starts_with</span>(<span class="st">"sample_"</span>)),</span>
-<span id="cb2-48"><a></a>              <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'location'</span>, <span class="st">'time_period'</span>)</span>
-<span id="cb2-49"><a></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb2-50"><a></a>    <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-51"><a></a>    <span class="fu">mutate</span>(<span class="at">time_period =</span> <span class="fu">format</span>(<span class="fu">as.Date</span>(time_period), <span class="st">"%Y-%m"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb2-52"><a></a>    <span class="fu">select</span>(time_period, location, <span class="fu">starts_with</span>(<span class="st">"sample_"</span>))</span>
-<span id="cb2-53"><a></a>  </span>
-<span id="cb2-54"><a></a>  </span>
-<span id="cb2-55"><a></a>  <span class="fu">print</span>(<span class="st">'made predictions'</span>)</span>
-<span id="cb2-56"><a></a>  </span>
-<span id="cb2-57"><a></a>  df_out <span class="sc">|&gt;</span> <span class="fu">print</span>()</span>
-<span id="cb2-58"><a></a>  </span>
-<span id="cb2-59"><a></a>  </span>
-<span id="cb2-60"><a></a>  <span class="fu">write.csv</span>(df_out, predictions_fn, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-61"><a></a>  </span>
-<span id="cb2-62"><a></a>  fname <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"df_out_"</span>, <span class="fu">format</span>(<span class="fu">Sys.time</span>(), <span class="st">"%Y%m%d_%H%M%S"</span>), predictions_fn)</span>
-<span id="cb2-63"><a></a>  <span class="fu">write_csv</span>(y_pred, fname)</span>
-<span id="cb2-64"><a></a>  </span>
-<span id="cb2-65"><a></a>}</span>
-<span id="cb2-66"><a></a></span>
-<span id="cb2-67"><a></a><span class="co"># --- Command Line Argument Handling (No change here) ---</span></span>
-<span id="cb2-68"><a></a></span>
-<span id="cb2-69"><a></a>args <span class="ot">&lt;-</span> <span class="fu">commandArgs</span>(<span class="at">trailingOnly =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-70"><a></a></span>
-<span id="cb2-71"><a></a><span class="cf">if</span> (<span class="fu">length</span>(args) <span class="sc">==</span> <span class="dv">4</span>) {</span>
-<span id="cb2-72"><a></a>  model_fn <span class="ot">&lt;-</span> args[<span class="dv">1</span>]</span>
-<span id="cb2-73"><a></a>  historic_data_fn <span class="ot">&lt;-</span> args[<span class="dv">2</span>]</span>
-<span id="cb2-74"><a></a>  future_climatedata_fn <span class="ot">&lt;-</span> args[<span class="dv">3</span>]</span>
-<span id="cb2-75"><a></a>  predictions_fn <span class="ot">&lt;-</span> args[<span class="dv">4</span>]</span>
-<span id="cb2-76"><a></a>  </span>
-<span id="cb2-77"><a></a>  <span class="fu">predict_chap</span>(model_fn, historic_data_fn, future_climatedata_fn, predictions_fn)</span>
-<span id="cb2-78"><a></a>}</span>
-<span id="cb2-79"><a></a></span>
-<span id="cb2-80"><a></a><span class="co"># Inventory sim</span></span>
-<span id="cb2-81"><a></a></span>
-<span id="cb2-82"><a></a><span class="fu">source</span>(<span class="st">'quantile_based_inventory_sim.R'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a><span class="co"># Load required libraries</span></span>
+<span id="cb2-2"><a aria-label="2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a aria-label="3"></a><span class="fu">library</span>(fable)</span>
+<span id="cb2-4"><a aria-label="4"></a><span class="fu">library</span>(tsibble)</span>
+<span id="cb2-5"><a aria-label="5"></a></span>
+<span id="cb2-6"><a aria-label="6"></a><span class="co"># Define the predict function</span></span>
+<span id="cb2-7"><a aria-label="7"></a>predict_chap <span class="ot">&lt;-</span> <span class="cf">function</span>(model_fn, historic_data_fn, future_climatedata_fn, predictions_fn) {</span>
+<span id="cb2-8"><a aria-label="8"></a>  </span>
+<span id="cb2-9"><a aria-label="9"></a>  <span class="co"># Load the pre-trained model structure</span></span>
+<span id="cb2-10"><a aria-label="10"></a>  model <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(model_fn)</span>
+<span id="cb2-11"><a aria-label="11"></a>  </span>
+<span id="cb2-12"><a aria-label="12"></a>  <span class="fu">print</span>(<span class="st">'read model'</span>)</span>
+<span id="cb2-13"><a aria-label="13"></a>  </span>
+<span id="cb2-14"><a aria-label="14"></a>  <span class="co"># Load the complete historical data</span></span>
+<span id="cb2-15"><a aria-label="15"></a>  historic_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(historic_data_fn) <span class="sc">|&gt;</span></span>
+<span id="cb2-16"><a aria-label="16"></a>    <span class="fu">mutate</span>(<span class="at">target =</span> <span class="fu">if_else</span>(<span class="fu">is.na</span>(target), <span class="dv">0</span>, target),</span>
+<span id="cb2-17"><a aria-label="17"></a>           <span class="at">time_period =</span> <span class="fu">yearmonth</span>(time_period)) <span class="sc">|&gt;</span></span>
+<span id="cb2-18"><a aria-label="18"></a>    <span class="fu">as_tsibble</span>(<span class="at">index =</span> time_period, <span class="at">key =</span> location) <span class="sc">|&gt;</span> </span>
+<span id="cb2-19"><a aria-label="19"></a>    <span class="fu">fill_gaps</span>(<span class="at">target=</span><span class="dv">0</span>L, <span class="at">.full =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb2-20"><a aria-label="20"></a>  </span>
+<span id="cb2-21"><a aria-label="21"></a>  <span class="co"># Load the future data (covariates only)</span></span>
+<span id="cb2-22"><a aria-label="22"></a>  future_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(future_climatedata_fn) <span class="sc">|&gt;</span></span>
+<span id="cb2-23"><a aria-label="23"></a>    <span class="fu">mutate</span>(<span class="at">time_period =</span> <span class="fu">yearmonth</span>(time_period)) <span class="sc">|&gt;</span></span>
+<span id="cb2-24"><a aria-label="24"></a>    <span class="fu">as_tsibble</span>(<span class="at">index =</span> time_period, <span class="at">key =</span> location)</span>
+<span id="cb2-25"><a aria-label="25"></a>  </span>
+<span id="cb2-26"><a aria-label="26"></a>  <span class="fu">print</span>(<span class="st">'load_data'</span>)</span>
+<span id="cb2-27"><a aria-label="27"></a>  </span>
+<span id="cb2-28"><a aria-label="28"></a>  <span class="co"># Refit the model with all historic data and forecast</span></span>
+<span id="cb2-29"><a aria-label="29"></a>  </span>
+<span id="cb2-30"><a aria-label="30"></a>  model <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span></span>
+<span id="cb2-31"><a aria-label="31"></a>    <span class="fu">refit</span>(historic_df)</span>
+<span id="cb2-32"><a aria-label="32"></a>  </span>
+<span id="cb2-33"><a aria-label="33"></a>  y_pred <span class="ot">&lt;-</span> model <span class="sc">|&gt;</span></span>
+<span id="cb2-34"><a aria-label="34"></a>    <span class="fu">generate</span>(<span class="at">new_data =</span> future_df, <span class="at">bootstrap =</span> <span class="cn">FALSE</span>, <span class="at">times =</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-35"><a aria-label="35"></a>    <span class="fu">mutate</span>(<span class="at">.rep =</span> <span class="fu">as.integer</span>(.rep)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-36"><a aria-label="36"></a>    <span class="fu">arrange</span>(.rep) <span class="sc">|&gt;</span> </span>
+<span id="cb2-37"><a aria-label="37"></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> .rep, <span class="at">values_from =</span> .sim, <span class="at">names_prefix =</span> <span class="st">"sample_"</span>)</span>
+<span id="cb2-38"><a aria-label="38"></a>  </span>
+<span id="cb2-39"><a aria-label="39"></a>  <span class="fu">print</span>(y_pred)</span>
+<span id="cb2-40"><a aria-label="40"></a>  </span>
+<span id="cb2-41"><a aria-label="41"></a>  <span class="co"># saveRDS(model, file = model_fn)</span></span>
+<span id="cb2-42"><a aria-label="42"></a>  </span>
+<span id="cb2-43"><a aria-label="43"></a>  df_out <span class="ot">&lt;-</span> future_df <span class="sc">|&gt;</span></span>
+<span id="cb2-44"><a aria-label="44"></a>    <span class="fu">left_join</span>(y_pred <span class="sc">|&gt;</span></span>
+<span id="cb2-45"><a aria-label="45"></a>                <span class="fu">select</span>(<span class="sc">-</span>.model) <span class="sc">|&gt;</span> </span>
+<span id="cb2-46"><a aria-label="46"></a>                <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"sample_"</span>), <span class="sc">~</span> <span class="fu">if_else</span>(. <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="dv">0</span>, .))) <span class="sc">|&gt;</span></span>
+<span id="cb2-47"><a aria-label="47"></a>                <span class="fu">rename_with</span>(<span class="sc">~</span> <span class="fu">paste0</span>(<span class="st">"sample_"</span>, <span class="fu">as.integer</span>(<span class="fu">str_extract</span>(., <span class="st">"</span><span class="sc">\\</span><span class="st">d+"</span>)) <span class="sc">-</span> <span class="dv">1</span>), <span class="fu">starts_with</span>(<span class="st">"sample_"</span>)),</span>
+<span id="cb2-48"><a aria-label="48"></a>              <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'location'</span>, <span class="st">'time_period'</span>)</span>
+<span id="cb2-49"><a aria-label="49"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb2-50"><a aria-label="50"></a>    <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-51"><a aria-label="51"></a>    <span class="fu">mutate</span>(<span class="at">time_period =</span> <span class="fu">format</span>(<span class="fu">as.Date</span>(time_period), <span class="st">"%Y-%m"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-52"><a aria-label="52"></a>    <span class="fu">select</span>(time_period, location, <span class="fu">starts_with</span>(<span class="st">"sample_"</span>))</span>
+<span id="cb2-53"><a aria-label="53"></a>  </span>
+<span id="cb2-54"><a aria-label="54"></a>  </span>
+<span id="cb2-55"><a aria-label="55"></a>  <span class="fu">print</span>(<span class="st">'made predictions'</span>)</span>
+<span id="cb2-56"><a aria-label="56"></a>  </span>
+<span id="cb2-57"><a aria-label="57"></a>  df_out <span class="sc">|&gt;</span> <span class="fu">print</span>()</span>
+<span id="cb2-58"><a aria-label="58"></a>  </span>
+<span id="cb2-59"><a aria-label="59"></a>  </span>
+<span id="cb2-60"><a aria-label="60"></a>  <span class="fu">write.csv</span>(df_out, predictions_fn, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-61"><a aria-label="61"></a>  </span>
+<span id="cb2-62"><a aria-label="62"></a>  fname <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"df_out_"</span>, <span class="fu">format</span>(<span class="fu">Sys.time</span>(), <span class="st">"%Y%m%d_%H%M%S"</span>), predictions_fn)</span>
+<span id="cb2-63"><a aria-label="63"></a>  <span class="fu">write_csv</span>(y_pred, fname)</span>
+<span id="cb2-64"><a aria-label="64"></a>  </span>
+<span id="cb2-65"><a aria-label="65"></a>}</span>
+<span id="cb2-66"><a aria-label="66"></a></span>
+<span id="cb2-67"><a aria-label="67"></a><span class="co"># --- Command Line Argument Handling (No change here) ---</span></span>
+<span id="cb2-68"><a aria-label="68"></a></span>
+<span id="cb2-69"><a aria-label="69"></a>args <span class="ot">&lt;-</span> <span class="fu">commandArgs</span>(<span class="at">trailingOnly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-70"><a aria-label="70"></a></span>
+<span id="cb2-71"><a aria-label="71"></a><span class="cf">if</span> (<span class="fu">length</span>(args) <span class="sc">==</span> <span class="dv">4</span>) {</span>
+<span id="cb2-72"><a aria-label="72"></a>  model_fn <span class="ot">&lt;-</span> args[<span class="dv">1</span>]</span>
+<span id="cb2-73"><a aria-label="73"></a>  historic_data_fn <span class="ot">&lt;-</span> args[<span class="dv">2</span>]</span>
+<span id="cb2-74"><a aria-label="74"></a>  future_climatedata_fn <span class="ot">&lt;-</span> args[<span class="dv">3</span>]</span>
+<span id="cb2-75"><a aria-label="75"></a>  predictions_fn <span class="ot">&lt;-</span> args[<span class="dv">4</span>]</span>
+<span id="cb2-76"><a aria-label="76"></a>  </span>
+<span id="cb2-77"><a aria-label="77"></a>  <span class="fu">predict_chap</span>(model_fn, historic_data_fn, future_climatedata_fn, predictions_fn)</span>
+<span id="cb2-78"><a aria-label="78"></a>}</span>
+<span id="cb2-79"><a aria-label="79"></a></span>
+<span id="cb2-80"><a aria-label="80"></a><span class="co"># Inventory sim</span></span>
+<span id="cb2-81"><a aria-label="81"></a></span>
+<span id="cb2-82"><a aria-label="82"></a><span class="fu">source</span>(<span class="st">'quantile_based_inventory_sim.R'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">source</span>(<span class="st">"ets-r/train.R"</span>)</span>
-<span id="cb3-2"><a></a><span class="fu">source</span>(<span class="st">"ets-r/predict.R"</span>)</span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a><span class="fu">train_chap</span>(<span class="st">"ets-r/training_data.csv"</span>, </span>
-<span id="cb3-5"><a></a>           <span class="st">"ets-r/output/model.bin"</span>)</span>
-<span id="cb3-6"><a></a></span>
-<span id="cb3-7"><a></a><span class="fu">predict_chap</span>(<span class="st">"ets-r/output/model.bin"</span>, </span>
-<span id="cb3-8"><a></a>             <span class="st">"ets-r/historic_data.csv"</span>, </span>
-<span id="cb3-9"><a></a>             <span class="st">"ets-r/future_data.csv"</span>, </span>
-<span id="cb3-10"><a></a>             <span class="st">"ets-r/predictions.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a><span class="fu">source</span>(<span class="st">"ets-r/train.R"</span>)</span>
+<span id="cb3-2"><a aria-label="2"></a><span class="fu">source</span>(<span class="st">"ets-r/predict.R"</span>)</span>
+<span id="cb3-3"><a aria-label="3"></a></span>
+<span id="cb3-4"><a aria-label="4"></a><span class="fu">train_chap</span>(<span class="st">"ets-r/training_data.csv"</span>, </span>
+<span id="cb3-5"><a aria-label="5"></a>           <span class="st">"ets-r/output/model.bin"</span>)</span>
+<span id="cb3-6"><a aria-label="6"></a></span>
+<span id="cb3-7"><a aria-label="7"></a><span class="fu">predict_chap</span>(<span class="st">"ets-r/output/model.bin"</span>, </span>
+<span id="cb3-8"><a aria-label="8"></a>             <span class="st">"ets-r/historic_data.csv"</span>, </span>
+<span id="cb3-9"><a aria-label="9"></a>             <span class="st">"ets-r/future_data.csv"</span>, </span>
+<span id="cb3-10"><a aria-label="10"></a>             <span class="st">"ets-r/predictions.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a></a><span class="fu">name</span><span class="kw">:</span><span class="at"> ets-r</span></span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a><span class="fu">target</span><span class="kw">:</span><span class="at"> disease_cases</span></span>
-<span id="cb4-4"><a></a></span>
-<span id="cb4-5"><a></a><span class="fu">adapters</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">'target'</span><span class="kw">:</span><span class="at"> </span><span class="st">'disease_cases'</span><span class="kw">}</span></span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a><span class="fu">docker_env</span><span class="kw">:</span></span>
-<span id="cb4-8"><a></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ets-r:latest</span></span>
-<span id="cb4-9"><a></a></span>
-<span id="cb4-10"><a></a><span class="fu">entry_points</span><span class="kw">:</span></span>
-<span id="cb4-11"><a></a><span class="at">  </span><span class="fu">train</span><span class="kw">:</span></span>
-<span id="cb4-12"><a></a><span class="at">    </span><span class="fu">parameters</span><span class="kw">:</span></span>
-<span id="cb4-13"><a></a><span class="at">      </span><span class="fu">train_data</span><span class="kw">:</span><span class="at"> path</span></span>
-<span id="cb4-14"><a></a><span class="at">      </span><span class="fu">model</span><span class="kw">:</span><span class="at"> path</span></span>
-<span id="cb4-15"><a></a><span class="at">    </span><span class="fu">command</span><span class="kw">:</span><span class="at"> </span><span class="st">"Rscript train.R {train_data} {model}"</span></span>
-<span id="cb4-16"><a></a><span class="at">  </span><span class="fu">predict</span><span class="kw">:</span></span>
-<span id="cb4-17"><a></a><span class="at">    </span><span class="fu">parameters</span><span class="kw">:</span></span>
-<span id="cb4-18"><a></a><span class="at">      </span><span class="fu">historic_data</span><span class="kw">:</span><span class="at"> path</span></span>
-<span id="cb4-19"><a></a><span class="at">      </span><span class="fu">future_data</span><span class="kw">:</span><span class="at"> path</span></span>
-<span id="cb4-20"><a></a><span class="at">      </span><span class="fu">model</span><span class="kw">:</span><span class="at"> str</span></span>
-<span id="cb4-21"><a></a><span class="at">      </span><span class="fu">out_file</span><span class="kw">:</span><span class="at"> path</span></span>
-<span id="cb4-22"><a></a><span class="at">    </span><span class="fu">command</span><span class="kw">:</span><span class="at"> </span><span class="st">"Rscript predict.R {model} {historic_data} {future_data} {out_file}"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a aria-label="1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> ets-r</span></span>
+<span id="cb4-2"><a aria-label="2"></a></span>
+<span id="cb4-3"><a aria-label="3"></a><span class="fu">target</span><span class="kw">:</span><span class="at"> disease_cases</span></span>
+<span id="cb4-4"><a aria-label="4"></a></span>
+<span id="cb4-5"><a aria-label="5"></a><span class="fu">adapters</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="fu">'target'</span><span class="kw">:</span><span class="at"> </span><span class="st">'disease_cases'</span><span class="kw">}</span></span>
+<span id="cb4-6"><a aria-label="6"></a></span>
+<span id="cb4-7"><a aria-label="7"></a><span class="fu">docker_env</span><span class="kw">:</span></span>
+<span id="cb4-8"><a aria-label="8"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ets-r:latest</span></span>
+<span id="cb4-9"><a aria-label="9"></a></span>
+<span id="cb4-10"><a aria-label="10"></a><span class="fu">entry_points</span><span class="kw">:</span></span>
+<span id="cb4-11"><a aria-label="11"></a><span class="at">  </span><span class="fu">train</span><span class="kw">:</span></span>
+<span id="cb4-12"><a aria-label="12"></a><span class="at">    </span><span class="fu">parameters</span><span class="kw">:</span></span>
+<span id="cb4-13"><a aria-label="13"></a><span class="at">      </span><span class="fu">train_data</span><span class="kw">:</span><span class="at"> path</span></span>
+<span id="cb4-14"><a aria-label="14"></a><span class="at">      </span><span class="fu">model</span><span class="kw">:</span><span class="at"> path</span></span>
+<span id="cb4-15"><a aria-label="15"></a><span class="at">    </span><span class="fu">command</span><span class="kw">:</span><span class="at"> </span><span class="st">"Rscript train.R {train_data} {model}"</span></span>
+<span id="cb4-16"><a aria-label="16"></a><span class="at">  </span><span class="fu">predict</span><span class="kw">:</span></span>
+<span id="cb4-17"><a aria-label="17"></a><span class="at">    </span><span class="fu">parameters</span><span class="kw">:</span></span>
+<span id="cb4-18"><a aria-label="18"></a><span class="at">      </span><span class="fu">historic_data</span><span class="kw">:</span><span class="at"> path</span></span>
+<span id="cb4-19"><a aria-label="19"></a><span class="at">      </span><span class="fu">future_data</span><span class="kw">:</span><span class="at"> path</span></span>
+<span id="cb4-20"><a aria-label="20"></a><span class="at">      </span><span class="fu">model</span><span class="kw">:</span><span class="at"> str</span></span>
+<span id="cb4-21"><a aria-label="21"></a><span class="at">      </span><span class="fu">out_file</span><span class="kw">:</span><span class="at"> path</span></span>
+<span id="cb4-22"><a aria-label="22"></a><span class="at">    </span><span class="fu">command</span><span class="kw">:</span><span class="at"> </span><span class="st">"Rscript predict.R {model} {historic_data} {future_data} {out_file}"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a></a>FROM ghcr.io/dhis2-chap/docker_r_inla:master</span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a>RUN apt-get update</span>
-<span id="cb5-4"><a></a>RUN apt-get install -y libharfbuzz-dev libfribidi-dev</span>
-<span id="cb5-5"><a></a>RUN R -e 'r = getOption("repos"); r["CRAN"] = "http://cran.us.r-project.org"; options(repos = r); install.packages(c("tidyverse", "fable", "tsibble", "fabletools", "fpp3", "doParallel"), repos=c(getOption("repos"), dep=TRUE))'</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource txt number-lines code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a aria-label="1"></a>FROM ghcr.io/dhis2-chap/docker_r_inla:master</span>
+<span id="cb5-2"><a aria-label="2"></a></span>
+<span id="cb5-3"><a aria-label="3"></a>RUN apt-get update</span>
+<span id="cb5-4"><a aria-label="4"></a>RUN apt-get install -y libharfbuzz-dev libfribidi-dev</span>
+<span id="cb5-5"><a aria-label="5"></a>RUN R -e 'r = getOption("repos"); r["CRAN"] = "http://cran.us.r-project.org"; options(repos = r); install.packages(c("tidyverse", "fable", "tsibble", "fabletools", "fpp3", "doParallel"), repos=c(getOption("repos"), dep=TRUE))'</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -854,150 +857,150 @@ LIVE DEMO
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Prepare data</a></li><li><a href="#tabset-2-2">Inventory function</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Inventory simulation</span></span>
-<span id="cb6-2"><a></a></span>
-<span id="cb6-3"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb6-4"><a></a><span class="fu">library</span>(tsibble)</span>
-<span id="cb6-5"><a></a><span class="fu">library</span>(doParallel)</span>
-<span id="cb6-6"><a></a></span>
-<span id="cb6-7"><a></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
-<span id="cb6-8"><a></a></span>
-<span id="cb6-9"><a></a><span class="co"># Read data ---------------------------------------------------------------</span></span>
-<span id="cb6-10"><a></a></span>
-<span id="cb6-11"><a></a>actual_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/laos/laos_epi_cleaned.csv'</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-12"><a></a>  <span class="fu">rename</span>(<span class="at">date =</span> time_period,</span>
-<span id="cb6-13"><a></a>         <span class="at">dispensed =</span> disease_cases) <span class="sc">|&gt;</span> </span>
-<span id="cb6-14"><a></a>  <span class="fu">select</span>(date, location, dispensed) <span class="sc">|&gt;</span> </span>
-<span id="cb6-15"><a></a>  <span class="fu">as_tibble</span>()</span>
-<span id="cb6-16"><a></a></span>
-<span id="cb6-17"><a></a>pred_all <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'predictions.csv'</span>)</span>
-<span id="cb6-18"><a></a></span>
-<span id="cb6-19"><a></a>pred_master_df <span class="ot">&lt;-</span> pred_all <span class="sc">|&gt;</span> </span>
-<span id="cb6-20"><a></a>  <span class="fu">rename</span>(<span class="at">date =</span> time_period) <span class="sc">|&gt;</span> </span>
-<span id="cb6-21"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>), <span class="sc">~</span> <span class="fu">pmax</span>(., <span class="dv">0</span>))) <span class="sc">|&gt;</span> </span>
-<span id="cb6-22"><a></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb6-23"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-24"><a></a>    <span class="at">mean =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="dv">3</span>,</span>
-<span id="cb6-25"><a></a>    <span class="at">q80  =</span> <span class="fu">quantile</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">probs =</span> <span class="fl">0.80</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">names =</span> <span class="cn">FALSE</span>),</span>
-<span id="cb6-26"><a></a>    <span class="at">q85  =</span> <span class="fu">quantile</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">probs =</span> <span class="fl">0.85</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">names =</span> <span class="cn">FALSE</span>),</span>
-<span id="cb6-27"><a></a>    <span class="at">q90  =</span> <span class="fu">quantile</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">probs =</span> <span class="fl">0.90</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">names =</span> <span class="cn">FALSE</span>),</span>
-<span id="cb6-28"><a></a>    <span class="at">q95  =</span> <span class="fu">quantile</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">probs =</span> <span class="fl">0.95</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">names =</span> <span class="cn">FALSE</span>),</span>
-<span id="cb6-29"><a></a>    <span class="at">q975 =</span> <span class="fu">quantile</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">probs =</span> <span class="fl">0.975</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb6-30"><a></a>  )  <span class="sc">|&gt;</span> </span>
-<span id="cb6-31"><a></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb6-32"><a></a>  <span class="fu">select</span>(date, location, mean, q80, q85, q90, q95, q975)</span>
-<span id="cb6-33"><a></a></span>
-<span id="cb6-34"><a></a>master_df <span class="ot">&lt;-</span> pred_master_df <span class="sc">|&gt;</span> </span>
-<span id="cb6-35"><a></a>  <span class="fu">left_join</span>(actual_df, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'date'</span>, <span class="st">'location'</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb6-36"><a></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(date, <span class="st">"-01"</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a><span class="co"># Inventory simulation</span></span>
+<span id="cb6-2"><a aria-label="2"></a></span>
+<span id="cb6-3"><a aria-label="3"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-4"><a aria-label="4"></a><span class="fu">library</span>(tsibble)</span>
+<span id="cb6-5"><a aria-label="5"></a><span class="fu">library</span>(doParallel)</span>
+<span id="cb6-6"><a aria-label="6"></a></span>
+<span id="cb6-7"><a aria-label="7"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
+<span id="cb6-8"><a aria-label="8"></a></span>
+<span id="cb6-9"><a aria-label="9"></a><span class="co"># Read data ---------------------------------------------------------------</span></span>
+<span id="cb6-10"><a aria-label="10"></a></span>
+<span id="cb6-11"><a aria-label="11"></a>actual_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/laos/laos_epi_cleaned.csv'</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-12"><a aria-label="12"></a>  <span class="fu">rename</span>(<span class="at">date =</span> time_period,</span>
+<span id="cb6-13"><a aria-label="13"></a>         <span class="at">dispensed =</span> disease_cases) <span class="sc">|&gt;</span> </span>
+<span id="cb6-14"><a aria-label="14"></a>  <span class="fu">select</span>(date, location, dispensed) <span class="sc">|&gt;</span> </span>
+<span id="cb6-15"><a aria-label="15"></a>  <span class="fu">as_tibble</span>()</span>
+<span id="cb6-16"><a aria-label="16"></a></span>
+<span id="cb6-17"><a aria-label="17"></a>pred_all <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'predictions.csv'</span>)</span>
+<span id="cb6-18"><a aria-label="18"></a></span>
+<span id="cb6-19"><a aria-label="19"></a>pred_master_df <span class="ot">&lt;-</span> pred_all <span class="sc">|&gt;</span> </span>
+<span id="cb6-20"><a aria-label="20"></a>  <span class="fu">rename</span>(<span class="at">date =</span> time_period) <span class="sc">|&gt;</span> </span>
+<span id="cb6-21"><a aria-label="21"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>), <span class="sc">~</span> <span class="fu">pmax</span>(., <span class="dv">0</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb6-22"><a aria-label="22"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb6-23"><a aria-label="23"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-24"><a aria-label="24"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="dv">3</span>,</span>
+<span id="cb6-25"><a aria-label="25"></a>    <span class="at">q80  =</span> <span class="fu">quantile</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">probs =</span> <span class="fl">0.80</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">names =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb6-26"><a aria-label="26"></a>    <span class="at">q85  =</span> <span class="fu">quantile</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">probs =</span> <span class="fl">0.85</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">names =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb6-27"><a aria-label="27"></a>    <span class="at">q90  =</span> <span class="fu">quantile</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">probs =</span> <span class="fl">0.90</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">names =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb6-28"><a aria-label="28"></a>    <span class="at">q95  =</span> <span class="fu">quantile</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">probs =</span> <span class="fl">0.95</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">names =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb6-29"><a aria-label="29"></a>    <span class="at">q975 =</span> <span class="fu">quantile</span>(<span class="fu">c_across</span>(<span class="fu">starts_with</span>(<span class="st">"sample"</span>)), <span class="at">probs =</span> <span class="fl">0.975</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-30"><a aria-label="30"></a>  )  <span class="sc">|&gt;</span> </span>
+<span id="cb6-31"><a aria-label="31"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb6-32"><a aria-label="32"></a>  <span class="fu">select</span>(date, location, mean, q80, q85, q90, q95, q975)</span>
+<span id="cb6-33"><a aria-label="33"></a></span>
+<span id="cb6-34"><a aria-label="34"></a>master_df <span class="ot">&lt;-</span> pred_master_df <span class="sc">|&gt;</span> </span>
+<span id="cb6-35"><a aria-label="35"></a>  <span class="fu">left_join</span>(actual_df, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'date'</span>, <span class="st">'location'</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb6-36"><a aria-label="36"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste0</span>(date, <span class="st">"-01"</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># Inventory function ------------------------------------------------------</span></span>
-<span id="cb7-2"><a></a></span>
-<span id="cb7-3"><a></a>master_long <span class="ot">&lt;-</span> master_df <span class="sc">|&gt;</span> </span>
-<span id="cb7-4"><a></a>  <span class="co"># filter(location == '0701larmany-0701 Xamnua-BCG diluent' &amp; model == 'ETS') |&gt; </span></span>
-<span id="cb7-5"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">'mean'</span>, <span class="st">'q80'</span>, <span class="st">'q85'</span>, <span class="st">'q90'</span>, <span class="st">'q95'</span>, <span class="st">'q975'</span>), <span class="at">names_to =</span> <span class="st">'target_csl'</span>, <span class="at">values_to =</span> <span class="st">'quantity'</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-6"><a></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">paste0</span>(location, <span class="st">':'</span>, target_csl))</span>
-<span id="cb7-7"><a></a></span>
-<span id="cb7-8"><a></a>id_list <span class="ot">&lt;-</span> master_long <span class="sc">|&gt;</span> </span>
-<span id="cb7-9"><a></a>  <span class="fu">pull</span>(id) <span class="sc">|&gt;</span> </span>
-<span id="cb7-10"><a></a>  <span class="fu">unique</span>() </span>
-<span id="cb7-11"><a></a></span>
-<span id="cb7-12"><a></a><span class="co"># Register outer parallel backend with multiple cores</span></span>
-<span id="cb7-13"><a></a></span>
-<span id="cb7-14"><a></a>n_cores <span class="ot">&lt;-</span> <span class="fu">detectCores</span>(<span class="at">logical =</span> <span class="cn">FALSE</span>) <span class="sc">-</span> <span class="dv">1</span>   <span class="co"># 16 physical cores – 1 = 15</span></span>
-<span id="cb7-15"><a></a>cl_outer <span class="ot">&lt;-</span> <span class="fu">makeCluster</span>(n_cores)</span>
-<span id="cb7-16"><a></a><span class="fu">registerDoParallel</span>(cl_outer)</span>
-<span id="cb7-17"><a></a></span>
-<span id="cb7-18"><a></a><span class="co"># parallel loop</span></span>
-<span id="cb7-19"><a></a></span>
-<span id="cb7-20"><a></a><span class="fu">system.time</span>(inventory_sim_full <span class="ot">&lt;-</span> <span class="fu">foreach</span>(<span class="at">i =</span> id_list,</span>
-<span id="cb7-21"><a></a>                                          <span class="at">.combine =</span> <span class="st">'rbind'</span>,</span>
-<span id="cb7-22"><a></a>                                          <span class="at">.packages=</span><span class="fu">c</span>(<span class="st">"doParallel"</span>, <span class="st">"foreach"</span>, <span class="st">"tidyverse"</span>, <span class="st">"tsibble"</span>, <span class="st">"fable"</span>)) <span class="sc">%dopar%</span> {</span>
-<span id="cb7-23"><a></a>                                            </span>
-<span id="cb7-24"><a></a>                                            <span class="co"># i &lt;- id_list[1]</span></span>
-<span id="cb7-25"><a></a>                                            </span>
-<span id="cb7-26"><a></a>                                            df <span class="ot">&lt;-</span> master_long <span class="sc">|&gt;</span></span>
-<span id="cb7-27"><a></a>                                              <span class="fu">filter</span>(id <span class="sc">==</span> i) <span class="sc">|&gt;</span> </span>
-<span id="cb7-28"><a></a>                                              <span class="fu">group_by</span>(location, target_csl) <span class="sc">|&gt;</span> </span>
-<span id="cb7-29"><a></a>                                              <span class="fu">arrange</span>(date) <span class="sc">|&gt;</span></span>
-<span id="cb7-30"><a></a>                                              <span class="fu">mutate</span>(</span>
-<span id="cb7-31"><a></a>                                                <span class="at">target_stock =</span> quantity,</span>
-<span id="cb7-32"><a></a>                                                <span class="at">opening_stock =</span> <span class="dv">0</span>,</span>
-<span id="cb7-33"><a></a>                                                <span class="at">received =</span> <span class="dv">0</span>,</span>
-<span id="cb7-34"><a></a>                                                <span class="at">closing_stock =</span> <span class="dv">0</span>,</span>
-<span id="cb7-35"><a></a>                                                <span class="at">order_qty =</span> <span class="dv">0</span>,</span>
-<span id="cb7-36"><a></a>                                                <span class="at">delivery_due =</span> <span class="cn">NA</span>,</span>
-<span id="cb7-37"><a></a>                                                <span class="at">fixed_lead_time =</span> <span class="dv">1</span></span>
-<span id="cb7-38"><a></a>                                              )</span>
-<span id="cb7-39"><a></a>                                            </span>
-<span id="cb7-40"><a></a>                                            deliveries <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb7-41"><a></a>                                            </span>
-<span id="cb7-42"><a></a>                                            <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(df))) {</span>
-<span id="cb7-43"><a></a>                                              today <span class="ot">&lt;-</span> df<span class="sc">$</span>date[i]</span>
-<span id="cb7-44"><a></a>                                              </span>
-<span id="cb7-45"><a></a>                                              <span class="co"># Receive orders</span></span>
-<span id="cb7-46"><a></a>                                              arrivals <span class="ot">&lt;-</span> deliveries <span class="sc">|&gt;</span></span>
-<span id="cb7-47"><a></a>                                                <span class="fu">keep</span>(<span class="sc">~</span>.x<span class="sc">$</span>arrival_date <span class="sc">==</span> today) <span class="sc">|&gt;</span></span>
-<span id="cb7-48"><a></a>                                                <span class="fu">map_dbl</span>(<span class="st">"amount"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-49"><a></a>                                                <span class="fu">sum</span>()</span>
-<span id="cb7-50"><a></a>                                              </span>
-<span id="cb7-51"><a></a>                                              df<span class="sc">$</span>opening_stock[i] <span class="ot">&lt;-</span> <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">1</span>) arrivals <span class="cf">else</span> df<span class="sc">$</span>closing_stock[i <span class="sc">-</span> <span class="dv">1</span>] <span class="sc">+</span> arrivals</span>
-<span id="cb7-52"><a></a>                                              actual <span class="ot">&lt;-</span> df<span class="sc">$</span>dispensed[i]</span>
-<span id="cb7-53"><a></a>                                              </span>
-<span id="cb7-54"><a></a>                                              df<span class="sc">$</span>received[i] <span class="ot">&lt;-</span> arrivals</span>
-<span id="cb7-55"><a></a>                                              df<span class="sc">$</span>closing_stock[i] <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">0</span>, df<span class="sc">$</span>opening_stock[i] <span class="sc">-</span> actual)</span>
-<span id="cb7-56"><a></a>                                              </span>
-<span id="cb7-57"><a></a>                                              <span class="co"># Place order</span></span>
-<span id="cb7-58"><a></a>                                              order_qty <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">0</span>, df<span class="sc">$</span>target_stock[i] <span class="sc">-</span> df<span class="sc">$</span>closing_stock[i])</span>
-<span id="cb7-59"><a></a>                                              lead_time <span class="ot">&lt;-</span> df<span class="sc">$</span>fixed_lead_time[i]</span>
-<span id="cb7-60"><a></a>                                              delivery_date <span class="ot">&lt;-</span> today <span class="sc">%m+%</span> <span class="fu">months</span>(lead_time)</span>
-<span id="cb7-61"><a></a>                                              </span>
-<span id="cb7-62"><a></a>                                              deliveries <span class="ot">&lt;-</span> <span class="fu">append</span>(deliveries, <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">arrival_date =</span> delivery_date, <span class="at">amount =</span> order_qty)))</span>
-<span id="cb7-63"><a></a>                                              </span>
-<span id="cb7-64"><a></a>                                              df<span class="sc">$</span>order_qty[i] <span class="ot">&lt;-</span> order_qty</span>
-<span id="cb7-65"><a></a>                                              df<span class="sc">$</span>delivery_due[i] <span class="ot">&lt;-</span> delivery_date</span>
-<span id="cb7-66"><a></a>                                            }</span>
-<span id="cb7-67"><a></a>                                            </span>
-<span id="cb7-68"><a></a>                                            </span>
-<span id="cb7-69"><a></a>                                            inventory_sim <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb7-70"><a></a>                                              <span class="fu">mutate</span>(</span>
-<span id="cb7-71"><a></a>                                                <span class="at">lost_sales =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, dispensed <span class="sc">-</span> <span class="fu">pmin</span>(dispensed, opening_stock)),</span>
-<span id="cb7-72"><a></a>                                                <span class="at">met_demand =</span> dispensed <span class="sc">&lt;=</span> opening_stock,</span>
-<span id="cb7-73"><a></a>                                                <span class="at">stockout =</span> dispensed <span class="sc">&gt;</span> opening_stock</span>
-<span id="cb7-74"><a></a>                                              )</span>
-<span id="cb7-75"><a></a>                                            </span>
-<span id="cb7-76"><a></a>                                            inventory_sim</span>
-<span id="cb7-77"><a></a>                                            </span>
-<span id="cb7-78"><a></a>                                          })</span>
-<span id="cb7-79"><a></a></span>
-<span id="cb7-80"><a></a><span class="co"># Stop outer cluster</span></span>
-<span id="cb7-81"><a></a></span>
-<span id="cb7-82"><a></a><span class="fu">stopCluster</span>(cl_outer)</span>
-<span id="cb7-83"><a></a></span>
-<span id="cb7-84"><a></a></span>
-<span id="cb7-85"><a></a><span class="co"># Final data</span></span>
-<span id="cb7-86"><a></a></span>
-<span id="cb7-87"><a></a><span class="fu">write_csv</span>(inventory_sim_full, <span class="st">'inventory_sim.csv'</span>)</span>
-<span id="cb7-88"><a></a></span>
-<span id="cb7-89"><a></a></span>
-<span id="cb7-90"><a></a><span class="co"># Inventory value added ---------------------------------------------------</span></span>
-<span id="cb7-91"><a></a></span>
-<span id="cb7-92"><a></a>inv_metrics <span class="ot">&lt;-</span> inventory_sim_full <span class="sc">|&gt;</span> </span>
-<span id="cb7-93"><a></a>  <span class="fu">group_by</span>(location, target_csl) <span class="sc">|&gt;</span> </span>
-<span id="cb7-94"><a></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-95"><a></a>  <span class="fu">summarise</span>(</span>
-<span id="cb7-96"><a></a>    <span class="at">CSL =</span> <span class="fu">round</span>(<span class="fu">mean</span>(met_demand, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
-<span id="cb7-97"><a></a>    <span class="at">stockout_rate =</span> <span class="fu">round</span>(<span class="fu">mean</span>(stockout, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
-<span id="cb7-98"><a></a>    <span class="at">avg_inventory =</span> <span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">mean</span>((opening_stock<span class="sc">+</span>closing_stock)<span class="sc">/</span><span class="dv">2</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="dv">1</span>)),</span>
-<span id="cb7-99"><a></a>    <span class="co"># avg_inventory = round(mean(if_else(order_qty &gt;= 0.1,</span></span>
-<span id="cb7-100"><a></a>    <span class="co">#                                     ((opening_stock+closing_stock)/2)/order_qty, NA_real_), </span></span>
-<span id="cb7-101"><a></a>    <span class="co">#                             na.rm=TRUE), 1),</span></span>
-<span id="cb7-102"><a></a>    <span class="at">.groups        =</span> <span class="st">"drop"</span></span>
-<span id="cb7-103"><a></a>  )</span>
-<span id="cb7-104"><a></a></span>
-<span id="cb7-105"><a></a>fname <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"df_out_"</span>, <span class="fu">format</span>(<span class="fu">Sys.time</span>(), <span class="st">"%Y%m%d_%H%M%S"</span>), <span class="st">'inventory.csv'</span>)</span>
-<span id="cb7-106"><a></a><span class="fu">write_csv</span>(inv_metrics, fname)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a><span class="co"># Inventory function ------------------------------------------------------</span></span>
+<span id="cb7-2"><a aria-label="2"></a></span>
+<span id="cb7-3"><a aria-label="3"></a>master_long <span class="ot">&lt;-</span> master_df <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a aria-label="4"></a>  <span class="co"># filter(location == '0701larmany-0701 Xamnua-BCG diluent' &amp; model == 'ETS') |&gt; </span></span>
+<span id="cb7-5"><a aria-label="5"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">'mean'</span>, <span class="st">'q80'</span>, <span class="st">'q85'</span>, <span class="st">'q90'</span>, <span class="st">'q95'</span>, <span class="st">'q975'</span>), <span class="at">names_to =</span> <span class="st">'target_csl'</span>, <span class="at">values_to =</span> <span class="st">'quantity'</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-6"><a aria-label="6"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">paste0</span>(location, <span class="st">':'</span>, target_csl))</span>
+<span id="cb7-7"><a aria-label="7"></a></span>
+<span id="cb7-8"><a aria-label="8"></a>id_list <span class="ot">&lt;-</span> master_long <span class="sc">|&gt;</span> </span>
+<span id="cb7-9"><a aria-label="9"></a>  <span class="fu">pull</span>(id) <span class="sc">|&gt;</span> </span>
+<span id="cb7-10"><a aria-label="10"></a>  <span class="fu">unique</span>() </span>
+<span id="cb7-11"><a aria-label="11"></a></span>
+<span id="cb7-12"><a aria-label="12"></a><span class="co"># Register outer parallel backend with multiple cores</span></span>
+<span id="cb7-13"><a aria-label="13"></a></span>
+<span id="cb7-14"><a aria-label="14"></a>n_cores <span class="ot">&lt;-</span> <span class="fu">detectCores</span>(<span class="at">logical =</span> <span class="cn">FALSE</span>) <span class="sc">-</span> <span class="dv">1</span>   <span class="co"># 16 physical cores – 1 = 15</span></span>
+<span id="cb7-15"><a aria-label="15"></a>cl_outer <span class="ot">&lt;-</span> <span class="fu">makeCluster</span>(n_cores)</span>
+<span id="cb7-16"><a aria-label="16"></a><span class="fu">registerDoParallel</span>(cl_outer)</span>
+<span id="cb7-17"><a aria-label="17"></a></span>
+<span id="cb7-18"><a aria-label="18"></a><span class="co"># parallel loop</span></span>
+<span id="cb7-19"><a aria-label="19"></a></span>
+<span id="cb7-20"><a aria-label="20"></a><span class="fu">system.time</span>(inventory_sim_full <span class="ot">&lt;-</span> <span class="fu">foreach</span>(<span class="at">i =</span> id_list,</span>
+<span id="cb7-21"><a aria-label="21"></a>                                          <span class="at">.combine =</span> <span class="st">'rbind'</span>,</span>
+<span id="cb7-22"><a aria-label="22"></a>                                          <span class="at">.packages=</span><span class="fu">c</span>(<span class="st">"doParallel"</span>, <span class="st">"foreach"</span>, <span class="st">"tidyverse"</span>, <span class="st">"tsibble"</span>, <span class="st">"fable"</span>)) <span class="sc">%dopar%</span> {</span>
+<span id="cb7-23"><a aria-label="23"></a>                                            </span>
+<span id="cb7-24"><a aria-label="24"></a>                                            <span class="co"># i &lt;- id_list[1]</span></span>
+<span id="cb7-25"><a aria-label="25"></a>                                            </span>
+<span id="cb7-26"><a aria-label="26"></a>                                            df <span class="ot">&lt;-</span> master_long <span class="sc">|&gt;</span></span>
+<span id="cb7-27"><a aria-label="27"></a>                                              <span class="fu">filter</span>(id <span class="sc">==</span> i) <span class="sc">|&gt;</span> </span>
+<span id="cb7-28"><a aria-label="28"></a>                                              <span class="fu">group_by</span>(location, target_csl) <span class="sc">|&gt;</span> </span>
+<span id="cb7-29"><a aria-label="29"></a>                                              <span class="fu">arrange</span>(date) <span class="sc">|&gt;</span></span>
+<span id="cb7-30"><a aria-label="30"></a>                                              <span class="fu">mutate</span>(</span>
+<span id="cb7-31"><a aria-label="31"></a>                                                <span class="at">target_stock =</span> quantity,</span>
+<span id="cb7-32"><a aria-label="32"></a>                                                <span class="at">opening_stock =</span> <span class="dv">0</span>,</span>
+<span id="cb7-33"><a aria-label="33"></a>                                                <span class="at">received =</span> <span class="dv">0</span>,</span>
+<span id="cb7-34"><a aria-label="34"></a>                                                <span class="at">closing_stock =</span> <span class="dv">0</span>,</span>
+<span id="cb7-35"><a aria-label="35"></a>                                                <span class="at">order_qty =</span> <span class="dv">0</span>,</span>
+<span id="cb7-36"><a aria-label="36"></a>                                                <span class="at">delivery_due =</span> <span class="cn">NA</span>,</span>
+<span id="cb7-37"><a aria-label="37"></a>                                                <span class="at">fixed_lead_time =</span> <span class="dv">1</span></span>
+<span id="cb7-38"><a aria-label="38"></a>                                              )</span>
+<span id="cb7-39"><a aria-label="39"></a>                                            </span>
+<span id="cb7-40"><a aria-label="40"></a>                                            deliveries <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb7-41"><a aria-label="41"></a>                                            </span>
+<span id="cb7-42"><a aria-label="42"></a>                                            <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(df))) {</span>
+<span id="cb7-43"><a aria-label="43"></a>                                              today <span class="ot">&lt;-</span> df<span class="sc">$</span>date[i]</span>
+<span id="cb7-44"><a aria-label="44"></a>                                              </span>
+<span id="cb7-45"><a aria-label="45"></a>                                              <span class="co"># Receive orders</span></span>
+<span id="cb7-46"><a aria-label="46"></a>                                              arrivals <span class="ot">&lt;-</span> deliveries <span class="sc">|&gt;</span></span>
+<span id="cb7-47"><a aria-label="47"></a>                                                <span class="fu">keep</span>(<span class="sc">~</span>.x<span class="sc">$</span>arrival_date <span class="sc">==</span> today) <span class="sc">|&gt;</span></span>
+<span id="cb7-48"><a aria-label="48"></a>                                                <span class="fu">map_dbl</span>(<span class="st">"amount"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-49"><a aria-label="49"></a>                                                <span class="fu">sum</span>()</span>
+<span id="cb7-50"><a aria-label="50"></a>                                              </span>
+<span id="cb7-51"><a aria-label="51"></a>                                              df<span class="sc">$</span>opening_stock[i] <span class="ot">&lt;-</span> <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">1</span>) arrivals <span class="cf">else</span> df<span class="sc">$</span>closing_stock[i <span class="sc">-</span> <span class="dv">1</span>] <span class="sc">+</span> arrivals</span>
+<span id="cb7-52"><a aria-label="52"></a>                                              actual <span class="ot">&lt;-</span> df<span class="sc">$</span>dispensed[i]</span>
+<span id="cb7-53"><a aria-label="53"></a>                                              </span>
+<span id="cb7-54"><a aria-label="54"></a>                                              df<span class="sc">$</span>received[i] <span class="ot">&lt;-</span> arrivals</span>
+<span id="cb7-55"><a aria-label="55"></a>                                              df<span class="sc">$</span>closing_stock[i] <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">0</span>, df<span class="sc">$</span>opening_stock[i] <span class="sc">-</span> actual)</span>
+<span id="cb7-56"><a aria-label="56"></a>                                              </span>
+<span id="cb7-57"><a aria-label="57"></a>                                              <span class="co"># Place order</span></span>
+<span id="cb7-58"><a aria-label="58"></a>                                              order_qty <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="dv">0</span>, df<span class="sc">$</span>target_stock[i] <span class="sc">-</span> df<span class="sc">$</span>closing_stock[i])</span>
+<span id="cb7-59"><a aria-label="59"></a>                                              lead_time <span class="ot">&lt;-</span> df<span class="sc">$</span>fixed_lead_time[i]</span>
+<span id="cb7-60"><a aria-label="60"></a>                                              delivery_date <span class="ot">&lt;-</span> today <span class="sc">%m+%</span> <span class="fu">months</span>(lead_time)</span>
+<span id="cb7-61"><a aria-label="61"></a>                                              </span>
+<span id="cb7-62"><a aria-label="62"></a>                                              deliveries <span class="ot">&lt;-</span> <span class="fu">append</span>(deliveries, <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">arrival_date =</span> delivery_date, <span class="at">amount =</span> order_qty)))</span>
+<span id="cb7-63"><a aria-label="63"></a>                                              </span>
+<span id="cb7-64"><a aria-label="64"></a>                                              df<span class="sc">$</span>order_qty[i] <span class="ot">&lt;-</span> order_qty</span>
+<span id="cb7-65"><a aria-label="65"></a>                                              df<span class="sc">$</span>delivery_due[i] <span class="ot">&lt;-</span> delivery_date</span>
+<span id="cb7-66"><a aria-label="66"></a>                                            }</span>
+<span id="cb7-67"><a aria-label="67"></a>                                            </span>
+<span id="cb7-68"><a aria-label="68"></a>                                            </span>
+<span id="cb7-69"><a aria-label="69"></a>                                            inventory_sim <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb7-70"><a aria-label="70"></a>                                              <span class="fu">mutate</span>(</span>
+<span id="cb7-71"><a aria-label="71"></a>                                                <span class="at">lost_sales =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, dispensed <span class="sc">-</span> <span class="fu">pmin</span>(dispensed, opening_stock)),</span>
+<span id="cb7-72"><a aria-label="72"></a>                                                <span class="at">met_demand =</span> dispensed <span class="sc">&lt;=</span> opening_stock,</span>
+<span id="cb7-73"><a aria-label="73"></a>                                                <span class="at">stockout =</span> dispensed <span class="sc">&gt;</span> opening_stock</span>
+<span id="cb7-74"><a aria-label="74"></a>                                              )</span>
+<span id="cb7-75"><a aria-label="75"></a>                                            </span>
+<span id="cb7-76"><a aria-label="76"></a>                                            inventory_sim</span>
+<span id="cb7-77"><a aria-label="77"></a>                                            </span>
+<span id="cb7-78"><a aria-label="78"></a>                                          })</span>
+<span id="cb7-79"><a aria-label="79"></a></span>
+<span id="cb7-80"><a aria-label="80"></a><span class="co"># Stop outer cluster</span></span>
+<span id="cb7-81"><a aria-label="81"></a></span>
+<span id="cb7-82"><a aria-label="82"></a><span class="fu">stopCluster</span>(cl_outer)</span>
+<span id="cb7-83"><a aria-label="83"></a></span>
+<span id="cb7-84"><a aria-label="84"></a></span>
+<span id="cb7-85"><a aria-label="85"></a><span class="co"># Final data</span></span>
+<span id="cb7-86"><a aria-label="86"></a></span>
+<span id="cb7-87"><a aria-label="87"></a><span class="fu">write_csv</span>(inventory_sim_full, <span class="st">'inventory_sim.csv'</span>)</span>
+<span id="cb7-88"><a aria-label="88"></a></span>
+<span id="cb7-89"><a aria-label="89"></a></span>
+<span id="cb7-90"><a aria-label="90"></a><span class="co"># Inventory value added ---------------------------------------------------</span></span>
+<span id="cb7-91"><a aria-label="91"></a></span>
+<span id="cb7-92"><a aria-label="92"></a>inv_metrics <span class="ot">&lt;-</span> inventory_sim_full <span class="sc">|&gt;</span> </span>
+<span id="cb7-93"><a aria-label="93"></a>  <span class="fu">group_by</span>(location, target_csl) <span class="sc">|&gt;</span> </span>
+<span id="cb7-94"><a aria-label="94"></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-95"><a aria-label="95"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-96"><a aria-label="96"></a>    <span class="at">CSL =</span> <span class="fu">round</span>(<span class="fu">mean</span>(met_demand, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb7-97"><a aria-label="97"></a>    <span class="at">stockout_rate =</span> <span class="fu">round</span>(<span class="fu">mean</span>(stockout, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="dv">1</span>),</span>
+<span id="cb7-98"><a aria-label="98"></a>    <span class="at">avg_inventory =</span> <span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">mean</span>((opening_stock<span class="sc">+</span>closing_stock)<span class="sc">/</span><span class="dv">2</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="dv">1</span>)),</span>
+<span id="cb7-99"><a aria-label="99"></a>    <span class="co"># avg_inventory = round(mean(if_else(order_qty &gt;= 0.1,</span></span>
+<span id="cb7-100"><a aria-label="100"></a>    <span class="co">#                                     ((opening_stock+closing_stock)/2)/order_qty, NA_real_), </span></span>
+<span id="cb7-101"><a aria-label="101"></a>    <span class="co">#                             na.rm=TRUE), 1),</span></span>
+<span id="cb7-102"><a aria-label="102"></a>    <span class="at">.groups        =</span> <span class="st">"drop"</span></span>
+<span id="cb7-103"><a aria-label="103"></a>  )</span>
+<span id="cb7-104"><a aria-label="104"></a></span>
+<span id="cb7-105"><a aria-label="105"></a>fname <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"df_out_"</span>, <span class="fu">format</span>(<span class="fu">Sys.time</span>(), <span class="st">"%Y%m%d_%H%M%S"</span>), <span class="st">'inventory.csv'</span>)</span>
+<span id="cb7-106"><a aria-label="106"></a><span class="fu">write_csv</span>(inv_metrics, fname)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1006,23 +1009,23 @@ LIVE DEMO
 <h2>Running models through Chap (docker + WSL)</h2>
 <p><br></p>
 <p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Connect with CHAP Core</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>cd chap<span class="sc">-</span>core<span class="sc">/</span></span>
-<span id="cb8-2"><a></a></span>
-<span id="cb8-3"><a></a>source .venv<span class="sc">/</span>bin<span class="sc">/</span>activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>cd chap<span class="sc">-</span>core<span class="sc">/</span></span>
+<span id="cb8-2"><a aria-label="2"></a></span>
+<span id="cb8-3"><a aria-label="3"></a>source .venv<span class="sc">/</span>bin<span class="sc">/</span>activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 <p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Create docker image</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>cd <span class="sc">/</span>mnt<span class="sc">/</span>d<span class="sc">/</span>GIT<span class="sc">/</span>dhis2_demo<span class="sc">/</span>ets<span class="sc">-</span>r</span>
-<span id="cb9-2"><a></a></span>
-<span id="cb9-3"><a></a>docker build <span class="sc">-</span>t ets<span class="sc">-</span>r<span class="sc">:</span>latest .</span>
-<span id="cb9-4"><a></a></span>
-<span id="cb9-5"><a></a><span class="co"># Return to CHAP Core</span></span>
-<span id="cb9-6"><a></a></span>
-<span id="cb9-7"><a></a>cd <span class="sc">~</span></span>
-<span id="cb9-8"><a></a></span>
-<span id="cb9-9"><a></a>cd chap<span class="sc">-</span>core<span class="sc">/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a>cd <span class="sc">/</span>mnt<span class="sc">/</span>d<span class="sc">/</span>GIT<span class="sc">/</span>dhis2_demo<span class="sc">/</span>ets<span class="sc">-</span>r</span>
+<span id="cb9-2"><a aria-label="2"></a></span>
+<span id="cb9-3"><a aria-label="3"></a>docker build <span class="sc">-</span>t ets<span class="sc">-</span>r<span class="sc">:</span>latest .</span>
+<span id="cb9-4"><a aria-label="4"></a></span>
+<span id="cb9-5"><a aria-label="5"></a><span class="co"># Return to CHAP Core</span></span>
+<span id="cb9-6"><a aria-label="6"></a></span>
+<span id="cb9-7"><a aria-label="7"></a>cd <span class="sc">~</span></span>
+<span id="cb9-8"><a aria-label="8"></a></span>
+<span id="cb9-9"><a aria-label="9"></a>cd chap<span class="sc">-</span>core<span class="sc">/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 <p><i class="fa-solid fa-check-circle" style="color:#156082; font-size:36px;"></i> Run CHAP evaluation</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>chap evaluate <span class="sc">--</span>model<span class="sc">-</span>name <span class="sc">/</span>mnt<span class="sc">/</span>d<span class="sc">/</span>GIT<span class="sc">/</span>dhis2_demo<span class="sc">/</span>ets<span class="sc">-</span>r <span class="sc">--</span>dataset<span class="sc">-</span>csv <span class="sc">/</span>mnt<span class="sc">/</span>d<span class="sc">/</span>GIT<span class="sc">/</span>dhis2_demo<span class="sc">/</span>ets<span class="sc">-</span>r<span class="sc">/</span>data<span class="sc">/</span>laos<span class="sc">/</span>laos_epi_cleaned.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>chap evaluate <span class="sc">--</span>model<span class="sc">-</span>name <span class="sc">/</span>mnt<span class="sc">/</span>d<span class="sc">/</span>GIT<span class="sc">/</span>dhis2_demo<span class="sc">/</span>ets<span class="sc">-</span>r <span class="sc">--</span>dataset<span class="sc">-</span>csv <span class="sc">/</span>mnt<span class="sc">/</span>d<span class="sc">/</span>GIT<span class="sc">/</span>dhis2_demo<span class="sc">/</span>ets<span class="sc">-</span>r<span class="sc">/</span>data<span class="sc">/</span>laos<span class="sc">/</span>laos_epi_cleaned.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="any-questions-or-thoughts" class="slide level2">
 <h2>Any questions or thoughts? 💬</h2>
