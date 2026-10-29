@@ -1,0 +1,16 @@
+# Render the website for design checks without rebuilding any slide decks.
+# Run: quarto render --profile preview --use-freezer --no-clean
+execute:
+  freeze: true
+project:
+  output-dir: .quarto/wes-preview
+  render:
+    - index.qmd
+    - about/index.qmd
+    - projects/**/*.qmd
+    - phd/index.qmd
+    - lab/index.qmd
+    - lab/*/index.qmd
+    - talks/index.qmd
+    - talks/*/index.qmd
+    - resources/index.qmd

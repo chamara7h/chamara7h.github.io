@@ -1,13 +1,32 @@
 project:
   type: website
+  resources:
+    - assets/
 
 website:
   title: "Home"
   open-graph: true
   search: false
-  page-footer: "Made with ❤️ and Quarto"
+  page-footer:
+    left: "Harsha Halgamuwe Hewage"
+    center: "Made with Quarto"
+    right:
+      - icon: envelope
+        href: mailto:hewagehrc@gmail.com
+        aria-label: E-mail
+      - icon: github
+        href: https://github.com/chamara7h
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/harshachamara/
+        aria-label: LinkedIn
+      - icon: mortarboard-fill
+        href: https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en
+        aria-label: Google Scholar
   navbar:
-    background: '#FAFBFD'
+    title: "Home"
+    collapse-below: md
+    background: '#f7f7f0'
     right:
       - text: About
         href: about/index.qmd
@@ -17,7 +36,11 @@ website:
         href: lab/index.qmd
       - text: Talks
         href: talks/index.qmd
+      - text: "Get in touch ↗"
+        href: mailto:hewagehrc@gmail.com
 
 format:
   html:
     theme: [cosmo, styles.scss]
+    body-classes: wes-site
+    include-after-body: _includes/site-scripts.html

@@ -1,4 +1,5 @@
 ---
+pagetitle: "Talks"
 listing: 
   contents: 
     - "dl4sg_seminar/*.qmd"
@@ -19,3 +20,9 @@ page-layout: full
 format: html
 ---
 
+```{=html}
+<section class="page-intro">
+<div class="page-heading" role="heading" aria-level="1">Talks & conversations.</div>
+<p>Ideas, research, and practical perspectives on forecasting and decision-making.</p>
+</section>
+```

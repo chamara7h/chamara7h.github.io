@@ -2,41 +2,29 @@
 pagetitle: "Home"
 page-layout: full
 format: html
+anchor-sections: false
 ---
 
-<section class="landing-page">
-<img class="landing-chart-bg" src="images/home-chart1.png" alt="">
+```{=html}
 
-<div class="landing-hero">
-<div class="landing-copy">
-<div class="landing-name" role="heading" aria-level="1">Harsha<br>Halgamuwe<br>Hewage</div>
-
-<p class="landing-tagline">
-I work on forecasting for social good, uncertainty, and decision-making, turning data into practical tools and learning materials for real-world problems.
-</p>
-
-<div class="landing-social" aria-label="Social links">
-<a href="mailto:hewagehrc@gmail.com" aria-label="E-mail" title="E-mail"><i class="bi bi-envelope"></i></a>
-<a href="https://github.com/chamara7h" aria-label="GitHub" title="GitHub"><i class="bi bi-github"></i></a>
-<a href="https://www.linkedin.com/in/harshachamara/" aria-label="LinkedIn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-<a href="https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en" aria-label="Google Scholar" title="Google Scholar"><i class="bi bi-bookmark-star-fill"></i></a>
+<section class="hero" aria-labelledby="hero-title">
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="hero-grid">
+<div class="copy">
+<div id="hero-title" class="hero-heading" role="heading" aria-level="1">Forecasting<br>for a <em>better</em><br><em>tomorrow.</em></div>
+<p class="intro">I’m <strong>Harsha Halgamuwe Hewage.</strong><br>I work on forecasting for social good, uncertainty, and decision-making, turning data into practical tools and learning materials for real-world problems.</p>
+<div class="actions"><a class="button" href="#explore">Explore my work <span aria-hidden="true">↗</span></a><a class="text-link" href="/about/">A little about me <span aria-hidden="true">↗</span></a></div><div class="social-icons" aria-label="Social links"><a href="mailto:hewagehrc@gmail.com" aria-label="E-mail" title="E-mail"><i class="bi bi-envelope" aria-hidden="true"></i></a><a href="https://github.com/chamara7h" aria-label="GitHub" title="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/harshachamara/" aria-label="LinkedIn" title="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a><a href="https://scholar.google.com/citations?user=XgQYqK8AAAAJ&amp;hl=en" aria-label="Google Scholar" title="Google Scholar"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></a></div>
 </div>
-
-<!-- <div class="landing-links">
-<a href="about/"><i class="bi bi-person-fill"></i><span>About</span></a>
-<a href="projects/"><i class="bi bi-bar-chart-fill"></i><span>Projects</span></a>
-<a href="lab/"><i class="bi bi-mortarboard-fill"></i><span>Learning Lab</span></a>
-<a href="talks/"><i class="bi bi-mic-fill"></i><span>Talks</span></a>
-</div> -->
-
-<p class="landing-note">Design inspired by traditional Sri Lankan Wes Muna motifs, which I connect with healing, community care, and the social good spirit behind my work.</p>
+<figure class="art"><img src="images/landing-wes-muna.png" width="1122" height="1378" alt="Blue and gold Wes Muna inspired figure working on a laptop, standing on a lotus"><figcaption>Rooted in Sri Lanka. Looking ahead.</figcaption></figure>
 </div>
-
-<div class="landing-visual">
-<img class="landing-flower landing-flower-top" src="images/landing-flower-gold.png" alt="">
-<img class="landing-artifact" src="images/landing-wes-muna.png" alt="Wes Muna inspired figure using a laptop in blue and gold tones">
-<img class="landing-flower landing-flower-bottom" src="images/landing-flower-gold.png" alt="">
-<img class="landing-divider-art" src="images/landing-divider-gold.png" alt="">
-</div>
-</div>
+<div class="hero-bottom"><span class="areas"><i class="dot" aria-hidden="true"></i>Forecasting &nbsp; / &nbsp; Public health &nbsp; / &nbsp; Education</span><button id="motion" type="button" aria-pressed="true">Ⅱ &nbsp; Pause motion</button></div>
 </section>
+<section id="explore" class="section" aria-labelledby="explore-title"><div class="section-head"><h2 id="explore-title">Ideas into practice.</h2><p>Research, tools, and shared learning<br>for real-world decisions.</p></div>
+<div class="work-list">
+<a class="work" href="/phd/"><span class="num">01</span><h3>Research & projects</h3><p>Forecasting for public health supply chains, where better decisions matter.</p><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="work" href="/lab/"><span class="num">02</span><h3>The Learning Lab</h3><p>Practical workshops and open materials for learning forecasting and data science.</p><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="work" href="/talks/"><span class="num">03</span><h3>Talks & conversations</h3><p>Sharing ideas on uncertainty, forecasting, and their role in social good.</p><span class="arrow" aria-hidden="true">↗</span></a>
+</div></section>
+<section class="story" aria-labelledby="story-title"><div><p class="eyebrow">A personal connection</p><h2 id="story-title">A sense of place.<br>A purpose beyond the numbers.</h2></div><div><p>The Wes Muna motifs connect this space to my Sri Lankan roots. For me, they evoke healing and community care, the same spirit of social good that guides my work.</p><a href="/about/">The story behind the artwork <span aria-hidden="true">↗</span></a></div></section>
+
+```

@@ -12,7 +12,7 @@ format: html
 <img class="about-portrait" src="../images/profile.jpg" alt="Portrait of Harsha Halgamuwe Hewage">
 </aside>
 
-<main class="about-main">
+<div class="about-main">
 <section class="about-intro">
 <div class="about-heading" role="heading" aria-level="1">About</div>
 
@@ -48,7 +48,7 @@ Explore my <a href="https://scholar.google.com/citations?user=XgQYqK8AAAAJ&hl=en
 </a>
 </div>
 </section>
-</main>
+</div>
 </div>
 
 <section class="wes-section">
