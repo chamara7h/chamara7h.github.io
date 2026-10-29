@@ -74,7 +74,7 @@ a,button {
   display:flex;
   gap:32px;
   align-items:center;
-  font-size:13px
+  font-size:15px
 }
 .site-nav a {
   padding:12px 0;
@@ -113,7 +113,7 @@ a,button {
   gap:18px
 }
 .eyebrow {
-  font-size:10px;
+  font-size:12px;
   letter-spacing:2px;
   text-transform:uppercase;
   display:flex;
@@ -143,7 +143,7 @@ h1 em {
 .intro {
   max-width:440px;
   color:var(--muted);
-  font-size:16px;
+  font-size:18px;
   line-height:1.75;
   margin:0
 }
@@ -156,7 +156,7 @@ h1 em {
   align-items:center;
   gap:25px;
   margin-top:30px;
-  font-size:13px
+  font-size:15px
 }
 .button {
   display:inline-flex;
@@ -196,7 +196,7 @@ h1 em {
   filter:drop-shadow(0 18px 23px rgba(21,45,68,.05))
 }
 .art figcaption {
-  font-size:9px;
+  font-size:11px;
   letter-spacing:1.9px;
   text-transform:uppercase;
   color:#667580;
@@ -208,7 +208,7 @@ h1 em {
   align-items:center;
   padding:18px 4.1%;
   border-top:1px solid var(--line);
-  font-size:10px;
+  font-size:12px;
   letter-spacing:1.6px;
   text-transform:uppercase;
   gap:12px;
@@ -231,7 +231,7 @@ h1 em {
   color:var(--ink);
   padding:8px;
   cursor:pointer;
-  font-size:10px;
+  font-size:12px;
   letter-spacing:1px;
   min-height:36px
 }
@@ -254,7 +254,7 @@ h1 em {
 }
 .section-head p {
   color:var(--muted);
-  font-size:13px;
+  font-size:15px;
   line-height:1.6;
   margin:0;
   max-width:290px
@@ -275,7 +275,7 @@ h1 em {
   background:#edf0e9
 }
 .num {
-  font-size:11px;
+  font-size:13px;
   color:var(--gold)
 }
 .work h3 {
@@ -283,7 +283,7 @@ h1 em {
   margin:0
 }
 .work p {
-  font-size:13px;
+  font-size:15px;
   line-height:1.7;
   color:var(--muted);
   margin:0
@@ -310,14 +310,14 @@ h1 em {
   margin:0
 }
 .story p {
-  font-size:14px;
+  font-size:16px;
   color:#d0dae0;
   line-height:1.8;
   margin:0 0 14px;
   max-width:520px
 }
 .story a {
-  font-size:12px;
+  font-size:14px;
   border-bottom:1px solid #7c8e99;
   padding-bottom:5px
 }
@@ -327,7 +327,7 @@ h1 em {
   align-items:center;
   justify-content:space-between;
   gap:22px;
-  font-size:11px;
+  font-size:13px;
   color:var(--muted)
 }
 .social {
@@ -339,7 +339,7 @@ h1 em {
   text-decoration:underline
 }
 .credits {
-  font-size:10px
+  font-size:12px
 }
 
 @media(min-width:1500px) {
@@ -364,7 +364,7 @@ h1 {
   font-size:65px
 }
 .intro {
-  font-size:14px
+  font-size:16px
 }
 .art img {
   max-width:370px
@@ -395,7 +395,7 @@ h1 {
   width:100%;
   justify-content:space-between;
   gap:10px;
-  font-size:11px
+  font-size:13px
 }
 .site-nav .contact {
   display:none
@@ -410,7 +410,7 @@ h1 {
   min-height:0
 }
 .eyebrow {
-  font-size:9px;
+  font-size:11px;
   letter-spacing:1.5px;
   margin-bottom:22px
 }
@@ -421,13 +421,13 @@ h1 {
 }
 .intro {
   max-width:460px;
-  font-size:14px;
+  font-size:16px;
   line-height:1.8
 }
 .actions {
   gap:22px;
   margin-top:24px;
-  font-size:12px
+  font-size:14px
 }
 .button {
   padding:14px 21px;
@@ -438,12 +438,12 @@ h1 {
   width:85%
 }
 .art figcaption {
-  font-size:8px;
+  font-size:10px;
   margin-top:10px
 }
 .hero-bottom {
   padding:12px 5%;
-  font-size:8px;
+  font-size:10px;
   letter-spacing:1px
 }
 .hero-bottom .areas {
@@ -451,7 +451,7 @@ h1 {
   line-height:1.7
 }
 #motion {
-  font-size:9px;
+  font-size:11px;
   white-space:nowrap
 }
 .section {
@@ -478,7 +478,7 @@ h1 {
 .work p {
   grid-column:2;
   grid-row:2;
-  font-size:12px
+  font-size:14px
 }
 .work .arrow {
   grid-column:3;
@@ -493,7 +493,7 @@ h1 {
   font-size:32px
 }
 .story p {
-  font-size:13px
+  font-size:15px
 }
 .site-footer {
   align-items:start;
@@ -519,7 +519,7 @@ h1 {
 & {
   padding:0!important;
   line-height:1.65;
-  font-size:15px;
+  font-size:17px;
   background:var(--paper)!important;
   color:var(--ink)!important;
   font-family:var(--sans)!important
@@ -542,7 +542,7 @@ h1 {
   border:1px solid var(--line);
   padding:10px 18px;
   border-radius:30px;
-  font-size:13px;
+  font-size:15px;
   white-space:nowrap
 }
 .home-button:hover {
@@ -577,7 +577,7 @@ h1 {
   color:var(--paper)
 }
 .social-icons i {
-  font-size:16px
+  font-size:18px
 }
 .copy>.social-icons {
   margin-top:23px
@@ -597,7 +597,7 @@ h1 {
   height:36px
 }
 .site-footer .social-icons i {
-  font-size:14px
+  font-size:16px
 }
 .visually-hidden {
   position:absolute;
@@ -641,7 +641,7 @@ p {
   max-width:1000px
 }
 .page-intro p {
-  font-size:17px;
+  font-size:19px;
   color:var(--muted);
   line-height:1.8;
   max-width:640px;
@@ -689,10 +689,10 @@ p {
   color:var(--ink);
   max-width:240px;
   font:inherit;
-  font-size:13px
+  font-size:15px
 }
 #result-count {
-  font-size:12px;
+  font-size:14px;
   color:var(--muted);
   white-space:nowrap;
   margin-left:auto
@@ -734,7 +734,7 @@ p {
   flex:1
 }
 .entry-date {
-  font-size:10px;
+  font-size:12px;
   letter-spacing:1.2px;
   text-transform:uppercase;
   color:var(--muted);
@@ -747,7 +747,7 @@ p {
   margin:0 0 14px
 }
 .entry-description {
-  font-size:13px;
+  font-size:15px;
   line-height:1.8;
   color:var(--muted);
   margin:0 0 18px
@@ -764,10 +764,10 @@ p {
   border-radius:20px;
   padding:3px 9px;
   color:#526b77;
-  font-size:10px
+  font-size:12px
 }
 .entry-action {
-  font-size:12px;
+  font-size:14px;
   display:flex;
   justify-content:space-between;
   align-items:center
@@ -789,7 +789,7 @@ p {
   font-size:37px
 }
 .project-collection .entry-description {
-  font-size:15px
+  font-size:17px
 }
 .project-collection .entry-tags {
   margin-top:5px
@@ -800,7 +800,7 @@ p {
 .breadcrumb {
   margin:0;
   padding:22px 6.5%;
-  font-size:11px;
+  font-size:13px;
   color:var(--muted);
   border-bottom:1px solid var(--line);
   display:flex;
@@ -836,14 +836,14 @@ p {
   color:var(--ink)!important
 }
 .detail-page .hero-section .description,.phd-lead {
-  font-size:18px;
+  font-size:20px;
   line-height:1.7;
   color:var(--muted);
   max-width:800px;
   margin:0 0 15px
 }
 .author-date,.quarto-title-meta {
-  font-size:12px;
+  font-size:14px;
   color:var(--muted)
 }
 .quarto-title-meta {
@@ -851,7 +851,7 @@ p {
   gap:30px
 }
 .quarto-title-meta-heading {
-  font-size:10px;
+  font-size:12px;
   letter-spacing:1px;
   text-transform:uppercase
 }
@@ -862,7 +862,7 @@ p {
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  font-size:11px
+  font-size:13px
 }
 .cta-buttons {
   display:flex;
@@ -880,7 +880,7 @@ p {
   color:white!important;
   border-radius:30px!important;
   padding:11px 19px;
-  font-size:12px;
+  font-size:14px;
   text-decoration:none!important;
   font-weight:500!important;
   box-shadow:none!important;
@@ -898,7 +898,7 @@ p {
   cursor:default
 }
 .detail-page .content-section,.detail-page>section:not(.hero-section),.detail-page>div.cell,.detail-page>div.quarto-layout-panel,.detail-page>p,.detail-page>ul,.detail-page>ol {
-  margin:35px auto;
+  margin:35px 6.5%;
   max-width:920px;
   width:calc(100% - 13%);
   padding:0;
@@ -944,7 +944,7 @@ p {
   border:1px solid var(--line);
   padding:18px;
   overflow:auto;
-  font-size:13px;
+  font-size:15px;
   line-height:1.6;
   position:relative;
   max-width:100%;
@@ -957,7 +957,7 @@ p {
 .detail-page table {
   border-collapse:collapse;
   width:100%;
-  font-size:13px;
+  font-size:15px;
   display:block;
   overflow-x:auto;
   margin:25px 0
@@ -987,7 +987,7 @@ p {
   margin:0
 }
 .phd-kicker,.phd-section-label {
-  font-size:10px;
+  font-size:12px;
   letter-spacing:1.6px;
   text-transform:uppercase;
   color:#84642c
@@ -1003,7 +1003,7 @@ p {
 }
 .phd-section-inner {
   max-width:1150px;
-  margin:auto
+  margin:0
 }
 .phd-section h2,.phd-impact h2 {
   margin:10px 0 24px
@@ -1024,7 +1024,7 @@ p {
   margin:0 0 10px
 }
 .phd-output-meta {
-  font-size:12px;
+  font-size:14px;
   color:var(--muted);
   margin:0
 }
@@ -1072,11 +1072,11 @@ p {
   border-radius:50%
 }
 .phd-person h3 {
-  font:500 15px var(--sans);
+  font:500 17px var(--sans);
   margin:12px 0
 }
 .phd-person p {
-  font-size:12px;
+  font-size:14px;
   color:var(--muted);
   margin:0
 }
@@ -1115,12 +1115,12 @@ p {
   margin:0 0 18px
 }
 .about-subtitle {
-  font-size:18px;
+  font-size:20px;
   color:#456d80;
   margin-bottom:26px
 }
 .about-intro p {
-  font-size:15px;
+  font-size:17px;
   line-height:1.9
 }
 .about-intro p a,.wes-copy p a {
@@ -1148,7 +1148,7 @@ p {
   margin:0 0 23px
 }
 .wes-copy p {
-  font-size:14px;
+  font-size:16px;
   line-height:1.85;
   max-width:680px
 }
@@ -1161,7 +1161,7 @@ p {
   margin:25px 0
 }
 .quarto-figure figcaption {
-  font-size:12px;
+  font-size:14px;
   color:var(--muted)
 }
 .code-copy-button {
@@ -1234,13 +1234,13 @@ p {
 }
 .home-button {
   padding:7px 14px;
-  font-size:12px
+  font-size:14px
 }
 .site-nav {
   gap:18px;
   justify-content:space-between;
   width:100%;
-  font-size:12px
+  font-size:14px
 }
 .page-intro {
   padding:40px 7% 32px
@@ -1250,7 +1250,7 @@ p {
   letter-spacing:-1px
 }
 .page-intro p {
-  font-size:14px
+  font-size:16px
 }
 .collection {
   padding:25px 7% 45px
@@ -1261,7 +1261,7 @@ p {
 }
 .search-label {
   flex-basis:100%;
-  font-size:13px
+  font-size:15px
 }
 .topic-label {
   flex:1
@@ -1303,10 +1303,10 @@ p {
   font-size:48px
 }
 .about-subtitle {
-  font-size:17px
+  font-size:19px
 }
 .about-intro p {
-  font-size:14px
+  font-size:16px
 }
 .about-actions {
   gap:20px
@@ -1330,10 +1330,10 @@ p {
   overflow-wrap:anywhere
 }
 .detail-page .hero-section .description,.phd-lead {
-  font-size:16px
+  font-size:18px
 }
 .breadcrumb {
-  font-size:10px;
+  font-size:12px;
   padding:17px 7%
 }
 .detail-page h2 {
@@ -1343,7 +1343,12 @@ p {
   font-size:23px
 }
 .detail-page p,.detail-page li {
-  font-size:14px
+  font-size:16px
+}
+.detail-page .content-section,.detail-page>section:not(.hero-section),.detail-page>div.cell,.detail-page>div.quarto-layout-panel,.detail-page>p,.detail-page>ul,.detail-page>ol {
+  margin-left:7%;
+  margin-right:7%;
+  width:86%
 }
 .phd-section,.phd-impact {
   padding:32px 7%
@@ -1356,10 +1361,10 @@ p {
   height:85px
 }
 .phd-person h3 {
-  font-size:13px
+  font-size:15px
 }
 .phd-person p {
-  font-size:11px
+  font-size:13px
 }
 .phd-partners img {
   max-width:125px;
