@@ -51,7 +51,15 @@ document.addEventListener('DOMContentLoaded', () => {
       count.textContent = `${n} ${n === 1 ? 'item' : 'items'}`;
     };
     list.on('updated', update);
-    if (search) search.addEventListener('input', () => list.search(search.value));
+    if (search) {
+      const searchCollection = () => list.search(search.value.toLowerCase());
+      search.addEventListener('input', searchCollection);
+      // Quarto's bundled List.js lowercases values but not the query.
+      search.addEventListener('keyup', event => {
+        event.stopImmediatePropagation();
+        searchCollection();
+      }, true);
+    }
     const filterCategory = () => {
       if (!select.value) list.filter();
       else list.filter(item => [...item.elm.querySelectorAll('.listing-category')]

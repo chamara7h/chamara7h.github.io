@@ -98,16 +98,18 @@ main#quarto-document-content {
 .quarto-listing .listing-actions-group {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 16px;
   margin: 0 0 35px;
   padding-bottom: 28px;
   border-bottom: 1px solid var(--line);
 }
-.quarto-listing .quarto-listing-filter { flex: 1; max-width: 600px; }
+.quarto-listing .quarto-listing-filter { flex: 0 1 600px; max-width: 600px; margin: 0; padding: 0; }
+.quarto-listing .listing-actions-group > * { margin-top: 0; margin-bottom: 0; }
 .quarto-listing .input-group-text,
 .quarto-listing .search {
-  min-height: 44px;
+  height: 44px;
   background: transparent;
   border-color: var(--line);
   color: var(--ink);
@@ -116,24 +118,25 @@ main#quarto-document-content {
 .quarto-listing .input-group-text { border-right: 0; }
 .quarto-listing .search { border-left: 0; }
 .listing-topic-filter {
+  flex: 0 1 250px;
   max-width: 250px;
-  min-height: 44px;
+  height: 44px;
   font-size: 15px;
   background-color: var(--paper);
   border-color: var(--line);
   color: var(--ink);
 }
-.listing-result-count { margin-left: auto; font-size: 14px; color: var(--muted); white-space: nowrap; }
+.listing-result-count { margin-left: 0; font-size: 14px; color: var(--muted); white-space: nowrap; }
 .quarto-listing .list.grid {
   display: grid;
-  align-items: start;
+  align-items: stretch;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 42px 28px;
 }
 .quarto-listing .g-col-1 { min-width: 0; }
-.quarto-grid-link { display: block; color: var(--ink); text-decoration: none; }
+.quarto-grid-link { display: block; height: 100%; color: var(--ink); text-decoration: none; }
 .quarto-grid-item.card {
-  height: auto !important;
+  height: 100%;
   background: transparent;
   border: 0;
   border-bottom: 1px solid var(--line);
@@ -142,6 +145,7 @@ main#quarto-document-content {
   padding-bottom: 24px;
 }
 .quarto-grid-item .card-img-top {
+  flex-shrink: 0;
   margin: 0 0 22px;
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -158,7 +162,7 @@ main#quarto-document-content {
   transition: transform .3s;
 }
 .quarto-grid-link:hover img.thumbnail-image { transform: scale(1.025); }
-.quarto-grid-item .card-body { padding: 0; display: flex; flex-direction: column; flex-grow: 0; }
+.quarto-grid-item .card-body { padding: 0; display: flex; flex-direction: column; flex-grow: 0; height: auto; }
 .quarto-grid-item .listing-title {
   font: 400 26px/1.2 var(--serif);
   color: var(--ink);
@@ -187,7 +191,8 @@ main#quarto-document-content {
   color: var(--muted);
   gap: 6px 10px;
 }
-.quarto-listing .pagination { justify-content: center; gap: 8px; margin-top: 36px; }
+.quarto-listing .pagination { float: none; justify-content: center; gap: 8px; margin: 36px 0 0; padding: 0; }
+.quarto-listing .pagination li { padding: 0; }
 .quarto-listing .page-link { color: var(--ink); background: transparent; border-color: var(--line); border-radius: 50%; min-width: 40px; text-align: center; }
 .quarto-listing .page-item.active .page-link { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .listing-author, .listing-date { font-size: 12px; font-weight: 400; color: var(--muted); }
